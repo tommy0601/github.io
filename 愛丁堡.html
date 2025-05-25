@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html lang="zh-hant-TW">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="曹旅瀚 Tommy" />
+    <meta name="description" content="探索愛丁堡的歷史與文化！從愛丁堡城堡到神秘的巷道，感受這座蘇格蘭首都的古老魅力與現代氛圍，並體驗愛丁堡藝術節的獨特熱情。" />
+    <meta name="keywords" content="愛丁堡旅遊, 愛丁堡景點, 愛丁堡城堡, 愛丁堡藝術節, 愛丁堡古城區, 愛丁堡歷史, 愛丁堡文化, 蘇格蘭旅遊, 愛丁堡自由行, 愛丁堡旅行" />
+    <title>Tommy 看世界 - 愛丁堡</title>
+    <link rel="icon" href="網頁縮圖.ico" />
+    <style>
+      body {
+        font-family: Calibri, Arial, sans-serif; /* 首選 Calibri，次選 Arial */
+        margin: 0;
+        padding: 0;
+        overflow-x: hidden; /* 禁止水平滾動 */
+        background-color: #f4f4f9;
+        color: #333;
+      }
+
+      h1 {
+        font-size: 40px;
+        font-weight: bold;
+      }
+
+      h2 {
+        font-size: 32px;
+        font-weight: bold;
+        color: #2a90a7;
+        display: inline-block;
+        margin-bottom: 1rem; /* 縮小 h2 的底部邊距 */
+        background-color: #cee5e8;
+      }
+
+      h3 {
+        font-size: 26px;
+        margin: 0 0 1rem;
+        font-weight: bold;
+        text-decoration: underline; /* 加上底線 */
+      }
+
+      h4 {
+        font-size: 18px;
+        font-weight: normal;
+        line-height: 1.8;
+      }
+
+      h5 {
+        font-size: 16px;
+        font-weight: normal;
+        margin: 0;
+      }
+
+      h6 {
+        font-size: 10px;
+        color: #fff;
+        margin: 0;
+        text-align: center;
+        line-height: 50px; /* 高度對齊 */
+      }
+
+      nav {
+        background-color: #78bcc4;
+        display: flex;
+        justify-content: space-between; /* 保持分佈在兩側 */
+        width: calc(100% - 10rem); /* 與其他內容的邊界一致 */
+        padding: 0.5rem 5rem; /* 主導覽列的 padding 設置 */
+        position: fixed;
+        top: 0;
+        z-index: 1000;
+      }
+
+      .nav-left .logo img {
+        height: 50px; /* 控制 Logo 圖片的高度 */
+        transform: translateX(-1.5rem); /* 向右移動 2rem */
+      }
+
+      .nav-right {
+        display: flex;
+        align-items: center;
+        transform: translateX(2rem); /* 向右移動 2rem */
+      }
+
+      nav a {
+        color: #eff5f5;
+        text-decoration: none;
+        padding: 0.5rem 1rem;
+        margin: 0 0.5rem;
+        transition: transform 0.3s;
+      }
+
+      nav a:hover {
+        transform: translateY(-3px);
+      }
+
+      .dropdown {
+        position: relative;
+      }
+
+      .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #78bcc4;
+        min-width: 160px;
+        border-radius: 4px;
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        padding: 0.2rem 0;
+      }
+
+      .dropdown-content a {
+        color: #eff5f5;
+        display: block;
+        transition: transform 0.3s;
+        border-bottom: 1px solid #ddd;
+      }
+
+      .dropdown-content a:last-child {
+        border-bottom: none;
+      }
+
+      .dropdown-content a:hover {
+        transform: translateY(-3px);
+      }
+
+      .dropdown:hover .dropdown-content {
+        display: block;
+      }
+
+      .intro-section {
+        background-color: #eff5f5;
+        display: flex;
+        padding: 2rem;
+        margin-top: 60px; /* 根據導航列高度調整 */
+        justify-content: space-between;
+        align-items: flex-start;
+        width: 100%;
+        box-sizing: border-box; /* 包含 padding 在內 */
+        padding-left: 5rem;
+        padding-right: 5rem;
+      }
+
+      .intro-section h4 {
+        max-width: 700px;
+      }
+
+      .intro-section .left {
+        width: 60%;
+      }
+
+      .intro-section .right {
+        width: 40%;
+      }
+
+      .destination-section {
+        display: flex;
+        padding: 1rem 5%; /* 左右內間距為螢幕的10% */
+        background-color: white;
+      }
+
+      .destination-main {
+        width: 75%;
+        margin-right: 1.5rem; /* 增加右邊外邊距 */
+      }
+
+      .destination-sidebar {
+        width: 25%;
+        padding-left: 1.5rem; /* 增加左側內邊距 */
+        margin-top: 2rem; /* 向上或向下調整，負值表示向上 */
+      }
+
+      .sidebar-image-container {
+        margin-bottom: 1rem;
+        text-align: center; /* 確保圖片置中 */
+      }
+
+      .sidebar-image-container img {
+        height: 300px; /* 設置直式圖片的高度 */
+      }
+
+      .two-vertical-images {
+        display: flex; /* 彈性佈局，讓圖片並排 */
+        justify-content: space-between; /* 兩張圖片均勻分佈 */
+        gap: 2rem; /* 圖片之間的間距 */
+        margin-top: 2rem;
+        margin-bottom: 2rem; /* 與下方內容的距離 */
+      }
+
+      .two-vertical-images img {
+        width: calc(50% - 0.5rem); /* 每張圖片佔用容器的一半減去間距 */
+        text-align: center; /* 確保圖片置中 */
+        height: auto; /* 保持圖片的直式比例 */
+        object-fit: cover; /* 確保圖片內容適應容器 */
+      }
+
+      .recommendation-section {
+        margin-top: 1.5rem; /* 與上方文字的間距 */
+        text-align: center;
+        position: sticky;
+        top: 80px; /* 空出導覽列的高度，確保推薦區不被覆蓋 */
+        z-index: 10; /* 提高層級，避免被其他內容遮蓋 */
+      }
+
+      .recommendation-section h3 {
+        font-size: 18px;
+        font-weight: bold;
+        margin-bottom: 0.5rem; /* 與按鈕區的距離 */
+      }
+
+      .recommendation-buttons {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 0.5rem; /* 按鈕之間的間距 */
+      }
+
+      .recommendation-buttons button {
+        padding: 0.5rem 1rem;
+        font-size: 14px;
+        color: white;
+        background-color: #78bcc4;
+        border: none;
+        border-radius: 4px;
+        transition: transform 0.3s;
+        font-family: Arial, sans-serif;
+      }
+
+      .recommendation-buttons button:hover {
+        transform: translateY(-3px);
+      }
+
+      .contact-section {
+        padding: 2rem 5rem; /* 上下與左右間距 */
+        background-color: #eff5f5; /* 淺灰背景 */
+        text-align: center; /* 確保內容置中對齊 */
+      }
+
+      .contact-item h3 {
+        font-size: 18px; /* 調整標題字體大小 */
+        margin: 0; /* 移除多餘的間距 */
+        text-decoration: none; /* 移除底線 */
+      }
+
+      footer {
+        background-color: #000;
+        color: white;
+        height: 30px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      #expandable-menu {
+        position: fixed;
+        top: 70px; /* 與螢幕頂部的距離設為 60px */
+        right: 0;
+        height: calc(100% - 70px); /* 高度減去 60px，避免超出視窗 */
+        width: 395px; /* 目錄寬度與 sidebar 齊寬 */
+        transform: translateX(100%); /* 初始狀態：隱藏在右側 */
+        transition: transform 0.3s ease;
+        background-color: #f4f4f9; /* 與網站背景一致 */
+        z-index: 1000;
+      }
+
+      /* 收闔按鈕 */
+      #menu-toggle {
+        position: absolute;
+        top: 45%;
+        left: -40px; /* 調整按鈕的位置，適應按鈕變大後的寬度 */
+        transform: translateY(-50%);
+        width: 40px; /* 增大按鈕寬度 */
+        height: 80px; /* 增大按鈕高度 */
+        background-color: #78bcc4;
+        color: white;
+        border-radius: 4px;
+        display: flex;
+        justify-content: center; /* 水平居中 */
+        align-items: center; /* 垂直居中 */
+      }
+
+      #menu-toggle::after {
+        content: "目錄"; /* 在按鈕內顯示 "目錄" */
+        font-size: 17px;
+        color: white; /* 設定字體顏色為白色 */
+        writing-mode: vertical-rl; /* 使文字垂直排列 */
+      }
+
+      #menu-toggle:hover {
+        background-color: #78bcc4;
+      }
+
+      /* 目錄內容 */
+      #menu-content {
+        padding: 0.5rem 1rem;
+        overflow-y: auto;
+        height: 100%;
+      }
+
+      #menu-content h4 {
+        font-weight: bold;
+        margin-top: 0;
+      }
+
+      #menu-list {
+        list-style: none;
+        padding: 0;
+      }
+
+      #menu-list li {
+        margin-bottom: 0.5rem;
+      }
+
+      #menu-list a {
+        color: #2a90a7;
+        text-decoration: none;
+        transition: color 0.3s;
+      }
+
+      #menu-list a:hover {
+        color: #78bcc4;
+      }
+
+      #menu-list .sub-item {
+        margin-left: 1.5rem; /* 調整縮排距離 */
+        font-size: 0.9rem; /* 可選：調整子項目字體大小 */
+      }
+
+      /* 目錄展開狀態 */
+      #expandable-menu.open {
+        transform: translateX(0);
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <div class="nav-left">
+        <div class="logo">
+          <a href="首頁.html">
+            <img src="網站Logo.png" alt="網站 Logo" />
+          </a>
+        </div>
+      </div>
+      <div class="nav-right">
+        <a href="首頁.html">關於我</a>
+        <div class="dropdown">
+          <a>亞洲旅遊</a>
+          <div class="dropdown-content">
+            <a href="中國.html">中國</a>
+            <a href="新加坡.html">新加坡</a>
+            <a href="馬來西亞.html">馬來西亞</a>
+            <a href="泰國.html">泰國</a>
+            <a href="印尼.html">印尼</a>
+            <a href="越南.html">越南</a>
+          </div>
+        </div>
+        <div class="dropdown">
+          <a>歐洲旅遊</a>
+          <div class="dropdown-content">
+            <a href="英國.html">英國</a>
+            <a href="法國.html">法國</a>
+            <a href="荷蘭.html">荷蘭</a>
+            <a href="比利時.html">比利時</a>
+            <a href="盧森堡.html">盧森堡</a>
+            <a href="瑞士.html">瑞士</a>
+            <a href="摩納哥.html">摩納哥</a>
+            <a href="西班牙.html">西班牙</a>
+            <a href="葡萄牙.html">葡萄牙</a>
+            <a href="安道爾.html">安道爾</a>
+            <a href="丹麥.html">丹麥</a>
+            <a href="瑞典.html">瑞典</a>
+            <a href="波蘭.html">波蘭</a>
+          </div>
+        </div>
+        <div class="dropdown">
+          <a>美洲旅遊</a>
+          <div class="dropdown-content">
+            <a href="美國.html">美國</a>
+            <a href="加拿大.html">加拿大</a>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <div class="intro-section">
+      <div class="left">
+        <h1>Tommy 在愛丁堡</h1>
+        <h4>
+          <b>愛丁堡 (Edinburgh) </b
+          >是蘇格蘭的首府和第二大城市，歷史可追溯到公元 2 世紀羅馬時期，在 13 世紀愛丁堡成為蘇格蘭的首府，並在 14 世紀經歷了一段重要的發展時期，16 世紀愛丁堡成為了蘇格蘭啟蒙運動的據點，深刻地影響了歐洲的文化發展。現在的愛丁堡是一個充滿活力和魅力的城市，擁有世界上最大的藝術節之一的愛丁堡藝術節，以及許多音樂、文學和戲劇節。愛丁堡坐落在群山環繞的地勢上，且距離風景壯麗的蘇格蘭高地不遠，是追求大自然的愛好者的理想之地。
+        </h4>
+      </div>
+      <div class="right">
+        <img src="英國照片\愛丁堡\愛丁堡_intro.jpg" width="90%" height="350px" />
+      </div>
+    </div>
+
+    <div class="destination-section">
+      <div class="destination-main">
+        <h2>愛丁堡交通</h2>
+        <h3>機場交通</h3>
+        <h4>
+          從愛丁堡機場可以搭乘 Airport Express 巴士抵達市中心，車程大約40分鐘。
+        </h4>
+        <h3>市區交通</h3>
+        <h4>
+          愛丁堡市區的景點十分集中，多數景點在觀光的時候步行即可，不太會有需要乘坐大眾交通運輸的情況。
+        </h4>
+        <br /><br />
+        <h2>愛丁堡住宿</h2>
+        <h4>
+          在愛丁堡住宿主要以觀光作為首要考量，基本上景點大多都在 High Street 上，<b>推薦大家住在 High Street 附近</b>，飯店選擇多也方便。
+        </h4>
+        <div style="text-align: center">
+          <img src="英國照片\愛丁堡\愛丁堡_住宿.png" width="1000px" />
+        </div>
+        <br /><br />
+        <h2>愛丁堡景點</h2>
+        <h3>Royal Mile</h3>
+        <h4>
+          Royal Mile 是愛丁堡最著名的一條街道，連接了愛丁堡城堡和愛丁堡皇家宮殿，沿著街道兩旁有許多保存完好的中世紀和文藝復興時期建築，具有悠久的歷史和豐富的文化遺產，包括聖吉爾斯大教堂 (St. Giles' Cathedral)、約翰·諾克斯之家 (John Knox House) 和皇家愛丁堡騎士團 (The Palace of Holyroodhouse) 等，街道兩側有許多商店、餐廳、咖啡館和酒吧，也會舉辦一些重要的節日和活動，其中包括愛丁堡藝穗節 (Edinburgh Festival Fringe) 和愛丁堡皇家遊行 (Edinburgh's Royal Military Tattoo)。
+        </h4>
+        <div style="text-align: center">
+          <img src="英國照片\愛丁堡\ED1.jpg" width="600px" />
+        </div>
+        <br /><br /><br />
+        <h3>愛丁堡城堡 (Edinburgh Castle)</h3>
+        <h4>
+          愛丁堡城堡坐落在愛丁堡山上的一個巨大岩石上，俯瞰著整個城市，可以追溯到公元 12 世紀，在過去的幾個世紀中曾經是蘇格蘭皇家家族的居所和重要的軍事堡壘。城堡內有各種建築物和結構，包括皇家宮殿、聖瑪格麗特教堂、國家戰爭博物館和蘇格蘭王冠珠寶室等。
+        </h4>
+        <h4>
+          每天正午可以在城堡內觀看一場傳統的炮擊儀式，稱為「一點炮」 (One O'Clock Gun)，這個儀式源於 19 世紀，目的是為了讓在愛丁堡港工作的船員們準確校準他們的時鐘。
+        </h4>
+        <div style="text-align: center">
+          <img src="英國照片\愛丁堡\ED2.jpg" width="800px" />
+        </div>
+        <h4>
+          從山下的羅斯噴泉 (Ross Fountain) 可以更完整的拍出愛丁堡城堡的雄偉。
+        </h4>
+        <div style="text-align: center">
+          <img src="英國照片\愛丁堡\ED3.jpg" width="800px" />
+        </div>
+        <br /><br /><br />
+        <h3>聖吉爾斯大教堂 (St Giles' Cathedral)</h3>
+        <h4>
+          聖吉爾斯大教堂的歷史可以追溯到公元 12 世紀，是獻給被視為愛丁堡的守護聖人的聖吉爾斯 (St. Giles)，教堂在過去的幾個世紀中經歷了多次擴建和改建，呈現出不同的建築風格，包括哥特式和文藝復興風格。教堂的外觀令人印象深刻，特別是其尖塔和華麗的尖頂，內部裝飾精美，包括彩繪玻璃窗、石雕和木雕等藝術品。教堂的中殿是一個寬敞的空間，擁有漂亮的拱頂和教堂的中心特色: 瑪利女王禮拜堂 (The Chapel of the Order of the Thistle)，這個禮拜堂是蘇格蘭最高榮譽勳章「蘇格蘭薊花勳章」(Order of the Thistle) 的會所。
+        </h4>
+        <div style="text-align: center">
+          <img src="英國照片\愛丁堡\ED4.jpg" width="600px" />
+          <img src="英國照片\愛丁堡\ED5.jpg" width="600px" />
+          <img src="英國照片\愛丁堡\ED6.jpg" width="600px" />
+        </div>
+        <br /><br /><br />
+        <h3>蘇格蘭國立博物館 (National Museum of Scotland)</h3>
+        <h4>
+          蘇格蘭國立博物館成立於 1854 年，並於 2011 年進行了擴建和重新開放，展示了來自不同文化和時期的廣泛收藏，典藏包括自然科學、人類學、藝術和設計等領域的物品，涵蓋了蘇格蘭、英國和全球的歷史和文化，可以在自然科學部門探索地球的演變，了解動植物的多樣性，並觀察珍貴的化石和礦物標本。人類學部門則展示了人類文明的發展，包括古代埃及、古希臘和其他文明的藝術品和文物。藝術和設計部門則展示了從中世紀到現代的蘇格蘭和國際藝術作品，包括名家的繪畫、雕塑和裝飾藝術品。博物館還有一些特色展覽，包括關於蘇格蘭歷史和文化的展覽，以及關於科學和技術的互動展覽。
+        </h4>
+        <div style="text-align: center">
+          <img src="英國照片\愛丁堡\ED7.jpg" width="600px" />
+        </div>
+        <br /><br /><br />
+        <h3>司各特紀念塔 (Scott Monument)</h3>
+        <h4>
+          司各特紀念碑是為了紀念蘇格蘭作家瓦爾特·司各特 (Sir Walter Scott) 而建造，這座紀念碑是世界上最高的作家紀念碑。司各特紀念碑建於 1840 年，是由建築師喬治·葛德 (George Meikle Kemp) 設計，採用了哥特式風格，以石材砌成，紀念碑的高度達到約 61 米，共有 287 個階梯，可以爬上頂部欣賞到愛丁堡市區的壯麗景色。
+        </h4>
+        <h4>
+          紀念碑的設計靈感來自於司各特作品中的描述，外部裝飾著對司各特及其作品的雕像和浮雕。在紀念碑的基座上有四個大型雕像代表著史考特筆下的角色，包括《艾薇兒湖》(The Lady of the Lake) 中的艾薇兒湖女主角和《羅伯·羅伊》(Rob Roy) 中的羅伯·羅伊，在紀念碑的頂部，則是一尊巨大的司各特雕像，他手持一本書，底座上刻有他的名言和作品名稱。
+        </h4>
+        <div style="text-align: center">
+          <img src="英國照片\愛丁堡\ED8.jpg" width="600px" />
+        </div>
+        <br /><br /><br />
+        <h3>卡爾頓山 (Calton Hill)</h3>
+        <h4>
+          卡爾頓山是位於愛丁堡市中心的一座小山，位於愛丁堡的東側，高約 103 米，從山頂可以鳥瞰整個愛丁堡的城市景觀。山頂上有許多著名的建築物和紀念碑，其中最著名的是「愛丁堡國家紀念碑」 (National Monument of Scotland)，是為了紀念那些在拿破崙戰爭中犧牲的蘇格蘭士兵而建造的，外觀類似於古希臘的帕德嫩神廟，然而由於資金不足，這座紀念碑從未完工，因此被稱為「蘇格蘭的無成果」。
+        </h4>
+        <h4>
+          卡爾頓山還有其他建築物，如「卡爾頓山觀測台」 (Calton Hill Observatory) 和「愛丁堡市議會」(City Observatory)，這些建築物代表了愛丁堡作為科學和文化中心的歷史地位。從卡爾頓山山頂可以欣賞到壯觀的景色，包括愛丁堡城堡、愛丁堡新城區、愛丁堡舊城區和寬闊的弗思河 (Firth of Forth)，特別是在日落時分，這裡的景色尤為令人難以忘懷。
+        </h4>
+        <div style="text-align: center">
+          <img src="英國照片\愛丁堡\ED9.jpg" width="800px" />
+          <img src="英國照片\愛丁堡\ED10.jpg" width="800px" />
+          <img src="英國照片\愛丁堡\ED11.jpg" width="800px" />
+          <img src="英國照片\愛丁堡\ED12.jpg" width="800px" />
+        </div>
+        <br /><br /><br />
+        <h3>Holyrood Park</h3>
+        <h4>
+          Holyrood Park 以其獨特的地質和地貌而聞名，最著名的特徵是位於公園中心的「亞瑟座」 (Arthur's Seat)，是一個海拔 251 米的古火山口，是愛丁堡最高的山丘之一，可以攀登到阿瑟座的山頂，從那裡欣賞到壯觀的全景，包括愛丁堡市中心、愛丁堡城堡、愛丁堡新城區以及愛丁堡的海岸線。Holyrood Park 也是豐富的生態系統的家園，擁有多樣的植物和野生動物，可能會看到各種鳥類、兔子和甚至是狐狸和鹿。
+        </h4>
+        <div style="text-align: center">
+          <img src="英國照片\愛丁堡\ED13.jpg" width="600px" />
+          <img src="英國照片\愛丁堡\ED14.jpg" width="600px" />
+          <img src="英國照片\愛丁堡\ED15.jpg" width="800px" />
+          <img src="英國照片\愛丁堡\ED16.jpg" width="800px" />
+        </div>
+        <br /><br /><br />
+        <h3>Dean Village</h3>
+        <h4>
+          Dean Village 位於利斯河 (Water of Leith) 岸邊，可以追溯到 12 世紀，當時它是一個繁忙的小型工業區，有許多磨坊和製造業工廠。隨著時間的推移，這個村莊逐漸轉變為一個宜居的社區，並且保留了許多古老的建築和街道佈局，有許多精美的單獨房屋和石砌的街道，街道上還保留著古老的橋樑和步道，可以漫步河岸欣賞利斯河清澈的水流和周圍的自然風景。
+        </h4>
+        <h4>Dean Village 的建築特色包括色彩鮮豔的石頭房屋、傾斜的屋頂、傳統的窗戶和裝飾性的石雕，反映了愛丁堡過去的歷史和建築風格，給人一種迷人而寧靜的感覺。</h4>
+        <div style="text-align: center">
+          <img src="英國照片\愛丁堡\ED17.jpg" width="800px" />
+          <img src="英國照片\愛丁堡\ED18.jpg" width="800px" />
+          <img src="英國照片\愛丁堡\ED19.jpg" width="800px" />
+          <img src="英國照片\愛丁堡\ED20.jpg" width="800px" />
+        </div>
+        <br /><br /><br />
+        <h2>愛丁堡美食</h2>
+        <h3>Makars Mash Bar</h3>
+        <h4>
+          來到蘇格蘭肯定要吃蘇格蘭料理，精挑細選了這家網紅餐廳，比一般用餐時間早來卻還是須要等個 15 分鐘，點了慢燉羊腿配起司薯泥，羊腿燉的非常軟爛但不會有騷味，第一次嘗試蘇格蘭炸蛋，外皮脆脆的口感十分特別，像是裹了炸皮的水煮蛋，再配上酸洋蔥醬非常好吃，<b>建議大家要事先訂位</b>。
+        </h4>
+        <div style="text-align: center">
+          <img src="英國照片\愛丁堡\ED21.jpg" width="800px" />
+          <img src="英國照片\愛丁堡\ED22.png" width="800px" />
+        </div>
+        <br />
+      </div>
+      <div class="destination-sidebar">
+        <div class="sidebar-image-container">
+          <img src="側邊欄自我介紹.jpg" />
+        </div>
+        <h5>
+          Hi!
+          我是Tommy，我熱愛旅遊也喜歡藉由影像紀錄旅程中的點點滴滴，透過文字將我在旅途中的所見所聞分享給大家。旅行對我而言不只是吃吃喝喝，而是能在行萬里路間感受世界的脈動，體驗不同的文化，希望藉由我的分享能讓大家看到更多世界的美好。
+        </h5>
+        <br />
+        <h5>
+          想更了解我或與我聯絡:
+          <a
+            href="https://www.instagram.com/tommy_techvoyage/"
+            target="_blank"
+            style="color: inherit; text-decoration: underline"
+          >
+            <b>Instagram</b>
+          </a>
+        </h5>
+        <div class="recommendation-section">
+          <h3>其他英國旅遊目的地</h3>
+          <div class="recommendation-buttons">
+            <a href="倫敦.html">
+              <button><h5>倫敦</h5></button>
+            </a>
+            <a href="曼徹斯特.html">
+              <button><h5>曼徹斯特</h5></button>
+            </a>
+            <a href="利物浦.html">
+              <button><h5>利物浦</h5></button>
+            </a>
+            <a href="約克.html">
+              <button><h5>約克</h5></button>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="contact-section">
+      <div class="contact-item">
+        <h3>
+          想更了解我或與我聯絡:
+          <a
+            href="https://www.instagram.com/tommy_techvoyage/"
+            target="_blank"
+            style="color: inherit; text-decoration: underline"
+          >
+            Instagram
+          </a>
+        </h3>
+      </div>
+    </div>
+    <footer>
+      <h6>COPYRIGHT © 2025 Tommy 看世界 All rights reserved.</h6>
+    </footer>
+    <div id="expandable-menu">
+      <div id="menu-toggle"></div>
+      <!-- 收闔按鈕 -->
+      <div id="menu-content">
+        <h4>目錄</h4>
+        <ul id="menu-list"></ul>
+      </div>
+    </div>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const menu = document.getElementById("expandable-menu");
+        const toggle = document.getElementById("menu-toggle");
+        const menuList = document.getElementById("menu-list");
+        const destinationMain = document.querySelector(".destination-main");
+
+        // 點擊按鈕切換目錄狀態
+        toggle.addEventListener("click", () => {
+          menu.classList.toggle("open");
+        });
+
+        // 從 destination-main 區域提取 h2 和 h3，動態生成目錄
+        const headings = destinationMain.querySelectorAll("h2, h3");
+        headings.forEach((heading, index) => {
+          // 確保每個 h2 和 h3 都有唯一的 id
+          if (!heading.id) {
+            heading.id = `heading-${index}`;
+          }
+
+          const listItem = document.createElement("li");
+          const link = document.createElement("a");
+          link.textContent = heading.textContent;
+          link.href = `#${heading.id}`;
+          listItem.appendChild(link);
+
+          // 為 h3 添加縮排樣式
+          if (heading.tagName.toLowerCase() === "h3") {
+            listItem.classList.add("sub-item");
+          }
+
+          menuList.appendChild(listItem);
+        });
+
+        // 滾動至目標位置並加上 75px 偏移
+        menuList.addEventListener("click", (event) => {
+          if (event.target.tagName === "A") {
+            event.preventDefault(); // 阻止預設行為
+
+            const targetId = event.target.getAttribute("href").substring(1); // 取得目標 ID
+            const targetElement = document.getElementById(targetId);
+
+            if (targetElement) {
+              // 計算目標元素的位置並加上 75px 偏移
+              const targetPosition =
+                targetElement.getBoundingClientRect().top + window.scrollY;
+              const offset = 75; // 偏移的距離
+              window.scrollTo({
+                top: targetPosition - offset,
+                behavior: "smooth", // 平滑滾動
+              });
+            }
+          }
+        });
+      });
+    </script>
+  </body>
+</html>

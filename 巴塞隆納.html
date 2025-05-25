@@ -1,0 +1,941 @@
+<!DOCTYPE html>
+<html lang="zh-hant-TW">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="曹旅瀚 Tommy" />
+    <meta name="description" content="探索巴塞隆納的藝術與陽光魅力！從高第的聖家堂、哥德區的歷史街道，到地中海海灘與道地西班牙美食，體驗最具魅力的西班牙城市。" />
+    <meta name="keywords" content="巴塞隆納旅遊, 高第建築, 聖家堂, 西班牙自由行, 巴塞隆納景點, 哥德區, 地中海, 巴塞隆納美食, 西班牙城市介紹" />
+    <title>Tommy 看世界 - 巴塞隆納</title>
+    <link rel="icon" href="網頁縮圖.ico" />
+    <style>
+      body {
+        font-family: Calibri, Arial, sans-serif; /* 首選 Calibri，次選 Arial */
+        margin: 0;
+        padding: 0;
+        overflow-x: hidden; /* 禁止水平滾動 */
+        background-color: #f4f4f9;
+        color: #333;
+      }
+
+      h1 {
+        font-size: 40px;
+        font-weight: bold;
+      }
+
+      h2 {
+        font-size: 32px;
+        font-weight: bold;
+        color: #2a90a7;
+        display: inline-block;
+        margin-bottom: 1rem; /* 縮小 h2 的底部邊距 */
+        background-color: #cee5e8;
+      }
+
+      h3 {
+        font-size: 26px;
+        margin: 0 0 1rem;
+        font-weight: bold;
+        text-decoration: underline; /* 加上底線 */
+      }
+
+      h4 {
+        font-size: 18px;
+        font-weight: normal;
+        line-height: 1.8;
+      }
+
+      h5 {
+        font-size: 16px;
+        font-weight: normal;
+        margin: 0;
+      }
+
+      h6 {
+        font-size: 10px;
+        color: #fff;
+        margin: 0;
+        text-align: center;
+        line-height: 50px; /* 高度對齊 */
+      }
+
+      nav {
+        background-color: #78bcc4;
+        display: flex;
+        justify-content: space-between; /* 保持分佈在兩側 */
+        width: calc(100% - 10rem); /* 與其他內容的邊界一致 */
+        padding: 0.5rem 5rem; /* 主導覽列的 padding 設置 */
+        position: fixed;
+        top: 0;
+        z-index: 1000;
+      }
+
+      .nav-left .logo img {
+        height: 50px; /* 控制 Logo 圖片的高度 */
+        transform: translateX(-1.5rem); /* 向右移動 2rem */
+      }
+
+      .nav-right {
+        display: flex;
+        align-items: center;
+        transform: translateX(2rem); /* 向右移動 2rem */
+      }
+
+      nav a {
+        color: #eff5f5;
+        text-decoration: none;
+        padding: 0.5rem 1rem;
+        margin: 0 0.5rem;
+        transition: transform 0.3s;
+      }
+
+      nav a:hover {
+        transform: translateY(-3px);
+      }
+
+      .dropdown {
+        position: relative;
+      }
+
+      .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #78bcc4;
+        min-width: 160px;
+        border-radius: 4px;
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        padding: 0.2rem 0;
+      }
+
+      .dropdown-content a {
+        color: #eff5f5;
+        display: block;
+        transition: transform 0.3s;
+        border-bottom: 1px solid #ddd;
+      }
+
+      .dropdown-content a:last-child {
+        border-bottom: none;
+      }
+
+      .dropdown-content a:hover {
+        transform: translateY(-3px);
+      }
+
+      .dropdown:hover .dropdown-content {
+        display: block;
+      }
+
+      .intro-section {
+        background-color: #eff5f5;
+        display: flex;
+        padding: 2rem;
+        margin-top: 60px; /* 根據導航列高度調整 */
+        justify-content: space-between;
+        align-items: flex-start;
+        width: 100%;
+        box-sizing: border-box; /* 包含 padding 在內 */
+        padding-left: 5rem;
+        padding-right: 5rem;
+      }
+
+      .intro-section h4 {
+        max-width: 700px;
+      }
+
+      .intro-section .left {
+        width: 60%;
+      }
+
+      .intro-section .right {
+        width: 40%;
+      }
+
+      .destination-section {
+        display: flex;
+        padding: 1rem 5%; /* 左右內間距為螢幕的10% */
+        background-color: white;
+      }
+
+      .destination-main {
+        width: 75%;
+        margin-right: 1.5rem; /* 增加右邊外邊距 */
+      }
+
+      .destination-sidebar {
+        width: 25%;
+        padding-left: 1.5rem; /* 增加左側內邊距 */
+        margin-top: 2rem; /* 向上或向下調整，負值表示向上 */
+      }
+
+      .sidebar-image-container {
+        margin-bottom: 1rem;
+        text-align: center; /* 確保圖片置中 */
+      }
+
+      .sidebar-image-container img {
+        height: 300px; /* 設置直式圖片的高度 */
+      }
+
+      .two-vertical-images {
+        display: flex; /* 彈性佈局，讓圖片並排 */
+        justify-content: space-between; /* 兩張圖片均勻分佈 */
+        gap: 2rem; /* 圖片之間的間距 */
+        margin-top: 2rem;
+        margin-bottom: 2rem; /* 與下方內容的距離 */
+      }
+
+      .two-vertical-images img {
+        width: calc(50% - 0.5rem); /* 每張圖片佔用容器的一半減去間距 */
+        text-align: center; /* 確保圖片置中 */
+        height: auto; /* 保持圖片的直式比例 */
+        object-fit: cover; /* 確保圖片內容適應容器 */
+      }
+
+      .recommendation-section {
+        margin-top: 1.5rem; /* 與上方文字的間距 */
+        text-align: center;
+        position: sticky;
+        top: 80px; /* 空出導覽列的高度，確保推薦區不被覆蓋 */
+        z-index: 10; /* 提高層級，避免被其他內容遮蓋 */
+      }
+
+      .recommendation-section h3 {
+        font-size: 18px;
+        font-weight: bold;
+        margin-bottom: 0.5rem; /* 與按鈕區的距離 */
+      }
+
+      .recommendation-buttons {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 0.5rem; /* 按鈕之間的間距 */
+      }
+
+      .recommendation-buttons button {
+        padding: 0.5rem 1rem;
+        font-size: 14px;
+        color: white;
+        background-color: #78bcc4;
+        border: none;
+        border-radius: 4px;
+        transition: transform 0.3s;
+        font-family: Arial, sans-serif;
+      }
+
+      .recommendation-buttons button:hover {
+        transform: translateY(-3px);
+      }
+
+      .contact-section {
+        padding: 2rem 5rem; /* 上下與左右間距 */
+        background-color: #eff5f5; /* 淺灰背景 */
+        text-align: center; /* 確保內容置中對齊 */
+      }
+
+      .contact-item h3 {
+        font-size: 18px; /* 調整標題字體大小 */
+        margin: 0; /* 移除多餘的間距 */
+        text-decoration: none; /* 移除底線 */
+      }
+
+      footer {
+        background-color: #000;
+        color: white;
+        height: 30px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      #expandable-menu {
+        position: fixed;
+        top: 70px; /* 與螢幕頂部的距離設為 60px */
+        right: 0;
+        height: calc(100% - 70px); /* 高度減去 60px，避免超出視窗 */
+        width: 395px; /* 目錄寬度與 sidebar 齊寬 */
+        transform: translateX(100%); /* 初始狀態：隱藏在右側 */
+        transition: transform 0.3s ease;
+        background-color: #f4f4f9; /* 與網站背景一致 */
+        z-index: 1000;
+      }
+
+      /* 收闔按鈕 */
+      #menu-toggle {
+        position: absolute;
+        top: 45%;
+        left: -40px; /* 調整按鈕的位置，適應按鈕變大後的寬度 */
+        transform: translateY(-50%);
+        width: 40px; /* 增大按鈕寬度 */
+        height: 80px; /* 增大按鈕高度 */
+        background-color: #78bcc4;
+        color: white;
+        border-radius: 4px;
+        display: flex;
+        justify-content: center; /* 水平居中 */
+        align-items: center; /* 垂直居中 */
+      }
+
+      #menu-toggle::after {
+        content: "目錄"; /* 在按鈕內顯示 "目錄" */
+        font-size: 17px;
+        color: white; /* 設定字體顏色為白色 */
+        writing-mode: vertical-rl; /* 使文字垂直排列 */
+      }
+
+      #menu-toggle:hover {
+        background-color: #78bcc4;
+      }
+
+      /* 目錄內容 */
+      #menu-content {
+        padding: 0.5rem 1rem;
+        overflow-y: auto;
+        height: 100%;
+      }
+
+      #menu-content h4 {
+        font-weight: bold;
+        margin-top: 0;
+      }
+
+      #menu-list {
+        list-style: none;
+        padding: 0;
+      }
+
+      #menu-list li {
+        margin-bottom: 0.5rem;
+      }
+
+      #menu-list a {
+        color: #2a90a7;
+        text-decoration: none;
+        transition: color 0.3s;
+      }
+
+      #menu-list a:hover {
+        color: #78bcc4;
+      }
+
+      #menu-list .sub-item {
+        margin-left: 1.5rem; /* 調整縮排距離 */
+        font-size: 0.9rem; /* 可選：調整子項目字體大小 */
+      }
+
+      /* 目錄展開狀態 */
+      #expandable-menu.open {
+        transform: translateX(0);
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <div class="nav-left">
+        <div class="logo">
+          <a href="首頁.html">
+            <img src="網站Logo.png" alt="網站 Logo" />
+          </a>
+        </div>
+      </div>
+      <div class="nav-right">
+        <a href="首頁.html">關於我</a>
+        <div class="dropdown">
+          <a>亞洲旅遊</a>
+          <div class="dropdown-content">
+            <a href="中國.html">中國</a>
+            <a href="新加坡.html">新加坡</a>
+            <a href="馬來西亞.html">馬來西亞</a>
+            <a href="泰國.html">泰國</a>
+            <a href="印尼.html">印尼</a>
+            <a href="越南.html">越南</a>
+          </div>
+        </div>
+        <div class="dropdown">
+          <a>歐洲旅遊</a>
+          <div class="dropdown-content">
+            <a href="英國.html">英國</a>
+            <a href="法國.html">法國</a>
+            <a href="荷蘭.html">荷蘭</a>
+            <a href="比利時.html">比利時</a>
+            <a href="盧森堡.html">盧森堡</a>
+            <a href="瑞士.html">瑞士</a>
+            <a href="摩納哥.html">摩納哥</a>
+            <a href="西班牙.html">西班牙</a>
+            <a href="葡萄牙.html">葡萄牙</a>
+            <a href="安道爾.html">安道爾</a>
+            <a href="丹麥.html">丹麥</a>
+            <a href="瑞典.html">瑞典</a>
+            <a href="波蘭.html">波蘭</a>
+          </div>
+        </div>
+        <div class="dropdown">
+          <a>美洲旅遊</a>
+          <div class="dropdown-content">
+            <a href="美國.html">美國</a>
+            <a href="加拿大.html">加拿大</a>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <div class="intro-section">
+      <div class="left">
+        <h1>Tommy 在巴塞隆納</h1>
+        <h4>
+          <b>巴塞隆納 (Barcelona) </b
+          >是西班牙最富有的城市，始於 2 世紀前羅馬帝國時期，是重要的商港和行政中心，逐漸發展成為地中海區域的重要貿易樞紐。16 世紀隨著西班牙王國的統一，巴塞隆納失去政治上的地位，但仍保持其重要的商業地位。如今的巴塞隆納集藝術、建築、美食和時尚於一身，成為享有盛譽的旅遊勝地，有高第設計的聖家堂、超現代的構築物等，無一不代表著這座城市的獨特氣質。
+        </h4>
+      </div>
+      <div class="right">
+        <img src="西班牙照片\巴塞隆納\巴塞隆納_介紹.jpg" width="90%" height="350px" />
+      </div>
+    </div>
+
+    <div class="destination-section">
+      <div class="destination-main">
+        <h2>巴塞隆納交通</h2>
+        <h3>機場交通</h3>
+        <h4>
+          從巴塞機場可以搭乘 24 小時都有營運的 A2 機場巴士直接抵達西班牙廣場、加泰隆尼亞廣場以及 Gran Via de les Corts Catalanes 沿線，車程大約 35 分鐘。
+        </h4>
+        <h3>市區交通</h3>
+        <h4>
+          巴塞隆納的地鐵線路眾多錯綜複雜，但幾乎所有的景點都有被地鐵路線覆蓋，因此最推薦的出行方式便是乘坐地鐵，
+          巴塞隆納有推出 <a href="https://www.tmb.cat/en/barcelona-fares-metro-bus" target="_blank">2/3/4/5 日交通票</a>，可以在時間範圍內不限次數搭乘大眾交通運輸，非常推薦大家購買，能省下不少旅費。
+        </h4>
+        <div style="text-align: center">
+          <img src="西班牙照片\巴塞隆納\巴塞隆納_交通.jpg" width="600px" />
+        </div>
+        <br /><br />
+        <h2>巴塞隆納住宿</h2>
+        <h4>
+          由於巴塞隆納是觀光勝地，因此也是許多小偷扒手猖獗之地，尤其在舊城區也就是靠近 La Rambla 一帶情況尤為嚴重，因此選擇住宿盡量不要在舊城區內，推薦大家可以選擇 Eixample 區或是 Gracias 區，相對來說治安較好交通也方便。
+        </h4>
+        <div style="text-align: center">
+          <img src="西班牙照片\巴塞隆納\巴塞隆納_住宿.png" width="1000px" />
+        </div>
+        <br /><br />
+        <h2>巴塞隆納景點</h2>
+        <h3>聖家堂 (La Sagrada Família)</h3>
+        <h4>
+          聖家堂是著名建築師安東尼·高第的代表作，於 1882 年開始動工，直到今天仍然沒有完工，建築工程經歷了多次中斷和重啟，一直延續到了 21 世紀，
+          目前已完工大約 80%，預計最終完工目標是 2026 年，也是高第誕生 200 週年。聖家堂的設計融合了哥特式和現代主義的風格元素，其外觀以大型的尖
+          塔和華麗的裝飾為特色，呈現出一種非凡的建築美學。教堂的建築材料主要由石頭和混凝土組成，並大量使用彩色玻璃窗以創造獨特的光影效果，整個建
+          築的設計遵循了天主教的象徵意義，體現了宗教主題和自然元素的融合，各種精細的浮雕和裝飾都富有深層次的宗教寓意，如描述聖經故事的浮雕、表現
+          大自然形態的柱子等。由於聖家堂遊客眾多且參觀人數有限制，強烈建議一定要先在<a href="https://sagradafamilia.org/en/" target="_blank">官網</a>訂票以免無法入場喔!
+        </h4>
+        <div style="text-align: center">
+          <img src="西班牙照片\巴塞隆納\BC1.jpg" width="600px" />
+          <img src="西班牙照片\巴塞隆納\BC2.jpg" width="600px" />
+          <img src="西班牙照片\巴塞隆納\BC3.jpg" width="600px" />
+          <img src="西班牙照片\巴塞隆納\BC4.jpg" width="600px" />
+          <img src="西班牙照片\巴塞隆納\BC5.jpg" width="600px" />
+          <img src="西班牙照片\巴塞隆納\BC6.jpg" width="600px" />
+          <img src="西班牙照片\巴塞隆納\BC7.jpg" width="600px" />
+        </div>
+        <br /><br /><br />
+        <h3>巴塞隆納主教座堂 (Cathedral de Barcelona)</h3>
+        <h4>
+          巴塞隆納主教座堂建造始於 13 世紀，於 1448 年正式完工，擁有 600 多年的歷史，採用了典型的北歐哥特式建築風格，
+          外觀高聳入雲佈滿精緻的裝飾雕塑，教堂主殿的尖頂塔共有 18 座，是哥特式教堂中罕見的場景。內部空間寬敞明亮天頂高聳，色彩斑斕的彩色玻璃窗讓內部充滿神聖的光輝，豪華的祭壇、柱廊和雕塑裝飾也體現了天主教的宗教風格。每年聖佩德羅節，這裡都會舉行盛大的節日慶祝活動。
+        </h4>
+        <div style="text-align: center">
+          <img src="西班牙照片\巴塞隆納\BC8.jpg" width="600px" />
+          <img src="西班牙照片\巴塞隆納\BC9.jpg" width="600px" />
+          <img src="西班牙照片\巴塞隆納\BC10.jpg" width="600px" />
+          <img src="西班牙照片\巴塞隆納\BC11.jpg" width="600px" />
+        </div>
+        <br /><br /><br />
+        <h3>阿格巴塔 (Torre Glòries)</h3>
+        <h4>
+          阿格巴塔是位於市中心的一座顯眼的摩天大樓，由法國建築師讓·努維爾設計，於 2005 年落成啟用。
+          阿格巴塔的設計充滿了創意與創新，其外觀呈現出獨特的幾何造型，有如一段被扭曲的金屬柱，主體由 304 個玻璃幕牆組成，在陽光的照射下呈現出五顏六色的變化，在晚上塔身會通過色彩變化的燈光效果，展現出夢幻般的景象。阿格巴塔高度達 142 米，主要用作辦公和商業用途。
+        </h4>
+        <div style="text-align: center">
+          <img src="西班牙照片\巴塞隆納\BC12.jpg" width="600px" />
+        </div>
+        <br /><br /><br />
+        <h3>聖若梅廣場 (Plaça de Sant Jaume)</h3>
+        <h4>
+          聖若梅廣場的歷史可以追溯到中世紀，當時它就是重要的宗教和政治中心，廣場上矗立著兩座重要的建築物，一座是巴塞隆納市政廳，另一座是加泰隆尼亞政府總部，象徵著地方與地區政治的交匯，是巴塞隆納市政活動的核心場所，經常舉辦節慶、集會和示威活動。廣場四周的建築風格保留了中世紀的風貌，散發著古老的歷史氛圍。
+        </h4>
+        <h4>如今的聖若梅廣場依舊保持著它作為巴塞隆納政治中心的地位，每年的國慶日和其他重大節日，居民都會在這裡聚集共同慶祝加泰隆尼亞的歷史和身份。</h4>
+        <div style="text-align: center">
+          <img src="西班牙照片\巴塞隆納\BC13.jpg" width="600px" />
+        </div>
+        <br /><br /><br />
+        <h3>La Rambla</h3>
+        <h4>
+          La Rambla 是巴塞隆納最著名的街道，位於老城區中心地帶，是條長約 1.2 公里的步行街，自中世紀以來就是這座城市的商業與文化中心，
+          兩側櫛比鱗次的商店、餐廳和小攤位吸引了大量遊客，街道兩旁種有高大的梧桐樹，形成了一幅綠蔭蔽日的夢幻景致。街道上有藝術家們的畫廊、
+          街頭表演者、音樂家等，營造出一種充滿活力和藝術氛圍的氛圍，在這條大道上可以感受到巴塞隆納獨特的歷史文化魅力。
+          要特別注意的是<b>這條街上的扒手非常多</b>，務必要保管好自己的隨身物品，時刻保持警惕財部會損失慘重。
+        </h4>
+        <div style="text-align: center">
+          <img src="西班牙照片\巴塞隆納\BC14.jpg" width="600px" />
+        </div>
+        <br /><br /><br />
+        <h3>皇家廣場 (Plaça Reial)</h3>
+        <h4>
+          皇家廣場建於 19 世紀上半葉，設計風格屬於新巴洛克式，四周圍繞建有高聳的拱形柱廊，給人一種宏偉華麗的感覺，廣場中心矗立著一座由鍋爐鏈鑄造的優雅噴泉雕塑。沿著廣場四周分佈著眾多餐廳、咖啡館和酒吧，還舉辦各種文化活動，是當地藝術家們表演的熱門場地。
+        </h4>
+        <div style="text-align: center">
+          <img src="西班牙照片\巴塞隆納\BC15.jpg" width="600px" />
+        </div>
+        <br /><br /><br />
+        <h3>哥倫布紀念碑 (Monument a Colom)</h3>
+        <h4>
+          哥倫布紀念碑高達 60 米，於 1888 年落成，以紀念克里斯托弗·哥倫布的偉大航海事業和發現新大陸的貢獻。紀念碑的設計主體是高聳的圓柱形立柱，頂端矗立著一尊 9 米高的哥倫布雕像，哥倫布雕像身穿 16 世紀航海服飾，一手握著羅盤，展現了他作為探險家和航海家的形象，紀念碑四周環繞著基座部分的浮雕，描繪了哥倫布航海及發現新大陸的歷史場景。
+        </h4>
+        <div style="text-align: center">
+          <img src="西班牙照片\巴塞隆納\BC16.jpg" width="600px" />
+        </div>
+        <br /><br /><br />
+        <h3>城堡公園 (Parc de la Ciutadella)</h3>
+        <h4>
+          城堡公園始建於 19 世紀，最初是為 1888 年巴塞隆納世界博覽會而建的，當時被設計成富麗堂皇的王宮式風格。公園的面積約為 17 公頃，擁有大片草坪、樹林及湖泊，最標誌性的建築是位於公園正中心的大噴泉，由法國雕塑家雷蒙·卡薩斯設計，四面噴灑的噴泉，周圍環繞著巍峨華麗的雕塑群像，充分展現了 19 世紀末巴洛克式建築的典範。
+        </h4>
+        <div style="text-align: center">
+          <img src="西班牙照片\巴塞隆納\BC17.jpg" width="800px" />
+          <img src="西班牙照片\巴塞隆納\BC18.jpg" width="600px" />
+          <img src="西班牙照片\巴塞隆納\BC19.jpg" width="600px" />
+        </div>
+        <br /><br /><br />
+        <h3>凱旋門 (Arc de Triomf)</h3>
+        <h4>
+          凱旋門建於 1888 年，為慶祝當年在巴塞隆納舉辦的世界博覽會而建立，建築風格屬於新文藝復興式，設計者是建築師何瑟普·維多斯，以紅色和米白色為主，給人以雄偉、宏大的感覺，拱門頂部雕刻著一尊騎馬的女神像，象徵著勝利和榮耀。凱旋門作為世博會的勝利之門，當時象徵著巴塞隆納發展的重要里程碑。
+        </h4>
+        <div style="text-align: center">
+          <img src="西班牙照片\巴塞隆納\BC20.jpg" width="800px" />
+          <img src="西班牙照片\巴塞隆納\BC21.jpg" width="600px" />
+        </div>
+        <br /><br /><br />
+        <h3>海洋聖母聖殿 (Basílica de Santa Maria del Mar)</h3>
+        <h4>
+          海洋聖母聖殿建於 14 世紀，取材自當時神聖羅馬帝國的手工業貿易繁榮時期，以光明、簡約、優雅著稱，為典型的哥特式建築風格。海洋聖母聖殿的外觀雄偉壯觀，由巨大的拱頂和尖塔構成，內部空間採用了三個長廊的設計，極富浪漫感和祥和氣氛，高聳的拱頂和大型彩色玻璃窗為教堂内部注入大量自然光線，形成神聖莊嚴的氛圍。教堂的裝飾也極為精緻美麗，包括柱身雕飾、祭壇、聖像等，並擁有一個巨大的管風琴，以優美動人的樂音為教堂增添了靈性和莊嚴。海洋聖母聖殿曾經歷過多次歷史事件，如西班牙內戰時的破壞，但它一次次被修復重建，繼續見證著這座城市的興衰變遷。
+        </h4>
+        <div style="text-align: center">
+          <img src="西班牙照片\巴塞隆納\BC22.png" width="600px" />
+          <img src="西班牙照片\巴塞隆納\BC23.png" width="600px" />
+        </div>
+        <br /><br /><br />
+        <h3>加泰隆尼亞廣場 (Plaça de Catalunya)</h3>
+        <h4>
+          加泰隆尼亞廣場始建於 19 世紀末，設計當時的目的是將舊城區與新城區連接起來，成為整個城市的中心樞紐。廣場呈長方形，面積約為 5 公頃，周圍環繞著眾多銀行、百貨公司和商業中心，以其寬敞的空間、豐富的噴泉、綠化景觀而聞名，中心區域設有不同主題的雕塑和噴泉，營造出一個優雅、藝術氛圍濃厚的公共空間。
+        </h4>
+        <div style="text-align: center">
+          <img src="西班牙照片\巴塞隆納\BC24.png" width="800px" />
+          <img src="西班牙照片\巴塞隆納\BC25.png" width="800px" />
+        </div>
+        <br /><br /><br />
+        <h3>瑰爾公園 (Parc Güell)</h3>
+        <h4>
+          瑰爾公園是名建築師安東尼·高第的代表作之一，位於巴塞隆納北部的 Gràcia 區，坐落於一塊巨大的丘陵地上，於 1900 年代初建成，原本是一座由高第設計的豪華住宅區，後改建為公共綠地空間。瑰爾公園以其獨特的高第式建築風格而聞名，融合了哥特式、文藝復興風格和東方風格元素，有很多色彩鮮豔、造型奇特的建築物，其中最著名的是主入口的雙柱門和著名的大廳。公園內的設計極富創意，有蜿蜒的陶瓷鑲嵌長椅、漂亮的噴泉、綠地植被和觀景台等，彰顯了高第的建築創造力，也成為這座城市的靈魂之所在。
+        </h4>
+        <div style="text-align: center">
+          <img src="西班牙照片\巴塞隆納\BC26.jpg" width="600px" />
+          <img src="西班牙照片\巴塞隆納\BC27.jpg" width="600px" />
+          <img src="西班牙照片\巴塞隆納\BC28.jpg" width="600px" />
+          <img src="西班牙照片\巴塞隆納\BC29.jpg" width="600px" />
+          <img src="西班牙照片\巴塞隆納\BC30.jpg" width="800px" />
+          <img src="西班牙照片\巴塞隆納\BC31.jpg" width="600px" />
+        </div>
+        <br /><br /><br />
+        <h3>Bunkers El carmel</h3>
+        <h4>
+          Bunkers El Carmel 是位於巴塞隆納北部山丘上的一處反戰爭防禦工事遺址，建於 1937 年，當時為了防範法西斯勢力的轟炸而建造，用於監測和防空的軍事據點。在西班牙內戰結束後，這些防空洞及相關設施被遺棄多年，直到 20 世紀 90 年代末，政府才將其整理並開放給公眾參觀。Bunkers El Carmel 位置絕佳，站在山丘之上，可以眺望整個巴塞隆納市的全景，非常推薦在日出或傍晚時分前來欣賞美景或夜景，是我心目中世界前幾美的夜景點。
+        </h4>
+        <div style="text-align: center">
+          <img src="西班牙照片\巴塞隆納\BC32.jpg" width="600px" />
+          <img src="西班牙照片\巴塞隆納\BC33.jpg" width="800px" />
+          <img src="西班牙照片\巴塞隆納\BC34.jpg" width="800px" />
+          <img src="西班牙照片\巴塞隆納\BC35.jpg" width="800px" />
+          <img src="西班牙照片\巴塞隆納\BC36.jpg" width="800px" />
+        </div>
+        <br /><br /><br />
+        <h3>加泰隆尼亞國家藝術博物館 (Museu Nacional d'Art de Catalunya)</h3>
+        <h4>
+          加泰隆尼亞國家藝術博物館坐落在蒙錐克山的山坡上，建築本身就是一處極具建築藝術價值的作品，原本是為 1929 年巴塞隆納萬國博覽會而建的皇宮，後來經過整修改建成為今天的博物館。博物館藏品非常豐富，涵蓋從羅馬時期到 20 世紀的各個歷史時期的藝術品，包括油畫、雕塑、裝置藝術等多種類型，最著名的莫過於龐大的羅馬時期壁畫和羅馬尼克時期的宗教藝術品收藏。
+        </h4>
+        <div style="text-align: center">
+          <img src="西班牙照片\巴塞隆納\BC37.jpg" width="800px" />
+          <img src="西班牙照片\巴塞隆納\BC38.jpg" width="800px" />
+          <img src="西班牙照片\巴塞隆納\BC39.jpg" width="800px" />
+        </div>
+        <br /><br /><br />
+        <h3>魔幻噴泉 (Font Màgica de Montjuïc)</h3>
+        <h4>
+          魔幻噴泉位於蒙錐克山腳下，緊鄰加泰隆尼亞國家藝術博物館，建於 1929 年，是為當時在巴塞隆納舉辦的萬國博覽會而興建的，表演開始時，水柱緩緩升起，化身為各種曲線優美的水舞，伴隨著炫目的燈光變幻和悠揚的音樂，呈現出一幕幕震撼人心的視覺饗宴。
+        </h4>
+        <h4>水舞表演一般<b>每周四、五、六晚上</b>上演，每場持續約 30 分鐘，但會<b>隨著季節與月份調整表演時間</b>，建議在前往前先上<a href="https://www.barcelonaturisme.com/wv3/en/page/592/font-magica.html" target="_blank">官網</a>查詢是否有表演以免撲空。</h4>
+        <div style="text-align: center">
+          <img src="西班牙照片\巴塞隆納\BC40.jpg" width="800px" />
+          <img src="西班牙照片\巴塞隆納\BC41.jpg" width="800px" />
+        </div>
+        <br /><br /><br />
+        <h3>莫祖錫奧林匹克體育場 (Estadi Olímpic Lluís Companys)</h3>
+        <h4>
+          莫祖錫奧林匹克體育場建於 1927 年，是為 1929 年巴塞隆納萬國博覽會而特別興建的，到了 1992 年夏季奧運會期間又進行了大規模翻新改建，取得了更加現代化的面貌。建築設計採用了希臘羅馬時期的經典元素，散發著濃厚的歷史感，主體建築外觀採用石材和柱式結構，可容納 8 萬多名觀眾，經常舉辦音樂會、演唱會等文化活動，是重要的文化休閒場所。
+        </h4>
+        <div style="text-align: center">
+          <img src="西班牙照片\巴塞隆納\BC42.jpg" width="800px" />
+          <img src="西班牙照片\巴塞隆納\BC43.jpg" width="600px" />
+          <img src="西班牙照片\巴塞隆納\BC44.jpg" width="800px" />
+        </div>
+        <br /><br /><br />
+        <h3>Castell de Montjuïc</h3>
+        <h4>
+          Castell de Montjuïc 建於 17 世紀，當時是作為一處軍事防禦要塞而建立的，坐落於蒙錐克山的最高峰，可俯瞰整個巴塞隆納市區和地中海。城堡建築由城牆、碉樓、炮臺等構成，整體呈現出威武雄偉的氣勢，除了軍事功能，城堡也曾作為政治監獄使用，許多政治犯和民主鬥士都曾被囚禁於此，直到 1931 年西班牙第二共和國建立後，城堡才終於停止了監獄使用。登上城堡瞭望台，能俯瞰整個巴塞隆納全景，遠眺地中海風光，夕陽西下時，這裡也是欣賞絕美日落的絕佳地點。
+        </h4>
+        <div style="text-align: center">
+          <img src="西班牙照片\巴塞隆納\BC45.png" width="800px" />
+          <img src="西班牙照片\巴塞隆納\BC46.png" width="800px" />
+          <img src="西班牙照片\巴塞隆納\BC47.jpg" width="800px" />
+          <img src="西班牙照片\巴塞隆納\BC48.jpg" width="800px" />
+          <img src="西班牙照片\巴塞隆納\BC49.jpg" width="600px" />
+          <img src="西班牙照片\巴塞隆納\BC50.jpg" width="600px" />
+        </div>
+        <br /><br /><br />
+        <h3>El Born Center for Culture and Memory</h3>
+        <h4>
+          El Born Center for Culture and Memory 是巴塞隆納市中心一處集歷史文化保護、博物館與文化活動於一體的設施，建於 1878 年，原本是一座市場大樓。1987 年大樓經過翻新改造後成為了一個集中展示巴塞隆納歷史遺產的文化中心。
+        </h4>
+        <h4>中心的地下室保留了 17 世紀巴塞隆納城市的地下遺址，包括房屋基礎、街道、地下管道等，展示了古城的獨特面貌，並設有多個展廳，定期舉辦關於巴塞隆納歷史、文化、藝術等方面的特展和活動。</h4>
+        <div style="text-align: center">
+          <img src="西班牙照片\巴塞隆納\BC51.jpg" width="600px" />
+        </div>
+        <br /><br /><br />
+        <h3>聖保羅醫院 (Hospital de la Santa Creu i Sant Pau)</h3>
+        <h4>
+          聖保羅醫院由建築師路尼·烏維拉在 1902 年至 1930 年間設計建造，最初是一所綜合性的醫院，集醫療、行政、教育等多方面功能於一體，整體建築風格屬於加泰羅尼亞的現代主義，融合了哥特式、文藝復興和伊斯蘭元素，營造出獨特的視覺效果，由石頭、磚塊、馬賽克和陶瓷瓦片組成，呈現出色彩繽紛的立面，每棟建築物都有自己獨特的設計特色，如塔樓、多角錐形塔尖等。1930 年代後這個醫院建築區逐漸被荒廢，但在 2009 年被列入聯合國教科文組織的世界文化遺產名錄，隨後經過大規模修復並重新開放。
+        </h4>
+        <div style="text-align: center">
+          <img src="西班牙照片\巴塞隆納\BC52.png" width="800px" />
+          <img src="西班牙照片\巴塞隆納\BC53.png" width="800px" />
+        </div>
+        <br /><br /><br />
+        <h3>巴特略之家 (Casa Batlló)</h3>
+        <h4>
+          巴特略之家由著名建築師安東尼·高第設計，於 1904 年至 1906 年間建造完成，高第以大海生物和骨骼作為靈感，為建築進行了徹底的重新設計和裝飾，整棟建築彷彿是一座活靈活現的海洋生物，牆面由色彩斑斕的陶瓷瓦片覆蓋，有如魚鱗般流暢變化，窗戶也採用有機形狀，猶如海洋中的骨骼和眼睛，屋頂上的煙囪更像是海怪般的觸角。建築的內部空間同樣富有創意，大堂採用圓拱頂設計形成流動感，彷彿置身在海底世界中，樓梯間和走廊也運用了曲線和不對稱的設計手法，增添了動感和視覺衝擊力，是巴塞隆納最著名的現代主義建築。
+        </h4>
+        <div style="text-align: center">
+          <img src="西班牙照片\巴塞隆納\BC54.png" width="600px" />
+        </div>
+        <br /><br /><br />
+        <h3>米拉之家 (Casa Milà)</h3>
+        <h4>
+          米拉之家是由米拉家族委託高第於 1906 年至 1912 年間建造的，堪稱高第建築典範作品。建築外觀以石材和鐵鑄製成，呈現出波浪般流動的造型，這種起伏有致的外墻，如同大自然中的岩層或海浪。樓層窗戶採用波浪形的弧形設計，增添了建築的動感和生命力，屋頂上稱為"煙囪"，實際上是一系列極為奇特的通風塔造型，渾然天成地融入整體建築。
+        </h4>
+        <h4>米拉之家內部設計同樣充滿創意，中央庭院採用螺旋式懸空樓梯，巧妙利用空間，引導視線向上延伸，每個房間都有獨特的造型和功能分區設計，讓整個建築猶如一件藝術品般精彩。</h4>
+        <div style="text-align: center">
+          <img src="西班牙照片\巴塞隆納\BC55.png" width="800px" />
+          <img src="西班牙照片\巴塞隆納\BC56.jpg" width="600px" />
+        </div>
+        <br /><br /><br />
+        <h3>Mercat de la Boqueria</h3>
+        <h4>
+          Mercat de la Boqueria 源自 15 世紀，起初只是一個露天的臨時性販售場所。1836 年當局正式在同一地點建立了一座由鐵製屋頂和磚牆圍成的永久性市場建築，建築外觀呈現典型的現代主義風格，以鐵、玻璃和彩色馬賽克裝飾，給人一種明亮、開放的感受。
+        </h4>
+        <h4>Mercat de la Boqueria 以其多樣的食材聞名，各種蔬果、肉類、海鮮、香料應有盡有攤販們大多是當地農民和漁民，他們親自把新鮮的產品帶到這裡出售，除了傳統的西班牙罐頭和火腿，還有許多異國風情的調料和食材。</h4>
+        <div style="text-align: center">
+          <img src="西班牙照片\巴塞隆納\BC57.png" width="800px" />
+          <img src="西班牙照片\巴塞隆納\BC58.png" width="800px" />
+        </div>
+        <br /><br /><br />
+        <h3>聖心聖殿 (Temple Expiatori del Sagrat Cor)</h3>
+        <h4>
+          聖心聖殿由著名建築師安東尼·高第設計，始建於 1902 年，歷經多年才於 2010 年落成啟用，教堂外觀巍峨宏偉，高達 72 米，由石材、磚瓦和大量的尖塔組成，設計融合了哥特式、巴洛克式和現代主義元素，尖塔的形狀宛如巨大的十字架，在陽光下投射出動人的影子。
+        </h4>
+        <h4>教堂中殿採用圓拱頂設計，牆壁鑲有大理石和拋光石材，呈現出迷人的光影效果。祭壇及其四周裝飾華麗精緻，充滿神聖感。四角的尖塔更是創意十足，猶如伸展的手臂般指向天空。儘管高第未能親自完成這座作品，但聖心聖殿依然代表了高迪建築藝術的最高成就。</h4>
+        <h4>前往聖心聖殿需要多次轉乘，從加泰隆尼亞廣場出發可先搭乘 S2 城際火車到 Peu del Funicular 站後轉搭 FV 斜軌到終點站 Vallvidrera Superior 後再轉乘 111 路線公車即可抵達，車程大約 1 小時，公車班次較少要把握好公車的時間。</h4>
+        <div style="text-align: center">
+          <img src="西班牙照片\巴塞隆納\BC59.jpg" width="600px" />
+          <img src="西班牙照片\巴塞隆納\BC60.jpg" width="600px" />
+          <img src="西班牙照片\巴塞隆納\BC61.jpg" width="600px" />
+          <img src="西班牙照片\巴塞隆納\BC62.jpg" width="600px" />
+        </div>
+        <br /><br /><br />
+        <h3>Barceloneta Beach</h3>
+        <h4>
+          Barceloneta Beach 起源於 17 世紀，當時為了安置漁民和船工而建立的小村落，經過多次改造成為如今的巴塞隆納海灘。海灘全長約 1.1 公里，
+          寬約 25 ~ 50 米，沙質細軟碧海藍天環繞其間，海水清澈溫和，非常適合遊泳和休閒娛樂。
+        </h4>
+        <div style="text-align: center">
+          <img src="西班牙照片\巴塞隆納\BC63.jpg" width="600px" />
+          <img src="西班牙照片\巴塞隆納\BC64.jpg" width="600px" />
+          <img src="西班牙照片\巴塞隆納\BC65.jpg" width="600px" />
+          <img src="西班牙照片\巴塞隆納\BC66.jpg" width="600px" />
+        </div>
+        <br /><br />
+        <h2>巴塞隆納近郊景點</h2>
+        <h3>蒙塞拉特修道院 (Abadia de Montserrat)</h3>
+        <h4>
+          蒙塞拉特修道院是加泰隆尼亞地區最著名的宗教景點，建於 11 世紀，坐落在海拔 1236 米的蒙塞拉特山上，高聳的山峰呈現出獨特的錯落有致的形
+          狀，猶如上天施加的神奇石雕。蒙塞拉特修道院依山而建，由幾座巍峨的建築組成，包括教堂、修道士宿舍、圖書館等，修道院的巴洛克式建築風格，
+          搭配天然岩石環境，造就了一處獨特而莊嚴的宗教聖地。
+        </h4>
+        <h4>修道院內部也有許多珍貴藝術品，如木雕、壁畫、古老樂器等，最著名的是蒙塞拉特聖母像，是 12 世紀的黑色木雕聖母子像，具有深厚的宗教和歷史意義。</h4>
+        <h4>從加泰隆尼亞廣場前往蒙塞拉特修道院可以先搭乘 L1 地鐵到 Pl. Espanya 站後轉乘 R5 城際火車到 Aeri de Montserrat 站後轉搭纜車上山，也可以再坐到下一站 Monistrol de Montserrat 後轉乘小火車上山，車程大約 100 分鐘。</h4>
+        <div style="text-align: center">
+          <img src="西班牙照片\巴塞隆納\BC67.jpg" width="600px" />
+          <img src="西班牙照片\巴塞隆納\BC68.jpg" width="800px" />
+          <img src="西班牙照片\巴塞隆納\BC69.jpg" width="800px" />
+        </div>
+        <h4>每個禮拜天修道院都會有小朋友的唱詩歌表演，表演開始後便不能再入場了，記得在<a href="https://abadiamontserrat.cat/en/" target="_blank">官網</a>上查好時間以免錯過喔!</h4>
+        <div style="text-align: center">
+          <img src="西班牙照片\巴塞隆納\BC70.jpg" width="600px" />
+        </div>
+        <br /><br /><br />
+        <h3>蒙塞拉特山 (Montserrat)</h3>
+        <h4>
+          蒙塞拉特山是位於加泰隆尼亞地區的山脈，由一系列呈鋸齒狀的岩石峰峰組成，由於受到地質作用的影響，整座山峰呈現出許多突兀的凸起和鋸齒狀的岩石塊，富有神奇而原始的自然魅力，覆蓋著錯落有致的常綠灌木叢和杜鵑花園，是熱衷於登山徒步的人們的樂園。
+        </h4>
+        <div style="text-align: center">
+          <img src="西班牙照片\巴塞隆納\BC71.jpg" width="600px" />
+          <img src="西班牙照片\巴塞隆納\BC72.jpg" width="800px" />
+        </div>
+        <h4>天氣好的時候遠處的庇里牛斯山都能看得很清楚!</h4>
+        <div style="text-align: center">
+          <img src="西班牙照片\巴塞隆納\BC73.jpg" width="800px" />
+          <img src="西班牙照片\巴塞隆納\BC74.jpg" width="800px" />
+          <img src="西班牙照片\巴塞隆納\BC75.jpg" width="800px" />
+        </div>
+        <br /><br /><br />
+        <h3>赫羅納 (Girona)</h3>
+        <h4>
+          赫羅納位於法國與西班牙邊境，是加泰隆尼亞地區最重要的文化中心，舊城區保留了中世紀時期的建築風貌，充滿濃郁的歷史氣息，城牆、教堂、城堡等古老建築錯落其間，構成了一幅迷人的都市景觀，著名的羅伊河和伊特河穿城而過，沿岸由各式咖啡館、餐館和精品店組成繽紛場景。
+        </h4>
+        <h4>在城市中心林立的教堂中最著名的是赫羅納大教堂，它擁有哥特式建築特色，是加泰羅尼亞地區最大的天主教教堂。
+          要前往赫羅納可以從巴塞隆納搭乘區域火車直達，先看好班次以免等很久。</h4>
+        <div style="text-align: center">
+          <img src="西班牙照片\巴塞隆納\BC76.jpg" width="600px" />
+          <img src="西班牙照片\巴塞隆納\BC77.jpg" width="600px" />
+          <img src="西班牙照片\巴塞隆納\BC78.jpg" width="600px" />
+          <img src="西班牙照片\巴塞隆納\BC79.jpg" width="800px" />
+          <img src="西班牙照片\巴塞隆納\BC80.jpg" width="600px" />
+        </div>
+        <br /><br /><br />
+        <h3>Muralles de Tossa de Mar</h3>
+        <h4>
+          Muralles de Tossa de Mar 位於加泰隆尼亞地區的一座小海濱城鎮 Tossa de Mar，城牆始建於 14 世紀，最初作為當地防禦海盜和侵略者的城垣，全長約 1.5 公里，沿著山坡環繞而建，突出的城樓和圓形門樓為整座城牆增添了不少特色。城牆內部保留了許多完整的中世紀建築，包括教堂、城堡、民居等，這些建築多以石材和粉刷牆面為主，呈現出濃厚的歐洲中世紀風情。
+        </h4>
+        <h4>可以沿著城牆的步道漫步，欣賞城牆上遼闊的海景，從城牆頂部向下眺望可以看到小鎮內的街道、民房和碧藍的地中海海景，周邊的海灘和峭壁美景也是遊客不容錯過的景點。
+          要前往 Tossa de Mar 可以從巴塞隆納搭乘客運直達，建議預先訂好車票以免滿位。
+        </h4>
+        <div style="text-align: center">
+          <img src="西班牙照片\巴塞隆納\BC81.jpg" width="800px" />
+          <img src="西班牙照片\巴塞隆納\BC82.jpg" width="800px" />
+          <img src="西班牙照片\巴塞隆納\BC83.jpg" width="600px" />
+          <img src="西班牙照片\巴塞隆納\BC84.jpg" width="800px" />
+          <img src="西班牙照片\巴塞隆納\BC85.jpg" width="600px" />
+          <img src="西班牙照片\巴塞隆納\BC86.jpg" width="600px" />
+          <img src="西班牙照片\巴塞隆納\BC87.jpg" width="600px" />
+        </div>
+        <br /><br /><br />
+        <h3>錫切斯 (Sitges)</h3>
+        <h4>
+          錫切斯位於巴塞隆納南部約 35 公里處，建於古羅馬時期，經歷了多番興衰，最終在 19 世紀晚期重新振興並成為一處休閒度假勝地，擁有 8 公里長的優美海灘，包括聖塞巴斯蒂安、加瓦爾一帶的海灘，都是休憩游泳的熱門去處。
+        </h4>
+        <h4>錫切斯還以其活躍的藝術文化而聞名，最具代表性的就是每年 2 月舉行的狂歡節，場面浩大熱鬧有如里約森巴嘉年華。要前往錫切斯可以從巴塞隆納搭乘區域火車直達，先看好班次以免等很久。</h4>
+        <div style="text-align: center">
+          <img src="西班牙照片\巴塞隆納\BC88.jpg" width="800px" />
+          <img src="西班牙照片\巴塞隆納\BC89.jpg" width="600px" />
+        </div>
+        <br /><br />
+        <h2>巴塞隆納美食</h2>
+        <h3>Colom Restaurant</h3>
+        <h4>
+          巴塞隆納是海鮮燉飯的故鄉，不同於台灣吃到的燉飯，paella 本身在更乾了些米心也比較硬，薄薄的舖在鍋上讓米粒吸滿了各種蝦貝類的精華，襯托著各種海鮮後在擠上檸檬汁就是最經典的西班牙料理，這家是我在巴塞隆納住了四個半月後總結的第一名燉飯，但要注意大多數海鮮燉飯都需要至少兩位才能點，對獨旅的遊客稍微不友善。
+        </h4>
+        <div style="text-align: center">
+          <img src="西班牙照片\巴塞隆納\BC90.jpg" width="600px" />
+          <img src="西班牙照片\巴塞隆納\BC91.jpg" width="600px" />
+        </div>
+        <br /><br /><br />
+        <h3>Cerveceria Catalana</h3>
+        <h4>
+          Cerveceria Catalana 是巴塞隆納最有名的 tapas 店，每逢用餐時段必定排上超過一小時，建議可以在非尖峰時段光顧，店內幾乎每道菜都是經典，最有名的擠到分別是火腿拼盤、炸花枝、醬爆大蝦、番茄橄欖油麵包條以及西班牙的經典調酒 Sangria，來吃過非常多次嘗過不同 tapas 都非常好吃，強烈推薦給各位。另外他的姊妹店叫 Ciutat Comtal，菜單是一模一樣的味道也是。
+        </h4>
+        <div style="text-align: center">
+          <img src="西班牙照片\巴塞隆納\BC92.jpg" width="600px" />
+          <img src="西班牙照片\巴塞隆納\BC93.jpg" width="600px" />
+          <img src="西班牙照片\巴塞隆納\BC94.jpg" width="600px" />
+        </div>
+        <br /><br /><br />
+        <h3>Restaurante La Barca del Salamanca</h3>
+        <h4>
+          Restaurante La Barca del Salamanca 一樣是以燉飯出名的餐廳，但這家是直接在帳棚下用餐，除了海鮮燉飯之外，也有西班牙最傳統的雞兔燉飯供選擇，在表現上也次名列巴塞隆納首列，餐廳靠近海灘，適合在海邊逛完後享用。
+        </h4>
+        <div style="text-align: center">
+          <img src="西班牙照片\巴塞隆納\BC95.jpg" width="600px" />
+        </div>
+        <br /><br /><br />
+        <h3>La Pallaresa Xocolateria Xurreria</h3>
+        <h4>
+          西班牙的經典甜點 Churros 肯定在巴塞隆納也不會缺席，剛舀出來熱騰騰的巧克力醬，配上裹上砂糖又炸得酥脆的油條，是觀光途中最好的解饞點心，這家也是長年需要排隊的名店，大約要預留 20-30 分鐘排隊入座喔。
+        </h4>
+        <div style="text-align: center">
+          <img src="西班牙照片\巴塞隆納\BC96.jpg" width="800px" />
+        </div>
+        <br /><br /><br />
+        <h3>La Tasqueta de Blai</h3>
+        <h4>
+          如果想吃現代改良版的 tapas 則非常推薦這家位於蒙錐克山腳下的餐廳，利用全新的食材組合己料理方式讓 tapas 煥然一新，也跳脫出了原本既有的框架，非常齡人驚喜，點了好幾個點心都非常好吃，推薦給大家。
+        </h4>
+        <div style="text-align: center">
+          <img src="西班牙照片\巴塞隆納\BC97.jpg" width="600px" />
+        </div>
+        <br /><br /><br />
+        <h3>Paradiso</h3>
+        <h4>
+          Paradiso 可以說是巴塞隆納最有名的酒吧，長年位居世界前 50 酒吧，更曾經奪下冠軍，必須預期要等上至少1個小時，但這家的調酒絕對值得這樣的等待，從菜單就有非常特殊的設計，再到每一杯酒都有他獨特的故事及造型，讓整個用餐體驗都十分新鮮，調酒濃度夠但卻十分順口，不愧是曾經的世界冠軍。
+        </h4>
+        <div style="text-align: center">
+          <img src="西班牙照片\巴塞隆納\BC98.jpg" width="600px" />
+        </div>
+        <br /><br /><br />
+        <h3>Dr Stravinsky</h3>
+        <h4>
+          Dr Stravinsky 以科學實驗室為主題的酒吧，位置卻是在老城區古色古香的中世紀建築中，是個十分奇特的組合，調酒品項融入較多蔬菜的元素，乍聽之下似乎不太好喝，但在調酒師的妙手之下讓每一杯的蔬果味都完美的融入調酒本身，而不會覺得刻意或突兀，整體店內的氣氛非常 chill ，推薦給想要享受三兩好友的放鬆之夜的大家。
+        </h4>
+        <div style="text-align: center">
+          <img src="西班牙照片\巴塞隆納\BC99.jpg" width="600px" />
+        </div>
+        <br />
+      </div>
+      <div class="destination-sidebar">
+        <div class="sidebar-image-container">
+          <img src="側邊欄自我介紹.jpg" />
+        </div>
+        <h5>
+          Hi!
+          我是Tommy，我熱愛旅遊也喜歡藉由影像紀錄旅程中的點點滴滴，透過文字將我在旅途中的所見所聞分享給大家。旅行對我而言不只是吃吃喝喝，而是能在行萬里路間感受世界的脈動，體驗不同的文化，希望藉由我的分享能讓大家看到更多世界的美好。
+        </h5>
+        <br />
+        <h5>
+          想更了解我或與我聯絡:
+          <a
+            href="https://www.instagram.com/tommy_techvoyage/"
+            target="_blank"
+            style="color: inherit; text-decoration: underline"
+          >
+            <b>Instagram</b>
+          </a>
+        </h5>
+        <div class="recommendation-section">
+          <h3>其他西班牙旅遊目的地</h3>
+          <div class="recommendation-buttons">
+            <a href="馬德里.html">
+              <button><h5>馬德里</h5></button>
+            </a>
+            <a href="瓦倫西亞.html">
+              <button><h5>瓦倫西亞</h5></button>
+            </a>
+            <a href="格瑞那達.html">
+              <button><h5>格瑞那達</h5></button>
+            </a>
+            <a href="馬拉加.html">
+              <button><h5>馬拉加</h5></button>
+            </a>
+            <a href="隆達.html">
+              <button><h5>隆達</h5></button>
+            </a>
+            <a href="直布羅陀.html">
+              <button><h5>直布羅陀</h5></button>
+            </a>
+            <a href="塞維亞.html">
+              <button><h5>塞維亞</h5></button>
+            </a>
+            <a href="馬略卡島.html">
+              <button><h5>馬略卡島</h5></button>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="contact-section">
+      <div class="contact-item">
+        <h3>
+          想更了解我或與我聯絡:
+          <a
+            href="https://www.instagram.com/tommy_techvoyage/"
+            target="_blank"
+            style="color: inherit; text-decoration: underline"
+          >
+            Instagram
+          </a>
+        </h3>
+      </div>
+    </div>
+    <footer>
+      <h6>COPYRIGHT © 2025 Tommy 看世界 All rights reserved.</h6>
+    </footer>
+    <div id="expandable-menu">
+      <div id="menu-toggle"></div>
+      <!-- 收闔按鈕 -->
+      <div id="menu-content">
+        <h4>目錄</h4>
+        <ul id="menu-list"></ul>
+      </div>
+    </div>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const menu = document.getElementById("expandable-menu");
+        const toggle = document.getElementById("menu-toggle");
+        const menuList = document.getElementById("menu-list");
+        const destinationMain = document.querySelector(".destination-main");
+
+        // 點擊按鈕切換目錄狀態
+        toggle.addEventListener("click", () => {
+          menu.classList.toggle("open");
+        });
+
+        // 從 destination-main 區域提取 h2 和 h3，動態生成目錄
+        const headings = destinationMain.querySelectorAll("h2, h3");
+        headings.forEach((heading, index) => {
+          // 確保每個 h2 和 h3 都有唯一的 id
+          if (!heading.id) {
+            heading.id = `heading-${index}`;
+          }
+
+          const listItem = document.createElement("li");
+          const link = document.createElement("a");
+          link.textContent = heading.textContent;
+          link.href = `#${heading.id}`;
+          listItem.appendChild(link);
+
+          // 為 h3 添加縮排樣式
+          if (heading.tagName.toLowerCase() === "h3") {
+            listItem.classList.add("sub-item");
+          }
+
+          menuList.appendChild(listItem);
+        });
+
+        // 滾動至目標位置並加上 75px 偏移
+        menuList.addEventListener("click", (event) => {
+          if (event.target.tagName === "A") {
+            event.preventDefault(); // 阻止預設行為
+
+            const targetId = event.target.getAttribute("href").substring(1); // 取得目標 ID
+            const targetElement = document.getElementById(targetId);
+
+            if (targetElement) {
+              // 計算目標元素的位置並加上 75px 偏移
+              const targetPosition =
+                targetElement.getBoundingClientRect().top + window.scrollY;
+              const offset = 75; // 偏移的距離
+              window.scrollTo({
+                top: targetPosition - offset,
+                behavior: "smooth", // 平滑滾動
+              });
+            }
+          }
+        });
+      });
+    </script>
+  </body>
+</html>

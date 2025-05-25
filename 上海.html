@@ -1,0 +1,758 @@
+<!DOCTYPE html>
+<html lang="zh-hant-TW">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="曹旅瀚 Tommy" />
+    <meta name="description" content="走進上海，感受東方巴黎的魅力！從外灘夜景、老城區弄堂，到現代摩天大樓與地道小吃，帶你深入探索中國最國際化的城市。" />
+    <meta name="keywords" content="上海旅遊, 上海景點, 上海美食, 外灘, 田子坊, 上海自由行, 中國城市介紹, 上海夜景, 上海購物" />
+    <title>Tommy 看世界 - 上海</title>
+    <link rel="icon" href="網頁縮圖.ico" />
+    <style>
+      body {
+        font-family: Calibri, Arial, sans-serif; /* 首選 Calibri，次選 Arial */
+        margin: 0;
+        padding: 0;
+        overflow-x: hidden; /* 禁止水平滾動 */
+        background-color: #f4f4f9;
+        color: #333;
+      }
+
+      h1 {
+        font-size: 40px;
+        font-weight: bold;
+      }
+
+      h2 {
+        font-size: 32px;
+        font-weight: bold;
+        color: #2a90a7;
+        display: inline-block;
+        margin-bottom: 1rem; /* 縮小 h2 的底部邊距 */
+        background-color: #cee5e8;
+      }
+
+      h3 {
+        font-size: 26px;
+        margin: 0 0 1rem;
+        font-weight: bold;
+        text-decoration: underline; /* 加上底線 */
+      }
+
+      h4 {
+        font-size: 18px;
+        font-weight: normal;
+        line-height: 1.8;
+      }
+
+      h5 {
+        font-size: 16px;
+        font-weight: normal;
+        margin: 0;
+      }
+
+      h6 {
+        font-size: 10px;
+        color: #fff;
+        margin: 0;
+        text-align: center;
+        line-height: 50px; /* 高度對齊 */
+      }
+
+      nav {
+        background-color: #78bcc4;
+        display: flex;
+        justify-content: space-between; /* 保持分佈在兩側 */
+        width: calc(100% - 10rem); /* 與其他內容的邊界一致 */
+        padding: 0.5rem 5rem; /* 主導覽列的 padding 設置 */
+        position: fixed;
+        top: 0;
+        z-index: 1000;
+      }
+
+      .nav-left .logo img {
+        height: 50px; /* 控制 Logo 圖片的高度 */
+        transform: translateX(-1.5rem); /* 向右移動 2rem */
+      }
+
+      .nav-right {
+        display: flex;
+        align-items: center;
+        transform: translateX(2rem); /* 向右移動 2rem */
+      }
+
+      nav a {
+        color: #eff5f5;
+        text-decoration: none;
+        padding: 0.5rem 1rem;
+        margin: 0 0.5rem;
+        transition: transform 0.3s;
+      }
+
+      nav a:hover {
+        transform: translateY(-3px);
+      }
+
+      .dropdown {
+        position: relative;
+      }
+
+      .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #78bcc4;
+        min-width: 160px;
+        border-radius: 4px;
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        padding: 0.2rem 0;
+      }
+
+      .dropdown-content a {
+        color: #eff5f5;
+        display: block;
+        transition: transform 0.3s;
+        border-bottom: 1px solid #ddd;
+      }
+
+      .dropdown-content a:last-child {
+        border-bottom: none;
+      }
+
+      .dropdown-content a:hover {
+        transform: translateY(-3px);
+      }
+
+      .dropdown:hover .dropdown-content {
+        display: block;
+      }
+
+      .intro-section {
+        background-color: #eff5f5;
+        display: flex;
+        padding: 2rem;
+        margin-top: 60px; /* 根據導航列高度調整 */
+        justify-content: space-between;
+        align-items: flex-start;
+        width: 100%;
+        box-sizing: border-box; /* 包含 padding 在內 */
+        padding-left: 5rem;
+        padding-right: 5rem;
+      }
+
+      .intro-section h4 {
+        max-width: 700px;
+      }
+
+      .intro-section .left {
+        width: 60%;
+      }
+
+      .intro-section .right {
+        width: 40%;
+      }
+
+      .destination-section {
+        display: flex;
+        padding: 1rem 5%; /* 左右內間距為螢幕的10% */
+        background-color: white;
+      }
+
+      .destination-main {
+        width: 75%;
+        margin-right: 1.5rem; /* 增加右邊外邊距 */
+      }
+
+      .destination-sidebar {
+        width: 25%;
+        padding-left: 1.5rem; /* 增加左側內邊距 */
+        margin-top: 2rem; /* 向上或向下調整，負值表示向上 */
+      }
+
+      .sidebar-image-container {
+        margin-bottom: 1rem;
+        text-align: center; /* 確保圖片置中 */
+      }
+
+      .sidebar-image-container img {
+        height: 300px; /* 設置直式圖片的高度 */
+      }
+
+      .two-vertical-images {
+        display: flex; /* 彈性佈局，讓圖片並排 */
+        justify-content: space-between; /* 兩張圖片均勻分佈 */
+        gap: 2rem; /* 圖片之間的間距 */
+        margin-top: 2rem;
+        margin-bottom: 2rem; /* 與下方內容的距離 */
+      }
+
+      .two-vertical-images img {
+        width: calc(50% - 0.5rem); /* 每張圖片佔用容器的一半減去間距 */
+        text-align: center; /* 確保圖片置中 */
+        height: auto; /* 保持圖片的直式比例 */
+        object-fit: cover; /* 確保圖片內容適應容器 */
+      }
+
+      .recommendation-section {
+        margin-top: 1.5rem; /* 與上方文字的間距 */
+        text-align: center;
+        position: sticky;
+        top: 80px; /* 空出導覽列的高度，確保推薦區不被覆蓋 */
+        z-index: 10; /* 提高層級，避免被其他內容遮蓋 */
+      }
+
+      .recommendation-section h3 {
+        font-size: 18px;
+        font-weight: bold;
+        margin-bottom: 0.5rem; /* 與按鈕區的距離 */
+      }
+
+      .recommendation-buttons {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 0.5rem; /* 按鈕之間的間距 */
+      }
+
+      .recommendation-buttons button {
+        padding: 0.5rem 1rem;
+        font-size: 14px;
+        color: white;
+        background-color: #78bcc4;
+        border: none;
+        border-radius: 4px;
+        transition: transform 0.3s;
+        font-family: Arial, sans-serif;
+      }
+
+      .recommendation-buttons button:hover {
+        transform: translateY(-3px);
+      }
+
+      .contact-section {
+        padding: 2rem 5rem; /* 上下與左右間距 */
+        background-color: #eff5f5; /* 淺灰背景 */
+        text-align: center; /* 確保內容置中對齊 */
+      }
+
+      .contact-item h3 {
+        font-size: 18px; /* 調整標題字體大小 */
+        margin: 0; /* 移除多餘的間距 */
+        text-decoration: none; /* 移除底線 */
+      }
+
+      footer {
+        background-color: #000;
+        color: white;
+        height: 30px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      #expandable-menu {
+        position: fixed;
+        top: 70px; /* 與螢幕頂部的距離設為 60px */
+        right: 0;
+        height: calc(100% - 70px); /* 高度減去 60px，避免超出視窗 */
+        width: 395px; /* 目錄寬度與 sidebar 齊寬 */
+        transform: translateX(100%); /* 初始狀態：隱藏在右側 */
+        transition: transform 0.3s ease;
+        background-color: #f4f4f9; /* 與網站背景一致 */
+        z-index: 1000;
+      }
+
+      /* 收闔按鈕 */
+      #menu-toggle {
+        position: absolute;
+        top: 45%;
+        left: -40px; /* 調整按鈕的位置，適應按鈕變大後的寬度 */
+        transform: translateY(-50%);
+        width: 40px; /* 增大按鈕寬度 */
+        height: 80px; /* 增大按鈕高度 */
+        background-color: #78bcc4;
+        color: white;
+        border-radius: 4px;
+        display: flex;
+        justify-content: center; /* 水平居中 */
+        align-items: center; /* 垂直居中 */
+      }
+
+      #menu-toggle::after {
+        content: "目錄"; /* 在按鈕內顯示 "目錄" */
+        font-size: 17px;
+        color: white; /* 設定字體顏色為白色 */
+        writing-mode: vertical-rl; /* 使文字垂直排列 */
+      }
+
+      #menu-toggle:hover {
+        background-color: #78bcc4;
+      }
+
+      /* 目錄內容 */
+      #menu-content {
+        padding: 0.5rem 1rem;
+        overflow-y: auto;
+        height: 100%;
+      }
+
+      #menu-content h4 {
+        font-weight: bold;
+        margin-top: 0;
+      }
+
+      #menu-list {
+        list-style: none;
+        padding: 0;
+      }
+
+      #menu-list li {
+        margin-bottom: 0.5rem;
+      }
+
+      #menu-list a {
+        color: #2a90a7;
+        text-decoration: none;
+        transition: color 0.3s;
+      }
+
+      #menu-list a:hover {
+        color: #78bcc4;
+      }
+
+      #menu-list .sub-item {
+        margin-left: 1.5rem; /* 調整縮排距離 */
+        font-size: 0.9rem; /* 可選：調整子項目字體大小 */
+      }
+
+      /* 目錄展開狀態 */
+      #expandable-menu.open {
+        transform: translateX(0);
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <div class="nav-left">
+        <div class="logo">
+          <a href="首頁.html">
+            <img src="網站Logo.png" alt="網站 Logo" />
+          </a>
+        </div>
+      </div>
+      <div class="nav-right">
+        <a href="首頁.html">關於我</a>
+        <div class="dropdown">
+          <a>亞洲旅遊</a>
+          <div class="dropdown-content">
+            <a href="中國.html">中國</a>
+            <a href="新加坡.html">新加坡</a>
+            <a href="馬來西亞.html">馬來西亞</a>
+            <a href="泰國.html">泰國</a>
+            <a href="印尼.html">印尼</a>
+            <a href="越南.html">越南</a>
+          </div>
+        </div>
+        <div class="dropdown">
+          <a>歐洲旅遊</a>
+          <div class="dropdown-content">
+            <a href="英國.html">英國</a>
+            <a href="法國.html">法國</a>
+            <a href="荷蘭.html">荷蘭</a>
+            <a href="比利時.html">比利時</a>
+            <a href="盧森堡.html">盧森堡</a>
+            <a href="瑞士.html">瑞士</a>
+            <a href="摩納哥.html">摩納哥</a>
+            <a href="西班牙.html">西班牙</a>
+            <a href="葡萄牙.html">葡萄牙</a>
+            <a href="安道爾.html">安道爾</a>
+            <a href="丹麥.html">丹麥</a>
+            <a href="瑞典.html">瑞典</a>
+            <a href="波蘭.html">波蘭</a>
+          </div>
+        </div>
+        <div class="dropdown">
+          <a>美洲旅遊</a>
+          <div class="dropdown-content">
+            <a href="美國.html">美國</a>
+            <a href="加拿大.html">加拿大</a>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <div class="intro-section">
+      <div class="left">
+        <h1>Tommy 在上海</h1>
+        <h4>
+          <b>上海</b>在 19
+          世紀初隨著鴉片戰爭被開放為通商口岸，才開始了其飛速發展，成長為中國最大的商業中心，融匯了中西文化特色，也保留了悠久的中華文化。近代透過科技創新、金融業等現代產業蓬勃發展，中國經濟版圖的重要一角，城市的文化藝術事業也蒸蒸日上，已然成為中國最重要的文化中心。
+        </h4>
+      </div>
+      <div class="right">
+        <img src="中國照片\上海\上海_介紹.jpg" width="90%" height="350px" />
+      </div>
+    </div>
+
+    <div class="destination-section">
+      <div class="destination-main">
+        <h2>上海交通</h2>
+        <h3>機場交通</h3>
+        <h4>
+          身為國際大都市，上海總共有兩個機場，分別是浦東機場及虹橋機場，除了最輕鬆但最燒錢的打車
+          (叫計程車) 之外，以下會分列各個機場的大眾交通方式:
+          <ul>
+            <li>
+              <b>浦東機場</b>: 可搭乘地鐵 2
+              號線直接進入市中心，要更快可以先搭乘磁浮列車再轉搭地鐵。
+            </li>
+            <li><b>虹橋機場</b>: 可搭乘地鐵 2 、10 號線直接進入市中心。</li>
+          </ul>
+        </h4>
+        <h3>市區交通</h3>
+        <h4>
+          上海的地鐵基本上覆蓋了所有景點，是出行的首要選擇，<b>在所有車站都能用微信或支付寶購票或是掃乘車碼進站</b>。
+        </h4>
+        <img src="中國照片\上海\上海_市區交通.png" width="1000px" />
+        <br /><br />
+        <h2>上海住宿</h2>
+        <h4>
+          在上海選住宿建議以交通做為考量，推薦可以找<b>南京路步行街</b>附近的住宿，除了附近小吃雲集十分熱鬧之外，步行去外灘看夜景或是去大轉乘站人民廣場都非常近。
+        </h4>
+        <img src="中國照片\上海\上海_住宿.png" width="1000px" />
+        <br /><br />
+        <h2>上海景點</h2>
+        <h3>南京路步行街</h3>
+        <h4>
+          南京路步行街始建於 1851
+          年，隨著上海的蓬勃發展而逐漸擴大和繁榮，集中了上海最高端的商業品牌，從國際奢侈品牌到本土特色商店應有盡有。南京路步行街除了豐富的商業活動，更在於它獨特的歷史氛圍，沿街散落著大量
+          19 至 20
+          世紀初的歐式建築遺存，展現了上海早期的國際都市風貌。南京路步行街也是上海人聚會、遊玩的熱門場所，有各種娛樂設施如電影院、表演場所，還有許多特色餐飲和文化創意店鋪。是一座城市歷史與現代文明交織的縮影。
+        </h4>
+        <div style="text-align: center">
+          <img src="中國照片\上海\上海1.jpg" width="600px" />
+          <img src="中國照片\上海\上海2.jpg" width="600px" />
+          <img src="中國照片\上海\上海3.jpg" width="600px" />
+        </div>
+        <br /><br /><br />
+        <h3>和平飯店</h3>
+        <h4>
+          和平飯店於 1906
+          年由英國人賓利·詹金斯設計並建造，以新文藝復興式風格為主，融合了中西建築元素，體現了上海早期國際都市的特色，高聳的鐘樓、濃豔的磚紅色外牆以及精心設計的裝飾圖案，構成了和平飯店極具代表性的外觀形象。和平飯店曾經是上海最高級的飯店之一，吸引了眾多政要名流和富商名流到此下榻，在中華民國時期和平飯店更是上海社交圈的中心，舉辦各種重要的政治和商業活動，也曾經接待過許多著名的外國政要和文化名人。
+        </h4>
+        <h4>
+          和平飯店如今已成為上海的地標性建築和重要的文化遺產，2001
+          年被列入上海市重點文物保護單位，在保持原有建築特色的基礎上，和平飯店現已改頭換面成為了一家高檔的五星級酒店。
+        </h4>
+        <div style="text-align: center">
+          <img src="中國照片\上海\上海4.jpg" width="800px" />
+          <img src="中國照片\上海\上海5.jpg" width="800px" />
+        </div>
+        <br /><br /><br />
+        <h3>外灘</h3>
+        <h4>
+          外灘的歷史可以追溯到 19
+          世紀中期，外灘一帶是上海最先開發的地區，大量外國商人和銀行陸續在外灘建立據點，形成了獨特的國際風情，也先後建起了英、法、德等各國領事館和銀行大樓，成為上海最繁華的商業中心。20
+          世紀初上海的城市建設進入高峰期，外灘的建築也變得愈加壯觀，包括和平飯店、中國銀行大樓、上海會館等，融合了西方多種建築風格，成為上海最富有特色的地標，被譽為"東方巴黎"。當夜幕降臨，整條外灘沿岸的建築物都亮起了各種燈光，在黃浦江的映襯下呈現出迷人的景象，對岸的浦東天際線在夜色中閃耀奪目，訴說著現在上海的繁華。
+        </h4>
+        <div style="text-align: center">
+          <img src="中國照片\上海\上海6.jpg" width="800px" />
+          <img src="中國照片\上海\上海7.jpg" width="800px" />
+          <img src="中國照片\上海\上海8.jpg" width="800px" />
+          <img src="中國照片\上海\上海9.jpg" width="800px" />
+          <img src="中國照片\上海\上海10.jpg" width="600px" />
+        </div>
+        <br /><br /><br />
+        <h3>陸家嘴</h3>
+        <h4>
+          陸家嘴位於上海浦東新區，與外灘隔江相望，一座座高聳入雲的摩天大樓拔地而起，聚集了眾多銀行、證券公司、保險機構以及其他金融服務機構，陸家嘴建築群融匯了中西建築元素,呈現出一派金碧輝煌的景象，著名的東方明珠電視塔、上海中心大廈等標誌性建築矗立其中，成為上海最具代表性的城市景觀，成為了中國乃至亞洲最重要的金融中心之一，吸引了眾多跨國公司和金融機構紛紛落戶，成為了中國融入全球經濟體系的重要門戶。
+        </h4>
+        <div style="text-align: center">
+          <img src="中國照片\上海\上海11.jpg" width="600px" />
+          <img src="中國照片\上海\上海12.jpg" width="600px" />
+        </div>
+        <br /><br /><br />
+        <h3>濱江公園</h3>
+        <h4>
+          濱江公園位於陸家嘴金融中心的西側，與外灘遙遙相望，有著絕佳的黃浦江江景，也設有星空長廊、音樂廣場等特色景觀，可以在此漫步、騎自行車、野餐等，是看夜景的絕佳位置。
+        </h4>
+        <div style="text-align: center">
+          <img src="中國照片\上海\上海13.jpg" width="800px" />
+          <img src="中國照片\上海\上海14.jpg" width="800px" />
+        </div>
+        <br /><br /><br />
+        <h3>豫園</h3>
+        <h4>
+          豫園是上海最著名的古典園林，最早建於 1552
+          年，為明朝大臣陳君章的私家園林，到清朝乾隆年間經過多次擴建和修葺形成了如今的面貌，園中建築融合了江南園林的典型特色，展現了濃厚的中國傳統文化氣息。園內有眾多精美絕倫的建築，如假山、亭台樓閣、拱橋、曲徑通幽等。除了建築，豫園內還擁有眾多珍稀的園藝植物，這些植物大多來自不同的地方，彰顯了中國園藝藝術的博大精深。
+        </h4>
+        <div style="text-align: center">
+          <img src="中國照片\上海\上海15.jpg" width="800px" />
+          <img src="中國照片\上海\上海16.jpg" width="600px" />
+          <img src="中國照片\上海\上海17.jpg" width="600px" />
+          <img src="中國照片\上海\上海18.jpg" width="600px" />
+        </div>
+        <br /><br /><br />
+        <h3>思南公館</h3>
+        <h4>
+          思南公館位於南京西路，歷史可以追溯到 1919
+          年，當時建為上海道德思想館，在上海的社會文化發展過程中扮演了重要角色。建築風格採用了新文藝復興建築的特點，融合了中西元素，充分體現了當時的現代化思潮。2008
+          年上海市政府開始對思南公館進行修繕改造，將其打造成集藝術展覽、文化交流、城市休閒於一體的文化藝術中心，整體修繕保留了建築本來的風貌，但內部空間則進行了全面的現代化改造。
+        </h4>
+        <div style="text-align: center">
+          <img src="中國照片\上海\上海19.jpg" width="600px" />
+          <img src="中國照片\上海\上海20.jpg" width="600px" />
+          <img src="中國照片\上海\上海21.jpg" width="600px" />
+          <img src="中國照片\上海\上海22.jpg" width="600px" />
+        </div>
+        <br /><br /><br />
+        <h3>田子坊</h3>
+        <h4>
+          田子坊的歷史可以追溯到 19
+          世紀初期，多數居民從事手工業和小商業，隨著上海近代化進程的加快，漸漸集中了大量石庫門建築。1950
+          年代後隨著城市更新的腳步，這些老舊的石庫門房屋逐漸被拆除或改造，直到
+          1998
+          年上海市政府確立了對這一地區的保護性開發方案，通過拆除一些破舊房屋、修繕保留部分具有歷史價值的舊建築，同時兼容新的現代化建築，田子坊逐步轉變成為集文化創意、藝術體驗、時尚購物於一體的特色街區。如今的田子坊有眾多藝術畫廊、設計工作室、時尚店鋪等，吸引了大批創意從業者和熱愛藝術文化的人士在此辦公、居住、消費，不僅豐富了街區的文化內涵，也進一步凸顯了田子坊作為上海文化地標的重要地位。
+        </h4>
+        <div style="text-align: center">
+          <img src="中國照片\上海\上海23.jpg" width="600px" />
+        </div>
+        <br /><br /><br />
+        <h3>武康大廈</h3>
+        <h4>
+          武康大廈位於徐匯區，歷史可以追溯到 1930
+          年代初期，當時被稱為"武康花園公寓"，由著名建築師劉敦桂先生設計，採用了新古典主義風格，結合了中國傳統園林的設計元素，吸引了不少上海名流入住。1970
+          年代後期武康大廈進入了一段衰落期，直到 1998
+          年上海市政府決定對其進行全面修繕改造，保留了原有的建築外形和庭院格局，但內部空間則進行了全面的現代化改造，，不僅保留了建築本身的歷史文化價值，更成為一處集住宅、商業、辦公於一體的綜合體，設有眾多高檔商鋪、餐飲娛樂場所，成為城市中的一處高端社區。
+        </h4>
+        <div style="text-align: center">
+          <img src="中國照片\上海\上海24.jpg" width="600px" />
+        </div>
+        <br /><br /><br />
+        <h2>上海近郊景點</h2>
+        <h3>拙政園</h3>
+        <h4>
+          拙政園是中國四大私家園林之一，歷史可以追溯到明朝嘉靖年間
+          (1522 ~ 1566 年)，是著名書畫家、園林藝術家李流芳所建造的私家園林，李流芳歷時數十年精心打造了這座園林，占地面積
+          15
+          公頃，園中的建築種類繁多，既有亭台樓閣也有曲徑通幽的小橋流水，還有錯落有致的山石水景，整體布局突出了"曲徑通幽"的設計理念，遍佈於園中的點點滴滴處處展現著不同主題與表情。1982
+          年拙政園被列為全國重點文物保護單位，2000 年又被評定為 4A
+          級旅遊景區，成為展現中國傳統園林藝術的重要窗口。
+        </h4>
+        <h4>拙政園的營業時間在冬季 11 ~ 2 月時為 07:30 ~ 17:00，其他時間則為 07:30 ~ 17:30，半小時前會停止售票，到現場買票即可，要注意一下時間安排喔!</h4>
+        <div style="text-align: center">
+          <img src="中國照片\上海\上海25.jpg" width="600px" />
+          <img src="中國照片\上海\上海26.jpg" width="800px" />
+          <img src="中國照片\上海\上海27.jpg" width="800px" />
+          <img src="中國照片\上海\上海28.jpg" width="800px" />
+        </div>
+        <br /><br /><br />
+        <h3>寒山寺</h3>
+        <h4>
+          寒山寺的名稱源於寺內的寒山，可以追溯到唐朝高宗年間 (公元 650
+          年代)，當時有一名僧人寒山子在此建立了最初的寺院，寒山子是禪宗思想的開創者之一，被譽為"中國佛教三祖"，他在寒山寺建立了禪宗洞山法脈，影響了此後的禪宗發展。後來的唐、宋、元、明、清等朝代，寒山寺都受到皇室皇族的青睞和支持，形成了今天的規模宏大、建築精美的格局。寺院內的建築包括普賢殿、大雄寶殿、藏經閣等，彰顯了中國古典建築的魅力。寒山寺的營業時間為 07:30 ~ 18:00，半小時前會停止售票，到現場買票即可!
+        </h4>
+        <div style="text-align: center">
+          <img src="中國照片\上海\上海29.jpg" width="600px" />
+          <img src="中國照片\上海\上海30.jpg" width="600px" />
+        </div>
+        <br /><br /><br />
+        <h3>七里山塘</h3>
+        <h4>
+          七里山塘的歷史可以追溯到明代，起初只是一條普通的水道，明嘉靖年間
+          (1522 ~ 1566 年)，當地著名園林藝術家李流芳開始對此進行改造，逐步塑造了如今的山塘景觀。七里山塘全長約
+          7
+          公里，沿線依次設置了多個著名景點，如碧波橋、曲院風荷、澹園等，融合了水道、建築、園林、人家等元素，勾勒出一幅典型的江南水鄉畫卷，街道兩岸高低錯落的古建築、人家、商鋪以及縱橫交錯的石拱橋、曲徑通幽的小巷，無不散發著江南水鄉的悠久氣韻。
+        </h4>
+        <div style="text-align: center">
+          <img src="中國照片\上海\上海31.jpg" width="600px" />
+        </div>
+        <br /><br /><br />
+        <h2>上海美食</h2>
+        <h3>三瑪璐酒樓</h3>
+        <h4>
+          三瑪璐酒樓是傳統滬菜的代表，提供各式江蘇料理，我們點的紅燒肉、酒香草投、蟹粉豆腐跟上海小牌都非常入味，服務也非常周到，推薦大家來上海一定要來試試。
+        </h4>
+        <div class="two-vertical-images">
+          <img src="中國照片\上海\上海32.jpg" />
+          <img src="中國照片\上海\上海32-1.jpg" />
+        </div>
+        <div class="two-vertical-images">
+          <img src="中國照片\上海\上海33.jpg" />
+          <img src="中國照片\上海\上海33-1.jpg" />
+        </div>
+        <br />
+        <h3>沈大成</h3>
+        <h4>
+          來上海一定不能錯過小籠包，這家最有名的便是蟹粉小籠，內線滿滿的蟹肉，一咬開湯汁直接爆出來，是最精華的部分，早餐點一籠小籠包配上燒餅油條豆漿便是最正宗老上海的組合，這家也有賣許多豆沙類的小點，也可以試試喔!
+        </h4>
+        <div style="text-align: center">
+          <img src="中國照片\上海\上海34.jpg" width="800px" />
+          <img src="中國照片\上海\上海35.jpg" width="800px" />
+          <img src="中國照片\上海\上海36.jpg" width="600px" />
+        </div>
+        <br /><br /><br />
+        <h3>裕興記</h3>
+        <h4>
+          除了蟹粉小籠，盛產螃蟹的江南地區還有另一道經典料理:
+          蟹黃麵，新鮮的蟹黃伴著上海麵，在配上一些小菜便是最完美的午餐，蟹黃非常濃通常會需要加麵才不會吃起來很膩，一定要來嘗試!
+        </h4>
+        <div style="text-align: center">
+          <img src="中國照片\上海\上海37.jpg" width="800px" />
+        </div>
+        <br /><br /><br />
+        <h3>滬西老弄堂麵館</h3>
+        <h4>
+          上海麵除了拌蟹黃醬以外，還有蔥油拌麵跟炸醬麵兩種料理方式，用香噴噴的油蔥與炸醬混和拌麵，再配上一塊上海排骨及其他小菜，蘸著特殊的排骨醋更是別有一番風味。
+        </h4>
+        <div style="text-align: center">
+          <img src="中國照片\上海\上海38.jpg" width="600px" />
+        </div>
+        <br /><br /><br />
+        <h3>舒蔡記</h3>
+        <h4>
+          煎餃跟菜飯也是上海兩個有名的小吃，煎餃外皮被煎到微微脆，將內餡的湯汁全被鎖在餡料中，一口咬下能吃到豬肉內餡的鮮味，另外用香菇調味的菜販也非常香，適合當作觀光時玩累休息的小吃。
+        </h4>
+        <div style="text-align: center">
+          <img src="中國照片\上海\上海39.jpg" width="800px" />
+        </div>
+        <br /><br /><br />
+        <h3>Captain 船長酒吧</h3>
+        <h4>
+          想感受夜上海風情的絕對不能錯過這家酒吧，坐落在外灘邊上擁有絕佳的觀景位置，不管從什麼角度拍都非常好看，座位分為室外及室內區可以自行選擇，酒類跟食物的表現也不俗，價錢也算合理，推薦大家一定要來天台拍照，但遇上周末假日記得要提早卡位
+          (無法訂位)，大約 8 點半就會全滿了。
+        </h4>
+        <div style="text-align: center">
+          <img src="中國照片\上海\上海40.jpg" width="600px" />
+        </div>
+      </div>
+      <div class="destination-sidebar">
+        <div class="sidebar-image-container">
+          <img src="側邊欄自我介紹.jpg" />
+        </div>
+        <h5>
+          Hi!
+          我是Tommy，我熱愛旅遊也喜歡藉由影像紀錄旅程中的點點滴滴，透過文字將我在旅途中的所見所聞分享給大家。旅行對我而言不只是吃吃喝喝，而是能在行萬里路間感受世界的脈動，體驗不同的文化，希望藉由我的分享能讓大家看到更多世界的美好。
+        </h5>
+        <br />
+        <h5>
+          想更了解我或與我聯絡:
+          <a
+            href="https://www.instagram.com/tommy_techvoyage/"
+            target="_blank"
+            style="color: inherit; text-decoration: underline"
+          >
+            <b>Instagram</b>
+          </a>
+        </h5>
+        <div class="recommendation-section">
+          <h3>其他中國旅遊目的地</h3>
+          <div class="recommendation-buttons">
+            <a href="廣州.html">
+              <button><h5>廣州</h5></button>
+            </a>
+            <a href="長沙.html">
+              <button><h5>長沙</h5></button>
+            </a>
+            <a href="成都.html">
+              <button><h5>成都</h5></button>
+            </a>
+            <a href="重慶.html">
+              <button><h5>重慶</h5></button>
+            </a>
+            <a href="桂林.html">
+              <button><h5>桂林</h5></button>
+            </a>
+            <a href="陽朔.html">
+              <button><h5>陽朔</h5></button>
+            </a>
+            <a href="汕頭南澳島.html">
+              <button><h5>汕頭南澳島</h5></button>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="contact-section">
+      <div class="contact-item">
+        <h3>
+          想更了解我或與我聯絡:
+          <a
+            href="https://www.instagram.com/tommy_techvoyage/"
+            target="_blank"
+            style="color: inherit; text-decoration: underline"
+          >
+            Instagram
+          </a>
+        </h3>
+      </div>
+    </div>
+    <footer>
+      <h6>COPYRIGHT © 2025 Tommy 看世界 All rights reserved.</h6>
+    </footer>
+    <div id="expandable-menu">
+      <div id="menu-toggle"></div>
+      <!-- 收闔按鈕 -->
+      <div id="menu-content">
+        <h4>目錄</h4>
+        <ul id="menu-list"></ul>
+      </div>
+    </div>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const menu = document.getElementById("expandable-menu");
+        const toggle = document.getElementById("menu-toggle");
+        const menuList = document.getElementById("menu-list");
+        const destinationMain = document.querySelector(".destination-main");
+
+        // 點擊按鈕切換目錄狀態
+        toggle.addEventListener("click", () => {
+          menu.classList.toggle("open");
+        });
+
+        // 從 destination-main 區域提取 h2 和 h3，動態生成目錄
+        const headings = destinationMain.querySelectorAll("h2, h3");
+        headings.forEach((heading, index) => {
+          // 確保每個 h2 和 h3 都有唯一的 id
+          if (!heading.id) {
+            heading.id = `heading-${index}`;
+          }
+
+          const listItem = document.createElement("li");
+          const link = document.createElement("a");
+          link.textContent = heading.textContent;
+          link.href = `#${heading.id}`;
+          listItem.appendChild(link);
+
+          // 為 h3 添加縮排樣式
+          if (heading.tagName.toLowerCase() === "h3") {
+            listItem.classList.add("sub-item");
+          }
+
+          menuList.appendChild(listItem);
+        });
+
+        // 滾動至目標位置並加上 75px 偏移
+        menuList.addEventListener("click", (event) => {
+          if (event.target.tagName === "A") {
+            event.preventDefault(); // 阻止預設行為
+
+            const targetId = event.target.getAttribute("href").substring(1); // 取得目標 ID
+            const targetElement = document.getElementById(targetId);
+
+            if (targetElement) {
+              // 計算目標元素的位置並加上 75px 偏移
+              const targetPosition =
+                targetElement.getBoundingClientRect().top + window.scrollY;
+              const offset = 75; // 偏移的距離
+              window.scrollTo({
+                top: targetPosition - offset,
+                behavior: "smooth", // 平滑滾動
+              });
+            }
+          }
+        });
+      });
+    </script>
+  </body>
+</html>

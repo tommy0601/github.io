@@ -1,0 +1,643 @@
+<!DOCTYPE html>
+<html lang="zh-hant-TW">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="曹旅瀚 Tommy" />
+    <meta name="description" content="探索西班牙塞維亞的歷史風情與迷人魅力！漫步古城街道、欣賞佛朗明哥舞、拜訪塞維亞大教堂與西班牙廣場，感受安達魯西亞的文化精髓。" />
+    <meta name="keywords" content="塞維亞旅遊, 西班牙塞維亞, 塞維亞景點, 佛朗明哥舞, 塞維亞大教堂, 西班牙廣場, 安達魯西亞文化, 塞維亞古城, 塞維亞自由行" />
+    <title>Tommy 看世界 - 塞維亞</title>
+    <link rel="icon" href="網頁縮圖.ico" />
+    <style>
+      body {
+        font-family: Calibri, Arial, sans-serif; /* 首選 Calibri，次選 Arial */
+        margin: 0;
+        padding: 0;
+        overflow-x: hidden; /* 禁止水平滾動 */
+        background-color: #f4f4f9;
+        color: #333;
+      }
+
+      h1 {
+        font-size: 40px;
+        font-weight: bold;
+      }
+
+      h2 {
+        font-size: 32px;
+        font-weight: bold;
+        color: #2a90a7;
+        display: inline-block;
+        margin-bottom: 1rem; /* 縮小 h2 的底部邊距 */
+        background-color: #cee5e8;
+      }
+
+      h3 {
+        font-size: 26px;
+        margin: 0 0 1rem;
+        font-weight: bold;
+        text-decoration: underline; /* 加上底線 */
+      }
+
+      h4 {
+        font-size: 18px;
+        font-weight: normal;
+        line-height: 1.8;
+      }
+
+      h5 {
+        font-size: 16px;
+        font-weight: normal;
+        margin: 0;
+      }
+
+      h6 {
+        font-size: 10px;
+        color: #fff;
+        margin: 0;
+        text-align: center;
+        line-height: 50px; /* 高度對齊 */
+      }
+
+      nav {
+        background-color: #78bcc4;
+        display: flex;
+        justify-content: space-between; /* 保持分佈在兩側 */
+        width: calc(100% - 10rem); /* 與其他內容的邊界一致 */
+        padding: 0.5rem 5rem; /* 主導覽列的 padding 設置 */
+        position: fixed;
+        top: 0;
+        z-index: 1000;
+      }
+
+      .nav-left .logo img {
+        height: 50px; /* 控制 Logo 圖片的高度 */
+        transform: translateX(-1.5rem); /* 向右移動 2rem */
+      }
+
+      .nav-right {
+        display: flex;
+        align-items: center;
+        transform: translateX(2rem); /* 向右移動 2rem */
+      }
+
+      nav a {
+        color: #eff5f5;
+        text-decoration: none;
+        padding: 0.5rem 1rem;
+        margin: 0 0.5rem;
+        transition: transform 0.3s;
+      }
+
+      nav a:hover {
+        transform: translateY(-3px);
+      }
+
+      .dropdown {
+        position: relative;
+      }
+
+      .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #78bcc4;
+        min-width: 160px;
+        border-radius: 4px;
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        padding: 0.2rem 0;
+      }
+
+      .dropdown-content a {
+        color: #eff5f5;
+        display: block;
+        transition: transform 0.3s;
+        border-bottom: 1px solid #ddd;
+      }
+
+      .dropdown-content a:last-child {
+        border-bottom: none;
+      }
+
+      .dropdown-content a:hover {
+        transform: translateY(-3px);
+      }
+
+      .dropdown:hover .dropdown-content {
+        display: block;
+      }
+
+      .intro-section {
+        background-color: #eff5f5;
+        display: flex;
+        padding: 2rem;
+        margin-top: 60px; /* 根據導航列高度調整 */
+        justify-content: space-between;
+        align-items: flex-start;
+        width: 100%;
+        box-sizing: border-box; /* 包含 padding 在內 */
+        padding-left: 5rem;
+        padding-right: 5rem;
+      }
+
+      .intro-section h4 {
+        max-width: 700px;
+      }
+
+      .intro-section .left {
+        width: 60%;
+      }
+
+      .intro-section .right {
+        width: 40%;
+      }
+
+      .destination-section {
+        display: flex;
+        padding: 1rem 5%; /* 左右內間距為螢幕的10% */
+        background-color: white;
+      }
+
+      .destination-main {
+        width: 75%;
+        margin-right: 1.5rem; /* 增加右邊外邊距 */
+      }
+
+      .destination-sidebar {
+        width: 25%;
+        padding-left: 1.5rem; /* 增加左側內邊距 */
+        margin-top: 2rem; /* 向上或向下調整，負值表示向上 */
+      }
+
+      .sidebar-image-container {
+        margin-bottom: 1rem;
+        text-align: center; /* 確保圖片置中 */
+      }
+
+      .sidebar-image-container img {
+        height: 300px; /* 設置直式圖片的高度 */
+      }
+
+      .two-vertical-images {
+        display: flex; /* 彈性佈局，讓圖片並排 */
+        justify-content: space-between; /* 兩張圖片均勻分佈 */
+        gap: 2rem; /* 圖片之間的間距 */
+        margin-top: 2rem;
+        margin-bottom: 2rem; /* 與下方內容的距離 */
+      }
+
+      .two-vertical-images img {
+        width: calc(50% - 0.5rem); /* 每張圖片佔用容器的一半減去間距 */
+        text-align: center; /* 確保圖片置中 */
+        height: auto; /* 保持圖片的直式比例 */
+        object-fit: cover; /* 確保圖片內容適應容器 */
+      }
+
+      .recommendation-section {
+        margin-top: 1.5rem; /* 與上方文字的間距 */
+        text-align: center;
+        position: sticky;
+        top: 80px; /* 空出導覽列的高度，確保推薦區不被覆蓋 */
+        z-index: 10; /* 提高層級，避免被其他內容遮蓋 */
+      }
+
+      .recommendation-section h3 {
+        font-size: 18px;
+        font-weight: bold;
+        margin-bottom: 0.5rem; /* 與按鈕區的距離 */
+      }
+
+      .recommendation-buttons {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 0.5rem; /* 按鈕之間的間距 */
+      }
+
+      .recommendation-buttons button {
+        padding: 0.5rem 1rem;
+        font-size: 14px;
+        color: white;
+        background-color: #78bcc4;
+        border: none;
+        border-radius: 4px;
+        transition: transform 0.3s;
+        font-family: Arial, sans-serif;
+      }
+
+      .recommendation-buttons button:hover {
+        transform: translateY(-3px);
+      }
+
+      .contact-section {
+        padding: 2rem 5rem; /* 上下與左右間距 */
+        background-color: #eff5f5; /* 淺灰背景 */
+        text-align: center; /* 確保內容置中對齊 */
+      }
+
+      .contact-item h3 {
+        font-size: 18px; /* 調整標題字體大小 */
+        margin: 0; /* 移除多餘的間距 */
+        text-decoration: none; /* 移除底線 */
+      }
+
+      footer {
+        background-color: #000;
+        color: white;
+        height: 30px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      #expandable-menu {
+        position: fixed;
+        top: 70px; /* 與螢幕頂部的距離設為 60px */
+        right: 0;
+        height: calc(100% - 70px); /* 高度減去 60px，避免超出視窗 */
+        width: 395px; /* 目錄寬度與 sidebar 齊寬 */
+        transform: translateX(100%); /* 初始狀態：隱藏在右側 */
+        transition: transform 0.3s ease;
+        background-color: #f4f4f9; /* 與網站背景一致 */
+        z-index: 1000;
+      }
+
+      /* 收闔按鈕 */
+      #menu-toggle {
+        position: absolute;
+        top: 45%;
+        left: -40px; /* 調整按鈕的位置，適應按鈕變大後的寬度 */
+        transform: translateY(-50%);
+        width: 40px; /* 增大按鈕寬度 */
+        height: 80px; /* 增大按鈕高度 */
+        background-color: #78bcc4;
+        color: white;
+        border-radius: 4px;
+        display: flex;
+        justify-content: center; /* 水平居中 */
+        align-items: center; /* 垂直居中 */
+      }
+
+      #menu-toggle::after {
+        content: "目錄"; /* 在按鈕內顯示 "目錄" */
+        font-size: 17px;
+        color: white; /* 設定字體顏色為白色 */
+        writing-mode: vertical-rl; /* 使文字垂直排列 */
+      }
+
+      #menu-toggle:hover {
+        background-color: #78bcc4;
+      }
+
+      /* 目錄內容 */
+      #menu-content {
+        padding: 0.5rem 1rem;
+        overflow-y: auto;
+        height: 100%;
+      }
+
+      #menu-content h4 {
+        font-weight: bold;
+        margin-top: 0;
+      }
+
+      #menu-list {
+        list-style: none;
+        padding: 0;
+      }
+
+      #menu-list li {
+        margin-bottom: 0.5rem;
+      }
+
+      #menu-list a {
+        color: #2a90a7;
+        text-decoration: none;
+        transition: color 0.3s;
+      }
+
+      #menu-list a:hover {
+        color: #78bcc4;
+      }
+
+      #menu-list .sub-item {
+        margin-left: 1.5rem; /* 調整縮排距離 */
+        font-size: 0.9rem; /* 可選：調整子項目字體大小 */
+      }
+
+      /* 目錄展開狀態 */
+      #expandable-menu.open {
+        transform: translateX(0);
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <div class="nav-left">
+        <div class="logo">
+          <a href="首頁.html">
+            <img src="網站Logo.png" alt="網站 Logo" />
+          </a>
+        </div>
+      </div>
+      <div class="nav-right">
+        <a href="首頁.html">關於我</a>
+        <div class="dropdown">
+          <a>亞洲旅遊</a>
+          <div class="dropdown-content">
+            <a href="中國.html">中國</a>
+            <a href="新加坡.html">新加坡</a>
+            <a href="馬來西亞.html">馬來西亞</a>
+            <a href="泰國.html">泰國</a>
+            <a href="印尼.html">印尼</a>
+            <a href="越南.html">越南</a>
+          </div>
+        </div>
+        <div class="dropdown">
+          <a>歐洲旅遊</a>
+          <div class="dropdown-content">
+            <a href="英國.html">英國</a>
+            <a href="法國.html">法國</a>
+            <a href="荷蘭.html">荷蘭</a>
+            <a href="比利時.html">比利時</a>
+            <a href="盧森堡.html">盧森堡</a>
+            <a href="瑞士.html">瑞士</a>
+            <a href="摩納哥.html">摩納哥</a>
+            <a href="西班牙.html">西班牙</a>
+            <a href="葡萄牙.html">葡萄牙</a>
+            <a href="安道爾.html">安道爾</a>
+            <a href="丹麥.html">丹麥</a>
+            <a href="瑞典.html">瑞典</a>
+            <a href="波蘭.html">波蘭</a>
+          </div>
+        </div>
+        <div class="dropdown">
+          <a>美洲旅遊</a>
+          <div class="dropdown-content">
+            <a href="美國.html">美國</a>
+            <a href="加拿大.html">加拿大</a>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <div class="intro-section">
+      <div class="left">
+        <h1>Tommy 在塞維亞</h1>
+        <h4>
+          <b>塞維亞 (Seville)  </b
+          >是安達魯西亞地區最大的城市，坐落在瓜達爾基維爾河 (Guadalquivir River) 畔，歷史可以追溯到羅馬時代，是重要的港口城市和商業中心。在西哥德人統治和摩爾人統治時期，塞維亞經歷了文化和宗教的融合，對城市的發展和建築風格產生了深遠的影響。如今塞維亞以其豐富多樣的文化活動和傳統而聞名，每年的塞維亞四月節 (Feria de Abril) 是西班牙最著名的節日，人們穿著傳統安達魯西亞服裝，參加音樂舞蹈和馬術表演。
+        </h4>
+      </div>
+      <div class="right">
+        <img src="西班牙照片\塞維亞\塞維亞_介紹.jpg" width="90%" height="350px" />
+      </div>
+    </div>
+
+    <div class="destination-section">
+      <div class="destination-main">
+        <h2>塞維亞交通</h2>
+        <h3>機場交通</h3>
+        <h4>
+          從塞維亞機場可以搭乘 EA 路線公車直接抵達市中心，車程大約 40 分鐘。
+        </h4>
+        <h3>市區交通</h3>
+        <h4>
+          塞維亞市區非常小，景點也非常集中，基本上步行即可。
+        </h4>
+        <br /><br />
+        <h2>塞維亞住宿</h2>
+        <h4>
+          在塞維亞選住宿可以用景點及餐廳做為考量，我推薦可以住在都市陽傘周邊的區域，除了離各大景點都比較近之外，附近餐廳的選擇也比較多元。
+        </h4>
+        <div style="text-align: center">
+          <img src="西班牙照片\塞維亞\塞維亞_住宿.png" width="800px" />
+        </div>
+        <br /><br />
+        <h2>塞維亞景點</h2>
+        <h3>塞維亞鬥牛場 (Plaza de toros de la Real Maestranza de Caballería de Sevilla)</h3>
+        <h4>
+          塞維亞鬥牛場是西班牙最古老的鬥牛場，建於 18 世紀，以其精美的建築和歷史背景而聞名，是一個圓形建築，由磚石和石材建造而成，外觀華麗而宏偉，內部座位可容納超過 1 萬名觀眾。塞維亞鬥牛場是西班牙鬥牛文化的象徵，每年的四月節期間，塞維亞舉行著世界上最重要的斗牛節 (Feria de Abril)。除了鬥牛活動，塞維亞鬥牛場還舉辦其他文化活動，如音樂會、歌劇和舞蹈表演。
+        </h4>
+        <div style="text-align: center">
+          <img src="西班牙照片\塞維亞\SE1.jpg" width="800px" />
+        </div>
+        <br /><br /><br />
+        <h3>都市陽傘 (Setas de Sevilla)</h3>
+        <h4>
+          都市陽傘由德國建築師 Jürgen Mayer 設計的，於 2011 年完工，是一個由木材和混凝土組成的巨大結構，呈現出一個超現實和未來主義的外觀，
+          目的是提供一個多功能的公共空間，將塞維亞的城市生活與現代建築相結合。都市陽傘內部擁有一個市場、一個觀景平台、一個博物館和一個廣場，
+          都市陽傘的建築也是永續的，擁有太陽能板和雨水收集系統，以提高能源效率和環境友好性。
+        </h4>
+        <div style="text-align: center">
+          <img src="西班牙照片\塞維亞\SE2.png" width="800px" />
+        </div>
+        <br /><br /><br />
+        <h3>Puente de Triana</h3>
+        <h4>
+          Triana 橋橫跨瓜達爾基維爾河，連接了塞維亞市中心和 Triana 區，建於 19 世紀，最初是一座石橋，後來在 20 世紀進行了改建。它的設計呈拱形，由石材和鐵結構組成，展現了當時的建築風格。Triana 區是個富有歷史和文化的區域，以其傳統的鍛造和陶瓷工藝聞名，同時還擁有許多傳統的小吃店、夜生活場所和當地市場。
+        </h4>
+        <div style="text-align: center">
+          <img src="西班牙照片\塞維亞\SE3.jpg" width="800px" />
+        </div>
+        <br /><br /><br />
+        <h3>黃金塔 (Torre del Oro)</h3>
+        <h4>
+          黃金塔建於 13 世紀，它曾經被覆蓋金箔，使其在陽光下閃耀金光，這個名字也可能與附近的金礦和貴金屬貿易有關。塔樓是一個八角形的建築，由石頭和磚塊建造而成，高 36 米，原本是一個防禦工事，用於保護塞維亞港口免受入侵者的襲擊，塔樓頂部有一個觀景台，可以登上塔樓欣賞塞維亞市區和瓜達爾基維爾河的美景。黃金塔現在是一個博物館，展示了塞維亞的海事歷史和文化，包括航海工具、地圖、模型船和航海文物，以及關於塞維亞港口的歷史和重要性的信息。
+        </h4>
+        <div style="text-align: center">
+          <img src="西班牙照片\塞維亞\SE4.jpg" width="600px" />
+        </div>
+        <br /><br /><br />
+        <h3>塞維亞主教座堂 (Catedral de Sevilla)</h3>
+        <h4>
+          塞維亞主教座堂建於 15 世紀，建築風格主要是哥德式，但在後期增加了文藝復興和巴洛克風格的元素。它建在一個古代的摩爾人清真寺的遺址上
+          ，保留了一些摩爾人建築的元素，如 Giralda 鐘樓，被聯合國教科文組織列為世界文化遺產。教堂內部空間廣闊，有五個巨大的船廊，高大的拱頂和華麗的裝飾，有許多宗教和藝術珍品，包括著名的主祭壇，由大量的黃金和寶石裝飾而成，還收藏了一些重要的藝術作品，如格雷科、穆拉、維拉維卡等畫家的畫作。
+        </h4>
+        <h4>Giralda 鐘樓是塞維亞大教堂最著名的特色之一，原本是摩爾人清真寺的一座宣禮塔。鐘樓高約 104 米，由磚塊建造而成，
+          其頂部則是一個巨大的銅質鐘和一個旗幟，可以爬上 Giralda 鐘樓，從頂部欣賞塞維亞市區的壯麗景色。由於參觀人數眾多，推薦可以先在<a href="https://catedraldesevilla.entradasdemuseos.com/" target="_blank">官網</a>購票，就不需要在現場等待長隊買票。</h4>
+        <div style="text-align: center">
+          <img src="西班牙照片\塞維亞\SE5.jpg" width="600px" />
+          <img src="西班牙照片\塞維亞\SE6.jpg" width="800px" />
+          <img src="西班牙照片\塞維亞\SE7.jpg" width="600px" />
+          <img src="西班牙照片\塞維亞\SE8.jpg" width="800px" />
+          <img src="西班牙照片\塞維亞\SE9.jpg" width="800px" />
+        </div>
+        <br /><br /><br />
+        <h3>塞維亞王宮 (Real Alcázar de Sevilla)</h3>
+        <h4>
+          塞維亞王宮的建築始於 10 世紀，最初是一座摩爾人宮殿，隨著不同時期的統治者和文化影響，宮殿進行了擴建和改建，形成了多種建築風格的融合。宮殿的建築包括了華麗的拱廊、精美的石雕、華麗的天花板和藝術品裝飾，展示了不同時代和文化的融合。宮殿內部有數個花園，包括水池、噴泉、樹木和花草，形成了一個寧靜而美麗的綠洲。最著名的是「渴望之園」(Jardines de los Reales Alcázares)，以其精緻的設計和壯麗的植物景觀而聞名。遊客可以在花園中漫步，欣賞花朵的盛開和水池的倒影。
+        </h4>
+        <div style="text-align: center">
+          <img src="西班牙照片\塞維亞\SE10.jpg" width="600px" />
+          <img src="西班牙照片\塞維亞\SE11.jpg" width="600px" />
+          <img src="西班牙照片\塞維亞\SE12.png" width="600px" />
+          <img src="西班牙照片\塞維亞\SE13.jpg" width="600px" />
+        </div>
+        <br /><br /><br />
+        <h3>西班牙廣場 (Plaza de España)</h3>
+        <h4>
+          西班牙廣場建於 1928 年，是由安東尼奧·阿爾瓦雷斯所設計，為了舉辦 1929 年伊比利亞美洲博覽會而設計的，
+          他將這個廣場設計成一個巨大的半圓形建築，圍繞著一個中央廣場和運河。整個廣場的風格融合了摩爾式、哥特式和文藝復興式元素，
+          展現了西班牙的建築風格和歷史。廣場的主要建築是半圓形的大樓，由磚砌而成，以華麗的瓷磚和石雕裝飾，大樓上有一系列涼亭，
+          每個涼亭都代表西班牙不同的省份，用瓷磚壁畫描繪了各省的歷史和文化。在廣場的中心有一個大型的噴泉，周圍是美麗的花園和小徑。塞維亞廣場也經常被用作電影的取景地，在電影《星球大戰》系列中出現過。
+        </h4>
+        <div style="text-align: center">
+          <img src="西班牙照片\塞維亞\SE14.jpg" width="800px" />
+          <img src="西班牙照片\塞維亞\SE15.jpg" width="800px" />
+          <img src="西班牙照片\塞維亞\SE17.jpg" width="600px" />
+        </div>
+        <br /><br />
+        <h2>塞維亞美食</h2>
+        <h3>Bar Postiguillo Tapas</h3>
+        <h4>
+          Bar Postiguillo Tapas 創始於上世紀 50 年代，內部卻保留了濃濃的西班牙經典酒吧風格，充滿了復古懷舊的氛圍，牆壁上掛滿了各種復古海報和老照片，讓人彷彿回到了上世紀中葉的塞維亞。最出名的 Tapas 包括香煎膠原牛肉、蒜香蜆肉、香烤羊肉串、烤馬鈴薯等，味道都非常好。這家餐廳也以其豐富的酒類品種而聞名，可以品嘗到各種西班牙特色葡萄酒、雪利酒和啤酒。
+        </h4>
+        <div style="text-align: center">
+          <img src="西班牙照片\塞維亞\SE18.jpg" width="600px" />
+          <img src="西班牙照片\塞維亞\SE19.jpg" width="600px" />
+        </div>
+        <br /><br /><br />
+        <h3>Los Coloniales</h3>
+        <h4>
+          塞維亞還有另一道名菜便是鵪鶉蛋料理，是在吐司上面放上火腿或肉片後再打上一顆鵪鶉蛋，包在一起一口咬下可以同時嘗到火腿跟鵪鶉蛋的鮮味，非常值得來品嘗。另外這家的牛小排以及 Sangria 也非常出名，可以一併點來試試。
+        </h4>
+        <div style="text-align: center">
+          <img src="西班牙照片\塞維亞\SE20.jpg" width="600px" />
+          <img src="西班牙照片\塞維亞\SE21.jpg" width="800px" />
+        </div>
+        <br /><br />
+      </div>
+      <div class="destination-sidebar">
+        <div class="sidebar-image-container">
+          <img src="側邊欄自我介紹.jpg" />
+        </div>
+        <h5>
+          Hi!
+          我是Tommy，我熱愛旅遊也喜歡藉由影像紀錄旅程中的點點滴滴，透過文字將我在旅途中的所見所聞分享給大家。旅行對我而言不只是吃吃喝喝，而是能在行萬里路間感受世界的脈動，體驗不同的文化，希望藉由我的分享能讓大家看到更多世界的美好。
+        </h5>
+        <br />
+        <h5>
+          想更了解我或與我聯絡:
+          <a
+            href="https://www.instagram.com/tommy_techvoyage/"
+            target="_blank"
+            style="color: inherit; text-decoration: underline"
+          >
+            <b>Instagram</b>
+          </a>
+        </h5>
+        <div class="recommendation-section">
+          <h3>其他西班牙旅遊目的地</h3>
+          <div class="recommendation-buttons">
+            <a href="巴塞隆納.html">
+              <button><h5>巴塞隆納</h5></button>
+            </a>
+            <a href="馬德里.html">
+              <button><h5>馬德里</h5></button>
+            </a>
+            <a href="瓦倫西亞.html">
+              <button><h5>瓦倫西亞</h5></button>
+            </a>
+            <a href="格瑞那達.html">
+              <button><h5>格瑞那達</h5></button>
+            </a>
+            <a href="馬拉加.html">
+              <button><h5>馬拉加</h5></button>
+            </a>
+            <a href="隆達.html">
+              <button><h5>隆達</h5></button>
+            </a>
+            <a href="直布羅陀.html">
+              <button><h5>直布羅陀</h5></button>
+            </a>
+            <a href="馬略卡島.html">
+              <button><h5>馬略卡島</h5></button>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="contact-section">
+      <div class="contact-item">
+        <h3>
+          想更了解我或與我聯絡:
+          <a
+            href="https://www.instagram.com/tommy_techvoyage/"
+            target="_blank"
+            style="color: inherit; text-decoration: underline"
+          >
+            Instagram
+          </a>
+        </h3>
+      </div>
+    </div>
+    <footer>
+      <h6>COPYRIGHT © 2025 Tommy 看世界 All rights reserved.</h6>
+    </footer>
+    <div id="expandable-menu">
+      <div id="menu-toggle"></div>
+      <!-- 收闔按鈕 -->
+      <div id="menu-content">
+        <h4>目錄</h4>
+        <ul id="menu-list"></ul>
+      </div>
+    </div>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const menu = document.getElementById("expandable-menu");
+        const toggle = document.getElementById("menu-toggle");
+        const menuList = document.getElementById("menu-list");
+        const destinationMain = document.querySelector(".destination-main");
+
+        // 點擊按鈕切換目錄狀態
+        toggle.addEventListener("click", () => {
+          menu.classList.toggle("open");
+        });
+
+        // 從 destination-main 區域提取 h2 和 h3，動態生成目錄
+        const headings = destinationMain.querySelectorAll("h2, h3");
+        headings.forEach((heading, index) => {
+          // 確保每個 h2 和 h3 都有唯一的 id
+          if (!heading.id) {
+            heading.id = `heading-${index}`;
+          }
+
+          const listItem = document.createElement("li");
+          const link = document.createElement("a");
+          link.textContent = heading.textContent;
+          link.href = `#${heading.id}`;
+          listItem.appendChild(link);
+
+          // 為 h3 添加縮排樣式
+          if (heading.tagName.toLowerCase() === "h3") {
+            listItem.classList.add("sub-item");
+          }
+
+          menuList.appendChild(listItem);
+        });
+
+        // 滾動至目標位置並加上 75px 偏移
+        menuList.addEventListener("click", (event) => {
+          if (event.target.tagName === "A") {
+            event.preventDefault(); // 阻止預設行為
+
+            const targetId = event.target.getAttribute("href").substring(1); // 取得目標 ID
+            const targetElement = document.getElementById(targetId);
+
+            if (targetElement) {
+              // 計算目標元素的位置並加上 75px 偏移
+              const targetPosition =
+                targetElement.getBoundingClientRect().top + window.scrollY;
+              const offset = 75; // 偏移的距離
+              window.scrollTo({
+                top: targetPosition - offset,
+                behavior: "smooth", // 平滑滾動
+              });
+            }
+          }
+        });
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html lang="zh-hant-TW">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="曹旅瀚 Tommy" />
+    <meta name="description" content="探索法國里昂的魅力所在！走訪世界遺產舊城區、細味米其林美食、欣賞羅馬劇場與里昂燈光節，體驗歷史、藝術與法式生活的完美融合。" />
+    <meta name="keywords" content="里昂旅遊, 法國自由行, 里昂美食, 里昂舊城區, 里昂景點, 世界遺產, 里昂燈光節, 法國城市推薦, 法國文化之旅, 米其林餐廳" />
+    <title>Tommy 看世界 - 里昂</title>
+    <link rel="icon" href="網頁縮圖.ico" />
+    <style>
+      body {
+        font-family: Calibri, Arial, sans-serif; /* 首選 Calibri，次選 Arial */
+        margin: 0;
+        padding: 0;
+        overflow-x: hidden; /* 禁止水平滾動 */
+        background-color: #f4f4f9;
+        color: #333;
+      }
+
+      h1 {
+        font-size: 40px;
+        font-weight: bold;
+      }
+
+      h2 {
+        font-size: 32px;
+        font-weight: bold;
+        color: #2a90a7;
+        display: inline-block;
+        margin-bottom: 1rem; /* 縮小 h2 的底部邊距 */
+        background-color: #cee5e8;
+      }
+
+      h3 {
+        font-size: 26px;
+        margin: 0 0 1rem;
+        font-weight: bold;
+        text-decoration: underline; /* 加上底線 */
+      }
+
+      h4 {
+        font-size: 18px;
+        font-weight: normal;
+        line-height: 1.8;
+      }
+
+      h5 {
+        font-size: 16px;
+        font-weight: normal;
+        margin: 0;
+      }
+
+      h6 {
+        font-size: 10px;
+        color: #fff;
+        margin: 0;
+        text-align: center;
+        line-height: 50px; /* 高度對齊 */
+      }
+
+      nav {
+        background-color: #78bcc4;
+        display: flex;
+        justify-content: space-between; /* 保持分佈在兩側 */
+        width: calc(100% - 10rem); /* 與其他內容的邊界一致 */
+        padding: 0.5rem 5rem; /* 主導覽列的 padding 設置 */
+        position: fixed;
+        top: 0;
+        z-index: 1000;
+      }
+
+      .nav-left .logo img {
+        height: 50px; /* 控制 Logo 圖片的高度 */
+        transform: translateX(-1.5rem); /* 向右移動 2rem */
+      }
+
+      .nav-right {
+        display: flex;
+        align-items: center;
+        transform: translateX(2rem); /* 向右移動 2rem */
+      }
+
+      nav a {
+        color: #eff5f5;
+        text-decoration: none;
+        padding: 0.5rem 1rem;
+        margin: 0 0.5rem;
+        transition: transform 0.3s;
+      }
+
+      nav a:hover {
+        transform: translateY(-3px);
+      }
+
+      .dropdown {
+        position: relative;
+      }
+
+      .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #78bcc4;
+        min-width: 160px;
+        border-radius: 4px;
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        padding: 0.2rem 0;
+      }
+
+      .dropdown-content a {
+        color: #eff5f5;
+        display: block;
+        transition: transform 0.3s;
+        border-bottom: 1px solid #ddd;
+      }
+
+      .dropdown-content a:last-child {
+        border-bottom: none;
+      }
+
+      .dropdown-content a:hover {
+        transform: translateY(-3px);
+      }
+
+      .dropdown:hover .dropdown-content {
+        display: block;
+      }
+
+      .intro-section {
+        background-color: #eff5f5;
+        display: flex;
+        padding: 2rem;
+        margin-top: 60px; /* 根據導航列高度調整 */
+        justify-content: space-between;
+        align-items: flex-start;
+        width: 100%;
+        box-sizing: border-box; /* 包含 padding 在內 */
+        padding-left: 5rem;
+        padding-right: 5rem;
+      }
+
+      .intro-section h4 {
+        max-width: 700px;
+      }
+
+      .intro-section .left {
+        width: 60%;
+      }
+
+      .intro-section .right {
+        width: 40%;
+      }
+
+      .destination-section {
+        display: flex;
+        padding: 1rem 5%; /* 左右內間距為螢幕的10% */
+        background-color: white;
+      }
+
+      .destination-main {
+        width: 75%;
+        margin-right: 1.5rem; /* 增加右邊外邊距 */
+      }
+
+      .destination-sidebar {
+        width: 25%;
+        padding-left: 1.5rem; /* 增加左側內邊距 */
+        margin-top: 2rem; /* 向上或向下調整，負值表示向上 */
+      }
+
+      .sidebar-image-container {
+        margin-bottom: 1rem;
+        text-align: center; /* 確保圖片置中 */
+      }
+
+      .sidebar-image-container img {
+        height: 300px; /* 設置直式圖片的高度 */
+      }
+
+      .two-vertical-images {
+        display: flex; /* 彈性佈局，讓圖片並排 */
+        justify-content: space-between; /* 兩張圖片均勻分佈 */
+        gap: 2rem; /* 圖片之間的間距 */
+        margin-top: 2rem;
+        margin-bottom: 2rem; /* 與下方內容的距離 */
+      }
+
+      .two-vertical-images img {
+        width: calc(50% - 0.5rem); /* 每張圖片佔用容器的一半減去間距 */
+        text-align: center; /* 確保圖片置中 */
+        height: auto; /* 保持圖片的直式比例 */
+        object-fit: cover; /* 確保圖片內容適應容器 */
+      }
+
+      .recommendation-section {
+        margin-top: 1.5rem; /* 與上方文字的間距 */
+        text-align: center;
+        position: sticky;
+        top: 80px; /* 空出導覽列的高度，確保推薦區不被覆蓋 */
+        z-index: 10; /* 提高層級，避免被其他內容遮蓋 */
+      }
+
+      .recommendation-section h3 {
+        font-size: 18px;
+        font-weight: bold;
+        margin-bottom: 0.5rem; /* 與按鈕區的距離 */
+      }
+
+      .recommendation-buttons {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 0.5rem; /* 按鈕之間的間距 */
+      }
+
+      .recommendation-buttons button {
+        padding: 0.5rem 1rem;
+        font-size: 14px;
+        color: white;
+        background-color: #78bcc4;
+        border: none;
+        border-radius: 4px;
+        transition: transform 0.3s;
+        font-family: Arial, sans-serif;
+      }
+
+      .recommendation-buttons button:hover {
+        transform: translateY(-3px);
+      }
+
+      .contact-section {
+        padding: 2rem 5rem; /* 上下與左右間距 */
+        background-color: #eff5f5; /* 淺灰背景 */
+        text-align: center; /* 確保內容置中對齊 */
+      }
+
+      .contact-item h3 {
+        font-size: 18px; /* 調整標題字體大小 */
+        margin: 0; /* 移除多餘的間距 */
+        text-decoration: none; /* 移除底線 */
+      }
+
+      footer {
+        background-color: #000;
+        color: white;
+        height: 30px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      #expandable-menu {
+        position: fixed;
+        top: 70px; /* 與螢幕頂部的距離設為 60px */
+        right: 0;
+        height: calc(100% - 70px); /* 高度減去 60px，避免超出視窗 */
+        width: 395px; /* 目錄寬度與 sidebar 齊寬 */
+        transform: translateX(100%); /* 初始狀態：隱藏在右側 */
+        transition: transform 0.3s ease;
+        background-color: #f4f4f9; /* 與網站背景一致 */
+        z-index: 1000;
+      }
+
+      /* 收闔按鈕 */
+      #menu-toggle {
+        position: absolute;
+        top: 45%;
+        left: -40px; /* 調整按鈕的位置，適應按鈕變大後的寬度 */
+        transform: translateY(-50%);
+        width: 40px; /* 增大按鈕寬度 */
+        height: 80px; /* 增大按鈕高度 */
+        background-color: #78bcc4;
+        color: white;
+        border-radius: 4px;
+        display: flex;
+        justify-content: center; /* 水平居中 */
+        align-items: center; /* 垂直居中 */
+      }
+
+      #menu-toggle::after {
+        content: "目錄"; /* 在按鈕內顯示 "目錄" */
+        font-size: 17px;
+        color: white; /* 設定字體顏色為白色 */
+        writing-mode: vertical-rl; /* 使文字垂直排列 */
+      }
+
+      #menu-toggle:hover {
+        background-color: #78bcc4;
+      }
+
+      /* 目錄內容 */
+      #menu-content {
+        padding: 0.5rem 1rem;
+        overflow-y: auto;
+        height: 100%;
+      }
+
+      #menu-content h4 {
+        font-weight: bold;
+        margin-top: 0;
+      }
+
+      #menu-list {
+        list-style: none;
+        padding: 0;
+      }
+
+      #menu-list li {
+        margin-bottom: 0.5rem;
+      }
+
+      #menu-list a {
+        color: #2a90a7;
+        text-decoration: none;
+        transition: color 0.3s;
+      }
+
+      #menu-list a:hover {
+        color: #78bcc4;
+      }
+
+      #menu-list .sub-item {
+        margin-left: 1.5rem; /* 調整縮排距離 */
+        font-size: 0.9rem; /* 可選：調整子項目字體大小 */
+      }
+
+      /* 目錄展開狀態 */
+      #expandable-menu.open {
+        transform: translateX(0);
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <div class="nav-left">
+        <div class="logo">
+          <a href="首頁.html">
+            <img src="網站Logo.png" alt="網站 Logo" />
+          </a>
+        </div>
+      </div>
+      <div class="nav-right">
+        <a href="首頁.html">關於我</a>
+        <div class="dropdown">
+          <a>亞洲旅遊</a>
+          <div class="dropdown-content">
+            <a href="中國.html">中國</a>
+            <a href="新加坡.html">新加坡</a>
+            <a href="馬來西亞.html">馬來西亞</a>
+            <a href="泰國.html">泰國</a>
+            <a href="印尼.html">印尼</a>
+            <a href="越南.html">越南</a>
+          </div>
+        </div>
+        <div class="dropdown">
+          <a>歐洲旅遊</a>
+          <div class="dropdown-content">
+            <a href="英國.html">英國</a>
+            <a href="法國.html">法國</a>
+            <a href="荷蘭.html">荷蘭</a>
+            <a href="比利時.html">比利時</a>
+            <a href="盧森堡.html">盧森堡</a>
+            <a href="瑞士.html">瑞士</a>
+            <a href="摩納哥.html">摩納哥</a>
+            <a href="西班牙.html">西班牙</a>
+            <a href="葡萄牙.html">葡萄牙</a>
+            <a href="安道爾.html">安道爾</a>
+            <a href="丹麥.html">丹麥</a>
+            <a href="瑞典.html">瑞典</a>
+            <a href="波蘭.html">波蘭</a>
+          </div>
+        </div>
+        <div class="dropdown">
+          <a>美洲旅遊</a>
+          <div class="dropdown-content">
+            <a href="美國.html">美國</a>
+            <a href="加拿大.html">加拿大</a>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <div class="intro-section">
+      <div class="left">
+        <h1>Tommy 在里昂</h1>
+        <h4>
+          <b>里昂 (Lyon) </b
+          >是法國第三大城，歷史可以追溯到公元前 43 年，因其戰略位置而迅速發展成羅馬帝國西部的重要行政中心。中世紀時期里昂成為一個繁榮的商貿重鎮，以絲綢、羊毛等工業聞名於世。如今里昂是法國第二大經濟中心，也是聯合國歐洲總部所在地，在教育、科技、文化等領域都有卓越表現，也是法國重要的運輸樞紐。里昂被譽為法國的美食之都，馬鈴薯菜、卡西薩香腸和勃根地葡萄酒吸引了無數美食愛好者。里昂也擁有一些知名的大學和研究機構，吸引了全球各地的音樂及工程領域的學生和學者。
+        </h4>
+      </div>
+      <div class="right">
+        <img src="法國照片\里昂_介紹.jpg" width="90%" height="350px" />
+      </div>
+    </div>
+
+    <div class="destination-section">
+      <div class="destination-main">
+        <h2>里昂交通</h2>
+        <h3>機場交通</h3>
+        <h4>
+          從里昂的聖埃克絮佩里機場可以搭乘 Rhônexpress 直達里昂市中心 Part Dieu 火車站，再轉乘地鐵就可以抵達觀光景點區了。
+        </h4>
+        <h3>市區交通</h3>
+        <h4>
+          里昂的景點相對集中，觀光景點間幾乎都可以步行抵達，要前往車站與飯店也可以搭乘路面輕軌及地鐵，在所有車站都能買單程票，最容易搭到的應該是下圖圈起來的淺綠色線，是從山下的 Vieux Lyon 坐到山上的富維耶聖母院的斜軌電車，是最省力的觀光方式。
+        </h4>
+        <div style="text-align: center">
+          <img src="法國照片\里昂_交通1.png" width="800px" />
+          <img src="法國照片\里昂_交通2.png" width="1000px" />
+        </div>
+        <br /><br />
+        <h2>里昂住宿</h2>
+        <h4>
+          里昂住宿的選擇可以交通方便程度為考量，比較推薦 Part Dieu 火車站周邊火有地鐵抵達的里昂第三區，不論是搭機或是搭乘火車高鐵到里昂都相對方便，不需要扛著一堆東西走很遠才到飯店。
+        </h4>
+        <div style="text-align: center">
+          <img src="法國照片\里昂_住宿.png" width="1000px" />
+        </div>
+        <br /><br />
+        <h2>里昂景點</h2>
+        <h3>里昂人壁畫 (Fresque des Lyonnais)</h3>
+        <h4>
+          里昂人壁畫位於 Presqu'île 半島的 Saint-Jean 區域，是一幅高達 800 平方米的巨大壁畫，由法國藝術家 CitéCréation 創作並於 1994 年完成，描繪了將近 30 位與里昂有關的著名人物，包括作家、藝術家、科學家、政治家等等。這些人物的面孔被描繪在建築物的牆壁上，以一種生動而具有特色的方式呈現，仿佛可以看到這些歷史人物真實地站在里昂的街頭，是里昂城市歷史和文化的縮影。
+        </h4>
+        <div style="text-align: center">
+          <img src="法國照片\里昂\LY1.jpg" width="600px" />
+          <img src="法國照片\里昂\LY2.jpg" width="600px" />
+        </div>
+        <br /><br /><br />
+        <h3>沃土廣場 (Place des Terreaux)</h3>
+        <h4>
+          沃土廣場位於 Presqu'île 半島上，以其壯麗的市政廳和巴洛克式的 Bartholdi 噴泉而聞名。市政廳是一座華麗的建築，建於 17 世紀，擁有宏偉的外觀和精美的裝飾。Bartholdi 噴泉由法國雕塑家巴托爾迪 (Bartholdi) 創作，是雕像和噴泉的結合，象徵著里昂的繁榮和活力。
+        </h4>
+        <div style="text-align: center">
+          <img src="法國照片\里昂\LY3.jpg" width="800px" />
+        </div>
+        <br /><br /><br />
+        <h3>雅各賓廣場 (Le Coin Vert)</h3>
+        <h4>
+          Le Coin Vert 名字意為「綠色角落」，位於里昂的核心，有著大片的草地、花園和樹木，提供了一個遠離城市喧囂的寧靜空間，讓人們可以在這裡散步、野餐或者坐下來閱讀，也擁有一個小型的噴泉，增添了一絲涼意和活力。雅各賓廣場也經常舉辦各種文化活動和市集，吸引了大量的遊客和當地居民前來參加。
+        </h4>
+        <div style="text-align: center">
+          <img src="法國照片\里昂\LY4.jpg" width="600px" />
+        </div>
+        <br /><br /><br />
+        <h3>里昂主教座堂 (Cathédrale Saint-Jean-Baptiste)</h3>
+        <h4>
+          里昂主教座堂位於市中心的老城區，建造始於 12 世紀，歷時幾個世紀才完工，因此它展現了多個時期的建築風格，包括哥特式、羅曼式和文藝復興式風格。外觀融合了氣勢磅礴的尖頂和精美的浮雕，內部則擁有壯麗的彩繪玻璃、祭壇和雕像，展示了豐富的宗教藝術，也是當地基督教信仰和文化的中心。
+        </h4>
+        <div style="text-align: center">
+          <img src="法國照片\里昂\LY5.jpg" width="600px" />
+        </div>
+        <br /><br /><br />
+        <h3>富維耶聖母院 (Basilique Notre-Dame de Fourvière)</h3>
+        <h4>
+          富維耶聖母院坐落在里昂市的最高點，俯瞰整個城市，建於 19 世紀末，以紀念里昂在 1870 年普法戰爭中的勝利和法國恢復和平。建築風格融合了新拜占庭和新哥特式風格，外觀華麗而壯觀，內部則裝飾著精美的彩繪玻璃、壁畫和雕像，展示了豐富的宗教藝術，也是重要的朝聖地。
+        </h4>
+        <div style="text-align: center">
+          <img src="法國照片\里昂\LY6.jpg" width="600px" />
+          <img src="法國照片\里昂\LY7.jpg" width="600px" />
+        </div>
+        <br /><br /><br />
+        <h3>富維耶山古羅馬劇場 (Théâtre Gallo Romain de Lyon-Fourvière)</h3>
+        <h4>
+          富維耶山古羅馬劇場位於 Fourvière hill，建於羅馬時代，據推測是在公元 15 年至 19 年之間建造的，坐落在一片開闊的露天空地上，可容納約 10000 名觀眾，是古羅馬時代里昂重要的社交和文化場所。在古代這裡會舉辦各種戲劇、音樂和體育比賽，為當時的市民提供了娛樂和社交的場所。整個劇院的設計精巧，呈半圓形，觀眾席分為不同的區域，根據社會地位和身份進行分隔，舞台部分則有著複雜的舞台機械系統，可以進行各種戲劇和表演。
+        </h4>
+        <div style="text-align: center">
+          <img src="法國照片\里昂\LY8.jpg" width="600px" />
+        </div>
+        <br /><br /><br />
+        <h3>索恩河 (Saône)</h3>
+        <h4>
+          索恩河貫穿里昂市區，並在城市南邊與隆河匯流，在左右案刻畫出里昂市區的不同風貌，右岸是老城區，左岸則是較新發展的區域，沿著河畔漫步便可一覽里昂的所有景點，夜景也十分的美。
+        </h4>
+        <div style="text-align: center">
+          <img src="法國照片\里昂\LY9.jpg" width="800px" />
+          <img src="法國照片\里昂\LY10.jpg" width="800px" />
+        </div>
+        <br /><br />
+        <h2>里昂美食</h2>
+        <h3>Le Laurencin</h3>
+        <h4>
+          傳統的里昂料理都會有內臟，算是歐美國家中少數會食用內臟的地區，這一家主打平價里昂料理，一整個套餐吃下來 20 歐元有找非常划算。我原本是完全不吃內臟的人，但想說都到了里昂還是該嘗試看看。開胃菜挑戰了小牛的牛蹄，味道很像帶有一點點肉味的果凍十分特別，主菜則是燉牛肚跟牛肚腸，利用了烹飪手法及醬汁掩蓋了內臟的腥味，口味非常不錯，另外也有牛腦或牛的所有你想的到的部位的料理我就沒有嘗試了。
+        </h4>
+        <div style="text-align: center">
+          <img src="法國照片\里昂\LY11.jpg" width="600px" />
+          <img src="法國照片\里昂\LY12.jpg" width="600px" />
+        </div>
+        <br /><br />
+      </div>
+      <div class="destination-sidebar">
+        <div class="sidebar-image-container">
+          <img src="側邊欄自我介紹.jpg" />
+        </div>
+        <h5>
+          Hi!
+          我是Tommy，我熱愛旅遊也喜歡藉由影像紀錄旅程中的點點滴滴，透過文字將我在旅途中的所見所聞分享給大家。旅行對我而言不只是吃吃喝喝，而是能在行萬里路間感受世界的脈動，體驗不同的文化，希望藉由我的分享能讓大家看到更多世界的美好。
+        </h5>
+        <br />
+        <h5>
+          想更了解我或與我聯絡:
+          <a
+            href="https://www.instagram.com/tommy_techvoyage/"
+            target="_blank"
+            style="color: inherit; text-decoration: underline"
+          >
+            <b>Instagram</b>
+          </a>
+        </h5>
+        <div class="recommendation-section">
+          <h3>其他法國旅遊目的地</h3>
+          <div class="recommendation-buttons">
+            <a href="巴黎.html">
+              <button><h5>巴黎</h5></button>
+            </a>
+            <a href="馬賽.html">
+              <button><h5>馬賽</h5></button>
+            </a>
+            <a href="尼斯.html">
+              <button><h5>尼斯</h5></button>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="contact-section">
+      <div class="contact-item">
+        <h3>
+          想更了解我或與我聯絡:
+          <a
+            href="https://www.instagram.com/tommy_techvoyage/"
+            target="_blank"
+            style="color: inherit; text-decoration: underline"
+          >
+            Instagram
+          </a>
+        </h3>
+      </div>
+    </div>
+    <footer>
+      <h6>COPYRIGHT © 2025 Tommy 看世界 All rights reserved.</h6>
+    </footer>
+    <div id="expandable-menu">
+      <div id="menu-toggle"></div>
+      <!-- 收闔按鈕 -->
+      <div id="menu-content">
+        <h4>目錄</h4>
+        <ul id="menu-list"></ul>
+      </div>
+    </div>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const menu = document.getElementById("expandable-menu");
+        const toggle = document.getElementById("menu-toggle");
+        const menuList = document.getElementById("menu-list");
+        const destinationMain = document.querySelector(".destination-main");
+
+        // 點擊按鈕切換目錄狀態
+        toggle.addEventListener("click", () => {
+          menu.classList.toggle("open");
+        });
+
+        // 從 destination-main 區域提取 h2 和 h3，動態生成目錄
+        const headings = destinationMain.querySelectorAll("h2, h3");
+        headings.forEach((heading, index) => {
+          // 確保每個 h2 和 h3 都有唯一的 id
+          if (!heading.id) {
+            heading.id = `heading-${index}`;
+          }
+
+          const listItem = document.createElement("li");
+          const link = document.createElement("a");
+          link.textContent = heading.textContent;
+          link.href = `#${heading.id}`;
+          listItem.appendChild(link);
+
+          // 為 h3 添加縮排樣式
+          if (heading.tagName.toLowerCase() === "h3") {
+            listItem.classList.add("sub-item");
+          }
+
+          menuList.appendChild(listItem);
+        });
+
+        // 滾動至目標位置並加上 75px 偏移
+        menuList.addEventListener("click", (event) => {
+          if (event.target.tagName === "A") {
+            event.preventDefault(); // 阻止預設行為
+
+            const targetId = event.target.getAttribute("href").substring(1); // 取得目標 ID
+            const targetElement = document.getElementById(targetId);
+
+            if (targetElement) {
+              // 計算目標元素的位置並加上 75px 偏移
+              const targetPosition =
+                targetElement.getBoundingClientRect().top + window.scrollY;
+              const offset = 75; // 偏移的距離
+              window.scrollTo({
+                top: targetPosition - offset,
+                behavior: "smooth", // 平滑滾動
+              });
+            }
+          }
+        });
+      });
+    </script>
+  </body>
+</html>

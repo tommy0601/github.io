@@ -1,0 +1,732 @@
+<!DOCTYPE html>
+<html lang="zh-hant-TW">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="曹旅瀚 Tommy" />
+    <meta name="description" content="探索胡志明市的魅力！從法式殖民建築到繁華的現代商業區，品嚐越南地道美食，了解這座充滿活力的城市的歷史與文化，發現胡志明市的獨特風情。" />
+    <meta name="keywords" content="胡志明市旅遊, 胡志明市景點, 胡志明市美食, 胡志明市自由行, 胡志明市歷史, 西貢, 越南旅遊, 胡志明市商業區, 胡志明市文化, 越南美食" />
+    <title>Tommy 看世界 - 胡志明市</title>
+    <link rel="icon" href="網頁縮圖.ico" />
+    <style>
+      body {
+        font-family: Calibri, Arial, sans-serif; /* 首選 Calibri，次選 Arial */
+        margin: 0;
+        padding: 0;
+        overflow-x: hidden; /* 禁止水平滾動 */
+        background-color: #f4f4f9;
+        color: #333;
+      }
+
+      h1 {
+        font-size: 40px;
+        font-weight: bold;
+      }
+
+      h2 {
+        font-size: 32px;
+        font-weight: bold;
+        color: #2a90a7;
+        display: inline-block;
+        margin-bottom: 1rem; /* 縮小 h2 的底部邊距 */
+        background-color: #cee5e8;
+      }
+
+      h3 {
+        font-size: 26px;
+        margin: 0 0 1rem;
+        font-weight: bold;
+        text-decoration: underline; /* 加上底線 */
+      }
+
+      h4 {
+        font-size: 18px;
+        font-weight: normal;
+        line-height: 1.8;
+      }
+
+      h5 {
+        font-size: 16px;
+        font-weight: normal;
+        margin: 0;
+      }
+
+      h6 {
+        font-size: 10px;
+        color: #fff;
+        margin: 0;
+        text-align: center;
+        line-height: 50px; /* 高度對齊 */
+      }
+
+      nav {
+        background-color: #78bcc4;
+        display: flex;
+        justify-content: space-between; /* 保持分佈在兩側 */
+        width: calc(100% - 10rem); /* 與其他內容的邊界一致 */
+        padding: 0.5rem 5rem; /* 主導覽列的 padding 設置 */
+        position: fixed;
+        top: 0;
+        z-index: 1000;
+      }
+
+      .nav-left .logo img {
+        height: 50px; /* 控制 Logo 圖片的高度 */
+        transform: translateX(-1.5rem); /* 向右移動 2rem */
+      }
+
+      .nav-right {
+        display: flex;
+        align-items: center;
+        transform: translateX(2rem); /* 向右移動 2rem */
+      }
+
+      nav a {
+        color: #eff5f5;
+        text-decoration: none;
+        padding: 0.5rem 1rem;
+        margin: 0 0.5rem;
+        transition: transform 0.3s;
+      }
+
+      nav a:hover {
+        transform: translateY(-3px);
+      }
+
+      .dropdown {
+        position: relative;
+      }
+
+      .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #78bcc4;
+        min-width: 160px;
+        border-radius: 4px;
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        padding: 0.2rem 0;
+      }
+
+      .dropdown-content a {
+        color: #eff5f5;
+        display: block;
+        transition: transform 0.3s;
+        border-bottom: 1px solid #ddd;
+      }
+
+      .dropdown-content a:last-child {
+        border-bottom: none;
+      }
+
+      .dropdown-content a:hover {
+        transform: translateY(-3px);
+      }
+
+      .dropdown:hover .dropdown-content {
+        display: block;
+      }
+
+      .intro-section {
+        background-color: #eff5f5;
+        display: flex;
+        padding: 2rem;
+        margin-top: 60px; /* 根據導航列高度調整 */
+        justify-content: space-between;
+        align-items: flex-start;
+        width: 100%;
+        box-sizing: border-box; /* 包含 padding 在內 */
+        padding-left: 5rem;
+        padding-right: 5rem;
+      }
+
+      .intro-section h4 {
+        max-width: 700px;
+      }
+
+      .intro-section .left {
+        width: 60%;
+      }
+
+      .intro-section .right {
+        width: 40%;
+      }
+
+      .destination-section {
+        display: flex;
+        padding: 1rem 5%; /* 左右內間距為螢幕的10% */
+        background-color: white;
+      }
+
+      .destination-main {
+        width: 75%;
+        margin-right: 1.5rem; /* 增加右邊外邊距 */
+      }
+
+      .destination-sidebar {
+        width: 25%;
+        padding-left: 1.5rem; /* 增加左側內邊距 */
+        margin-top: 2rem; /* 向上或向下調整，負值表示向上 */
+      }
+
+      .sidebar-image-container {
+        margin-bottom: 1rem;
+        text-align: center; /* 確保圖片置中 */
+      }
+
+      .sidebar-image-container img {
+        height: 300px; /* 設置直式圖片的高度 */
+      }
+
+      .two-vertical-images {
+        display: flex; /* 彈性佈局，讓圖片並排 */
+        justify-content: space-between; /* 兩張圖片均勻分佈 */
+        gap: 2rem; /* 圖片之間的間距 */
+        margin-top: 2rem;
+        margin-bottom: 2rem; /* 與下方內容的距離 */
+      }
+
+      .two-vertical-images img {
+        width: calc(50% - 0.5rem); /* 每張圖片佔用容器的一半減去間距 */
+        text-align: center; /* 確保圖片置中 */
+        height: auto; /* 保持圖片的直式比例 */
+        object-fit: cover; /* 確保圖片內容適應容器 */
+      }
+
+      .recommendation-section {
+        margin-top: 1.5rem; /* 與上方文字的間距 */
+        text-align: center;
+        position: sticky;
+        top: 80px; /* 空出導覽列的高度，確保推薦區不被覆蓋 */
+        z-index: 10; /* 提高層級，避免被其他內容遮蓋 */
+      }
+
+      .recommendation-section h3 {
+        font-size: 18px;
+        font-weight: bold;
+        margin-bottom: 0.5rem; /* 與按鈕區的距離 */
+      }
+
+      .recommendation-buttons {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 0.5rem; /* 按鈕之間的間距 */
+      }
+
+      .recommendation-buttons button {
+        padding: 0.5rem 1rem;
+        font-size: 14px;
+        color: white;
+        background-color: #78bcc4;
+        border: none;
+        border-radius: 4px;
+        transition: transform 0.3s;
+        font-family: Arial, sans-serif;
+      }
+
+      .recommendation-buttons button:hover {
+        transform: translateY(-3px);
+      }
+
+      .contact-section {
+        padding: 2rem 5rem; /* 上下與左右間距 */
+        background-color: #eff5f5; /* 淺灰背景 */
+        text-align: center; /* 確保內容置中對齊 */
+      }
+
+      .contact-item h3 {
+        font-size: 18px; /* 調整標題字體大小 */
+        margin: 0; /* 移除多餘的間距 */
+        text-decoration: none; /* 移除底線 */
+      }
+
+      footer {
+        background-color: #000;
+        color: white;
+        height: 30px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      #expandable-menu {
+        position: fixed;
+        top: 70px; /* 與螢幕頂部的距離設為 60px */
+        right: 0;
+        height: calc(100% - 70px); /* 高度減去 60px，避免超出視窗 */
+        width: 395px; /* 目錄寬度與 sidebar 齊寬 */
+        transform: translateX(100%); /* 初始狀態：隱藏在右側 */
+        transition: transform 0.3s ease;
+        background-color: #f4f4f9; /* 與網站背景一致 */
+        z-index: 1000;
+      }
+
+      /* 收闔按鈕 */
+      #menu-toggle {
+        position: absolute;
+        top: 45%;
+        left: -40px; /* 調整按鈕的位置，適應按鈕變大後的寬度 */
+        transform: translateY(-50%);
+        width: 40px; /* 增大按鈕寬度 */
+        height: 80px; /* 增大按鈕高度 */
+        background-color: #78bcc4;
+        color: white;
+        border-radius: 4px;
+        display: flex;
+        justify-content: center; /* 水平居中 */
+        align-items: center; /* 垂直居中 */
+      }
+
+      #menu-toggle::after {
+        content: "目錄"; /* 在按鈕內顯示 "目錄" */
+        font-size: 17px;
+        color: white; /* 設定字體顏色為白色 */
+        writing-mode: vertical-rl; /* 使文字垂直排列 */
+      }
+
+      #menu-toggle:hover {
+        background-color: #78bcc4;
+      }
+
+      /* 目錄內容 */
+      #menu-content {
+        padding: 0.5rem 1rem;
+        overflow-y: auto;
+        height: 100%;
+      }
+
+      #menu-content h4 {
+        font-weight: bold;
+        margin-top: 0;
+      }
+
+      #menu-list {
+        list-style: none;
+        padding: 0;
+      }
+
+      #menu-list li {
+        margin-bottom: 0.5rem;
+      }
+
+      #menu-list a {
+        color: #2a90a7;
+        text-decoration: none;
+        transition: color 0.3s;
+      }
+
+      #menu-list a:hover {
+        color: #78bcc4;
+      }
+
+      #menu-list .sub-item {
+        margin-left: 1.5rem; /* 調整縮排距離 */
+        font-size: 0.9rem; /* 可選：調整子項目字體大小 */
+      }
+
+      /* 目錄展開狀態 */
+      #expandable-menu.open {
+        transform: translateX(0);
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <div class="nav-left">
+        <div class="logo">
+          <a href="首頁.html">
+            <img src="網站Logo.png" alt="網站 Logo" />
+          </a>
+        </div>
+      </div>
+      <div class="nav-right">
+        <a href="首頁.html">關於我</a>
+        <div class="dropdown">
+          <a>亞洲旅遊</a>
+          <div class="dropdown-content">
+            <a href="中國.html">中國</a>
+            <a href="新加坡.html">新加坡</a>
+            <a href="馬來西亞.html">馬來西亞</a>
+            <a href="泰國.html">泰國</a>
+            <a href="印尼.html">印尼</a>
+            <a href="越南.html">越南</a>
+          </div>
+        </div>
+        <div class="dropdown">
+          <a>歐洲旅遊</a>
+          <div class="dropdown-content">
+            <a href="英國.html">英國</a>
+            <a href="法國.html">法國</a>
+            <a href="荷蘭.html">荷蘭</a>
+            <a href="比利時.html">比利時</a>
+            <a href="盧森堡.html">盧森堡</a>
+            <a href="瑞士.html">瑞士</a>
+            <a href="摩納哥.html">摩納哥</a>
+            <a href="西班牙.html">西班牙</a>
+            <a href="葡萄牙.html">葡萄牙</a>
+            <a href="安道爾.html">安道爾</a>
+            <a href="丹麥.html">丹麥</a>
+            <a href="瑞典.html">瑞典</a>
+            <a href="波蘭.html">波蘭</a>
+          </div>
+        </div>
+        <div class="dropdown">
+          <a>美洲旅遊</a>
+          <div class="dropdown-content">
+            <a href="美國.html">美國</a>
+            <a href="加拿大.html">加拿大</a>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <div class="intro-section">
+      <div class="left">
+        <h1>Tommy 在胡志明市</h1>
+        <h4>
+          <b>胡志明市 (Ho Chi Minh City)</b>
+          又稱為西貢，是南北越統一前南越的首府，也是越南最大的城市。歷史可以追溯到 17 世紀，隨著法國殖民統治的到來，西貢逐漸發展成為法屬印度支那的行政中心，吸收了大量的法國文化元素，呈現出東西方融合風貌。在經歷了越戰的黑暗歲月後，1975 年 4 月 30 日西貢解放後正式更名為胡志明市，如今的胡志明市已經成為了越南最繁榮的城市，是工業、商貿和金融的中心。我特別喜歡胡志明市是因為她雖為都市但市區仍保有非常純樸的感覺，越南人民也都十分善良好客，物價也不高，十分適合放鬆旅遊。
+        </h4>
+      </div>
+      <div class="right">
+        <img src="越南照片\胡志明市\胡志明市_介紹.jpg" width="90%" height="350px" />
+      </div>
+    </div>
+
+    <div class="destination-section">
+      <div class="destination-main">
+        <h2>胡志明市交通</h2>
+        <h3>機場交通</h3>
+        <h4>
+          新山國際機場距離胡志明市區不遠，但由於交通狀況不佳所以開車也需要 30-40 分鐘，胡志明市沒有地鐵，從機場出行就直接叫 Grab 吧，非常便宜。
+        </h4>
+        <h3>市區交通</h3>
+        <h4>
+          胡志明市的景點相當集中，基本上遊客活動範圍都在第一郡，因此可以步行觀光，也可以叫 Grab。胡志明市的交通非常亂，機車非常多，過馬路的時候因為沒有紅綠燈，大家都是舉手示意自己要穿越馬路，不然可能永遠都過不去喔！
+        </h4>
+        <div style="text-align: center">
+          <img src="越南照片\胡志明市\胡志明市_交通.jpg" width="600px" />
+        </div>
+        <br /><br />
+        <h2>胡志明市住宿</h2>
+        <h4>
+          胡志明市的景點除了戰爭遺跡博物館在第三郡外，其他都在第一郡，因此如果追求方便的話可以選擇第一郡市中心的酒店，如果想省錢則可以看看第三郡的房間，也有許多不錯的選項。
+        </h4>
+        <div style="text-align: center">
+          <img src="越南照片\胡志明市\胡志明市_住宿.png" width="800px" />
+        </div>
+        <br /><br />
+        <h2>胡志明市景點</h2>
+        <h3>獨立宮 (Independence Palace)</h3>
+        <h4>
+          獨立宮又名統一宮，最早是南越政府的總統府，除了有中西合璧風格的宴會廳、起居室等等，在地下也有許多軍事情報相關的設施，充分展現了南北越分裂時期的緊張感，後來北越軍隊於 1975 年攻破獨立宮完成越南統一，因此獨立宮在越南歷史中有十分重要的意義，推薦喜歡歷史文化及軍事的人可以花上 2 ~ 3 個小時慢慢感受及欣賞。另外要特別注意的是<b>售票處是在靠近噴水池一側</b>，另一頭只能出場無法買票進場喔!
+        </h4>
+        <div style="text-align: center">
+          <img src="越南照片\胡志明市\HC1.jpg" width="800px" />
+        </div>
+        <h4>融合中西式建築風格的賓客廳</h4>
+        <div style="text-align: center">
+          <img src="越南照片\胡志明市\HC2.jpg" width="800px" />
+          <img src="越南照片\胡志明市\HC3.jpg" width="800px" />
+        </div>
+        <h4>地底下的畫風突變成非常緊張及肅殺</h4>
+        <div style="text-align: center">
+          <img src="越南照片\胡志明市\HC4.jpg" width="800px" />
+          <img src="越南照片\胡志明市\HC5.jpg" width="800px" />
+        </div>
+        <br /><br /><br />
+        <h3>紅教堂 (Notre Dame Cathedral of Saigon)</h3>
+        <h4>
+          紅教堂正式名稱為西貢聖母無原罪主教座堂，，是當地最具代表性的法式殖民建築，建於 1863 年至 1880 年間，由法國殖民政府所建，全由法國運來的紅磚砌成，歷經百年風雨依然色澤鮮明，教堂外觀雄偉對稱，擁有兩座高達 58 公尺的尖塔，頂端設有十字架，象徵天主教的信仰與力量。內部空間莊嚴寧靜，以哥德式風格為主，設有大型彩繪玻璃與聖母像，為信徒祈禱與旅人拍照的熱門地點，讓你有置身歐洲的錯覺，可惜我去的時候在大整修，不只裡面進不去外面還整個包起來...。
+        </h4>
+        <div style="text-align: center">
+          <img src="越南照片\胡志明市\HC6.jpg" width="600px" />
+        </div>
+        <br /><br /><br />
+        <h3>西貢中心郵政局 (Bưu điện trung tâm Sài Gòn)</h3>
+        <h4>
+          西貢中心郵政局與紅教堂相鄰，是由法國於 1886 年至 1891 年間興建，至 1892 年正式啟用。工程建築風格充滿法式風情，是法國殖民時期的第一座郵政局。現在除了郵局的功能之外，也身兼紀念品明信片販售處的功能，是許多觀光客來淘寶的地方。
+        </h4>
+        <div style="text-align: center">
+          <img src="越南照片\胡志明市\HC7.jpg" width="800px" />
+          <img src="越南照片\胡志明市\HC8.jpg" width="600px" />
+        </div>
+        <br /><br /><br />
+        <h3>胡志明市書街 (Đường sách Thành phố Hồ Chí Minh)</h3>
+        <h4>
+          書街位於紅教堂還有郵政總局旁，在胡志明的喧囂中猶如綠洲秘境般的存在，茂密的行道樹好似隔絕了嘈雜，短短的街上有書店、咖啡廳、文創商店，不少是半開放式座位，也有在街上擺攤的舊書販，營造悠閒的氣氛，現在是許多網美的打卡聖地。
+        </h4>
+        <div style="text-align: center">
+          <img src="越南照片\胡志明市\HC9.jpg" width="600px" />
+        </div>
+        <br /><br /><br />
+        <h3>胡志明市人民委員會大廳 (Ủy ban Nhân dân Thành phố Hồ Chí Minh)</h3>
+        <h4>
+          胡志明市人民委員會大廳是現在胡志明市委員會的辦公室，興建於 1902 年，並於 1908 年落成，建築風格深受法國風格影響。在大廳前的公園中擺放了胡志明的雕像，面朝著直通西貢河的 Đ. Nguyễn Huệ，是胡志明市著名的大街，經常舉辦不同的活動。人民委員會大廳在白天與夜晚看起來的感覺十分不同，晚間時分裝置燈則會開啟，別具另一番風味。
+        </h4>
+        <div style="text-align: center">
+          <img src="越南照片\胡志明市\HC10.jpg" width="800px" />
+          <img src="越南照片\胡志明市\HC11.jpg" width="600px" />
+        </div>
+        <br /><br /><br />
+        <h3>咖啡公寓 (Arabica)</h3>
+        <h4>
+          咖啡公寓可以說是胡志明市最文青的區域，老舊的建築物中隱藏許多特色咖啡廳，行程跑累了不妨上來休息一下，品嘗越南特色的咖啡，公寓外不同咖啡廳的招牌爭奇鬥艷也蔚為一景。
+        </h4>
+        <div style="text-align: center">
+          <img src="越南照片\胡志明市\HC12.jpg" width="600px" />
+        </div>
+        <br /><br /><br />
+        <h3>濱城市場 (Chợ Bến Thành)</h3>
+        <h4>
+          如果想要逛街或買伴手禮，像是果乾、咖啡或腰果等等，則絕對不能錯過這邊，除了伴手禮外也有熟食，小東西跟服飾可供選購。但要特別注意的是有些店家會拉高價格，所以請盡情的殺價或貨比三家，內部沒有冷氣也<b>可能有扒手</b>，貴重物品要稍微注意一下。
+        </h4>
+        <div style="text-align: center">
+          <img src="越南照片\胡志明市\HC13.jpg" width="800px" />
+        </div>
+        <br /><br /><br />
+        <h3>戰爭遺跡博物館 (Bảo tàng Chứng tích Chiến tranh)</h3>
+        <h4>
+          戰爭遺跡博物館是詳細介紹越南戰爭史的博物館，除了戶外展示了許多武器及模擬牢房，場館內也有許多照片去呈現當時戰爭的殘酷，慢慢閱讀文字的話大約需要 2 小時，敘述了美軍在越戰中的戰爭罪行。運用相當多的史料如新聞剪報，戰地記者的相片，以及口述歷史等，充分反應美軍的惡行以及越戰時及戰後對當地人的影響，從另一個角度再次去審視這段歷史。館內十分赤裸的展示戰爭對平民的傷害，並不適合小朋友，需要斟酌觀看。
+        </h4>
+        <div style="text-align: center">
+          <img src="越南照片\胡志明市\HC14.jpg" width="800px" />
+          <img src="越南照片\胡志明市\HC15.jpg" width="600px" />
+        </div>
+        <br /><br /><br />
+        <h3>裴援步行街 (Phố đi bộ Bùi Viện)</h3>
+        <h4>
+          裴援步行街酒吧夜店一條街，入夜之後是年輕人的天堂，各家都用動感的音樂、快閃瞎人的霓虹燈還有在桌邊小舞台上跳舞的舞者攬客，是個十分特別的體驗，但要注意自己的隨身物品，還有這條街價格不一定便宜要自己斟酌。<b>這一帶的店家音樂會放到快 3 點，所以選旅館請遠離這一帶</b>。
+        </h4>
+        <div style="text-align: center">
+          <img src="越南照片\胡志明市\HC16.jpg" width="800px" />
+          <img src="越南照片\胡志明市\HC17.jpg" width="600px" />
+        </div>
+        <br /><br /><br />
+        <h3>Bitexco Financial Tower</h3>
+        <h4>
+          Bitexco Financial Tower Bitexco 樓高 262 公尺共 68 層，於 2010 年落成啟用，建築靈感來自越南國花蓮花，外型優雅流線展現現代與傳統之美的結合，設有辦公室、購物商場、餐廳以及觀景台 Skydeck，位於 49 樓，可 360 度俯瞰胡志明市的壯麗市景與西貢河，特別引人注目的是 52 樓外突的直升機停機坪，成為建築的一大特色，有獨立的電梯可以直達頂樓的觀景台，推薦大家可以傍晚的時候上塔，可以一次欣賞白天、日落與夜景，夜景的部分超乎我期待的美，非常值得。
+        </h4>
+        <div style="text-align: center">
+          <img src="越南照片\胡志明市\HC18.jpg" width="600px" />
+          <img src="越南照片\胡志明市\HC19.jpg" width="800px" />
+          <img src="越南照片\胡志明市\HC20.jpg" width="600px" />
+          <img src="越南照片\胡志明市\HC21.jpg" width="800px" />
+        </div>
+        <br /><br /><br />
+        <h3>白滕碼頭公園 (Công viên Bến Bạch Đằng)</h3>
+        <h4>
+          白滕碼頭公園是許多當地人休閒娛樂的地方，可以欣賞第一郡經典的西貢河景，還有 landmark 81 建築群及守添二斜張橋的夜景，但是前往此處必須穿越沿河的 tôn đức thắng，下班時間的車潮相當可怕，感覺能過那條馬路你就能駕馭全世界的斑馬線了哈哈哈。
+        </h4>
+        <div style="text-align: center">
+          <img src="越南照片\胡志明市\HC22.jpg" width="800px" />
+        </div>
+        <br /><br />
+        <h2>胡志明市近郊景點</h2>
+        <h3>古芝地道 (Khu di tích lịch sử Địa đạo Củ Chi)</h3>
+        <h4>
+          總長約 250 公里的古芝地道，由無數條寬約 80 公分的地下通道交錯組成。古芝地道開始建造於法國殖民時期，越南農民為了抵抗法國殖民統治，以徒手或簡單器具挖掘了 20 多年。越南南北分裂時期，北越的游擊隊為了襲擊美軍不斷擴建，甚至被當成抵抗美國最重要的地下基地，除了可以實際走進狹窄的地道體驗之外，也展示了北越游擊隊如何在地道系統中生活、偽裝並抵抗美軍的攻擊，看完無不感嘆戰爭的殘酷及越南人的韌性，非常值得一訪。前往古芝地道可以參加 <a href="https://www.klook.com/zh-TW/activity/1471-cu-chi-tunnels-experience-ho-chi-minh-city/" target="_blank">klook 的半日團</a>
+          ，也配有解說讓你更能了解這段歷史。
+        </h4>
+        <div style="text-align: center">
+          <img src="越南照片\胡志明市\HC23.jpg" width="600px" />
+        </div>
+        <h4>
+          位於地下的伏擊口。
+        </h4>
+        <div style="text-align: center">
+          <img src="越南照片\胡志明市\HC24.jpg" width="800px" />
+          <img src="越南照片\胡志明市\HC25.jpg" width="600px" />
+          <img src="越南照片\胡志明市\HC26.jpg" width="600px" />
+        </div>
+        <br />
+        <h2>胡志明市美食</h2>
+        <h3>Phu Vuong Pho</h3>
+        <h4>
+          Phu Vuong Pho 從食物到裝潢都非常正宗的牛肉河粉，熱騰騰的生牛肉河粉加上一些檸檬汁及菩提葉，是在炎熱的天氣下最好的開胃方式，再配上一杯冰沙就更完美了，但在越南的河粉店要注意<b>店家附上的濕紙巾是要收費的</b>，記得不要隨意拆封使用喔!
+        </h4>
+        <div style="text-align: center">
+          <img src="越南照片\胡志明市\HC27.jpg" width="800px" />
+        </div>
+        <br /><br /><br />
+        <h3>Cocotte法式料理 (Cocotte Bến Thành)</h3>
+        <h4>
+          由於曾經被法國殖民，因此越南的法式料理也相當出名，而且相較於台灣可說是相當便宜，店內位置不多，所以建議要先在網上訂位以免要等很久。餐點的部分經典的洋蔥湯、烤田螺、油封鴨以及牛小排都表現不俗，不知道從何點起也有套餐提供選擇。
+        </h4>
+        <div class="two-vertical-images">
+          <img src="越南照片\胡志明市\HC28-1.jpg" />
+          <img src="越南照片\胡志明市\HC28-2.jpg" />
+        </div>
+        <div class="two-vertical-images">
+          <img src="越南照片\胡志明市\HC29-1.jpg" />
+          <img src="越南照片\胡志明市\HC29-2.jpg" />
+        </div>
+        <br /><br /><br />
+        <h3>Bếp Mẹ ỉn 胖媽廚房</h3>
+        <h4>
+          胖媽廚房在 Cocotte 法式料理的隔壁，是米其林推薦的越式傳統料理，口味手法都十分優秀，招牌的海鮮煎餅酥軟鬆，脆夾著大量蔬菜十分美味，另外點的滷肉是口味一般的好吃，加點蒜味炒飯鬆脆鹹香。尖峰時段需要排隊才能吃到，建議可以錯峰前往品嚐。
+        </h4>
+        <div style="text-align: center">
+          <img src="越南照片\胡志明市\HC30.jpg" width="800px" />
+        </div>
+        <div class="two-vertical-images">
+          <img src="越南照片\胡志明市\HC31-1.jpg" />
+          <img src="越南照片\胡志明市\HC31-2.jpg" />
+        </div>
+        <br /><br /><br />
+        <h3>Bánh Mì Huynh Hoa</h3>
+        <h4>
+          來越南肯定不能錯過越南法國麵包，Bánh Mì Huynh Hoa 是當地也非常受歡迎的一家，分為外賣店跟現場店，但要注意店內位置非常少，因此幾乎都是外帶。法國麵包的份量非常大，完全可以點一個對半切兩個人分，鵝肝醬糊上去完全沒有在手軟，再配上不同肉及蔬菜，幾乎可以把它當成一餐了。
+        </h4>
+        <div style="text-align: center">
+          <img src="越南照片\胡志明市\HC33.jpg" width="600px" />
+        </div>
+        <br /><br /><br />
+        <h3>Ngon Restaurant</h3>
+        <h4>
+          當地非常有名的網紅餐廳，裝潢及餐食較為高級，點的幾道菜表現也都蠻好的，但也許是因為太多人餐廳又大，因此上菜要等一下子，沒有訂位的話也需要在外等候，唯一美中不足的是餐廳內沒有冷氣，建議晚上再來光臨。
+        </h4>
+        <div class="two-vertical-images">
+          <img src="越南照片\胡志明市\HC34-1.jpg" />
+          <img src="越南照片\胡志明市\HC34-2.jpg" />
+        </div>
+        <div style="text-align: center">
+          <img src="越南照片\胡志明市\HC35-1.jpg" width="600px" />
+        </div>
+        <br /><br /><br />
+        <h3>鴉片工廠 (Bar Refinery)</h3>
+        <h4>
+          鴉片工廠是另一家有名的法式料理，相比於 Cocotte，這家的氣氛更典雅，店內的陳設彷彿讓你置身法式宮廷，屬於中價位的法餐，中午提供的 lunch set 十分划算，推薦大家可以中午前往。
+        </h4>
+        <div class="two-vertical-images">
+          <img src="越南照片\胡志明市\HC36-1.jpg" />
+          <img src="越南照片\胡志明市\HC36-2.jpg" />
+        </div>
+        <div class="two-vertical-images">
+          <img src="越南照片\胡志明市\HC37-1.jpg" />
+          <img src="越南照片\胡志明市\HC37-2.jpg" />
+        </div>
+        <br /><br /><br />
+        <h3>The Workshop Coffee</h3>
+        <h4>
+          作為越南重要的經濟作物之一，品嚐咖啡也是來越南非常重要的一環，這家位於市中心的咖啡廳除了文青的裝潢，也提供了不同種咖啡品種選擇，逛累了行程想要避暑喝一杯特色的越式咖啡的話十分推薦，這邊也是許多自由工作者出沒的地方。
+        </h4>
+        <div style="text-align: center">
+          <img src="越南照片\胡志明市\HC38.jpg" width="600px" />
+        </div>
+        <br /><br /><br />
+        <h3>The Alley Cocktail Bar & Kitchen</h3>
+        <h4>
+          The Alley Cocktail Bar & Kitchen 是隱藏於小巷中的調酒吧，店內偏昏暗氣氛很足，調酒的表現也很好，週末還有現場樂隊的演出，店內一處的地板下是透明的地下酒窖算是一大特色。
+        </h4>
+        <div style="text-align: center">
+          <img src="越南照片\胡志明市\HC39.jpg" width="600px" />
+          <img src="越南照片\胡志明市\HC40.jpg" width="600px" />
+        </div>
+        <br />
+      </div>
+      <div class="destination-sidebar">
+        <div class="sidebar-image-container">
+          <img src="側邊欄自我介紹.jpg" />
+        </div>
+        <h5>
+          Hi!
+          我是Tommy，我熱愛旅遊也喜歡藉由影像紀錄旅程中的點點滴滴，透過文字將我在旅途中的所見所聞分享給大家。旅行對我而言不只是吃吃喝喝，而是能在行萬里路間感受世界的脈動，體驗不同的文化，希望藉由我的分享能讓大家看到更多世界的美好。
+        </h5>
+        <br />
+        <h5>
+          想更了解我或與我聯絡:
+          <a
+            href="https://www.instagram.com/tommy_techvoyage/"
+            target="_blank"
+            style="color: inherit; text-decoration: underline"
+          >
+            <b>Instagram</b>
+          </a>
+        </h5>
+      </div>
+    </div>
+    <div class="contact-section">
+      <div class="contact-item">
+        <h3>
+          想更了解我或與我聯絡:
+          <a
+            href="https://www.instagram.com/tommy_techvoyage/"
+            target="_blank"
+            style="color: inherit; text-decoration: underline"
+          >
+            Instagram
+          </a>
+        </h3>
+      </div>
+    </div>
+    <footer>
+      <h6>COPYRIGHT © 2025 Tommy 看世界 All rights reserved.</h6>
+    </footer>
+    <div id="expandable-menu">
+      <div id="menu-toggle"></div>
+      <!-- 收闔按鈕 -->
+      <div id="menu-content">
+        <h4>目錄</h4>
+        <ul id="menu-list"></ul>
+      </div>
+    </div>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const menu = document.getElementById("expandable-menu");
+        const toggle = document.getElementById("menu-toggle");
+        const menuList = document.getElementById("menu-list");
+        const destinationMain = document.querySelector(".destination-main");
+
+        // 點擊按鈕切換目錄狀態
+        toggle.addEventListener("click", () => {
+          menu.classList.toggle("open");
+        });
+
+        // 從 destination-main 區域提取 h2 和 h3，動態生成目錄
+        const headings = destinationMain.querySelectorAll("h2, h3");
+        headings.forEach((heading, index) => {
+          // 確保每個 h2 和 h3 都有唯一的 id
+          if (!heading.id) {
+            heading.id = `heading-${index}`;
+          }
+
+          const listItem = document.createElement("li");
+          const link = document.createElement("a");
+          link.textContent = heading.textContent;
+          link.href = `#${heading.id}`;
+          listItem.appendChild(link);
+
+          // 為 h3 添加縮排樣式
+          if (heading.tagName.toLowerCase() === "h3") {
+            listItem.classList.add("sub-item");
+          }
+
+          menuList.appendChild(listItem);
+        });
+
+        // 滾動至目標位置並加上 75px 偏移
+        menuList.addEventListener("click", (event) => {
+          if (event.target.tagName === "A") {
+            event.preventDefault(); // 阻止預設行為
+
+            const targetId = event.target.getAttribute("href").substring(1); // 取得目標 ID
+            const targetElement = document.getElementById(targetId);
+
+            if (targetElement) {
+              // 計算目標元素的位置並加上 75px 偏移
+              const targetPosition =
+                targetElement.getBoundingClientRect().top + window.scrollY;
+              const offset = 75; // 偏移的距離
+              window.scrollTo({
+                top: targetPosition - offset,
+                behavior: "smooth", // 平滑滾動
+              });
+            }
+          }
+        });
+      });
+    </script>
+  </body>
+</html>

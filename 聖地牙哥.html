@@ -1,0 +1,764 @@
+<!DOCTYPE html>
+<html lang="zh-hant-TW">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="曹旅瀚 Tommy" />
+    <meta name="description" content="探索聖地牙哥的陽光與海灘！從聖地牙哥動物園到墨西哥美食，體驗這座加州城市的獨特魅力，享受悠閒的海岸生活與多樣化的文化活動。" />
+    <meta name="keywords" content="聖地牙哥旅遊, 聖地牙哥景點, 聖地牙哥動物園, 聖地牙哥海灘, 聖地牙哥美食, 聖地牙哥自由行, 加州旅遊, 聖地牙哥夜生活, 聖地牙哥家庭旅遊, 聖地牙哥水上活動" />
+    <title>Tommy 看世界 - 聖地牙哥</title>
+    <link rel="icon" href="網頁縮圖.ico" />
+    <style>
+      body {
+        font-family: Calibri, Arial, sans-serif; /* 首選 Calibri，次選 Arial */
+        margin: 0;
+        padding: 0;
+        overflow-x: hidden; /* 禁止水平滾動 */
+        background-color: #f4f4f9;
+        color: #333;
+      }
+
+      h1 {
+        font-size: 40px;
+        font-weight: bold;
+      }
+
+      h2 {
+        font-size: 32px;
+        font-weight: bold;
+        color: #2a90a7;
+        display: inline-block;
+        margin-bottom: 1rem; /* 縮小 h2 的底部邊距 */
+        background-color: #cee5e8;
+      }
+
+      h3 {
+        font-size: 26px;
+        margin: 0 0 1rem;
+        font-weight: bold;
+        text-decoration: underline; /* 加上底線 */
+      }
+
+      h4 {
+        font-size: 18px;
+        font-weight: normal;
+        line-height: 1.8;
+      }
+
+      h5 {
+        font-size: 16px;
+        font-weight: normal;
+        margin: 0;
+      }
+
+      h6 {
+        font-size: 10px;
+        color: #fff;
+        margin: 0;
+        text-align: center;
+        line-height: 50px; /* 高度對齊 */
+      }
+
+      nav {
+        background-color: #78bcc4;
+        display: flex;
+        justify-content: space-between; /* 保持分佈在兩側 */
+        width: calc(100% - 10rem); /* 與其他內容的邊界一致 */
+        padding: 0.5rem 5rem; /* 主導覽列的 padding 設置 */
+        position: fixed;
+        top: 0;
+        z-index: 1000;
+      }
+
+      .nav-left .logo img {
+        height: 50px; /* 控制 Logo 圖片的高度 */
+        transform: translateX(-1.5rem); /* 向右移動 2rem */
+      }
+
+      .nav-right {
+        display: flex;
+        align-items: center;
+        transform: translateX(2rem); /* 向右移動 2rem */
+      }
+
+      nav a {
+        color: #eff5f5;
+        text-decoration: none;
+        padding: 0.5rem 1rem;
+        margin: 0 0.5rem;
+        transition: transform 0.3s;
+      }
+
+      nav a:hover {
+        transform: translateY(-3px);
+      }
+
+      .dropdown {
+        position: relative;
+      }
+
+      .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #78bcc4;
+        min-width: 160px;
+        border-radius: 4px;
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        padding: 0.2rem 0;
+      }
+
+      .dropdown-content a {
+        color: #eff5f5;
+        display: block;
+        transition: transform 0.3s;
+        border-bottom: 1px solid #ddd;
+      }
+
+      .dropdown-content a:last-child {
+        border-bottom: none;
+      }
+
+      .dropdown-content a:hover {
+        transform: translateY(-3px);
+      }
+
+      .dropdown:hover .dropdown-content {
+        display: block;
+      }
+
+      .intro-section {
+        background-color: #eff5f5;
+        display: flex;
+        padding: 2rem;
+        margin-top: 60px; /* 根據導航列高度調整 */
+        justify-content: space-between;
+        align-items: flex-start;
+        width: 100%;
+        box-sizing: border-box; /* 包含 padding 在內 */
+        padding-left: 5rem;
+        padding-right: 5rem;
+      }
+
+      .intro-section h4 {
+        max-width: 700px;
+      }
+
+      .intro-section .left {
+        width: 60%;
+      }
+
+      .intro-section .right {
+        width: 40%;
+      }
+
+      .destination-section {
+        display: flex;
+        padding: 1rem 5%; /* 左右內間距為螢幕的10% */
+        background-color: white;
+      }
+
+      .destination-main {
+        width: 75%;
+        margin-right: 1.5rem; /* 增加右邊外邊距 */
+      }
+
+      .destination-sidebar {
+        width: 25%;
+        padding-left: 1.5rem; /* 增加左側內邊距 */
+        margin-top: 2rem; /* 向上或向下調整，負值表示向上 */
+      }
+
+      .sidebar-image-container {
+        margin-bottom: 1rem;
+        text-align: center; /* 確保圖片置中 */
+      }
+
+      .sidebar-image-container img {
+        height: 300px; /* 設置直式圖片的高度 */
+      }
+
+      .two-vertical-images {
+        display: flex; /* 彈性佈局，讓圖片並排 */
+        justify-content: space-between; /* 兩張圖片均勻分佈 */
+        gap: 2rem; /* 圖片之間的間距 */
+        margin-top: 2rem;
+        margin-bottom: 2rem; /* 與下方內容的距離 */
+      }
+
+      .two-vertical-images img {
+        width: calc(50% - 0.5rem); /* 每張圖片佔用容器的一半減去間距 */
+        text-align: center; /* 確保圖片置中 */
+        height: auto; /* 保持圖片的直式比例 */
+        object-fit: cover; /* 確保圖片內容適應容器 */
+      }
+
+      .recommendation-section {
+        margin-top: 1.5rem; /* 與上方文字的間距 */
+        text-align: center;
+        position: sticky;
+        top: 80px; /* 空出導覽列的高度，確保推薦區不被覆蓋 */
+        z-index: 10; /* 提高層級，避免被其他內容遮蓋 */
+      }
+
+      .recommendation-section h3 {
+        font-size: 18px;
+        font-weight: bold;
+        margin-bottom: 0.5rem; /* 與按鈕區的距離 */
+      }
+
+      .recommendation-buttons {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 0.5rem; /* 按鈕之間的間距 */
+      }
+
+      .recommendation-buttons button {
+        padding: 0.5rem 1rem;
+        font-size: 14px;
+        color: white;
+        background-color: #78bcc4;
+        border: none;
+        border-radius: 4px;
+        transition: transform 0.3s;
+        font-family: Arial, sans-serif;
+      }
+
+      .recommendation-buttons button:hover {
+        transform: translateY(-3px);
+      }
+
+      .contact-section {
+        padding: 2rem 5rem; /* 上下與左右間距 */
+        background-color: #eff5f5; /* 淺灰背景 */
+        text-align: center; /* 確保內容置中對齊 */
+      }
+
+      .contact-item h3 {
+        font-size: 18px; /* 調整標題字體大小 */
+        margin: 0; /* 移除多餘的間距 */
+        text-decoration: none; /* 移除底線 */
+      }
+
+      footer {
+        background-color: #000;
+        color: white;
+        height: 30px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      #expandable-menu {
+        position: fixed;
+        top: 70px; /* 與螢幕頂部的距離設為 60px */
+        right: 0;
+        height: calc(100% - 70px); /* 高度減去 60px，避免超出視窗 */
+        width: 395px; /* 目錄寬度與 sidebar 齊寬 */
+        transform: translateX(100%); /* 初始狀態：隱藏在右側 */
+        transition: transform 0.3s ease;
+        background-color: #f4f4f9; /* 與網站背景一致 */
+        z-index: 1000;
+      }
+
+      /* 收闔按鈕 */
+      #menu-toggle {
+        position: absolute;
+        top: 45%;
+        left: -40px; /* 調整按鈕的位置，適應按鈕變大後的寬度 */
+        transform: translateY(-50%);
+        width: 40px; /* 增大按鈕寬度 */
+        height: 80px; /* 增大按鈕高度 */
+        background-color: #78bcc4;
+        color: white;
+        border-radius: 4px;
+        display: flex;
+        justify-content: center; /* 水平居中 */
+        align-items: center; /* 垂直居中 */
+      }
+
+      #menu-toggle::after {
+        content: "目錄"; /* 在按鈕內顯示 "目錄" */
+        font-size: 17px;
+        color: white; /* 設定字體顏色為白色 */
+        writing-mode: vertical-rl; /* 使文字垂直排列 */
+      }
+
+      #menu-toggle:hover {
+        background-color: #78bcc4;
+      }
+
+      /* 目錄內容 */
+      #menu-content {
+        padding: 0.5rem 1rem;
+        overflow-y: auto;
+        height: 100%;
+      }
+
+      #menu-content h4 {
+        font-weight: bold;
+        margin-top: 0;
+      }
+
+      #menu-list {
+        list-style: none;
+        padding: 0;
+      }
+
+      #menu-list li {
+        margin-bottom: 0.5rem;
+      }
+
+      #menu-list a {
+        color: #2a90a7;
+        text-decoration: none;
+        transition: color 0.3s;
+      }
+
+      #menu-list a:hover {
+        color: #78bcc4;
+      }
+
+      #menu-list .sub-item {
+        margin-left: 1.5rem; /* 調整縮排距離 */
+        font-size: 0.9rem; /* 可選：調整子項目字體大小 */
+      }
+
+      /* 目錄展開狀態 */
+      #expandable-menu.open {
+        transform: translateX(0);
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <div class="nav-left">
+        <div class="logo">
+          <a href="首頁.html">
+            <img src="網站Logo.png" alt="網站 Logo" />
+          </a>
+        </div>
+      </div>
+      <div class="nav-right">
+        <a href="首頁.html">關於我</a>
+        <div class="dropdown">
+          <a>亞洲旅遊</a>
+          <div class="dropdown-content">
+            <a href="中國.html">中國</a>
+            <a href="新加坡.html">新加坡</a>
+            <a href="馬來西亞.html">馬來西亞</a>
+            <a href="泰國.html">泰國</a>
+            <a href="印尼.html">印尼</a>
+            <a href="越南.html">越南</a>
+          </div>
+        </div>
+        <div class="dropdown">
+          <a>歐洲旅遊</a>
+          <div class="dropdown-content">
+            <a href="英國.html">英國</a>
+            <a href="法國.html">法國</a>
+            <a href="荷蘭.html">荷蘭</a>
+            <a href="比利時.html">比利時</a>
+            <a href="盧森堡.html">盧森堡</a>
+            <a href="瑞士.html">瑞士</a>
+            <a href="摩納哥.html">摩納哥</a>
+            <a href="西班牙.html">西班牙</a>
+            <a href="葡萄牙.html">葡萄牙</a>
+            <a href="安道爾.html">安道爾</a>
+            <a href="丹麥.html">丹麥</a>
+            <a href="瑞典.html">瑞典</a>
+            <a href="波蘭.html">波蘭</a>
+          </div>
+        </div>
+        <div class="dropdown">
+          <a>美洲旅遊</a>
+          <div class="dropdown-content">
+            <a href="美國.html">美國</a>
+            <a href="加拿大.html">加拿大</a>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <div class="intro-section">
+      <div class="left">
+        <h1>Tommy 在聖地牙哥</h1>
+        <h4>
+          <b>聖地牙哥 (San Diego) </b
+          >是加州歷史最悠久的城市，深受西班牙和墨西哥文化影響，歷史可追溯至 1542年，當時西班牙探險家 Juan Rodríguez Cabrillo 抵達此地，在此建立了 聖地牙哥傳教站，是加州第一座傳教站，奠定了聖地牙哥作為西班牙殖民地的重要地位。1848 年美墨戰爭結束後，聖地牙哥正式成為美國的一部分，並迅速發展成為一個重要的港口城市，二戰期間聖地牙哥成為美國海軍的重要基地，軍事工業促進了當地經濟的繁榮。現代則以其科技產業、軍事基地、觀光業和生物醫學研究而聞名，並以其陽光、沙灘和悠閒的生活方式成為加州最受歡迎的居住地之一。
+        </h4>
+      </div>
+      <div class="right">
+        <img src="美國照片\聖地牙哥\聖地牙哥_介紹.jpg" width="90%" height="350px" />
+      </div>
+    </div>
+
+    <div class="destination-section">
+      <div class="destination-main">
+        <h2>聖地牙哥交通</h2>
+        <h3>機場交通</h3>
+        <h4>
+          從聖地牙哥國際機場可搭乘 992 路線巴士直達聖地牙哥市中心 Santa Fe，車程約 20 分鐘，可再轉乘其他交通工具。
+        </h4>
+        <h3>市區交通</h3>
+        <h4>
+          聖地牙哥也承襲了美西地區"沒車沒腳"的狀況，以觀光的角度還是最推薦直接租車，但若有預算考量可以選擇搭乘輕軌 (Trolley) 與公車遊覽，但公車班次偏少要特別留意車次。
+        </h4>
+        <div style="text-align: center">
+          <img src="美國照片\聖地牙哥\聖地牙哥_交通.png" width="800px" />
+        </div>
+        <br /><br />
+        <h2>聖地牙哥住宿</h2>
+        <h4>
+          選擇聖地牙哥的住宿可以用距離景點的距離作為考量，最推薦是住在靠近 Santa Fe 的沿海區域，有很多飯店選擇，因為比較裡面的城區在晚上治安相對較差，要避免晚上到 C Street 附近，會有比較多遊民聚集。
+        </h4>
+        <div style="text-align: center">
+          <img src="美國照片\聖地牙哥\聖地牙哥_住宿1.png" width="1000px" />
+          <img src="美國照片\聖地牙哥\聖地牙哥_住宿2.png" width="1000px" />
+        </div>
+        <br /><br />
+        <h2>聖地牙哥景點</h2>
+        <h3>中途島號航空母艦博物館 (USS Midway Museum)</h3>
+        <h4>
+          中途島號航空母艦博物館是聖地牙哥最具代表性的景點，博物館設立在中途島號航空母艦（USS Midway CV-41） 上，這艘航母曾是美國海軍史上服役時間最長的航空母艦，從 1945 年到 1992 年服役了近 47 年。這座航母參與過多場重大軍事行動，包括越戰與波斯灣戰爭，並曾作為美國海軍最大的航空母艦，如今中途島號航空母艦被改建為博物館，停泊在聖地牙哥港，讓遊客能夠親身探索這艘歷史悠久的軍艦。博物館內設有超過 60 個展區，包括飛行甲板、機庫、艦長室以及艦員生活區，展示了美軍航母的運作方式與艦上生活，甲板上還展示了 30 多架退役的軍機，其中包括 F-14 戰鬥機、A-6 攻擊機和 SBD 無畏式轟炸機等經典機型。
+        </h4>
+        <div style="text-align: center">
+          <img src="美國照片\聖地牙哥\SD1.jpg" width="800px" />
+          <img src="美國照片\聖地牙哥\SD2.jpg" width="800px" />
+          <img src="美國照片\聖地牙哥\SD3.jpg" width="800px" />
+          <img src="美國照片\聖地牙哥\SD4.jpg" width="800px" />
+          <img src="美國照片\聖地牙哥\SD5.jpg" width="800px" />
+          <img src="美國照片\聖地牙哥\SD6.jpg" width="800px" />
+          <img src="美國照片/聖地牙哥/SD7.jpg" width="600px" />
+          <img src="美國照片/聖地牙哥/SD8.jpg" width="600px" />
+        </div>       
+        <br /><br /><br />
+        <h3>海港村 (Seaport Village)</h3>
+        <h4>
+          海港村位於聖地牙哥灣，於 1980 年開幕，以其西班牙殖民風格與維多利亞風格建築營造出獨特的氛圍，讓遊客彷彿走進一座寧靜的海濱小鎮，有許多特色店鋪，販售手工藝品、紀念品、珠寶和藝術品，還可以在海邊的露天咖啡座或餐廳享受美食，欣賞聖地牙哥灣的美麗景色。熱門景點之一是 Seaport Village 旋轉木馬，建於 1895 年，是當地的歷史性地標之一，還經常舉辦現場音樂表演、街頭藝人秀和季節性活動。
+        </h4>
+        <div style="text-align: center">
+          <img src="美國照片\聖地牙哥\SD9.jpg" width="800px" />
+        </div>
+        <br /><br /><br />
+        <h3>Gaslamp Quarter</h3>
+        <h4>
+          Gaslamp Quarter 是聖地牙哥最具歷史與活力的社區，以其維多利亞時代建築、繁華的夜生活和多元化的餐飲選擇而聞名，佔地 16 個街區，擁有超過 100 家餐廳、酒吧、夜店、藝廊和精品店。煤氣燈區的歷史可追溯至 19 世紀末，當時該區曾是聖地牙哥的商業與社交中心，但後來一度衰落，直到 1980 年代，市政府開始進行大規模復興計畫，保留了原有的維多利亞建築，並發展成為現代化的娛樂與文化區，Gaslamp Quarter 已成為聖地牙哥國際動漫展和各類大型活動的重要地點，該區緊鄰 Petco Park（聖地牙哥教士隊主場），使其成為體育迷的熱門聚集地。
+        </h4>
+        <div style="text-align: center">
+          <img src="美國照片\聖地牙哥\SD10.jpg" width="800px" />
+        </div>
+        <br /><br /><br />
+        <h3>Little Italy</h3>
+        <h4>
+          Little Italy 位於市中心的北端，曾是 19 世紀末至 20 世紀中葉聖地牙哥的漁業中心，聚集了大量義大利移民，
+          特別是來自西西里島的漁民，今天的 Little Italy 已發展成為一個繁榮的文化與美食勝地，擁有高評價的義大利餐廳、咖啡館、
+          酒吧和時尚精品店，還有許多義式咖啡館。Little Italy 的地標包括 Piazza della Famiglia，是一個開放式的社交空間，經常舉辦現場音樂和社區活動，每週六舉辦的 Little Italy Mercato Farmers’ Market 是當地最受歡迎的農夫市集，販售新鮮農產品、手工藝品和美食。
+        </h4>
+        <div style="text-align: center">
+          <img src="美國照片/聖地牙哥/SD11.jpg" width="600px" />
+        </div>
+        <br /><br /><br />
+        <h3>Sunset Cliffs</h3>
+        <h4>
+          Sunset Cliffs 以其壯觀的懸崖景觀、驚艷的日落和原始的自然美景而聞名，位於 Point Loma 社區沿岸，擁有崎嶇的懸崖、天然洞穴和壯麗的太平洋景色，沿著海岸線延伸，提供許多徒步路線和觀景點，欣賞海浪拍打岩石的壯麗景象，或在退潮時探索隱藏的海蝕洞與潮池，也是衝浪愛好者的熱門地點。
+        </h4>
+        <div style="text-align: center">
+          <img src="美國照片/聖地牙哥/SD12.jpg" width="600px" />
+          <img src="美國照片/聖地牙哥/SD13.jpg" width="600px" />
+          <img src="美國照片/聖地牙哥/SD14.jpg" width="800px" />
+        </div>
+        <br /><br /><br />
+        <h3>Centennial Park</h3>
+        <h4>
+          Centennial Park 是科羅納多島 (Coronado Island) 上的一座公園，位於渡輪碼頭附近，擁有絕佳的視角，可俯瞰聖地牙哥灣，並欣賞聖地牙哥市中心的美麗天際線。公園原址曾是 1886 年科羅納多渡輪正式啟用的地點，特別適合野餐、散步、騎自行車或簡單地放鬆欣賞美景，公園內有綠意盎然的草坪、長椅以及一條沿著海岸線延伸的步道，提供了完美的戶外活動空間。
+        </h4>
+        <div style="text-align: center">
+          <img src="美國照片\聖地牙哥\SD15.jpg" width="800px" />
+        </div>
+        <br /><br /><br />
+        <h3>The Plaza at the Border</h3>
+        <h4>
+          The Plaza at the Border 是位於美墨邊境的一座購物中心，距離美國與墨西哥的聖伊西德羅過境點只有幾分鐘的步行距離。這裡是一個重要的購物區，吸引來自美墨兩地的消費者，購物中心擁有眾多知名品牌店鋪，包括時尚服飾、鞋類、運動用品和電子產品，適合各類購物需求，對墨西哥遊客而言是一個理想的購物地點，許多顧客在進出美國時，會順道在此購物或休息，加上附近有Las Americas Premium Outlets 這樣的大型折扣購物中心，使這個區域成為聖地牙哥最受歡迎的購物區。
+        </h4>
+        <div style="text-align: center">
+          <img src="美國照片\聖地牙哥\SD16.jpg" width="600px" />
+          <img src="美國照片\聖地牙哥\SD17.jpg" width="600px" />
+        </div>
+        <h4>大名鼎鼎的川普美墨邊境高牆，另外一頭建築物密集的就是墨西哥的提華納了。</h4>
+        <div style="text-align: center">
+          <img src="美國照片\聖地牙哥\SD18.jpg" width="800px" />
+          <img src="美國照片\聖地牙哥\SD19.jpg" width="800px" />
+          <img src="美國照片\聖地牙哥\SD20.jpg" width="800px" />
+        </div>
+        <br /><br /><br />
+        <h3>巴爾波公園 (Balboa Park)</h3>
+        <h4>
+          巴爾波公園是美國最大的都市文化公園之一，成立於 1868 年，並於 1915 年的巴拿馬 - 加利福尼亞博覽會上正式亮相，以慶祝巴拿馬運河的開通，
+          因其西班牙殖民復興建築風格和美麗的花園聞名，巴爾波公園擁有 17 座博物館，涵蓋藝術、科學、歷史等多個領域，
+          其中包括聖地牙哥藝術博物館 (San Diego Museum of Art）、航空與太空博物館 (San Diego Air & Space Museum) 
+          和自然歷史博物館 (San Diego Natural History Museum)，聖地牙哥動物園 (San Diego Zoo) 也位於公園內，還有數個表演藝術場館，
+          如舊環球劇院（Old Globe Theatre），定期舉辦莎士比亞戲劇和其他演出，公園的日本友誼花園（Japanese Friendship Garden）也是遊客喜愛的景點。
+        </h4>
+        <div style="text-align: center">
+          <img src="美國照片\聖地牙哥\SD21.jpg" width="600px" />
+          <img src="美國照片\聖地牙哥\SD22.jpg" width="800px" />
+          <img src="美國照片\聖地牙哥\SD23.jpg" width="800px" />
+        </div>
+        <br /><br /><br />
+        <h3>加州大學聖地牙哥分校 (University of California San Diego)</h3>
+        <h4>
+          加州大學聖地牙哥分校（UCSD） 是美國頂尖的公立研究型大學之一，位於聖地牙哥的 La Jolla 地區，成立於 1960 年，是加州大學系統（UC 系統） 的 10 所分校之一，以其強大的科研實力、創新精神和卓越的學術表現而聞名，UCSD 在工程、醫學、海洋科學、人工智慧和生物科技等領域具有世界級的聲譽，尤其是其醫學院和工程學院長期位居全美前列，UCSD 也是斯克里普斯海洋研究所的所在地，是全球最重要的海洋與氣候科學機構之一，校園內擁有許多標誌性建築，如獨特的吉塞爾圖書館（Geisel Library），以其未來感十足的設計成為學校的象徵。
+        </h4>
+        <div style="text-align: center">
+          <img src="美國照片\聖地牙哥\SD24.jpg" width="800px" />
+          <img src="美國照片\聖地牙哥\SD25.jpg" width="800px" />
+          <img src="美國照片\聖地牙哥\SD26.jpg" width="800px" />
+        </div>
+        <br /><br /><br />
+        <h3>Children’s Pool La Jolla</h3>
+        <h4>
+          Children’s Pool La Jolla 以其寧靜的海灣、壯麗的景色和野生動物觀賞機會聞名，位於 La Jolla 海岸，由著名慈善家艾倫·斯克里普斯於 1931 年捐贈建造，原本是為了給孩子們提供一個安全的游泳區，因此得名「兒童池」，海灣被人工海堤保護，減少了海浪的衝擊，使其成為理想的游泳地點，隨著時間推移成為了海豹和海獅的棲息地，經常聚集在沙灘上曬太陽或在水中嬉戲，由於野生動物的保護需求，每年 12 月至 5 月是海豹繁殖季節，此時海灘會封閉以保護新生幼崽。
+        </h4>
+        <div style="text-align: center">
+          <img src="美國照片\聖地牙哥\SD27.jpg" width="600px" />
+          <img src="美國照片\聖地牙哥\SD28.jpg" width="800px" />
+        </div>
+        <br /><br /><br />
+        <h3>La Jolla Cove</h3>
+        <h4>
+          La Jolla Cove 以清澈的海水、壯麗的懸崖和豐富的海洋生態聞名，屬於拉荷亞海洋保護區，禁止捕魚和採集海洋生物，因此擁有豐富的海洋生態系統，La Jolla Cove 周圍經常可見海豹、海獅和加州加拉帕戈斯鰩魚，救生員也會提醒遊客保持安全距離，避免干擾野生動物。
+        </h4>
+        <div style="text-align: center">
+          <img src="美國照片\聖地牙哥\SD29.jpg" width="600px" />
+          <img src="美國照片\聖地牙哥\SD30.jpg" width="600px" />
+          <img src="美國照片\聖地牙哥\SD31.jpg" width="600px" />
+          <img src="美國照片\聖地牙哥\SD32.jpg" width="600px" />
+          <img src="美國照片\聖地牙哥\SD33.jpg" width="800px" />
+          <img src="美國照片\聖地牙哥\SD34.jpg" width="800px" />
+        </div>
+        <br /><br /><br />
+        <h3>La Jolla Shores Beach</h3>
+        <h4>
+          La Jolla Shores Beach 以寬廣的沙灘、溫和的海浪和豐富的水上活動聞名，適合家庭遊玩、游泳、衝浪和潛水，鄰近拉荷亞海洋生態保護區，擁有豐富的海洋生態，特別適合新手衝浪者和浮潛愛好者，因為這裡的海浪較溫和水質清澈，許多潛水員和皮划艇愛好者也會從這裡出發探索海底洞穴、海草床和野生動物。
+        </h4>
+        <div style="text-align: center">
+          <img src="美國照片\聖地牙哥\SD35.jpg" width="800px" />
+          <img src="美國照片\聖地牙哥\SD36.jpg" width="800px" />
+          <img src="美國照片\聖地牙哥\SD37.jpg" width="800px" />
+        </div>
+        <br /><br /><br />
+        <h3>UCSD Scripps Pier</h3>
+        <h4>
+          UCSD Scripps Pier 是加州大學聖地牙哥分校斯克里普斯海洋研究所（Scripps Institution of Oceanography） 旗下的重要海洋研究設施，位於 La Jolla 海岸，全名為埃倫·布朗寧·斯克里普斯紀念碼頭（Ellen Browning Scripps Memorial Pier），是全球最先進的海洋科學研究碼頭，建於 1916 年，並於 1988 年進行重建，長約 330 米，是 UCSD 進行海洋學、氣候變遷和海洋生物研究 的重要基地，研究人員在這裡進行水質監測、潮汐研究、海洋生物觀察和氣象數據收集，其數據對全球海洋科學研究具有重大價值。此處也是看夕陽的熱門景點，非常推薦日落時分前來欣賞夕陽。
+        </h4>
+        <div style="text-align: center">
+          <img src="美國照片\聖地牙哥\SD38.jpg" width="600px" />
+          <img src="美國照片\聖地牙哥\SD39.jpg" width="600px" />
+          <img src="美國照片\聖地牙哥\SD40.jpg" width="800px" />
+        </div>
+        <br /><br />
+        <h2>聖地牙哥近郊景點</h2>
+        <h3>Potato Chip Rock</h3>
+        <h4>
+          Potato Chip Rock 位於伍德森山山頂，因其薄而尖的外觀，形似一片懸空的洋芋片而得名，許多登山者慕名前來，
+          在岩石上擺出驚險的拍照姿勢，使其成為社群媒體上的熱門打卡地點。通往Potato Chip Rock 的健行路線主要有兩條：
+          最受歡迎的是從 Lake Poway 出發的約 13 公里）往返路線，適合中級至高級健行者；另一條較短但更陡峭的路線則是從 Mt. Woodson Road 側進入，約 6.4 公里往返。由於步道上幾乎沒有遮蔭，建議登山者攜帶足夠的水並選擇清晨或傍晚時段前往，以避免高溫。
+        </h4>
+        <div style="text-align: center">
+          <img src="美國照片\聖地牙哥\SD41.jpg" width="800px" />
+          <img src="美國照片\聖地牙哥\SD42.jpg" width="800px" />
+          <img src="美國照片\聖地牙哥\SD43.jpg" width="800px" />
+        </div>
+        <br /><br /><br />
+        <h3>Lake Poway</h3>
+        <h4>
+          Lake Poway 位於波威市的山丘之中，不僅是當地的水源保護區，也是一個適合健行、釣魚、野餐和划船的多功能公園。釣魚和划船是 Lake Poway 的亮點，湖中有鱒魚、鯉魚、鯰魚和藍鰓魚，每年都會進行魚類補充放養。遊客可以自備釣具或在湖邊租借釣竿，湖區提供獨木舟、腳踏船和電動船租賃，讓人們可以在湖面上悠閒享受風景。
+        </h4>
+        <div style="text-align: center">
+          <img src="美國照片\聖地牙哥\SD44.jpg" width="800px" />
+          <img src="美國照片\聖地牙哥\SD45.jpg" width="800px" />
+        </div>
+        <br /><br />
+        <h2>聖地牙哥美食</h2>
+        <h3>Phil’s BBQ</h3>
+        <h4>
+          Phil’s BBQ 是聖地牙哥最受歡迎的燒烤餐廳，自 1998 年開業以來，以獨特的燒烤醬汁和入味多汁的烤肉而聞名，最受歡迎的菜色包括BBQ 豬肋排、燒烤半雞以及手撕豬肉三明治，搭配炸洋蔥圈、馬鈴薯泥或奶油玉米，風味更佳。Phil’s BBQ 採用慢火燻烤，並刷上特製醬料，讓肉質鮮嫩、外皮焦香。餐廳氛圍輕鬆，適合家庭聚餐或朋友聚會。
+        </h4>
+        <div style="text-align: center">
+          <img src="美國照片\聖地牙哥\SD46.jpg" width="600px" />
+          <img src="美國照片\聖地牙哥\SD47.jpg" width="600px" />
+        </div>
+        <br /><br /><br />
+        <h3>Breakfast Republic</h3>
+        <h4>
+          Breakfast Republic 以創意料理和豐富多樣的菜單聞名，提供各種獨特的早午餐選擇，包括紅絲絨煎餅、龍蝦班尼迪克蛋和培根炒飯，特製咖啡和各式晨間雞尾酒（如血腥瑪麗 Bloody Mary）也廣受好評。
+        </h4>
+        <div style="text-align: center">
+          <img src="美國照片\聖地牙哥\SD48.jpg" width="600px" />
+        </div>
+        <br /><br /><br />
+        <h3>Buon Appetito Restaurant</h3>
+        <h4>
+          Buon Appetito Restaurant 是小義大利區備受推崇的義式餐廳，以道地的義大利料理和溫馨氛圍聞名，招牌菜包括自製海鮮意大利麵 Frutti di Mare、松露奶油醬義大利餃和經典炭烤牛排，再搭配精選義大利葡萄酒，他們的提拉米蘇也是必嚐美食，餐廳內部裝潢溫馨典雅，營造出家一般的感覺，並提供室內與露天座位，適合情侶約會、家庭聚餐或朋友聚會。
+        </h4>
+        <div style="text-align: center">
+          <img src="美國照片\聖地牙哥\SD49.jpg" width="600px" />
+          <img src="美國照片\聖地牙哥\SD50.jpg" width="600px" />
+        </div>
+        <br /><br /><br />
+        <h3>The Taco Stand</h3>
+        <h4>
+          The Taco Stand 以正宗的塔可和新鮮手工製作的玉米餅聞名，餐廳靈感來自提華納的傳統塔可攤，致力於提供道地又高品質的墨西哥風味美食，招牌菜包括牧場烤肉塔可、炸魚塔可和燉牛肉塔可，搭配新鮮酪梨醬、自製莎莎醬和手工玉米餅，他們的墨西哥玉米、墨西哥燉牛肉薯條 和 自製冰淇淋吉拿棒也深受食客喜愛。
+        </h4>
+        <div style="text-align: center">
+          <img src="美國照片\聖地牙哥\SD51.jpg" width="600px" />
+        </div>
+        <br /><br /><br />
+        <h3>Regents Pizzeria</h3>
+        <h4>
+          Regents Pizzeria 是聖地牙哥知名的披薩店，以芝加哥深盤披薩和紐約風格披薩聞名，強調新鮮手工製作的麵團、自製醬料和高品質食材，人氣菜單包括經典瑪格麗特披薩、肉食愛好者披薩以及招牌白醬菠菜蘑菇披薩，還提供義大利麵、熱壓三明治、翅膀和精選手工精釀啤酒，適合搭配美食享用。
+        </h4>
+        <div style="text-align: center">
+          <img src="美國照片\聖地牙哥\SD52.jpg" width="600px" />
+          <img src="美國照片\聖地牙哥\SD53.jpg" width="600px" />
+        </div>
+        <br /><br /><br />
+        <h3>Craft & Commerce</h3>
+        <h4>
+          Craft & Commerce 位於 Little Italy 區，融合了懷舊與現代風格，店內裝飾有書籍、標本藝術與工業風元素，營造出獨特的用餐氛圍。Craft & Commerce 以創意手工調酒 聞名，如 Smoke & Mirrors（煙燻威士忌調酒）和 Batida Rosa（椰奶水果雞尾酒），也提供高品質的美式料理，如炭烤漢堡、燉牛頰肉、香脆炸雞等，搭配精選手工啤酒與葡萄酒，提升用餐體驗。
+        </h4>
+        <div style="text-align: center">
+          <img src="美國照片\聖地牙哥\SD54.jpg" width="600px" />
+        </div>
+        <br />
+        <br />
+      </div>
+      <div class="destination-sidebar">
+        <div class="sidebar-image-container">
+          <img src="側邊欄自我介紹.jpg" />
+        </div>
+        <h5>
+          Hi!
+          我是Tommy，我熱愛旅遊也喜歡藉由影像紀錄旅程中的點點滴滴，透過文字將我在旅途中的所見所聞分享給大家。旅行對我而言不只是吃吃喝喝，而是能在行萬里路間感受世界的脈動，體驗不同的文化，希望藉由我的分享能讓大家看到更多世界的美好。
+        </h5>
+        <br />
+        <h5>
+          想更了解我或與我聯絡:
+          <a
+            href="https://www.instagram.com/tommy_techvoyage/"
+            target="_blank"
+            style="color: inherit; text-decoration: underline"
+          >
+            <b>Instagram</b>
+          </a>
+        </h5>
+        <div class="recommendation-section">
+          <h3>其他美國旅遊目的地</h3>
+          <div class="recommendation-buttons">
+            <a href="舊金山.html">
+              <button><h5>舊金山</h5></button>
+            </a>
+            <a href="矽谷.html">
+              <button><h5>矽谷</h5></button>
+            </a>
+            <a href="洛杉磯.html">
+              <button><h5>洛杉磯</h5></button>
+            </a>
+            <a href="波士頓.html">
+              <button><h5>波士頓</h5></button>
+            </a>
+            <a href="紐約.html">
+              <button><h5>紐約</h5></button>
+            </a>
+            <a href="華盛頓DC.html">
+              <button><h5>華盛頓DC</h5></button>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="contact-section">
+      <div class="contact-item">
+        <h3>
+          想更了解我或與我聯絡:
+          <a
+            href="https://www.instagram.com/tommy_techvoyage/"
+            target="_blank"
+            style="color: inherit; text-decoration: underline"
+          >
+            Instagram
+          </a>
+        </h3>
+      </div>
+    </div>
+    <footer>
+      <h6>COPYRIGHT © 2025 Tommy 看世界 All rights reserved.</h6>
+    </footer>
+    <div id="expandable-menu">
+      <div id="menu-toggle"></div>
+      <!-- 收闔按鈕 -->
+      <div id="menu-content">
+        <h4>目錄</h4>
+        <ul id="menu-list"></ul>
+      </div>
+    </div>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const menu = document.getElementById("expandable-menu");
+        const toggle = document.getElementById("menu-toggle");
+        const menuList = document.getElementById("menu-list");
+        const destinationMain = document.querySelector(".destination-main");
+
+        // 點擊按鈕切換目錄狀態
+        toggle.addEventListener("click", () => {
+          menu.classList.toggle("open");
+        });
+
+        // 從 destination-main 區域提取 h2 和 h3，動態生成目錄
+        const headings = destinationMain.querySelectorAll("h2, h3");
+        headings.forEach((heading, index) => {
+          // 確保每個 h2 和 h3 都有唯一的 id
+          if (!heading.id) {
+            heading.id = `heading-${index}`;
+          }
+
+          const listItem = document.createElement("li");
+          const link = document.createElement("a");
+          link.textContent = heading.textContent;
+          link.href = `#${heading.id}`;
+          listItem.appendChild(link);
+
+          // 為 h3 添加縮排樣式
+          if (heading.tagName.toLowerCase() === "h3") {
+            listItem.classList.add("sub-item");
+          }
+
+          menuList.appendChild(listItem);
+        });
+
+        // 滾動至目標位置並加上 75px 偏移
+        menuList.addEventListener("click", (event) => {
+          if (event.target.tagName === "A") {
+            event.preventDefault(); // 阻止預設行為
+
+            const targetId = event.target.getAttribute("href").substring(1); // 取得目標 ID
+            const targetElement = document.getElementById(targetId);
+
+            if (targetElement) {
+              // 計算目標元素的位置並加上 75px 偏移
+              const targetPosition =
+                targetElement.getBoundingClientRect().top + window.scrollY;
+              const offset = 75; // 偏移的距離
+              window.scrollTo({
+                top: targetPosition - offset,
+                behavior: "smooth", // 平滑滾動
+              });
+            }
+          }
+        });
+      });
+    </script>
+  </body>
+</html>

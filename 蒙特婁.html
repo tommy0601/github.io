@@ -1,0 +1,730 @@
+<!DOCTYPE html>
+<html lang="zh-hant-TW">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="曹旅瀚 Tommy" />
+    <meta name="description" content="探索蒙特婁的法式魅力與多元文化！從迷人的舊城區到現代藝術氛圍，體驗這座城市的美食、音樂和獨特的生活方式，感受蒙特婁的獨特魅力。" />
+    <meta name="keywords" content="蒙特婁旅遊, 蒙特婁景點, 蒙特婁美食, 蒙特婁舊城區, 蒙特婁文化, 蒙特婁博物館, 蒙特婁音樂, 蒙特婁自由行, 蒙特婁藝術, 蒙特婁歷史" />
+    <title>Tommy 看世界 - 蒙特婁</title>
+    <link rel="icon" href="網頁縮圖.ico" />
+    <style>
+      body {
+        font-family: Calibri, Arial, sans-serif; /* 首選 Calibri，次選 Arial */
+        margin: 0;
+        padding: 0;
+        overflow-x: hidden; /* 禁止水平滾動 */
+        background-color: #f4f4f9;
+        color: #333;
+      }
+
+      h1 {
+        font-size: 40px;
+        font-weight: bold;
+      }
+
+      h2 {
+        font-size: 32px;
+        font-weight: bold;
+        color: #2a90a7;
+        display: inline-block;
+        margin-bottom: 1rem; /* 縮小 h2 的底部邊距 */
+        background-color: #cee5e8;
+      }
+
+      h3 {
+        font-size: 26px;
+        margin: 0 0 1rem;
+        font-weight: bold;
+        text-decoration: underline; /* 加上底線 */
+      }
+
+      h4 {
+        font-size: 18px;
+        font-weight: normal;
+        line-height: 1.8;
+      }
+
+      h5 {
+        font-size: 16px;
+        font-weight: normal;
+        margin: 0;
+      }
+
+      h6 {
+        font-size: 10px;
+        color: #fff;
+        margin: 0;
+        text-align: center;
+        line-height: 50px; /* 高度對齊 */
+      }
+
+      nav {
+        background-color: #78bcc4;
+        display: flex;
+        justify-content: space-between; /* 保持分佈在兩側 */
+        width: calc(100% - 10rem); /* 與其他內容的邊界一致 */
+        padding: 0.5rem 5rem; /* 主導覽列的 padding 設置 */
+        position: fixed;
+        top: 0;
+        z-index: 1000;
+      }
+
+      .nav-left .logo img {
+        height: 50px; /* 控制 Logo 圖片的高度 */
+        transform: translateX(-1.5rem); /* 向右移動 2rem */
+      }
+
+      .nav-right {
+        display: flex;
+        align-items: center;
+        transform: translateX(2rem); /* 向右移動 2rem */
+      }
+
+      nav a {
+        color: #eff5f5;
+        text-decoration: none;
+        padding: 0.5rem 1rem;
+        margin: 0 0.5rem;
+        transition: transform 0.3s;
+      }
+
+      nav a:hover {
+        transform: translateY(-3px);
+      }
+
+      .dropdown {
+        position: relative;
+      }
+
+      .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #78bcc4;
+        min-width: 160px;
+        border-radius: 4px;
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        padding: 0.2rem 0;
+      }
+
+      .dropdown-content a {
+        color: #eff5f5;
+        display: block;
+        transition: transform 0.3s;
+        border-bottom: 1px solid #ddd;
+      }
+
+      .dropdown-content a:last-child {
+        border-bottom: none;
+      }
+
+      .dropdown-content a:hover {
+        transform: translateY(-3px);
+      }
+
+      .dropdown:hover .dropdown-content {
+        display: block;
+      }
+
+      .intro-section {
+        background-color: #eff5f5;
+        display: flex;
+        padding: 2rem;
+        margin-top: 60px; /* 根據導航列高度調整 */
+        justify-content: space-between;
+        align-items: flex-start;
+        width: 100%;
+        box-sizing: border-box; /* 包含 padding 在內 */
+        padding-left: 5rem;
+        padding-right: 5rem;
+      }
+
+      .intro-section h4 {
+        max-width: 700px;
+      }
+
+      .intro-section .left {
+        width: 60%;
+      }
+
+      .intro-section .right {
+        width: 40%;
+      }
+
+      .destination-section {
+        display: flex;
+        padding: 1rem 5%; /* 左右內間距為螢幕的10% */
+        background-color: white;
+      }
+
+      .destination-main {
+        width: 75%;
+        margin-right: 1.5rem; /* 增加右邊外邊距 */
+      }
+
+      .destination-sidebar {
+        width: 25%;
+        padding-left: 1.5rem; /* 增加左側內邊距 */
+        margin-top: 2rem; /* 向上或向下調整，負值表示向上 */
+      }
+
+      .sidebar-image-container {
+        margin-bottom: 1rem;
+        text-align: center; /* 確保圖片置中 */
+      }
+
+      .sidebar-image-container img {
+        height: 300px; /* 設置直式圖片的高度 */
+      }
+
+      .two-vertical-images {
+        display: flex; /* 彈性佈局，讓圖片並排 */
+        justify-content: space-between; /* 兩張圖片均勻分佈 */
+        gap: 2rem; /* 圖片之間的間距 */
+        margin-top: 2rem;
+        margin-bottom: 2rem; /* 與下方內容的距離 */
+      }
+
+      .two-vertical-images img {
+        width: calc(50% - 0.5rem); /* 每張圖片佔用容器的一半減去間距 */
+        text-align: center; /* 確保圖片置中 */
+        height: auto; /* 保持圖片的直式比例 */
+        object-fit: cover; /* 確保圖片內容適應容器 */
+      }
+
+      .recommendation-section {
+        margin-top: 1.5rem; /* 與上方文字的間距 */
+        text-align: center;
+        position: sticky;
+        top: 80px; /* 空出導覽列的高度，確保推薦區不被覆蓋 */
+        z-index: 10; /* 提高層級，避免被其他內容遮蓋 */
+      }
+
+      .recommendation-section h3 {
+        font-size: 18px;
+        font-weight: bold;
+        margin-bottom: 0.5rem; /* 與按鈕區的距離 */
+      }
+
+      .recommendation-buttons {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 0.5rem; /* 按鈕之間的間距 */
+      }
+
+      .recommendation-buttons button {
+        padding: 0.5rem 1rem;
+        font-size: 14px;
+        color: white;
+        background-color: #78bcc4;
+        border: none;
+        border-radius: 4px;
+        transition: transform 0.3s;
+        font-family: Arial, sans-serif;
+      }
+
+      .recommendation-buttons button:hover {
+        transform: translateY(-3px);
+      }
+
+      .contact-section {
+        padding: 2rem 5rem; /* 上下與左右間距 */
+        background-color: #eff5f5; /* 淺灰背景 */
+        text-align: center; /* 確保內容置中對齊 */
+      }
+
+      .contact-item h3 {
+        font-size: 18px; /* 調整標題字體大小 */
+        margin: 0; /* 移除多餘的間距 */
+        text-decoration: none; /* 移除底線 */
+      }
+
+      footer {
+        background-color: #000;
+        color: white;
+        height: 30px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      #expandable-menu {
+        position: fixed;
+        top: 70px; /* 與螢幕頂部的距離設為 60px */
+        right: 0;
+        height: calc(100% - 70px); /* 高度減去 60px，避免超出視窗 */
+        width: 395px; /* 目錄寬度與 sidebar 齊寬 */
+        transform: translateX(100%); /* 初始狀態：隱藏在右側 */
+        transition: transform 0.3s ease;
+        background-color: #f4f4f9; /* 與網站背景一致 */
+        z-index: 1000;
+      }
+
+      /* 收闔按鈕 */
+      #menu-toggle {
+        position: absolute;
+        top: 45%;
+        left: -40px; /* 調整按鈕的位置，適應按鈕變大後的寬度 */
+        transform: translateY(-50%);
+        width: 40px; /* 增大按鈕寬度 */
+        height: 80px; /* 增大按鈕高度 */
+        background-color: #78bcc4;
+        color: white;
+        border-radius: 4px;
+        display: flex;
+        justify-content: center; /* 水平居中 */
+        align-items: center; /* 垂直居中 */
+      }
+
+      #menu-toggle::after {
+        content: "目錄"; /* 在按鈕內顯示 "目錄" */
+        font-size: 17px;
+        color: white; /* 設定字體顏色為白色 */
+        writing-mode: vertical-rl; /* 使文字垂直排列 */
+      }
+
+      #menu-toggle:hover {
+        background-color: #78bcc4;
+      }
+
+      /* 目錄內容 */
+      #menu-content {
+        padding: 0.5rem 1rem;
+        overflow-y: auto;
+        height: 100%;
+      }
+
+      #menu-content h4 {
+        font-weight: bold;
+        margin-top: 0;
+      }
+
+      #menu-list {
+        list-style: none;
+        padding: 0;
+      }
+
+      #menu-list li {
+        margin-bottom: 0.5rem;
+      }
+
+      #menu-list a {
+        color: #2a90a7;
+        text-decoration: none;
+        transition: color 0.3s;
+      }
+
+      #menu-list a:hover {
+        color: #78bcc4;
+      }
+
+      #menu-list .sub-item {
+        margin-left: 1.5rem; /* 調整縮排距離 */
+        font-size: 0.9rem; /* 可選：調整子項目字體大小 */
+      }
+
+      /* 目錄展開狀態 */
+      #expandable-menu.open {
+        transform: translateX(0);
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <div class="nav-left">
+        <div class="logo">
+          <a href="首頁.html">
+            <img src="網站Logo.png" alt="網站 Logo" />
+          </a>
+        </div>
+      </div>
+      <div class="nav-right">
+        <a href="首頁.html">關於我</a>
+        <div class="dropdown">
+          <a>亞洲旅遊</a>
+          <div class="dropdown-content">
+            <a href="中國.html">中國</a>
+            <a href="新加坡.html">新加坡</a>
+            <a href="馬來西亞.html">馬來西亞</a>
+            <a href="泰國.html">泰國</a>
+            <a href="印尼.html">印尼</a>
+            <a href="越南.html">越南</a>
+          </div>
+        </div>
+        <div class="dropdown">
+          <a>歐洲旅遊</a>
+          <div class="dropdown-content">
+            <a href="英國.html">英國</a>
+            <a href="法國.html">法國</a>
+            <a href="荷蘭.html">荷蘭</a>
+            <a href="比利時.html">比利時</a>
+            <a href="盧森堡.html">盧森堡</a>
+            <a href="瑞士.html">瑞士</a>
+            <a href="摩納哥.html">摩納哥</a>
+            <a href="西班牙.html">西班牙</a>
+            <a href="葡萄牙.html">葡萄牙</a>
+            <a href="安道爾.html">安道爾</a>
+            <a href="丹麥.html">丹麥</a>
+            <a href="瑞典.html">瑞典</a>
+            <a href="波蘭.html">波蘭</a>
+          </div>
+        </div>
+        <div class="dropdown">
+          <a>美洲旅遊</a>
+          <div class="dropdown-content">
+            <a href="美國.html">美國</a>
+            <a href="加拿大.html">加拿大</a>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <div class="intro-section">
+      <div class="left">
+        <h1>Tommy 在蒙特婁</h1>
+        <h4>
+          <b>蒙特婁 (Montreal) </b
+          >是魁北克省的最大城，歷史可以追溯到 17 世紀，當時法國殖民者在聖勞倫斯河畔建立了這座城市，並逐漸成為了加拿大東部的重要商業和金融中心。19 世紀時蒙特婁因其繁榮的貿易和工業而聞名於世，城市的建築和街道規劃也反映了這種文化交融的特點。1976 年蒙特婁成功舉辦了夏季奧運會，帶來了前所未有的機遇如今蒙特婁已發展成為加拿大重要的金融、技術和文化中心。
+        </h4>
+      </div>
+      <div class="right">
+        <img src="加拿大照片\蒙特婁\蒙特婁_介紹.jpg" width="90%" height="350px" />
+      </div>
+    </div>
+
+    <div class="destination-section">
+      <div class="destination-main">
+        <h2>蒙特婁交通</h2>
+        <h3>機場交通</h3>
+        <h4>
+          從蒙特利爾皮埃爾·埃利奧特·特魯多國際機場可以搭乘 747 路線公車直接進城，車程大約 40 分鐘。
+        </h4>
+        <h3>市區交通</h3>
+        <h4>
+          蒙特婁的地鐵系統十分完善，絕大多數的景點都有地鐵到達，是最主要的交通方式，
+          觀光客建議可以買 <a href="https://www.stm.info/fr/tarifs/titres-de-transport/10-passages-tous-modes" target="_blank">10 趟票</a>，可以在時限範圍內不論距離搭乘地鐵系統，相對比較划算。
+        </h4>
+        <div style="text-align: center">
+          <img src="加拿大照片\蒙特婁\蒙特婁_交通1.png" width="1000px" />
+          <img src="加拿大照片\蒙特婁\蒙特婁_交通2.jpg" width="600px" />
+        </div>
+        <br /><br />
+        <h2>蒙特婁住宿</h2>
+        <h4>
+          在蒙特婁選擇住宿可以用附近的機能做為主要考量，推薦可以住在 St. Catherine 街沿線，除了離地鐵站比較近以外，也有許多商場及餐廳。
+        </h4>
+        <div style="text-align: center">
+          <img src="加拿大照片\蒙特婁\蒙特婁_住宿.png" width="1000px" />
+        </div>
+        <br /><br />
+        <h2>蒙特婁景點</h2>
+        <h3>麥吉爾大學 (Université McGill)</h3>
+        <h4>
+          麥吉爾大學創建於 1821 年，擁有優秀的教育和科研環境，在文科、工程、醫學等多個領域擁有卓越的聲譽，經常躋身全球大學排名前列，擁有 16 個學院，涵蓋人文科學、自然科學、醫療衛生、管理等多個專業。學校擁有 160 多個學生社團和組織，涵蓋文化、體育等各個領域，每年的 "寒假滑雪節" 更是學校的著名傳統活動。
+        </h4>
+        <h4>校園內有許多歷史悠久的建築，如哥德式的麥克唐納大樓，校園坐落於市中心的綠意盎然的場地，吸引了來自 100 多個國家的學生，創造了多元文化交流的氛圍。</h4>
+        <div style="text-align: center">
+          <img src="加拿大照片\蒙特婁\MT1.jpg" width="600px" />
+          <img src="加拿大照片\蒙特婁\MT2.jpg" width="600px" />
+          <img src="加拿大照片\蒙特婁\MT3.jpg" width="600px" />
+          <img src="加拿大照片\蒙特婁\MT4.jpg" width="600px" />
+          <img src="加拿大照片\蒙特婁\MT5.jpg" width="800px" />
+        </div>
+        <br /><br /><br />
+        <h3>La Grande Roue de Montréal</h3>
+        <h4>
+          La Grande Roue de Montréal 坐落於舊港碼頭，這座巍峨的摩天輪於 2017 年 6 月正式啟用，高達 60 米，擁有 40 個乘坐艙，可以欣賞 360 度的蒙特婁天際線，俯瞰美麗的聖勞倫斯河和舊港區的景致，晚上時分摩天輪更會點亮多彩的燈光，為夜幕中的蒙特婁增添了一抹迷人的光輝。La Grande Roue de Montréal 的每個乘坐艙都採用特製的玻璃設計，輪廓也呈現出現代化的曲線感，融合了工業風與藝術美感。
+        </h4>
+        <div style="text-align: center">
+          <img src="加拿大照片\蒙特婁\MT6.jpg" width="600px" />
+        </div>
+        <br /><br /><br />
+        <h3>聖母聖殿 (Basilique Notre-Dame de Montréal)</h3>
+        <h4>
+          聖母聖殿是北美洲最大最美麗的哥特式大教堂，是蒙特婁的標誌性建築，建於 19 世紀初，歷時超過 20 年才完工，採用典型的法國哥特式建築風格，充滿了雕刻細節和精美的彩色玻璃窗，教堂的内部裝飾更是大有講究，以金碧輝煌的裝潢著稱，教堂的中殿長達 60 米，高度達 35 米，擁有 6000 多個管風琴管，是世界上最大的管風琴之一。教堂內部的精美壁畫、雕像和神壇等都是罕見的藝術瑰寶，可以在此欣賞這些藝術品，了解天主教會悠久的歷史文化。
+        </h4>
+        <div style="text-align: center">
+          <img src="加拿大照片\蒙特婁\MT7.jpg" width="600px" />
+          <img src="加拿大照片\蒙特婁\MT8.jpg" width="600px" />
+        </div>
+        <br /><br /><br />
+        <h3>蒙特婁舊港 (Vieux-Port de Montréal)</h3>
+        <h4>
+          蒙特婁舊港坐落在聖勞倫斯河畔，最初是蒙特婁的工商業中心，後來逐步轉型為休閒娛樂，在老港碼頭 (Quai de l'Horloge) 有一座漂亮的鐘樓，是舊港區的地標，舊港區還擁有優美的河畔碼頭和綠地休憩空間，可以在此悠閒漫步，感受老城區獨特的魅力。
+        </h4>
+        <div style="text-align: center">
+          <img src="加拿大照片\蒙特婁\MT9.jpg" width="800px" />
+          <img src="加拿大照片\蒙特婁\MT10.jpg" width="600px" />
+        </div>
+        <br /><br /><br />
+        <h3>皇家山 (Mount Royal)</h3>
+        <h4>
+          皇家山高度約為 230 米，山頂可以俯瞰整個蒙特婁市區，最引人注目的特徵就是它那處處散發著自然魅力的景致，公園內有茂密的針葉林和闊葉林還有清澈的小溪和湖泊，每年四季皇家山都散發著不同的魅力，春天的櫻花、夏天的綠蔭、秋天的染紅樹葉以及冬日的白雪皚皚，都有非常不同的景觀。
+        </h4>
+        <div style="text-align: center">
+          <img src="加拿大照片\蒙特婁\MT11.jpg" width="800px" />
+          <img src="加拿大照片\蒙特婁\MT12.jpg" width="800px" />
+          <img src="加拿大照片\蒙特婁\MT13.jpg" width="800px" />
+          <img src="加拿大照片\蒙特婁\MT14.jpg" width="600px" />
+          <img src="加拿大照片\蒙特婁\MT15.jpg" width="600px" />
+          <img src="加拿大照片\蒙特婁\MT16.jpg" width="600px" />
+        </div>
+        <br /><br /><br />
+        <h3>Saint-Catherine Street</h3>
+        <h4>
+          Saint-Catherine Street 是蒙特婁最負盛名的購物街，貫穿整個城市的中心區，集中了蒙特婁最熱鬧的商業活動，沿街林立著各種大型商場、精品店、餐廳、酒吧和娛樂場所，其中包括有著百年歷史的大型百貨公司、時尚購物商城以及世界知名品牌專賣店，也有眾多電影院、博物館、藝術畫廊以及攝影展覽等，還有許多酒吧、俱樂部和演藝廳，是當地人和遊客聚集的熱點。
+        </h4>
+        <div style="text-align: center">
+          <img src="加拿大照片\蒙特婁\MT17.jpg" width="600px" />
+          <img src="加拿大照片\蒙特婁\MT18.jpg" width="600px" />
+        </div>
+        <br /><br /><br />
+        <h3>蒙特利爾生物圈 (Biosphère de Montréal)</h3>
+        <h4>
+          蒙特婁生物圈的一座極富特色的環境博物館，也是世界唯一一座以全環境為主題的博物館，這座建築原是 1967 年世界博覽會期間的美國館，後被改建成了環境博物館，位於聖勞倫斯河中的聖海倫島上，以其獨特的球形玻璃外觀而聞名。這座建築本身也是一件環保藝術品，玻璃外殼利用太陽能發電，採用高效的節能技術，展現了現代建築與環保的完美融合。
+        </h4>
+        <h4>蒙特婁生物圈的主要功能是展示和教育大眾關於環境保護、可持續發展等重要議題，館內設有多個互動展廳，涵蓋氣候變化、水資源管理、能源利用等主題，可以通過各種體驗式展示親身感受環境保護的重要性，也會邀請環保專家和公眾一起討論解決方案。</h4>
+        <div style="text-align: center">
+          <img src="加拿大照片\蒙特婁\MT19.jpg" width="600px" />
+          <img src="加拿大照片\蒙特婁\MT20.jpg" width="800px" />
+          <img src="加拿大照片\蒙特婁\MT21.jpg" width="800px" />
+        </div>
+        <br /><br /><br />
+        <h3>蒙特婁美術館 (Musée des beaux-arts de Montréal)</h3>
+        <h4>
+          蒙特婁美術館始建於 1860 年代，建築風格融合了新古典主義和現代主義的特點，是蒙特婁最優雅的文化地標，藏品涵蓋了從古代到當代的世界各地藝術作品，包括繪畫、雕塑、版畫、裝置藝術等多種形式，館內收藏了著名藝術家如皮埃羅·德拉·弗朗西斯卡、米盧·克萊門、羅伯特·戴克等的精彩作品。美術館還擁有一個專業的藝術研究中心，為學者和普通民眾提供豐富的資源和藝術教育計畫。
+        </h4>
+        <div style="text-align: center">
+          <img src="加拿大照片\蒙特婁\MT22.jpg" width="800px" />
+        </div>
+        <br /><br /><br />
+        <h3>聖若瑟聖堂 (L'Oratoire Saint-Joseph du Mont-Royal)</h3>
+        <h4>
+          聖若瑟聖堂是一座宏偉的大聖約瑟夫大教堂，被稱為是世界最大的聖約瑟夫聖地，建於 1904 年，由建築師奧克塔夫·摩尼建造，坐落在蒙特婁的蒙特羅亞爾山上，教堂外觀由三座巍峨的銅質穹頂所組成，反射著陽光而熠熠生輝。
+        </h4>
+        <h4>聖若瑟聖堂是為了紀念耶穌的養父聖約瑟夫而建立的，教堂內部裝飾華麗，牆壁上鏤刻有精美的圖案，祭壇由白色意大利大理石雕刻而成，散發著莊嚴肅穆的氣氛，除此之外還能沿著內部走廊欣賞遼闊的蒙特羅亞爾山美景與日落。</h4>
+        <div style="text-align: center">
+          <img src="加拿大照片\蒙特婁\MT23.jpg" width="600px" />
+          <img src="加拿大照片\蒙特婁\MT24.jpg" width="600px" />
+          <img src="加拿大照片\蒙特婁\MT25.jpg" width="600px" />
+          <img src="加拿大照片\蒙特婁\MT26.jpg" width="800px" />
+          <img src="加拿大照片\蒙特婁\MT27.jpg" width="800px" />
+        </div>
+        <br /><br /><br />
+        <h3>棲息地67 (Habitat 67)</h3>
+        <h4>
+          棲息地 67 是一座著名的建築群落，由加拿大建築師莫舍·薩菲迪設計，是 1967 年世界博覽會的一個標誌性作品。這個建築群由 67 個預製的立方體單元組成，排列在一個斜面之上，形成了一個獨特的結構，每個單元都是一個獨立的公寓單元，有自己的露台和花園，整個建築呈現一種堆疊、堆積的立體感，為傳統公寓樓帶來了全新的視覺體驗。
+        </h4>
+        <h4>棲息地 67 的設計理念是要創造一種新型的居住環境，融合了城市公寓的便利性與郊區獨立房屋的私密性和環境舒適性，通過利用預製單元和立方體模組，建築師試圖實現大規模的生產和低成本，同時確保每個單元都擁有良好的采光、通風和景觀視野，被稱為是 20 世紀最具影響力的建築作品，標誌著一種對現有住房模式的革命性嘗試，體現了建築師對未來城市居住模式的遠見。</h4>
+        <div style="text-align: center">
+          <img src="加拿大照片\蒙特婁\MT28.jpg" width="800px" />
+        </div>
+        <br /><br /><br />
+        <h3>Square Victoria</h3>
+        <h4>
+          Square Victoria 建於 1991 年，廣場中央有一座大型噴泉，四周圍繞著銀行、保險公司和其他金融機構的辦公大樓，包括加拿大國家銀行、德銀和蒙特利爾證券交易所等機構，廣場中央的噴泉在夏天成為孩子們戲水的熱門地點，周圍有商店、餐館和咖啡廳，加拿大國慶日和夏季音樂會等都會在這邊舉行。
+        </h4>
+        <div style="text-align: center">
+          <img src="加拿大照片\蒙特婁\MT29.jpg" width="600px" />
+          <img src="加拿大照片\蒙特婁\MT30.jpg" width="600px" />
+        </div>
+        <br /><br />
+        <h2>蒙特婁近郊景點</h2>
+        <h3>Mont Saint-Hilaire</h3>
+        <h4>
+          Mont Saint-Hilaire 位於蒙特婁東南方約 40 公里處，這座火山高度為 414 米，是魁北克省最著名的自然景點之一，火山地處皮埃羅山脈南部，周圍環繞著佈滿溪谷和湖泊的自然保護區，擁有豐富的動植物資源。這座火山於 1000 多年前形成，是北美大陸上最年輕的火山之一，保存了大量珍貴的地質化石和礦物標本，生長著各種珍稀的植被，包括許多古老的紅松林和落葉林，還是許多野生動物的棲息地，可以看到鹿、熊和各種鳥類。
+        </h4>
+        <h4>Mont Saint-Hilaire 於 1985 年被列為加拿大國家歷史遺產地，被評為魁北克省最重要的生態保護區，不僅是加拿大東部的一處自然奇觀，也是當地居民重要的休閒娛樂場所。</h4>
+        <div style="text-align: center">
+          <img src="加拿大照片\蒙特婁\MT31.jpg" width="800px" />
+          <img src="加拿大照片\蒙特婁\MT32.jpg" width="800px" />
+          <img src="加拿大照片\蒙特婁\MT33.jpg" width="800px" />
+          <img src="加拿大照片\蒙特婁\MT34.jpg" width="800px" />
+          <img src="加拿大照片\蒙特婁\MT35.jpg" width="800px" />
+          <img src="加拿大照片\蒙特婁\MT36.jpg" width="800px" />
+          <img src="加拿大照片\蒙特婁\MT37.jpg" width="600px" />
+        </div>
+        <br /><br /><br />
+        <h3>Mont-Orford</h3>
+        <h4>
+          Mont-Orford 是魁北克省東南部的一座山峰，海拔 1259 米，擁有優美的自然景觀，山體由古老的變質岩和石灰岩組成，山勢陡峭山頂常年積雪，山上覆蓋著茂密的針葉林和落葉林，湖泊和溪流縱橫其間，形成了壯麗的自然風光。
+        </h4>
+        <h4>Mont-Orford 於 1938 年被列為魁北克省自然保護區，擁有豐富的野生動植物資源，是野餐、遠足、登山等戶外活動的熱門目的地，還是加拿大最重要的滑雪勝地之一。山上設有 40 多條高品質的滑雪道，適合各種滑雪愛好者，是東部地區最重要的滑雪渡假中心。</h4>
+        <div style="text-align: center">
+          <img src="加拿大照片\蒙特婁\MT38.jpg" width="800px" />
+          <img src="加拿大照片\蒙特婁\MT39.jpg" width="800px" />
+          <img src="加拿大照片\蒙特婁\MT40.jpg" width="800px" />
+          <img src="加拿大照片\蒙特婁\MT41.jpg" width="800px" />
+        </div>
+        <br /><br /><br />
+        <h3>Parc de la Gorge de Coaticook</h3>
+        <h4>
+          Parc de la Gorge de Coaticook 位於魁北克省科阿蒂庫克市附近，主要景點是科阿蒂庫克大峽谷，峽谷長約 5 公里，最深處可達 120 米，是由千百年來的侵蝕和河流切割形成的地質奇觀。公園內還有其他自然景觀值得一遊，如瀑布、溪流、森林等，在夏季可以在公園內的湖泊游泳、划船等水上活動。
+        </h4>
+        <h4>由於其獨特的自然環境和良好的保育工作，Parc de la Gorge de Coaticook 被列為魁北克省的重點省級公園，保護了當地珍稀的地質遺產。</h4>
+        <div style="text-align: center">
+          <img src="加拿大照片\蒙特婁\MT42.jpg" width="800px" />
+          <img src="加拿大照片\蒙特婁\MT43.jpg" width="800px" />
+          <img src="加拿大照片\蒙特婁\MT44.jpg" width="800px" />
+          <img src="加拿大照片\蒙特婁\MT45.jpg" width="600px" />
+        </div>
+        <br /><br />
+        <h2>蒙特婁美食</h2>
+        <h3>Schwartz's Deli</h3>
+        <h4>
+          Schwartz's Deli 是一家成立於 1928 年的猶太風餐館，專門經營各種猶太式的冷肉製品，比如煙熏肉、蒜香香腸、碎肉餅等，最著名的是燻肉三明治。燻肉三明治是由兩片薄薄的黑麥麵包夾著厚厚的燻肉切片製成，肉質鮮嫩多汁帶有濃郁的煙燻香味，搭配酸甜口感的酸黃芥末醬是絕妙的搭配，Schwartz's Deli 還提供各種熱湯、薯條、沙拉等配餐以及蘋果派、起司蛋糕等餐後甜點。
+        </h4>
+        <h4>Schwartz's Deli 保留了許多傳統猶太餐館的風格，比如狹小的空間、簡單的裝潢、快節奏的用餐體驗等，讓人有如置身於 1920 年代的猶太社區，成為蒙特婁必來的美食景點。</h4>
+        <div style="text-align: center">
+          <img src="加拿大照片\蒙特婁\MT46.jpg" width="800px" />
+          <img src="加拿大照片\蒙特婁\MT47.jpg" width="800px" />
+        </div>
+        <br /><br /><br />
+        <h3>Bootlegger cocktail bar & cuisine</h3>
+        <h4>
+          Bootlegger cocktail bar & cuisine 是一家餐酒館，採用了禁酒時代 (1920 ~ 1933 年) 的主題裝潢和氛圍，牆壁上掛著當時的海報和照片，酒保們也穿著復古的服飾，讓人彷彿置身於上個世紀的美國。
+        </h4>
+        <h4>Bootlegger 擅長調製各種經典雞尾酒，如馬提尼、曼哈頓、老太婆等，採用高品質的烈酒和新鮮的調料，力求呈現出最正宗的口感，也推出了一些融合了加拿大風味的創新特調，隱藏在地下室的用餐區更是頗有風情，讓人有種身在秘密酒吧的感覺。</h4>
+        <div style="text-align: center">
+          <img src="加拿大照片\蒙特婁\MT48.jpg" width="600px" />
+          <img src="加拿大照片\蒙特婁\MT49.jpg" width="600px" />
+        </div>
+        <br /><br /><br />
+        <h3>La Banquise</h3>
+        <h4>
+          La Banquise 主打漢堡及 poutine，是一種在薯條上淋上肉汁及起司塊的吃法，算是加拿大當地的特色菜餚，肉汁與起司非常好的替薯條提了為，在加拿大寒冷的天氣中也提供了充分的飽足感，推薦大家到蒙特婁一定要來試試。
+        </h4>
+        <div style="text-align: center">
+          <img src="加拿大照片\蒙特婁\MT50.jpg" width="600px" />
+        </div>
+        <br /><br /><br />
+        <h3>L' Avenue</h3>
+        <h4>
+          L'Avenue 融合了法式和北美的烹飪風格，提供豐富多樣的早午餐和甜點，最著名的包括各式班尼迪克蛋、英式早餐、鯛魚吐司等，另外酥皮塔、馬卡龍等都極富創意且口感出眾。餐廳採用了溫暖的木質裝飾配以明亮的採光和舒適的座椅布置，營造出溫馨愜意的用餐體驗，整體風格則融合了法式優雅與北美休閒，展現了蒙特婁獨特的多元文化底蘊。
+        </h4>
+        <div style="text-align: center">
+          <img src="加拿大照片\蒙特婁\MT51.jpg" width="800px" />
+          <img src="加拿大照片\蒙特婁\MT52.jpg" width="800px" />
+        </div>
+        <br /><br />
+      </div>
+      <div class="destination-sidebar">
+        <div class="sidebar-image-container">
+          <img src="側邊欄自我介紹.jpg" />
+        </div>
+        <h5>
+          Hi!
+          我是Tommy，我熱愛旅遊也喜歡藉由影像紀錄旅程中的點點滴滴，透過文字將我在旅途中的所見所聞分享給大家。旅行對我而言不只是吃吃喝喝，而是能在行萬里路間感受世界的脈動，體驗不同的文化，希望藉由我的分享能讓大家看到更多世界的美好。
+        </h5>
+        <br />
+        <h5>
+          想更了解我或與我聯絡:
+          <a
+            href="https://www.instagram.com/tommy_techvoyage/"
+            target="_blank"
+            style="color: inherit; text-decoration: underline"
+          >
+            <b>Instagram</b>
+          </a>
+        </h5>
+        <div class="recommendation-section">
+          <h3>其他美國旅遊目的地</h3>
+          <div class="recommendation-buttons">
+            <a href="多倫多.html">
+              <button><h5>多倫多</h5></button>
+            </a>
+            <a href="渥太華.html">
+              <button><h5>渥太華</h5></button>
+            </a>
+            <a href="魁北克城.html">
+              <button><h5>魁北克城</h5></button>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="contact-section">
+      <div class="contact-item">
+        <h3>
+          想更了解我或與我聯絡:
+          <a
+            href="https://www.instagram.com/tommy_techvoyage/"
+            target="_blank"
+            style="color: inherit; text-decoration: underline"
+          >
+            Instagram
+          </a>
+        </h3>
+      </div>
+    </div>
+    <footer>
+      <h6>COPYRIGHT © 2025 Tommy 看世界 All rights reserved.</h6>
+    </footer>
+    <div id="expandable-menu">
+      <div id="menu-toggle"></div>
+      <!-- 收闔按鈕 -->
+      <div id="menu-content">
+        <h4>目錄</h4>
+        <ul id="menu-list"></ul>
+      </div>
+    </div>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const menu = document.getElementById("expandable-menu");
+        const toggle = document.getElementById("menu-toggle");
+        const menuList = document.getElementById("menu-list");
+        const destinationMain = document.querySelector(".destination-main");
+
+        // 點擊按鈕切換目錄狀態
+        toggle.addEventListener("click", () => {
+          menu.classList.toggle("open");
+        });
+
+        // 從 destination-main 區域提取 h2 和 h3，動態生成目錄
+        const headings = destinationMain.querySelectorAll("h2, h3");
+        headings.forEach((heading, index) => {
+          // 確保每個 h2 和 h3 都有唯一的 id
+          if (!heading.id) {
+            heading.id = `heading-${index}`;
+          }
+
+          const listItem = document.createElement("li");
+          const link = document.createElement("a");
+          link.textContent = heading.textContent;
+          link.href = `#${heading.id}`;
+          listItem.appendChild(link);
+
+          // 為 h3 添加縮排樣式
+          if (heading.tagName.toLowerCase() === "h3") {
+            listItem.classList.add("sub-item");
+          }
+
+          menuList.appendChild(listItem);
+        });
+
+        // 滾動至目標位置並加上 75px 偏移
+        menuList.addEventListener("click", (event) => {
+          if (event.target.tagName === "A") {
+            event.preventDefault(); // 阻止預設行為
+
+            const targetId = event.target.getAttribute("href").substring(1); // 取得目標 ID
+            const targetElement = document.getElementById(targetId);
+
+            if (targetElement) {
+              // 計算目標元素的位置並加上 75px 偏移
+              const targetPosition =
+                targetElement.getBoundingClientRect().top + window.scrollY;
+              const offset = 75; // 偏移的距離
+              window.scrollTo({
+                top: targetPosition - offset,
+                behavior: "smooth", // 平滑滾動
+              });
+            }
+          }
+        });
+      });
+    </script>
+  </body>
+</html>

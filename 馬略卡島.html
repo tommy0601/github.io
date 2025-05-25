@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+<html lang="zh-hant-TW">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="曹旅瀚 Tommy" />
+    <meta name="description" content="探索馬略卡島的魅力！從壯麗的海灘到迷人的古鎮，體驗這座西班牙島嶼的自然景觀、歷史文化與美食，享受一段理想的度假旅程。" />
+    <meta name="keywords" content="馬略卡島旅遊, 馬略卡島景點, 馬略卡島海灘, 馬略卡島自由行, 馬略卡島古鎮, 馬略卡島美食, 馬略卡島自然景觀, 巴利阿里群島, 馬略卡島度假" />
+    <title>Tommy 看世界 - 馬略卡島</title>
+    <link rel="icon" href="網頁縮圖.ico" />
+    <style>
+      body {
+        font-family: Calibri, Arial, sans-serif; /* 首選 Calibri，次選 Arial */
+        margin: 0;
+        padding: 0;
+        overflow-x: hidden; /* 禁止水平滾動 */
+        background-color: #f4f4f9;
+        color: #333;
+      }
+
+      h1 {
+        font-size: 40px;
+        font-weight: bold;
+      }
+
+      h2 {
+        font-size: 32px;
+        font-weight: bold;
+        color: #2a90a7;
+        display: inline-block;
+        margin-bottom: 1rem; /* 縮小 h2 的底部邊距 */
+        background-color: #cee5e8;
+      }
+
+      h3 {
+        font-size: 26px;
+        margin: 0 0 1rem;
+        font-weight: bold;
+        text-decoration: underline; /* 加上底線 */
+      }
+
+      h4 {
+        font-size: 18px;
+        font-weight: normal;
+        line-height: 1.8;
+      }
+
+      h5 {
+        font-size: 16px;
+        font-weight: normal;
+        margin: 0;
+      }
+
+      h6 {
+        font-size: 10px;
+        color: #fff;
+        margin: 0;
+        text-align: center;
+        line-height: 50px; /* 高度對齊 */
+      }
+
+      nav {
+        background-color: #78bcc4;
+        display: flex;
+        justify-content: space-between; /* 保持分佈在兩側 */
+        width: calc(100% - 10rem); /* 與其他內容的邊界一致 */
+        padding: 0.5rem 5rem; /* 主導覽列的 padding 設置 */
+        position: fixed;
+        top: 0;
+        z-index: 1000;
+      }
+
+      .nav-left .logo img {
+        height: 50px; /* 控制 Logo 圖片的高度 */
+        transform: translateX(-1.5rem); /* 向右移動 2rem */
+      }
+
+      .nav-right {
+        display: flex;
+        align-items: center;
+        transform: translateX(2rem); /* 向右移動 2rem */
+      }
+
+      nav a {
+        color: #eff5f5;
+        text-decoration: none;
+        padding: 0.5rem 1rem;
+        margin: 0 0.5rem;
+        transition: transform 0.3s;
+      }
+
+      nav a:hover {
+        transform: translateY(-3px);
+      }
+
+      .dropdown {
+        position: relative;
+      }
+
+      .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #78bcc4;
+        min-width: 160px;
+        border-radius: 4px;
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        padding: 0.2rem 0;
+      }
+
+      .dropdown-content a {
+        color: #eff5f5;
+        display: block;
+        transition: transform 0.3s;
+        border-bottom: 1px solid #ddd;
+      }
+
+      .dropdown-content a:last-child {
+        border-bottom: none;
+      }
+
+      .dropdown-content a:hover {
+        transform: translateY(-3px);
+      }
+
+      .dropdown:hover .dropdown-content {
+        display: block;
+      }
+
+      .intro-section {
+        background-color: #eff5f5;
+        display: flex;
+        padding: 2rem;
+        margin-top: 60px; /* 根據導航列高度調整 */
+        justify-content: space-between;
+        align-items: flex-start;
+        width: 100%;
+        box-sizing: border-box; /* 包含 padding 在內 */
+        padding-left: 5rem;
+        padding-right: 5rem;
+      }
+
+      .intro-section h4 {
+        max-width: 700px;
+      }
+
+      .intro-section .left {
+        width: 60%;
+      }
+
+      .intro-section .right {
+        width: 40%;
+      }
+
+      .destination-section {
+        display: flex;
+        padding: 1rem 5%; /* 左右內間距為螢幕的10% */
+        background-color: white;
+      }
+
+      .destination-main {
+        width: 75%;
+        margin-right: 1.5rem; /* 增加右邊外邊距 */
+      }
+
+      .destination-sidebar {
+        width: 25%;
+        padding-left: 1.5rem; /* 增加左側內邊距 */
+        margin-top: 2rem; /* 向上或向下調整，負值表示向上 */
+      }
+
+      .sidebar-image-container {
+        margin-bottom: 1rem;
+        text-align: center; /* 確保圖片置中 */
+      }
+
+      .sidebar-image-container img {
+        height: 300px; /* 設置直式圖片的高度 */
+      }
+
+      .two-vertical-images {
+        display: flex; /* 彈性佈局，讓圖片並排 */
+        justify-content: space-between; /* 兩張圖片均勻分佈 */
+        gap: 2rem; /* 圖片之間的間距 */
+        margin-top: 2rem;
+        margin-bottom: 2rem; /* 與下方內容的距離 */
+      }
+
+      .two-vertical-images img {
+        width: calc(50% - 0.5rem); /* 每張圖片佔用容器的一半減去間距 */
+        text-align: center; /* 確保圖片置中 */
+        height: auto; /* 保持圖片的直式比例 */
+        object-fit: cover; /* 確保圖片內容適應容器 */
+      }
+
+      .recommendation-section {
+        margin-top: 1.5rem; /* 與上方文字的間距 */
+        text-align: center;
+        position: sticky;
+        top: 80px; /* 空出導覽列的高度，確保推薦區不被覆蓋 */
+        z-index: 10; /* 提高層級，避免被其他內容遮蓋 */
+      }
+
+      .recommendation-section h3 {
+        font-size: 18px;
+        font-weight: bold;
+        margin-bottom: 0.5rem; /* 與按鈕區的距離 */
+      }
+
+      .recommendation-buttons {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 0.5rem; /* 按鈕之間的間距 */
+      }
+
+      .recommendation-buttons button {
+        padding: 0.5rem 1rem;
+        font-size: 14px;
+        color: white;
+        background-color: #78bcc4;
+        border: none;
+        border-radius: 4px;
+        transition: transform 0.3s;
+        font-family: Arial, sans-serif;
+      }
+
+      .recommendation-buttons button:hover {
+        transform: translateY(-3px);
+      }
+
+      .contact-section {
+        padding: 2rem 5rem; /* 上下與左右間距 */
+        background-color: #eff5f5; /* 淺灰背景 */
+        text-align: center; /* 確保內容置中對齊 */
+      }
+
+      .contact-item h3 {
+        font-size: 18px; /* 調整標題字體大小 */
+        margin: 0; /* 移除多餘的間距 */
+        text-decoration: none; /* 移除底線 */
+      }
+
+      footer {
+        background-color: #000;
+        color: white;
+        height: 30px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      #expandable-menu {
+        position: fixed;
+        top: 70px; /* 與螢幕頂部的距離設為 60px */
+        right: 0;
+        height: calc(100% - 70px); /* 高度減去 60px，避免超出視窗 */
+        width: 395px; /* 目錄寬度與 sidebar 齊寬 */
+        transform: translateX(100%); /* 初始狀態：隱藏在右側 */
+        transition: transform 0.3s ease;
+        background-color: #f4f4f9; /* 與網站背景一致 */
+        z-index: 1000;
+      }
+
+      /* 收闔按鈕 */
+      #menu-toggle {
+        position: absolute;
+        top: 45%;
+        left: -40px; /* 調整按鈕的位置，適應按鈕變大後的寬度 */
+        transform: translateY(-50%);
+        width: 40px; /* 增大按鈕寬度 */
+        height: 80px; /* 增大按鈕高度 */
+        background-color: #78bcc4;
+        color: white;
+        border-radius: 4px;
+        display: flex;
+        justify-content: center; /* 水平居中 */
+        align-items: center; /* 垂直居中 */
+      }
+
+      #menu-toggle::after {
+        content: "目錄"; /* 在按鈕內顯示 "目錄" */
+        font-size: 17px;
+        color: white; /* 設定字體顏色為白色 */
+        writing-mode: vertical-rl; /* 使文字垂直排列 */
+      }
+
+      #menu-toggle:hover {
+        background-color: #78bcc4;
+      }
+
+      /* 目錄內容 */
+      #menu-content {
+        padding: 0.5rem 1rem;
+        overflow-y: auto;
+        height: 100%;
+      }
+
+      #menu-content h4 {
+        font-weight: bold;
+        margin-top: 0;
+      }
+
+      #menu-list {
+        list-style: none;
+        padding: 0;
+      }
+
+      #menu-list li {
+        margin-bottom: 0.5rem;
+      }
+
+      #menu-list a {
+        color: #2a90a7;
+        text-decoration: none;
+        transition: color 0.3s;
+      }
+
+      #menu-list a:hover {
+        color: #78bcc4;
+      }
+
+      #menu-list .sub-item {
+        margin-left: 1.5rem; /* 調整縮排距離 */
+        font-size: 0.9rem; /* 可選：調整子項目字體大小 */
+      }
+
+      /* 目錄展開狀態 */
+      #expandable-menu.open {
+        transform: translateX(0);
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <div class="nav-left">
+        <div class="logo">
+          <a href="首頁.html">
+            <img src="網站Logo.png" alt="網站 Logo" />
+          </a>
+        </div>
+      </div>
+      <div class="nav-right">
+        <a href="首頁.html">關於我</a>
+        <div class="dropdown">
+          <a>亞洲旅遊</a>
+          <div class="dropdown-content">
+            <a href="中國.html">中國</a>
+            <a href="新加坡.html">新加坡</a>
+            <a href="馬來西亞.html">馬來西亞</a>
+            <a href="泰國.html">泰國</a>
+            <a href="印尼.html">印尼</a>
+            <a href="越南.html">越南</a>
+          </div>
+        </div>
+        <div class="dropdown">
+          <a>歐洲旅遊</a>
+          <div class="dropdown-content">
+            <a href="英國.html">英國</a>
+            <a href="法國.html">法國</a>
+            <a href="荷蘭.html">荷蘭</a>
+            <a href="比利時.html">比利時</a>
+            <a href="盧森堡.html">盧森堡</a>
+            <a href="瑞士.html">瑞士</a>
+            <a href="摩納哥.html">摩納哥</a>
+            <a href="西班牙.html">西班牙</a>
+            <a href="葡萄牙.html">葡萄牙</a>
+            <a href="安道爾.html">安道爾</a>
+            <a href="丹麥.html">丹麥</a>
+            <a href="瑞典.html">瑞典</a>
+            <a href="波蘭.html">波蘭</a>
+          </div>
+        </div>
+        <div class="dropdown">
+          <a>美洲旅遊</a>
+          <div class="dropdown-content">
+            <a href="美國.html">美國</a>
+            <a href="加拿大.html">加拿大</a>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <div class="intro-section">
+      <div class="left">
+        <h1>Tommy 在馬略卡島</h1>
+        <h4>
+          <b>馬略卡島 (Mallorca)  </b
+          >是巴利阿里群島中最大的島嶼，位於地中海西部，歷史可以追溯到史前時代，有證據表明這裡在公元前 4000 年就有人類居住，島上曾經受到過腓尼基人、羅馬人、拜占庭人和摩爾人的統治。13 世紀時成為阿拉貢王國的一部分，並在之後的幾個世紀中歷經了一系列的政治變革。如今馬略卡島是一個知名的度假勝地，擁有壯麗的海灘、清澈的海水和豐富的自然景觀，還有許多古老的村莊和城市，保留著悠久的歷史和文化遺產。
+        </h4>
+      </div>
+      <div class="right">
+        <img src="西班牙照片\馬略卡島\馬略卡_介紹.jpg" width="90%" height="350px" />
+      </div>
+    </div>
+
+    <div class="destination-section">
+      <div class="destination-main">
+        <h2>馬略卡島交通</h2>
+        <h3>機場交通</h3>
+        <h4>
+          從馬略卡機場可以搭乘 A1 路線公車直接抵達首府帕爾瑪市中心，車程大約 25 分鐘。
+        </h4>
+        <h3>市區交通</h3>
+        <h4>
+          在帕爾瑪市區的景點算是集中，基本上可以步行或搭乘公車，但如果是要到島上的其他小鎮就建議能<b>在機場或市區租車</b>，機動性比較高也方便。
+        </h4>
+        <br /><br />
+        <h2>馬略卡島住宿</h2>
+        <h4>
+          馬略卡島作為歐洲的度假勝地，住宿可以分為兩種，如果是想住在市區的話可以選擇在 La Rambla 周邊的住宿，餐廳的選擇十分多元; 另外一種就是度假飯店享受陽光沙灘泳池的話，整個島上有非常多的選擇，比較熱門的是在 Les Meravelles、Palma Nova、Cala Major 和 Rotes Velles 這四個地方，渡假飯店的選擇多且都有沙灘，可以根據自己想要的旅遊模式選擇。
+        </h4>
+        <div style="text-align: center">
+          <img src="西班牙照片\馬略卡島\馬略卡_住宿1.png" width="1000px" />
+          <img src="西班牙照片\馬略卡島\馬略卡_住宿2.png" width="1000px" />
+          <img src="西班牙照片\馬略卡島\馬略卡_住宿3.png" width="600px" />
+        </div>
+        <br /><br />
+        <h2>馬略卡島景點</h2>
+        <h3>帕爾馬主教座堂 (Catedral de Mallorca)</h3>
+        <h4>
+          帕爾馬主教座堂建造始於 13 世紀，並在之後的幾個世紀中進行了多次擴建和改建，建設始於該地原有的穆斯林清真寺，並在之後的幾個世紀中受到了不同的建築師和藝術家的影響。教堂最引人注目之處是其壯觀的建築風格和尖塔，呈現出典型的哥特式特徵，包括尖拱窗戶、尖塔和華麗的石雕裝飾。內部同樣壯觀，擁有高大的拱頂、華麗的花窗玻璃和精美的壁畫，其中最著名的是由著名藝術家安東尼·古迪 (Antoni Gaudí) 設計的天花板裝飾，展現了他的獨特風格和技巧。
+        </h4>
+        <div style="text-align: center">
+          <img src="西班牙照片\馬略卡島\MC1.jpg" width="800px" />
+          <img src="西班牙照片\馬略卡島\MC2.jpg" width="800px" />
+          <img src="西班牙照片\馬略卡島\MC3.jpg" width="600px" />
+        </div>
+        <br /><br /><br />
+        <h3>Plaça Major</h3>
+        <h4>
+          Plaça Major 的歷史可以追溯到 14 世紀，曾經是帕爾馬市政府的所在地，也是集會和市場的中心。廣場的建築呈現出典型的巴洛克風格，有著對稱的建築立面、石柱和拱門，以及華麗的裝飾。在廣場的周圍，有許多咖啡廳、餐廳和商店，可以品嚐到當地的美食和特色小吃，如當地的糕點和 tapas。
+        </h4>
+        <div style="text-align: center">
+          <img src="西班牙照片\馬略卡島\MC4.jpg" width="800px" />
+          <img src="西班牙照片\馬略卡島\MC5.jpg" width="600px" />
+        </div>
+        <br /><br /><br />
+        <h3>Train Sóller</h3>
+        <h4>
+          Train Sóller 是馬略卡島上的一條歷史悠久的窄軌鐵路，連接著馬略卡島的首府帕爾馬 (Palma) 和美麗的海港城鎮索列 (Sóller) ，穿越了馬略卡島的山區風景。歷史可以追溯到 1912 年，這條鐵路的建設是為了解決當時交通不便的問題，同時也是為了運輸當地的橙子和其他農產品到帕爾馬港口。這條鐵路的特點之一是它使用的是窄軌，軌距僅為 914 毫米，是世界上少數仍在運營的窄軌鐵路，也為遊客提供了獨特而古老的交通體驗。Train Sóller 路線全長 27.3 公里，沿途穿越了山區、橙園和風景優美的村莊，可以欣賞到馬略卡島壯麗的自然風光，包括山谷、海灣和山脈。
+        </h4>
+        <div style="text-align: center">
+          <img src="西班牙照片\馬略卡島\MC6.jpg" width="600px" />
+          <img src="西班牙照片\馬略卡島\MC7.jpg" width="800px" />
+          <img src="西班牙照片\馬略卡島\MC8.jpg" width="800px" />
+        </div>
+        <br /><br /><br />
+        <h3>Port de Sóller</h3>
+        <h4>
+          Port de Sóller 是位於西班牙馬略卡島北部的海港城鎮，坐落在 Sóller 山谷的出口處，被群山環繞，同時也面臨著美麗的地中海，作為一個傳統的漁港，Port de Sóller 保留了很多傳統的海港特色，可以看到漁船和色彩繽紛的小船停靠在碼頭，還有漁民們忙碌的身影，這裡的海灣水質清澈，是一個理想的地方來享受陽光和海灘。
+        </h4>
+        <h4>Port de Sóller 的建築風格也非常迷人，特別是沿著海濱的房屋和餐廳可以看到一些精心修復的漁民住宅，保留了傳統的馬略卡建築風格，帶有紅色瓦片屋頂和石牆，還有一些時尚的海濱餐廳和咖啡館，可以品嚐當地美食和放鬆身心。</h4>
+        <div style="text-align: center">
+          <img src="西班牙照片\馬略卡島\MC9.jpg" width="800px" />
+          <img src="西班牙照片\馬略卡島\MC10.jpg" width="800px" />
+          <img src="西班牙照片\馬略卡島\MC11.jpg" width="800px" />
+          <img src="西班牙照片\馬略卡島\MC12.jpg" width="800px" />
+          <img src="西班牙照片\馬略卡島\MC13.jpg" width="800px" />
+        </div>
+        <br /><br /><br />
+        <h3>Far des Cap Gros</h3>
+        <h4>
+          Far des Cap Gros 位於 Deià 和 Valldemossa 之間的海岸線上，靠近 Serra de Tramuntana 山脈的海岸，建於 1859 年，是一座白色圓柱形燈塔，高達 43 米，坐落在一個崎嶇的海岬上，俯瞰著地中海的壯麗景色。燈塔的設計簡潔而優雅，展示了傳統的燈塔風格。這座燈塔的主要功能是為船隻提供導航和警示，幫助它們在夜間或惡劣天氣下避免礁石和危險，過去燈塔是由守塔人管理和操作的，但現在已經自動化。從燈塔的頂部可以俯瞰到激起的海浪、壯麗的海岸線、遠處的山脈，並將整個 Sóller 小鎮盡收眼底，是攝影愛好者和自然愛好者的天堂。
+        </h4>
+        <div style="text-align: center">
+          <img src="西班牙照片\馬略卡島\MC14.jpg" width="600px" />
+          <img src="西班牙照片\馬略卡島\MC15.jpg" width="800px" />
+          <img src="西班牙照片\馬略卡島\MC16.jpg" width="800px" />
+          <img src="西班牙照片\馬略卡島\MC17.jpg" width="600px" />
+        </div>
+        <br /><br /><br />
+        <h3>Playa del mago</h3>
+        <h4>
+          Playa del Mago 位於馬略卡島西南部，以其清澈的海水和美麗的自然環境而聞名，海灘位於一個小而隱蔽的海灣中，被高大的松樹和茂密的植被所環繞，營造出一種私密和寧靜的氛圍，沙灘是金色的，水質清澈非常適合游泳和浮潛。
+        </h4>
+        <h4>Playa del Mago 也是一個受歡迎的裸體海灘，吸引著裸體愛好者和自由主義者，被認為是馬略卡島上最早的裸體海灘，並且保持著一個開放和寬容的氛圍，可以在柔軟的沙灘上放鬆，享受陽光和海浪。</h4>
+        <div style="text-align: center">
+          <img src="西班牙照片\馬略卡島\MC18.jpg" width="600px" />
+          <img src="西班牙照片\馬略卡島\MC19.jpg" width="800px" />
+          <img src="西班牙照片\馬略卡島\MC20.jpg" width="800px" />
+          <img src="西班牙照片\馬略卡島\MC21.jpg" width="800px" />
+        </div>
+        <br /><br />
+        <h2>馬略卡島美食</h2>
+        <h3>Restaurante Buscando El Norte</h3>
+        <h4>
+          馬略卡島最有名的就是章魚料理，烤的一點點脆的章魚配上番茄芋泥，可以吃到最原味的海鮮鮮味，算是最出名的小菜之一，推薦大家可以到 tapas 店嘗嘗。
+        </h4>
+        <div style="text-align: center">
+          <img src="西班牙照片\馬略卡島\MC22.jpg" width="600px" />
+        </div>
+        <br /><br /><br />
+        <h3>Calypso</h3>
+        <h4>
+          位於 Cala Major 旁的義式餐廳，招牌的西班牙火腿披薩火腿跟起司放的毫不手軟，十分的有誠意，羊乳酪漢堡的起司也釋放的厚厚一層，非常適合在沙灘玩耍放鬆後來飽餐一頓。
+        </h4>
+        <div style="text-align: center">
+          <img src="西班牙照片\馬略卡島\MC23.jpg" width="800px" />
+        </div>
+        <br /><br /><br />
+        <h3>La Rosa Vermuteria & Colmado</h3>
+        <h4>
+          除了小章魚之外，烏賊和大章魚也是常出現在當地人餐桌上的菜餚，這家位於帕爾瑪市中心的餐廳以海鮮料理及西班牙 tapas 聞名，大章魚腿雖然非常粗，但咬起來部會十分費里反倒是處理得非常鮮嫩，名菜馬鈴薯火腿蛋也很好吃，非常推薦大家。
+        </h4>
+        <div style="text-align: center">
+          <img src="西班牙照片\馬略卡島\MC24.jpg" width="600px" />
+          <img src="西班牙照片\馬略卡島\MC25.jpg" width="600px" />
+        </div>
+        <br /><br />
+      </div>
+      <div class="destination-sidebar">
+        <div class="sidebar-image-container">
+          <img src="側邊欄自我介紹.jpg" />
+        </div>
+        <h5>
+          Hi!
+          我是Tommy，我熱愛旅遊也喜歡藉由影像紀錄旅程中的點點滴滴，透過文字將我在旅途中的所見所聞分享給大家。旅行對我而言不只是吃吃喝喝，而是能在行萬里路間感受世界的脈動，體驗不同的文化，希望藉由我的分享能讓大家看到更多世界的美好。
+        </h5>
+        <br />
+        <h5>
+          想更了解我或與我聯絡:
+          <a
+            href="https://www.instagram.com/tommy_techvoyage/"
+            target="_blank"
+            style="color: inherit; text-decoration: underline"
+          >
+            <b>Instagram</b>
+          </a>
+        </h5>
+        <div class="recommendation-section">
+          <h3>其他西班牙旅遊目的地</h3>
+          <div class="recommendation-buttons">
+            <a href="巴塞隆納.html">
+              <button><h5>巴塞隆納</h5></button>
+            </a>
+            <a href="馬德里.html">
+              <button><h5>馬德里</h5></button>
+            </a>
+            <a href="瓦倫西亞.html">
+              <button><h5>瓦倫西亞</h5></button>
+            </a>
+            <a href="格瑞那達.html">
+              <button><h5>格瑞那達</h5></button>
+            </a>
+            <a href="馬拉加.html">
+              <button><h5>馬拉加</h5></button>
+            </a>
+            <a href="隆達.html">
+              <button><h5>隆達</h5></button>
+            </a>
+            <a href="直布羅陀.html">
+              <button><h5>直布羅陀</h5></button>
+            </a>
+            <a href="塞維亞.html">
+              <button><h5>塞維亞</h5></button>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="contact-section">
+      <div class="contact-item">
+        <h3>
+          想更了解我或與我聯絡:
+          <a
+            href="https://www.instagram.com/tommy_techvoyage/"
+            target="_blank"
+            style="color: inherit; text-decoration: underline"
+          >
+            Instagram
+          </a>
+        </h3>
+      </div>
+    </div>
+    <footer>
+      <h6>COPYRIGHT © 2025 Tommy 看世界 All rights reserved.</h6>
+    </footer>
+    <div id="expandable-menu">
+      <div id="menu-toggle"></div>
+      <!-- 收闔按鈕 -->
+      <div id="menu-content">
+        <h4>目錄</h4>
+        <ul id="menu-list"></ul>
+      </div>
+    </div>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const menu = document.getElementById("expandable-menu");
+        const toggle = document.getElementById("menu-toggle");
+        const menuList = document.getElementById("menu-list");
+        const destinationMain = document.querySelector(".destination-main");
+
+        // 點擊按鈕切換目錄狀態
+        toggle.addEventListener("click", () => {
+          menu.classList.toggle("open");
+        });
+
+        // 從 destination-main 區域提取 h2 和 h3，動態生成目錄
+        const headings = destinationMain.querySelectorAll("h2, h3");
+        headings.forEach((heading, index) => {
+          // 確保每個 h2 和 h3 都有唯一的 id
+          if (!heading.id) {
+            heading.id = `heading-${index}`;
+          }
+
+          const listItem = document.createElement("li");
+          const link = document.createElement("a");
+          link.textContent = heading.textContent;
+          link.href = `#${heading.id}`;
+          listItem.appendChild(link);
+
+          // 為 h3 添加縮排樣式
+          if (heading.tagName.toLowerCase() === "h3") {
+            listItem.classList.add("sub-item");
+          }
+
+          menuList.appendChild(listItem);
+        });
+
+        // 滾動至目標位置並加上 75px 偏移
+        menuList.addEventListener("click", (event) => {
+          if (event.target.tagName === "A") {
+            event.preventDefault(); // 阻止預設行為
+
+            const targetId = event.target.getAttribute("href").substring(1); // 取得目標 ID
+            const targetElement = document.getElementById(targetId);
+
+            if (targetElement) {
+              // 計算目標元素的位置並加上 75px 偏移
+              const targetPosition =
+                targetElement.getBoundingClientRect().top + window.scrollY;
+              const offset = 75; // 偏移的距離
+              window.scrollTo({
+                top: targetPosition - offset,
+                behavior: "smooth", // 平滑滾動
+              });
+            }
+          }
+        });
+      });
+    </script>
+  </body>
+</html>

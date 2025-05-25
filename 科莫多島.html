@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html lang="zh-hant-TW">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="曹旅瀚 Tommy" />
+    <meta name="description" content="探索科莫多島的原始魅力！走訪科莫多國家公園，近距離觀賞世界著名的科莫多巨蜥，並沉浸在壯麗的海灘與豐富的海洋生態中，體驗無與倫比的自然奇觀。" />
+    <meta name="keywords" content="科莫多島旅遊, 科莫多島自由行, 科莫多巨蜥, 科莫多國家公園, 科莫多島景點, 科莫多島海灘, 科莫多島潛水, 科莫多島探險, 印度尼西亞旅遊" />
+    <title>Tommy 看世界 - 科莫多島</title>
+    <link rel="icon" href="網頁縮圖.ico" />
+    <style>
+      body {
+        font-family: Calibri, Arial, sans-serif; /* 首選 Calibri，次選 Arial */
+        margin: 0;
+        padding: 0;
+        overflow-x: hidden; /* 禁止水平滾動 */
+        background-color: #f4f4f9;
+        color: #333;
+      }
+
+      h1 {
+        font-size: 40px;
+        font-weight: bold;
+      }
+
+      h2 {
+        font-size: 32px;
+        font-weight: bold;
+        color: #2a90a7;
+        display: inline-block;
+        margin-bottom: 1rem; /* 縮小 h2 的底部邊距 */
+        background-color: #cee5e8;
+      }
+
+      h3 {
+        font-size: 26px;
+        margin: 0 0 1rem;
+        font-weight: bold;
+        text-decoration: underline; /* 加上底線 */
+      }
+
+      h4 {
+        font-size: 18px;
+        font-weight: normal;
+        line-height: 1.8;
+      }
+
+      h5 {
+        font-size: 16px;
+        font-weight: normal;
+        margin: 0;
+      }
+
+      h6 {
+        font-size: 10px;
+        color: #fff;
+        margin: 0;
+        text-align: center;
+        line-height: 50px; /* 高度對齊 */
+      }
+
+      nav {
+        background-color: #78bcc4;
+        display: flex;
+        justify-content: space-between; /* 保持分佈在兩側 */
+        width: calc(100% - 10rem); /* 與其他內容的邊界一致 */
+        padding: 0.5rem 5rem; /* 主導覽列的 padding 設置 */
+        position: fixed;
+        top: 0;
+        z-index: 1000;
+      }
+
+      .nav-left .logo img {
+        height: 50px; /* 控制 Logo 圖片的高度 */
+        transform: translateX(-1.5rem); /* 向右移動 2rem */
+      }
+
+      .nav-right {
+        display: flex;
+        align-items: center;
+        transform: translateX(2rem); /* 向右移動 2rem */
+      }
+
+      nav a {
+        color: #eff5f5;
+        text-decoration: none;
+        padding: 0.5rem 1rem;
+        margin: 0 0.5rem;
+        transition: transform 0.3s;
+      }
+
+      nav a:hover {
+        transform: translateY(-3px);
+      }
+
+      .dropdown {
+        position: relative;
+      }
+
+      .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #78bcc4;
+        min-width: 160px;
+        border-radius: 4px;
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        padding: 0.2rem 0;
+      }
+
+      .dropdown-content a {
+        color: #eff5f5;
+        display: block;
+        transition: transform 0.3s;
+        border-bottom: 1px solid #ddd;
+      }
+
+      .dropdown-content a:last-child {
+        border-bottom: none;
+      }
+
+      .dropdown-content a:hover {
+        transform: translateY(-3px);
+      }
+
+      .dropdown:hover .dropdown-content {
+        display: block;
+      }
+
+      .intro-section {
+        background-color: #eff5f5;
+        display: flex;
+        padding: 2rem;
+        margin-top: 60px; /* 根據導航列高度調整 */
+        justify-content: space-between;
+        align-items: flex-start;
+        width: 100%;
+        box-sizing: border-box; /* 包含 padding 在內 */
+        padding-left: 5rem;
+        padding-right: 5rem;
+      }
+
+      .intro-section h4 {
+        max-width: 700px;
+      }
+
+      .intro-section .left {
+        width: 60%;
+      }
+
+      .intro-section .right {
+        width: 40%;
+      }
+
+      .destination-section {
+        display: flex;
+        padding: 1rem 5%; /* 左右內間距為螢幕的10% */
+        background-color: white;
+      }
+
+      .destination-main {
+        width: 75%;
+        margin-right: 1.5rem; /* 增加右邊外邊距 */
+      }
+
+      .destination-sidebar {
+        width: 25%;
+        padding-left: 1.5rem; /* 增加左側內邊距 */
+        margin-top: 2rem; /* 向上或向下調整，負值表示向上 */
+      }
+
+      .sidebar-image-container {
+        margin-bottom: 1rem;
+        text-align: center; /* 確保圖片置中 */
+      }
+
+      .sidebar-image-container img {
+        height: 300px; /* 設置直式圖片的高度 */
+      }
+
+      .two-vertical-images {
+        display: flex; /* 彈性佈局，讓圖片並排 */
+        justify-content: space-between; /* 兩張圖片均勻分佈 */
+        gap: 2rem; /* 圖片之間的間距 */
+        margin-top: 2rem;
+        margin-bottom: 2rem; /* 與下方內容的距離 */
+      }
+
+      .two-vertical-images img {
+        width: calc(50% - 0.5rem); /* 每張圖片佔用容器的一半減去間距 */
+        text-align: center; /* 確保圖片置中 */
+        height: auto; /* 保持圖片的直式比例 */
+        object-fit: cover; /* 確保圖片內容適應容器 */
+      }
+
+      .recommendation-section {
+        margin-top: 1.5rem; /* 與上方文字的間距 */
+        text-align: center;
+        position: sticky;
+        top: 80px; /* 空出導覽列的高度，確保推薦區不被覆蓋 */
+        z-index: 10; /* 提高層級，避免被其他內容遮蓋 */
+      }
+
+      .recommendation-section h3 {
+        font-size: 18px;
+        font-weight: bold;
+        margin-bottom: 0.5rem; /* 與按鈕區的距離 */
+      }
+
+      .recommendation-buttons {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 0.5rem; /* 按鈕之間的間距 */
+      }
+
+      .recommendation-buttons button {
+        padding: 0.5rem 1rem;
+        font-size: 14px;
+        color: white;
+        background-color: #78bcc4;
+        border: none;
+        border-radius: 4px;
+        transition: transform 0.3s;
+        font-family: Arial, sans-serif;
+      }
+
+      .recommendation-buttons button:hover {
+        transform: translateY(-3px);
+      }
+
+      .contact-section {
+        padding: 2rem 5rem; /* 上下與左右間距 */
+        background-color: #eff5f5; /* 淺灰背景 */
+        text-align: center; /* 確保內容置中對齊 */
+      }
+
+      .contact-item h3 {
+        font-size: 18px; /* 調整標題字體大小 */
+        margin: 0; /* 移除多餘的間距 */
+        text-decoration: none; /* 移除底線 */
+      }
+
+      footer {
+        background-color: #000;
+        color: white;
+        height: 30px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      #expandable-menu {
+        position: fixed;
+        top: 70px; /* 與螢幕頂部的距離設為 60px */
+        right: 0;
+        height: calc(100% - 70px); /* 高度減去 60px，避免超出視窗 */
+        width: 395px; /* 目錄寬度與 sidebar 齊寬 */
+        transform: translateX(100%); /* 初始狀態：隱藏在右側 */
+        transition: transform 0.3s ease;
+        background-color: #f4f4f9; /* 與網站背景一致 */
+        z-index: 1000;
+      }
+
+      /* 收闔按鈕 */
+      #menu-toggle {
+        position: absolute;
+        top: 45%;
+        left: -40px; /* 調整按鈕的位置，適應按鈕變大後的寬度 */
+        transform: translateY(-50%);
+        width: 40px; /* 增大按鈕寬度 */
+        height: 80px; /* 增大按鈕高度 */
+        background-color: #78bcc4;
+        color: white;
+        border-radius: 4px;
+        display: flex;
+        justify-content: center; /* 水平居中 */
+        align-items: center; /* 垂直居中 */
+      }
+
+      #menu-toggle::after {
+        content: "目錄"; /* 在按鈕內顯示 "目錄" */
+        font-size: 17px;
+        color: white; /* 設定字體顏色為白色 */
+        writing-mode: vertical-rl; /* 使文字垂直排列 */
+      }
+
+      #menu-toggle:hover {
+        background-color: #78bcc4;
+      }
+
+      /* 目錄內容 */
+      #menu-content {
+        padding: 0.5rem 1rem;
+        overflow-y: auto;
+        height: 100%;
+      }
+
+      #menu-content h4 {
+        font-weight: bold;
+        margin-top: 0;
+      }
+
+      #menu-list {
+        list-style: none;
+        padding: 0;
+      }
+
+      #menu-list li {
+        margin-bottom: 0.5rem;
+      }
+
+      #menu-list a {
+        color: #2a90a7;
+        text-decoration: none;
+        transition: color 0.3s;
+      }
+
+      #menu-list a:hover {
+        color: #78bcc4;
+      }
+
+      #menu-list .sub-item {
+        margin-left: 1.5rem; /* 調整縮排距離 */
+        font-size: 0.9rem; /* 可選：調整子項目字體大小 */
+      }
+
+      /* 目錄展開狀態 */
+      #expandable-menu.open {
+        transform: translateX(0);
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <div class="nav-left">
+        <div class="logo">
+          <a href="首頁.html">
+            <img src="網站Logo.png" alt="網站 Logo" />
+          </a>
+        </div>
+      </div>
+      <div class="nav-right">
+        <a href="首頁.html">關於我</a>
+        <div class="dropdown">
+          <a>亞洲旅遊</a>
+          <div class="dropdown-content">
+            <a href="中國.html">中國</a>
+            <a href="新加坡.html">新加坡</a>
+            <a href="馬來西亞.html">馬來西亞</a>
+            <a href="泰國.html">泰國</a>
+            <a href="印尼.html">印尼</a>
+            <a href="越南.html">越南</a>
+          </div>
+        </div>
+        <div class="dropdown">
+          <a>歐洲旅遊</a>
+          <div class="dropdown-content">
+            <a href="英國.html">英國</a>
+            <a href="法國.html">法國</a>
+            <a href="荷蘭.html">荷蘭</a>
+            <a href="比利時.html">比利時</a>
+            <a href="盧森堡.html">盧森堡</a>
+            <a href="瑞士.html">瑞士</a>
+            <a href="摩納哥.html">摩納哥</a>
+            <a href="西班牙.html">西班牙</a>
+            <a href="葡萄牙.html">葡萄牙</a>
+            <a href="安道爾.html">安道爾</a>
+            <a href="丹麥.html">丹麥</a>
+            <a href="瑞典.html">瑞典</a>
+            <a href="波蘭.html">波蘭</a>
+          </div>
+        </div>
+        <div class="dropdown">
+          <a>美洲旅遊</a>
+          <div class="dropdown-content">
+            <a href="美國.html">美國</a>
+            <a href="加拿大.html">加拿大</a>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <div class="intro-section">
+      <div class="left">
+        <h1>Tommy 在科莫多島</h1>
+        <h4>
+          <b>科莫多島 (Komodo)</b> 是努沙登加拉群島中的一個小島，由於火山和地震活動，科莫多島的生態系統與世界其它地方隔離開來。島上獨特的生態孕育出一些特有的生物，當中最著名的是地球上最大的蜥蜴: 科莫多龍，以及地球上最原始的哺乳動物之一的眼鏡猴，附近的海域也因為整區都劃為國家公園而受到嚴格保護，限制登島人數，保留了最原始的熱帶海洋生態，是喜歡接觸自然的人的天堂。
+        </h4>
+      </div>
+      <div class="right">
+        <img src="印尼照片\科莫多島\科莫多島_介紹.jpg" width="90%" height="350px" />
+      </div>
+    </div>
+
+    <div class="destination-section">
+      <div class="destination-main">
+        <h2>科莫多島交通</h2>
+        <h4>
+          前往科莫多島可以由峇里島直飛 Badjo，科莫多島全島無人居住，所有的居民區與交通樞紐都位在東努加登沙拉島上的 Badjo，機場距離市區非常近，多數旅館也有車輛接機服務，因此不太需要擔心交通問題，前往科莫多島都是有一整天的套裝行程，能提前詢問飯店合作的船家，由於能進入國家公園範圍的船家都有嚴格牌照管制，因此基本上沒有坑遊客的情形，可以放心的與船家了解行程及價格。如果想要遊覽 Badjo 也可以向飯店詢問租借機車，會有專人幫你送來旅館。
+        </h4>
+        <br />
+        <h2>科莫多島住宿</h2>
+        <h4>
+          在 Badjo 的住宿基本上分為民宿及高級度假酒店，民宿大多在市區，價錢十分便宜但品質依然不錯，高級度假酒店則能提供所有的服務，基本上可以不用踏出酒店半步，大多位於海濱且附有自己的碼頭，當然價錢相當不便宜，可以根據自己想要的假期模式決定。
+        </h4>
+        <div style="text-align: center">
+          <img src="印尼照片\科莫多島\科莫多島_住宿.png" width="1000px" />
+        </div>
+        <br /><br />
+        <h2>科莫多島景點</h2>
+        <h3>Pulau Padar</h3>
+        <h4>
+          Pulau Padar 通常是船家出海後的第一站，是個絕美照相地點，以其壯觀的風景和迷人的景觀而聞名於世，登上 Padar 島的山頂可以俯瞰整個 Padar 島，欣賞到三個不同色調的沙灘，分別是粉紅色、白色和黑色，多色彩的景觀在島嶼上形成了一幅絕美的畫卷，壯麗的山脈和奇特的地貌，其中包括陡峭的峭壁、叢林和岩石組成的地形，為探險之旅增添樂趣。
+        </h4>
+        <div style="text-align: center">
+          <img src="印尼照片\科莫多島\KM1.jpg" width="800px" />
+          <img src="印尼照片\科莫多島\KM2.jpg" width="800px" />
+        </div>
+        <br /><br /><br />
+        <h3>Pink Beach</h3>
+        <h4>
+          Pink Beach 算是整趟旅程最期待的點，去之前看照片就非常心動，粉紅沙灘果然沒有讓我失望，粉紅沙灘形成的原因是孔蟲分解珊瑚產生紅色顆粒，再與白沙混合便形成了粉紅色的沙灘，真的超級夢幻，看著超清澈的海水與粉色沙漸層的色調，感覺自己飛越幾千公里的辛勞都沒有白費，要離開的時候超級念念不捨，但要注意由於是國家公園，<b>粉紅沙是不能帶走的喔!</b>
+        </h4>
+        <div style="text-align: center">
+          <img src="印尼照片\科莫多島\KM3.jpg" width="800px" />
+          <img src="印尼照片\科莫多島\KM4.jpg" width="800px" />
+          <img src="印尼照片\科莫多島\KM5.jpg" width="600px" />
+        </div>
+        <br /><br /><br />
+        <h3>Loh Liang Komodo National Park</h3>
+        <h4>
+          在船上吃完午餐後總算來到重頭戲，要跟科莫多龍見面了，科莫多巨蜥只生活在科莫多島上，被認為是世界上最大的蜥蜴，通常長度 5 ~ 10 米，最長可達 15 米，具有強壯的身體和厚實的皮膚，以應對島上嚴酷的環境條件，身體呈現出深色的鱗片和優美的紋路，在叢林中具有出色的偽裝能力。科莫多巨蜥是肉食性動物，以獵捕小型哺乳動物、鳥類和其他爬行動物為食，通常潛伏在草叢或樹木附近，利用敏捷的移動和強大的顎部力量進行獵食，這些巨蜥也是島上生態系統的重要成員，在控制小型哺乳動物數量、播種植物種子和維持生態平衡方面發揮著關鍵作用。科莫多巨蜥受到國際自然保護聯盟的關注，被列為易危物種，由於棲息地的破壞和非法捕獵，它們的數量持續減少，也成為了觀光業的重要資源。
+        </h4>
+        <div style="text-align: center">
+          <img src="印尼照片\科莫多島\KM6.jpg" width="800px" />
+          <img src="印尼照片\科莫多島\KM7.jpg" width="600px" />
+          <img src="印尼照片\科莫多島\KM8.jpg" width="600px" />
+        </div>
+        <br /><br /><br />
+        <h3>Kanawa Island</h3>
+        <h4>
+          喜愛浮潛的人的天堂，這座島周圍有非常多珊瑚礁，是各種熱帶海洋生物的棲息地，各色熱帶魚穿梭珊瑚礁及海草間，也有許多會與我一同伴游，數不清的魚群形成龐大的生態聚落，親眼看到真的是非常震撼。
+        </h4>
+        <div style="text-align: center">
+          <img src="印尼照片\科莫多島\KM9.jpg" width="800px" />
+        </div>
+        <br /><br /><br />
+        <h3>Mirror Stone Cave</h3>
+        <h4>
+          Mirror Stone Cave 是一個原本在海底但受地殼活動而浮出海面的溶洞，由景區入口至洞口的一段路有大片竹林，氣質清雅且非常涼快，溶洞內的岩石形狀奇特，而且有多種不同顏色，洞口附近的岩壁都被樹根佔據了，有種尋幽探秘的氣氛。岩石上有不少珊瑚和其他海洋生物的化石，洞內有一個史前海龜化石，保存非常完整，就連頭部也清晰可辨，岩壁上還不時會發現貝殻化石的蹤影，如一個化石博物館。
+        </h4>
+        <div style="text-align: center">
+          <img src="印尼照片\科莫多島\KM10.jpg" width="600px" />
+          <img src="印尼照片\科莫多島\KM11.jpg" width="600px" />
+        </div>
+        <br /><br /><br />
+        <h3>Bukit Amelia</h3>
+        <h4>
+          Bukit Amelia 是位於 Badjo 北邊的山丘，可以一覽弗洛勒斯海的美景，也能看到整個科莫多群島非常壯觀，但要注意路徑不太好走記得穿運動鞋，路途中也沒有遮蔭要小心中暑。
+        </h4>
+        <div style="text-align: center">
+          <img src="印尼照片\科莫多島\KM12.jpg" width="800px" />
+          <img src="印尼照片\科莫多島\KM13.jpg" width="800px" />
+          <img src="印尼照片\科莫多島\KM14.jpg" width="800px" />
+        </div>
+        <br />
+        <h2>科莫多島美食</h2>
+        <h3>Taman Laut Handayani Seafood Restaurant</h3>
+        <h4>
+          這家主打東努加登沙拉特色料理，鹹魚芭蕉飯還有酸辣海鮮湯味道都相當特別，餐廳的景也很好，能夠看日落與夜景，記得要提前訂位才能坐到比較好的位置喔。
+        </h4>
+        <div style="text-align: center">
+          <img src="印尼照片\科莫多島\KM15.jpg" width="600px" />
+        </div>
+      </div>
+      <div class="destination-sidebar">
+        <div class="sidebar-image-container">
+          <img src="側邊欄自我介紹.jpg" />
+        </div>
+        <h5>
+          Hi!
+          我是Tommy，我熱愛旅遊也喜歡藉由影像紀錄旅程中的點點滴滴，透過文字將我在旅途中的所見所聞分享給大家。旅行對我而言不只是吃吃喝喝，而是能在行萬里路間感受世界的脈動，體驗不同的文化，希望藉由我的分享能讓大家看到更多世界的美好。
+        </h5>
+        <br />
+        <h5>
+          想更了解我或與我聯絡:
+          <a
+            href="https://www.instagram.com/tommy_techvoyage/"
+            target="_blank"
+            style="color: inherit; text-decoration: underline"
+          >
+            <b>Instagram</b>
+          </a>
+        </h5>
+        <div class="recommendation-section">
+          <h3>其他印尼旅遊目的地</h3>
+          <div class="recommendation-buttons">
+            <a href="峇里島.html">
+              <button><h5>峇里島</h5></button>
+            </a>
+            <a href="龍目島.html">
+              <button><h5>龍目島</h5></button>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="contact-section">
+      <div class="contact-item">
+        <h3>
+          想更了解我或與我聯絡:
+          <a
+            href="https://www.instagram.com/tommy_techvoyage/"
+            target="_blank"
+            style="color: inherit; text-decoration: underline"
+          >
+            Instagram
+          </a>
+        </h3>
+      </div>
+    </div>
+    <footer>
+      <h6>COPYRIGHT © 2025 Tommy 看世界 All rights reserved.</h6>
+    </footer>
+    <div id="expandable-menu">
+      <div id="menu-toggle"></div>
+      <!-- 收闔按鈕 -->
+      <div id="menu-content">
+        <h4>目錄</h4>
+        <ul id="menu-list"></ul>
+      </div>
+    </div>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const menu = document.getElementById("expandable-menu");
+        const toggle = document.getElementById("menu-toggle");
+        const menuList = document.getElementById("menu-list");
+        const destinationMain = document.querySelector(".destination-main");
+
+        // 點擊按鈕切換目錄狀態
+        toggle.addEventListener("click", () => {
+          menu.classList.toggle("open");
+        });
+
+        // 從 destination-main 區域提取 h2 和 h3，動態生成目錄
+        const headings = destinationMain.querySelectorAll("h2, h3");
+        headings.forEach((heading, index) => {
+          // 確保每個 h2 和 h3 都有唯一的 id
+          if (!heading.id) {
+            heading.id = `heading-${index}`;
+          }
+
+          const listItem = document.createElement("li");
+          const link = document.createElement("a");
+          link.textContent = heading.textContent;
+          link.href = `#${heading.id}`;
+          listItem.appendChild(link);
+
+          // 為 h3 添加縮排樣式
+          if (heading.tagName.toLowerCase() === "h3") {
+            listItem.classList.add("sub-item");
+          }
+
+          menuList.appendChild(listItem);
+        });
+
+        // 滾動至目標位置並加上 75px 偏移
+        menuList.addEventListener("click", (event) => {
+          if (event.target.tagName === "A") {
+            event.preventDefault(); // 阻止預設行為
+
+            const targetId = event.target.getAttribute("href").substring(1); // 取得目標 ID
+            const targetElement = document.getElementById(targetId);
+
+            if (targetElement) {
+              // 計算目標元素的位置並加上 75px 偏移
+              const targetPosition =
+                targetElement.getBoundingClientRect().top + window.scrollY;
+              const offset = 75; // 偏移的距離
+              window.scrollTo({
+                top: targetPosition - offset,
+                behavior: "smooth", // 平滑滾動
+              });
+            }
+          }
+        });
+      });
+    </script>
+  </body>
+</html>

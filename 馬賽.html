@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html lang="zh-hant-TW">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="曹旅瀚 Tommy" />
+    <meta name="description" content="探索馬賽的魅力！從壯麗的港口到古老的聖母大教堂，體驗這座地中海城市的歷史、文化、美食和自然景觀，發現馬賽的獨特風情。" />
+    <meta name="keywords" content="馬賽旅遊, 馬賽景點, 馬賽港口, 聖母大教堂, 馬賽美食, 馬賽歷史, 馬賽自由行, 地中海旅遊, 馬賽文化, 馬賽自然景觀" />
+    <title>Tommy 看世界 - 馬賽</title>
+    <link rel="icon" href="網頁縮圖.ico" />
+    <style>
+      body {
+        font-family: Calibri, Arial, sans-serif; /* 首選 Calibri，次選 Arial */
+        margin: 0;
+        padding: 0;
+        overflow-x: hidden; /* 禁止水平滾動 */
+        background-color: #f4f4f9;
+        color: #333;
+      }
+
+      h1 {
+        font-size: 40px;
+        font-weight: bold;
+      }
+
+      h2 {
+        font-size: 32px;
+        font-weight: bold;
+        color: #2a90a7;
+        display: inline-block;
+        margin-bottom: 1rem; /* 縮小 h2 的底部邊距 */
+        background-color: #cee5e8;
+      }
+
+      h3 {
+        font-size: 26px;
+        margin: 0 0 1rem;
+        font-weight: bold;
+        text-decoration: underline; /* 加上底線 */
+      }
+
+      h4 {
+        font-size: 18px;
+        font-weight: normal;
+        line-height: 1.8;
+      }
+
+      h5 {
+        font-size: 16px;
+        font-weight: normal;
+        margin: 0;
+      }
+
+      h6 {
+        font-size: 10px;
+        color: #fff;
+        margin: 0;
+        text-align: center;
+        line-height: 50px; /* 高度對齊 */
+      }
+
+      nav {
+        background-color: #78bcc4;
+        display: flex;
+        justify-content: space-between; /* 保持分佈在兩側 */
+        width: calc(100% - 10rem); /* 與其他內容的邊界一致 */
+        padding: 0.5rem 5rem; /* 主導覽列的 padding 設置 */
+        position: fixed;
+        top: 0;
+        z-index: 1000;
+      }
+
+      .nav-left .logo img {
+        height: 50px; /* 控制 Logo 圖片的高度 */
+        transform: translateX(-1.5rem); /* 向右移動 2rem */
+      }
+
+      .nav-right {
+        display: flex;
+        align-items: center;
+        transform: translateX(2rem); /* 向右移動 2rem */
+      }
+
+      nav a {
+        color: #eff5f5;
+        text-decoration: none;
+        padding: 0.5rem 1rem;
+        margin: 0 0.5rem;
+        transition: transform 0.3s;
+      }
+
+      nav a:hover {
+        transform: translateY(-3px);
+      }
+
+      .dropdown {
+        position: relative;
+      }
+
+      .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #78bcc4;
+        min-width: 160px;
+        border-radius: 4px;
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        padding: 0.2rem 0;
+      }
+
+      .dropdown-content a {
+        color: #eff5f5;
+        display: block;
+        transition: transform 0.3s;
+        border-bottom: 1px solid #ddd;
+      }
+
+      .dropdown-content a:last-child {
+        border-bottom: none;
+      }
+
+      .dropdown-content a:hover {
+        transform: translateY(-3px);
+      }
+
+      .dropdown:hover .dropdown-content {
+        display: block;
+      }
+
+      .intro-section {
+        background-color: #eff5f5;
+        display: flex;
+        padding: 2rem;
+        margin-top: 60px; /* 根據導航列高度調整 */
+        justify-content: space-between;
+        align-items: flex-start;
+        width: 100%;
+        box-sizing: border-box; /* 包含 padding 在內 */
+        padding-left: 5rem;
+        padding-right: 5rem;
+      }
+
+      .intro-section h4 {
+        max-width: 700px;
+      }
+
+      .intro-section .left {
+        width: 60%;
+      }
+
+      .intro-section .right {
+        width: 40%;
+      }
+
+      .destination-section {
+        display: flex;
+        padding: 1rem 5%; /* 左右內間距為螢幕的10% */
+        background-color: white;
+      }
+
+      .destination-main {
+        width: 75%;
+        margin-right: 1.5rem; /* 增加右邊外邊距 */
+      }
+
+      .destination-sidebar {
+        width: 25%;
+        padding-left: 1.5rem; /* 增加左側內邊距 */
+        margin-top: 2rem; /* 向上或向下調整，負值表示向上 */
+      }
+
+      .sidebar-image-container {
+        margin-bottom: 1rem;
+        text-align: center; /* 確保圖片置中 */
+      }
+
+      .sidebar-image-container img {
+        height: 300px; /* 設置直式圖片的高度 */
+      }
+
+      .two-vertical-images {
+        display: flex; /* 彈性佈局，讓圖片並排 */
+        justify-content: space-between; /* 兩張圖片均勻分佈 */
+        gap: 2rem; /* 圖片之間的間距 */
+        margin-top: 2rem;
+        margin-bottom: 2rem; /* 與下方內容的距離 */
+      }
+
+      .two-vertical-images img {
+        width: calc(50% - 0.5rem); /* 每張圖片佔用容器的一半減去間距 */
+        text-align: center; /* 確保圖片置中 */
+        height: auto; /* 保持圖片的直式比例 */
+        object-fit: cover; /* 確保圖片內容適應容器 */
+      }
+
+      .recommendation-section {
+        margin-top: 1.5rem; /* 與上方文字的間距 */
+        text-align: center;
+        position: sticky;
+        top: 80px; /* 空出導覽列的高度，確保推薦區不被覆蓋 */
+        z-index: 10; /* 提高層級，避免被其他內容遮蓋 */
+      }
+
+      .recommendation-section h3 {
+        font-size: 18px;
+        font-weight: bold;
+        margin-bottom: 0.5rem; /* 與按鈕區的距離 */
+      }
+
+      .recommendation-buttons {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 0.5rem; /* 按鈕之間的間距 */
+      }
+
+      .recommendation-buttons button {
+        padding: 0.5rem 1rem;
+        font-size: 14px;
+        color: white;
+        background-color: #78bcc4;
+        border: none;
+        border-radius: 4px;
+        transition: transform 0.3s;
+        font-family: Arial, sans-serif;
+      }
+
+      .recommendation-buttons button:hover {
+        transform: translateY(-3px);
+      }
+
+      .contact-section {
+        padding: 2rem 5rem; /* 上下與左右間距 */
+        background-color: #eff5f5; /* 淺灰背景 */
+        text-align: center; /* 確保內容置中對齊 */
+      }
+
+      .contact-item h3 {
+        font-size: 18px; /* 調整標題字體大小 */
+        margin: 0; /* 移除多餘的間距 */
+        text-decoration: none; /* 移除底線 */
+      }
+
+      footer {
+        background-color: #000;
+        color: white;
+        height: 30px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      #expandable-menu {
+        position: fixed;
+        top: 70px; /* 與螢幕頂部的距離設為 60px */
+        right: 0;
+        height: calc(100% - 70px); /* 高度減去 60px，避免超出視窗 */
+        width: 395px; /* 目錄寬度與 sidebar 齊寬 */
+        transform: translateX(100%); /* 初始狀態：隱藏在右側 */
+        transition: transform 0.3s ease;
+        background-color: #f4f4f9; /* 與網站背景一致 */
+        z-index: 1000;
+      }
+
+      /* 收闔按鈕 */
+      #menu-toggle {
+        position: absolute;
+        top: 45%;
+        left: -40px; /* 調整按鈕的位置，適應按鈕變大後的寬度 */
+        transform: translateY(-50%);
+        width: 40px; /* 增大按鈕寬度 */
+        height: 80px; /* 增大按鈕高度 */
+        background-color: #78bcc4;
+        color: white;
+        border-radius: 4px;
+        display: flex;
+        justify-content: center; /* 水平居中 */
+        align-items: center; /* 垂直居中 */
+      }
+
+      #menu-toggle::after {
+        content: "目錄"; /* 在按鈕內顯示 "目錄" */
+        font-size: 17px;
+        color: white; /* 設定字體顏色為白色 */
+        writing-mode: vertical-rl; /* 使文字垂直排列 */
+      }
+
+      #menu-toggle:hover {
+        background-color: #78bcc4;
+      }
+
+      /* 目錄內容 */
+      #menu-content {
+        padding: 0.5rem 1rem;
+        overflow-y: auto;
+        height: 100%;
+      }
+
+      #menu-content h4 {
+        font-weight: bold;
+        margin-top: 0;
+      }
+
+      #menu-list {
+        list-style: none;
+        padding: 0;
+      }
+
+      #menu-list li {
+        margin-bottom: 0.5rem;
+      }
+
+      #menu-list a {
+        color: #2a90a7;
+        text-decoration: none;
+        transition: color 0.3s;
+      }
+
+      #menu-list a:hover {
+        color: #78bcc4;
+      }
+
+      #menu-list .sub-item {
+        margin-left: 1.5rem; /* 調整縮排距離 */
+        font-size: 0.9rem; /* 可選：調整子項目字體大小 */
+      }
+
+      /* 目錄展開狀態 */
+      #expandable-menu.open {
+        transform: translateX(0);
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <div class="nav-left">
+        <div class="logo">
+          <a href="首頁.html">
+            <img src="網站Logo.png" alt="網站 Logo" />
+          </a>
+        </div>
+      </div>
+      <div class="nav-right">
+        <a href="首頁.html">關於我</a>
+        <div class="dropdown">
+          <a>亞洲旅遊</a>
+          <div class="dropdown-content">
+            <a href="中國.html">中國</a>
+            <a href="新加坡.html">新加坡</a>
+            <a href="馬來西亞.html">馬來西亞</a>
+            <a href="泰國.html">泰國</a>
+            <a href="印尼.html">印尼</a>
+            <a href="越南.html">越南</a>
+          </div>
+        </div>
+        <div class="dropdown">
+          <a>歐洲旅遊</a>
+          <div class="dropdown-content">
+            <a href="英國.html">英國</a>
+            <a href="法國.html">法國</a>
+            <a href="荷蘭.html">荷蘭</a>
+            <a href="比利時.html">比利時</a>
+            <a href="盧森堡.html">盧森堡</a>
+            <a href="瑞士.html">瑞士</a>
+            <a href="摩納哥.html">摩納哥</a>
+            <a href="西班牙.html">西班牙</a>
+            <a href="葡萄牙.html">葡萄牙</a>
+            <a href="安道爾.html">安道爾</a>
+            <a href="丹麥.html">丹麥</a>
+            <a href="瑞典.html">瑞典</a>
+            <a href="波蘭.html">波蘭</a>
+          </div>
+        </div>
+        <div class="dropdown">
+          <a>美洲旅遊</a>
+          <div class="dropdown-content">
+            <a href="美國.html">美國</a>
+            <a href="加拿大.html">加拿大</a>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <div class="intro-section">
+      <div class="left">
+        <h1>Tommy 在馬賽</h1>
+        <h4>
+          <b>馬賽 (Marseille) </b
+          >位於法國南部的地中海沿岸，是法國第二大城和最大的港口城市，擁有 2600 多年的歷史，獨特的地理位置使其成為地中海地區的重要樞紐，成為一個多元文化的聚集地，從古代希臘和羅馬的遺跡到中世紀的教堂和古老的堡壘，保有歷史的痕跡。近代馬賽經歷了工業轉型，從以前的製造業中心轉型為現代服務業發展中心，如今的馬賽是商業文化重鎮，融合了南法、亞洲與非洲的文化，呈現出獨特的文化風貌。
+        </h4>
+      </div>
+      <div class="right">
+        <img src="法國照片\馬賽\馬賽_介紹.jpg" width="90%" height="350px" />
+      </div>
+    </div>
+
+    <div class="destination-section">
+      <div class="destination-main">
+        <h2>馬賽交通</h2>
+        <h3>機場交通</h3>
+        <h4>
+          從馬賽普羅旺斯機場可以乘坐 L091 線火車，一站便可抵達馬賽的 Saint-Charles 火車站，車程大約 40 分鐘。
+        </h4>
+        <h3>市區交通</h3>
+        <h4>
+          馬賽市區的景點十分集中，幾乎都是靠近馬賽老港的周圍一圈，在觀光時主要以步行即可，前往守護聖母聖殿和蔚藍海岸可以搭乘公車與地鐵，上車直接刷信用卡即可。
+        </h4>
+        <div style="text-align: center">
+          <img src="法國照片\馬賽\馬賽_交通.png" width="800px" />
+        </div>
+        <br /><br />
+        <h2>馬賽住宿</h2>
+        <h4>
+          由於馬賽的景點十分集中，因此選擇住宿時以位置來考量即可，在馬賽老港附近的住宿選擇多，也是治安相對比較良好的區域，但還是要非常注意自身的貴重物品。
+        </h4>
+        <div style="text-align: center">
+          <img src="法國照片\馬賽\馬賽_住宿.png" width="800px" />
+        </div>
+        <br /><br />
+        <h2>馬賽景點</h2>
+        <h3>隆尚宮 (Palais Longchamp)</h3>
+        <h4>
+          隆尚宮坐落在隆尚公園內，建於 19 世紀末，是為了紀念馬賽的水源重新供應而建造的。建築由兩個主要部分組成：中央噴泉和美術館。中央噴泉是由法國雕塑家 Jean-Baptiste-Jules Cavelier 設計，噴泉上方有一個巨大的水池和壯觀的噴泉，象徵著水的重要性和生命的源泉，噴泉的兩側則是壯麗的石製雕像和浮雕，描繪了與水有關的神話和象徵。
+        </h4>
+        <div style="text-align: center">
+          <img src="法國照片\馬賽\MS1.jpg" width="800px" />
+        </div>
+        <br /><br /><br />
+        <h3>老濟貧院 (Centre de la Vieille Charité)</h3>
+        <h4>
+          老濟貧院坐落在 Le Panier 地區，建於 17 世紀，最初是為了提供收容窮人、孤兒和無家可歸者的慈善機構而建造的，由法國建築師皮埃爾·普伊格 (Pierre Puget) 設計，展示了巴洛克風格和地中海建築的結合，是馬賽最重要的巴洛克建築之一。建築的外觀獨特，由粉紅色的石頭建成，擁有壯麗的立面和精緻的細節，呈現出一個封閉的方形庭院，四面被建築物包圍，中央有一個噴泉和花園。庭院的四個角落有四座塔樓，增添了建築的威嚴和特色，可惜我來的時候剛好遇到整修未開放，只能在附近的小巷中走走逛逛感受老馬賽風情。
+        </h4>
+        <div style="text-align: center">
+          <img src="法國照片\馬賽\MS2.jpg" width="600px" />
+          <img src="法國照片\馬賽\MS3.jpg" width="600px" />
+        </div>
+        <br /><br /><br />
+        <h3>馬賽老港 (Vieux-Port de Marseille)</h3>
+        <h4>
+          馬賽老港是法國最古老、最具代表性的港口，與地中海相連，可以追溯到古代羅馬時期，在幾個世紀的發展和演變中成為地中海地區最重要的商業和航運中心。港口周圍有許多歷史悠久的建築物，包括古老的倉庫、漁船和著名的港口大堤，港口的中心是一個半月形的碼頭，周圍有著許多餐廳、咖啡館和商店，是當地居民聚集的熱門場所。
+        </h4>
+        <div style="text-align: center">
+          <img src="法國照片\馬賽\MS4.jpg" width="800px" />
+        </div>
+        <br /><br /><br />
+        <h3>守護聖母聖殿 (Basilique Notre-Dame de la Garde)</h3>
+        <h4>
+          守護聖母聖殿位於拉加爾德山 (La Garde Hill) 頂部，海拔约 150 米，俯瞰著整個馬賽和地中海。建於19世紀，是為了紀念馬賽市的守護聖人聖瑪麗亞而建造的一座新拜占庭風格建築，以其壯麗的外觀和精緻的細節而聞名。聖殿主體高達 41 米，其尖塔更高達 157 米，成為馬賽市天際線的一部分，外牆由白色石材建成，並裝飾有彩色馬賽磁磚，展現出華麗而獨特的外觀，在聖殿頂部有一尊金色的聖母瑪麗亞雕像，被當地居民視為保護者和守護神。聖殿內部的天花板和壁畫描繪了聖瑪麗亞的故事和其他聖經場景，還擁有一個寬敞的中殿和多個小堂，供人們進行祈禱和參觀。
+        </h4>
+        <h4>要前往守護聖母聖殿可以從老港搭乘 60 路線公車抵達，可以省去很多爬山的路程，推薦可以坐車上山再走下山，欣賞不一樣的風景。</h4>
+        <div style="text-align: center">
+          <img src="法國照片\馬賽\MS5.jpg" width="600px" />
+          <img src="法國照片\馬賽\MS6.jpg" width="600px" />
+          <img src="法國照片\馬賽\MS7.jpg" width="800px" />
+        </div>
+        <br /><br /><br />
+        <h3>聖維克多修道院 (Abbaye Saint-Victor)</h3>
+        <h4>
+          聖維克多修道院的歷史可以追溯到 5 世紀，據傳說這個地方曾經是一個古代的基督教殉道者聖維克多 (Saint Victor) 的埋葬地點，修道院在 10 世紀時成為本篤會的一個重要中心，並在中世紀時期經歷了繁榮和發展。修道院的建築群包括修道院教堂、修道院建築和古老的墓穴，教堂是羅馬式風格的建築，具有厚重的石牆和拱頂，內部裝飾著壁畫、彩色玻璃窗和宗教藝術品，展示了中世紀時期的宗教藝術風格。
+        </h4>
+        <div style="text-align: center">
+          <img src="法國照片\馬賽\MS8.jpg" width="800px" />
+        </div>
+        <br />
+        <h2>馬賽近郊景點</h2>
+        <h3>蔚藍海岸國家公園 (Parc national des Calanques)</h3>
+        <h4>
+          蔚藍海岸國家公園距離馬賽約 15 公里，被認為是地中海地區最美麗的自然景觀，以其壯麗的海灣和峭壁而聞名，國家公園成立於 2012 年，涵蓋面積約 525 平方公里，包括陸地和海域。公園的主要特色是其卡朗克 (Calanques) 地形，是一系列峭壁、海灣和海蝕洞穴的組合，這些地形形成了壯觀的海岸線、優美的海灣和令人難以置信的自然景觀。國家公園還擁有豐富的文化和歷史遺產。在公園內有一些古老的漁村和修道院，如 Calanque de Sormiou 和 Calanque de Morgiou 等，展現了當地傳統和生活方式。
+        </h4>
+        <h4>前往蔚藍海岸國家公園可以從老港先坐地鐵 L2 到 Sainte-Marguerite Dromel 站後轉搭 24 路公車坐到底站 Campus de Luminy，登山口就在下車處旁邊。</h4>
+        <div style="text-align: center">
+          <img src="法國照片\馬賽\MS9.jpg" width="600px" />
+          <img src="法國照片\馬賽\MS10.jpg" width="600px" />
+          <img src="法國照片\馬賽\MS11.jpg" width="600px" />
+          <img src="法國照片\馬賽\MS12.jpg" width="600px" />
+          <img src="法國照片\馬賽\MS13.jpg" width="600px" />
+        </div>
+        <br /><br />
+        <h2>馬賽美食</h2>
+        <h3>Le Miramar</h3>
+        <h4>
+          馬賽魚湯 (Bouillabaisse) 是馬賽地區的一道傳統海鮮湯，被譽為法國最經典和美味的料理。起源可以追溯到古老的漁民傳統，最早是由漁民使用捕獲的次級魚種和海鮮煮製而成，以充分利用漁獲並避免浪費。馬賽魚湯的製作過程相當繁複，並要求使用多種不同的魚類和海鮮，通常包括紅魚、鯛魚、鰽魚、魷魚和蝦等，這些海鮮通常與蔬菜 (如洋蔥、番茄和西芹)以及香料 (如番紅花、百里香和薄荷) 一起煮製。首先將魚和海鮮與蔬菜和香料一起煮沸，以提取出它們的風味和營養，然後將湯過濾並分離出固體成分，最後將湯煮沸，加入橄欖油、蒜頭和橄欖，使湯的口感更豐富，因此上菜時會有兩種不同烹煮階段的湯以供品嘗，在配上蒜蓉麵包和麵包脆片真的超級進補。馬賽魚湯的價格不斐，一份套餐都至少 65 歐元起跳 (2022 年的時候，現在應該更高了)，小資族可能需要考慮一下。
+        </h4>
+        <div style="text-align: center">
+          <img src="法國照片\馬賽\MS14.jpg" width="800px" />
+          <img src="法國照片\馬賽\MS15.jpg" width="600px" />
+          <img src="法國照片\馬賽\MS16.jpg" width="600px" />
+          <img src="法國照片\馬賽\MS17.jpg" width="800px" />
+        </div>
+        <br /><br />
+      </div>
+      <div class="destination-sidebar">
+        <div class="sidebar-image-container">
+          <img src="側邊欄自我介紹.jpg" />
+        </div>
+        <h5>
+          Hi!
+          我是Tommy，我熱愛旅遊也喜歡藉由影像紀錄旅程中的點點滴滴，透過文字將我在旅途中的所見所聞分享給大家。旅行對我而言不只是吃吃喝喝，而是能在行萬里路間感受世界的脈動，體驗不同的文化，希望藉由我的分享能讓大家看到更多世界的美好。
+        </h5>
+        <br />
+        <h5>
+          想更了解我或與我聯絡:
+          <a
+            href="https://www.instagram.com/tommy_techvoyage/"
+            target="_blank"
+            style="color: inherit; text-decoration: underline"
+          >
+            <b>Instagram</b>
+          </a>
+        </h5>
+        <div class="recommendation-section">
+          <h3>其他法國旅遊目的地</h3>
+          <div class="recommendation-buttons">
+            <a href="巴黎.html">
+              <button><h5>巴黎</h5></button>
+            </a>
+            <a href="里昂.html">
+              <button><h5>里昂</h5></button>
+            </a>
+            <a href="尼斯.html">
+              <button><h5>尼斯</h5></button>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="contact-section">
+      <div class="contact-item">
+        <h3>
+          想更了解我或與我聯絡:
+          <a
+            href="https://www.instagram.com/tommy_techvoyage/"
+            target="_blank"
+            style="color: inherit; text-decoration: underline"
+          >
+            Instagram
+          </a>
+        </h3>
+      </div>
+    </div>
+    <footer>
+      <h6>COPYRIGHT © 2025 Tommy 看世界 All rights reserved.</h6>
+    </footer>
+    <div id="expandable-menu">
+      <div id="menu-toggle"></div>
+      <!-- 收闔按鈕 -->
+      <div id="menu-content">
+        <h4>目錄</h4>
+        <ul id="menu-list"></ul>
+      </div>
+    </div>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const menu = document.getElementById("expandable-menu");
+        const toggle = document.getElementById("menu-toggle");
+        const menuList = document.getElementById("menu-list");
+        const destinationMain = document.querySelector(".destination-main");
+
+        // 點擊按鈕切換目錄狀態
+        toggle.addEventListener("click", () => {
+          menu.classList.toggle("open");
+        });
+
+        // 從 destination-main 區域提取 h2 和 h3，動態生成目錄
+        const headings = destinationMain.querySelectorAll("h2, h3");
+        headings.forEach((heading, index) => {
+          // 確保每個 h2 和 h3 都有唯一的 id
+          if (!heading.id) {
+            heading.id = `heading-${index}`;
+          }
+
+          const listItem = document.createElement("li");
+          const link = document.createElement("a");
+          link.textContent = heading.textContent;
+          link.href = `#${heading.id}`;
+          listItem.appendChild(link);
+
+          // 為 h3 添加縮排樣式
+          if (heading.tagName.toLowerCase() === "h3") {
+            listItem.classList.add("sub-item");
+          }
+
+          menuList.appendChild(listItem);
+        });
+
+        // 滾動至目標位置並加上 75px 偏移
+        menuList.addEventListener("click", (event) => {
+          if (event.target.tagName === "A") {
+            event.preventDefault(); // 阻止預設行為
+
+            const targetId = event.target.getAttribute("href").substring(1); // 取得目標 ID
+            const targetElement = document.getElementById(targetId);
+
+            if (targetElement) {
+              // 計算目標元素的位置並加上 75px 偏移
+              const targetPosition =
+                targetElement.getBoundingClientRect().top + window.scrollY;
+              const offset = 75; // 偏移的距離
+              window.scrollTo({
+                top: targetPosition - offset,
+                behavior: "smooth", // 平滑滾動
+              });
+            }
+          }
+        });
+      });
+    </script>
+  </body>
+</html>

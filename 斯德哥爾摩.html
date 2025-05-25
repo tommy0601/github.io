@@ -1,0 +1,714 @@
+<!DOCTYPE html>
+<html lang="zh-hant-TW">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="曹旅瀚 Tommy" />
+    <meta name="description" content="探索斯德哥爾摩的魅力！從古老的皇宮到現代化的博物館，體驗瑞典首都的歷史、文化、美食和自然景觀，感受斯德哥爾摩的獨特氛圍。" />
+    <meta name="keywords" content="斯德哥爾摩旅遊, 斯德哥爾摩景點, 斯德哥爾摩皇宮, 斯德哥爾摩博物館, 斯德哥爾摩美食, 斯德哥爾摩自由行, 瑞典首都, 斯德哥爾摩自然景觀, 斯德哥爾摩文化, 斯德哥爾摩夜生活" />
+    <title>Tommy 看世界 - 斯德哥爾摩</title>
+    <link rel="icon" href="網頁縮圖.ico" />
+    <style>
+      body {
+        font-family: Calibri, Arial, sans-serif; /* 首選 Calibri，次選 Arial */
+        margin: 0;
+        padding: 0;
+        overflow-x: hidden; /* 禁止水平滾動 */
+        background-color: #f4f4f9;
+        color: #333;
+      }
+
+      h1 {
+        font-size: 40px;
+        font-weight: bold;
+      }
+
+      h2 {
+        font-size: 32px;
+        font-weight: bold;
+        color: #2a90a7;
+        display: inline-block;
+        margin-bottom: 1rem; /* 縮小 h2 的底部邊距 */
+        background-color: #cee5e8;
+      }
+
+      h3 {
+        font-size: 26px;
+        margin: 0 0 1rem;
+        font-weight: bold;
+        text-decoration: underline; /* 加上底線 */
+      }
+
+      h4 {
+        font-size: 18px;
+        font-weight: normal;
+        line-height: 1.8;
+      }
+
+      h5 {
+        font-size: 16px;
+        font-weight: normal;
+        margin: 0;
+      }
+
+      h6 {
+        font-size: 10px;
+        color: #fff;
+        margin: 0;
+        text-align: center;
+        line-height: 50px; /* 高度對齊 */
+      }
+
+      nav {
+        background-color: #78bcc4;
+        display: flex;
+        justify-content: space-between; /* 保持分佈在兩側 */
+        width: calc(100% - 10rem); /* 與其他內容的邊界一致 */
+        padding: 0.5rem 5rem; /* 主導覽列的 padding 設置 */
+        position: fixed;
+        top: 0;
+        z-index: 1000;
+      }
+
+      .nav-left .logo img {
+        height: 50px; /* 控制 Logo 圖片的高度 */
+        transform: translateX(-1.5rem); /* 向右移動 2rem */
+      }
+
+      .nav-right {
+        display: flex;
+        align-items: center;
+        transform: translateX(2rem); /* 向右移動 2rem */
+      }
+
+      nav a {
+        color: #eff5f5;
+        text-decoration: none;
+        padding: 0.5rem 1rem;
+        margin: 0 0.5rem;
+        transition: transform 0.3s;
+      }
+
+      nav a:hover {
+        transform: translateY(-3px);
+      }
+
+      .dropdown {
+        position: relative;
+      }
+
+      .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #78bcc4;
+        min-width: 160px;
+        border-radius: 4px;
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        padding: 0.2rem 0;
+      }
+
+      .dropdown-content a {
+        color: #eff5f5;
+        display: block;
+        transition: transform 0.3s;
+        border-bottom: 1px solid #ddd;
+      }
+
+      .dropdown-content a:last-child {
+        border-bottom: none;
+      }
+
+      .dropdown-content a:hover {
+        transform: translateY(-3px);
+      }
+
+      .dropdown:hover .dropdown-content {
+        display: block;
+      }
+
+      .intro-section {
+        background-color: #eff5f5;
+        display: flex;
+        padding: 2rem;
+        margin-top: 60px; /* 根據導航列高度調整 */
+        justify-content: space-between;
+        align-items: flex-start;
+        width: 100%;
+        box-sizing: border-box; /* 包含 padding 在內 */
+        padding-left: 5rem;
+        padding-right: 5rem;
+      }
+
+      .intro-section h4 {
+        max-width: 700px;
+      }
+
+      .intro-section .left {
+        width: 60%;
+      }
+
+      .intro-section .right {
+        width: 40%;
+      }
+
+      .destination-section {
+        display: flex;
+        padding: 1rem 5%; /* 左右內間距為螢幕的10% */
+        background-color: white;
+      }
+
+      .destination-main {
+        width: 75%;
+        margin-right: 1.5rem; /* 增加右邊外邊距 */
+      }
+
+      .destination-sidebar {
+        width: 25%;
+        padding-left: 1.5rem; /* 增加左側內邊距 */
+        margin-top: 2rem; /* 向上或向下調整，負值表示向上 */
+      }
+
+      .sidebar-image-container {
+        margin-bottom: 1rem;
+        text-align: center; /* 確保圖片置中 */
+      }
+
+      .sidebar-image-container img {
+        height: 300px; /* 設置直式圖片的高度 */
+      }
+
+      .two-vertical-images {
+        display: flex; /* 彈性佈局，讓圖片並排 */
+        justify-content: space-between; /* 兩張圖片均勻分佈 */
+        gap: 2rem; /* 圖片之間的間距 */
+        margin-top: 2rem;
+        margin-bottom: 2rem; /* 與下方內容的距離 */
+      }
+
+      .two-vertical-images img {
+        width: calc(50% - 0.5rem); /* 每張圖片佔用容器的一半減去間距 */
+        text-align: center; /* 確保圖片置中 */
+        height: auto; /* 保持圖片的直式比例 */
+        object-fit: cover; /* 確保圖片內容適應容器 */
+      }
+
+      .recommendation-section {
+        margin-top: 1.5rem; /* 與上方文字的間距 */
+        text-align: center;
+        position: sticky;
+        top: 80px; /* 空出導覽列的高度，確保推薦區不被覆蓋 */
+        z-index: 10; /* 提高層級，避免被其他內容遮蓋 */
+      }
+
+      .recommendation-section h3 {
+        font-size: 18px;
+        font-weight: bold;
+        margin-bottom: 0.5rem; /* 與按鈕區的距離 */
+      }
+
+      .recommendation-buttons {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 0.5rem; /* 按鈕之間的間距 */
+      }
+
+      .recommendation-buttons button {
+        padding: 0.5rem 1rem;
+        font-size: 14px;
+        color: white;
+        background-color: #78bcc4;
+        border: none;
+        border-radius: 4px;
+        transition: transform 0.3s;
+        font-family: Arial, sans-serif;
+      }
+
+      .recommendation-buttons button:hover {
+        transform: translateY(-3px);
+      }
+
+      .contact-section {
+        padding: 2rem 5rem; /* 上下與左右間距 */
+        background-color: #eff5f5; /* 淺灰背景 */
+        text-align: center; /* 確保內容置中對齊 */
+      }
+
+      .contact-item h3 {
+        font-size: 18px; /* 調整標題字體大小 */
+        margin: 0; /* 移除多餘的間距 */
+        text-decoration: none; /* 移除底線 */
+      }
+
+      footer {
+        background-color: #000;
+        color: white;
+        height: 30px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      #expandable-menu {
+        position: fixed;
+        top: 70px; /* 與螢幕頂部的距離設為 60px */
+        right: 0;
+        height: calc(100% - 70px); /* 高度減去 60px，避免超出視窗 */
+        width: 395px; /* 目錄寬度與 sidebar 齊寬 */
+        transform: translateX(100%); /* 初始狀態：隱藏在右側 */
+        transition: transform 0.3s ease;
+        background-color: #f4f4f9; /* 與網站背景一致 */
+        z-index: 1000;
+      }
+
+      /* 收闔按鈕 */
+      #menu-toggle {
+        position: absolute;
+        top: 45%;
+        left: -40px; /* 調整按鈕的位置，適應按鈕變大後的寬度 */
+        transform: translateY(-50%);
+        width: 40px; /* 增大按鈕寬度 */
+        height: 80px; /* 增大按鈕高度 */
+        background-color: #78bcc4;
+        color: white;
+        border-radius: 4px;
+        display: flex;
+        justify-content: center; /* 水平居中 */
+        align-items: center; /* 垂直居中 */
+      }
+
+      #menu-toggle::after {
+        content: "目錄"; /* 在按鈕內顯示 "目錄" */
+        font-size: 17px;
+        color: white; /* 設定字體顏色為白色 */
+        writing-mode: vertical-rl; /* 使文字垂直排列 */
+      }
+
+      #menu-toggle:hover {
+        background-color: #78bcc4;
+      }
+
+      /* 目錄內容 */
+      #menu-content {
+        padding: 0.5rem 1rem;
+        overflow-y: auto;
+        height: 100%;
+      }
+
+      #menu-content h4 {
+        font-weight: bold;
+        margin-top: 0;
+      }
+
+      #menu-list {
+        list-style: none;
+        padding: 0;
+      }
+
+      #menu-list li {
+        margin-bottom: 0.5rem;
+      }
+
+      #menu-list a {
+        color: #2a90a7;
+        text-decoration: none;
+        transition: color 0.3s;
+      }
+
+      #menu-list a:hover {
+        color: #78bcc4;
+      }
+
+      #menu-list .sub-item {
+        margin-left: 1.5rem; /* 調整縮排距離 */
+        font-size: 0.9rem; /* 可選：調整子項目字體大小 */
+      }
+
+      /* 目錄展開狀態 */
+      #expandable-menu.open {
+        transform: translateX(0);
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <div class="nav-left">
+        <div class="logo">
+          <a href="首頁.html">
+            <img src="網站Logo.png" alt="網站 Logo" />
+          </a>
+        </div>
+      </div>
+      <div class="nav-right">
+        <a href="首頁.html">關於我</a>
+        <div class="dropdown">
+          <a>亞洲旅遊</a>
+          <div class="dropdown-content">
+            <a href="中國.html">中國</a>
+            <a href="新加坡.html">新加坡</a>
+            <a href="馬來西亞.html">馬來西亞</a>
+            <a href="泰國.html">泰國</a>
+            <a href="印尼.html">印尼</a>
+            <a href="越南.html">越南</a>
+          </div>
+        </div>
+        <div class="dropdown">
+          <a>歐洲旅遊</a>
+          <div class="dropdown-content">
+            <a href="英國.html">英國</a>
+            <a href="法國.html">法國</a>
+            <a href="荷蘭.html">荷蘭</a>
+            <a href="比利時.html">比利時</a>
+            <a href="盧森堡.html">盧森堡</a>
+            <a href="瑞士.html">瑞士</a>
+            <a href="摩納哥.html">摩納哥</a>
+            <a href="西班牙.html">西班牙</a>
+            <a href="葡萄牙.html">葡萄牙</a>
+            <a href="安道爾.html">安道爾</a>
+            <a href="丹麥.html">丹麥</a>
+            <a href="瑞典.html">瑞典</a>
+            <a href="波蘭.html">波蘭</a>
+          </div>
+        </div>
+        <div class="dropdown">
+          <a>美洲旅遊</a>
+          <div class="dropdown-content">
+            <a href="美國.html">美國</a>
+            <a href="加拿大.html">加拿大</a>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <div class="intro-section">
+      <div class="left">
+        <h1>Tommy 在斯德哥爾摩</h1>
+        <h4>
+          <b>斯德哥爾摩 (Stockholm)  </b>是瑞典的首都和最大城，位於斯堪地納維亞半島東岸的波羅的海海灣，歷史可以追溯到 13 世紀，是瑞典國王的居所和行政中心，並成為了北歐最重要的城市。如今斯德哥爾摩是一個現代化的國際都市，擁有先進的基礎設施和繁榮的經濟，市區由數個島嶼組成，並以其迷人的水域景觀而聞名，因此被稱為「北方的威尼斯」。
+        </h4>
+      </div>
+      <div class="right">
+        <img
+          src="瑞典照片\斯德哥爾摩\斯德哥爾摩_介紹.jpg"
+          width="90%"
+          height="350px"
+        />
+      </div>
+    </div>
+
+    <div class="destination-section">
+      <div class="destination-main">
+        <h2>斯德哥爾摩交通</h2>
+        <h3>機場交通</h3>
+        <h4>
+          從哥本哈根凱斯楚普機場可以搭乘地鐵 M2 線抵達市中心 Kongens Nytorv 站，車程約 20 分鐘。
+        </h4>
+        <h3>市區交通</h3>
+        <h4>
+          在斯德哥爾摩主要的交通方式便是地鐵，幾乎能涵蓋所有的景點，值得一提的是一些地鐵站會根據該站的特色而有不同的裝置藝術，讓通勤這件事不會無聊，如果外面天氣惡劣，進行地鐵站巡禮也能有許多收穫!
+        </h4>
+        <div style="text-align: center">
+          <img src="瑞典照片\斯德哥爾摩\斯德哥爾摩_交通1.png" width="1000px" />
+          <img src="瑞典照片\斯德哥爾摩\斯德哥爾摩_交通2.jpg" width="600px" />
+          <img src="瑞典照片\斯德哥爾摩\斯德哥爾摩_交通3.jpg" width="800px" />
+        </div>
+        <br /><br />
+        <h2>斯德哥爾摩住宿</h2>
+        <h4>
+          斯德哥爾摩的景點十分集中，多數景點都在老城區島上，但島上物價房價也較高，推薦大家可以住在靠近國王花園一帶，住宿選擇多吃飯也比較方便。
+        </h4>
+        <div style="text-align: center">
+          <img src="瑞典照片\斯德哥爾摩\斯德哥爾摩_住宿.png" width="1000px" />
+        </div>
+        <br /><br />
+        <h2>斯德哥爾摩景點</h2>
+        <h3>Östermalms Food Hall</h3>
+        <h4>
+          Östermalms Food Hall 位於 Östermalm 區的中心地帶，是斯德哥爾摩最古老、最受歡迎的食品市場，於 1888 年開業，該建築本身也是一件藝術品，展示了瑞典新古典主義風格的建築設計，內部裝飾精美，擁有高天花板、彩色玻璃窗和精美的細節，營造出獨特的氛圍。
+        </h4>
+        <h4>在 Östermalms Food Hall 中可以找到各種各樣的食品攤位和商店，銷售來自瑞典和其他國家的美食和特色產品，有新鮮的海鮮、肉類、奶製品、麵包、糕點、蔬菜、水果以及瑞典傳統食品，如瑞典肉丸 (köttbullar) 和鯡魚罐頭 (surströmming)，還設有餐廳和咖啡廳，滿足不同口味的需求。</h4>
+        <div style="text-align: center">
+          <img src="瑞典照片\斯德哥爾摩\ST1.jpg" width="600px" />
+          <img src="瑞典照片\斯德哥爾摩\ST2.jpg" width="800px" />
+        </div>
+        <br /><br /><br />
+        <h3>斯德哥爾摩王宮 (Kungliga slottet)</h3>
+        <h4>
+          斯德哥爾摩王宮是瑞典王室的正式居所和辦公地點，建築風格主要為巴洛克和新古典主義，外觀壯觀而莊嚴。宮殿內部佈局宏大，包括 600 多個房間，其中包括展覽廳、博物館、禮堂、宴會廳和王室私人住所，展示了瑞典王室的歷史、文化和藝術珍品，包括王冠、王室珠寶、古代文物和繪畫收藏，象徵著王權和權力。
+        </h4>
+        <h4>除了參觀宮殿內部，也能探索皇家宮廷和其他附屬建築物，如皇家教堂 (Storkyrkan) 和皇家武器庫 (Livrustkammaren)，體現了瑞典王室的歷史和文化遺產。另外<b>每天中午都有衛兵儀式</b>，以盛裝護衛皇家宮殿，展示了瑞典傳統的儀仗和儀式。</h4>
+        <div style="text-align: center">
+          <img src="瑞典照片\斯德哥爾摩\ST3.jpg" width="800px" />
+          <img src="瑞典照片\斯德哥爾摩\ST4.jpg" width="800px" />
+          <img src="瑞典照片\斯德哥爾摩\ST5.jpg" width="800px" />
+          <img src="瑞典照片\斯德哥爾摩\ST6.jpg" width="800px" />
+          <img src="瑞典照片\斯德哥爾摩\ST7.jpg" width="600px" />
+          <img src="瑞典照片\斯德哥爾摩\ST8.jpg" width="600px" />
+        </div>
+        <br /><br /><br />
+        <h3>瑞典議會 (Riksdagshuset)</h3>
+        <h4>
+          瑞典議會是國家政治決策和立法的中心，建築風格結合了新古典主義和現代主義元素，由瑞典建築師 Arvid Bjerke 設計，並於 1905 年至 1928 年間興建，外觀宏偉而莊重，以花崗岩和紅磚建造，擁有壯麗的圓頂和尖塔，大樓的設計融入了瑞典的歷史和文化元素，表達了國家的統一和議會制度的重要性。
+        </h4>
+        <h4>瑞典議會內部有許多重要的議會設施和房間，包括議會大廳、議會委員會、辦公室和會議室。議會大廳是該建築最宏偉的空間，是議會議員進行辯論和投票的地方，大廳內設有觀眾席，供公眾觀看議會的辯論過程。</h4>
+        <div style="text-align: center">
+          <img src="瑞典照片\斯德哥爾摩\ST9.jpg" width="800px" />
+          <img src="瑞典照片\斯德哥爾摩\ST10.jpg" width="600px" />
+        </div>
+        <br /><br /><br />
+        <h3>斯德哥爾摩大教堂 (Storkyrkan)</h3>
+        <h4>
+          斯德哥爾摩大教堂建於 13 世紀，是瑞典國家儀式和重要宗教儀式的場所，建築風格結合了哥德式和巴洛克式元素，外觀壯觀而華麗，內部裝飾豪華，包括精美的彩色玻璃窗、石雕、壁畫和雕刻，其中最著名的是為瑞典國王加冕儀式而設計的加冕檯 (Stallmästarebordet) 和加冕椅 (Coronation Chair)。
+        </h4>
+        <div style="text-align: center">
+          <img src="瑞典照片\斯德哥爾摩\ST11.jpg" width="600px" />
+        </div>
+        <br /><br /><br />
+        <h3>老城區 (Gamla Stan)</h3>
+        <h4>
+          老城區是瑞典首都的歷史中心，歷史可以追溯到 13 世紀，許多建築物保存至今，展現了中世紀和文藝復興時期的建築風格。這個區域有狹窄的街道、彎曲的小巷和彩色的建築，給人一種迷人而浪漫的感覺，最著名的街道是 Västerlånggatan 和 Österlånggatan，有許多古老的商店、咖啡館和餐廳。
+        </h4>
+        <div style="text-align: center">
+          <img src="瑞典照片\斯德哥爾摩\ST12.jpg" width="800px" />
+          <img src="瑞典照片\斯德哥爾摩\ST13.jpg" width="600px" />
+          <img src="瑞典照片\斯德哥爾摩\ST14.jpg" width="600px" />
+        </div>
+        <br /><br /><br />
+        <h3>騎士島教堂 (Riddarholmskyrkan)</h3>
+        <h4>
+          騎士島教堂是瑞典最古老的教堂之一，也是瑞典國家墳場的所在地，供應國王和皇后的葬禮。建築風格是哥德式，最早建於 13 世紀，以紅磚建造，但內部裝飾豪華。教堂內有許多著名的墳墓和紀念碑，包括瑞典國王和皇后的陵墓。其中最著名的是瑞典國王古斯塔夫·阿道夫 (Gustav Adolf) 和瑞典國王卡爾十一世·古斯塔夫 (Carl XI) 的陵墓。
+        </h4>
+        <div style="text-align: center">
+          <img src="瑞典照片\斯德哥爾摩\ST15.jpg" width="800px" />
+          <img src="瑞典照片\斯德哥爾摩\ST16.jpg" width="800px" />
+          <img src="瑞典照片\斯德哥爾摩\ST17.jpg" width="600px" />
+        </div>
+        <br /><br /><br />
+        <h3>Mariaberget</h3>
+        <h4>
+          Mariaberget 是位於 Södermalm 區的西部的小山丘，有著一條風景如畫的步道Monteliusvägen，可以俯瞰整個斯德哥爾摩市區和馬拉雷恩湖 (Mälaren Lake)，享受壯麗的景色。
+        </h4>
+        <div style="text-align: center">
+          <img src="瑞典照片\斯德哥爾摩\ST18.jpg" width="800px" />
+          <img src="瑞典照片\斯德哥爾摩\ST19.jpg" width="800px" />
+          <img src="瑞典照片\斯德哥爾摩\ST20.jpg" width="800px" />
+        </div>
+        <br /><br /><br />
+        <h3>瓦薩沉船博物館 (Vasamuseet)</h3>
+        <h4>
+          瓦薩沉船博物館的主要展品是瓦薩號 (Vasa)，是 17 世紀瑞典的一艘戰船。瓦薩號本身是一個令人驚嘆的展品，長達 69 米，高達 52 米，裝飾著華麗的雕刻和彩繪，是當時瑞典海軍的驕傲，但由於設計上的問題導致在 1628 年下水不久後沉沒，並在 333 年後於 1961 年被打撈上岸，博物館專門展示這艘戰船的殘骸和相關的文物，以及船上的展示品和重建模型。
+        </h4>
+        <h4>展覽提供了關於瓦薩號的豐富信息和故事。遊客可以了解這艘船的建造過程、沉沒原因以及打撈和修復的歷史，還展示了其他與航海和海洋相關的展品，如航海工具、藝術品、文物和模型及當時的瑞典海軍、船上的生活和航海技術等相關主題。</h4>
+        <div style="text-align: center">
+          <img src="瑞典照片\斯德哥爾摩\ST21.jpg" width="800px" />
+          <img src="瑞典照片\斯德哥爾摩\ST22.jpg" width="800px" />
+          <img src="瑞典照片\斯德哥爾摩\ST23.jpg" width="800px" />
+          <img src="瑞典照片\斯德哥爾摩\ST24.jpg" width="600px" />
+          <img src="瑞典照片\斯德哥爾摩\ST25.jpg" width="600px" />
+        </div>
+        <br /><br /><br />
+        <h3>北歐博物館 (Nordiska museet)</h3>
+        <h4>
+          北歐博物館建於 19 世紀末，於 1907 年對公眾開放，周圍環繞著美麗的公園和自然景觀，展覽涵蓋了北歐文化和生活的各個方面，收藏了大量的展品，包括傳統服飾、家居用品、藝術品、工藝品、玩具、音樂樂器等等，展示了北歐地區的傳統和現代生活方式，可以通過互動展示、多媒體展示、文物和藝術品的展示，深入了解北歐文化的多樣性和豐富性。
+        </h4>
+        <div style="text-align: center">
+          <img src="瑞典照片\斯德哥爾摩\ST26.jpg" width="800px" />
+        </div>
+        <br /><br /><br />
+        <h3>斯德哥爾摩市政廳 (Stockholms stadshus)</h3>
+        <h4>
+          斯德哥爾摩市政廳是斯德哥爾摩的市政中心，建於 20 世紀初，以哥德復興風格為基礎設計的，由瑞典建築師拉爾斯·伊斯恩 (Ragnar Östberg) 設計，並於 1923 年完工。該建築以其壯麗的外觀和精美的細節而聞名，特別是其高塔和黃色磚石結構。它是許多重要活動和慶典的場所，最著名的是每年的諾貝爾宴會，是諾貝爾獎頒獎禮後的盛大宴會，吸引著全球各地的知名人士和嘉賓。除了市政活動，市政廳也開放給遊客參觀。遊客可以參觀建築的內部，包括市政廳、金色大廳，它是一個華麗的宴會廳，以其壯麗的裝飾、黃金和五彩繪玻璃馬賽克而聞名。
+        </h4>
+        <div style="text-align: center">
+          <img src="瑞典照片\斯德哥爾摩\ST27.jpg" width="800px" />
+          <img src="瑞典照片\斯德哥爾摩\ST28.jpg" width="800px" />
+        </div>
+        <br /><br /><br />
+        <h3>諾貝爾博物館 (Nobel Prize Museum)</h3>
+        <h4>
+          諾貝爾獎博物館展示和紀念諾貝爾獎的歷史、得獎者和其所代表的卓越成就，是諾貝爾基金會的一部分，旨在向公眾傳播阿爾弗雷德·諾貝爾的遺產和他的貢獻。展覽通過多種互動方式，介紹了諾貝爾獎的背景、選拔程序以及各個領域的得獎者，可以通過視聽展示、獎狀、片介紹和故事講述，了解諾貝爾獎的由來和意義，還展示了得獎者的生平和獎項的影響力，以及他們對人類進步的重要貢獻。
+        </h4>
+        <div style="text-align: center">
+          <img src="瑞典照片\斯德哥爾摩\ST29.jpg" width="800px" />
+          <img src="瑞典照片\斯德哥爾摩\ST30.jpg" width="800px" />
+        </div>
+        <div class="two-vertical-images">
+          <img src="瑞典照片\斯德哥爾摩\ST31-1.jpg" />
+          <img src="瑞典照片\斯德哥爾摩\ST31-2.jpg" />
+        </div>
+        <br /><br />
+        <h2>斯德哥爾摩近郊景點</h2>
+        <h3>卓寧霍姆宮 (Drottningholms Slott)</h3>
+        <h4>
+          卓寧霍姆宮位於馬倫湖 (Lake Mälaren) 的一個島嶼上，被聯合國教科文組織列為世界文化遺產，是瑞典王室的官方居所。建於 17 世紀晚期，並在 18 世紀進行了擴建和改建，是一座巴洛克風格的建築，融合了法國和意大利的建築元素，被認為是北歐最精美的宮殿。
+        </h4>
+        <h4>
+          主宮殿是卓寧霍姆宮的核心，保存著豐富的藝術品和家具，展示了不同時期的裝飾風格，包括巴洛克、洛可可和新古典主義，可以參觀宮殿的一部分，欣賞宮殿內部的宮廳、客廳、餐廳和卧室等空間，體驗皇室的生活氛圍。
+        </h4>
+        <h4>皇宮周圍的花園和公園是卓寧霍姆宮的另一個亮點。花園設計精美，有著幾個不同的部分，包括法國式花園、英式風景園和巴洛克花園，可以在花園中漫步，欣賞到美麗的花卉、噴泉和雕塑。</h4>
+        <div style="text-align: center">
+          <img src="瑞典照片\斯德哥爾摩\ST33.jpg" width="800px" />
+          <img src="瑞典照片\斯德哥爾摩\ST34.jpg" width="800px" />
+          <img src="瑞典照片\斯德哥爾摩\ST35.jpg" width="800px" />
+          <img src="瑞典照片\斯德哥爾摩\ST36.jpg" width="800px" />
+          <img src="瑞典照片\斯德哥爾摩\ST37.jpg" width="800px" />
+        </div>
+        <br /><br />
+        <h2>斯德哥爾摩美食</h2>
+        <h3>Restaurant Kajsas Fisk</h3>
+        <h4>
+          斯德哥爾摩最出名的就是魚湯料理，以番茄湯為底再加入魚片、蝦子、淡菜等海鮮熬煮，起鍋後放入一塊牛油，品嘗著海鮮的鮮甜，配著麵包與沙拉，在寒冷的天氣中是最令人滿足的一餐。
+        </h4>
+        <div style="text-align: center">
+          <img src="瑞典照片\斯德哥爾摩\ST38.jpg" width="800px" />
+          <img src="瑞典照片\斯德哥爾摩\ST39.jpg" width="800px" />
+        </div>
+        <br /><br /><br />
+        <h3>A bar called Gemma</h3>
+        <h4>
+          名列世界前 50 的酒吧肯定需要來訪，店內的座位不算很多，昏暗的氛圍非常適合放鬆心情，水果基調的調酒味道十分好，巧妙地用清香掩蓋了濃重的酒味，但實際上酒精濃度不低，相當的有誠意，喝完整個身體都暖暖的可以暫時禦寒 XD。
+        </h4>
+        <div style="text-align: center">
+          <img src="瑞典照片\斯德哥爾摩\ST40.jpg" width="600px" />
+          <img src="瑞典照片\斯德哥爾摩\ST41.jpg" width="600px" />
+        </div>
+        <br /><br /><br />
+        <h3>Pom & Flora</h3>
+        <h4>
+          到瑞典肯定要來嘗試當的的早餐 Porridge，是加了肉桂蘋果醬跟堅果黑麥糊的燕麥粥，吃下去整個澱粉量爆表，一小碗就會吃的很飽，有一點不太習慣這種飲食法，但不妨來試試看。
+        </h4>
+        <div style="text-align: center">
+          <img src="瑞典照片\斯德哥爾摩\ST42.jpg" width="600px" />
+        </div>
+        <br /><br /><br />
+        <h3>Meatballs for the People</h3>
+        <h4>
+          終於吃到最正宗的瑞典肉丸了啊啊! 在大冷天中還要排隊 30 分鐘才入座，可見這家火熱的程度。Meatballs for the People 提供了瑞典各地不同動物部位的肉丸，包含牛、雞、豬、鹿還有馴鹿等等，肉丸的味道很豐富，加了香草與洋蔥提味，薯泥是放了很多奶油的那種我非常喜歡，再配上解膩的小紅莓和醃黃瓜，這才是最正宗的配菜版本喔!
+        </h4>
+        <div style="text-align: center">
+          <img src="瑞典照片\斯德哥爾摩\ST43.jpg" width="600px" />
+        </div>
+        <br /><br /><br />
+        <h3>Vete-Katten</h3>
+        <h4>
+          瑞典的下午茶文化叫 Fika，其中最著名的三種蛋糕分別是下圖中由左而右的布達佩斯蛋糕、肉桂捲、公主蛋糕，布達佩斯蛋糕外層是軟酥皮，內裹奶油及小紅莓，一口下去酸甜在口中齊綻放; 肉桂捲算是瑞典的國民麵包，常常作為早餐食用，甚至超商中都有販售; 公主蛋糕則是外層有薄博一層綠色的杏仁糖霜，裡面包裹奶油，加起來非常的甜，吃下去感受的到血糖飆升，這家的好處是內用咖啡與牛奶喝到飽，是個非常適合吃下午茶聊天的好去處。
+        </h4>
+        <div style="text-align: center">
+          <img src="瑞典照片\斯德哥爾摩\ST44.jpg" width="600px" />
+        </div>
+        <br /><br /><br />
+        <h3>Max Burger</h3>
+        <h4>
+          屬於瑞典本土的速食店品牌，整體漢堡的風格跟 Five Guys 很像，薯條則比較像麥當勞的作法，在冷天吃下一頓高熱量的速食滿足感非常高，價錢在當地也是相對便宜，是很餓又想省錢的好選擇。
+        </h4>
+        <div style="text-align: center">
+          <img src="瑞典照片\斯德哥爾摩\ST45.jpg" width="600px" />
+          <img src="瑞典照片\斯德哥爾摩\ST46.jpg" width="600px" />
+        </div>
+        <br /><br />
+      </div>
+      <div class="destination-sidebar">
+        <div class="sidebar-image-container">
+          <img src="側邊欄自我介紹.jpg" />
+        </div>
+        <h5>
+          Hi!
+          我是Tommy，我熱愛旅遊也喜歡藉由影像紀錄旅程中的點點滴滴，透過文字將我在旅途中的所見所聞分享給大家。旅行對我而言不只是吃吃喝喝，而是能在行萬里路間感受世界的脈動，體驗不同的文化，希望藉由我的分享能讓大家看到更多世界的美好。
+        </h5>
+        <br />
+        <h5>
+          想更了解我或與我聯絡:
+          <a
+            href="https://www.instagram.com/tommy_techvoyage/"
+            target="_blank"
+            style="color: inherit; text-decoration: underline"
+          >
+            <b>Instagram</b>
+          </a>
+        </h5>
+      </div>
+    </div>
+    <div class="contact-section">
+      <div class="contact-item">
+        <h3>
+          想更了解我或與我聯絡:
+          <a
+            href="https://www.instagram.com/tommy_techvoyage/"
+            target="_blank"
+            style="color: inherit; text-decoration: underline"
+          >
+            Instagram
+          </a>
+        </h3>
+      </div>
+    </div>
+    <footer>
+      <h6>COPYRIGHT © 2025 Tommy 看世界 All rights reserved.</h6>
+    </footer>
+    <div id="expandable-menu">
+      <div id="menu-toggle"></div>
+      <!-- 收闔按鈕 -->
+      <div id="menu-content">
+        <h4>目錄</h4>
+        <ul id="menu-list"></ul>
+      </div>
+    </div>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const menu = document.getElementById("expandable-menu");
+        const toggle = document.getElementById("menu-toggle");
+        const menuList = document.getElementById("menu-list");
+        const destinationMain = document.querySelector(".destination-main");
+
+        // 點擊按鈕切換目錄狀態
+        toggle.addEventListener("click", () => {
+          menu.classList.toggle("open");
+        });
+
+        // 從 destination-main 區域提取 h2 和 h3，動態生成目錄
+        const headings = destinationMain.querySelectorAll("h2, h3");
+        headings.forEach((heading, index) => {
+          // 確保每個 h2 和 h3 都有唯一的 id
+          if (!heading.id) {
+            heading.id = `heading-${index}`;
+          }
+
+          const listItem = document.createElement("li");
+          const link = document.createElement("a");
+          link.textContent = heading.textContent;
+          link.href = `#${heading.id}`;
+          listItem.appendChild(link);
+
+          // 為 h3 添加縮排樣式
+          if (heading.tagName.toLowerCase() === "h3") {
+            listItem.classList.add("sub-item");
+          }
+
+          menuList.appendChild(listItem);
+        });
+
+        // 滾動至目標位置並加上 75px 偏移
+        menuList.addEventListener("click", (event) => {
+          if (event.target.tagName === "A") {
+            event.preventDefault(); // 阻止預設行為
+
+            const targetId = event.target.getAttribute("href").substring(1); // 取得目標 ID
+            const targetElement = document.getElementById(targetId);
+
+            if (targetElement) {
+              // 計算目標元素的位置並加上 75px 偏移
+              const targetPosition =
+                targetElement.getBoundingClientRect().top + window.scrollY;
+              const offset = 75; // 偏移的距離
+              window.scrollTo({
+                top: targetPosition - offset,
+                behavior: "smooth", // 平滑滾動
+              });
+            }
+          }
+        });
+      });
+    </script>
+  </body>
+</html>

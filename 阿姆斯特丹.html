@@ -1,0 +1,695 @@
+<!DOCTYPE html>
+<html lang="zh-hant-TW">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="曹旅瀚 Tommy" />
+    <meta name="description" content="探索阿姆斯特丹的獨特魅力！走訪這座充滿歷史和文化的城市，乘坐運河船遊覽、參觀梵高博物館與安妮·弗蘭克博物館，體驗這個自由、開放的城市氛圍。" />
+    <meta name="keywords" content="阿姆斯特丹旅遊, 阿姆斯特丹景點, 阿姆斯特丹自由行, 梵高博物館, 安妮弗蘭克博物館, 阿姆斯特丹運河, 荷蘭旅遊, 阿姆斯特丹文化, 阿姆斯特丹藝術" />
+    <title>Tommy 看世界 - 阿姆斯特丹</title>
+    <link rel="icon" href="網頁縮圖.ico" />
+    <style>
+      body {
+        font-family: Calibri, Arial, sans-serif; /* 首選 Calibri，次選 Arial */
+        margin: 0;
+        padding: 0;
+        overflow-x: hidden; /* 禁止水平滾動 */
+        background-color: #f4f4f9;
+        color: #333;
+      }
+
+      h1 {
+        font-size: 40px;
+        font-weight: bold;
+      }
+
+      h2 {
+        font-size: 32px;
+        font-weight: bold;
+        color: #2a90a7;
+        display: inline-block;
+        margin-bottom: 1rem; /* 縮小 h2 的底部邊距 */
+        background-color: #cee5e8;
+      }
+
+      h3 {
+        font-size: 26px;
+        margin: 0 0 1rem;
+        font-weight: bold;
+        text-decoration: underline; /* 加上底線 */
+      }
+
+      h4 {
+        font-size: 18px;
+        font-weight: normal;
+        line-height: 1.8;
+      }
+
+      h5 {
+        font-size: 16px;
+        font-weight: normal;
+        margin: 0;
+      }
+
+      h6 {
+        font-size: 10px;
+        color: #fff;
+        margin: 0;
+        text-align: center;
+        line-height: 50px; /* 高度對齊 */
+      }
+
+      nav {
+        background-color: #78bcc4;
+        display: flex;
+        justify-content: space-between; /* 保持分佈在兩側 */
+        width: calc(100% - 10rem); /* 與其他內容的邊界一致 */
+        padding: 0.5rem 5rem; /* 主導覽列的 padding 設置 */
+        position: fixed;
+        top: 0;
+        z-index: 1000;
+      }
+
+      .nav-left .logo img {
+        height: 50px; /* 控制 Logo 圖片的高度 */
+        transform: translateX(-1.5rem); /* 向右移動 2rem */
+      }
+
+      .nav-right {
+        display: flex;
+        align-items: center;
+        transform: translateX(2rem); /* 向右移動 2rem */
+      }
+
+      nav a {
+        color: #eff5f5;
+        text-decoration: none;
+        padding: 0.5rem 1rem;
+        margin: 0 0.5rem;
+        transition: transform 0.3s;
+      }
+
+      nav a:hover {
+        transform: translateY(-3px);
+      }
+
+      .dropdown {
+        position: relative;
+      }
+
+      .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #78bcc4;
+        min-width: 160px;
+        border-radius: 4px;
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        padding: 0.2rem 0;
+      }
+
+      .dropdown-content a {
+        color: #eff5f5;
+        display: block;
+        transition: transform 0.3s;
+        border-bottom: 1px solid #ddd;
+      }
+
+      .dropdown-content a:last-child {
+        border-bottom: none;
+      }
+
+      .dropdown-content a:hover {
+        transform: translateY(-3px);
+      }
+
+      .dropdown:hover .dropdown-content {
+        display: block;
+      }
+
+      .intro-section {
+        background-color: #eff5f5;
+        display: flex;
+        padding: 2rem;
+        margin-top: 60px; /* 根據導航列高度調整 */
+        justify-content: space-between;
+        align-items: flex-start;
+        width: 100%;
+        box-sizing: border-box; /* 包含 padding 在內 */
+        padding-left: 5rem;
+        padding-right: 5rem;
+      }
+
+      .intro-section h4 {
+        max-width: 700px;
+      }
+
+      .intro-section .left {
+        width: 60%;
+      }
+
+      .intro-section .right {
+        width: 40%;
+      }
+
+      .destination-section {
+        display: flex;
+        padding: 1rem 5%; /* 左右內間距為螢幕的10% */
+        background-color: white;
+      }
+
+      .destination-main {
+        width: 75%;
+        margin-right: 1.5rem; /* 增加右邊外邊距 */
+      }
+
+      .destination-sidebar {
+        width: 25%;
+        padding-left: 1.5rem; /* 增加左側內邊距 */
+        margin-top: 2rem; /* 向上或向下調整，負值表示向上 */
+      }
+
+      .sidebar-image-container {
+        margin-bottom: 1rem;
+        text-align: center; /* 確保圖片置中 */
+      }
+
+      .sidebar-image-container img {
+        height: 300px; /* 設置直式圖片的高度 */
+      }
+
+      .two-vertical-images {
+        display: flex; /* 彈性佈局，讓圖片並排 */
+        justify-content: space-between; /* 兩張圖片均勻分佈 */
+        gap: 2rem; /* 圖片之間的間距 */
+        margin-top: 2rem;
+        margin-bottom: 2rem; /* 與下方內容的距離 */
+      }
+
+      .two-vertical-images img {
+        width: calc(50% - 0.5rem); /* 每張圖片佔用容器的一半減去間距 */
+        text-align: center; /* 確保圖片置中 */
+        height: auto; /* 保持圖片的直式比例 */
+        object-fit: cover; /* 確保圖片內容適應容器 */
+      }
+
+      .recommendation-section {
+        margin-top: 1.5rem; /* 與上方文字的間距 */
+        text-align: center;
+        position: sticky;
+        top: 80px; /* 空出導覽列的高度，確保推薦區不被覆蓋 */
+        z-index: 10; /* 提高層級，避免被其他內容遮蓋 */
+      }
+
+      .recommendation-section h3 {
+        font-size: 18px;
+        font-weight: bold;
+        margin-bottom: 0.5rem; /* 與按鈕區的距離 */
+      }
+
+      .recommendation-buttons {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 0.5rem; /* 按鈕之間的間距 */
+      }
+
+      .recommendation-buttons button {
+        padding: 0.5rem 1rem;
+        font-size: 14px;
+        color: white;
+        background-color: #78bcc4;
+        border: none;
+        border-radius: 4px;
+        transition: transform 0.3s;
+        font-family: Arial, sans-serif;
+      }
+
+      .recommendation-buttons button:hover {
+        transform: translateY(-3px);
+      }
+
+      .contact-section {
+        padding: 2rem 5rem; /* 上下與左右間距 */
+        background-color: #eff5f5; /* 淺灰背景 */
+        text-align: center; /* 確保內容置中對齊 */
+      }
+
+      .contact-item h3 {
+        font-size: 18px; /* 調整標題字體大小 */
+        margin: 0; /* 移除多餘的間距 */
+        text-decoration: none; /* 移除底線 */
+      }
+
+      footer {
+        background-color: #000;
+        color: white;
+        height: 30px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      #expandable-menu {
+        position: fixed;
+        top: 70px; /* 與螢幕頂部的距離設為 60px */
+        right: 0;
+        height: calc(100% - 70px); /* 高度減去 60px，避免超出視窗 */
+        width: 395px; /* 目錄寬度與 sidebar 齊寬 */
+        transform: translateX(100%); /* 初始狀態：隱藏在右側 */
+        transition: transform 0.3s ease;
+        background-color: #f4f4f9; /* 與網站背景一致 */
+        z-index: 1000;
+      }
+
+      /* 收闔按鈕 */
+      #menu-toggle {
+        position: absolute;
+        top: 45%;
+        left: -40px; /* 調整按鈕的位置，適應按鈕變大後的寬度 */
+        transform: translateY(-50%);
+        width: 40px; /* 增大按鈕寬度 */
+        height: 80px; /* 增大按鈕高度 */
+        background-color: #78bcc4;
+        color: white;
+        border-radius: 4px;
+        display: flex;
+        justify-content: center; /* 水平居中 */
+        align-items: center; /* 垂直居中 */
+      }
+
+      #menu-toggle::after {
+        content: "目錄"; /* 在按鈕內顯示 "目錄" */
+        font-size: 17px;
+        color: white; /* 設定字體顏色為白色 */
+        writing-mode: vertical-rl; /* 使文字垂直排列 */
+      }
+
+      #menu-toggle:hover {
+        background-color: #78bcc4;
+      }
+
+      /* 目錄內容 */
+      #menu-content {
+        padding: 0.5rem 1rem;
+        overflow-y: auto;
+        height: 100%;
+      }
+
+      #menu-content h4 {
+        font-weight: bold;
+        margin-top: 0;
+      }
+
+      #menu-list {
+        list-style: none;
+        padding: 0;
+      }
+
+      #menu-list li {
+        margin-bottom: 0.5rem;
+      }
+
+      #menu-list a {
+        color: #2a90a7;
+        text-decoration: none;
+        transition: color 0.3s;
+      }
+
+      #menu-list a:hover {
+        color: #78bcc4;
+      }
+
+      #menu-list .sub-item {
+        margin-left: 1.5rem; /* 調整縮排距離 */
+        font-size: 0.9rem; /* 可選：調整子項目字體大小 */
+      }
+
+      /* 目錄展開狀態 */
+      #expandable-menu.open {
+        transform: translateX(0);
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <div class="nav-left">
+        <div class="logo">
+          <a href="首頁.html">
+            <img src="網站Logo.png" alt="網站 Logo" />
+          </a>
+        </div>
+      </div>
+      <div class="nav-right">
+        <a href="首頁.html">關於我</a>
+        <div class="dropdown">
+          <a>亞洲旅遊</a>
+          <div class="dropdown-content">
+            <a href="中國.html">中國</a>
+            <a href="新加坡.html">新加坡</a>
+            <a href="馬來西亞.html">馬來西亞</a>
+            <a href="泰國.html">泰國</a>
+            <a href="印尼.html">印尼</a>
+            <a href="越南.html">越南</a>
+          </div>
+        </div>
+        <div class="dropdown">
+          <a>歐洲旅遊</a>
+          <div class="dropdown-content">
+            <a href="英國.html">英國</a>
+            <a href="法國.html">法國</a>
+            <a href="荷蘭.html">荷蘭</a>
+            <a href="比利時.html">比利時</a>
+            <a href="盧森堡.html">盧森堡</a>
+            <a href="瑞士.html">瑞士</a>
+            <a href="摩納哥.html">摩納哥</a>
+            <a href="西班牙.html">西班牙</a>
+            <a href="葡萄牙.html">葡萄牙</a>
+            <a href="安道爾.html">安道爾</a>
+            <a href="丹麥.html">丹麥</a>
+            <a href="瑞典.html">瑞典</a>
+            <a href="波蘭.html">波蘭</a>
+          </div>
+        </div>
+        <div class="dropdown">
+          <a>美洲旅遊</a>
+          <div class="dropdown-content">
+            <a href="美國.html">美國</a>
+            <a href="加拿大.html">加拿大</a>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <div class="intro-section">
+      <div class="left">
+        <h1>Tommy 在阿姆斯特丹</h1>
+        <h4>
+          <b>阿姆斯特丹 (Amsterdam) </b>是荷蘭的首都，起初是一個小漁村，在 17
+          世紀的荷蘭黃金時代成為了歐洲最重要的貿易中心，航運業、金融業和藝術文化繁榮發展，城市的繁榮和富裕吸引了來自世界各地的商人。現在的阿姆斯特丹擁有豐富的文化和旅遊資源，可以看到保存完好的
+          17
+          世紀荷蘭黃金時代的建築，如狹窄的運河房屋。阿姆斯特丹也以自行車文化而聞名，城市內有大量的自行車道，居民經常使用自行車作為主要的交通工具。
+        </h4>
+      </div>
+      <div class="right">
+        <img
+          src="荷蘭照片\阿姆斯特丹\阿姆斯特丹_介紹.jpg"
+          width="90%"
+          height="350px"
+        />
+      </div>
+    </div>
+
+    <div class="destination-section">
+      <div class="destination-main">
+        <h2>阿姆斯特丹交通</h2>
+        <h3>機場交通</h3>
+        <h4>
+          從阿姆斯特丹史基浦機場可以坐 Intercity Direct
+          火車直接抵達阿姆斯特丹中央車站，車程大約 20 分鐘。
+        </h4>
+        <h3>市區交通</h3>
+        <h4>
+          阿姆斯特丹的景點相當集中，基本上都可以步行抵達，走累了也可以搭乘路面電車，另外荷蘭是個相當單車友善的國家，也可以選擇租個單車漫遊這座運河城市。
+        </h4>
+        <div style="text-align: center">
+          <img src="荷蘭照片\阿姆斯特丹\阿姆斯特丹_交通.jpg" width="800px" />
+        </div>
+        <br /><br />
+        <h2>阿姆斯特丹住宿</h2>
+        <h4>
+          阿姆斯特丹的住宿相當的貴，住在觀光區的價格真的很驚人，推薦可以住在稍微外圍但又有路面電車可以直通市中心的地方，例如荷蘭國家博物館或荷蘭海事博物館一帶。
+        </h4>
+        <div style="text-align: center">
+          <img src="荷蘭照片\阿姆斯特丹\阿姆斯特丹_住宿.png" width="800px" />
+        </div>
+        <br /><br />
+        <h2>阿姆斯特丹景點</h2>
+        <h3>安妮之家 (Anne Frank Huis)</h3>
+        <h4>
+          安妮之家紀念猶太女孩安妮·弗蘭克及其家人在二戰期間躲藏於此的經歷，他是一位在第二次世界大戰期間寫下了《安妮日記》的猶太女孩，在躲藏期間寫下的日記成為了世界文學的經典之作。在二戰期間，他們在這個秘密藏身處度過了兩年的時間，直到他們被揭發並被送往集中營，安妮的父親奧托·弗蘭克是唯一在戰爭結束後幸存下來的家庭成員，他在戰後回到阿姆斯特丹，發現這座建築保存完好，於是將其改建成了紀念館。
+        </h4>
+        <h4>
+          到訪安妮之家可以參觀這座建築的各個房間和藏身處，了解安妮一家當時的生活環境，同時也可以通過展覽品、影片和照片等展示物了解二戰時期的歷史背景和猶太人遭受的迫害。博物館內展示了安妮的日記手稿以及其他重要文物，並通過這些展品講述了安妮的故事。
+        </h4>
+        <div style="text-align: center">
+          <img src="荷蘭照片\阿姆斯特丹\AM1.jpg" width="600px" />
+        </div>
+        <br /><br /><br />
+        <h3>水壩廣場 (Dam Square)</h3>
+        <h4>
+          水壩廣場是荷蘭阿姆斯特丹市中心最重要且最繁忙的廣場，位於阿姆斯特爾河
+          (Amstel) 和伊耳河 (IJ)
+          之間，名稱源自於建造在伊耳河上的一座水壩。歷史可以追溯到 13
+          世紀，當時是一個港口和市場的集散地，隨著時間的推移，廣場成為政治、商業和社交活動的中心。廣場周圍環繞著許多重要的建築和地標，其中最著名的是阿姆斯特丹皇宮
+          (Royal Palace Amsterdam)，建於 17
+          世紀，最初是荷蘭的市政廳，後來轉為皇室的官邸。皇宮現在是荷蘭國王的官方接待場所，同時對公眾開放參觀。
+        </h4>
+        <div style="text-align: center">
+          <img src="荷蘭照片\阿姆斯特丹\AM2.jpg" width="800px" />
+          <img src="荷蘭照片\阿姆斯特丹\AM3.jpg" width="800px" />
+        </div>
+        <br /><br /><br />
+        <h3>鑄幣塔 (Munttoren)</h3>
+        <h4>
+          鑄幣塔的建築風格為哥特式，建於 15 世紀末至 16
+          世紀初，最初是阿姆斯特丹城牆的一部分，作為城門和防禦塔樓。塔樓以其特殊的形狀和裝飾而聞名，其頂端有一個錢幣形狀的天花板，象徵著它作為阿姆斯特丹的貨幣交易中心的重要性。
+        </h4>
+        <div style="text-align: center">
+          <img src="荷蘭照片\阿姆斯特丹\AM4.jpg" width="600px" />
+          <img src="荷蘭照片\阿姆斯特丹\AM5.jpg" width="600px" />
+        </div>
+        <br /><br /><br />
+        <h3>紅燈區秘密博物館 (Red Light Secrets)</h3>
+        <h4>
+          紅燈區秘密博物館位於紅燈區內一座歷史悠久的建築物內，旨在展示這個特殊地區的背後故事和文化。博物館內部通過多媒體展示、道具和互動展覽，介紹紅燈區的歷史、工作條件、法規和文化背景。了解妓院內部的運作方式、妓女的生活、安全和工作條件等方面的資訊。博物館還提供了
+          VR
+          體驗，模擬成為一名紅燈區工作者的角色，進一步了解他們的日常生活和經歷，促使人們思考性工作的倫理、社會影響和性產業相關問題。
+          <b
+            >由於紅燈區涉及成人內容和敏感主題，博物館對年齡限制有要求，在參觀前確認相關規定</b
+          >。
+        </h4>
+        <div style="text-align: center">
+          <img src="荷蘭照片\阿姆斯特丹\AM6.jpg" width="800px" />
+        </div>
+        <br /><br /><br />
+        <h3>紅燈區 (Red Light District)</h3>
+        <h4>
+          紅燈區的核心區域位於 De Wallen
+          地區，佔據了市中心的一部分運河區域。這些窗戶通常配有紅色霓虹燈，妓女會以各種方式穿著或表演，可以在紅燈區漫遊，觀看並選擇與妓女交易。除了性工作場所，紅燈區還擁有一些性愛用品商店和成人劇院，分為初階的
+          Peeping Show 跟進階的成人秀，Peeping Show
+          是一個環形的房間，投幣進入後櫥窗會開啟，便可以看到在內表演的女郎，時間到了之後櫥窗便會關閉，成人秀則是舞台劇的形式，表演時常較長價錢也相對較高。
+        </h4>
+        <h4>
+          紅燈區在阿姆斯特丹的歷史中佔據著重要地位，可以追溯到 14
+          世紀，這個區域是水手和商人聚集的地方，並逐漸發展成為一個性工作的中心。參觀紅燈區一定要特別注意，
+          <b>攝影和錄影是被嚴格禁止的</b>，要尊重這些性工作者們。
+        </h4>
+        <div style="text-align: center">
+          <img src="荷蘭照片\阿姆斯特丹\AM7.jpg" width="800px" />
+          <img src="荷蘭照片\阿姆斯特丹\AM8.jpg" width="800px" />
+        </div>
+        <br /><br /><br />
+        <h3>梵谷博物館 (Van Gogh Museum)</h3>
+        <h4>
+          梵谷博物館致力於收藏、展示和研究著名荷蘭畫家文森特·梵谷 (Vincent van Gogh) 的作品。梵谷是 19 世紀末最重要的藝術家之一，他以其明亮的色彩和獨特的筆觸風格而聞名。然而他在生前並未獲得廣泛的認可，直到他去世後才獲得了全球的讚譽。梵谷的作品描繪了自然景觀、人物肖像和內心世界的情感表達，展現了他獨特的藝術視野和情感深度。
+        </h4>
+        <h4>梵谷博物館擁有世界上最大、最全面的梵谷作品收藏。博物館內展示了大約200幅梵高的畫作，包括他的自畫像、風景畫和靜物畫。可以欣賞到一些著名的作品，如《向日葵》(Sunflowers)、《星空》(Starry Night) 和《耳朵割下的自畫像》(Self-Portrait with Bandaged Ear)。</h4>
+        <h4>梵谷博物館不僅是一個畫廊，還是一個重要的研究機構。博物館的研究團隊致力於研究和解析梵谷的藝術，並與其他機構合作舉辦學術研討會和展覽。
+          由於博物館每天參觀人數有限，建議先在<a href="https://www.vangoghmuseum.nl/en" target="_blank">官網</a>訂票以免進不去喔!</h4>
+        <div class="two-vertical-images">
+          <img src="荷蘭照片\阿姆斯特丹\AM9-1.jpg" />
+          <img src="荷蘭照片\阿姆斯特丹\AM9-2.jpg" />
+        </div>
+        <div class="two-vertical-images">
+          <img src="荷蘭照片\阿姆斯特丹\AM10-1.jpg" />
+          <img src="荷蘭照片\阿姆斯特丹\AM10-2.jpg" />
+        </div>
+        <br /><br /><br />
+        <h3>海尼根啤酒博物館 (Heineken Experience)</h3>
+        <h4>
+          海尼根是世界上最知名的啤酒品牌之一，具有悠久的歷史和廣泛的國際影響力。海尼根啤酒博物館位於一個曾經是海尼根啤酒廠的建築物內，展示了該品牌的起源和發展，也可以參觀各種互動展覽和展示，了解海尼根啤酒的製作過程，透過多媒體展示、視頻、模型和實物展示等方式，介紹啤酒的原材料、釀造過程、包裝技術、歷史酒窖和酒桶。
+        </h4>
+        <h4>除了觀光展示，還可以參加啤酒品嚐活動，品嚐不同種類的啤酒，並學習如何品味和評價啤酒的風味，或參與啤酒製作的互動工作坊，親自體驗釀造過程，並製作自己的個人啤酒。</h4>
+        <div style="text-align: center">
+          <img src="荷蘭照片\阿姆斯特丹\AM11.jpg" width="800px" />
+        </div>
+        <div class="two-vertical-images">
+          <img src="荷蘭照片\阿姆斯特丹\AM12-1.jpg" />
+          <img src="荷蘭照片\阿姆斯特丹\AM12-2.jpg" />
+        </div>
+        <br /><br />
+        <h2>阿姆斯特丹近郊景點</h2>
+        <h3>贊丹風車群 (Zaanse Schans Windmills)</h3>
+        <h4>
+          贊丹風車群位於贊丹地區，距離阿姆斯特丹約 15 公里，是一個歷史悠久的工業區域，在過去的幾個世紀中，贊丹地區是荷蘭重要的工業中心，風車在這裡發揮了關鍵的作用。贊丹風車群包括一系列保存完好的風車，高聳在風景如畫的河岸上，這些風車代表了不同的功能，包括磨坊、鋸木廠、榨油廠和染料廠等，每個風車都有其獨特的外觀和特點，展示了荷蘭傳統建築和工業設計的精髓。
+        </h4>
+        <h4>
+          可以參觀其中一些風車的內部，了解風車的運作原理和其在不同工業領域中的應用。在內部可以看到巨大的齒輪、磨石和其他機械設備，這些設備以風能驅動，執行各種工藝過程，是對荷蘭歷史和工業發展的洞察。
+        </h4>
+        <h4>前往贊丹風車群可以從阿姆斯特丹中央車站乘坐 Sprinter 火車到 Zaandijk Zaanse Schans 站後再步行約 20 分鐘即可抵達。</h4>
+        <div style="text-align: center">
+          <img src="荷蘭照片\阿姆斯特丹\AM13.jpg" width="800px" />
+          <img src="荷蘭照片\阿姆斯特丹\AM14.jpg" width="600px" />
+          <img src="荷蘭照片\阿姆斯特丹\AM15.jpg" width="600px" />
+        </div>
+        <br /><br /><br />
+        <h3>庫肯霍夫 (Keukenhof)</h3>
+        <h4>
+          庫肯霍夫是世界上最大的花卉展覽會，距離阿姆斯特丹約 35 公里，佔地約 32 公頃，擁有豐富多樣的花卉種植，
+          包括鬱金香、水仙、飛燕草、風信子和其他彩色春季花卉。開放時間通常在每年春季的<b>三月底至五月初</b>，具體日期根據當年花卉綻放的情況而定，
+          建議先參考<a href="https://keukenhof.nl/en/" target="_blank">官網</a>，超過 700 萬朵鮮花在庫肯霍夫綻放，營造出令人驚嘆的花海景觀。除了花卉展示，還有專業的導覽和導覽團，可以深入了解花卉種植和園藝技術。
+        </h4>
+        <h4>
+          在每年庫肯霍夫開放期間，會有專線巴士從阿姆斯特丹 RAI 國際會展中心直達庫肯霍夫，可以先坐地鐵到 Europaplein 站再轉搭專線巴士前往。
+        </h4>
+        <div style="text-align: center">
+          <img src="荷蘭照片\阿姆斯特丹\AM16.jpg" width="800px" />
+          <img src="荷蘭照片\阿姆斯特丹\AM17.jpg" width="800px" />
+          <img src="荷蘭照片\阿姆斯特丹\AM18.jpg" width="800px" />
+          <img src="荷蘭照片\阿姆斯特丹\AM19.jpg" width="800px" />
+          <img src="荷蘭照片\阿姆斯特丹\AM20.jpg" width="800px" />
+        </div>
+        <br /><br />
+        <h2>阿此斯特丹美食</h2>
+        <h3>Vlaams Friteshuis Vleminckx</h3>
+        <h4>
+          薯條最早是從荷蘭比利時一帶發明的，這家號稱全阿姆斯特丹最好吃的薯條，點了個小份的一個人吃剛剛好，中份大概就是兩個人的份量了，點餐時可以決定要加幾種醬料，我選擇了最有名的蒜味醬，剛剛炸出來的薯條外酥內鬆軟，油也瀝得很乾，配上濃郁的醬料很快就一口接一口吃完了，推薦大家可以當作觀光到一半嘴饞時的點心。
+        </h4>
+        <div style="text-align: center">
+          <img src="荷蘭照片\阿姆斯特丹\AM21.jpg" width="600px" />
+        </div>
+        <br /><br /><br />
+        <h3>The Seafood Bar</h3>
+        <h4>
+          荷蘭鄰近北海，因此漁業資源相當豐富，也有非常多海鮮料理，這家一踏進去沒有海鮮的腥味，環境很乾淨，以綜合海鮮燒烤聞名，一大盤端上來蝦蟹貝類應有盡有，可惜要四人以上才適合點，所以我只能看著隔壁桌的想像味道，改點了一樣出名的炸鱈魚薯條，魚塊不會炸過頭，還保有魚的鮮味，搭配私房的塔塔醬非常好吃，推薦可以三兩朋友一起叫一桌海鮮大快朵頤。
+        </h4>
+        <div style="text-align: center">
+          <img src="荷蘭照片\阿姆斯特丹\AM22.jpg" width="600px" />
+        </div>
+        <br /><br /><br />
+        <h3>Smokey Coffeeshop</h3>
+        <h4>
+          來荷蘭最有名的便是體驗大麻，在當地的 Coffee Shop 並不是指咖啡廳的意思，而只專指販賣大麻相關產品的店家 (咖啡廳會使用 Cafe 這個字)，
+          踏進店裡是各種玲瑯滿目的大麻製品，從最傳統的捲菸式大麻，到特殊的大麻糖果和大麻蛋糕等等食品都有。
+          用吸食的大麻會比較快速體會到大麻的效用，但同時效果也消退的比較快，而用吃的則因為需要消化吸收，需要一定的吸收時間，
+          但效果卻會持續幾小時甚至一整夜，<b>在購買時請務必詢問店員並評估自己的身體狀況，並請在安全的室內服用以避免發生危險</b>。
+        </h4>
+        <div style="text-align: center">
+          <img src="荷蘭照片\阿姆斯特丹\AM23.jpg" width="600px" />
+        </div>
+        <br /><br /><br />
+        <h3>The Pantry</h3>
+        <h4>
+          來嘗嘗道地的荷蘭料理，前菜是青豆湯配黑麥餅，青豆湯加入培根做調味，讓湯中除了都子的滿足感外還有肉香味，主菜則是牛豬肉腸配三位薯泥，分別是胡蘿蔔、酸菜及菠菜口味，算是第一次吃到味道比較多變的薯泥十分新奇，肉腸加入洋蔥跟香草做調味，讓原本的肉腸又多添了些許風味，推薦想要嘗鮮荷蘭傳統料理的大家。
+        </h4>
+        <div style="text-align: center">
+          <img src="荷蘭照片\阿姆斯特丹\AM24.jpg" width="800px" />
+          <img src="荷蘭照片\阿姆斯特丹\AM25.jpg" width="600px" />
+        </div>
+        <br /><br />
+      </div>
+      <div class="destination-sidebar">
+        <div class="sidebar-image-container">
+          <img src="側邊欄自我介紹.jpg" />
+        </div>
+        <h5>
+          Hi!
+          我是Tommy，我熱愛旅遊也喜歡藉由影像紀錄旅程中的點點滴滴，透過文字將我在旅途中的所見所聞分享給大家。旅行對我而言不只是吃吃喝喝，而是能在行萬里路間感受世界的脈動，體驗不同的文化，希望藉由我的分享能讓大家看到更多世界的美好。
+        </h5>
+        <br />
+        <h5>
+          想更了解我或與我聯絡:
+          <a
+            href="https://www.instagram.com/tommy_techvoyage/"
+            target="_blank"
+            style="color: inherit; text-decoration: underline"
+          >
+            <b>Instagram</b>
+          </a>
+        </h5>
+      </div>
+    </div>
+    <div class="contact-section">
+      <div class="contact-item">
+        <h3>
+          想更了解我或與我聯絡:
+          <a
+            href="https://www.instagram.com/tommy_techvoyage/"
+            target="_blank"
+            style="color: inherit; text-decoration: underline"
+          >
+            Instagram
+          </a>
+        </h3>
+      </div>
+    </div>
+    <footer>
+      <h6>COPYRIGHT © 2025 Tommy 看世界 All rights reserved.</h6>
+    </footer>
+    <div id="expandable-menu">
+      <div id="menu-toggle"></div>
+      <!-- 收闔按鈕 -->
+      <div id="menu-content">
+        <h4>目錄</h4>
+        <ul id="menu-list"></ul>
+      </div>
+    </div>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const menu = document.getElementById("expandable-menu");
+        const toggle = document.getElementById("menu-toggle");
+        const menuList = document.getElementById("menu-list");
+        const destinationMain = document.querySelector(".destination-main");
+
+        // 點擊按鈕切換目錄狀態
+        toggle.addEventListener("click", () => {
+          menu.classList.toggle("open");
+        });
+
+        // 從 destination-main 區域提取 h2 和 h3，動態生成目錄
+        const headings = destinationMain.querySelectorAll("h2, h3");
+        headings.forEach((heading, index) => {
+          // 確保每個 h2 和 h3 都有唯一的 id
+          if (!heading.id) {
+            heading.id = `heading-${index}`;
+          }
+
+          const listItem = document.createElement("li");
+          const link = document.createElement("a");
+          link.textContent = heading.textContent;
+          link.href = `#${heading.id}`;
+          listItem.appendChild(link);
+
+          // 為 h3 添加縮排樣式
+          if (heading.tagName.toLowerCase() === "h3") {
+            listItem.classList.add("sub-item");
+          }
+
+          menuList.appendChild(listItem);
+        });
+
+        // 滾動至目標位置並加上 75px 偏移
+        menuList.addEventListener("click", (event) => {
+          if (event.target.tagName === "A") {
+            event.preventDefault(); // 阻止預設行為
+
+            const targetId = event.target.getAttribute("href").substring(1); // 取得目標 ID
+            const targetElement = document.getElementById(targetId);
+
+            if (targetElement) {
+              // 計算目標元素的位置並加上 75px 偏移
+              const targetPosition =
+                targetElement.getBoundingClientRect().top + window.scrollY;
+              const offset = 75; // 偏移的距離
+              window.scrollTo({
+                top: targetPosition - offset,
+                behavior: "smooth", // 平滑滾動
+              });
+            }
+          }
+        });
+      });
+    </script>
+  </body>
+</html>

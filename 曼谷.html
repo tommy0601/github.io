@@ -1,0 +1,889 @@
+<!DOCTYPE html>
+<html lang="zh-hant-TW">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="曹旅瀚 Tommy" />
+    <meta name="description" content="探索曼谷的魅力！從壯麗的寺廟到熱鬧的夜市，體驗泰國首都的歷史、文化、美食與購物，開啟一段難忘的旅行之旅。" />
+    <meta name="keywords" content="曼谷旅遊, 曼谷景點, 曼谷寺廟, 曼谷夜市, 曼谷美食, 曼谷自由行, 曼谷購物, 曼谷文化, 曼谷街頭美食, 泰國首都" />
+    <title>Tommy 看世界 - 曼谷</title>
+    <link rel="icon" href="網頁縮圖.ico" />
+    <style>
+      body {
+        font-family: Calibri, Arial, sans-serif; /* 首選 Calibri，次選 Arial */
+        margin: 0;
+        padding: 0;
+        overflow-x: hidden; /* 禁止水平滾動 */
+        background-color: #f4f4f9;
+        color: #333;
+      }
+
+      h1 {
+        font-size: 40px;
+        font-weight: bold;
+      }
+
+      h2 {
+        font-size: 32px;
+        font-weight: bold;
+        color: #2a90a7;
+        display: inline-block;
+        margin-bottom: 1rem; /* 縮小 h2 的底部邊距 */
+        background-color: #cee5e8;
+      }
+
+      h3 {
+        font-size: 26px;
+        margin: 0 0 1rem;
+        font-weight: bold;
+        text-decoration: underline; /* 加上底線 */
+      }
+
+      h4 {
+        font-size: 18px;
+        font-weight: normal;
+        line-height: 1.8;
+      }
+
+      h5 {
+        font-size: 16px;
+        font-weight: normal;
+        margin: 0;
+      }
+
+      h6 {
+        font-size: 10px;
+        color: #fff;
+        margin: 0;
+        text-align: center;
+        line-height: 50px; /* 高度對齊 */
+      }
+
+      nav {
+        background-color: #78bcc4;
+        display: flex;
+        justify-content: space-between; /* 保持分佈在兩側 */
+        width: calc(100% - 10rem); /* 與其他內容的邊界一致 */
+        padding: 0.5rem 5rem; /* 主導覽列的 padding 設置 */
+        position: fixed;
+        top: 0;
+        z-index: 1000;
+      }
+
+      .nav-left .logo img {
+        height: 50px; /* 控制 Logo 圖片的高度 */
+        transform: translateX(-1.5rem); /* 向右移動 2rem */
+      }
+
+      .nav-right {
+        display: flex;
+        align-items: center;
+        transform: translateX(2rem); /* 向右移動 2rem */
+      }
+
+      nav a {
+        color: #eff5f5;
+        text-decoration: none;
+        padding: 0.5rem 1rem;
+        margin: 0 0.5rem;
+        transition: transform 0.3s;
+      }
+
+      nav a:hover {
+        transform: translateY(-3px);
+      }
+
+      .dropdown {
+        position: relative;
+      }
+
+      .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #78bcc4;
+        min-width: 160px;
+        border-radius: 4px;
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        padding: 0.2rem 0;
+      }
+
+      .dropdown-content a {
+        color: #eff5f5;
+        display: block;
+        transition: transform 0.3s;
+        border-bottom: 1px solid #ddd;
+      }
+
+      .dropdown-content a:last-child {
+        border-bottom: none;
+      }
+
+      .dropdown-content a:hover {
+        transform: translateY(-3px);
+      }
+
+      .dropdown:hover .dropdown-content {
+        display: block;
+      }
+
+      .intro-section {
+        background-color: #eff5f5;
+        display: flex;
+        padding: 2rem;
+        margin-top: 60px; /* 根據導航列高度調整 */
+        justify-content: space-between;
+        align-items: flex-start;
+        width: 100%;
+        box-sizing: border-box; /* 包含 padding 在內 */
+        padding-left: 5rem;
+        padding-right: 5rem;
+      }
+
+      .intro-section h4 {
+        max-width: 700px;
+      }
+
+      .intro-section .left {
+        width: 60%;
+      }
+
+      .intro-section .right {
+        width: 40%;
+      }
+
+      .destination-section {
+        display: flex;
+        padding: 1rem 5%; /* 左右內間距為螢幕的10% */
+        background-color: white;
+      }
+
+      .destination-main {
+        width: 75%;
+        margin-right: 1.5rem; /* 增加右邊外邊距 */
+      }
+
+      .destination-sidebar {
+        width: 25%;
+        padding-left: 1.5rem; /* 增加左側內邊距 */
+        margin-top: 2rem; /* 向上或向下調整，負值表示向上 */
+      }
+
+      .sidebar-image-container {
+        margin-bottom: 1rem;
+        text-align: center; /* 確保圖片置中 */
+      }
+
+      .sidebar-image-container img {
+        height: 300px; /* 設置直式圖片的高度 */
+      }
+
+      .two-vertical-images {
+        display: flex; /* 彈性佈局，讓圖片並排 */
+        justify-content: space-between; /* 兩張圖片均勻分佈 */
+        gap: 2rem; /* 圖片之間的間距 */
+        margin-top: 2rem;
+        margin-bottom: 2rem; /* 與下方內容的距離 */
+      }
+
+      .two-vertical-images img {
+        width: calc(50% - 0.5rem); /* 每張圖片佔用容器的一半減去間距 */
+        text-align: center; /* 確保圖片置中 */
+        height: auto; /* 保持圖片的直式比例 */
+        object-fit: cover; /* 確保圖片內容適應容器 */
+      }
+
+      .recommendation-section {
+        margin-top: 1.5rem; /* 與上方文字的間距 */
+        text-align: center;
+        position: sticky;
+        top: 80px; /* 空出導覽列的高度，確保推薦區不被覆蓋 */
+        z-index: 10; /* 提高層級，避免被其他內容遮蓋 */
+      }
+
+      .recommendation-section h3 {
+        font-size: 18px;
+        font-weight: bold;
+        margin-bottom: 0.5rem; /* 與按鈕區的距離 */
+      }
+
+      .recommendation-buttons {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 0.5rem; /* 按鈕之間的間距 */
+      }
+
+      .recommendation-buttons button {
+        padding: 0.5rem 1rem;
+        font-size: 14px;
+        color: white;
+        background-color: #78bcc4;
+        border: none;
+        border-radius: 4px;
+        transition: transform 0.3s;
+        font-family: Arial, sans-serif;
+      }
+
+      .recommendation-buttons button:hover {
+        transform: translateY(-3px);
+      }
+
+      .contact-section {
+        padding: 2rem 5rem; /* 上下與左右間距 */
+        background-color: #eff5f5; /* 淺灰背景 */
+        text-align: center; /* 確保內容置中對齊 */
+      }
+
+      .contact-item h3 {
+        font-size: 18px; /* 調整標題字體大小 */
+        margin: 0; /* 移除多餘的間距 */
+        text-decoration: none; /* 移除底線 */
+      }
+
+      footer {
+        background-color: #000;
+        color: white;
+        height: 30px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      #expandable-menu {
+        position: fixed;
+        top: 70px; /* 與螢幕頂部的距離設為 60px */
+        right: 0;
+        height: calc(100% - 70px); /* 高度減去 60px，避免超出視窗 */
+        width: 395px; /* 目錄寬度與 sidebar 齊寬 */
+        transform: translateX(100%); /* 初始狀態：隱藏在右側 */
+        transition: transform 0.3s ease;
+        background-color: #f4f4f9; /* 與網站背景一致 */
+        z-index: 1000;
+      }
+
+      /* 收闔按鈕 */
+      #menu-toggle {
+        position: absolute;
+        top: 45%;
+        left: -40px; /* 調整按鈕的位置，適應按鈕變大後的寬度 */
+        transform: translateY(-50%);
+        width: 40px; /* 增大按鈕寬度 */
+        height: 80px; /* 增大按鈕高度 */
+        background-color: #78bcc4;
+        color: white;
+        border-radius: 4px;
+        display: flex;
+        justify-content: center; /* 水平居中 */
+        align-items: center; /* 垂直居中 */
+      }
+
+      #menu-toggle::after {
+        content: "目錄"; /* 在按鈕內顯示 "目錄" */
+        font-size: 17px;
+        color: white; /* 設定字體顏色為白色 */
+        writing-mode: vertical-rl; /* 使文字垂直排列 */
+      }
+
+      #menu-toggle:hover {
+        background-color: #78bcc4;
+      }
+
+      /* 目錄內容 */
+      #menu-content {
+        padding: 0.5rem 1rem;
+        overflow-y: auto;
+        height: 100%;
+      }
+
+      #menu-content h4 {
+        font-weight: bold;
+        margin-top: 0;
+      }
+
+      #menu-list {
+        list-style: none;
+        padding: 0;
+      }
+
+      #menu-list li {
+        margin-bottom: 0.5rem;
+      }
+
+      #menu-list a {
+        color: #2a90a7;
+        text-decoration: none;
+        transition: color 0.3s;
+      }
+
+      #menu-list a:hover {
+        color: #78bcc4;
+      }
+
+      #menu-list .sub-item {
+        margin-left: 1.5rem; /* 調整縮排距離 */
+        font-size: 0.9rem; /* 可選：調整子項目字體大小 */
+      }
+
+      /* 目錄展開狀態 */
+      #expandable-menu.open {
+        transform: translateX(0);
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <div class="nav-left">
+        <div class="logo">
+          <a href="首頁.html">
+            <img src="網站Logo.png" alt="網站 Logo" />
+          </a>
+        </div>
+      </div>
+      <div class="nav-right">
+        <a href="首頁.html">關於我</a>
+        <div class="dropdown">
+          <a>亞洲旅遊</a>
+          <div class="dropdown-content">
+            <a href="中國.html">中國</a>
+            <a href="新加坡.html">新加坡</a>
+            <a href="馬來西亞.html">馬來西亞</a>
+            <a href="泰國.html">泰國</a>
+            <a href="印尼.html">印尼</a>
+            <a href="越南.html">越南</a>
+          </div>
+        </div>
+        <div class="dropdown">
+          <a>歐洲旅遊</a>
+          <div class="dropdown-content">
+            <a href="英國.html">英國</a>
+            <a href="法國.html">法國</a>
+            <a href="荷蘭.html">荷蘭</a>
+            <a href="比利時.html">比利時</a>
+            <a href="盧森堡.html">盧森堡</a>
+            <a href="瑞士.html">瑞士</a>
+            <a href="摩納哥.html">摩納哥</a>
+            <a href="西班牙.html">西班牙</a>
+            <a href="葡萄牙.html">葡萄牙</a>
+            <a href="安道爾.html">安道爾</a>
+            <a href="丹麥.html">丹麥</a>
+            <a href="瑞典.html">瑞典</a>
+            <a href="波蘭.html">波蘭</a>
+          </div>
+        </div>
+        <div class="dropdown">
+          <a>美洲旅遊</a>
+          <div class="dropdown-content">
+            <a href="美國.html">美國</a>
+            <a href="加拿大.html">加拿大</a>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <div class="intro-section">
+      <div class="left">
+        <h1>Tommy 在曼谷</h1>
+        <h4>
+          <b>曼谷 (Bangkok)</b>
+          是泰國的首都和最大城，為泰國的政治、經濟、貿易、交通、文化、科技、教育和各方面的中心，位於昭披耶河的東岸，鄰近泰國灣。1980
+          年代和 1990
+          年代的亞洲投資熱潮期間，許多跨國公司將其地區總部設在曼谷，因此這座城市現在是金融和商業的區域重鎮，被列為
+          Alpha
+          級別的國際都市，也是世界頂級旅遊目的地之一，經常評為世界上人流量最大的城市。
+        </h4>
+      </div>
+      <div class="right">
+        <img src="泰國照片\曼谷\曼谷_介紹.jpg" width="90%" height="350px" />
+      </div>
+    </div>
+
+    <div class="destination-section">
+      <div class="destination-main">
+        <h2>曼谷交通</h2>
+        <h3>機場交通</h3>
+        <h4>
+          曼谷的素萬那普機場距離市區大約 30 ~ 40 分鐘的車程，但由於<b
+            >曼谷的路面交通十分擁堵，在尖峰時間往往需要 2 倍以上的時間</b
+          >，因此叫 Grab
+          來往機場要特別空出額外時間。另外機場與市區之間有機場地鐵 ARL 可以直接送你進市中心的
+          Phaya Thai 站，間距大約是 10
+          分鐘，也能在沿線換乘其他地鐵線，是我比較推薦能掌握時間的方式。
+        </h4>
+        <h3>市區交通</h3>
+        <h4>
+          曼谷的市區交通可說是惡名昭彰，<b>幾乎無時無刻都在塞車</b>，更不用說是上下班尖峰時間真的會塞到懷疑人生，因此我的建議是在有地鐵的地方就盡量搭乘地鐵，出行比較不會受路面交通影響。另外如果還是想要體驗路面交通的話，一人出行可以選擇能鑽在車陣中的
+          Grab 摩托，但安全的部分就自行考量
+          XD，因為蠻多司機都沒有安全帽給你戴。如果想體驗東南亞風情可以去找嘟嘟車司機，告訴他要去那裡再進行議價，可以先用
+          Grab 查說去那邊大約要多少錢，殺價時從對折開始喊就好。
+        </h4>
+        <img src="泰國照片\曼谷\曼谷_交通.png" width="1000px" />
+        <br /><br />
+        <h2>曼谷住宿</h2>
+        <h4>
+          曼谷的住宿 CP
+          值非常高，不用花到很大價錢就能住國際連鎖的五星級酒店，還配有樓頂夜景泳池的那種，大部分的高級酒店都集中在
+          Siam 或 Chit Lom 這兩站，也是交通相對方便的地方;
+          如果要比較便宜的選項可以往東南邊的 Thong Lo 或 Phrom Phong 站尋找;
+          喜歡夜生活的人則可以關注 Sala Daeng 或 Chong Nonsi
+          站一帶，距離酒吧夜店區比較近。
+        </h4>
+        <div style="text-align: center">
+          <img src="泰國照片\曼谷\曼谷_住宿.png" width="1000px" />
+        </div>
+        <br /><br />
+        <h2>曼谷景點</h2>
+        <h3>曼谷大皇宮 (พระบรมมหาราชวัง)</h3>
+        <h4>
+          曼谷大皇宮是拉瑪一世卻克里王朝皇室建築主體，做為皇家宗教儀式、典禮及接待外賓處，也是
+          18 ~ 20
+          世紀間皇室成員居住地，直到上任泰皇拉馬九世才遷出。進入大皇宮前會有安全檢查、語音導覽機可以斟酌租用，
+          <b>特別要注意穿拖涼鞋、無袖、短褲短裙者不能進入</b
+          >，在大門前商家購買會非常貴，建議身上帶著長褲換，也要注意防曬。先參觀神話史詩壁畫長廊後，進入玉佛寺建築群，細細品味皇家佛寺建築，大雄寶殿、舍利塔、金塔、藏經閣等佛寺建築相當壯麗。進入大皇宮區後，偌大的皇室居家及行政辦公大樓，西式建築風格融合泰式風情，能夠一窺泰國皇室的生活。
+        </h4>
+        <div style="text-align: center">
+          <img src="泰國照片\曼谷\BK1.jpg" width="600px" />
+          <img src="泰國照片\曼谷\BK2.jpg" width="600px" />
+          <img src="泰國照片\曼谷\BK3.jpg" width="800px" />
+        </div>
+        <br /><br /><br />
+        <h3>黎明寺 (วัดอรุณราชวรารามราชวรมหาวิหาร)</h3>
+        <h4>
+          黎明寺又稱為鄭王廟，象徵著光明、希望，有著重新開始的意思。整座神廟擁有歷史悠久的典故以及濃厚的宗教文化元素，獨特的外觀充分展現泰國佛寺的特色，塔上每一層都有極為精緻的雕刻，並且每一層有著不同代表的靈物所守護著，都有其蘊含的象徵意義，除了拍照以外，也可以慢慢欣賞這些佛教世界觀的故事元素，因此人流量極大，也是曼谷標誌性的景點。這裡也是穿泰服拍照的熱點，
+          <b>可以在 Sanam Chai 站附近租借後搭船前往鄭王廟</b
+          >，會比在鄭王廟裡面租借便宜，可以參考各大網美的照片或模仿現場攝影師的角度拍照，可以省下一大筆雇用費
+          XD。
+        </h4>
+        <div style="text-align: center">
+          <img src="泰國照片\曼谷\BK4.jpg" width="600px" />
+        </div>
+        <h4>
+          鄭王廟在晚上會打上橘光，推薦大家能在傍晚到 Wat Pho Pier
+          隔昭披耶河眺望夕陽搭配鄭王廟，非常壯觀。
+        </h4>
+        <div style="text-align: center">
+          <img src="泰國照片\曼谷\BK5.jpg" width="800px" />
+          <img src="泰國照片\曼谷\BK6.jpg" width="800px" />
+        </div>
+        <br /><br /><br />
+        <h3>四面佛 (ศาลท้าวมหาพรหมเอราวัณ)</h3>
+        <h4>
+          四面佛以有腳那面為正面，以正面為始，順時鐘分別代表事業、感情、財富、平安。旁邊有許多金象及舞者，可見香火之鼎盛，有許多信徒不遠千里在大熱天中祭拜，也有願望達成後來還願的信眾。
+        </h4>
+        <div style="text-align: center">
+          <img src="泰國照片\曼谷\BK7.jpg" width="600px" />
+        </div>
+        <br /><br /><br />
+        <h3>Asiatique河濱夜市 (เอเชียทีค เดอะ ริเวอร์ฟรอนท์)</h3>
+        <h4>
+          Asiatique
+          是個專為外國遊客打造的河濱夜市，可以欣賞昭披耶河的夜景，但<b>平均消費也比較高！</b>2011
+          年的都市重劃計畫，讓這片廣達 4.8
+          公頃的土地有了華麗變身的契機，曼谷最大的摩天輪就豎立於河道一旁、舊倉庫重新裝修為一家家風格獨特的餐廳，也是人妖秀跟泰拳秀的表演場地，如果想乘坐遊船在昭披耶河上邊享受美食邊欣賞表演，也可以在河濱的碼頭乘船。
+        </h4>
+        <div style="text-align: center">
+          <img src="泰國照片\曼谷\BK8.jpg" width="600px" />
+          <img src="泰國照片\曼谷\BK9.jpg" width="600px" />
+        </div>
+        <br /><br /><br />
+        <h3>中央世界 (Central World)</h3>
+        <h4>
+          中央世界是泰國最大的購物中心，也是東南亞最大的購物中心，擁有超過 500
+          家商店，包括眾多國際名牌、餐廳、咖啡館、夜店等，提供廣泛的購物、餐飲和娛樂選擇，也擁有一個稱為"世界廣場"的大型戶外區域，經常舉辦各種活動和節慶活動如音樂會等。憑藉其巨大的規模、多樣化的商業業態以及作為曼谷重要活動場所的地位，中央世界已成為世界級的購物和旅遊熱點，也是曼谷的重要地標。
+        </h4>
+        <div style="text-align: center">
+          <img src="泰國照片\曼谷\BK10.jpg" width="600px" />
+        </div>
+        <br /><br /><br />
+        <h3>ICONSIAM</h3>
+        <h4>
+          ICONSIAM 於 2018 年開業，擁有總面積達 75
+          萬平方米，包括兩座購物商場、酒店 、河濱公園，集結了超過 500
+          家各類型商舖，包括國際頂級奢侈品牌、時尚精品、餐飲、娛樂設施等，還擁有全泰國最大的購物中心室內噴泉秀。除了豐富的購物選擇，ICONSIAM
+          也設有泰國文化館展示泰國的歷史與傳統，常舉辦各類文化節慶和表演活動。
+        </h4>
+        <h4>
+          最有特色的是地下一樓 (G樓)
+          的室內水上市場，買一些伴手禮以及品嚐泰式小吃，裡面的食物跟商品真的琳瑯滿目，種類也非常多非常有特色。
+        </h4>
+        <div style="text-align: center">
+          <img src="泰國照片\曼谷\BK11.jpg" width="600px" />
+          <img src="泰國照片\曼谷\BK12.jpg" width="600px" />
+        </div>
+        <br /><br /><br />
+        <h3>OneSiam Skywalk</h3>
+        <h4>
+          OneSiam Skywalk 是位於曼谷市中心，連接了 Siam
+          地區的多個主要購物中心，包括 Siam Paragon、Siam Center 和 Siam
+          Discovery，長達 400
+          米的天橋提供了舒適的步行空間，避免交通擁堵。天橋的設計融合了現代藝術和科技，設有 LED 燈光和休息區，最出名的便是天橋上的"Bangkok"字樣，許多名人都曾經來這邊取景，算是知名打卡點。
+        </h4>
+        <div style="text-align: center">
+          <img src="泰國照片\曼谷\BK13.jpg" width="600px" />
+        </div>
+        <br /><br /><br />
+        <h3>瑪哈布特寺 (Wat Benchamabophit Dusitwanaram)</h3>
+        <h4>
+          瑪哈布特寺建於 1899
+          年，由國王拉瑪五世下令建造，寺廟以其獨特的建築風格聞名，融合了傳統泰國和西方建築元素，特別是意大利文藝復興風格的影響。寺廟的主殿稱為“烏帕卡”，以白色大理石建造，展現出精緻的工藝和華美的裝飾，殿內供奉著一尊金色的佛像，是該寺的主要宗教象徵，吸引著眾多遊客和信徒前來參觀和祈禱。
+        </h4>
+        <div style="text-align: center">
+          <img src="泰國照片\曼谷\BK14.jpg" width="800px" />
+          <img src="泰國照片\曼谷\BK15.jpg" width="600px" />
+        </div>
+        <br /><br /><br />
+        <h3>曼谷唐人街 (เยาวราช)</h3>
+        <h4>
+          曼谷唐人街位於曼谷老城區的普吉區，始建於 19
+          世紀，最初是一個小型華人聚居區，後來逐漸發展成為集住宅、商業、宗教於一體的大型華人社區。如今這裡聚集了大量的中式商店、餐館、寺廟等，保留了濃厚的中國文化氣息。在唐人街可以品嘗各種正宗的中式小吃，如炒粿條、點心、燒臘等。此外，這裡也有一些著名的中國廟宇，如九皇爺廟、華僑會館等供人膜拜和參觀。唐人街也逐漸吸引新興的時尚潮流，出現了不少咖啡館、餐吧、小型藝術畫廊等更年輕化的商業。
+        </h4>
+        <div style="text-align: center">
+          <img src="泰國照片\曼谷\BK16.jpg" width="600px" />
+          <img src="泰國照片\曼谷\BK17.jpg" width="600px" />
+        </div>
+        <br /><br /><br />
+        <h3>恰圖恰市集 (Chatuchak Weekend Market)</h3>
+        <h4>
+          恰圖恰市集是<b>全球最大的週末市場</b>之一，面積達 27 公頃，擁有超過
+          8000
+          個攤位，每週末這裡吸引著數十萬遊客和當地居民，成為購物愛好者的天堂。市場提供各式各樣的商品，包括服裝、手工藝品、家居裝飾、古董、寵物和美食等，無論是尋找獨特的紀念品，還是品嚐當地的小吃都能滿足，市場內的氛圍熱鬧非凡，可以享受漫遊的樂趣，探索不同的攤位和巷弄。
+        </h4>
+        <div style="text-align: center">
+          <img src="泰國照片\曼谷\BK18.jpg" width="600px" />
+          <img src="泰國照片\曼谷\BK19.jpg" width="600px" />
+        </div>
+        <br /><br /><br />
+        <h3>王權瑪哈納功大廈 (King Power MahaNakhon)</h3>
+        <h4>
+          王權瑪哈納功大廈是曼谷的一座地標性摩天大樓，以其獨特的設計和現代化的建築風格而聞名，大廈高達
+          314 米，是曼谷最高的建築之一，於 2016
+          年完工，外觀猶如一個被打破的立方體，展現出獨特的立體效果。大廈內部集結了豪華的商場、酒店和觀景台，觀景台提供
+          360 度的壯麗城市景觀，還有豐富的餐飲選擇。
+        </h4>
+        <div style="text-align: center">
+          <img src="泰國照片\曼谷\BK20.jpg" width="600px" />
+        </div>
+        <br /><br />
+        <h2>曼谷近郊景點</h2>
+        <h3>丹嫩莎朵水上市場 (ตลาดน้ำดำเนินสะดวก)</h3>
+        <h4>
+          丹嫩莎朵水上市場超過百年歷史，營業時間比較早可以早點到，搭乘小船駛入水道會先看到當地居民生活環境和傳統的泰式高腳屋建築，接著進入水上市場，兩旁岸邊琳瑯滿目的服飾、紀念品、手工藝都充滿了濃濃的泰式風情，但最特別的還是水道上的木船攤販，上面載滿了各式各樣的美食，只要看到什麼就招一下手，船販就會用小鉤子將距離拉近，十分有趣。水上市場內可以選擇包括泰奶、水果、椰子冰、米粉湯等，
+          <b>但腸胃敏感或擔心衛生問題的人自己就要稍微評估一下</b
+          >，另外要在這裡買東西的話一定要殺價，但不太建議在這邊買因為偏貴。由於有非常多觀光客，塞船的景象也是這的一大特色，記得不要把頭、手伸出船外免得擦傷。雖然這邊有點觀光化，但還是能體驗一把當地居民的生活。
+        </h4>
+        <h4>
+          如果要自行前往丹嫩莎朵水上市場的話需要租車，因為坐大眾交通要 2
+          個多小時，最推薦的是參加 <a href="https://www.klook.com/zh-TW/activity/127327-damnoen-saduak-floating-market-maeklong-railway-market/" target="_blank">Klook的一日團</a>，能直接從曼谷把你載到水上市場，也不用去煩惱挑選哪個船家，是最方便省事的方式。
+        </h4>
+        <div style="text-align: center">
+          <img src="泰國照片\曼谷\BK21.jpg" width="800px" />
+          <img src="泰國照片\曼谷\BK22.jpg" width="800px" />
+          <img src="泰國照片\曼谷\BK23.jpg" width="600px" />
+        </div>
+        <br /><br /><br />
+        <h3>美功鐵路市場 (ตลาดร่มหุบ)</h3>
+        <h4>
+          美功鐵路市場是緊鄰鐵道兩旁的市場，
+          <b>當火車出發或即將到站時，鐵道兩側的攤商會快速把攤位收起讓火車通過</b
+          >，特殊的景象吸引大批遊客到訪。要注意每天的火車班次有限，想一睹火車從身旁通過的感覺務必抓準時間，鐵軌兩側有畫紅線，當火車通過時要站在紅線以外，跟火車的距離僅有數公分而已，當火車快要來的時候，店家就會慢慢開始整理，接著遠處就會傳來火車接連的鳴笛聲，再以極緩慢的速度慢慢通過，車上跟兩旁的人們都會瘋狂捕捉火車的身影，當最後一節車廂通過後，大家就會跟在後面一路和火車合影，非常有趣的行程，值得安排來走走。火車到美功站之後，沒有買票也能上車拍拍照坐坐，車上工作人員不但不會阻止，反而還會熱情的幫忙拍照跟取景。
+        </h4>
+        <h4>
+          如果要自行前往美功鐵路市場的話坐火車要 2
+          個多小時，而且是沒有冷氣的那種，最推薦的是參加 <a href="https://www.klook.com/zh-TW/activity/127327-damnoen-saduak-floating-market-maeklong-railway-market/" target="_blank">Klook的一日團</a>
+          ，能直接從曼谷把你載到鐵道市場，最舒服省事的方式。
+        </h4>
+        <div style="text-align: center">
+          <img src="泰國照片\曼谷\BK24.jpg" width="600px" />
+          <img src="泰國照片\曼谷\BK25.jpg" width="600px" />
+          <img src="泰國照片\曼谷\BK26.jpg" width="800px" />
+        </div>
+        <br /><br /><br />
+        <h3>柴瓦塔那蘭寺 (วัดไชยวัฒนาราม)</h3>
+        <h4>
+          柴瓦塔那蘭寺位於昭披耶河畔的柴瓦塔那蘭寺被公認為阿瑜陀耶最雄偉美麗的佛寺遺跡，曾是阿瑜陀耶國王巴沙通母親的住處，故他於即位後一年
+          (1630年)
+          便下令建造柴瓦塔那蘭寺以紀念其母，此寺又稱貴妃寺。佛寺建築為高棉風格，塔群中央有一座高棉式普朗塔，塔高
+          35 米，普朗塔四周有 4 個小塔，再外圍則有 8
+          個更小的塔，形成一個壯觀的佛塔群。柴瓦塔那蘭寺是一座皇家寺廟，昔日國王和他的繼承者都在這裏舉行宗教儀式，皇室成員的遺體亦會在此火化。由於泰劇"天生一對"有在此取景，因此寺內不少遊客會裝扮成王子公主四處打卡，寺外也有多間租借泰國傳統服飾的店舖。
+        </h4>
+        <h4>
+          如果要自行前往大城的話坐大眾交通要 2 個小時，最推薦的是參加 <a href="https://www.klook.com/zh-TW/activity/391-ayutthaya-historical-park-day-tour-bang-pa-in-summer-palace-ayutthaya-temples-night-market/" target="_blank">Klook的一日團</a>，能直接從曼谷把你載到大城的許多景點，也不用去煩惱轉車或叫車的問題，是最方便省事的方式。
+        </h4>
+        <div style="text-align: center">
+          <img src="泰國照片\曼谷\BK27.jpg" width="800px" />
+          <img src="泰國照片\曼谷\BK28.jpg" width="600px" />
+        </div>
+        <br /><br /><br />
+        <h3>崖差蒙空寺 (วัดใหญ่ชัยมงคล)</h3>
+        <h4>
+          崖差蒙空寺建於 1357
+          年大城王朝初代王烏通王時期，是當時從錫蘭回國的僧侶修行所在地，後來為了紀念大城王朝的納黎萱王打敗了緬甸軍，於
+          1593
+          年進行了改建，是大城府最古老的建築之一，也是大城府內保存最完善的文化遺跡，以長達
+          28
+          公尺的戶外臥佛和錫蘭式寶塔而聞名。這裡的臥佛是可以許願的，相傳只要能成功把錢幣黏到臥佛的腳底板，就有好運勢/願望就可以實現。
+        </h4>
+        <h4>
+          如果要自行前往大城的話坐大眾交通要 2 個小時，最推薦的是參加 <a href="https://www.klook.com/zh-TW/activity/391-ayutthaya-historical-park-day-tour-bang-pa-in-summer-palace-ayutthaya-temples-night-market/" target="_blank">Klook的一日團</a>，能直接從曼谷把你載到大城的許多景點，也不用去煩惱轉車或叫車的問題，是最方便省事的方式。
+        </h4>
+        <div style="text-align: center">
+          <img src="泰國照片\曼谷\BK29.jpg" width="800px" />
+        </div>
+        <br /><br /><br />
+        <h3>瑪哈泰寺 (วัดมหาธาตุ)</h3>
+        <h4>
+          瑪哈泰寺建立於 1374
+          年素可泰王朝時期，是泰國當時最早建造的吳哥窟高棉式建築，包含寶塔、八角寶塔、王家大廳、壁畫，其原建有
+          198 座佛塔。西元 1767
+          年大城遭緬甸軍入侵毀壞，放火焚燒寺廟佛像，只留下斷垣殘壁，緬甸軍為了展示軍威，便將大城佛寺裡石刻佛像的佛首盡數砍下，其中一顆佛首滾到了無花果樹的樹根底部，經年累月後，佛首被樹根包裏了起來，形成今日天然的「樹中佛」奇觀，當地人民則將這顆佛首視為神聖之物。
+        </h4>
+        <h4>
+          如果要自行前往大城的話坐大眾交通要 2 個小時，最推薦的是參加 <a href="https://www.klook.com/zh-TW/activity/391-ayutthaya-historical-park-day-tour-bang-pa-in-summer-palace-ayutthaya-temples-night-market/" target="_blank">Klook的一日團</a>，能直接從曼谷把你載到大城的許多景點，也不用去煩惱轉車或叫車的問題，是最方便省事的方式。
+        </h4>
+        <div style="text-align: center">
+          <img src="泰國照片\曼谷\BK30.jpg" width="600px" />
+          <img src="泰國照片\曼谷\BK31.jpg" width="600px" />
+          <img src="泰國照片\曼谷\BK32.jpg" width="600px" />
+          <img src="泰國照片\曼谷\BK33.jpg" width="600px" />
+        </div>
+        <br /><br />
+        <h2>曼谷美食</h2>
+        <h3>紅大哥水門雞飯(โกอ่างข้าวมันไก่ประตูน้ำ)</h3>
+        <h4>
+          從水門市場走路大約 3
+          分鐘就到了紅大哥水門雞飯，來的時候是中午雖然要排隊，但翻桌率很高不到五分鐘就進去了。海南雞肉體本身很嫩沒有沾醬時沒什麼味道，沾上辣醬配上飯非常開胃，全店最愛的就是泰奶，茶香味很足超好喝。龍眼汁也很好喝，不愛奶製品喜歡清爽類的人推薦可以點。
+        </h4>
+        <div style="text-align: center">
+          <img src="泰國照片\曼谷\BK34.jpg" width="600px" />
+        </div>
+        <br /><br /><br />
+        <h3>Savoey</h3>
+        <h4>
+          Savoey 在一個與 Chit Lom 站連接的商場裡，位置十分方便，當天比較早吃晚餐所以餐廳內人不算到很多。點了招牌的冬陰功海鮮還有鳳梨炒飯，味道都很夠，辣炒魷魚也很嫩，說是這邊的咖喱螃蟹很好吃，但因為我們人太少就沒點了，價錢也不算很高，但是坐得很舒服。
+        </h4>
+        <div class="two-vertical-images">
+          <img src="泰國照片\曼谷\BK35-1.jpg" />
+          <img src="泰國照片\曼谷\BK35-2.jpg" />
+        </div>
+        <div class="two-vertical-images">
+          <img src="泰國照片\曼谷\BK36-1.jpg" />
+          <img src="泰國照片\曼谷\BK36-2.jpg" />
+        </div>
+        <br /><br /><br />
+        <h3>安樂園</h3>
+        <h4>
+          安樂園是歷史悠久小店似香港式茶餐廳，位於古舊建築物 1 樓，店內擺放充滿懷舊色彩物品，食物高性債比，凍奶茶嫩滑，店員服務非常好客友善，在此感受滿滿歷史氛圍！早上 11 點抵達大約等了 20 分鐘入座，自家做的吐司弄的三明治真的很香很好吃，可惜去的時候不知道週末不提供招牌的法式吐司，只能留待下次再訪了。
+        </h4>
+        <div style="text-align: center">
+          <img src="泰國照片\曼谷\BK37.jpg" width="600px" />
+          <img src="泰國照片\曼谷\BK38.jpg" width="600px" />
+        </div>
+        <br /><br /><br />
+        <h3>K. Panich Sticky Rice</h3>
+        <h4>
+          接近一百年歷史的芒果糯米飯，做法就是最傳統的沒有什麼創新的設計，就是最原汁原味純粹的芒果糯米飯，芒果很甜很香吃起來很順滑，糯米飯粒粒層次分明黏度適中，加上椰汁就是純粹的糯米飯味道，雖然價格相較於其他芒果糯米飯高，但是好吃的程度絕對有超過這個價值。
+        </h4>
+        <div style="text-align: center">
+          <img src="泰國照片\曼谷\BK39.jpg" width="600px" />
+        </div>
+        <br /><br /><br />
+        <h3>媽媽的家 (บ้านคุณแม่)</h3>
+        <h4>
+          媽媽的家位於 National Stadium 站旁的商場中，就在非常有名的曼谷天橋旁，主打傳統泰國的家常料理，冬陰功海鮮湯裡的料非常多，Pat thai 鹹淡適中擠上檸檬汁非常開胃，腰果雞跟青木瓜沙拉也都很爽口，座位也舒適還有傳統泰國樂器的現場演奏，十分推薦。
+        </h4>
+        <div class="two-vertical-images">
+          <img src="泰國照片\曼谷\BK40-1.jpg" />
+          <img src="泰國照片\曼谷\BK40-2.jpg" />
+        </div>
+        <div class="two-vertical-images">
+          <img src="泰國照片\曼谷\BK41-1.jpg" />
+          <img src="泰國照片\曼谷\BK41-2.jpg" />
+        </div>
+        <br /><br /><br />
+        <h3>陳億粿條店 (ร้านก๋วยจั๊บนายเอ็ก)</h3>
+        <h4>
+          陳億粿條店位於唐人街的米其林推薦，大約等了 10 分鐘就進去了，在排隊時就會讓你選擇粿條湯裡想要什麼料，因為自己不吃內臟，於是就選了脆皮豬，粿條是螺旋的很特別，湯頭的胡椒味很濃厚，可以再加辣椒水調成酸酸辣辣的味道，脆皮的部份非常脆，卡滋卡滋，油脂直接在口中爆開，馬上又點了一盤，價錢十分便宜但份量不算很多，當作逛唐人街中的一家小吃十分剛好。
+        </h4>
+        <div style="text-align: center">
+          <img src="泰國照片\曼谷\BK43.jpg" width="600px" />
+        </div>
+        <br /><br /><br />
+        <h3>林老五魚丸麵</h3>
+        <h4>
+          林老五魚丸麵位於唐人街附近，也是米其林推薦街邊美食，魚丸麵湯頭好喝帶點甜，魚丸超脆又彈口，但 Q 到我覺得加了很多硼砂，為了健康不能常吃，麵如果是選雞蛋麵的話會有鹼味，怕味道的請避開，總體十分便宜。
+        </h4>
+        <div style="text-align: center">
+          <img src="泰國照片\曼谷\BK44.jpg" width="600px" />
+          <img src="泰國照片\曼谷\BK45.jpg" width="600px" />
+        </div>
+        <br /><br /><br />
+        <h3>榮泰米粉湯 (Rung Rueang Pork Noodle)</h3>
+        <h4>
+          榮泰米粉湯連續多年獲得米其林推薦的麵店，翻桌率很高，中午到雖然排隊但是很快就進去了，點餐方式很直覺，選湯選面選料選喝的就完成了，湯裡面的料有很多選擇，有豬肝、豬心、豬腸、魚丸、肉丸等，但由於我不吃內臟就沒選那些，肉丸吸滿了湯汁之後，味道非常好，湯也是有花時間熬高湯。特別要提一下他們家的柳橙汁，裡面有大塊果肉，用來解膩解辣都非常舒服，住附近有經過的話推薦吃吃看。
+        </h4>
+        <div style="text-align: center">
+          <img src="泰國照片\曼谷\BK46.jpg" width="600px" />
+          <img src="泰國照片\曼谷\BK47.jpg" width="600px" />
+        </div>
+        <br /><br /><br />
+        <h3>Nai Mong Hoi Thod (นายหมงหอยทอด)</h3>
+        <h4>
+          是泰國曼谷著名的蠔煎店，以其美味的海鮮料理而聞名，專注於蠔煎 (Hoi Thod)，使用新鮮的蠔和特色調味料，搭配酥脆的外皮，口感獨特，除了蠔煎也提供其他海鮮料理，如炸魚和蟹肉炒飯，價格便宜但用餐區域沒有空調，建議晚上再來避開太陽。
+        </h4>
+        <div style="text-align: center">
+          <img src="泰國照片\曼谷\BK48.jpg" width="600px" />
+          <img src="泰國照片\曼谷\BK49.jpg" width="800px" />
+          <img src="泰國照片\曼谷\BK50.jpg" width="800px" />
+        </div>
+        <br /><br /><br />
+        <h3>Ann Guay Tiew Kua Gai (แอนก๋วยเตี๋ยวคั่วไก่)</h3>
+        <h4>
+          是曼谷著名的雞肉炒河粉店，以其獨特的風味和口感而受到食客喜愛，主打的菜品是炒河粉，選用新鮮的雞肉和特製醬料，搭配香脆的蔬菜，除了炒河粉之外也提供多種配菜和湯品，價格便宜是街頭美食愛好者不可錯過的地點。
+        </h4>
+        <div style="text-align: center">
+          <img src="泰國照片\曼谷\BK51.jpg" width="600px" />
+          <img src="泰國照片\曼谷\BK52.jpg" width="600px" />
+        </div>
+        <br /><br /><br />
+        <h3>Octave Rooftop Lounge & Bar</h3>
+        <h4>
+          來曼谷肯定不能錯過樓頂酒吧，這家在 Marriott Hotel 頂樓，總共有 45、47 和 48 三層，由下而上會愈來愈吵鬧，可以自行決定想要去怎樣分為的樓層，但請<b>務必務必務必要先訂位</b>，否則能進場也只能站著，我們剛好被分配在角落桌，能一次欣賞兩面的曼谷夜景，真是太幸運了。酒不能說到非常好，但是現場氣氛非常好，女 DJ 也是很會帶動氣氛，過來喝兩杯看夜景聽音樂跳跳舞非常不錯喔！
+        </h4>
+        <div style="text-align: center">
+          <img src="泰國照片\曼谷\BK53.jpg" width="600px" />
+          <img src="泰國照片\曼谷\BK54.jpg" width="600px" />
+          <img src="泰國照片\曼谷\BK55.jpg" width="800px" />
+        </div>
+        <br /><br /><br />
+        <h3>Yào Rooftop Bar</h3>
+        <h4>
+          位於素拉翁塞萬豪酒店頂層，以其壯觀的城市景觀和時尚的氛圍而聞名，提供各式創意雞尾酒和精緻的美食，特別適合晚上聚會或浪漫約會，酒吧的設計現代而優雅，擁有舒適的座位和氛圍燈光，能在迷人的天際線下享受悠閒時光，還能欣賞到曼谷的美麗景色，價錢偏高但如果不想跑太遠看夜景的話，這邊是個好選擇，<b>但建議預先訂位以免撲空</b>。
+        </h4>
+        <div style="text-align: center">
+          <img src="泰國照片\曼谷\BK56.jpg" width="600px" />
+          <img src="泰國照片\曼谷\BK57.jpg" width="800px" />
+          <img src="泰國照片\曼谷\BK58.jpg" width="800px" />
+        </div>
+        <br /><br /><br />
+        <h3>Vesper</h3>
+        <h4>
+          身為國際大都市，曼谷也有許多世界前 50 的酒吧，這間酒吧是連續六年獲得 Asia 50 best bars！店內位置不多，禮拜四晚上 10 點到剛好拿到最後一桌，一進去裡面的店員都很親切的和大家打招呼，bartender 也會時不時的和各個客人聊天，店內的酒單每一杯都是 signature，很好喝就算是酒感重的也都很好入喉，而且很多口味是在台灣和香港都沒有喝過的味道。推薦大家有到曼谷的話，一定要來這間酒吧拜訪！！！
+        </h4>
+        <div style="text-align: center">
+          <img src="泰國照片\曼谷\BK59.jpg" width="600px" />
+          <img src="泰國照片\曼谷\BK60.jpg" width="600px" />
+        </div>
+        <br />
+      </div>
+      <div class="destination-sidebar">
+        <div class="sidebar-image-container">
+          <img src="側邊欄自我介紹.jpg" />
+        </div>
+        <h5>
+          Hi!
+          我是Tommy，我熱愛旅遊也喜歡藉由影像紀錄旅程中的點點滴滴，透過文字將我在旅途中的所見所聞分享給大家。旅行對我而言不只是吃吃喝喝，而是能在行萬里路間感受世界的脈動，體驗不同的文化，希望藉由我的分享能讓大家看到更多世界的美好。
+        </h5>
+        <br />
+        <h5>
+          想更了解我或與我聯絡:
+          <a
+            href="https://www.instagram.com/tommy_techvoyage/"
+            target="_blank"
+            style="color: inherit; text-decoration: underline"
+          >
+            <b>Instagram</b>
+          </a>
+        </h5>
+        <div class="recommendation-section">
+          <h3>其他泰國旅遊目的地</h3>
+          <div class="recommendation-buttons">
+            <a href="普吉島.html">
+              <button><h5>普吉島</h5></button>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="contact-section">
+      <div class="contact-item">
+        <h3>
+          想更了解我或與我聯絡:
+          <a
+            href="https://www.instagram.com/tommy_techvoyage/"
+            target="_blank"
+            style="color: inherit; text-decoration: underline"
+          >
+            Instagram
+          </a>
+        </h3>
+      </div>
+    </div>
+    <footer>
+      <h6>COPYRIGHT © 2025 Tommy 看世界 All rights reserved.</h6>
+    </footer>
+    <div id="expandable-menu">
+      <div id="menu-toggle"></div>
+      <!-- 收闔按鈕 -->
+      <div id="menu-content">
+        <h4>目錄</h4>
+        <ul id="menu-list"></ul>
+      </div>
+    </div>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const menu = document.getElementById("expandable-menu");
+        const toggle = document.getElementById("menu-toggle");
+        const menuList = document.getElementById("menu-list");
+        const destinationMain = document.querySelector(".destination-main");
+
+        // 點擊按鈕切換目錄狀態
+        toggle.addEventListener("click", () => {
+          menu.classList.toggle("open");
+        });
+
+        // 從 destination-main 區域提取 h2 和 h3，動態生成目錄
+        const headings = destinationMain.querySelectorAll("h2, h3");
+        headings.forEach((heading, index) => {
+          // 確保每個 h2 和 h3 都有唯一的 id
+          if (!heading.id) {
+            heading.id = `heading-${index}`;
+          }
+
+          const listItem = document.createElement("li");
+          const link = document.createElement("a");
+          link.textContent = heading.textContent;
+          link.href = `#${heading.id}`;
+          listItem.appendChild(link);
+
+          // 為 h3 添加縮排樣式
+          if (heading.tagName.toLowerCase() === "h3") {
+            listItem.classList.add("sub-item");
+          }
+
+          menuList.appendChild(listItem);
+        });
+
+        // 滾動至目標位置並加上 75px 偏移
+        menuList.addEventListener("click", (event) => {
+          if (event.target.tagName === "A") {
+            event.preventDefault(); // 阻止預設行為
+
+            const targetId = event.target.getAttribute("href").substring(1); // 取得目標 ID
+            const targetElement = document.getElementById(targetId);
+
+            if (targetElement) {
+              // 計算目標元素的位置並加上 75px 偏移
+              const targetPosition =
+                targetElement.getBoundingClientRect().top + window.scrollY;
+              const offset = 75; // 偏移的距離
+              window.scrollTo({
+                top: targetPosition - offset,
+                behavior: "smooth", // 平滑滾動
+              });
+            }
+          }
+        });
+      });
+    </script>
+  </body>
+</html>

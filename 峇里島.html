@@ -1,0 +1,931 @@
+<!DOCTYPE html>
+<html lang="zh-hant-TW">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="曹旅瀚 Tommy" />
+    <meta name="description" content="探索峇里島的魅力！從美麗的沙灘到古老的寺廟，體驗峇里島的獨特文化與自然景觀。享受海灘度假、沖浪、瑜伽和島嶼探險，感受這個熱帶天堂的每一刻。" />
+    <meta name="keywords" content="峇里島旅遊, 峇里島自由行, 峇里島沙灘, 峇里島寺廟, 峇里島瑜伽, 峇里島沖浪, 峇里島度假, 峇里島景點, 峇里島文化, 峇里島自然景觀" />
+    <title>Tommy 看世界 - 峇里島</title>
+    <link rel="icon" href="網頁縮圖.ico" />
+    <style>
+      body {
+        font-family: Calibri, Arial, sans-serif; /* 首選 Calibri，次選 Arial */
+        margin: 0;
+        padding: 0;
+        overflow-x: hidden; /* 禁止水平滾動 */
+        background-color: #f4f4f9;
+        color: #333;
+      }
+
+      h1 {
+        font-size: 40px;
+        font-weight: bold;
+      }
+
+      h2 {
+        font-size: 32px;
+        font-weight: bold;
+        color: #2a90a7;
+        display: inline-block;
+        margin-bottom: 1rem; /* 縮小 h2 的底部邊距 */
+        background-color: #cee5e8;
+      }
+
+      h3 {
+        font-size: 26px;
+        margin: 0 0 1rem;
+        font-weight: bold;
+        text-decoration: underline; /* 加上底線 */
+      }
+
+      h4 {
+        font-size: 18px;
+        font-weight: normal;
+        line-height: 1.8;
+      }
+
+      h5 {
+        font-size: 16px;
+        font-weight: normal;
+        margin: 0;
+      }
+
+      h6 {
+        font-size: 10px;
+        color: #fff;
+        margin: 0;
+        text-align: center;
+        line-height: 50px; /* 高度對齊 */
+      }
+
+      nav {
+        background-color: #78bcc4;
+        display: flex;
+        justify-content: space-between; /* 保持分佈在兩側 */
+        width: calc(100% - 10rem); /* 與其他內容的邊界一致 */
+        padding: 0.5rem 5rem; /* 主導覽列的 padding 設置 */
+        position: fixed;
+        top: 0;
+        z-index: 1000;
+      }
+
+      .nav-left .logo img {
+        height: 50px; /* 控制 Logo 圖片的高度 */
+        transform: translateX(-1.5rem); /* 向右移動 2rem */
+      }
+
+      .nav-right {
+        display: flex;
+        align-items: center;
+        transform: translateX(2rem); /* 向右移動 2rem */
+      }
+
+      nav a {
+        color: #eff5f5;
+        text-decoration: none;
+        padding: 0.5rem 1rem;
+        margin: 0 0.5rem;
+        transition: transform 0.3s;
+      }
+
+      nav a:hover {
+        transform: translateY(-3px);
+      }
+
+      .dropdown {
+        position: relative;
+      }
+
+      .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #78bcc4;
+        min-width: 160px;
+        border-radius: 4px;
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        padding: 0.2rem 0;
+      }
+
+      .dropdown-content a {
+        color: #eff5f5;
+        display: block;
+        transition: transform 0.3s;
+        border-bottom: 1px solid #ddd;
+      }
+
+      .dropdown-content a:last-child {
+        border-bottom: none;
+      }
+
+      .dropdown-content a:hover {
+        transform: translateY(-3px);
+      }
+
+      .dropdown:hover .dropdown-content {
+        display: block;
+      }
+
+      .intro-section {
+        background-color: #eff5f5;
+        display: flex;
+        padding: 2rem;
+        margin-top: 60px; /* 根據導航列高度調整 */
+        justify-content: space-between;
+        align-items: flex-start;
+        width: 100%;
+        box-sizing: border-box; /* 包含 padding 在內 */
+        padding-left: 5rem;
+        padding-right: 5rem;
+      }
+
+      .intro-section h4 {
+        max-width: 700px;
+      }
+
+      .intro-section .left {
+        width: 60%;
+      }
+
+      .intro-section .right {
+        width: 40%;
+      }
+
+      .destination-section {
+        display: flex;
+        padding: 1rem 5%; /* 左右內間距為螢幕的10% */
+        background-color: white;
+      }
+
+      .destination-main {
+        width: 75%;
+        margin-right: 1.5rem; /* 增加右邊外邊距 */
+      }
+
+      .destination-sidebar {
+        width: 25%;
+        padding-left: 1.5rem; /* 增加左側內邊距 */
+        margin-top: 2rem; /* 向上或向下調整，負值表示向上 */
+      }
+
+      .sidebar-image-container {
+        margin-bottom: 1rem;
+        text-align: center; /* 確保圖片置中 */
+      }
+
+      .sidebar-image-container img {
+        height: 300px; /* 設置直式圖片的高度 */
+      }
+
+      .two-vertical-images {
+        display: flex; /* 彈性佈局，讓圖片並排 */
+        justify-content: space-between; /* 兩張圖片均勻分佈 */
+        gap: 2rem; /* 圖片之間的間距 */
+        margin-top: 2rem;
+        margin-bottom: 2rem; /* 與下方內容的距離 */
+      }
+
+      .two-vertical-images img {
+        width: calc(50% - 0.5rem); /* 每張圖片佔用容器的一半減去間距 */
+        text-align: center; /* 確保圖片置中 */
+        height: auto; /* 保持圖片的直式比例 */
+        object-fit: cover; /* 確保圖片內容適應容器 */
+      }
+
+      .recommendation-section {
+        margin-top: 1.5rem; /* 與上方文字的間距 */
+        text-align: center;
+        position: sticky;
+        top: 80px; /* 空出導覽列的高度，確保推薦區不被覆蓋 */
+        z-index: 10; /* 提高層級，避免被其他內容遮蓋 */
+      }
+
+      .recommendation-section h3 {
+        font-size: 18px;
+        font-weight: bold;
+        margin-bottom: 0.5rem; /* 與按鈕區的距離 */
+      }
+
+      .recommendation-buttons {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 0.5rem; /* 按鈕之間的間距 */
+      }
+
+      .recommendation-buttons button {
+        padding: 0.5rem 1rem;
+        font-size: 14px;
+        color: white;
+        background-color: #78bcc4;
+        border: none;
+        border-radius: 4px;
+        transition: transform 0.3s;
+        font-family: Arial, sans-serif;
+      }
+
+      .recommendation-buttons button:hover {
+        transform: translateY(-3px);
+      }
+
+      .contact-section {
+        padding: 2rem 5rem; /* 上下與左右間距 */
+        background-color: #eff5f5; /* 淺灰背景 */
+        text-align: center; /* 確保內容置中對齊 */
+      }
+
+      .contact-item h3 {
+        font-size: 18px; /* 調整標題字體大小 */
+        margin: 0; /* 移除多餘的間距 */
+        text-decoration: none; /* 移除底線 */
+      }
+
+      footer {
+        background-color: #000;
+        color: white;
+        height: 30px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      #expandable-menu {
+        position: fixed;
+        top: 70px; /* 與螢幕頂部的距離設為 60px */
+        right: 0;
+        height: calc(100% - 70px); /* 高度減去 60px，避免超出視窗 */
+        width: 395px; /* 目錄寬度與 sidebar 齊寬 */
+        transform: translateX(100%); /* 初始狀態：隱藏在右側 */
+        transition: transform 0.3s ease;
+        background-color: #f4f4f9; /* 與網站背景一致 */
+        z-index: 1000;
+      }
+
+      /* 收闔按鈕 */
+      #menu-toggle {
+        position: absolute;
+        top: 45%;
+        left: -40px; /* 調整按鈕的位置，適應按鈕變大後的寬度 */
+        transform: translateY(-50%);
+        width: 40px; /* 增大按鈕寬度 */
+        height: 80px; /* 增大按鈕高度 */
+        background-color: #78bcc4;
+        color: white;
+        border-radius: 4px;
+        display: flex;
+        justify-content: center; /* 水平居中 */
+        align-items: center; /* 垂直居中 */
+      }
+
+      #menu-toggle::after {
+        content: "目錄"; /* 在按鈕內顯示 "目錄" */
+        font-size: 17px;
+        color: white; /* 設定字體顏色為白色 */
+        writing-mode: vertical-rl; /* 使文字垂直排列 */
+      }
+
+      #menu-toggle:hover {
+        background-color: #78bcc4;
+      }
+
+      /* 目錄內容 */
+      #menu-content {
+        padding: 0.5rem 1rem;
+        overflow-y: auto;
+        height: 100%;
+      }
+
+      #menu-content h4 {
+        font-weight: bold;
+        margin-top: 0;
+      }
+
+      #menu-list {
+        list-style: none;
+        padding: 0;
+      }
+
+      #menu-list li {
+        margin-bottom: 0.5rem;
+      }
+
+      #menu-list a {
+        color: #2a90a7;
+        text-decoration: none;
+        transition: color 0.3s;
+      }
+
+      #menu-list a:hover {
+        color: #78bcc4;
+      }
+
+      #menu-list .sub-item {
+        margin-left: 1.5rem; /* 調整縮排距離 */
+        font-size: 0.9rem; /* 可選：調整子項目字體大小 */
+      }
+
+      /* 目錄展開狀態 */
+      #expandable-menu.open {
+        transform: translateX(0);
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <div class="nav-left">
+        <div class="logo">
+          <a href="首頁.html">
+            <img src="網站Logo.png" alt="網站 Logo" />
+          </a>
+        </div>
+      </div>
+      <div class="nav-right">
+        <a href="首頁.html">關於我</a>
+        <div class="dropdown">
+          <a>亞洲旅遊</a>
+          <div class="dropdown-content">
+            <a href="中國.html">中國</a>
+            <a href="新加坡.html">新加坡</a>
+            <a href="馬來西亞.html">馬來西亞</a>
+            <a href="泰國.html">泰國</a>
+            <a href="印尼.html">印尼</a>
+            <a href="越南.html">越南</a>
+          </div>
+        </div>
+        <div class="dropdown">
+          <a>歐洲旅遊</a>
+          <div class="dropdown-content">
+            <a href="英國.html">英國</a>
+            <a href="法國.html">法國</a>
+            <a href="荷蘭.html">荷蘭</a>
+            <a href="比利時.html">比利時</a>
+            <a href="盧森堡.html">盧森堡</a>
+            <a href="瑞士.html">瑞士</a>
+            <a href="摩納哥.html">摩納哥</a>
+            <a href="西班牙.html">西班牙</a>
+            <a href="葡萄牙.html">葡萄牙</a>
+            <a href="安道爾.html">安道爾</a>
+            <a href="丹麥.html">丹麥</a>
+            <a href="瑞典.html">瑞典</a>
+            <a href="波蘭.html">波蘭</a>
+          </div>
+        </div>
+        <div class="dropdown">
+          <a>美洲旅遊</a>
+          <div class="dropdown-content">
+            <a href="美國.html">美國</a>
+            <a href="加拿大.html">加拿大</a>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <div class="intro-section">
+      <div class="left">
+        <h1>Tommy 在峇里島</h1>
+        <h4>
+          <b>峇里島 (Bali)</b>
+          自公元前 5
+          世紀起就開始吸引來自印度、中國和阿拉伯的商人和遊客，帶來了佛教和印度教，並逐步融入當地的土著文化。9
+          世紀峇里島興起了自己的王國文明，最著名的是武吉多鬥王朝延續至 16
+          世紀，期間吸收了印度教、佛教以及土著的神道信仰，形成了獨特的"峇里教"。16 世紀後峇里島被荷蘭殖民者統治，直到
+          1945
+          年才重獲獨立。如今的峇里島已經成為世界聞名的旅遊勝地，保留了原始自然美景，到處可見獨特的寺廟建築和藝術品，也有高級度假村、水上運動、美食餐廳等，成為融合古老文化與現代生活的理想之島。
+        </h4>
+      </div>
+      <div class="right">
+        <img src="印尼照片\峇里島\峇里島_介紹.jpg" width="90%" height="350px" />
+      </div>
+    </div>
+
+    <div class="destination-section">
+      <div class="destination-main">
+        <h2>峇里島交通</h2>
+        <h3>機場交通</h3>
+        <h4>
+          峇里島的伍拉賴機場基本上就在 Kuta 市中心，離鬧區非常近，最方便的就是<b>叫
+            Grab</b> 或是預約飯店接送，比較不會被坑錢喔。
+        </h4>
+        <h3>市區交通</h3>
+        <h4>
+          Denpasar 塞車的程度跟曼谷不相上下，會塞到你懷疑人生的那種，除了叫 Grab
+          之外，
+          <b>租借機車也是非常推薦的方式</b
+          >，除了能穿梭車陣之外，也更能欣賞峇里島的風景，要去一些戶外景點時也比較不需要擔心停車問題。
+        </h4>
+        <br />
+        <h2>峇里島住宿</h2>
+        <h4>
+          身為老牌度假勝地，峇里島最不缺的就是各種住宿啦，從國際連鎖的五星酒店，再到奢華的海邊
+          villa， 都是去峇里島一定要體驗的，住宿主要分成以下兩種:
+          <ul>
+            <li>
+              <b>Kuta、水明漾和金巴蘭</b>:
+              位於峇里島南邊，主打陽光、沙灘和夕陽，大部分連鎖的高級酒店、度假中心和
+              villa
+              都在這區，想要享受極致放鬆、每天躺沙灘跟做按摩的推薦可以以這區為主。
+            </li>
+            <li>
+              <b>烏布</b>:
+              位於峇里島中部，走的則是自然路線，看神廟、梯田和火山，探索叢林秘境跟瀑布為主，住宿型態則多為特色民宿，適合深度旅遊的人。
+            </li>
+          </ul>
+        </h4>
+        <div style="text-align: center">
+          <img src="印尼照片\峇里島\峇里島_住宿.png" width="1000px" />
+        </div>
+        <br /><br />
+        <h2>峇里島景點</h2>
+        <h3>烏布皇宮 (Ubud Palace)</h3>
+        <h4>
+          烏布皇宮是一處富有歷史韻味的皇家建築群，始建於 19
+          世紀初，曾是烏布王國的皇家居所，包括宮殿、寺廟和庭院等，融合了峇里島傳統的建築風格，宮殿的牆壁和地板上雕刻有精緻的浮雕圖案，描繪了神話故事和王室歷史，由於至今依然有王室後代居住，所以只有開放前半部讓遊客參觀，規模雖然不大卻是當地藝術文化發展的起點，值得進來逛逛。烏布一帶林立著各種販售手工織品跟小東西的店家，許多都非常的有特色，推薦可以留一些時間漫步烏布的大街小巷，會有許多意想不到的收穫。
+        </h4>
+        <div style="text-align: center">
+          <img src="印尼照片\峇里島\BL1.jpg" width="600px" />
+          <img src="印尼照片\峇里島\BL2.jpg" width="600px" />
+        </div>
+        <br /><br /><br />
+        <h3>德哥拉朗梯田 (Tegallalang Rice Terrace)</h3>
+        <h4>
+          德哥拉朗梯田被公認為是世界上最美麗的稻田之一，由若干層層疊疊的梯田組成，沿著山坡蜿蜒起伏延伸約
+          1
+          公里長，每層梯田的稻田都被精心修剪和整理，形成規則有序的圖案，梯田上的水路系統巧妙地利用了當地的地勢和自然條件，維持著這片綠色瀑布般的稻田景致，在清晨或傍晚溫和的光線下，景色更顯迷人。
+        </h4>
+        <h4>
+          德哥拉朗梯田仍保留著當地峇里人的傳統農耕文化，可以近距離觀察當地人採收稻穀、挑水等農作業，進而了解當地特有的稻米生態系統，並於
+          2012 年被列入世界文化遺產。我 6
+          月去的時候恰好是一片青色，再晚些到秋天來則可以看到金黃一片的稻穀，這邊吸引許多觀光客的原因還有盪鞦韆，穿著薄紗服飾盪鞦韆營造在梯田間飄逸的樣貌確實蠻好拍的，但收費並不算便宜請自行斟酌。
+        </h4>
+        <div style="text-align: center">
+          <img src="印尼照片\峇里島\BL3.jpg" width="600px" />
+          <img src="印尼照片\峇里島\BL4.jpg" width="800px" />
+          <img src="印尼照片\峇里島\BL5.jpg" width="600px" />
+          <img src="印尼照片\峇里島\BL6.jpg" width="800px" />
+        </div>
+        <br /><br /><br />
+        <h3>聖泉寺 (Pura Tirta Empul)</h3>
+        <h4>
+          聖泉寺位於烏布郊區，建於公元 926
+          年，主要供奉印度教的神明，整個建築群由若干個神殿和庭院組成，有如美麗的石門、雕刻精美的牆壁以及供奉各種神祇的寺廟殿堂，每到重要節日寺廟都會舉辦隆重的祭祀儀式。
+        </h4>
+        <h4>
+          最著名的是位於寺廟中部的神聖泉池，泉水清澈透明終年湧流不息，泉池旁有一排排石雕噴泉，據傳這些泉水擁有淨化和治療的神奇力量，虔誠的信徒和遊客會在這裡沐浴以祈求健康和福祉，泉水溫度大約
+          15 度，要注意不要浸泡過久以免感冒。在入口處必須圍上提供的長巾
+          Salon，如果要洗聖泉還需要額外再換上聖泉池的沙龍，流程可以隨時問現場的工作人員，我當天去人有點多就沒有下去浸泡了。
+        </h4>
+        <div style="text-align: center">
+          <img src="印尼照片\峇里島\BL7.jpg" width="600px" />
+          <img src="印尼照片\峇里島\BL8.jpg" width="600px" />
+          <img src="印尼照片\峇里島\BL9.jpg" width="600px" />
+        </div>
+        <br /><br /><br />
+        <h3>巴杜爾火山 (Gunung Batur)</h3>
+        <h4>
+          巴杜爾火山位於烏布以北約 25 公里的地方，海拔 1717
+          米，是峇里島的第二高峰，曾在 1917 年和 1926
+          年發生過大規模噴發，近年的活動相對平穩但仍被列為高度警戒的活火山。巴杜爾火山是這趟峇里島旅遊中最令我驚豔的地方，雖然要騎了
+          1 小時的車，但這邊的風景絕對值得，在 Kintamani
+          遠眺火山，一片翠綠中焦黑的光禿格外顯眼，是上一次噴發時在大地留下的傷疤，伴著後方巍峨的阿貢火山，形成壯觀的一幅風景。
+        </h4>
+        <div style="text-align: center">
+          <img src="印尼照片\峇里島\BL10.jpg" width="800px" />
+          <img src="印尼照片\峇里島\BL11.jpg" width="800px" />
+        </div>
+        <h4>
+          另外也可以在巴杜爾火山上看日出，主要分為坐吉普車跟登山兩種方式，都可以在
+          <a href=https://www.klook.com/zh-TW/activity/22005-mount-batur-sunrise-experience-4wd-jeep-bali/ target="_blank">Klook</a> 上報名，推薦是有住在烏布的時候參加，因為大約晚上 3、4
+          點就要啟程，直到早上 10、11
+          點才會結束，也要斟酌一下行程安排跟體力，上山晚上溫度只有約 15
+          度，也要做好保暖措施喔!
+        </h4>
+        <div style="text-align: center">
+          <img src="印尼照片\峇里島\BL12.jpg" width="800px" />
+          <img src="印尼照片\峇里島\BL13.jpg" width="800px" />
+          <img src="印尼照片\峇里島\BL14.jpg" width="800px" />
+        </div>
+        <br /><br /><br />
+        <h3>Danau Batoer</h3>
+        <h4>
+          Danau Batoer
+          是一座美麗迷人的火山湖，形成於數千年前峇里島巴杜爾火山的巨大噴發之後，留下了一個巨大的火山口湖。湖面呈現深邃的藍綠色，水質清澈湛藍，湖光山色交相輝映構成了一幅絕美的自然景觀。湖的周圍崎嶇陡峭的湖岸、茂密的熱帶雨林以及遠處起伏的群山共同構成了
+          Danau Batoer
+          獨特迷人的風景，可以在湖岸散步欣賞美景或乘船在湖面上輕輕漂流，感受湖水的清涼和寧靜，鳥群與原始村莊相伴其間，一瞬間還以為自己來到瑞士阿爾卑斯山，我非常喜歡湖畔的寧靜感，推薦大家來這邊一定要下山到湖邊走走。
+        </h4>
+        <div style="text-align: center">
+          <img src="印尼照片\峇里島\BL15.jpg" width="800px" />
+          <img src="印尼照片\峇里島\BL16.jpg" width="800px" />
+          <img src="印尼照片\峇里島\BL17.jpg" width="800px" />
+        </div>
+        <br /><br /><br />
+        <h3>海神廟 (Tanah Lot)</h3>
+        <h4>
+          海神廟位於印尼峇里島中西部海岸，始建於 16
+          世紀，被視為峇里島最神聖的寺廟，供奉著印度教的海神 Dewa
+          Baruna，建築融合了當地獨特的峇里建築風格，造型優美給人神聖莊嚴的感覺。寺廟坐落在一座小島上，周圍被大海環繞，潮汐進退之間寺廟或隱或現，可以在退潮時期徒步前往小島參拜寺廟，並欣賞美麗的日落景色，沉落的夕陽灑在寺廟及海面上，呈現出迷人的光影效果，襯著海面落日餘暉，佇立海中的神廟剪影非常動人，非常推薦坐在海邊岬角上的咖啡廳靜靜欣賞著日落。
+        </h4>
+        <div style="text-align: center">
+          <img src="印尼照片\峇里島\BL18.jpg" width="800px" />
+          <img src="印尼照片\峇里島\BL19.jpg" width="800px" />
+          <img src="印尼照片\峇里島\BL20.jpg" width="800px" />
+        </div>
+        <br /><br /><br />
+        <h3>Green Bowl Beach</h3>
+        <h4>
+          Green Bowl Beach
+          位於峇里島南部，靠近著名的烏魯瓦圖（Uluwatu），是一個隱秘迷人的海灘，以其壯觀的自然景觀和清澈的海水而聞名，吸引了希望遠離人群、享受寧靜的遊客，要到達沙灘需要沿著一條陡峭的小徑下行，高差約有
+          100 公尺要斟酌自己的體力。
+        </h4>
+        <h4>
+          Green Bowl Beach
+          的沙灘由細膩的白沙構成，海水色彩從淺藍到深藍不等，十分適合游泳和潛水，特別是在退潮時可以發現海底的珊瑚礁和各種海洋生物，這裡的浪潮對衝浪者也非常友好，使其成為衝浪愛好者的熱門地點。
+        </h4>
+        <div style="text-align: center">
+          <img src="印尼照片\峇里島\BL21.jpg" width="800px" />
+          <img src="印尼照片\峇里島\BL22.jpg" width="800px" />
+          <img src="印尼照片\峇里島\BL23.jpg" width="800px" />
+        </div>
+        <br /><br /><br />
+        <h3>烏魯瓦圖廟 (Pura Luhur Uluwatu)</h3>
+        <h4>
+          烏魯瓦圖廟位於峇里島南部，坐落在海拔約 70 米的懸崖之上俯瞰著壯觀的印度洋，屬於「九大海岸寺廟」之一，主要供奉海神保護當地居民免受海洋災害的侵襲。寺廟建於公元
+          11
+          世紀，擁有獨特的峇里島建築風格，寺廟內的雕刻和裝飾展現了豐富的文化和宗教意義可以在寺廟周圍漫步，欣賞到壯麗的海景和美麗的日落景色，這裡的環境靜謐，讓人感受到深厚的宗教氛圍。
+        </h4>
+        <h4>
+          要特別注意的是寺廟附近的猴子非常多，而且具有攻擊性，會搶劫遊客的隨身物品跟眼鏡，因此在寺廟時要看管好隨身物品，我在逛寺廟的時候看到好幾隻猴手上都野遊客的物品
+          XD。
+        </h4>
+        <div style="text-align: center">
+          <img src="印尼照片\峇里島\BL24.jpg" width="600px" />
+          <img src="印尼照片\峇里島\BL25.jpg" width="600px" />
+          <img src="印尼照片\峇里島\BL26.jpg" width="600px" />
+        </div>
+        <br /><br /><br />
+        <h3>Kecak Uluwatu</h3>
+        <h4>
+          Kecak Uluwatu
+          表演於烏魯瓦圖廟，舞蹈以其獨特的敘事風格和富有感染力的表演而聞名，通常在日落時分進行，背景是壯觀的印度洋，為表演增添了神秘和壯麗的氛圍。舞蹈的起源可以追溯到 1930 年代，最初是基於古老的宗教儀式，後來演變成一種戲劇性的表演形式，整個表演並不依賴樂器，而是由一群男演員（通常約 70 人）圍成一個圓圈，通過齊聲高唱“cak”
+          來創造出一種獨特的節奏和氛圍。這些男演員在表演中同時扮演不同的角色，講述《羅摩衍那》（Ramayana）中的故事，尤其是羅摩與其妻子西塔之間的愛情故事，以及猴子軍隊如何幫助羅摩對抗惡魔王拉瓦那（Ravana）。
+        </h4>
+        <h4>
+          除了精彩的表演，Kecak Uluwatu
+          還配有火焰舞蹈，增加了視覺的震撼效果，並深入了解巴厘島的傳統藝術和豐富的神話故事，是來到峇里島旅遊的必看項目之一，推薦可以先在網上<a href=https://www.klook.com/zh-TW/activity/21638-uluwatu-kecak-fire-dance-show-tickets-bali/ target="_blank">訂票</a>並在現場兌換，推薦選擇日落時分的場次，在氛圍渲染上能更感受到火舞的悸動。
+        </h4>
+        <div style="text-align: center">
+          <img src="印尼照片\峇里島\BL27.jpg" width="600px" />
+          <img src="印尼照片\峇里島\BL28.jpg" width="800px" />
+          <img src="印尼照片\峇里島\BL29.jpg" width="600px" />
+          <img src="印尼照片\峇里島\BL30.jpg" width="600px" />
+        </div>
+        <br /><br /><br />
+        <h3>布拉坦水神廟 (Pura Ulun Danu Beratan)</h3>
+        <h4>
+          布拉坦水神廟位於峇里島中部 Bedugul 地區，坐落於美麗的巴圖爾湖（Lake
+          Beratan）邊緣，是峇里島重要的宗教場所之一，專門供奉水神德維杜安努（Dewi
+          Danu），以祈求水源的豐沛和農作物的豐收。
+        </h4>
+        <h4>
+          布拉坦水神廟建於 17
+          世紀，展現了典型的峇里島建築風格，特別是其獨特的多層屋頂（meru），象徵著對神靈的尊敬。寺廟的建築與周圍的自然環境和諧融合，尤其是在清晨和薄霧瀰漫的時刻，寺廟的倒影映在湖面上，形成如夢似幻的景象，吸引眾多攝影愛好者。
+        </h4>
+        <div style="text-align: center">
+          <img src="印尼照片\峇里島\BL31.jpg" width="600px" />
+          <img src="印尼照片\峇里島\BL32.jpg" width="600px" />
+          <img src="印尼照片\峇里島\BL33.jpg" width="800px" />
+        </div>
+        <br /><br /><br />
+        <h3>Banyumala Waterfall</h3>
+        <h4>
+          Banyumala Waterfall
+          位於峇里島北部，以其壯觀的雙層瀑布和清澈的水潭而聞名，距離 Lake Buyan
+          約有 30 分鐘的車程，周圍被茂密的熱帶雨林環繞，Banyumala Waterfall
+          的主要特點是它的兩條水流，從高處飛流而下形成壯觀的水簾，並在底部形成一個碧藍的水潭，可以在這裡游泳感受到與大自然融為一體的感覺。
+        </h4>
+        <h4>
+          前往 Banyumala Waterfall
+          需要先沿著一條路況極差的下坡路，這段開車或騎車務必非常小心，下車後再沿一條小徑徒步下切溪谷，途中可欣賞到周圍壯麗的自然景觀，但不算非常容易，務必小心自身安全。
+        </h4>
+        <div style="text-align: center">
+          <img src="印尼照片\峇里島\BL34.jpg" width="600px" />
+          <img src="印尼照片\峇里島\BL35.jpg" width="600px" />
+        </div>
+        <br /><br /><br />
+        <h3>Buyan Lake</h3>
+        <h4>
+          Buyan Lake 位於峇里島北部的高原湖泊，坐落在壯觀的山脈之間，海拔約 1000
+          米，是峇里島第二大湖泊，以其清澈的水域和周圍的自然景觀而聞名，湖面常常被薄霧籠罩，特別是在清晨，形成如夢似幻的景色。湖泊四周被茂密的熱帶雨林和茶園環繞生態系統豐富，也是許多鳥類和其他野生動物的棲息地，可以在湖面上划船，體驗不同的水上活動。
+        </h4>
+        <div style="text-align: center">
+          <img src="印尼照片\峇里島\BL36.jpg" width="800px" />
+        </div>
+        <br /><br /><br />
+        <h3>百沙基母廟 (Pura Agung Besakih)</h3>
+        <h4>
+          百沙基母廟是峇里島上最重要的寺廟之一，位於阿貢火山山坡上，歷史可以追溯到公元 8 世紀，是峇里島最大的寺廟群，擁有多達86座小廟，建築群以其獨特的多層屋頂（meru）而聞名，這些屋頂象徵著對神靈的敬仰，寺廟內的主要廟宇供奉著印度教的三位主神：濕婆（Shiva）、毗濕奴（Vishnu）和梵天（Brahma），吸引大量信徒和朝聖者前來祈求平安與祝福。每年百沙基母廟會舉行多次重要的宗教儀式和慶典，吸引了來自各地的信徒，尤其是 "Pagerwesi" 和 "Kuningan" 等節日，展現了峇里島獨特的宗教文化與社區精神。寺廟周圍的自然景觀壯麗，可以在此欣賞到周圍的山脈和稻田，享受寧靜的氛圍。
+        </h4>
+        <div style="text-align: center">
+          <img src="印尼照片\峇里島\BL37.jpg" width="600px" />
+          <img src="印尼照片\峇里島\BL38.jpg" width="600px" />
+          <img src="印尼照片\峇里島\BL39.jpg" width="800px" />
+          <img src="印尼照片\峇里島\BL40.jpg" width="600px" />
+        </div>
+        <br /><br /><br />
+        <h3>阿貢火山 (Gunung Agung)</h3>
+        <h4>
+          阿貢火山是峇里島上最高的火山，海拔約 3031
+          米，是該島的主要地標，火山於 1963 年首次大規模噴發，造成了嚴重的災難，並對周圍社區產生了重大影響。阿貢火山被視為峇里島最神聖的地方之一，當地人相信它是神靈的居所，火山的形狀壯麗，常年被雲霧籠罩，為遊客提供了壯觀的景觀。登山健行是火山最著名的活動，從火山頂部可以俯瞰到整個島嶼的美景，尤其是在日出時分景色更加壯觀。
+        </h4>
+        <div style="text-align: center">
+          <img src="印尼照片\峇里島\BL41.jpg" width="600px" />
+          <img src="印尼照片\峇里島\BL42.jpg" width="600px" />
+        </div>
+        <br /><br /><br />
+        <h3>Tukad Cepung Waterfall</h3>
+        <h4>
+          Tukad Cepung Waterfall 位於島的東部，靠近 Tembuku
+          區，位於一個狹窄的山谷中，瀑布水流從高處傾瀉而下，形成一個如畫的水簾，並在底部形成一個碧藍的水潭。前往
+          Tukad Cepung Waterfall
+          的路途需要進行一段徒步旅行，沿途遊客可以欣賞到熱帶雨林的美麗景色和豐富的生態系統，走進山谷時陽光透過岩石縫隙灑在水面上形成迷人的光束，增添了這裡的神秘感。在
+          IG 網紅網美的宣傳下，瀑布已成為熱門的拍照點，周末下午可能需要排隊超過
+          30 分鐘才拍的到照，建議要早一點來以免浪費很多時間排隊喔!
+        </h4>
+        <div style="text-align: center">
+          <img src="印尼照片\峇里島\BL43.jpg" width="600px" />
+          <img src="印尼照片\峇里島\BL44.jpg" width="600px" />
+          <img src="印尼照片\峇里島\BL45.jpg" width="600px" />
+          <img src="印尼照片\峇里島\BL46.jpg" width="600px" />
+        </div>
+        <br /><br /><br />
+        <h3>Goa Lawah Temple</h3>
+        <h4>
+          Goa Lawah Temple
+          亦稱為蝙蝠洞寺，特殊之處在於其位於一個天然的洞穴中，洞內居住著數以萬計的蝙蝠，形成了一個獨特的生態系統。Goa
+          Lawah Temple
+          被視為峇里島最神聖的寺廟之一，主要供奉海神和祖靈，吸引著大量信徒前來朝聖和參觀，Goa
+          Lawah Temple
+          的建築風格典雅雕刻精美，寺廟內有多個祭壇和雕像，展示了峇里島獨特的文化和宗教信仰。寺廟周圍環繞著壯麗的自然景觀，綠樹成蔭給人一種寧靜的感覺。每年當地居民會舉行許多重要的宗教儀式，特別是在寺廟的節日慶典期間，吸引了眾多信徒前來參與。
+        </h4>
+        <div style="text-align: center">
+          <img src="印尼照片\峇里島\BL47.jpg" width="600px" />
+          <img src="印尼照片\峇里島\BL48.jpg" width="600px" />
+          <img src="印尼照片\峇里島\BL49.jpg" width="800px" />
+        </div>
+        <br /><br /><br />
+        <h3>Tulamben Beach</h3>
+        <h4>
+          Tulamben Beach
+          島的東北部，是一個以潛水和浮潛聞名的海灘，擁有豐富的海洋生態系統，是潛水愛好者的天堂。Tulamben
+          最著名的景點是沉沒於 1963 年的美國貨輪 “USAT
+          Liberty”，這艘船在二戰期間被敵方攻擊後漂流到這裡，現在成為了潛水者和浮潛者探索的熱門地點。“USAT
+          Liberty” 周圍環繞著色彩斑斕的珊瑚礁和各種海洋生物，包括熱帶魚、海龜和小型鯊魚，潛水的深度適合各種水平的潛水者，從初學者到專業人士都能在這裡找到合適的挑戰。
+        </h4>
+        <div style="text-align: center">
+          <img src="印尼照片\峇里島\BL50.jpg" width="600px" />
+          <img src="印尼照片\峇里島\BL51.jpg" width="800px" />
+        </div>
+        <br /><br /><br />
+        <h3>Amed Beach</h3>
+        <h4>
+          Amed Beach
+          位於島的東北部，沙灘以其黑色火山沙聞名，背景是壯觀的阿貢火山，水域清澈透明非常適合潛水和浮潛，擁有多樣的珊瑚礁和色彩斑斕的熱帶魚，是潛水愛好者的天堂，可以在淺水區輕鬆地觀賞到海洋生物，如
+          Jemeluk Bay 和 Lipah Beach 有豐富的水下生態體驗。
+        </h4>
+        <h4>
+          除了水上活動，Amed Beach
+          有許多小型的餐廳和住宿選擇，氛圍寧靜適合放鬆身心，享受海邊的日出，參觀當地的寺廟和傳統村莊，深入了解當地的生活方式和習俗。
+        </h4>
+        <div style="text-align: center">
+          <img src="印尼照片\峇里島\BL52.jpg" width="800px" />
+          <img src="印尼照片\峇里島\BL53.jpg" width="800px" />
+          <img src="印尼照片\峇里島\BL54.jpg" width="800px" />
+        </div>
+        <br /><br /><br />
+        <h3>Taman Ujung</h3>
+        <h4>
+          Taman Ujung
+          亦稱為水宮，花園建於20世紀初，原為峇里島的皇宮之一，是當時的國王為了休閒和宴會而設計的，充分展現了峇里島的建築藝術和文化特色，設計融合了峇里島和西方的建築風格，花園內有廣闊的水池、精緻的石刻和壯觀的拱門，水宮的湖面映照著周圍的山脈和天空，營造出夢幻般的氛圍。在花園內漫步可以欣賞各種熱帶植物和花卉，並探索不同的建築結構，如水上亭子和古老的祭壇，特別是在黃昏時分，夕陽映照在水面上增添了無限浪漫。
+        </h4>
+        <div style="text-align: center">
+          <img src="印尼照片\峇里島\BL55.jpg" width="800px" />
+          <img src="印尼照片\峇里島\BL56.jpg" width="800px" />
+          <img src="印尼照片\峇里島\BL57.jpg" width="800px" />
+        </div>
+        <br />
+        <h2>峇里島美食</h2>
+        <h3>Pison</h3>
+        <h4>
+          Pison
+          是在烏布大街上非常有名的餐廳，座位區分為室內跟室外可自行選擇，<b>建議要先訂位</b>以免要等很久，裝潢十分的用心充滿峇里島風情，點了最有名的髒鴨飯、炸鴨蛋五花豬飯跟鴨肉炒飯都超好吃，鎖住了鴨肉的香味，非常推薦。
+        </h4>
+        <div style="text-align: center">
+          <img src="印尼照片\峇里島\BL58.jpg" width="800px" />
+          <img src="印尼照片\峇里島\BL59.jpg" width="800px" />
+          <img src="印尼照片\峇里島\BL60.jpg" width="800px" />
+          <img src="印尼照片\峇里島\BL61.jpg" width="800px" />
+        </div>
+        <br /><br /><br />
+        <h3>Montana Del Cafe</h3>
+        <h4>
+          Montana Del Cafe 是位於 Kintamani
+          的咖啡館，坐落在壯麗的自然景觀中，擁有眺望巴杜爾火山的無敵景觀，真的是個超級好拍照的地方，甚至還有懸空的網狀平台讓大家能體會一把在懸崖邊的刺激感。咖啡廳提供各式各樣的咖啡飲品，並搭配新鮮的早餐、午餐和甜點選擇，特別注重本地食材，餐廳的設計以自然元素為主，是午後放鬆休息的好去處。
+        </h4>
+        <div style="text-align: center">
+          <img src="印尼照片\峇里島\BL62.jpg" width="800px" />
+          <img src="印尼照片\峇里島\BL63.jpg" width="800px" />
+        </div>
+        <br /><br /><br />
+        <h3>Ritatkala Cafe</h3>
+        <h4>
+          Ritatkala Cafe
+          的位置絕佳，可以從座位可以將巴杜爾火山盡收眼底，真的超級好拍照，青椒香料雞跟果汁都表現得很好，悠閒的躺在躺椅上沐浴陽光欣賞火山的美景真的很美好。
+        </h4>
+        <div style="text-align: center">
+          <img src="印尼照片\峇里島\BL64.jpg" width="800px" />
+          <img src="印尼照片\峇里島\BL65.jpg" width="800px" />
+          <img src="印尼照片\峇里島\BL66.jpg" width="800px" />
+        </div>
+        <br /><br /><br />
+        <h3>Kebun Bistro</h3>
+        <h4>
+          Kebun Bistro 是位於烏布融合法式鄉村風情與地中海風味的迷人餐廳，以「Kebun」（印尼語意為「花園」）命名，餐廳擁有綠意盎然的環境和浪漫的歐式氛圍，讓人仿若置身於普羅旺斯的庭院。Kebun
+          Bistro
+          提供手工製作的披薩、鮮嫩的烤肉、精緻的沙拉，以及經典法式甜點，尤其是峇里島做法的油封鴨更是必點，所有食材均以新鮮和有機為主，呈現自然純粹的風味，也提供多種優質葡萄酒與手沖咖啡，是用餐或下午茶的理想選擇。
+        </h4>
+        <div style="text-align: center">
+          <img src="印尼照片\峇里島\BL67.jpg" width="800px" />
+          <img src="印尼照片\峇里島\BL68.jpg" width="800px" />
+        </div>
+        <br /><br /><br />
+        <h3>The Shaddy Pig</h3>
+        <h4>
+          The Shaddy Pig 是位於 Canggu，以創意調酒與活力氛圍著稱的隱密酒吧，以復古工業風設計為主題，酒吧內部融入昏黃燈光、皮革家具及懷舊裝飾，營造出獨特而低調的奢華感。The
+          Shaddy Pig
+          提供多樣創新調酒，結合當地風味與國際酒品，滿足挑剔的味蕾需求，酒吧也定期舉辦現場音樂表演與主題派對，是聚會或小酌的理想選擇。店內注重私密性，入口設計頗具神秘感，增添探險與驚喜的體驗。
+        </h4>
+        <div class="two-vertical-images">
+          <img src="印尼照片\峇里島\BL69-1.jpg" />
+          <img src="印尼照片\峇里島\BL69-2.jpg" />
+        </div>
+        <div class="two-vertical-images">
+          <img src="印尼照片\峇里島\BL70-1.jpg" />
+          <img src="印尼照片\峇里島\BL70-2.jpg" />
+        </div>
+        <br /><br />
+        <h3>La Montagne Coffee</h3>
+        <h4>
+          La Montagne Coffee 是一家臨近阿貢火山的咖啡廳，品牌名字 "La Montagne"
+          意為「山」，象徵其咖啡豆來源於火山土壤孕育的高山地區，強調從種植、採收到烘焙的每個細節，確保保留咖啡的自然風味。咖啡廳最大的賣點就是能遠眺阿貢火山及山腳下的梯田，結合成一幅最代表峇里島的風景，店內結合峇里島自然與現代元素，是喜愛探索風味的咖啡愛好者不容錯過的選擇。
+        </h4>
+        <div style="text-align: center">
+          <img src="印尼照片\峇里島\BL71.jpg" width="800px" />
+        </div>
+        <br /><br /><br />
+        <h3>Gooseberry Restaurant</h3>
+        <h4>
+          Gooseberry Restaurant 是靠近烏魯瓦圖神廟一家備受讚譽的餐廳，以其新鮮的當地食材和創意料理而聞名，餐廳環境舒適，融合了現代與傳統的裝潢，營造出輕鬆愉悅的用餐氛圍，但價位也相對較高。Gooseberry
+          Restaurant
+          有多樣的選擇，包括健康的早餐、精緻的午餐和晚餐，特別適合素食者和海鮮愛好者，招牌菜品獨具匠心，並且搭配各式手工調製的飲品，可以享受完美的用餐體驗，也是體驗峇里島文化的理想場所。
+        </h4>
+        <div style="text-align: center">
+          <img src="印尼照片\峇里島\BL72.jpg" width="600px" />
+          <img src="印尼照片\峇里島\BL73.jpg" width="600px" />
+        </div>
+        <br /><br /><br />
+        <h3>Casa Tua</h3>
+        <h4>
+          Casa Tua 是位於 Canggu 的一家峇里島 fusion
+          餐廳，菜色設計融合了當地文化與意大利風格，營造出舒適而優雅的用餐環境，讓每位客人都感受到如家般的溫暖，並提供多樣的選擇，包括新鮮的海鮮和多款經典峇里島菜，也有許多創意的東西方融合料理，所有菜品均採用當地新鮮食材精心製作，享受印尼與西方融合料理。
+        </h4>
+        <div style="text-align: center">
+          <img src="印尼照片\峇里島\BL74.jpg" width="600px" />
+          <img src="印尼照片\峇里島\BL75.jpg" width="600px" />
+          <img src="印尼照片\峇里島\BL76.jpg" width="600px" />
+        </div>
+        <br /><br /><br />
+        <h3>L'osteria Pizza E Cucina Ubud</h3>
+        <h4>
+          L'osteria Pizza E Cucina Ubud 是位於烏布的義大利餐廳，以其正宗的披薩和美味的意大利菜聞名。，裝潢融合了傳統與現代元素，讓客人感受到熱情好客的意大利文化。餐廳提供各式新鮮製作的披薩，配以當地新鮮食材，以及多款經典意大利菜，如手工義大利麵和豐富的海鮮料理，L'osteria
+          特別注重食材的品質和風味，旨在為食客帶來地道的意大利美食體驗，還有多種手工調製的飲品，完美搭配每道菜品。
+        </h4>
+        <div style="text-align: center">
+          <img src="印尼照片\峇里島\BL77.jpg" width="600px" />
+        </div>
+        <br />
+      </div>
+      <div class="destination-sidebar">
+        <div class="sidebar-image-container">
+          <img src="側邊欄自我介紹.jpg" />
+        </div>
+        <h5>
+          Hi!
+          我是Tommy，我熱愛旅遊也喜歡藉由影像紀錄旅程中的點點滴滴，透過文字將我在旅途中的所見所聞分享給大家。旅行對我而言不只是吃吃喝喝，而是能在行萬里路間感受世界的脈動，體驗不同的文化，希望藉由我的分享能讓大家看到更多世界的美好。
+        </h5>
+        <br />
+        <h5>
+          想更了解我或與我聯絡:
+          <a
+            href="https://www.instagram.com/tommy_techvoyage/"
+            target="_blank"
+            style="color: inherit; text-decoration: underline"
+          >
+            <b>Instagram</b>
+          </a>
+        </h5>
+        <div class="recommendation-section">
+          <h3>其他印尼旅遊目的地</h3>
+          <div class="recommendation-buttons">
+            <a href="龍目島.html">
+              <button><h5>龍目島</h5></button>
+            </a>
+            <a href="科莫多島.html">
+              <button><h5>科莫多島</h5></button>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="contact-section">
+      <div class="contact-item">
+        <h3>
+          想更了解我或與我聯絡:
+          <a
+            href="https://www.instagram.com/tommy_techvoyage/"
+            target="_blank"
+            style="color: inherit; text-decoration: underline"
+          >
+            Instagram
+          </a>
+        </h3>
+      </div>
+    </div>
+    <footer>
+      <h6>COPYRIGHT © 2025 Tommy 看世界 All rights reserved.</h6>
+    </footer>
+    <div id="expandable-menu">
+      <div id="menu-toggle"></div>
+      <!-- 收闔按鈕 -->
+      <div id="menu-content">
+        <h4>目錄</h4>
+        <ul id="menu-list"></ul>
+      </div>
+    </div>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const menu = document.getElementById("expandable-menu");
+        const toggle = document.getElementById("menu-toggle");
+        const menuList = document.getElementById("menu-list");
+        const destinationMain = document.querySelector(".destination-main");
+
+        // 點擊按鈕切換目錄狀態
+        toggle.addEventListener("click", () => {
+          menu.classList.toggle("open");
+        });
+
+        // 從 destination-main 區域提取 h2 和 h3，動態生成目錄
+        const headings = destinationMain.querySelectorAll("h2, h3");
+        headings.forEach((heading, index) => {
+          // 確保每個 h2 和 h3 都有唯一的 id
+          if (!heading.id) {
+            heading.id = `heading-${index}`;
+          }
+
+          const listItem = document.createElement("li");
+          const link = document.createElement("a");
+          link.textContent = heading.textContent;
+          link.href = `#${heading.id}`;
+          listItem.appendChild(link);
+
+          // 為 h3 添加縮排樣式
+          if (heading.tagName.toLowerCase() === "h3") {
+            listItem.classList.add("sub-item");
+          }
+
+          menuList.appendChild(listItem);
+        });
+
+        // 滾動至目標位置並加上 75px 偏移
+        menuList.addEventListener("click", (event) => {
+          if (event.target.tagName === "A") {
+            event.preventDefault(); // 阻止預設行為
+
+            const targetId = event.target.getAttribute("href").substring(1); // 取得目標 ID
+            const targetElement = document.getElementById(targetId);
+
+            if (targetElement) {
+              // 計算目標元素的位置並加上 75px 偏移
+              const targetPosition =
+                targetElement.getBoundingClientRect().top + window.scrollY;
+              const offset = 75; // 偏移的距離
+              window.scrollTo({
+                top: targetPosition - offset,
+                behavior: "smooth", // 平滑滾動
+              });
+            }
+          }
+        });
+      });
+    </script>
+  </body>
+</html>

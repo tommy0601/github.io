@@ -1,0 +1,649 @@
+<!DOCTYPE html>
+<html lang="zh-hant-TW">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="曹旅瀚 Tommy" />
+    <meta name="description" content="探索汕頭南澳島的海島風情！細白沙灘、自然海景、海鮮美食與歷史古蹟，帶你體驗廣東最迷人的離島秘境，遠離喧囂、享受寧靜海風。" />
+    <meta name="keywords" content="南澳島旅遊, 汕頭南澳島, 廣東海島, 南澳島自由行, 南澳島景點, 南澳大橋, 南澳島海鮮, 廣東秘境, 南澳島住宿, 海島推薦" />
+    <title>Tommy 看世界 - 汕頭南澳島</title>
+    <link rel="icon" href="網頁縮圖.ico" />
+    <style>
+      body {
+        font-family: Calibri, Arial, sans-serif; /* 首選 Calibri，次選 Arial */
+        margin: 0;
+        padding: 0;
+        overflow-x: hidden; /* 禁止水平滾動 */
+        background-color: #f4f4f9;
+        color: #333;
+      }
+
+      h1 {
+        font-size: 40px;
+        font-weight: bold;
+      }
+
+      h2 {
+        font-size: 32px;
+        font-weight: bold;
+        color: #2a90a7;
+        display: inline-block;
+        margin-bottom: 1rem; /* 縮小 h2 的底部邊距 */
+        background-color: #cee5e8;
+      }
+
+      h3 {
+        font-size: 26px;
+        margin: 0 0 1rem;
+        font-weight: bold;
+        text-decoration: underline; /* 加上底線 */
+      }
+
+      h4 {
+        font-size: 18px;
+        font-weight: normal;
+        line-height: 1.8;
+      }
+
+      h5 {
+        font-size: 16px;
+        font-weight: normal;
+        margin: 0;
+      }
+
+      h6 {
+        font-size: 10px;
+        color: #fff;
+        margin: 0;
+        text-align: center;
+        line-height: 50px; /* 高度對齊 */
+      }
+
+      nav {
+        background-color: #78bcc4;
+        display: flex;
+        justify-content: space-between; /* 保持分佈在兩側 */
+        width: calc(100% - 10rem); /* 與其他內容的邊界一致 */
+        padding: 0.5rem 5rem; /* 主導覽列的 padding 設置 */
+        position: fixed;
+        top: 0;
+        z-index: 1000;
+      }
+
+      .nav-left .logo img {
+        height: 50px; /* 控制 Logo 圖片的高度 */
+        transform: translateX(-1.5rem); /* 向右移動 2rem */
+      }
+
+      .nav-right {
+        display: flex;
+        align-items: center;
+        transform: translateX(2rem); /* 向右移動 2rem */
+      }
+
+      nav a {
+        color: #eff5f5;
+        text-decoration: none;
+        padding: 0.5rem 1rem;
+        margin: 0 0.5rem;
+        transition: transform 0.3s;
+      }
+
+      nav a:hover {
+        transform: translateY(-3px);
+      }
+
+      .dropdown {
+        position: relative;
+      }
+
+      .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #78bcc4;
+        min-width: 160px;
+        border-radius: 4px;
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        padding: 0.2rem 0;
+      }
+
+      .dropdown-content a {
+        color: #eff5f5;
+        display: block;
+        transition: transform 0.3s;
+        border-bottom: 1px solid #ddd;
+      }
+
+      .dropdown-content a:last-child {
+        border-bottom: none;
+      }
+
+      .dropdown-content a:hover {
+        transform: translateY(-3px);
+      }
+
+      .dropdown:hover .dropdown-content {
+        display: block;
+      }
+
+      .intro-section {
+        background-color: #eff5f5;
+        display: flex;
+        padding: 2rem;
+        margin-top: 60px; /* 根據導航列高度調整 */
+        justify-content: space-between;
+        align-items: flex-start;
+        width: 100%;
+        box-sizing: border-box; /* 包含 padding 在內 */
+        padding-left: 5rem;
+        padding-right: 5rem;
+      }
+
+      .intro-section h4 {
+        max-width: 700px;
+      }
+
+      .intro-section .left {
+        width: 60%;
+      }
+
+      .intro-section .right {
+        width: 40%;
+      }
+
+      .destination-section {
+        display: flex;
+        padding: 1rem 5%; /* 左右內間距為螢幕的10% */
+        background-color: white;
+      }
+
+      .destination-main {
+        width: 75%;
+        margin-right: 1.5rem; /* 增加右邊外邊距 */
+      }
+
+      .destination-sidebar {
+        width: 25%;
+        padding-left: 1.5rem; /* 增加左側內邊距 */
+        margin-top: 2rem; /* 向上或向下調整，負值表示向上 */
+      }
+
+      .sidebar-image-container {
+        margin-bottom: 1rem;
+        text-align: center; /* 確保圖片置中 */
+      }
+
+      .sidebar-image-container img {
+        height: 300px; /* 設置直式圖片的高度 */
+      }
+
+      .two-vertical-images {
+        display: flex; /* 彈性佈局，讓圖片並排 */
+        justify-content: space-between; /* 兩張圖片均勻分佈 */
+        gap: 2rem; /* 圖片之間的間距 */
+        margin-top: 2rem;
+        margin-bottom: 2rem; /* 與下方內容的距離 */
+      }
+
+      .two-vertical-images img {
+        width: calc(50% - 0.5rem); /* 每張圖片佔用容器的一半減去間距 */
+        text-align: center; /* 確保圖片置中 */
+        height: auto; /* 保持圖片的直式比例 */
+        object-fit: cover; /* 確保圖片內容適應容器 */
+      }
+
+      .recommendation-section {
+        margin-top: 1.5rem; /* 與上方文字的間距 */
+        text-align: center;
+        position: sticky;
+        top: 80px; /* 空出導覽列的高度，確保推薦區不被覆蓋 */
+        z-index: 10; /* 提高層級，避免被其他內容遮蓋 */
+      }
+
+      .recommendation-section h3 {
+        font-size: 18px;
+        font-weight: bold;
+        margin-bottom: 0.5rem; /* 與按鈕區的距離 */
+      }
+
+      .recommendation-buttons {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 0.5rem; /* 按鈕之間的間距 */
+      }
+
+      .recommendation-buttons button {
+        padding: 0.5rem 1rem;
+        font-size: 14px;
+        color: white;
+        background-color: #78bcc4;
+        border: none;
+        border-radius: 4px;
+        transition: transform 0.3s;
+        font-family: Arial, sans-serif;
+      }
+
+      .recommendation-buttons button:hover {
+        transform: translateY(-3px);
+      }
+
+      .contact-section {
+        padding: 2rem 5rem; /* 上下與左右間距 */
+        background-color: #eff5f5; /* 淺灰背景 */
+        text-align: center; /* 確保內容置中對齊 */
+      }
+
+      .contact-item h3 {
+        font-size: 18px; /* 調整標題字體大小 */
+        margin: 0; /* 移除多餘的間距 */
+        text-decoration: none; /* 移除底線 */
+      }
+
+      footer {
+        background-color: #000;
+        color: white;
+        height: 30px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      #expandable-menu {
+        position: fixed;
+        top: 70px; /* 與螢幕頂部的距離設為 60px */
+        right: 0;
+        height: calc(100% - 70px); /* 高度減去 60px，避免超出視窗 */
+        width: 395px; /* 目錄寬度與 sidebar 齊寬 */
+        transform: translateX(100%); /* 初始狀態：隱藏在右側 */
+        transition: transform 0.3s ease;
+        background-color: #f4f4f9; /* 與網站背景一致 */
+        z-index: 1000;
+      }
+
+      /* 收闔按鈕 */
+      #menu-toggle {
+        position: absolute;
+        top: 45%;
+        left: -40px; /* 調整按鈕的位置，適應按鈕變大後的寬度 */
+        transform: translateY(-50%);
+        width: 40px; /* 增大按鈕寬度 */
+        height: 80px; /* 增大按鈕高度 */
+        background-color: #78bcc4;
+        color: white;
+        border-radius: 4px;
+        display: flex;
+        justify-content: center; /* 水平居中 */
+        align-items: center; /* 垂直居中 */
+      }
+
+      #menu-toggle::after {
+        content: "目錄"; /* 在按鈕內顯示 "目錄" */
+        font-size: 17px;
+        color: white; /* 設定字體顏色為白色 */
+        writing-mode: vertical-rl; /* 使文字垂直排列 */
+      }
+
+      #menu-toggle:hover {
+        background-color: #78bcc4;
+      }
+
+      /* 目錄內容 */
+      #menu-content {
+        padding: 0.5rem 1rem;
+        overflow-y: auto;
+        height: 100%;
+      }
+
+      #menu-content h4 {
+        font-weight: bold;
+        margin-top: 0;
+      }
+
+      #menu-list {
+        list-style: none;
+        padding: 0;
+      }
+
+      #menu-list li {
+        margin-bottom: 0.5rem;
+      }
+
+      #menu-list a {
+        color: #2a90a7;
+        text-decoration: none;
+        transition: color 0.3s;
+      }
+
+      #menu-list a:hover {
+        color: #78bcc4;
+      }
+
+      #menu-list .sub-item {
+        margin-left: 1.5rem; /* 調整縮排距離 */
+        font-size: 0.9rem; /* 可選：調整子項目字體大小 */
+      }
+
+      /* 目錄展開狀態 */
+      #expandable-menu.open {
+        transform: translateX(0);
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <div class="nav-left">
+        <div class="logo">
+          <a href="首頁.html">
+            <img src="網站Logo.png" alt="網站 Logo" />
+          </a>
+        </div>
+      </div>
+      <div class="nav-right">
+        <a href="首頁.html">關於我</a>
+        <div class="dropdown">
+          <a>亞洲旅遊</a>
+          <div class="dropdown-content">
+            <a href="中國.html">中國</a>
+            <a href="新加坡.html">新加坡</a>
+            <a href="馬來西亞.html">馬來西亞</a>
+            <a href="泰國.html">泰國</a>
+            <a href="印尼.html">印尼</a>
+            <a href="越南.html">越南</a>
+          </div>
+        </div>
+        <div class="dropdown">
+          <a>歐洲旅遊</a>
+          <div class="dropdown-content">
+            <a href="英國.html">英國</a>
+            <a href="法國.html">法國</a>
+            <a href="荷蘭.html">荷蘭</a>
+            <a href="比利時.html">比利時</a>
+            <a href="盧森堡.html">盧森堡</a>
+            <a href="瑞士.html">瑞士</a>
+            <a href="摩納哥.html">摩納哥</a>
+            <a href="西班牙.html">西班牙</a>
+            <a href="葡萄牙.html">葡萄牙</a>
+            <a href="安道爾.html">安道爾</a>
+            <a href="丹麥.html">丹麥</a>
+            <a href="瑞典.html">瑞典</a>
+            <a href="波蘭.html">波蘭</a>
+          </div>
+        </div>
+        <div class="dropdown">
+          <a>美洲旅遊</a>
+          <div class="dropdown-content">
+            <a href="美國.html">美國</a>
+            <a href="加拿大.html">加拿大</a>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <div class="intro-section">
+      <div class="left">
+        <h1>Tommy 在南澳島</h1>
+        <h4>
+          <b>南澳</b
+          >是中國廣東省汕頭市下轄的一個縣，位於粵、閩二省交界海面，是廣東省唯一的海島縣。南澳縣由南澳島及周邊
+          22 個小島嶼組成，北回歸線橫穿海島，是廣東省人口最少的縣級行政區。
+        </h4>
+      </div>
+      <div class="right">
+        <img
+          src="中國照片\汕頭南澳島\南澳_介紹.jpg"
+          width="90%"
+          height="350px"
+        />
+      </div>
+    </div>
+
+    <div class="destination-section">
+      <div class="destination-main">
+        <h2>南澳島交通</h2>
+        <h4>
+          從汕頭市區到南澳島可以<b
+            >由汕頭高鐵站換乘 161A/161B/161K 路線巴士前往</b
+          >，約耗時 1 個半小時，
+          我自己更推薦是先<b>在小紅書或微信上聯繫好包車</b>，可以直接送你從高鐵站到旅館，相對方便快速也省去轉乘公車麻煩。在島上交通的部分一樣推薦選擇包車，也可以租小電驢
+          (電動摩托車)
+          馳騁於公路，機動性更高也比較不會有停車的問題，畢竟南澳島旺季時遊客非常多大機率會塞車喔。
+        </h4>
+        <img src="中國照片\汕頭南澳島\南澳_交通.png" width="1000px" />
+        <br /><br />
+        <h2>南澳島住宿</h2>
+        <h4>
+          在南澳島肯定是要住海景民宿啦!
+          在小紅書上搜尋"南澳島民宿"就會跳出一大堆美輪美奐又可愛的海景民宿房間，
+          這些帳號大多都是民宿主人自己經營的可以直接私訊問他們，但建議可以多方比較以免踩到地雷喔。
+          地點的部分會推薦住在離<b>後宅鎮</b>不要太遠的地方，除了吃的東西比較多選擇之外，交通也比較便利喔。如果是想要欣賞日出的話則可以選擇住在<b>青澳灣</b>周圍，是面東方的海景第一排。
+        </h4>
+        <div style="text-align: center">
+          <img src="中國照片\汕頭南澳島\南澳_住宿.jpg" width="800px" />
+        </div>
+        <br /><br />
+        <h2>南澳島景點</h2>
+        <h3>錢澳灣燈塔</h3>
+        <h4>
+          錢澳灣燈塔位於南澳島西南側，是南澳島著名的三個燈塔之一，雖然沒辦法抵達燈塔下方，但是在附近的礁石及觀景台就能拍出很美的照片，算是小紅書帶紅的景點之一，路過可以停下來花個 30 ~ 40 分鐘遊覽拍照。
+        </h4>
+        <div style="text-align: center">
+          <img src="中國照片\汕頭南澳島\南澳1.jpg" width="600px" />
+          <img src="中國照片\汕頭南澳島\南澳2.jpg" width="800px" />
+        </div>
+        <br /><br /><br />
+        <h3>長山尾燈塔</h3>
+        <h4>
+          長山尾燈塔位於南澳島西側，緊鄰南澳島跨海大橋，是廣東省第一座跨海大橋，總長 9.3 公里並耗時 20 年完工，在海邊可以欣賞跨海大橋一路延伸至彼岸的汕頭，也是欣賞日落的絕佳位置，推薦可以日落前 30 分鐘抵達，可以看著橙黃的夕陽緩緩落下。
+        </h4>
+        <div style="text-align: center">
+          <img src="中國照片\汕頭南澳島\南澳3.jpg" width="600px" />
+          <img src="中國照片\汕頭南澳島\南澳4.jpg" width="600px" />
+          <img src="中國照片\汕頭南澳島\南澳5.jpg" width="800px" />
+        </div>
+        <br /><br /><br />
+        <h3>三囪崖燈塔</h3>
+        <h4>
+          三囪崖燈塔位於南澳島東南側，面朝台灣海峽，可以欣賞 180 度無死角的絕美海景。入口處並不好找，但自從這邊爆紅後入口處便停了許多遊客車輛及餐車，變得十分明顯 XD，走進來大約需要 10 分鐘，全路完全無遮蔭夏天必須做好防曬，最靠近只能走到下圖的地方，無法走到燈塔下方，攀爬岩石要注意跌落的風險。另外在入口處附近也是通往後方"石頭山"的入口，但由於當時在網上查了說十分高難度最好要搭乘當地居民的農車，便沒有排進計畫中了，有興趣與風電風車拍照的可以小紅書上找找。
+        </h4>
+        <div style="text-align: center">
+          <img src="中國照片\汕頭南澳島\南澳6.jpg" width="600px" />
+          <img src="中國照片\汕頭南澳島\南澳7.jpg" width="800px" />
+        </div>
+        <br /><br /><br />
+        <h3>青澳灣北回歸線標誌塔</h3>
+        <h4>
+          青澳灣位於南澳島東側，以絕美的日出聞名，也因為擁有大片沙灘及海水浴場，夏天是著名的消暑勝地。
+          青澳灣也是北回歸線上的一點，在沙灘旁矗立了一個標誌塔，塔中心的球體有一個從上而下的洞，
+          <b>當夏至正中午 12 點時陽光會從正上方直落而下在地上形成光點</b>，算是一大特色。
+        </h4>
+        <div style="text-align: center">
+          <img src="中國照片\汕頭南澳島\南澳8.jpg" width="600px" />
+        </div>
+        <br /><br /><br />
+        <h3>雲杉公路</h3>
+        <h4>
+          雲杉公路位於南澳鳥谷動物園與雲深古寺之間的 064 縣道上，一整排雲杉排列於公路兩旁，長約 300 公尺，好像在歡迎遊客上雲深古寺一覽南澳島風光一般，從樹枝間也能隱約遠眺深澳鎮及隔海的大唐發電廠，是個非常好拍照的地方。
+        </h4>
+        <div style="text-align: center">
+          <img src="中國照片\汕頭南澳島\南澳9.jpg" width="600px" />
+          <img src="中國照片\汕頭南澳島\南澳10.jpg" width="600px" />
+          <img src="中國照片\汕頭南澳島\南澳11.jpg" width="600px" />
+        </div>
+        <br /><br /><br />
+        <h3>雄鎮關</h3>
+        <h4>
+          雄鎮關位於深澳鎮南面的雲澳與深澳交界的山坳，地勢比較險要，是當年深澳總兵府南面的屏障，也是出征時必爭的軍事要地。傳說明朝嘉靖年間，浙江總兵戚繼光奉旨到南澳平定吳平時，就在雄鎮關出奇兵而獲勝，這個戰役曾出動了閩粵兩省官兵，是當年有名的戰役，雄鎮關也從此名聞。從附近的公路也能遠眺整個深澳鎮，天氣好的時候可以清楚的看到海上紅色一點一點的養殖棚架，更可以看到大陸的其他鄉鎮。
+        </h4>
+        <div style="text-align: center">
+          <img src="中國照片\汕頭南澳島\南澳12.jpg" width="600px" />
+          <img src="中國照片\汕頭南澳島\南澳13.jpg" width="800px" />
+        </div>
+        <br /><br /><br />
+        <h3>風電場遊覽區</h3>
+        <h4>
+          位於南澳島正中心的 057 縣道上，整個南澳島都不乏風力發電裝置的影子，包括在海上都有許多風能裝置，在公路上能欣賞兩旁山頭上滿滿的風車，景致十分壯觀。
+        </h4>
+        <div style="text-align: center">
+          <img src="中國照片\汕頭南澳島\南澳14.jpg" width="800px" />
+        </div>
+        <br /><br />
+        <h2>南澳島美食</h2>
+        <h3>然孖生醃</h3>
+        <h4>
+          生醃是把魚、蝦、蟹等海鮮或河鮮，用酒、薑、蒜等調料醃製，再冷藏或冷凍製作而成。對於潮州一帶的人來說，只有生醃才可以最大程度保留海產品的最原始風味。這次入門第一次吃生醃先從比較不容易腸胃不適的墨魚開始，薑與蒜醃製的墨魚保留了海鮮的鮮甜，非常適合當作宵夜解饞，
+          等多嘗試了幾次之後應該就會挑戰蝦蟹類了，<b>要特別斟酌自己的腸胃狀況再決定要點什麼吃喔!</b>
+        </h4>
+        <div style="text-align: center">
+          <img src="中國照片\汕頭南澳島\南澳15.jpg" width="600px" />
+        </div>
+        <br /><br /><br />
+        <h3>炳忠粿麵條</h3>
+        <h4>
+          炳忠粿麵條位於后宅鎮的市場中，<b>附近不好停車建議騎車前往</b>，最有名的海鮮瘦肉粿條，一整晚有一大半都是蝦、蚵仔還有瘦豬肉，讓吸滿湯汁的粿條十分鮮甜，早上或中午來上一碗，很補整天都很有活力。
+        </h4>
+        <div style="text-align: center">
+          <img src="中國照片\汕頭南澳島\南澳16.jpg" width="600px" />
+        </div>
+        <br /><br /><br />
+        <h3>許大姊的菜</h3>
+        <h4>
+          位於青澳北回歸線標誌附近，價格非常實惠，兩個人不到 150 人民幣便可以有一整桌的海鮮，從花甲、鮮蝦、蚵仔到扇貝應有盡有，且一定要點南澳島最有名的紫菜炒飯，帶鹹味的紫菜配上些許海膽超級好吃，想吃海鮮的推薦這一家。
+        </h4>
+        <div style="text-align: center">
+          <img src="中國照片\汕頭南澳島\南澳17.jpg" width="800px" />
+          <img src="中國照片\汕頭南澳島\南澳18.jpg" width="800px" />
+        </div>
+        <br /><br />
+      </div>
+      <div class="destination-sidebar">
+        <div class="sidebar-image-container">
+          <img src="側邊欄自我介紹.jpg" />
+        </div>
+        <h5>
+          Hi!
+          我是Tommy，我熱愛旅遊也喜歡藉由影像紀錄旅程中的點點滴滴，透過文字將我在旅途中的所見所聞分享給大家。旅行對我而言不只是吃吃喝喝，而是能在行萬里路間感受世界的脈動，體驗不同的文化，希望藉由我的分享能讓大家看到更多世界的美好。
+        </h5>
+        <br />
+        <h5>
+          想更了解我或與我聯絡:
+          <a
+            href="https://www.instagram.com/tommy_techvoyage/"
+            target="_blank"
+            style="color: inherit; text-decoration: underline"
+          >
+            <b>Instagram</b>
+          </a>
+        </h5>
+        <div class="recommendation-section">
+          <h3>其他中國旅遊目的地</h3>
+          <div class="recommendation-buttons">
+            <a href="上海.html">
+              <button><h5>上海</h5></button>
+            </a>
+            <a href="廣州.html">
+              <button><h5>廣州</h5></button>
+            </a>
+            <a href="長沙.html">
+              <button><h5>長沙</h5></button>
+            </a>
+            <a href="成都.html">
+              <button><h5>成都</h5></button>
+            </a>
+            <a href="重慶.html">
+              <button><h5>重慶</h5></button>
+            </a>
+            <a href="桂林.html">
+              <button><h5>桂林</h5></button>
+            </a>
+            <a href="陽朔.html">
+              <button><h5>陽朔</h5></button>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="contact-section">
+      <div class="contact-item">
+        <h3>
+          想更了解我或與我聯絡:
+          <a
+            href="https://www.instagram.com/tommy_techvoyage/"
+            target="_blank"
+            style="color: inherit; text-decoration: underline"
+          >
+            Instagram
+          </a>
+        </h3>
+      </div>
+    </div>
+    <footer>
+      <h6>COPYRIGHT © 2025 Tommy 看世界 All rights reserved.</h6>
+    </footer>
+    <div id="expandable-menu">
+      <div id="menu-toggle"></div>
+      <!-- 收闔按鈕 -->
+      <div id="menu-content">
+        <h4>目錄</h4>
+        <ul id="menu-list"></ul>
+      </div>
+    </div>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const menu = document.getElementById("expandable-menu");
+        const toggle = document.getElementById("menu-toggle");
+        const menuList = document.getElementById("menu-list");
+        const destinationMain = document.querySelector(".destination-main");
+
+        // 點擊按鈕切換目錄狀態
+        toggle.addEventListener("click", () => {
+          menu.classList.toggle("open");
+        });
+
+        // 從 destination-main 區域提取 h2 和 h3，動態生成目錄
+        const headings = destinationMain.querySelectorAll("h2, h3");
+        headings.forEach((heading, index) => {
+          // 確保每個 h2 和 h3 都有唯一的 id
+          if (!heading.id) {
+            heading.id = `heading-${index}`;
+          }
+
+          const listItem = document.createElement("li");
+          const link = document.createElement("a");
+          link.textContent = heading.textContent;
+          link.href = `#${heading.id}`;
+          listItem.appendChild(link);
+
+          // 為 h3 添加縮排樣式
+          if (heading.tagName.toLowerCase() === "h3") {
+            listItem.classList.add("sub-item");
+          }
+
+          menuList.appendChild(listItem);
+        });
+
+        // 滾動至目標位置並加上 75px 偏移
+        menuList.addEventListener("click", (event) => {
+          if (event.target.tagName === "A") {
+            event.preventDefault(); // 阻止預設行為
+
+            const targetId = event.target.getAttribute("href").substring(1); // 取得目標 ID
+            const targetElement = document.getElementById(targetId);
+
+            if (targetElement) {
+              // 計算目標元素的位置並加上 75px 偏移
+              const targetPosition =
+                targetElement.getBoundingClientRect().top + window.scrollY;
+              const offset = 75; // 偏移的距離
+              window.scrollTo({
+                top: targetPosition - offset,
+                behavior: "smooth", // 平滑滾動
+              });
+            }
+          }
+        });
+      });
+    </script>
+  </body>
+</html>

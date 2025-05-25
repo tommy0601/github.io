@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html lang="zh-hant-TW">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="曹旅瀚 Tommy" />
+    <meta name="description" content="探索馬拉加的魅力！從壯觀的阿爾卡薩瓦城堡到陽光灿烂的海灘，體驗安達盧西亞的文化、美食與歷史遺跡，發現這座融合古老與現代的西班牙城市。" />
+    <meta name="keywords" content="馬拉加旅遊, 馬拉加景點, 阿爾卡薩瓦城堡, 馬拉加海灘, 馬拉加自由行, 馬拉加美食, 馬拉加文化, 馬拉加歷史, 安達盧西亞旅遊" />
+    <title>Tommy 看世界 - 馬拉加</title>
+    <link rel="icon" href="網頁縮圖.ico" />
+    <style>
+      body {
+        font-family: Calibri, Arial, sans-serif; /* 首選 Calibri，次選 Arial */
+        margin: 0;
+        padding: 0;
+        overflow-x: hidden; /* 禁止水平滾動 */
+        background-color: #f4f4f9;
+        color: #333;
+      }
+
+      h1 {
+        font-size: 40px;
+        font-weight: bold;
+      }
+
+      h2 {
+        font-size: 32px;
+        font-weight: bold;
+        color: #2a90a7;
+        display: inline-block;
+        margin-bottom: 1rem; /* 縮小 h2 的底部邊距 */
+        background-color: #cee5e8;
+      }
+
+      h3 {
+        font-size: 26px;
+        margin: 0 0 1rem;
+        font-weight: bold;
+        text-decoration: underline; /* 加上底線 */
+      }
+
+      h4 {
+        font-size: 18px;
+        font-weight: normal;
+        line-height: 1.8;
+      }
+
+      h5 {
+        font-size: 16px;
+        font-weight: normal;
+        margin: 0;
+      }
+
+      h6 {
+        font-size: 10px;
+        color: #fff;
+        margin: 0;
+        text-align: center;
+        line-height: 50px; /* 高度對齊 */
+      }
+
+      nav {
+        background-color: #78bcc4;
+        display: flex;
+        justify-content: space-between; /* 保持分佈在兩側 */
+        width: calc(100% - 10rem); /* 與其他內容的邊界一致 */
+        padding: 0.5rem 5rem; /* 主導覽列的 padding 設置 */
+        position: fixed;
+        top: 0;
+        z-index: 1000;
+      }
+
+      .nav-left .logo img {
+        height: 50px; /* 控制 Logo 圖片的高度 */
+        transform: translateX(-1.5rem); /* 向右移動 2rem */
+      }
+
+      .nav-right {
+        display: flex;
+        align-items: center;
+        transform: translateX(2rem); /* 向右移動 2rem */
+      }
+
+      nav a {
+        color: #eff5f5;
+        text-decoration: none;
+        padding: 0.5rem 1rem;
+        margin: 0 0.5rem;
+        transition: transform 0.3s;
+      }
+
+      nav a:hover {
+        transform: translateY(-3px);
+      }
+
+      .dropdown {
+        position: relative;
+      }
+
+      .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #78bcc4;
+        min-width: 160px;
+        border-radius: 4px;
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        padding: 0.2rem 0;
+      }
+
+      .dropdown-content a {
+        color: #eff5f5;
+        display: block;
+        transition: transform 0.3s;
+        border-bottom: 1px solid #ddd;
+      }
+
+      .dropdown-content a:last-child {
+        border-bottom: none;
+      }
+
+      .dropdown-content a:hover {
+        transform: translateY(-3px);
+      }
+
+      .dropdown:hover .dropdown-content {
+        display: block;
+      }
+
+      .intro-section {
+        background-color: #eff5f5;
+        display: flex;
+        padding: 2rem;
+        margin-top: 60px; /* 根據導航列高度調整 */
+        justify-content: space-between;
+        align-items: flex-start;
+        width: 100%;
+        box-sizing: border-box; /* 包含 padding 在內 */
+        padding-left: 5rem;
+        padding-right: 5rem;
+      }
+
+      .intro-section h4 {
+        max-width: 700px;
+      }
+
+      .intro-section .left {
+        width: 60%;
+      }
+
+      .intro-section .right {
+        width: 40%;
+      }
+
+      .destination-section {
+        display: flex;
+        padding: 1rem 5%; /* 左右內間距為螢幕的10% */
+        background-color: white;
+      }
+
+      .destination-main {
+        width: 75%;
+        margin-right: 1.5rem; /* 增加右邊外邊距 */
+      }
+
+      .destination-sidebar {
+        width: 25%;
+        padding-left: 1.5rem; /* 增加左側內邊距 */
+        margin-top: 2rem; /* 向上或向下調整，負值表示向上 */
+      }
+
+      .sidebar-image-container {
+        margin-bottom: 1rem;
+        text-align: center; /* 確保圖片置中 */
+      }
+
+      .sidebar-image-container img {
+        height: 300px; /* 設置直式圖片的高度 */
+      }
+
+      .two-vertical-images {
+        display: flex; /* 彈性佈局，讓圖片並排 */
+        justify-content: space-between; /* 兩張圖片均勻分佈 */
+        gap: 2rem; /* 圖片之間的間距 */
+        margin-top: 2rem;
+        margin-bottom: 2rem; /* 與下方內容的距離 */
+      }
+
+      .two-vertical-images img {
+        width: calc(50% - 0.5rem); /* 每張圖片佔用容器的一半減去間距 */
+        text-align: center; /* 確保圖片置中 */
+        height: auto; /* 保持圖片的直式比例 */
+        object-fit: cover; /* 確保圖片內容適應容器 */
+      }
+
+      .recommendation-section {
+        margin-top: 1.5rem; /* 與上方文字的間距 */
+        text-align: center;
+        position: sticky;
+        top: 80px; /* 空出導覽列的高度，確保推薦區不被覆蓋 */
+        z-index: 10; /* 提高層級，避免被其他內容遮蓋 */
+      }
+
+      .recommendation-section h3 {
+        font-size: 18px;
+        font-weight: bold;
+        margin-bottom: 0.5rem; /* 與按鈕區的距離 */
+      }
+
+      .recommendation-buttons {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 0.5rem; /* 按鈕之間的間距 */
+      }
+
+      .recommendation-buttons button {
+        padding: 0.5rem 1rem;
+        font-size: 14px;
+        color: white;
+        background-color: #78bcc4;
+        border: none;
+        border-radius: 4px;
+        transition: transform 0.3s;
+        font-family: Arial, sans-serif;
+      }
+
+      .recommendation-buttons button:hover {
+        transform: translateY(-3px);
+      }
+
+      .contact-section {
+        padding: 2rem 5rem; /* 上下與左右間距 */
+        background-color: #eff5f5; /* 淺灰背景 */
+        text-align: center; /* 確保內容置中對齊 */
+      }
+
+      .contact-item h3 {
+        font-size: 18px; /* 調整標題字體大小 */
+        margin: 0; /* 移除多餘的間距 */
+        text-decoration: none; /* 移除底線 */
+      }
+
+      footer {
+        background-color: #000;
+        color: white;
+        height: 30px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      #expandable-menu {
+        position: fixed;
+        top: 70px; /* 與螢幕頂部的距離設為 60px */
+        right: 0;
+        height: calc(100% - 70px); /* 高度減去 60px，避免超出視窗 */
+        width: 395px; /* 目錄寬度與 sidebar 齊寬 */
+        transform: translateX(100%); /* 初始狀態：隱藏在右側 */
+        transition: transform 0.3s ease;
+        background-color: #f4f4f9; /* 與網站背景一致 */
+        z-index: 1000;
+      }
+
+      /* 收闔按鈕 */
+      #menu-toggle {
+        position: absolute;
+        top: 45%;
+        left: -40px; /* 調整按鈕的位置，適應按鈕變大後的寬度 */
+        transform: translateY(-50%);
+        width: 40px; /* 增大按鈕寬度 */
+        height: 80px; /* 增大按鈕高度 */
+        background-color: #78bcc4;
+        color: white;
+        border-radius: 4px;
+        display: flex;
+        justify-content: center; /* 水平居中 */
+        align-items: center; /* 垂直居中 */
+      }
+
+      #menu-toggle::after {
+        content: "目錄"; /* 在按鈕內顯示 "目錄" */
+        font-size: 17px;
+        color: white; /* 設定字體顏色為白色 */
+        writing-mode: vertical-rl; /* 使文字垂直排列 */
+      }
+
+      #menu-toggle:hover {
+        background-color: #78bcc4;
+      }
+
+      /* 目錄內容 */
+      #menu-content {
+        padding: 0.5rem 1rem;
+        overflow-y: auto;
+        height: 100%;
+      }
+
+      #menu-content h4 {
+        font-weight: bold;
+        margin-top: 0;
+      }
+
+      #menu-list {
+        list-style: none;
+        padding: 0;
+      }
+
+      #menu-list li {
+        margin-bottom: 0.5rem;
+      }
+
+      #menu-list a {
+        color: #2a90a7;
+        text-decoration: none;
+        transition: color 0.3s;
+      }
+
+      #menu-list a:hover {
+        color: #78bcc4;
+      }
+
+      #menu-list .sub-item {
+        margin-left: 1.5rem; /* 調整縮排距離 */
+        font-size: 0.9rem; /* 可選：調整子項目字體大小 */
+      }
+
+      /* 目錄展開狀態 */
+      #expandable-menu.open {
+        transform: translateX(0);
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <div class="nav-left">
+        <div class="logo">
+          <a href="首頁.html">
+            <img src="網站Logo.png" alt="網站 Logo" />
+          </a>
+        </div>
+      </div>
+      <div class="nav-right">
+        <a href="首頁.html">關於我</a>
+        <div class="dropdown">
+          <a>亞洲旅遊</a>
+          <div class="dropdown-content">
+            <a href="中國.html">中國</a>
+            <a href="新加坡.html">新加坡</a>
+            <a href="馬來西亞.html">馬來西亞</a>
+            <a href="泰國.html">泰國</a>
+            <a href="印尼.html">印尼</a>
+            <a href="越南.html">越南</a>
+          </div>
+        </div>
+        <div class="dropdown">
+          <a>歐洲旅遊</a>
+          <div class="dropdown-content">
+            <a href="英國.html">英國</a>
+            <a href="法國.html">法國</a>
+            <a href="荷蘭.html">荷蘭</a>
+            <a href="比利時.html">比利時</a>
+            <a href="盧森堡.html">盧森堡</a>
+            <a href="瑞士.html">瑞士</a>
+            <a href="摩納哥.html">摩納哥</a>
+            <a href="西班牙.html">西班牙</a>
+            <a href="葡萄牙.html">葡萄牙</a>
+            <a href="安道爾.html">安道爾</a>
+            <a href="丹麥.html">丹麥</a>
+            <a href="瑞典.html">瑞典</a>
+            <a href="波蘭.html">波蘭</a>
+          </div>
+        </div>
+        <div class="dropdown">
+          <a>美洲旅遊</a>
+          <div class="dropdown-content">
+            <a href="美國.html">美國</a>
+            <a href="加拿大.html">加拿大</a>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <div class="intro-section">
+      <div class="left">
+        <h1>Tommy 在馬拉加</h1>
+        <h4>
+          <b>馬拉加 (Málaga) </b
+          >位於安達魯西亞地區，歷史可以追溯到古羅馬時期，是一個重要的貿易港口和商業中心，是羅馬帝國在伊比利亞半島的要塞城市。在穆斯林統治時期也是一個文化和商業中心，以農業、工藝和科學方面的發展而聞名。現代的馬拉加是安達魯西亞地區的商業和金融中心，也擁有許多文化活動，如馬拉加傳統音樂節，是個藝術和文化的重要據點。
+        </h4>
+      </div>
+      <div class="right">
+        <img src="西班牙照片\馬拉加\馬拉加_介紹.jpg" width="90%" height="350px" />
+      </div>
+    </div>
+
+    <div class="destination-section">
+      <div class="destination-main">
+        <h2>馬拉加交通</h2>
+        <h3>機場交通</h3>
+        <h4>
+          從馬拉加機場可以搭乘 A 路線公車直達市中心，車程大約 40 分鐘。
+        </h4>
+        <h3>市區交通</h3>
+        <h4>
+          馬拉加市區非常小，景點也相當集中，大部分靠步行就足夠，如果要去希布拉爾法羅城堡可以搭乘 35 路公車到終點站。
+        </h4>
+        <br /><br />
+        <h2>馬拉加住宿</h2>
+        <h4>
+          馬拉加舊城區範圍不大，推薦可以住在地鐵 Atarazanas 站附近，去景點及機場或地鐵站都非常方便。
+        </h4>
+        <div style="text-align: center">
+          <img src="西班牙照片\馬拉加\馬拉加_住宿.png" width="1000px" />
+        </div>
+        <br /><br />
+        <h2>馬拉加景點</h2>
+        <h3>馬拉加主教座堂 (Catedral de la Encarnación de Málaga)</h3>
+        <h4>
+          馬拉加主教座堂始建於 16 世紀，但由於多種因素的影響，工程一直持續了數個世紀，這也導致了教堂的建築風格上的變化。教堂的主立面展示了華麗的文藝復興風格，而其側面則呈現出哥特式的特徵。教堂內部極為壯觀，擁有高聳的拱頂、華麗的祭壇和豐富的藝術品，最著名的是由 Diego de Siloé 設計的聖心堂，以及由 Pedro de Mena 創作的耶穌受難像，也收藏了許多重要的宗教藝術品和古老的文物，展示了馬拉加的宗教和文化遺產。
+        </h4>
+        <div style="text-align: center">
+          <img src="西班牙照片\馬拉加\ML1.jpg" width="600px" />
+          <img src="西班牙照片\馬拉加\ML2.jpg" width="600px" />
+        </div>
+        <br /><br /><br />
+        <h3>Alcazaba</h3>
+        <h4>
+          Alcazaba 始建於 8 世紀，當時馬拉加被穆斯林統治，被用作統治者的宮殿和城堡，同時也作為城市的防禦工事，建築結構融合了羅馬城牆和塔樓的遺跡，以及摩爾式的庭院、花園和噴泉。從 Alcazaba 頂部可以欣賞到馬拉加市區的壯觀景色，包括大教堂、港口和地中海的美麗海岸線。
+        </h4>
+        <div style="text-align: center">
+          <img src="西班牙照片\馬拉加\ML3.jpg" width="600px" />
+          <img src="西班牙照片\馬拉加\ML4.jpg" width="800px" />
+        </div>
+        <br /><br /><br />
+        <h3>Playa la Malagueta</h3>
+        <h4>
+          Playa la Malagueta 是一個長約 1200 米的海灘，擁有柔細的金色沙灘和清澈的海水，有許多休閒設施和服務供遊客使用，包括休息區、太陽傘和躺椅租賃、淋浴設施、海灘酒吧和餐廳等，也是各種海洋活動的熱門場所，可以參加浮潛、游泳、划船和帆板等水上運動，或者租用水上遊樂設施，如水上滑梯和浮筒。
+        </h4>
+        <div style="text-align: center">
+          <img src="西班牙照片\馬拉加\ML5.jpg" width="800px" />
+          <img src="西班牙照片\馬拉加\ML6.jpg" width="800px" />
+        </div>
+        <br /><br /><br />
+        <h3>希布拉爾法羅城堡 (Castillo de Gibralfaro)</h3>
+        <h4>
+          希布拉爾法羅城堡的歷史可以追溯到 14 世紀，當時作為阿爾罕布拉王朝統治馬拉加的重要堡壘。城堡的建築結構包括城牆、塔樓、砲台和防禦工事，展示了摩爾式和基督教式的建築風格，從城堡的高處可以俯瞰整個馬拉加市區、地中海和周圍的山脈，景色壯觀。城堡內部保存完好，設有展覽和解說，展示了希布拉爾法羅城堡的歷史和文化意義，城堡的頂部有一座高塔及壯麗的觀景台，可以遠眺馬拉加的美景。
+        </h4>
+        <div style="text-align: center">
+          <img src="西班牙照片\馬拉加\ML7.jpg" width="600px" />
+          <img src="西班牙照片\馬拉加\ML8.jpg" width="600px" />
+          <img src="西班牙照片\馬拉加\ML9.jpg" width="600px" />
+          <img src="西班牙照片\馬拉加\ML10.jpg" width="600px" />
+        </div>
+        <br /><br /><br />
+        <h3>畢卡索博物館 (Picasso Museum Málaga)</h3>
+        <h4>
+          畢卡索博物館位於一座修復的 16 世紀宮殿內，後人在畢卡索的故鄉展示他的廣泛藝術收藏，包括繪畫、雕塑、陶瓷和素描等作品，涵蓋了畢卡索從早期到晚期的各個創作時期，展示了他的藝術風格和創作演變。博物館內部設有多個展廳，展示了不同主題和時期的畢卡索作品，也展示了與畢卡索相關的文物、照片和文件，提供關於他生活和藝術的深入背景資訊。
+        </h4>
+        <div class="two-vertical-images">
+          <img src="西班牙照片\馬拉加\ML11-1.jpg" />
+          <img src="西班牙照片\馬拉加\ML11-2.jpg" />
+        </div>
+        <div class="two-vertical-images">
+          <img src="西班牙照片\馬拉加\ML12-1.jpg" />
+          <img src="西班牙照片\馬拉加\ML12-2.jpg" />
+        </div>
+        <div style="text-align: center">
+          <img src="西班牙照片\馬拉加\ML13.jpg" width="800px" />
+        </div>
+        <br /><br />
+        <h2>馬拉加美食</h2>
+        <h3>El Pimpi</h3>
+        <h4>
+          鄰近地中海的馬拉加漁業資源相當豐富，最出名的是利用牛肉汁燉的烏賊，飽滿的烏賊吸滿了肉香味，一口下去可以同時感受海陸兩種感覺，搭上紫洋芋的甜味非常適配。另外馬拉加一帶也是麝香葡萄的產地，因此麝香葡萄酒也是當地的特色之一，相比於一般的葡萄酒，馬拉加的麝香葡萄酒澀味較淡，取而代之的是麝香味及些許甜味，組合起來十分特別，但酒精濃度偏高後勁蠻強的。
+        </h4>
+        <div style="text-align: center">
+          <img src="西班牙照片\馬拉加\ML14.jpg" width="600px" />
+          <img src="西班牙照片\馬拉加\ML15.jpg" width="600px" />
+          <img src="西班牙照片\馬拉加\ML16.jpg" width="600px" />
+        </div>
+        <br /><br />
+      </div>
+      <div class="destination-sidebar">
+        <div class="sidebar-image-container">
+          <img src="側邊欄自我介紹.jpg" />
+        </div>
+        <h5>
+          Hi!
+          我是Tommy，我熱愛旅遊也喜歡藉由影像紀錄旅程中的點點滴滴，透過文字將我在旅途中的所見所聞分享給大家。旅行對我而言不只是吃吃喝喝，而是能在行萬里路間感受世界的脈動，體驗不同的文化，希望藉由我的分享能讓大家看到更多世界的美好。
+        </h5>
+        <br />
+        <h5>
+          想更了解我或與我聯絡:
+          <a
+            href="https://www.instagram.com/tommy_techvoyage/"
+            target="_blank"
+            style="color: inherit; text-decoration: underline"
+          >
+            <b>Instagram</b>
+          </a>
+        </h5>
+        <div class="recommendation-section">
+          <h3>其他西班牙旅遊目的地</h3>
+          <div class="recommendation-buttons">
+            <a href="巴塞隆納.html">
+              <button><h5>巴塞隆納</h5></button>
+            </a>
+            <a href="馬德里.html">
+              <button><h5>馬德里</h5></button>
+            </a>
+            <a href="瓦倫西亞.html">
+              <button><h5>瓦倫西亞</h5></button>
+            </a>
+            <a href="格瑞那達.html">
+              <button><h5>格瑞那達</h5></button>
+            </a>
+            <a href="隆達.html">
+              <button><h5>隆達</h5></button>
+            </a>
+            <a href="直布羅陀.html">
+              <button><h5>直布羅陀</h5></button>
+            </a>
+            <a href="塞維亞.html">
+              <button><h5>塞維亞</h5></button>
+            </a>
+            <a href="馬略卡島.html">
+              <button><h5>馬略卡島</h5></button>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="contact-section">
+      <div class="contact-item">
+        <h3>
+          想更了解我或與我聯絡:
+          <a
+            href="https://www.instagram.com/tommy_techvoyage/"
+            target="_blank"
+            style="color: inherit; text-decoration: underline"
+          >
+            Instagram
+          </a>
+        </h3>
+      </div>
+    </div>
+    <footer>
+      <h6>COPYRIGHT © 2025 Tommy 看世界 All rights reserved.</h6>
+    </footer>
+    <div id="expandable-menu">
+      <div id="menu-toggle"></div>
+      <!-- 收闔按鈕 -->
+      <div id="menu-content">
+        <h4>目錄</h4>
+        <ul id="menu-list"></ul>
+      </div>
+    </div>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const menu = document.getElementById("expandable-menu");
+        const toggle = document.getElementById("menu-toggle");
+        const menuList = document.getElementById("menu-list");
+        const destinationMain = document.querySelector(".destination-main");
+
+        // 點擊按鈕切換目錄狀態
+        toggle.addEventListener("click", () => {
+          menu.classList.toggle("open");
+        });
+
+        // 從 destination-main 區域提取 h2 和 h3，動態生成目錄
+        const headings = destinationMain.querySelectorAll("h2, h3");
+        headings.forEach((heading, index) => {
+          // 確保每個 h2 和 h3 都有唯一的 id
+          if (!heading.id) {
+            heading.id = `heading-${index}`;
+          }
+
+          const listItem = document.createElement("li");
+          const link = document.createElement("a");
+          link.textContent = heading.textContent;
+          link.href = `#${heading.id}`;
+          listItem.appendChild(link);
+
+          // 為 h3 添加縮排樣式
+          if (heading.tagName.toLowerCase() === "h3") {
+            listItem.classList.add("sub-item");
+          }
+
+          menuList.appendChild(listItem);
+        });
+
+        // 滾動至目標位置並加上 75px 偏移
+        menuList.addEventListener("click", (event) => {
+          if (event.target.tagName === "A") {
+            event.preventDefault(); // 阻止預設行為
+
+            const targetId = event.target.getAttribute("href").substring(1); // 取得目標 ID
+            const targetElement = document.getElementById(targetId);
+
+            if (targetElement) {
+              // 計算目標元素的位置並加上 75px 偏移
+              const targetPosition =
+                targetElement.getBoundingClientRect().top + window.scrollY;
+              const offset = 75; // 偏移的距離
+              window.scrollTo({
+                top: targetPosition - offset,
+                behavior: "smooth", // 平滑滾動
+              });
+            }
+          }
+        });
+      });
+    </script>
+  </body>
+</html>

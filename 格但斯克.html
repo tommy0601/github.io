@@ -1,0 +1,662 @@
+<!DOCTYPE html>
+<html lang="zh-hant-TW">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="曹旅瀚 Tommy" />
+    <meta name="description" content="探索格但斯克的魅力！這座歷史悠久的港口城市擁有獨特的中世紀建築和海濱景色，體驗波蘭的文化遺產、歷史遺跡與現代風情，發現格但斯克的迷人之處。" />
+    <meta name="keywords" content="格但斯克旅遊, 格但斯克景點, 格但斯克自由行, 格但斯克歷史, 格但斯克港口, 格但斯克文化, 格但斯克美食, 格但斯克建築, 格但斯克海濱, 波蘭旅遊" />
+    <title>Tommy 看世界 - 格但斯克</title>
+    <link rel="icon" href="網頁縮圖.ico" />
+    <style>
+      body {
+        font-family: Calibri, Arial, sans-serif; /* 首選 Calibri，次選 Arial */
+        margin: 0;
+        padding: 0;
+        overflow-x: hidden; /* 禁止水平滾動 */
+        background-color: #f4f4f9;
+        color: #333;
+      }
+
+      h1 {
+        font-size: 40px;
+        font-weight: bold;
+      }
+
+      h2 {
+        font-size: 32px;
+        font-weight: bold;
+        color: #2a90a7;
+        display: inline-block;
+        margin-bottom: 1rem; /* 縮小 h2 的底部邊距 */
+        background-color: #cee5e8;
+      }
+
+      h3 {
+        font-size: 26px;
+        margin: 0 0 1rem;
+        font-weight: bold;
+        text-decoration: underline; /* 加上底線 */
+      }
+
+      h4 {
+        font-size: 18px;
+        font-weight: normal;
+        line-height: 1.8;
+      }
+
+      h5 {
+        font-size: 16px;
+        font-weight: normal;
+        margin: 0;
+      }
+
+      h6 {
+        font-size: 10px;
+        color: #fff;
+        margin: 0;
+        text-align: center;
+        line-height: 50px; /* 高度對齊 */
+      }
+
+      nav {
+        background-color: #78bcc4;
+        display: flex;
+        justify-content: space-between; /* 保持分佈在兩側 */
+        width: calc(100% - 10rem); /* 與其他內容的邊界一致 */
+        padding: 0.5rem 5rem; /* 主導覽列的 padding 設置 */
+        position: fixed;
+        top: 0;
+        z-index: 1000;
+      }
+
+      .nav-left .logo img {
+        height: 50px; /* 控制 Logo 圖片的高度 */
+        transform: translateX(-1.5rem); /* 向右移動 2rem */
+      }
+
+      .nav-right {
+        display: flex;
+        align-items: center;
+        transform: translateX(2rem); /* 向右移動 2rem */
+      }
+
+      nav a {
+        color: #eff5f5;
+        text-decoration: none;
+        padding: 0.5rem 1rem;
+        margin: 0 0.5rem;
+        transition: transform 0.3s;
+      }
+
+      nav a:hover {
+        transform: translateY(-3px);
+      }
+
+      .dropdown {
+        position: relative;
+      }
+
+      .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #78bcc4;
+        min-width: 160px;
+        border-radius: 4px;
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        padding: 0.2rem 0;
+      }
+
+      .dropdown-content a {
+        color: #eff5f5;
+        display: block;
+        transition: transform 0.3s;
+        border-bottom: 1px solid #ddd;
+      }
+
+      .dropdown-content a:last-child {
+        border-bottom: none;
+      }
+
+      .dropdown-content a:hover {
+        transform: translateY(-3px);
+      }
+
+      .dropdown:hover .dropdown-content {
+        display: block;
+      }
+
+      .intro-section {
+        background-color: #eff5f5;
+        display: flex;
+        padding: 2rem;
+        margin-top: 60px; /* 根據導航列高度調整 */
+        justify-content: space-between;
+        align-items: flex-start;
+        width: 100%;
+        box-sizing: border-box; /* 包含 padding 在內 */
+        padding-left: 5rem;
+        padding-right: 5rem;
+      }
+
+      .intro-section h4 {
+        max-width: 700px;
+      }
+
+      .intro-section .left {
+        width: 60%;
+      }
+
+      .intro-section .right {
+        width: 40%;
+      }
+
+      .destination-section {
+        display: flex;
+        padding: 1rem 5%; /* 左右內間距為螢幕的10% */
+        background-color: white;
+      }
+
+      .destination-main {
+        width: 75%;
+        margin-right: 1.5rem; /* 增加右邊外邊距 */
+      }
+
+      .destination-sidebar {
+        width: 25%;
+        padding-left: 1.5rem; /* 增加左側內邊距 */
+        margin-top: 2rem; /* 向上或向下調整，負值表示向上 */
+      }
+
+      .sidebar-image-container {
+        margin-bottom: 1rem;
+        text-align: center; /* 確保圖片置中 */
+      }
+
+      .sidebar-image-container img {
+        height: 300px; /* 設置直式圖片的高度 */
+      }
+
+      .two-vertical-images {
+        display: flex; /* 彈性佈局，讓圖片並排 */
+        justify-content: space-between; /* 兩張圖片均勻分佈 */
+        gap: 2rem; /* 圖片之間的間距 */
+        margin-top: 2rem;
+        margin-bottom: 2rem; /* 與下方內容的距離 */
+      }
+
+      .two-vertical-images img {
+        width: calc(50% - 0.5rem); /* 每張圖片佔用容器的一半減去間距 */
+        text-align: center; /* 確保圖片置中 */
+        height: auto; /* 保持圖片的直式比例 */
+        object-fit: cover; /* 確保圖片內容適應容器 */
+      }
+
+      .recommendation-section {
+        margin-top: 1.5rem; /* 與上方文字的間距 */
+        text-align: center;
+        position: sticky;
+        top: 80px; /* 空出導覽列的高度，確保推薦區不被覆蓋 */
+        z-index: 10; /* 提高層級，避免被其他內容遮蓋 */
+      }
+
+      .recommendation-section h3 {
+        font-size: 18px;
+        font-weight: bold;
+        margin-bottom: 0.5rem; /* 與按鈕區的距離 */
+      }
+
+      .recommendation-buttons {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 0.5rem; /* 按鈕之間的間距 */
+      }
+
+      .recommendation-buttons button {
+        padding: 0.5rem 1rem;
+        font-size: 14px;
+        color: white;
+        background-color: #78bcc4;
+        border: none;
+        border-radius: 4px;
+        transition: transform 0.3s;
+        font-family: Arial, sans-serif;
+      }
+
+      .recommendation-buttons button:hover {
+        transform: translateY(-3px);
+      }
+
+      .contact-section {
+        padding: 2rem 5rem; /* 上下與左右間距 */
+        background-color: #eff5f5; /* 淺灰背景 */
+        text-align: center; /* 確保內容置中對齊 */
+      }
+
+      .contact-item h3 {
+        font-size: 18px; /* 調整標題字體大小 */
+        margin: 0; /* 移除多餘的間距 */
+        text-decoration: none; /* 移除底線 */
+      }
+
+      footer {
+        background-color: #000;
+        color: white;
+        height: 30px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      #expandable-menu {
+        position: fixed;
+        top: 70px; /* 與螢幕頂部的距離設為 60px */
+        right: 0;
+        height: calc(100% - 70px); /* 高度減去 60px，避免超出視窗 */
+        width: 395px; /* 目錄寬度與 sidebar 齊寬 */
+        transform: translateX(100%); /* 初始狀態：隱藏在右側 */
+        transition: transform 0.3s ease;
+        background-color: #f4f4f9; /* 與網站背景一致 */
+        z-index: 1000;
+      }
+
+      /* 收闔按鈕 */
+      #menu-toggle {
+        position: absolute;
+        top: 45%;
+        left: -40px; /* 調整按鈕的位置，適應按鈕變大後的寬度 */
+        transform: translateY(-50%);
+        width: 40px; /* 增大按鈕寬度 */
+        height: 80px; /* 增大按鈕高度 */
+        background-color: #78bcc4;
+        color: white;
+        border-radius: 4px;
+        display: flex;
+        justify-content: center; /* 水平居中 */
+        align-items: center; /* 垂直居中 */
+      }
+
+      #menu-toggle::after {
+        content: "目錄"; /* 在按鈕內顯示 "目錄" */
+        font-size: 17px;
+        color: white; /* 設定字體顏色為白色 */
+        writing-mode: vertical-rl; /* 使文字垂直排列 */
+      }
+
+      #menu-toggle:hover {
+        background-color: #78bcc4;
+      }
+
+      /* 目錄內容 */
+      #menu-content {
+        padding: 0.5rem 1rem;
+        overflow-y: auto;
+        height: 100%;
+      }
+
+      #menu-content h4 {
+        font-weight: bold;
+        margin-top: 0;
+      }
+
+      #menu-list {
+        list-style: none;
+        padding: 0;
+      }
+
+      #menu-list li {
+        margin-bottom: 0.5rem;
+      }
+
+      #menu-list a {
+        color: #2a90a7;
+        text-decoration: none;
+        transition: color 0.3s;
+      }
+
+      #menu-list a:hover {
+        color: #78bcc4;
+      }
+
+      #menu-list .sub-item {
+        margin-left: 1.5rem; /* 調整縮排距離 */
+        font-size: 0.9rem; /* 可選：調整子項目字體大小 */
+      }
+
+      /* 目錄展開狀態 */
+      #expandable-menu.open {
+        transform: translateX(0);
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <div class="nav-left">
+        <div class="logo">
+          <a href="首頁.html">
+            <img src="網站Logo.png" alt="網站 Logo" />
+          </a>
+        </div>
+      </div>
+      <div class="nav-right">
+        <a href="首頁.html">關於我</a>
+        <div class="dropdown">
+          <a>亞洲旅遊</a>
+          <div class="dropdown-content">
+            <a href="中國.html">中國</a>
+            <a href="新加坡.html">新加坡</a>
+            <a href="馬來西亞.html">馬來西亞</a>
+            <a href="泰國.html">泰國</a>
+            <a href="印尼.html">印尼</a>
+            <a href="越南.html">越南</a>
+          </div>
+        </div>
+        <div class="dropdown">
+          <a>歐洲旅遊</a>
+          <div class="dropdown-content">
+            <a href="英國.html">英國</a>
+            <a href="法國.html">法國</a>
+            <a href="荷蘭.html">荷蘭</a>
+            <a href="比利時.html">比利時</a>
+            <a href="盧森堡.html">盧森堡</a>
+            <a href="瑞士.html">瑞士</a>
+            <a href="摩納哥.html">摩納哥</a>
+            <a href="西班牙.html">西班牙</a>
+            <a href="葡萄牙.html">葡萄牙</a>
+            <a href="安道爾.html">安道爾</a>
+            <a href="丹麥.html">丹麥</a>
+            <a href="瑞典.html">瑞典</a>
+            <a href="波蘭.html">波蘭</a>
+          </div>
+        </div>
+        <div class="dropdown">
+          <a>美洲旅遊</a>
+          <div class="dropdown-content">
+            <a href="美國.html">美國</a>
+            <a href="加拿大.html">加拿大</a>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <div class="intro-section">
+      <div class="left">
+        <h1>Tommy 在格但斯克</h1>
+        <h4>
+          <b>格但斯克 (Gdansk)  </b>是位於波羅的海沿岸的波蘭城市，歷史可以追溯到公元 10世紀，當時是一個漁村，後來成為漢薩同盟的一部分，並在中世紀繁榮起來。格但斯克在二戰期間遭受了嚴重破壞，但在戰後得到了重建，在 1980 年代初工人和工會領袖萊希·瓦文薩頓斯基帶領著反對共產主義政權的抗議活動，使得這座城市成為波蘭民主運動的象徵，最終導致了共產主義政權的崩潰。現在的格但斯克是波羅的海的主要港口，對國際貿易起著重要作用。
+        </h4>
+      </div>
+      <div class="right">
+        <img
+          src="波蘭照片\格但斯克\格但斯克_介紹.jpg"
+          width="90%"
+          height="350px"
+        />
+      </div>
+    </div>
+
+    <div class="destination-section">
+      <div class="destination-main">
+        <h2>格但斯克交通</h2>
+        <h3>機場交通</h3>
+        <h4>
+          從格但斯克華勒沙機場可以乘坐 REG 路線城際火車到 Gdańsk Główny 站或搭乘 210 路線公車進入市區，車程大約 50 分鐘，在機場都有售票機可以買票。
+        </h4>
+        <h3>市區交通</h3>
+        <h4>
+          格但斯克市區非常小景點也十分集中，基本只用步行就能走完所有景點，如果要前往西盤半島則可以從 Gdańsk Główny 搭乘 106 號公車，但班次並不多且要注意西盤半島一側並沒有任何售票機，所以建議在 Gdańsk Główny 站時就先行買好來回的車票。
+        </h4>
+        <br /><br />
+        <h2>格但斯克住宿</h2>
+        <h4>
+          格但斯克的景點都位於老城區內，在選擇住宿的位置時可以以老城區的範圍為基準進行搜尋，老城區北邊是住宿比較多的區域，離觀光景點都不遠但夜晚十分寧靜，是最推薦的區域。
+        </h4>
+        <div style="text-align: center">
+          <img src="波蘭照片\格但斯克\格但斯克_住宿.png" width="1000px" />
+        </div>
+        <br /><br />
+        <h2>格但斯克景點</h2>
+        <h3>Mariacka</h3>
+        <h4>
+          Mariacka 位於格但斯克市中心的心臟地帶，以其獨特的建築風格、石頭鋪成的街道和精美的手工藝品店而聞名，沿著這條街道，你可以看到許多保存完好的中世紀和文藝復興時期的建築物，其中最著名的是 Mariacka 塔樓，是格但斯克的地標。
+        </h4>
+        <h4>Mariacka 街道也以其琥珀商店而聞名，琥珀是波羅的海地區的一種寶石，而格但斯克是波蘭最大的琥珀加工和貿易中心，在 Mariacka 街道上可以找到許多琥珀商店，展示和銷售各種琥珀首飾、手工藝品和紀念品。Mariacka 街道還擁有一些藝術工作室和畫廊，展示當地藝術家的作品，提供了一個平台欣賞和購買當代藝術品並與藝術家互動。</h4>
+        <div style="text-align: center">
+          <img src="波蘭照片\格但斯克\GD1.jpg" width="600px" />
+        </div>
+        <br /><br /><br />
+        <h3>聖瑪利亞教堂 (Bazylika Mariacka Wniebowzięcia Najświętszej Maryi Panny w Gdańsku)</h3>
+        <h4>
+          聖瑪利亞教堂是格但斯克最著名的教堂，也是世界上最大的磚石教堂之一。始建於 14 世紀，並在 15 和 16 世紀進行了擴建和裝飾。以其壯觀的高塔和華麗的外觀而聞名，是一個典型的哥德式建築。教堂的尖塔高達 82 米，可以登上教堂的塔樓，從那裡欣賞到格但斯克市的壯麗景色。登上塔樓需要攀爬近 400 個階梯，但壯觀的景觀絕對是值得的。
+        </h4>
+        <h4>教堂內部的主要特色之一是其大型木質祭壇，裝飾著精緻的雕刻和彩繪，教堂內還擁有許多寶貴的藝術品和文物，包括古老的壁畫、雕塑和維特·斯圖爾姆的管風琴。</h4>
+        <div style="text-align: center">
+          <img src="波蘭照片\格但斯克\GD2.jpg" width="600px" />
+          <img src="波蘭照片\格但斯克\GD3.jpg" width="600px" />
+          <img src="波蘭照片\格但斯克\GD4.jpg" width="600px" />
+          <img src="波蘭照片\格但斯克\GD5.jpg" width="800px" />
+        </div>
+        <br /><br /><br />
+        <h3>長街 (Długa)</h3>
+        <h4>
+          長街是格但斯克舊城區最繁華的街道，也是最重要的觀光和商業區。長街的歷史可以追溯到中世紀，在過去的幾個世紀中，這條街一直是城市的商業和社交中心，見證了格但斯克的繁榮和發展。這條街上的建築物展示了不同的建築風格，包括哥德式、文藝復興和巴洛克風格，反映了不同時期的建築和設計趨勢，其中一些建築物還有精美的雕刻和裝飾。
+        </h4>
+        <h4>除了建築外，Długa 街還擁有各種商店、咖啡館和餐廳，提供購物和用餐的機會，也可以在這裡尋找當地的手工藝品、紀念品和時尚商品，同時品嚐當地的美食和飲品。</h4>
+        <div style="text-align: center">
+          <img src="波蘭照片\格但斯克\GD6.jpg" width="800px" />
+          <img src="波蘭照片\格但斯克\GD7.jpg" width="800px" />
+          <img src="波蘭照片\格但斯克\GD8.jpg" width="600px" />
+        </div>
+        <br /><br /><br />
+        <h3>海神噴泉 (Fontanna Neptuna)</h3>
+        <h4>
+          海神噴泉建於 17 世紀，是由意大利雕塑家亞斯帕齊奧·庫爾雷利 (Aspario Curreli) 設計和製作，以羅馬神話中的海神涅普頓 (Neptunus) 為主題，以慶祝格但斯克作為波羅的海貿易聯盟的一部分。噴泉的中心是一尊巨大的涅普頓雕像，他站在一個圓形的基座上，手持三叉戟，象徵著海洋的力量和統治權。涅普頓的身邊圍繞著四個雕像，分別代表四個河流：文德河、奧得河、魯茲河和河發河，象徵著格但斯克的海洋貿易聯盟。
+        </h4>
+        <div style="text-align: center">
+          <img src="波蘭照片\格但斯克\GD9.jpg" width="600px" />
+        </div>
+        <br /><br /><br />
+        <h3>長廣場 (Długi Targ)</h3>
+        <h4>
+          長廣場是格但斯克市舊城區的一個主要廣場，在中世紀就已經存在，是格但斯克的商業和社交中心之一，兩側有一系列精美的建築物，展示了不同時期的建築風格和設計。廣場上最著名的建築物之一是格但斯克市政廳 (Ratusz)，它位於廣場的南端，是一座文藝復興風格建築，市政廳的塔樓高聳入雲，成為廣場的標誌性建築，也是格但斯克的象徵。
+        </h4>
+        <h4>在廣場的東側，有一系列彩色的建築物，稱為彩色行宮 (Kamienice Artusów)。這些建築物具有荷蘭文藝復興風格，並以繪有彩色圖案和裝飾的外牆而聞名。彩色行宮曾是商人協會的集會場所，現在則是一個博物館，展示著格但斯克的文化和藝術品。</h4>
+        <h4>長廣場也是格但斯克的節日和特殊活動的舉辦地，在耶誕節期間，廣場會舉辦耶誕市集，擺放著各種攤位和節慶裝飾。</h4>
+        <div style="text-align: center">
+          <img src="波蘭照片\格但斯克\GD10.jpg" width="800px" />
+          <img src="波蘭照片\格但斯克\GD11.jpg" width="800px" />
+          <img src="波蘭照片\格但斯克\GD12.jpg" width="800px" />
+        </div>
+        <br /><br /><br />
+        <h3>舊碼頭起重機 (Stary żuraw portowy)</h3>
+        <h4>
+          舊碼頭起重機靠近莫特拉瓦河 (Motława River) 的岸邊，建於 15 世紀晚期，是當時格但斯克的船舶起重機，是一座木結構建築，以其獨特的外觀和古老的技術而聞名。這座起重機原本是用於卸貨、裝載船舶以及船舶維修和建造，由一個巨大的旋轉臂和一個起重機架組成，旋轉臂可以旋轉 360 度，以方便搬運貨物，反映了當時的工程技術水平，是當時航海貿易的重要設施。
+        </h4>
+        <div style="text-align: center">
+          <img src="波蘭照片\格但斯克\GD13.jpg" width="800px" />
+          <img src="波蘭照片\格但斯克\GD14.jpg" width="800px" />
+        </div>
+        <br /><br /><br />
+        <h3>高地之門 (Brama Wyżynna)</h3>
+        <h4>
+          高地之門是格但斯克的城門之一，位於格但斯克舊城區的西部，建於 15 世紀，是格但斯克城牆的一部分，用於防禦和控制城市的出入口。這座城門具有防禦性的設計，包括厚實的石牆、護城河和吊橋。高地之門的建築風格結合了哥德式和文藝復興風格的元素，有一個大型的拱門，上面有嵌有城市徽章和其他裝飾。高地之門經歷了多次修復和重建，以保持其原始的外觀和結構。
+        </h4>
+        <div style="text-align: center">
+          <img src="波蘭照片\格但斯克\GD15.jpg" width="800px" />
+        </div>
+        <br /><br /><br />
+        <h3>西盤半島 (Westerplatte)</h3>
+        <h4>
+          西盤半島位於莫特瓦河出海口的格但斯克港，是一個狹窄的半島，在歷史上是格但斯克港口的軍事要塞，用於保護城市免受海上威脅。納粹德國入侵波蘭時，德國軍隊於 1939 年 9 月 1 日對西盤半島發動了襲擊，標誌著戰爭的開始。在數日的激烈戰鬥後，西盤半島的波蘭守軍最終投降，但他們的抵抗和勇氣成為了波蘭國內和國際間對納粹侵略的象徵。西盤半島是一個具有紀念意義的地方，可以參觀西盤半島紀念碑和紀念館，了解當時的歷史背景、戰鬥過程和參與其中的人們的故事，也可以看到戰爭期間使用的軍事設施的遺址，包括砲台、掩體和防禦工事。
+        </h4>
+        <h4>展覽提供了關於瓦薩號的豐富信息和故事。遊客可以了解這艘船的建造過程、沉沒原因以及打撈和修復的歷史，還展示了其他與航海和海洋相關的展品，如航海工具、藝術品、文物和模型及當時的瑞典海軍、船上的生活和航海技術等相關主題。</h4>
+        <div style="text-align: center">
+          <img src="波蘭照片\格但斯克\GD16.jpg" width="600px" />
+          <img src="波蘭照片\格但斯克\GD17.jpg" width="800px" />
+          <img src="波蘭照片\格但斯克\GD18.jpg" width="600px" />
+        </div>
+        <br /><br />
+        <h2>格但斯克近郊景點</h2>
+        <h3>馬爾堡城堡 (Zamek w Malborku)</h3>
+        <h4>
+          馬爾堡城堡位於波蘭北部馬爾堡 (Malbork)，是世界上最大的磚石建築，建於 13 世紀，是由德國修道騎士團 (Teutonic Knights) 所建造。它被設計為一個堅固的要塞，旨在保護修道騎士團在波羅的海地區的利益。城堡的建築風格結合了哥德式和文藝復興風格的元素，展示了當時的建築壯麗和精湛的工藝。
+        </h4>
+        <h4>
+          馬爾堡城堡包括多個建築物和塔樓，由城牆和護城河所環繞。其中最著名的是高塔 (High Castle)，它是城堡的主要結構，擁有壯觀的宴會廳、宗教聖堂、貴族宿舍和展覽廳。馬爾堡城堡於 1945 年的第二次世界大戰期間受到嚴重損壞，但在戰後進行了廣泛的修復工作，以恢復其原貌。
+        </h4>
+        <h4>整個園區參觀下來大約 2 小時，但城堡在冬季時間下午 2 點便是最後入場，因此要把握時間，城堡的營業時間隨季節變化建議能參考<a href="https://zamek.malbork.pl/en/home/" target="_blank">官網</a>。前往馬爾堡城堡可以從 Gdańsk Główny 乘坐 30 分鐘的火車到 Malbork 站後再步行約 20 分鐘抵達，<b>火車班次大約 1 小時一班</b>，建議一次買好來回的火車票才更能掌握時間。</h4>
+        <div style="text-align: center">
+          <img src="波蘭照片\格但斯克\GD19.jpg" width="800px" />
+          <img src="波蘭照片\格但斯克\GD20.jpg" width="800px" />
+          <img src="波蘭照片\格但斯克\GD21.jpg" width="800px" />
+          <img src="波蘭照片\格但斯克\GD22.jpg" width="600px" />
+          <img src="波蘭照片\格但斯克\GD23.jpg" width="800px" />
+          <img src="波蘭照片\格但斯克\GD24.jpg" width="800px" />
+        </div>
+        <br /><br />
+        <h2>格但斯克美食</h2>
+        <h3>Pikawa</h3>
+        <h4>
+          Pikawa 是位於老城區中的下午茶，以自家製的波蘭蘋果派及胡蘿蔔蛋糕最為出名，不同於一般美式的蘋果派皮是一整塊厚餅皮狀，波蘭蘋果派的餅皮是脆的也比較薄，把重點放比較多在內餡的肉桂蘋果，口感非常特別，推薦大家可以來坐在街邊悠閒地吃個下午茶。
+        </h4>
+        <div style="text-align: center">
+          <img src="波蘭照片\格但斯克\GD25.jpg" width="600px" />
+        </div>
+        <br /><br /><br />
+        <h3>Pierogarnia Stary Młyn</h3>
+        <h4>
+          來波蘭肯定要嘗試波蘭餃子，與中式皮薄餡多的餃子不同，波蘭餃子的外皮很厚，吃的到麵筋味與麵粉感，辣牛肉內餡也偏乾不會一咬下去就流汁，沾著蜂蜜芥末醬蠻衝擊味蕾的。另外點的培根肉腸馬鈴薯酸湯味道也很特別，有點像不會辣的酸辣湯再把配料換成馬鈴薯跟肉腸，感覺吃波蘭料理要稍微適應一下。
+        </h4>
+        <div style="text-align: center">
+          <img src="波蘭照片\格但斯克\GD26.jpg" width="800px" />
+          <img src="波蘭照片\格但斯克\GD27.jpg" width="800px" />
+        </div>
+        <br /><br /><br />
+        <h3>Chinkalnia Georgian Restaurant</h3>
+        <h4>
+          在波蘭也能找到許多前蘇聯國家的餐廳，嘗試了這間喬治亞菜，點了招牌的羊肉薄荷喬治亞餃，完全就是放大版的小籠包，但也跟波蘭餃子類似把重點放在較厚的餅皮而非餡料，吃的時候要先將最上面的麵團咬掉才能食用非常特別，加點的 Kebab 還有扁豆馬鈴薯燉豬肉也都表現不俗，推薦大家可以來試試中亞的菜系。
+        </h4>
+        <div style="text-align: center">
+          <img src="波蘭照片\格但斯克\GD28.jpg" width="800px" />
+        </div>
+        <div class="two-vertical-images">
+          <img src="波蘭照片\格但斯克\GD29-1.jpg" />
+          <img src="波蘭照片\格但斯克\GD29-2.jpg" />
+        </div>
+        <br /><br /><br />
+        <h3>Bar Turystyczny</h3>
+        <h4>
+          這家店原本是共產時期的人民食堂，整體裝潢都還保留著社區食堂的風格，就連點餐方式也是拿著托盤告訴飯堂工作人員要什麼配菜，點了波蘭炸豬排配香草薯泥及奶油菠菜，炸豬排表現一般，但是配菜的薯泥跟菠菜卻好吃的令人驚艷，奶油放得剛剛好，襯托出菠菜的香味，價錢上也算蠻便宜的，非常推薦來體驗共產時期飯堂吃飯的感覺。
+        </h4>
+        <div style="text-align: center">
+          <img src="波蘭照片\格但斯克\GD30.jpg" width="800px" />
+          <img src="波蘭照片\格但斯克\GD31.jpg" width="800px" />
+        </div>
+        <br /><br />
+      </div>
+      <div class="destination-sidebar">
+        <div class="sidebar-image-container">
+          <img src="側邊欄自我介紹.jpg" />
+        </div>
+        <h5>
+          Hi!
+          我是Tommy，我熱愛旅遊也喜歡藉由影像紀錄旅程中的點點滴滴，透過文字將我在旅途中的所見所聞分享給大家。旅行對我而言不只是吃吃喝喝，而是能在行萬里路間感受世界的脈動，體驗不同的文化，希望藉由我的分享能讓大家看到更多世界的美好。
+        </h5>
+        <br />
+        <h5>
+          想更了解我或與我聯絡:
+          <a
+            href="https://www.instagram.com/tommy_techvoyage/"
+            target="_blank"
+            style="color: inherit; text-decoration: underline"
+          >
+            <b>Instagram</b>
+          </a>
+        </h5>
+      </div>
+    </div>
+    <div class="contact-section">
+      <div class="contact-item">
+        <h3>
+          想更了解我或與我聯絡:
+          <a
+            href="https://www.instagram.com/tommy_techvoyage/"
+            target="_blank"
+            style="color: inherit; text-decoration: underline"
+          >
+            Instagram
+          </a>
+        </h3>
+      </div>
+    </div>
+    <footer>
+      <h6>COPYRIGHT © 2025 Tommy 看世界 All rights reserved.</h6>
+    </footer>
+    <div id="expandable-menu">
+      <div id="menu-toggle"></div>
+      <!-- 收闔按鈕 -->
+      <div id="menu-content">
+        <h4>目錄</h4>
+        <ul id="menu-list"></ul>
+      </div>
+    </div>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const menu = document.getElementById("expandable-menu");
+        const toggle = document.getElementById("menu-toggle");
+        const menuList = document.getElementById("menu-list");
+        const destinationMain = document.querySelector(".destination-main");
+
+        // 點擊按鈕切換目錄狀態
+        toggle.addEventListener("click", () => {
+          menu.classList.toggle("open");
+        });
+
+        // 從 destination-main 區域提取 h2 和 h3，動態生成目錄
+        const headings = destinationMain.querySelectorAll("h2, h3");
+        headings.forEach((heading, index) => {
+          // 確保每個 h2 和 h3 都有唯一的 id
+          if (!heading.id) {
+            heading.id = `heading-${index}`;
+          }
+
+          const listItem = document.createElement("li");
+          const link = document.createElement("a");
+          link.textContent = heading.textContent;
+          link.href = `#${heading.id}`;
+          listItem.appendChild(link);
+
+          // 為 h3 添加縮排樣式
+          if (heading.tagName.toLowerCase() === "h3") {
+            listItem.classList.add("sub-item");
+          }
+
+          menuList.appendChild(listItem);
+        });
+
+        // 滾動至目標位置並加上 75px 偏移
+        menuList.addEventListener("click", (event) => {
+          if (event.target.tagName === "A") {
+            event.preventDefault(); // 阻止預設行為
+
+            const targetId = event.target.getAttribute("href").substring(1); // 取得目標 ID
+            const targetElement = document.getElementById(targetId);
+
+            if (targetElement) {
+              // 計算目標元素的位置並加上 75px 偏移
+              const targetPosition =
+                targetElement.getBoundingClientRect().top + window.scrollY;
+              const offset = 75; // 偏移的距離
+              window.scrollTo({
+                top: targetPosition - offset,
+                behavior: "smooth", // 平滑滾動
+              });
+            }
+          }
+        });
+      });
+    </script>
+  </body>
+</html>

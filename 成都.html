@@ -1,0 +1,733 @@
+<!DOCTYPE html>
+<html lang="zh-hant-TW">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="曹旅瀚 Tommy" />
+    <meta name="description" content="探索成都的獨特魅力！走訪寬窄巷子、武侯祠、大熊貓基地，品嚐道地川菜與火鍋，體驗悠閒茶館文化與千年古都的現代融合。" />
+    <meta name="keywords" content="成都旅遊, 成都景點, 成都美食, 大熊貓基地, 川菜火鍋, 寬窄巷子, 成都自由行, 成都市區推薦, 成都茶館文化, 四川旅遊" />
+    <title>Tommy 看世界 - 成都</title>
+    <link rel="icon" href="網頁縮圖.ico" />
+    <style>
+      body {
+        font-family: Calibri, Arial, sans-serif; /* 首選 Calibri，次選 Arial */
+        margin: 0;
+        padding: 0;
+        overflow-x: hidden; /* 禁止水平滾動 */
+        background-color: #f4f4f9;
+        color: #333;
+      }
+
+      h1 {
+        font-size: 40px;
+        font-weight: bold;
+      }
+
+      h2 {
+        font-size: 32px;
+        font-weight: bold;
+        color: #2a90a7;
+        display: inline-block;
+        margin-bottom: 1rem; /* 縮小 h2 的底部邊距 */
+        background-color: #cee5e8;
+      }
+
+      h3 {
+        font-size: 26px;
+        margin: 0 0 1rem;
+        font-weight: bold;
+        text-decoration: underline; /* 加上底線 */
+      }
+
+      h4 {
+        font-size: 18px;
+        font-weight: normal;
+        line-height: 1.8;
+      }
+
+      h5 {
+        font-size: 16px;
+        font-weight: normal;
+        margin: 0;
+      }
+
+      h6 {
+        font-size: 10px;
+        color: #fff;
+        margin: 0;
+        text-align: center;
+        line-height: 50px; /* 高度對齊 */
+      }
+
+      nav {
+        background-color: #78bcc4;
+        display: flex;
+        justify-content: space-between; /* 保持分佈在兩側 */
+        width: calc(100% - 10rem); /* 與其他內容的邊界一致 */
+        padding: 0.5rem 5rem; /* 主導覽列的 padding 設置 */
+        position: fixed;
+        top: 0;
+        z-index: 1000;
+      }
+
+      .nav-left .logo img {
+        height: 50px; /* 控制 Logo 圖片的高度 */
+        transform: translateX(-1.5rem); /* 向右移動 2rem */
+      }
+
+      .nav-right {
+        display: flex;
+        align-items: center;
+        transform: translateX(2rem); /* 向右移動 2rem */
+      }
+
+      nav a {
+        color: #eff5f5;
+        text-decoration: none;
+        padding: 0.5rem 1rem;
+        margin: 0 0.5rem;
+        transition: transform 0.3s;
+      }
+
+      nav a:hover {
+        transform: translateY(-3px);
+      }
+
+      .dropdown {
+        position: relative;
+      }
+
+      .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #78bcc4;
+        min-width: 160px;
+        border-radius: 4px;
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        padding: 0.2rem 0;
+      }
+
+      .dropdown-content a {
+        color: #eff5f5;
+        display: block;
+        transition: transform 0.3s;
+        border-bottom: 1px solid #ddd;
+      }
+
+      .dropdown-content a:last-child {
+        border-bottom: none;
+      }
+
+      .dropdown-content a:hover {
+        transform: translateY(-3px);
+      }
+
+      .dropdown:hover .dropdown-content {
+        display: block;
+      }
+
+      .intro-section {
+        background-color: #eff5f5;
+        display: flex;
+        padding: 2rem;
+        margin-top: 60px; /* 根據導航列高度調整 */
+        justify-content: space-between;
+        align-items: flex-start;
+        width: 100%;
+        box-sizing: border-box; /* 包含 padding 在內 */
+        padding-left: 5rem;
+        padding-right: 5rem;
+      }
+
+      .intro-section h4 {
+        max-width: 700px;
+      }
+
+      .intro-section .left {
+        width: 60%;
+      }
+
+      .intro-section .right {
+        width: 40%;
+      }
+
+      .destination-section {
+        display: flex;
+        padding: 1rem 5%; /* 左右內間距為螢幕的10% */
+        background-color: white;
+      }
+
+      .destination-main {
+        width: 75%;
+        margin-right: 1.5rem; /* 增加右邊外邊距 */
+      }
+
+      .destination-sidebar {
+        width: 25%;
+        padding-left: 1.5rem; /* 增加左側內邊距 */
+        margin-top: 2rem; /* 向上或向下調整，負值表示向上 */
+      }
+
+      .sidebar-image-container {
+        margin-bottom: 1rem;
+        text-align: center; /* 確保圖片置中 */
+      }
+
+      .sidebar-image-container img {
+        height: 300px; /* 設置直式圖片的高度 */
+      }
+
+      .two-vertical-images {
+        display: flex; /* 彈性佈局，讓圖片並排 */
+        justify-content: space-between; /* 兩張圖片均勻分佈 */
+        gap: 2rem; /* 圖片之間的間距 */
+        margin-top: 2rem;
+        margin-bottom: 2rem; /* 與下方內容的距離 */
+      }
+
+      .two-vertical-images img {
+        width: calc(50% - 0.5rem); /* 每張圖片佔用容器的一半減去間距 */
+        text-align: center; /* 確保圖片置中 */
+        height: auto; /* 保持圖片的直式比例 */
+        object-fit: cover; /* 確保圖片內容適應容器 */
+      }
+
+      .recommendation-section {
+        margin-top: 1.5rem; /* 與上方文字的間距 */
+        text-align: center;
+        position: sticky;
+        top: 80px; /* 空出導覽列的高度，確保推薦區不被覆蓋 */
+        z-index: 10; /* 提高層級，避免被其他內容遮蓋 */
+      }
+
+      .recommendation-section h3 {
+        font-size: 18px;
+        font-weight: bold;
+        margin-bottom: 0.5rem; /* 與按鈕區的距離 */
+      }
+
+      .recommendation-buttons {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 0.5rem; /* 按鈕之間的間距 */
+      }
+
+      .recommendation-buttons button {
+        padding: 0.5rem 1rem;
+        font-size: 14px;
+        color: white;
+        background-color: #78bcc4;
+        border: none;
+        border-radius: 4px;
+        transition: transform 0.3s;
+        font-family: Arial, sans-serif;
+      }
+
+      .recommendation-buttons button:hover {
+        transform: translateY(-3px);
+      }
+
+      .contact-section {
+        padding: 2rem 5rem; /* 上下與左右間距 */
+        background-color: #eff5f5; /* 淺灰背景 */
+        text-align: center; /* 確保內容置中對齊 */
+      }
+
+      .contact-item h3 {
+        font-size: 18px; /* 調整標題字體大小 */
+        margin: 0; /* 移除多餘的間距 */
+        text-decoration: none; /* 移除底線 */
+      }
+
+      footer {
+        background-color: #000;
+        color: white;
+        height: 30px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      #expandable-menu {
+        position: fixed;
+        top: 70px; /* 與螢幕頂部的距離設為 60px */
+        right: 0;
+        height: calc(100% - 70px); /* 高度減去 60px，避免超出視窗 */
+        width: 395px; /* 目錄寬度與 sidebar 齊寬 */
+        transform: translateX(100%); /* 初始狀態：隱藏在右側 */
+        transition: transform 0.3s ease;
+        background-color: #f4f4f9; /* 與網站背景一致 */
+        z-index: 1000;
+      }
+
+      /* 收闔按鈕 */
+      #menu-toggle {
+        position: absolute;
+        top: 45%;
+        left: -40px; /* 調整按鈕的位置，適應按鈕變大後的寬度 */
+        transform: translateY(-50%);
+        width: 40px; /* 增大按鈕寬度 */
+        height: 80px; /* 增大按鈕高度 */
+        background-color: #78bcc4;
+        color: white;
+        border-radius: 4px;
+        display: flex;
+        justify-content: center; /* 水平居中 */
+        align-items: center; /* 垂直居中 */
+      }
+
+      #menu-toggle::after {
+        content: "目錄"; /* 在按鈕內顯示 "目錄" */
+        font-size: 17px;
+        color: white; /* 設定字體顏色為白色 */
+        writing-mode: vertical-rl; /* 使文字垂直排列 */
+      }
+
+      #menu-toggle:hover {
+        background-color: #78bcc4;
+      }
+
+      /* 目錄內容 */
+      #menu-content {
+        padding: 0.5rem 1rem;
+        overflow-y: auto;
+        height: 100%;
+      }
+
+      #menu-content h4 {
+        font-weight: bold;
+        margin-top: 0;
+      }
+
+      #menu-list {
+        list-style: none;
+        padding: 0;
+      }
+
+      #menu-list li {
+        margin-bottom: 0.5rem;
+      }
+
+      #menu-list a {
+        color: #2a90a7;
+        text-decoration: none;
+        transition: color 0.3s;
+      }
+
+      #menu-list a:hover {
+        color: #78bcc4;
+      }
+
+      #menu-list .sub-item {
+        margin-left: 1.5rem; /* 調整縮排距離 */
+        font-size: 0.9rem; /* 可選：調整子項目字體大小 */
+      }
+
+      /* 目錄展開狀態 */
+      #expandable-menu.open {
+        transform: translateX(0);
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <div class="nav-left">
+        <div class="logo">
+          <a href="首頁.html">
+            <img src="網站Logo.png" alt="網站 Logo" />
+          </a>
+        </div>
+      </div>
+      <div class="nav-right">
+        <a href="首頁.html">關於我</a>
+        <div class="dropdown">
+          <a>亞洲旅遊</a>
+          <div class="dropdown-content">
+            <a href="中國.html">中國</a>
+            <a href="新加坡.html">新加坡</a>
+            <a href="馬來西亞.html">馬來西亞</a>
+            <a href="泰國.html">泰國</a>
+            <a href="印尼.html">印尼</a>
+            <a href="越南.html">越南</a>
+          </div>
+        </div>
+        <div class="dropdown">
+          <a>歐洲旅遊</a>
+          <div class="dropdown-content">
+            <a href="英國.html">英國</a>
+            <a href="法國.html">法國</a>
+            <a href="荷蘭.html">荷蘭</a>
+            <a href="比利時.html">比利時</a>
+            <a href="盧森堡.html">盧森堡</a>
+            <a href="瑞士.html">瑞士</a>
+            <a href="摩納哥.html">摩納哥</a>
+            <a href="西班牙.html">西班牙</a>
+            <a href="葡萄牙.html">葡萄牙</a>
+            <a href="安道爾.html">安道爾</a>
+            <a href="丹麥.html">丹麥</a>
+            <a href="瑞典.html">瑞典</a>
+            <a href="波蘭.html">波蘭</a>
+          </div>
+        </div>
+        <div class="dropdown">
+          <a>美洲旅遊</a>
+          <div class="dropdown-content">
+            <a href="美國.html">美國</a>
+            <a href="加拿大.html">加拿大</a>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <div class="intro-section">
+      <div class="left">
+        <h1>Tommy 在成都</h1>
+        <h4>
+          <b>成都</b>擁有超過 3000 年的歷史，是中國西南地區最具影響力的城市，自公元前 4 世紀起，古蜀國便在此建都，並興建了舉世聞名的都江堰水利工程，為成都的農業與商業發展奠定了基礎。秦朝統一中國後，設立蜀郡，進一步促進了經濟繁榮。到了唐宋時期，成都因發達的絲綢與茶葉貿易而成為全國商業重鎮，被譽為「天府之國」。如今成都不僅是中國重要的科技與創新樞紐，也是旅遊、文化和美食之都，成都的電子信息、人工智慧、航空航天等高科技產業蓬勃發展，吸引國內外企業投資。
+        </h4>
+      </div>
+      <div class="right">
+        <img src="中國照片\成都\成都_介紹.jpg" width="90%" height="350px" />
+      </div>
+    </div>
+
+    <div class="destination-section">
+      <div class="destination-main">
+        <h2>成都交通</h2>
+        <h3>機場交通</h3>
+        <h4>
+          身為四川省省會，成都總共有兩個機場，分別是雙流機場及天府機場，由於機場都離市中心有一大段距離，因此不建議打車，以下會分列各個機場的大眾交通方式:
+          <ul>
+            <li>
+              <b>雙流機場</b>: 主要是國內線的營運機場，可搭乘地鐵 10 號線進入市區，再轉乘其他路線。
+            </li>
+            <li><b>天府機場</b>: 主要是國際線的營運機場，可搭乘地鐵 18 號線抵達成都南站，建議能搭到直達車可省下不少時間，車程約 30 分鐘。</li>
+          </ul>
+        </h4>
+        <h3>市區交通</h3>
+        <h4>
+          成都的地鐵基本上覆蓋了所有景點，是出行的首要選擇，<b>在所有車站都能用支付寶或維信支付購買單程票，或是直接使用乘車碼進站</b>。
+        </h4>
+        <img src="中國照片\成都\成都_交通.png" width="1000px" />
+        <br /><br />
+        <h2>成都住宿</h2>
+        <h4>
+          在成都選住宿推薦可以找<b>春熙路或太古里</b>附近的住宿，附近比較熱鬧吃東西的選擇也多，能夠更好的感受成都的夜生活，要去其他景點附近也有地鐵站，要打車也比較容易。
+        </h4>
+        <img src="中國照片\成都\成都_住宿.png" width="1000px" />
+        <br /><br />
+        <h2>成都景點</h2>
+        <h3>春熙路</h3>
+        <h4>
+          春熙路是成都最具代表性的商業步行街，擁有近百年的歷史，始建於 1924 年，名字取自《老子》中的「眾人熙熙，如享太牢，如春登台」，寓意繁榮興盛，被譽為「西部第一商業街」。春熙路集結了國際奢侈品牌、時尚潮流店、百貨商場和地道成都美食，包括 IFS 國際金融中心、太古里、遠洋太古里等，在街上能看到非常多奇裝異服走在時尚最前端的人，算是一大樂趣!
+        </h4>
+        <div style="text-align: center">
+          <img src="中國照片\成都\CD1.jpg" width="600px" />
+          <img src="中國照片\成都\CD2.jpg" width="600px" />
+        </div>
+        <br /><br /><br />
+        <h3>IFS國際金融中心</h3>
+        <h4>
+          IFS國際金融中心位於春熙路核心地段，是集購物、辦公、酒店與藝術於一體的城市地標，於 2014 年正式開幕，成為成都最具代表性的高端商業綜合體，IFS 擁有超過 20 萬平方米的購物空間，涵蓋國際奢侈品牌、潮流時尚品牌、高端餐飲以及娛樂設施，是潮流與時尚文化的聚集地。IFS 的樓頂空中花園是一大亮點，其中最著名的是「趴在大樓上的大熊貓」雕塑，由世界知名藝術家 Lawrence Argent 設計，成為成都的網紅打卡點。
+        </h4>
+        <div style="text-align: center">
+          <img src="中國照片\成都\CD3.jpg" width="600px" />
+          <img src="中國照片\成都\CD4.jpg" width="600px" />
+        </div>
+        <br /><br /><br />
+        <h3>太古里</h3>
+        <h4>
+          太古里位於春熙路商圈，是集購物、美食、娛樂與文化於一體的高端開放式商業區，於 2015 年開幕，憑藉獨特的建築風格與品牌陣容，成為成都最具代表性的潮流購物地標，設計理念融合傳統與現代，以低密度建築形式呈現，保留了大慈寺等歷史建築，形成新舊並存的商業空間，匯聚了眾多國際奢侈品牌、潮流設計師品牌以及高端生活方式店鋪，經常舉辦藝術展覽、品牌快閃店與音樂活動，成為年輕人與時尚潮人的聚集地。
+        </h4>
+        <div style="text-align: center">
+          <img src="中國照片\成都\CD5.jpg" width="800px" />
+          <img src="中國照片\成都\CD6.jpg" width="800px" />
+          <img src="中國照片\成都\CD7.jpg" width="600px" />
+        </div>
+        <br /><br /><br />
+        <h3>寬窄巷子</h3>
+        <h4>
+          寬窄巷子擁有超過300年歷史，街區由寬巷子、窄巷子和井巷子三條平行排列的古街組成，最早可追溯至清朝康熙年間，當時為駐紮八旗兵的居住區，保留了大量川西古建築，以老成都的閑適生活為主題，擁有許多茶館、民俗院落與高端會所，是體驗成都慢生活的最佳去處。窄巷子則展現成都的現代與時尚，擁有各類創意小店、酒吧與精品咖啡館，吸引年輕人與藝術愛好者，井巷子則主打成都美食與非物質文化遺產，如川劇變臉、手工糖畫等，讓遊客近距離感受巴蜀文化魅力。
+        </h4>
+        <div style="text-align: center">
+          <img src="中國照片\成都\CD8.jpg" width="600px" />
+          <img src="中國照片\成都\CD9.jpg" width="600px" />
+          <img src="中國照片\成都\CD10.jpg" width="600px" />
+        </div>
+        <br /><br /><br />
+        <h3>錦里</h3>
+        <h4>
+          錦里緊鄰著名的武侯祠，是成都最具代表性的歷史文化與商業步行街之一，擁有上千年的歷史，據說曾是三國時期蜀漢的重要商業街區，因此有「西蜀第一街」的美譽，以仿古建築風格再現了蜀漢文化與明清時期川西街道的獨特風貌。走進錦里，青石板路、飛檐翹角的古建築、紅燈籠高掛的街巷，營造出濃厚的川西風情，街道兩旁匯聚了成都特色小吃、手工藝品店、茶館與酒吧，如三大炮、賴湯圓、糖油果子等地道美食，街區內還有川劇變臉、皮影戲、糖畫製作等傳統民俗表演，能浸在巴蜀文化之中。
+        </h4>
+        <div style="text-align: center">
+          <img src="中國照片\成都\CD11.jpg" width="600px" />
+          <img src="中國照片\成都\CD12.jpg" width="600px" />
+          <img src="中國照片\成都\CD13.jpg" width="600px" />
+        </div>
+        <br /><br /><br />
+        <h3>杜甫草堂</h3>
+        <h4>
+          杜甫草堂是唐代詩人杜甫在安史之亂期間流寓成都時的故居，公元759年，杜甫因戰亂離開長安，輾轉來到成都，在浣花溪畔建造茅屋，並在此居住了近四年，創作了《春夜喜雨》、《茅屋為秋風所破歌》等 240 多首膾炙人口的詩篇，展現了他關心民生疾苦的情懷。如今的杜甫草堂經過歷代修繕，保留了仿唐風格的茅屋、詩史堂、大雅堂等歷史建築，並擁有竹林掩映的庭院與詩意盎然的園林景觀，杜甫塑像、碑刻詩文等文化遺跡，每年都會舉辦詩歌朗誦會、書畫展覽與學術研討，吸引無數文人墨客前來朝聖。
+        </h4>
+        <h4>杜甫草堂的營業時間為<b> 09:00 ~ 18:00 </b>，且在打烊半小時前就會停止售票，慢慢逛的話需要 60 ~ 90 分鐘，要特別注意預留時間。</h4>
+        <div style="text-align: center">
+          <img src="中國照片\成都\CD14.jpg" width="800px" />
+          <img src="中國照片\成都\CD15.jpg" width="600px" />
+          <img src="中國照片\成都\CD16.jpg" width="800px" />
+          <img src="中國照片\成都\CD17.jpg" width="800px" />
+          <img src="中國照片\成都\CD18.jpg" width="800px" />
+          <img src="中國照片\成都\CD19.jpg" width="600px" />
+          <img src="中國照片\成都\CD20.jpg" width="600px" />
+        </div>
+        <br /><br /><br />
+        <h3>天府廣場</h3>
+        <h4>
+          天府廣場位於成都市中心，被譽為「成都的心臟」，總面積約 88000 平方米，呈現放射狀布局，是成都的重要政治、文化與交通樞紐，原址可追溯至明清時期的皇城，曾是蜀王府所在地，後來在新中國成立後改建為城市廣場。廣場中央豎立著鄧小平雕像，象徵著改革開放對成都的深遠影響，廣場周圍環繞著許多重要建築，如四川科技館、四川省圖書館和四川大劇院，展現了成都的文化與科技發展。
+        </h4>
+        <div style="text-align: center">
+          <img src="中國照片\成都\CD21.jpg" width="800px" />
+        </div>
+        <br /><br /><br />
+        <h3>四川廣播電視塔</h3>
+        <h4>
+          四川廣播電視塔簡稱 339 電視塔，建於 1992 年，並於 2006 年正式對外開放，塔高 339 米，不僅承擔著成都的廣播電視信號傳輸功能，還是一座集觀光、娛樂、餐飲於一體的綜合性建築，塔內擁有透明全景觀景台，站在上面可俯瞰整個成都市區，遠眺西嶺雪山與龍泉山脈，夜晚時分電視塔的燈光秀與城市霓虹交相輝映，成為成都最具魅力的夜景。
+        </h4>
+        <div style="text-align: center">
+          <img src="中國照片\成都\CD22.jpg" width="600px" />
+        </div>
+        <br /><br /><br />
+        <h3>文殊院</h3>
+        <h4>
+          文殊院是川西地區規模最大、影響最深遠的佛教寺廟，擁有超過 1300 年的歷史，始建於唐代，原名「信相寺」，清朝康熙年間因供奉文殊菩薩而更名為「文殊院」，文殊院建築群氣勢恢宏，保留了典型的清代佛寺風格，寺內有大雄寶殿、文殊殿、藏經樓、羅漢堂等重要建築，供奉著精美的佛像與珍貴的佛經，大雄寶殿內的佛像金碧輝煌，散發莊嚴寧靜的氣息，吸引無數信眾與遊客前來朝拜，匯聚了成都特色茶館與手工藝品店，是體驗成都人文風情的好去處。
+        </h4>
+        <div style="text-align: center">
+          <img src="中國照片\成都\CD23.jpg" width="600px" />
+          <img src="中國照片\成都\CD24.jpg" width="600px" />
+        </div>
+        <br /><br /><br />
+        <h3>玉林路</h3>
+        <h4>
+          玉林路是一條充滿市井風情與文藝氣息的街道，因為音樂、美食與咖啡館的獨特氛圍，成為文藝青年與遊客的熱門打卡地。玉林路最廣為人知的，莫過於歌手趙雷的《成都》，歌詞中提到的「玉林路的盡頭」讓這條街道聲名大噪，吸引無數人前來尋找歌曲中的浪漫與故事，還有成都最具代表性的小酒館，成立於 1997 年，是許多音樂愛好者的精神地標，眾多獨立音樂人曾在此駐唱。
+        </h4>
+        <h4>玉林路也是美食天堂，擁有眾多地道的川菜館、蒼蠅館子和火鍋店，如玉林串串香、冒椒火辣、龍門陣等，每一家都充滿了濃濃的成都味道，街道兩旁還分布著許多獨立書店、咖啡館、藝術空間，能體驗到成都最真實的市井文化與文藝氣息。</h4>
+        <div style="text-align: center">
+          <img src="中國照片\成都\CD25.jpg" width="600px" />
+          <img src="中國照片\成都\CD26.jpg" width="800px" />
+        </div>
+        <br /><br /><br />
+        <h2>成都近郊景點</h2>
+        <h3>四姑娘山</h3>
+        <h4>
+          四姑娘山位於阿壩藏族羌族自治州小金縣，被譽為「東方阿爾卑斯」，由四座連綿的雪峰組成，主峰四姑娘山（幺妹峰）海拔 6250 米，是四川第二高峰，以其秀美與險峻並存的風貌聞名於世。四姑娘山擁有壯麗的自然景觀，包括<b>雙橋溝、長坪溝、海子溝</b>三大主要景區，雙橋溝風景如畫，擁有高山草甸、冰川湖泊和雪山倒影，是遊覽最輕鬆的路線，長坪溝適合徒步與騎馬，沿途可見原始森林、溪流瀑布與壯觀的雪峰，海子溝則是高山湖泊密布的探險聖地，吸引眾多攝影師與登山愛好者前來挑戰。
+        </h4>
+        <h4>作為川西戶外天堂，四姑娘山是徒步、攀登、露營與攝影的理想之地，每年秋季層林盡染，五彩斑斕，是一年中最美的時刻，還擁有濃厚的藏族文化，當地的藏民村寨、轉經祈福與傳統節日，讓遊客能夠深度體驗藏族風情。四姑娘山一帶<b>平均海拔為 3500 公尺</b>，屬於高原的範圍，因此<b>容易誘發高山症</b>，來這裡遊玩一定要時刻注意自己的身體狀況，切勿進行過於耗氧的活動，才不會因為高山症壞了興致。</h4>
+        <h4>欲前往四姑娘山，最主要的方式是<b>包車旅遊</b>，可以在小紅書上搜尋包車行程，並直接私訊司機討論景點與價格，上山單趟約需 3 小時，是最方便省事的方式；另外也可以從成都的茶店子客運站坐客運上山，但班次相對較少也比較不方便，建議這個方式要有當地朋友陪同。</h4>
+        <div style="text-align: center">
+          <img src="中國照片\成都\CD27.jpg" width="800px" />
+          <img src="中國照片\成都\CD28.jpg" width="600px" />
+          <img src="中國照片\成都\CD29.jpg" width="800px" />
+          <img src="中國照片\成都\CD30.jpg" width="800px" />
+          <img src="中國照片\成都\CD31.jpg" width="800px" />
+          <img src="中國照片\成都\CD32.jpg" width="800px" />
+          <img src="中國照片\成都\CD33.jpg" width="600px" />
+        </div>
+        <br /><br /><br />
+        <h3>都江堰熊貓樂園</h3>
+        <h4>
+          都江堰熊貓樂園位於都江堰市，是一座專門保護和研究大熊貓的自然生態保護區，樂園依山而建，占地面積廣闊，為大熊貓提供接近自然的生活環境，不僅是大熊貓繁育、救助與野化培訓的重要基地，也向遊客開放，讓人們近距離觀察熊貓的生活習性。樂園內設有科普教育區，通過展覽與互動活動，提高公眾對瀕危動物保護的意識。
+        </h4>
+        <h4>欲前往都江堰熊貓樂園，可以從成都搭高鐵到青城山站再打車前往，車程大約 40 ~ 60 分鐘，園區營業時間為 08:30 ~ 17:00，要把握好時間!</h4>
+        <div style="text-align: center">
+          <img src="中國照片\成都\CD34.jpg" width="600px" />
+          <img src="中國照片\成都\CD35.jpg" width="600px" />
+          <img src="中國照片\成都\CD36.jpg" width="600px" />
+          <img src="中國照片\成都\CD37.jpg" width="800px" />
+        </div>
+        <br /><br /><br />
+        <h2>成都美食</h2>
+        <h3>葉婆婆缽缽雞</h3>
+        <h4>
+          葉婆婆缽缽雞是成都著名的傳統小吃品牌，缽缽雞起源於四川樂山，主要以竹籤串起雞肉、鴨腸、蔬菜等食材，搭配特製紅油湯底，冷吃入味。葉婆婆缽缽雞憑藉傳統秘製醬料與地道川味，在眾多缽缽雞品牌中脫穎而出，成為成都美食代表，其湯底融合花椒、辣椒、芝麻等多種香料，口感層次豐富麻辣適中。
+        </h4>
+        <div style="text-align: center">
+          <img src="中國照片\成都\CD38.jpg" width="600px" style="transform: rotate(270deg);"/>
+          <img src="中國照片\成都\CD39.jpg" width="800px" />
+        </div>
+        <br /><br /><br />
+        <h3>兩路口老火鍋</h3>
+        <h4>
+          兩路口老火鍋是成都頗具人氣的傳統四川風味火鍋店，以其濃郁麻辣的紅湯鍋底和鮮香回甘的湯頭聞名，店內使用手工炒製的底料，融合花椒、辣椒與多種香料，麻辣鮮香層次豐富，涮品選擇多樣，包括黃喉、毛肚、牛肉、鴨腸等經典火鍋食材，搭配店家特製的油碟，更添風味，兩路口老火鍋不僅保留了重慶火鍋的靈魂，也結合成都本地人的口味偏好，成為在地與遊客都讚不絕口的美食地標。
+        </h4>
+        <div style="text-align: center">
+          <img src="中國照片\成都\CD40.jpg" width="600px" />
+          <img src="中國照片\成都\CD41.jpg" width="600px" style="transform: rotate(270deg);"/>
+        </div>
+        <br /><br /><br />
+        <h3>龍抄手</h3>
+        <h4>
+          龍抄手是成都著名的傳統小吃，以其細膩的餡料和鮮美的湯汁深受食客喜愛，“抄手” 即四川方言中的餛飩，因其包製時形似雙手交叉而得名。龍抄手創立於 1941 年，以精選豬肉餡料搭配薄而勁道的餃皮，並以獨特的紅油、清湯或雞湯調味，口感鮮嫩滑潤，麻辣或鮮香皆具風味，是當地及遊客品味四川小吃文化的必嚐之選。
+        </h4>
+        <div style="text-align: center">
+          <img src="中國照片\成都\CD42.jpg" width="600px" />
+        </div>
+        <br /><br /><br />
+        <h3>烤匠</h3>
+        <h4>
+          烤匠是四川知名的烤魚品牌，以獨特的烹飪技藝和地道川味深受食客喜愛，以 “先烤後燉” 的方式製作烤魚，選用新鮮活魚經過炭火燒烤鎖住鮮美，再搭配秘製醬料與多種香料燉煮入味，口感麻辣鮮香層次豐富。烤匠的口味選擇多樣，包括經典麻辣、藤椒、泡椒等風味，餐廳環境融入川渝風情，氛圍熱鬧適合聚餐與朋友小酌。
+        </h4>
+        <div style="text-align: center">
+          <img src="中國照片\成都\CD43.jpg" width="800px" />
+        </div>
+        <h4>在餐後會贈送一枝花椒冰棒，一開始吃下去有花椒麻麻的感覺，後面就回復成一般牛奶冰棒的味道，非常衝擊味蕾，非常推薦大家一定要試試。</h4>
+        <div style="text-align: center">
+          <img src="中國照片\成都\CD44.jpg" width="600px" />
+        </div>
+        <br /><br /><br />
+        <h3>蛋烘糕 (街邊有許多小攤販)</h3>
+        <h4>
+          蛋烘糕是四川傳統小吃，外觀類似迷你版的鬆餅或雞蛋糕，口感外酥內軟深受各年齡層食客喜愛，以雞蛋、麵粉、糖等製成麵糊，倒入特製的小鍋內煎烘，並在熟成時加入各式餡料，如豆沙、花生、芝麻、奶油，甚至川味麻辣等創新口味。蛋烘糕製作過程簡單卻講究火候，才能達到金黃酥脆的效果，是四川小吃文化中不可或缺的一部分。
+        </h4>
+        <div style="text-align: center">
+          <img src="中國照片\成都\CD45.jpg" width="600px" />
+        </div>
+        <br /><br /><br />
+        <h3>樂山蹺腳牛肉</h3>
+        <h4>
+          樂山蹺腳牛肉是四川樂山的傳統名菜，其特色在於以牛肉和各種牛雜，如牛舌、牛肝、牛脊髓、牛蹄筋等，搭配多種中草藥熬製而成的清澈鮮美湯底，具有滋補養生的功效。 ​據傳這道菜起源於上世紀 30 年代的樂山蘇稽鎮，一位羅姓老中醫在河邊懸鍋烹藥，將牛雜與中草藥同煮，發現湯味鮮美且有療效，遂廣受歡迎。 ​食客常圍坐鍋旁翹腳而食故得名「蹺腳牛肉」，​如今樂山牛肉鍋已被列入非物質文化遺產，成為樂山美食的代表。
+        </h4>
+        <div style="text-align: center">
+          <img src="中國照片\成都\CD46.jpg" width="600px" />
+        </div>
+      </div>
+      <div class="destination-sidebar">
+        <div class="sidebar-image-container">
+          <img src="側邊欄自我介紹.jpg" />
+        </div>
+        <h5>
+          Hi!
+          我是Tommy，我熱愛旅遊也喜歡藉由影像紀錄旅程中的點點滴滴，透過文字將我在旅途中的所見所聞分享給大家。旅行對我而言不只是吃吃喝喝，而是能在行萬里路間感受世界的脈動，體驗不同的文化，希望藉由我的分享能讓大家看到更多世界的美好。
+        </h5>
+        <br />
+        <h5>
+          想更了解我或與我聯絡:
+          <a
+            href="https://www.instagram.com/tommy_techvoyage/"
+            target="_blank"
+            style="color: inherit; text-decoration: underline"
+          >
+            <b>Instagram</b>
+          </a>
+        </h5>
+        <div class="recommendation-section">
+          <h3>其他中國旅遊目的地</h3>
+          <div class="recommendation-buttons">
+            <a href="上海.html">
+              <button><h5>上海</h5></button>
+            </a>
+            <a href="廣州.html">
+              <button><h5>廣州</h5></button>
+            </a>
+            <a href="長沙.html">
+              <button><h5>長沙</h5></button>
+            </a>
+            <a href="重慶.html">
+              <button><h5>重慶</h5></button>
+            </a>
+            <a href="桂林.html">
+              <button><h5>桂林</h5></button>
+            </a>
+            <a href="陽朔.html">
+              <button><h5>陽朔</h5></button>
+            </a>
+            <a href="汕頭南澳島.html">
+              <button><h5>汕頭南澳島</h5></button>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="contact-section">
+      <div class="contact-item">
+        <h3>
+          想更了解我或與我聯絡:
+          <a
+            href="https://www.instagram.com/tommy_techvoyage/"
+            target="_blank"
+            style="color: inherit; text-decoration: underline"
+          >
+            Instagram
+          </a>
+        </h3>
+      </div>
+    </div>
+    <footer>
+      <h6>COPYRIGHT © 2025 Tommy 看世界 All rights reserved.</h6>
+    </footer>
+    <div id="expandable-menu">
+      <div id="menu-toggle"></div>
+      <!-- 收闔按鈕 -->
+      <div id="menu-content">
+        <h4>目錄</h4>
+        <ul id="menu-list"></ul>
+      </div>
+    </div>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const menu = document.getElementById("expandable-menu");
+        const toggle = document.getElementById("menu-toggle");
+        const menuList = document.getElementById("menu-list");
+        const destinationMain = document.querySelector(".destination-main");
+
+        // 點擊按鈕切換目錄狀態
+        toggle.addEventListener("click", () => {
+          menu.classList.toggle("open");
+        });
+
+        // 從 destination-main 區域提取 h2 和 h3，動態生成目錄
+        const headings = destinationMain.querySelectorAll("h2, h3");
+        headings.forEach((heading, index) => {
+          // 確保每個 h2 和 h3 都有唯一的 id
+          if (!heading.id) {
+            heading.id = `heading-${index}`;
+          }
+
+          const listItem = document.createElement("li");
+          const link = document.createElement("a");
+          link.textContent = heading.textContent;
+          link.href = `#${heading.id}`;
+          listItem.appendChild(link);
+
+          // 為 h3 添加縮排樣式
+          if (heading.tagName.toLowerCase() === "h3") {
+            listItem.classList.add("sub-item");
+          }
+
+          menuList.appendChild(listItem);
+        });
+
+        // 滾動至目標位置並加上 75px 偏移
+        menuList.addEventListener("click", (event) => {
+          if (event.target.tagName === "A") {
+            event.preventDefault(); // 阻止預設行為
+
+            const targetId = event.target.getAttribute("href").substring(1); // 取得目標 ID
+            const targetElement = document.getElementById(targetId);
+
+            if (targetElement) {
+              // 計算目標元素的位置並加上 75px 偏移
+              const targetPosition =
+                targetElement.getBoundingClientRect().top + window.scrollY;
+              const offset = 75; // 偏移的距離
+              window.scrollTo({
+                top: targetPosition - offset,
+                behavior: "smooth", // 平滑滾動
+              });
+            }
+          }
+        });
+      });
+    </script>
+  </body>
+</html>

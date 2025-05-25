@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html lang="zh-hant-TW">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="曹旅瀚 Tommy" />
+    <meta name="description" content="探索曼徹斯特的魅力！從工業革命歷史到足球文化，體驗這座英國城市的博物館、音樂、夜生活和美食，感受曼徹斯特的獨特氛圍。" />
+    <meta name="keywords" content="曼徹斯特旅遊, 曼徹斯特景點, 曼徹斯特博物館, 曼徹斯特足球, 曼徹斯特音樂, 曼徹斯特美食, 曼徹斯特自由行, 曼徹斯特夜生活, 英國北部旅遊" />
+    <title>Tommy 看世界 - 曼徹斯特</title>
+    <link rel="icon" href="網頁縮圖.ico" />
+    <style>
+      body {
+        font-family: Calibri, Arial, sans-serif; /* 首選 Calibri，次選 Arial */
+        margin: 0;
+        padding: 0;
+        overflow-x: hidden; /* 禁止水平滾動 */
+        background-color: #f4f4f9;
+        color: #333;
+      }
+
+      h1 {
+        font-size: 40px;
+        font-weight: bold;
+      }
+
+      h2 {
+        font-size: 32px;
+        font-weight: bold;
+        color: #2a90a7;
+        display: inline-block;
+        margin-bottom: 1rem; /* 縮小 h2 的底部邊距 */
+        background-color: #cee5e8;
+      }
+
+      h3 {
+        font-size: 26px;
+        margin: 0 0 1rem;
+        font-weight: bold;
+        text-decoration: underline; /* 加上底線 */
+      }
+
+      h4 {
+        font-size: 18px;
+        font-weight: normal;
+        line-height: 1.8;
+      }
+
+      h5 {
+        font-size: 16px;
+        font-weight: normal;
+        margin: 0;
+      }
+
+      h6 {
+        font-size: 10px;
+        color: #fff;
+        margin: 0;
+        text-align: center;
+        line-height: 50px; /* 高度對齊 */
+      }
+
+      nav {
+        background-color: #78bcc4;
+        display: flex;
+        justify-content: space-between; /* 保持分佈在兩側 */
+        width: calc(100% - 10rem); /* 與其他內容的邊界一致 */
+        padding: 0.5rem 5rem; /* 主導覽列的 padding 設置 */
+        position: fixed;
+        top: 0;
+        z-index: 1000;
+      }
+
+      .nav-left .logo img {
+        height: 50px; /* 控制 Logo 圖片的高度 */
+        transform: translateX(-1.5rem); /* 向右移動 2rem */
+      }
+
+      .nav-right {
+        display: flex;
+        align-items: center;
+        transform: translateX(2rem); /* 向右移動 2rem */
+      }
+
+      nav a {
+        color: #eff5f5;
+        text-decoration: none;
+        padding: 0.5rem 1rem;
+        margin: 0 0.5rem;
+        transition: transform 0.3s;
+      }
+
+      nav a:hover {
+        transform: translateY(-3px);
+      }
+
+      .dropdown {
+        position: relative;
+      }
+
+      .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #78bcc4;
+        min-width: 160px;
+        border-radius: 4px;
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        padding: 0.2rem 0;
+      }
+
+      .dropdown-content a {
+        color: #eff5f5;
+        display: block;
+        transition: transform 0.3s;
+        border-bottom: 1px solid #ddd;
+      }
+
+      .dropdown-content a:last-child {
+        border-bottom: none;
+      }
+
+      .dropdown-content a:hover {
+        transform: translateY(-3px);
+      }
+
+      .dropdown:hover .dropdown-content {
+        display: block;
+      }
+
+      .intro-section {
+        background-color: #eff5f5;
+        display: flex;
+        padding: 2rem;
+        margin-top: 60px; /* 根據導航列高度調整 */
+        justify-content: space-between;
+        align-items: flex-start;
+        width: 100%;
+        box-sizing: border-box; /* 包含 padding 在內 */
+        padding-left: 5rem;
+        padding-right: 5rem;
+      }
+
+      .intro-section h4 {
+        max-width: 700px;
+      }
+
+      .intro-section .left {
+        width: 60%;
+      }
+
+      .intro-section .right {
+        width: 40%;
+      }
+
+      .destination-section {
+        display: flex;
+        padding: 1rem 5%; /* 左右內間距為螢幕的10% */
+        background-color: white;
+      }
+
+      .destination-main {
+        width: 75%;
+        margin-right: 1.5rem; /* 增加右邊外邊距 */
+      }
+
+      .destination-sidebar {
+        width: 25%;
+        padding-left: 1.5rem; /* 增加左側內邊距 */
+        margin-top: 2rem; /* 向上或向下調整，負值表示向上 */
+      }
+
+      .sidebar-image-container {
+        margin-bottom: 1rem;
+        text-align: center; /* 確保圖片置中 */
+      }
+
+      .sidebar-image-container img {
+        height: 300px; /* 設置直式圖片的高度 */
+      }
+
+      .two-vertical-images {
+        display: flex; /* 彈性佈局，讓圖片並排 */
+        justify-content: space-between; /* 兩張圖片均勻分佈 */
+        gap: 2rem; /* 圖片之間的間距 */
+        margin-top: 2rem;
+        margin-bottom: 2rem; /* 與下方內容的距離 */
+      }
+
+      .two-vertical-images img {
+        width: calc(50% - 0.5rem); /* 每張圖片佔用容器的一半減去間距 */
+        text-align: center; /* 確保圖片置中 */
+        height: auto; /* 保持圖片的直式比例 */
+        object-fit: cover; /* 確保圖片內容適應容器 */
+      }
+
+      .recommendation-section {
+        margin-top: 1.5rem; /* 與上方文字的間距 */
+        text-align: center;
+        position: sticky;
+        top: 80px; /* 空出導覽列的高度，確保推薦區不被覆蓋 */
+        z-index: 10; /* 提高層級，避免被其他內容遮蓋 */
+      }
+
+      .recommendation-section h3 {
+        font-size: 18px;
+        font-weight: bold;
+        margin-bottom: 0.5rem; /* 與按鈕區的距離 */
+      }
+
+      .recommendation-buttons {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 0.5rem; /* 按鈕之間的間距 */
+      }
+
+      .recommendation-buttons button {
+        padding: 0.5rem 1rem;
+        font-size: 14px;
+        color: white;
+        background-color: #78bcc4;
+        border: none;
+        border-radius: 4px;
+        transition: transform 0.3s;
+        font-family: Arial, sans-serif;
+      }
+
+      .recommendation-buttons button:hover {
+        transform: translateY(-3px);
+      }
+
+      .contact-section {
+        padding: 2rem 5rem; /* 上下與左右間距 */
+        background-color: #eff5f5; /* 淺灰背景 */
+        text-align: center; /* 確保內容置中對齊 */
+      }
+
+      .contact-item h3 {
+        font-size: 18px; /* 調整標題字體大小 */
+        margin: 0; /* 移除多餘的間距 */
+        text-decoration: none; /* 移除底線 */
+      }
+
+      footer {
+        background-color: #000;
+        color: white;
+        height: 30px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      #expandable-menu {
+        position: fixed;
+        top: 70px; /* 與螢幕頂部的距離設為 60px */
+        right: 0;
+        height: calc(100% - 70px); /* 高度減去 60px，避免超出視窗 */
+        width: 395px; /* 目錄寬度與 sidebar 齊寬 */
+        transform: translateX(100%); /* 初始狀態：隱藏在右側 */
+        transition: transform 0.3s ease;
+        background-color: #f4f4f9; /* 與網站背景一致 */
+        z-index: 1000;
+      }
+
+      /* 收闔按鈕 */
+      #menu-toggle {
+        position: absolute;
+        top: 45%;
+        left: -40px; /* 調整按鈕的位置，適應按鈕變大後的寬度 */
+        transform: translateY(-50%);
+        width: 40px; /* 增大按鈕寬度 */
+        height: 80px; /* 增大按鈕高度 */
+        background-color: #78bcc4;
+        color: white;
+        border-radius: 4px;
+        display: flex;
+        justify-content: center; /* 水平居中 */
+        align-items: center; /* 垂直居中 */
+      }
+
+      #menu-toggle::after {
+        content: "目錄"; /* 在按鈕內顯示 "目錄" */
+        font-size: 17px;
+        color: white; /* 設定字體顏色為白色 */
+        writing-mode: vertical-rl; /* 使文字垂直排列 */
+      }
+
+      #menu-toggle:hover {
+        background-color: #78bcc4;
+      }
+
+      /* 目錄內容 */
+      #menu-content {
+        padding: 0.5rem 1rem;
+        overflow-y: auto;
+        height: 100%;
+      }
+
+      #menu-content h4 {
+        font-weight: bold;
+        margin-top: 0;
+      }
+
+      #menu-list {
+        list-style: none;
+        padding: 0;
+      }
+
+      #menu-list li {
+        margin-bottom: 0.5rem;
+      }
+
+      #menu-list a {
+        color: #2a90a7;
+        text-decoration: none;
+        transition: color 0.3s;
+      }
+
+      #menu-list a:hover {
+        color: #78bcc4;
+      }
+
+      #menu-list .sub-item {
+        margin-left: 1.5rem; /* 調整縮排距離 */
+        font-size: 0.9rem; /* 可選：調整子項目字體大小 */
+      }
+
+      /* 目錄展開狀態 */
+      #expandable-menu.open {
+        transform: translateX(0);
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <div class="nav-left">
+        <div class="logo">
+          <a href="首頁.html">
+            <img src="網站Logo.png" alt="網站 Logo" />
+          </a>
+        </div>
+      </div>
+      <div class="nav-right">
+        <a href="首頁.html">關於我</a>
+        <div class="dropdown">
+          <a>亞洲旅遊</a>
+          <div class="dropdown-content">
+            <a href="中國.html">中國</a>
+            <a href="新加坡.html">新加坡</a>
+            <a href="馬來西亞.html">馬來西亞</a>
+            <a href="泰國.html">泰國</a>
+            <a href="印尼.html">印尼</a>
+            <a href="越南.html">越南</a>
+          </div>
+        </div>
+        <div class="dropdown">
+          <a>歐洲旅遊</a>
+          <div class="dropdown-content">
+            <a href="英國.html">英國</a>
+            <a href="法國.html">法國</a>
+            <a href="荷蘭.html">荷蘭</a>
+            <a href="比利時.html">比利時</a>
+            <a href="盧森堡.html">盧森堡</a>
+            <a href="瑞士.html">瑞士</a>
+            <a href="摩納哥.html">摩納哥</a>
+            <a href="西班牙.html">西班牙</a>
+            <a href="葡萄牙.html">葡萄牙</a>
+            <a href="安道爾.html">安道爾</a>
+            <a href="丹麥.html">丹麥</a>
+            <a href="瑞典.html">瑞典</a>
+            <a href="波蘭.html">波蘭</a>
+          </div>
+        </div>
+        <div class="dropdown">
+          <a>美洲旅遊</a>
+          <div class="dropdown-content">
+            <a href="美國.html">美國</a>
+            <a href="加拿大.html">加拿大</a>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <div class="intro-section">
+      <div class="left">
+        <h1>Tommy 在曼徹斯特</h1>
+        <h4>
+          <b>曼徹斯特 (Manchester) </b
+          >位於英格蘭西北部，是英國第三大都市區，曾是工業革命的重要據點之一，隨著工業革命的到來，曼徹斯特成為了一個工業化的城市，特別是紡織工業的中心，帶動了城市的經濟增長和人口激增。20 世紀初，曼徹斯特經歷了一段轉型期，從工業城市轉變為一個更多元化的經濟和文化中心，雖然一些傳統的工業活動逐漸式微，但曼徹斯特在科技、金融、媒體和創意產業等領域蓬勃發展，成為了一個現代化的城市。
+        </h4>
+      </div>
+      <div class="right">
+        <img src="英國照片\曼徹斯特\曼城_intro.jpg" width="90%" height="350px" />
+      </div>
+    </div>
+
+    <div class="destination-section">
+      <div class="destination-main">
+        <h2>曼徹斯特交通</h2>
+        <h3>機場交通</h3>
+        <h4>
+          從曼徹斯特機場可以搭乘 Northern、Transpennine 或是 Transport for Wales 線城際火車抵達市中心的 Manchester Piccadilly 站，車程大約 25 分鐘。
+        </h4>
+        <h3>市區交通</h3>
+        <h4>
+          曼徹斯特市區的景點十分集中，在觀光的時候步行即可，不太會有需要乘坐大眾交通運輸的情況，如果是 3 ~ 4 人一起行動叫 uber 會比較划算。
+        </h4>
+        <br /><br />
+        <h2>曼徹斯特住宿</h2>
+        <h4>
+          在曼徹斯特住宿主要以交通作為首要考量，推薦大家住在 Manchester Piccadilly 站附近，飯店的選擇多，要前往附近城市如倫敦、利物浦，或是鄰近的峰區的景點都比較方便。
+        </h4>
+        <div style="text-align: center">
+          <img src="英國照片\曼徹斯特\曼城_住宿.png" width="1000px" />
+        </div>
+        <br /><br />
+        <h2>曼徹斯特景點</h2>
+        <h3>約翰·萊蘭茲圖書館 (John Rylands Research Institute and Library)</h3>
+        <h4>
+          約翰·萊蘭茲圖書館是位於曼徹斯特的一座著名的研究機構和圖書館，也是曼徹斯特大學的一部分。建於19世紀末，是為了紀念企業家約翰·賴蘭茲 (John Rylands) 和他的妻子恩尼斯 (Enriqueta Augustina Rylands) 而建立的，圖書館的建築風格獨特，結合了哥德復興風格和新古典主義風格，擁有豐富的特藏和珍貴文獻，包括手稿、古籍、地圖、印刷品等，涵蓋了廣泛的主題和時期，其特藏包括許多重要的歷史文獻、宗教文獻、文學作品等，為研究人員和學者提供了豐富的資源和素材。
+        </h4>
+        <div style="text-align: center">
+          <img src="英國照片\曼徹斯特\MA1.jpg" width="600px" />
+        </div>
+        <br /><br /><br />
+        <h3>曼徹斯特美術館 (Manchester Art Gallery)</h3>
+        <h4>
+          曼徹斯特美術館展示了從 13 世紀到現代的藝術作品，自 1887 年開放以來，已經成為了城市的地標之一。畫廊的建築風格為新古典主義風格，外觀氣派內部裝飾精美，收藏涵蓋了各種藝術形式，包括繪畫、雕塑、攝影、工藝品等，展示了不同時期和不同風格的作品，包括了一些重要的英國和國際藝術家的作品，如約翰·康斯特布爾 (John Constable)、J·M·W·透納 (J.M.W. Turner)、蘇珊娜·厄普斯坦 (Susanna E. Epstein) 等。
+        </h4>
+        <div style="text-align: center">
+          <img src="英國照片\曼徹斯特\MA2.jpg" width="800px" />
+          <img src="英國照片\曼徹斯特\MA3.jpg" width="800px" />
+        </div>
+        <br /><br /><br />
+        <h3>艾倫·圖靈紀念雕像 (Alan Turing Memorial)</h3>
+        <h4>
+          艾倫·圖靈紀念碑位於曼徹斯特的索爾福德大學校園內，是為了紀念計算機科學家、數學家和密碼學家艾倫·圖靈而建立的。紀念碑是由雕塑家吉姆·邦吉爾 (Glyn Hughes) 創作的，於 2001 年揭幕。這座紀念碑是一個大型的青銅雕像，展現了艾倫·圖靈坐在一張長凳上的姿勢，手中拿著一本打開的書，雕像的背後是一個巨大的圓盤，代表著一個未完的迴圈，象徵著圖靈的工作對未來的持續影響。
+        </h4>
+        <h4>這座紀念碑不僅是對艾倫·圖靈的一種尊敬和紀念，也是對他的工作和遺產的一種表彰。艾倫·圖靈在第二次世界大戰期間對破解德國軍方密碼的貢獻以及他在計算機科學和人工智能領域的先驅工作，使得他成為了現代計算機科學的一個偉大的象徵。</h4>
+        <div style="text-align: center">
+          <img src="英國照片\曼徹斯特\MA4.jpg" width="800px" />
+          <img src="英國照片\曼徹斯特\MA5.jpg" width="600px" />
+        </div>
+        <br /><br /><br />
+        <h3>科學產業博物館 (Science and Industry Museum)</h3>
+        <h4>
+          科學產業博物館是一個以科學、技術和工業為主題的博物館，目的是展示和紀念曼徹斯特作為工業革命據點的重要歷史，包括舊曼徹斯特火車站 (Old Manchester Railway Station) 和烏爾姆斯特維爾鋼鐵廠 (Urbis building)。
+        </h4>
+        <h4>博物館的展覽涵蓋了多個主題，包括工業革命、能源、交通、電信、計算機科學和醫學等，可以通過互動展品、實物展示、多媒體展示和實驗等方式，了解科學和工業的發展歷程，以及相關領域的創新和影響。</h4>
+        <div style="text-align: center">
+          <img src="英國照片\曼徹斯特\MA6.jpg" width="600px" />
+          <img src="英國照片\曼徹斯特\MA7.jpg" width="600px" />
+        </div>
+        <br /><br /><br />
+        <h2>曼徹斯特近郊景點</h2>
+        <h3>峰區 (Peak District)</h3>
+        <h4>
+          峰區位於英國中部，是英格蘭內陸地區最古老和最大的國家公園，以其壯麗的山脈、綿延的綠色丘陵、古老的村莊和迷人的風景而聞名，是一個受歡迎的休閒和戶外活動目的地。公園內有許多步行和徒步旅行的路線，適合各種能力和興趣的人，包括起伏的山脈、草地、河流、峽谷和洞穴等。
+        </h4>
+        <h4>要前往峰區可以從 Manchester Piccadilly 站搭乘慢火車前往 Edale ，每天的班次不多建議先行查詢<a href="https://www.thetrainline.com/train-times/manchester-piccadilly-to-edale"
+          target="_blank">時刻表</a>並買票，下車後步行約 10 分鐘便可抵達登山口，可以搜尋 "Taylors Croft" 作為登山口處的定位。</h4>
+        <div style="text-align: center">
+          <img src="英國照片\曼徹斯特\MA8.jpg" width="800px" />
+          <img src="英國照片\曼徹斯特\MA9.jpg" width="800px" />
+          <img src="英國照片\曼徹斯特\MA10.jpg" width="800px" />
+          <img src="英國照片\曼徹斯特\MA11.jpg" width="800px" />
+          <img src="英國照片\曼徹斯特\MA12.jpg" width="600px" />
+          <img src="英國照片\曼徹斯特\MA13.jpg" width="600px" />
+        </div>
+        <br /><br /><br />
+        <h2>曼徹斯特美食</h2>
+        <h3>Ezra & Gil</h3>
+        <h4>
+          Ezra & Gil 是位於 Piccadilly Gardens 附近的早午餐，以英式大早餐為賣點，同時也有販售各類麵包糕點類，是在市中心非常適合享受早上時光的地方。
+        </h4>
+        <div style="text-align: center">
+          <img src="英國照片\曼徹斯特\MA14.jpg" width="600px" />
+        </div>
+        <br />
+      </div>
+      <div class="destination-sidebar">
+        <div class="sidebar-image-container">
+          <img src="側邊欄自我介紹.jpg" />
+        </div>
+        <h5>
+          Hi!
+          我是Tommy，我熱愛旅遊也喜歡藉由影像紀錄旅程中的點點滴滴，透過文字將我在旅途中的所見所聞分享給大家。旅行對我而言不只是吃吃喝喝，而是能在行萬里路間感受世界的脈動，體驗不同的文化，希望藉由我的分享能讓大家看到更多世界的美好。
+        </h5>
+        <br />
+        <h5>
+          想更了解我或與我聯絡:
+          <a
+            href="https://www.instagram.com/tommy_techvoyage/"
+            target="_blank"
+            style="color: inherit; text-decoration: underline"
+          >
+            <b>Instagram</b>
+          </a>
+        </h5>
+        <div class="recommendation-section">
+          <h3>其他英國旅遊目的地</h3>
+          <div class="recommendation-buttons">
+            <a href="倫敦.html">
+              <button><h5>倫敦</h5></button>
+            </a>
+            <a href="利物浦.html">
+              <button><h5>利物浦</h5></button>
+            </a>
+            <a href="約克.html">
+              <button><h5>約克</h5></button>
+            </a>
+            <a href="愛丁堡.html">
+              <button><h5>愛丁堡</h5></button>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="contact-section">
+      <div class="contact-item">
+        <h3>
+          想更了解我或與我聯絡:
+          <a
+            href="https://www.instagram.com/tommy_techvoyage/"
+            target="_blank"
+            style="color: inherit; text-decoration: underline"
+          >
+            Instagram
+          </a>
+        </h3>
+      </div>
+    </div>
+    <footer>
+      <h6>COPYRIGHT © 2025 Tommy 看世界 All rights reserved.</h6>
+    </footer>
+    <div id="expandable-menu">
+      <div id="menu-toggle"></div>
+      <!-- 收闔按鈕 -->
+      <div id="menu-content">
+        <h4>目錄</h4>
+        <ul id="menu-list"></ul>
+      </div>
+    </div>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const menu = document.getElementById("expandable-menu");
+        const toggle = document.getElementById("menu-toggle");
+        const menuList = document.getElementById("menu-list");
+        const destinationMain = document.querySelector(".destination-main");
+
+        // 點擊按鈕切換目錄狀態
+        toggle.addEventListener("click", () => {
+          menu.classList.toggle("open");
+        });
+
+        // 從 destination-main 區域提取 h2 和 h3，動態生成目錄
+        const headings = destinationMain.querySelectorAll("h2, h3");
+        headings.forEach((heading, index) => {
+          // 確保每個 h2 和 h3 都有唯一的 id
+          if (!heading.id) {
+            heading.id = `heading-${index}`;
+          }
+
+          const listItem = document.createElement("li");
+          const link = document.createElement("a");
+          link.textContent = heading.textContent;
+          link.href = `#${heading.id}`;
+          listItem.appendChild(link);
+
+          // 為 h3 添加縮排樣式
+          if (heading.tagName.toLowerCase() === "h3") {
+            listItem.classList.add("sub-item");
+          }
+
+          menuList.appendChild(listItem);
+        });
+
+        // 滾動至目標位置並加上 75px 偏移
+        menuList.addEventListener("click", (event) => {
+          if (event.target.tagName === "A") {
+            event.preventDefault(); // 阻止預設行為
+
+            const targetId = event.target.getAttribute("href").substring(1); // 取得目標 ID
+            const targetElement = document.getElementById(targetId);
+
+            if (targetElement) {
+              // 計算目標元素的位置並加上 75px 偏移
+              const targetPosition =
+                targetElement.getBoundingClientRect().top + window.scrollY;
+              const offset = 75; // 偏移的距離
+              window.scrollTo({
+                top: targetPosition - offset,
+                behavior: "smooth", // 平滑滾動
+              });
+            }
+          }
+        });
+      });
+    </script>
+  </body>
+</html>

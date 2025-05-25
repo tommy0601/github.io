@@ -1,0 +1,643 @@
+<!DOCTYPE html>
+<html lang="zh-hant-TW">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="曹旅瀚 Tommy" />
+    <meta name="description" content="探索矽谷的創新與科技魅力！了解全球科技巨頭的發源地，走訪蘋果、谷歌、臉書等公司總部，體驗矽谷的創業精神與未來科技發展。" />
+    <meta name="keywords" content="矽谷旅遊, 矽谷科技, 矽谷創業, 矽谷公司, 矽谷景點, 矽谷自由行, 蘋果總部, 谷歌總部, 臉書總部, 矽谷創新文化" />
+    <title>Tommy 看世界 - 矽谷</title>
+    <link rel="icon" href="網頁縮圖.ico" />
+    <style>
+      body {
+        font-family: Calibri, Arial, sans-serif; /* 首選 Calibri，次選 Arial */
+        margin: 0;
+        padding: 0;
+        overflow-x: hidden; /* 禁止水平滾動 */
+        background-color: #f4f4f9;
+        color: #333;
+      }
+
+      h1 {
+        font-size: 40px;
+        font-weight: bold;
+      }
+
+      h2 {
+        font-size: 32px;
+        font-weight: bold;
+        color: #2a90a7;
+        display: inline-block;
+        margin-bottom: 1rem; /* 縮小 h2 的底部邊距 */
+        background-color: #cee5e8;
+      }
+
+      h3 {
+        font-size: 26px;
+        margin: 0 0 1rem;
+        font-weight: bold;
+        text-decoration: underline; /* 加上底線 */
+      }
+
+      h4 {
+        font-size: 18px;
+        font-weight: normal;
+        line-height: 1.8;
+      }
+
+      h5 {
+        font-size: 16px;
+        font-weight: normal;
+        margin: 0;
+      }
+
+      h6 {
+        font-size: 10px;
+        color: #fff;
+        margin: 0;
+        text-align: center;
+        line-height: 50px; /* 高度對齊 */
+      }
+
+      nav {
+        background-color: #78bcc4;
+        display: flex;
+        justify-content: space-between; /* 保持分佈在兩側 */
+        width: calc(100% - 10rem); /* 與其他內容的邊界一致 */
+        padding: 0.5rem 5rem; /* 主導覽列的 padding 設置 */
+        position: fixed;
+        top: 0;
+        z-index: 1000;
+      }
+
+      .nav-left .logo img {
+        height: 50px; /* 控制 Logo 圖片的高度 */
+        transform: translateX(-1.5rem); /* 向右移動 2rem */
+      }
+
+      .nav-right {
+        display: flex;
+        align-items: center;
+        transform: translateX(2rem); /* 向右移動 2rem */
+      }
+
+      nav a {
+        color: #eff5f5;
+        text-decoration: none;
+        padding: 0.5rem 1rem;
+        margin: 0 0.5rem;
+        transition: transform 0.3s;
+      }
+
+      nav a:hover {
+        transform: translateY(-3px);
+      }
+
+      .dropdown {
+        position: relative;
+      }
+
+      .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #78bcc4;
+        min-width: 160px;
+        border-radius: 4px;
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        padding: 0.2rem 0;
+      }
+
+      .dropdown-content a {
+        color: #eff5f5;
+        display: block;
+        transition: transform 0.3s;
+        border-bottom: 1px solid #ddd;
+      }
+
+      .dropdown-content a:last-child {
+        border-bottom: none;
+      }
+
+      .dropdown-content a:hover {
+        transform: translateY(-3px);
+      }
+
+      .dropdown:hover .dropdown-content {
+        display: block;
+      }
+
+      .intro-section {
+        background-color: #eff5f5;
+        display: flex;
+        padding: 2rem;
+        margin-top: 60px; /* 根據導航列高度調整 */
+        justify-content: space-between;
+        align-items: flex-start;
+        width: 100%;
+        box-sizing: border-box; /* 包含 padding 在內 */
+        padding-left: 5rem;
+        padding-right: 5rem;
+      }
+
+      .intro-section h4 {
+        max-width: 700px;
+      }
+
+      .intro-section .left {
+        width: 60%;
+      }
+
+      .intro-section .right {
+        width: 40%;
+      }
+
+      .destination-section {
+        display: flex;
+        padding: 1rem 5%; /* 左右內間距為螢幕的10% */
+        background-color: white;
+      }
+
+      .destination-main {
+        width: 75%;
+        margin-right: 1.5rem; /* 增加右邊外邊距 */
+      }
+
+      .destination-sidebar {
+        width: 25%;
+        padding-left: 1.5rem; /* 增加左側內邊距 */
+        margin-top: 2rem; /* 向上或向下調整，負值表示向上 */
+      }
+
+      .sidebar-image-container {
+        margin-bottom: 1rem;
+        text-align: center; /* 確保圖片置中 */
+      }
+
+      .sidebar-image-container img {
+        height: 300px; /* 設置直式圖片的高度 */
+      }
+
+      .two-vertical-images {
+        display: flex; /* 彈性佈局，讓圖片並排 */
+        justify-content: space-between; /* 兩張圖片均勻分佈 */
+        gap: 2rem; /* 圖片之間的間距 */
+        margin-top: 2rem;
+        margin-bottom: 2rem; /* 與下方內容的距離 */
+      }
+
+      .two-vertical-images img {
+        width: calc(50% - 0.5rem); /* 每張圖片佔用容器的一半減去間距 */
+        text-align: center; /* 確保圖片置中 */
+        height: auto; /* 保持圖片的直式比例 */
+        object-fit: cover; /* 確保圖片內容適應容器 */
+      }
+
+      .recommendation-section {
+        margin-top: 1.5rem; /* 與上方文字的間距 */
+        text-align: center;
+        position: sticky;
+        top: 80px; /* 空出導覽列的高度，確保推薦區不被覆蓋 */
+        z-index: 10; /* 提高層級，避免被其他內容遮蓋 */
+      }
+
+      .recommendation-section h3 {
+        font-size: 18px;
+        font-weight: bold;
+        margin-bottom: 0.5rem; /* 與按鈕區的距離 */
+      }
+
+      .recommendation-buttons {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 0.5rem; /* 按鈕之間的間距 */
+      }
+
+      .recommendation-buttons button {
+        padding: 0.5rem 1rem;
+        font-size: 14px;
+        color: white;
+        background-color: #78bcc4;
+        border: none;
+        border-radius: 4px;
+        transition: transform 0.3s;
+        font-family: Arial, sans-serif;
+      }
+
+      .recommendation-buttons button:hover {
+        transform: translateY(-3px);
+      }
+
+      .contact-section {
+        padding: 2rem 5rem; /* 上下與左右間距 */
+        background-color: #eff5f5; /* 淺灰背景 */
+        text-align: center; /* 確保內容置中對齊 */
+      }
+
+      .contact-item h3 {
+        font-size: 18px; /* 調整標題字體大小 */
+        margin: 0; /* 移除多餘的間距 */
+        text-decoration: none; /* 移除底線 */
+      }
+
+      footer {
+        background-color: #000;
+        color: white;
+        height: 30px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      #expandable-menu {
+        position: fixed;
+        top: 70px; /* 與螢幕頂部的距離設為 60px */
+        right: 0;
+        height: calc(100% - 70px); /* 高度減去 60px，避免超出視窗 */
+        width: 395px; /* 目錄寬度與 sidebar 齊寬 */
+        transform: translateX(100%); /* 初始狀態：隱藏在右側 */
+        transition: transform 0.3s ease;
+        background-color: #f4f4f9; /* 與網站背景一致 */
+        z-index: 1000;
+      }
+
+      /* 收闔按鈕 */
+      #menu-toggle {
+        position: absolute;
+        top: 45%;
+        left: -40px; /* 調整按鈕的位置，適應按鈕變大後的寬度 */
+        transform: translateY(-50%);
+        width: 40px; /* 增大按鈕寬度 */
+        height: 80px; /* 增大按鈕高度 */
+        background-color: #78bcc4;
+        color: white;
+        border-radius: 4px;
+        display: flex;
+        justify-content: center; /* 水平居中 */
+        align-items: center; /* 垂直居中 */
+      }
+
+      #menu-toggle::after {
+        content: "目錄"; /* 在按鈕內顯示 "目錄" */
+        font-size: 17px;
+        color: white; /* 設定字體顏色為白色 */
+        writing-mode: vertical-rl; /* 使文字垂直排列 */
+      }
+
+      #menu-toggle:hover {
+        background-color: #78bcc4;
+      }
+
+      /* 目錄內容 */
+      #menu-content {
+        padding: 0.5rem 1rem;
+        overflow-y: auto;
+        height: 100%;
+      }
+
+      #menu-content h4 {
+        font-weight: bold;
+        margin-top: 0;
+      }
+
+      #menu-list {
+        list-style: none;
+        padding: 0;
+      }
+
+      #menu-list li {
+        margin-bottom: 0.5rem;
+      }
+
+      #menu-list a {
+        color: #2a90a7;
+        text-decoration: none;
+        transition: color 0.3s;
+      }
+
+      #menu-list a:hover {
+        color: #78bcc4;
+      }
+
+      #menu-list .sub-item {
+        margin-left: 1.5rem; /* 調整縮排距離 */
+        font-size: 0.9rem; /* 可選：調整子項目字體大小 */
+      }
+
+      /* 目錄展開狀態 */
+      #expandable-menu.open {
+        transform: translateX(0);
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <div class="nav-left">
+        <div class="logo">
+          <a href="首頁.html">
+            <img src="網站Logo.png" alt="網站 Logo" />
+          </a>
+        </div>
+      </div>
+      <div class="nav-right">
+        <a href="首頁.html">關於我</a>
+        <div class="dropdown">
+          <a>亞洲旅遊</a>
+          <div class="dropdown-content">
+            <a href="中國.html">中國</a>
+            <a href="新加坡.html">新加坡</a>
+            <a href="馬來西亞.html">馬來西亞</a>
+            <a href="泰國.html">泰國</a>
+            <a href="印尼.html">印尼</a>
+            <a href="越南.html">越南</a>
+          </div>
+        </div>
+        <div class="dropdown">
+          <a>歐洲旅遊</a>
+          <div class="dropdown-content">
+            <a href="英國.html">英國</a>
+            <a href="法國.html">法國</a>
+            <a href="荷蘭.html">荷蘭</a>
+            <a href="比利時.html">比利時</a>
+            <a href="盧森堡.html">盧森堡</a>
+            <a href="瑞士.html">瑞士</a>
+            <a href="摩納哥.html">摩納哥</a>
+            <a href="西班牙.html">西班牙</a>
+            <a href="葡萄牙.html">葡萄牙</a>
+            <a href="安道爾.html">安道爾</a>
+            <a href="丹麥.html">丹麥</a>
+            <a href="瑞典.html">瑞典</a>
+            <a href="波蘭.html">波蘭</a>
+          </div>
+        </div>
+        <div class="dropdown">
+          <a>美洲旅遊</a>
+          <div class="dropdown-content">
+            <a href="美國.html">美國</a>
+            <a href="加拿大.html">加拿大</a>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <div class="intro-section">
+      <div class="left">
+        <h1>Tommy 在矽谷</h1>
+        <h4>
+          <b>矽谷 (Silicon Valley) </b
+          >位於舊金山灣區南部，是全球科技產業和創新中心，涵蓋聖荷西 (San Jos)、帕羅奧圖 (Palo Alto)、山景城 (Mountain View) 等城市，聚集了眾多世界頂級的科技公司、創業公司和風險投資機構。矽谷的名稱來自於半導體產業，因為早期的電子和電腦公司主要生產矽晶片，隨著科技發展，這裡成為網際網路、人工智慧、電動車、生物科技等領域的創新熱點，擁有如 Google、Apple、 Meta、Tesla 和 Netflix 等科技巨頭。
+        </h4>
+      </div>
+      <div class="right">
+        <img src="美國照片\矽谷\矽谷_介紹.jpg" width="90%" height="350px" />
+      </div>
+    </div>
+
+    <div class="destination-section">
+      <div class="destination-main">
+        <h2>矽谷交通</h2>
+        <h3>機場交通</h3>
+        <h4>
+          距離矽谷最近的國際機場是舊金山國際機場，車程大約 50 分鐘，而矽谷的聖荷西機場則為國內線的機場，主營是西岸地區及東岸的大城市，建議是在機場租車、叫車或是當地有朋友可以接送，因為距離不算近也沒有大眾交通運輸。
+        </h4>
+        <h3>市區交通</h3>
+        <h4>
+          矽谷幾乎是人人都有一輛車，因此大眾交通運輸十分不普及，班次偏少覆蓋範圍也有限，推薦是直接租車最省事。
+        </h4>
+        <h2>矽谷住宿</h2>
+        <h4>
+          矽谷的住宿主要是看旅行目的，如果是單純在灣區遊玩則不建議住在矽谷，可以採用由舊金山開車一日遊的方式。
+        </h4>
+        <h2>矽谷景點</h2>
+        <h3>Apple Park Visitor Center</h3>
+        <h4>
+          Apple Park Visitor Center 位於庫比蒂諾 (Cupertino)，是蘋果公司為公眾打造的參訪中心，讓遊客能近距離體驗這家全球科技巨頭的創新精神，於 2017 年 隨著 Apple Park 總部的落成正式開放，融合了極簡現代設計與先進科技。訪客中心分為四大區域: 
+          <li>
+            Apple Merchandise Store：販售限量版蘋果紀念商品，如 T 恤、帽子、文具等，很多只有在此間店販售，極具收藏價值。
+          </li>
+          <li>
+            AR 展示區：透過 iPad Pro 互動體驗 Apple Park 的建築設計與環境，讓遊客能以 AR 技術探索總部內部細節。
+          </li>
+          <li>
+            Apple Cafe：提供輕食與咖啡，讓遊客在蘋果設計的環境中放鬆。
+          </li>
+          <li>
+            屋頂觀景台：可俯瞰 Apple Park 總部的壯觀環形建築，也稱為太空船 (The Spaceship)。
+          </li>
+          整體建築採用玻璃、碳纖維屋頂與金屬材質，與 Apple Park 的設計理念相呼應，是探索蘋果品牌文化的最佳地點！
+        </h4>
+        <div style="text-align: center">
+          <img src="美國照片\矽谷\SV1.jpg" width="600px" />
+          <img src="美國照片\矽谷\SV2.jpg" width="600px" />
+          <img src="美國照片\矽谷\SV3.jpg" width="800px" />
+          <img src="美國照片\矽谷\SV4.jpg" width="800px" />
+          <img src="美國照片\矽谷\SV5.jpg" width="800px" />
+          <img src="美國照片\矽谷\SV6.jpg" width="800px" />
+          <img src="美國照片\矽谷\SV7.jpg" width="600px" />
+        </div>
+        <br /><br /><br />
+        <h3>Googleplex</h3>
+        <h4>
+          Googleplex 是 Google 總部的所在地，位於山景城 (Mountain View)，是全球最具代表性的科技園區之一，Googleplex 這個名稱結合了"Google"與"complex（建築群）"兩詞，象徵著其龐大的科技生態，總部建築設計開放且充滿創意，擁有大量綠地、開放式辦公空間、智能建築設施，以及 Google 以「快樂與效率並重」為理念打造的各種員工福利，如免費餐廳、自行車租借、健身房等。
+        </h4>
+        <h4>儘管 Googleplex 並未對外開放參觀內部辦公區域，但普通民眾可以自由參觀園區的部分公共區域，如 Android 草地雕像公園，這裡展示著歷代 Android 系統版本吉祥物，如 Cupcake、Marshmallow 等，吸引許多科技迷拍照打卡，園區內還有 Google Store，販售獨家品牌商品。</h4>
+        <div style="text-align: center">
+          <img src="美國照片\矽谷\SV8.jpg" width="600px" />
+          <img src="美國照片\矽谷\SV9.jpg" width="600px" />
+          <img src="美國照片\矽谷\SV10.jpg" width="800px" />
+          <img src="美國照片\矽谷\SV11.jpg" width="600px" />
+          <img src="美國照片\矽谷\SV12.jpg" width="600px" />
+          <img src="美國照片\矽谷\SV13.jpg" width="800px" />
+          <img src="美國照片\矽谷\SV14.jpg" width="800px" />
+          <img src="美國照片\矽谷\SV15.jpg" width="800px" />
+        </div>
+        <br /><br /><br />
+        <h3>史丹佛大學 (Stanford University)</h3>
+        <h4>
+          史丹佛大學位於帕羅奧圖 (Palo Alto) 附近，是全球頂尖的私立研究型大學之一，以其卓越的學術成就、創新精神和矽谷關聯性聞名，
+          於 1885 年由鐵路大亨李蘭·史丹佛 (Leland Stanford) 與妻子珍妮·史丹佛 (Jane Stanford)  創立，以紀念他們早逝的兒子，並致力於提供高等教育和推動社會進步。史丹佛擁有世界一流的工程、商學、醫學、法學和人文社會科學學院，培養出無數科技領袖和企業家，包括 Google、HP、Netflix 和 Tesla 等公司的創辦人，學校與矽谷的密切聯繫，使其成為全球創業和科技創新的核心之一。
+        </h4>
+        <h4>其中胡佛塔 (Hoover Tower) 是史丹佛大學的地標建築，高 87 公尺，建於 1941 年，以美國第 31 任總統赫伯特·胡佛命名，塔內設有胡佛研究所，收藏大量珍貴歷史檔案，可以登上觀景台俯瞰史丹佛校園與矽谷美景，其獨特的西班牙文藝復興風格，使其成為史丹佛最具代表性的建築。</h4>
+        <div style="text-align: center">
+          <img src="美國照片\矽谷\SV16.jpg" width="800px" />
+          <img src="美國照片\矽谷\SV17.jpg" width="800px" />
+          <img src="美國照片\矽谷\SV18.jpg" width="600px" />
+          <img src="美國照片\矽谷\SV19.jpg" width="800px" />
+          <img src="美國照片\矽谷\SV20.jpg" width="800px" />
+        </div>
+        <br /><br /><br />
+        <h3>電腦歷史博物館 (Computer History Museum)</h3>
+        <h4>
+          電腦歷史博物館位於山景城  (Mountain View)，致力於保存與展示電腦發展的歷程與影響，博物館的收藏涵蓋超過 2000 
+          件歷史展品，從早期機械計算機、第一代電腦、主機系統、個人電腦、人工智慧、網際網路發展，到現代智慧裝置與量子運算等技術，著名展品包括 ENIAC、Cray-1 超級電腦、Apple I、Google 自動駕駛汽車原型，以及早期硬碟、鍵盤等罕見科技文物。其中最受歡迎的展覽之一是 "Revolution: The First 2000 Years of Computing"，展示計算技術如何演變，並影響社會、經濟與文化。
+        </h4>
+        <div class="two-vertical-images">
+          <img src="美國照片\矽谷\SV21-1.jpg" />
+          <img src="美國照片\矽谷\SV21-2.jpg" />
+        </div>
+        <div style="text-align: center">
+          <img src="美國照片\矽谷\SV22.jpg" width="800px" />
+          <img src="美國照片\矽谷\SV23.jpg" width="800px" />
+        </div>
+        <br /><br /><br />
+        <h3>英特爾博物館 (Intel Museum)</h3>
+        <h4>
+          英特爾博物館位於聖塔克拉拉 (Santa Clara)，是全球半導體巨頭英特爾設立的科技博物館，展示半導體技術的發展歷程與創新成果，透過互動展覽、影片和歷史文物，介紹從 Intel 4004 (全球第一款商業微處理器) 到現代高效能晶片的發展歷程，可以看到晶圓製造過程、無塵室技術、奈米級電路設計，並親身體驗如何將矽晶圓轉化為運算核心。
+        </h4>
+        <div style="text-align: center">
+          <img src="美國照片\矽谷\SV24.jpg" width="600px" />
+          <img src="美國照片\矽谷\SV25.jpg" width="800px" />
+        </div>
+        <br /><br />
+        <h2>矽谷美食</h2>
+        <h3>In-N-Out Burger</h3>
+        <h4>
+          In-N-Out Burger 是美國西岸最具代表性的速食漢堡連鎖店，於 1948 年在加州鮑德溫公園 (Baldwin Park) 創立，以新鮮食材、簡單菜單與高品質漢堡聞名，品牌堅持現點現做，不使用冷凍肉或微波食品，所有漢堡均以 100% 純牛肉製成，並搭配新鮮生菜、番茄、自製醬料及手工切製的薯條，經典菜單包括 Double-Double (雙層牛肉雙層起司漢堡) 和 Animal Style (隱藏版醬料與煎洋蔥)，深受顧客喜愛。
+        </h4>
+        <div style="text-align: center">
+          <img src="美國照片\矽谷\SV26.jpg" width="600px" />
+          <img src="美國照片\矽谷\SV27.jpg" width="600px" />
+        </div>
+        <br /><br /><br />
+        <h3>Meyhouse</h3>
+        <h4>
+          Meyhouse 是一家位於加州聖尼維爾 (Sunnyvale) 的土耳其餐廳，以正宗的安納托利亞風味和傳統烤肉聞名，提供各式冷熱開胃菜 (Meze)、
+          海鮮、燒烤肉串 (Kebabs) 和手工製作的地中海風味料理，呈現道地的土耳其風味。Meyhouse 的特色菜包括燒烤羊排、炭烤章魚、傳統烤餅 (Pide)、
+          自製優格與地道的甜點，還供應來自土耳其與加州的精選葡萄酒，打造絕佳的搭配體驗。
+        </h4>
+        <div style="text-align: center">
+          <img src="美國照片\矽谷\SV28.jpg" width="800px" />
+          <img src="美國照片\矽谷\SV29.jpg" width="800px" />
+          <img src="美國照片\矽谷\SV30.jpg" width="800px" />
+          <img src="美國照片\矽谷\SV31.jpg" width="800px" />
+        </div>
+        <br /><br />
+      </div>
+      <div class="destination-sidebar">
+        <div class="sidebar-image-container">
+          <img src="側邊欄自我介紹.jpg" />
+        </div>
+        <h5>
+          Hi!
+          我是Tommy，我熱愛旅遊也喜歡藉由影像紀錄旅程中的點點滴滴，透過文字將我在旅途中的所見所聞分享給大家。旅行對我而言不只是吃吃喝喝，而是能在行萬里路間感受世界的脈動，體驗不同的文化，希望藉由我的分享能讓大家看到更多世界的美好。
+        </h5>
+        <br />
+        <h5>
+          想更了解我或與我聯絡:
+          <a
+            href="https://www.instagram.com/tommy_techvoyage/"
+            target="_blank"
+            style="color: inherit; text-decoration: underline"
+          >
+            <b>Instagram</b>
+          </a>
+        </h5>
+        <div class="recommendation-section">
+          <h3>其他美國旅遊目的地</h3>
+          <div class="recommendation-buttons">
+            <a href="舊金山.html">
+              <button><h5>舊金山</h5></button>
+            </a>
+            <a href="洛杉磯.html">
+              <button><h5>洛杉磯</h5></button>
+            </a>
+            <a href="聖地牙哥.html">
+              <button><h5>聖地牙哥</h5></button>
+            </a>
+            <a href="波士頓.html">
+              <button><h5>波士頓</h5></button>
+            </a>
+            <a href="紐約.html">
+              <button><h5>紐約</h5></button>
+            </a>
+            <a href="華盛頓DC.html">
+              <button><h5>華盛頓DC</h5></button>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="contact-section">
+      <div class="contact-item">
+        <h3>
+          想更了解我或與我聯絡:
+          <a
+            href="https://www.instagram.com/tommy_techvoyage/"
+            target="_blank"
+            style="color: inherit; text-decoration: underline"
+          >
+            Instagram
+          </a>
+        </h3>
+      </div>
+    </div>
+    <footer>
+      <h6>COPYRIGHT © 2025 Tommy 看世界 All rights reserved.</h6>
+    </footer>
+    <div id="expandable-menu">
+      <div id="menu-toggle"></div>
+      <!-- 收闔按鈕 -->
+      <div id="menu-content">
+        <h4>目錄</h4>
+        <ul id="menu-list"></ul>
+      </div>
+    </div>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const menu = document.getElementById("expandable-menu");
+        const toggle = document.getElementById("menu-toggle");
+        const menuList = document.getElementById("menu-list");
+        const destinationMain = document.querySelector(".destination-main");
+
+        // 點擊按鈕切換目錄狀態
+        toggle.addEventListener("click", () => {
+          menu.classList.toggle("open");
+        });
+
+        // 從 destination-main 區域提取 h2 和 h3，動態生成目錄
+        const headings = destinationMain.querySelectorAll("h2, h3");
+        headings.forEach((heading, index) => {
+          // 確保每個 h2 和 h3 都有唯一的 id
+          if (!heading.id) {
+            heading.id = `heading-${index}`;
+          }
+
+          const listItem = document.createElement("li");
+          const link = document.createElement("a");
+          link.textContent = heading.textContent;
+          link.href = `#${heading.id}`;
+          listItem.appendChild(link);
+
+          // 為 h3 添加縮排樣式
+          if (heading.tagName.toLowerCase() === "h3") {
+            listItem.classList.add("sub-item");
+          }
+
+          menuList.appendChild(listItem);
+        });
+
+        // 滾動至目標位置並加上 75px 偏移
+        menuList.addEventListener("click", (event) => {
+          if (event.target.tagName === "A") {
+            event.preventDefault(); // 阻止預設行為
+
+            const targetId = event.target.getAttribute("href").substring(1); // 取得目標 ID
+            const targetElement = document.getElementById(targetId);
+
+            if (targetElement) {
+              // 計算目標元素的位置並加上 75px 偏移
+              const targetPosition =
+                targetElement.getBoundingClientRect().top + window.scrollY;
+              const offset = 75; // 偏移的距離
+              window.scrollTo({
+                top: targetPosition - offset,
+                behavior: "smooth", // 平滑滾動
+              });
+            }
+          }
+        });
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+<html lang="zh-hant-TW">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="曹旅瀚 Tommy" />
+    <meta name="description" content="探索加拿大多倫多的精彩魅力！走訪CN塔、市政廳、湖濱中心等經典地標，體驗多元文化、美食風景與充滿活力的都會生活。" />
+    <meta name="keywords" content="多倫多旅遊, 加拿大自由行, CN塔, 多倫多景點, 多倫多美食, 加拿大城市, 多倫多文化, 多倫多市政廳, 安大略湖, 多倫多生活" />
+    <title>Tommy 看世界 - 多倫多</title>
+    <link rel="icon" href="網頁縮圖.ico" />
+    <style>
+      body {
+        font-family: Calibri, Arial, sans-serif; /* 首選 Calibri，次選 Arial */
+        margin: 0;
+        padding: 0;
+        overflow-x: hidden; /* 禁止水平滾動 */
+        background-color: #f4f4f9;
+        color: #333;
+      }
+
+      h1 {
+        font-size: 40px;
+        font-weight: bold;
+      }
+
+      h2 {
+        font-size: 32px;
+        font-weight: bold;
+        color: #2a90a7;
+        display: inline-block;
+        margin-bottom: 1rem; /* 縮小 h2 的底部邊距 */
+        background-color: #cee5e8;
+      }
+
+      h3 {
+        font-size: 26px;
+        margin: 0 0 1rem;
+        font-weight: bold;
+        text-decoration: underline; /* 加上底線 */
+      }
+
+      h4 {
+        font-size: 18px;
+        font-weight: normal;
+        line-height: 1.8;
+      }
+
+      h5 {
+        font-size: 16px;
+        font-weight: normal;
+        margin: 0;
+      }
+
+      h6 {
+        font-size: 10px;
+        color: #fff;
+        margin: 0;
+        text-align: center;
+        line-height: 50px; /* 高度對齊 */
+      }
+
+      nav {
+        background-color: #78bcc4;
+        display: flex;
+        justify-content: space-between; /* 保持分佈在兩側 */
+        width: calc(100% - 10rem); /* 與其他內容的邊界一致 */
+        padding: 0.5rem 5rem; /* 主導覽列的 padding 設置 */
+        position: fixed;
+        top: 0;
+        z-index: 1000;
+      }
+
+      .nav-left .logo img {
+        height: 50px; /* 控制 Logo 圖片的高度 */
+        transform: translateX(-1.5rem); /* 向右移動 2rem */
+      }
+
+      .nav-right {
+        display: flex;
+        align-items: center;
+        transform: translateX(2rem); /* 向右移動 2rem */
+      }
+
+      nav a {
+        color: #eff5f5;
+        text-decoration: none;
+        padding: 0.5rem 1rem;
+        margin: 0 0.5rem;
+        transition: transform 0.3s;
+      }
+
+      nav a:hover {
+        transform: translateY(-3px);
+      }
+
+      .dropdown {
+        position: relative;
+      }
+
+      .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #78bcc4;
+        min-width: 160px;
+        border-radius: 4px;
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        padding: 0.2rem 0;
+      }
+
+      .dropdown-content a {
+        color: #eff5f5;
+        display: block;
+        transition: transform 0.3s;
+        border-bottom: 1px solid #ddd;
+      }
+
+      .dropdown-content a:last-child {
+        border-bottom: none;
+      }
+
+      .dropdown-content a:hover {
+        transform: translateY(-3px);
+      }
+
+      .dropdown:hover .dropdown-content {
+        display: block;
+      }
+
+      .intro-section {
+        background-color: #eff5f5;
+        display: flex;
+        padding: 2rem;
+        margin-top: 60px; /* 根據導航列高度調整 */
+        justify-content: space-between;
+        align-items: flex-start;
+        width: 100%;
+        box-sizing: border-box; /* 包含 padding 在內 */
+        padding-left: 5rem;
+        padding-right: 5rem;
+      }
+
+      .intro-section h4 {
+        max-width: 700px;
+      }
+
+      .intro-section .left {
+        width: 60%;
+      }
+
+      .intro-section .right {
+        width: 40%;
+      }
+
+      .destination-section {
+        display: flex;
+        padding: 1rem 5%; /* 左右內間距為螢幕的10% */
+        background-color: white;
+      }
+
+      .destination-main {
+        width: 75%;
+        margin-right: 1.5rem; /* 增加右邊外邊距 */
+      }
+
+      .destination-sidebar {
+        width: 25%;
+        padding-left: 1.5rem; /* 增加左側內邊距 */
+        margin-top: 2rem; /* 向上或向下調整，負值表示向上 */
+      }
+
+      .sidebar-image-container {
+        margin-bottom: 1rem;
+        text-align: center; /* 確保圖片置中 */
+      }
+
+      .sidebar-image-container img {
+        height: 300px; /* 設置直式圖片的高度 */
+      }
+
+      .two-vertical-images {
+        display: flex; /* 彈性佈局，讓圖片並排 */
+        justify-content: space-between; /* 兩張圖片均勻分佈 */
+        gap: 2rem; /* 圖片之間的間距 */
+        margin-top: 2rem;
+        margin-bottom: 2rem; /* 與下方內容的距離 */
+      }
+
+      .two-vertical-images img {
+        width: calc(50% - 0.5rem); /* 每張圖片佔用容器的一半減去間距 */
+        text-align: center; /* 確保圖片置中 */
+        height: auto; /* 保持圖片的直式比例 */
+        object-fit: cover; /* 確保圖片內容適應容器 */
+      }
+
+      .recommendation-section {
+        margin-top: 1.5rem; /* 與上方文字的間距 */
+        text-align: center;
+        position: sticky;
+        top: 80px; /* 空出導覽列的高度，確保推薦區不被覆蓋 */
+        z-index: 10; /* 提高層級，避免被其他內容遮蓋 */
+      }
+
+      .recommendation-section h3 {
+        font-size: 18px;
+        font-weight: bold;
+        margin-bottom: 0.5rem; /* 與按鈕區的距離 */
+      }
+
+      .recommendation-buttons {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 0.5rem; /* 按鈕之間的間距 */
+      }
+
+      .recommendation-buttons button {
+        padding: 0.5rem 1rem;
+        font-size: 14px;
+        color: white;
+        background-color: #78bcc4;
+        border: none;
+        border-radius: 4px;
+        transition: transform 0.3s;
+        font-family: Arial, sans-serif;
+      }
+
+      .recommendation-buttons button:hover {
+        transform: translateY(-3px);
+      }
+
+      .contact-section {
+        padding: 2rem 5rem; /* 上下與左右間距 */
+        background-color: #eff5f5; /* 淺灰背景 */
+        text-align: center; /* 確保內容置中對齊 */
+      }
+
+      .contact-item h3 {
+        font-size: 18px; /* 調整標題字體大小 */
+        margin: 0; /* 移除多餘的間距 */
+        text-decoration: none; /* 移除底線 */
+      }
+
+      footer {
+        background-color: #000;
+        color: white;
+        height: 30px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      #expandable-menu {
+        position: fixed;
+        top: 70px; /* 與螢幕頂部的距離設為 60px */
+        right: 0;
+        height: calc(100% - 70px); /* 高度減去 60px，避免超出視窗 */
+        width: 395px; /* 目錄寬度與 sidebar 齊寬 */
+        transform: translateX(100%); /* 初始狀態：隱藏在右側 */
+        transition: transform 0.3s ease;
+        background-color: #f4f4f9; /* 與網站背景一致 */
+        z-index: 1000;
+      }
+
+      /* 收闔按鈕 */
+      #menu-toggle {
+        position: absolute;
+        top: 45%;
+        left: -40px; /* 調整按鈕的位置，適應按鈕變大後的寬度 */
+        transform: translateY(-50%);
+        width: 40px; /* 增大按鈕寬度 */
+        height: 80px; /* 增大按鈕高度 */
+        background-color: #78bcc4;
+        color: white;
+        border-radius: 4px;
+        display: flex;
+        justify-content: center; /* 水平居中 */
+        align-items: center; /* 垂直居中 */
+      }
+
+      #menu-toggle::after {
+        content: "目錄"; /* 在按鈕內顯示 "目錄" */
+        font-size: 17px;
+        color: white; /* 設定字體顏色為白色 */
+        writing-mode: vertical-rl; /* 使文字垂直排列 */
+      }
+
+      #menu-toggle:hover {
+        background-color: #78bcc4;
+      }
+
+      /* 目錄內容 */
+      #menu-content {
+        padding: 0.5rem 1rem;
+        overflow-y: auto;
+        height: 100%;
+      }
+
+      #menu-content h4 {
+        font-weight: bold;
+        margin-top: 0;
+      }
+
+      #menu-list {
+        list-style: none;
+        padding: 0;
+      }
+
+      #menu-list li {
+        margin-bottom: 0.5rem;
+      }
+
+      #menu-list a {
+        color: #2a90a7;
+        text-decoration: none;
+        transition: color 0.3s;
+      }
+
+      #menu-list a:hover {
+        color: #78bcc4;
+      }
+
+      #menu-list .sub-item {
+        margin-left: 1.5rem; /* 調整縮排距離 */
+        font-size: 0.9rem; /* 可選：調整子項目字體大小 */
+      }
+
+      /* 目錄展開狀態 */
+      #expandable-menu.open {
+        transform: translateX(0);
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <div class="nav-left">
+        <div class="logo">
+          <a href="首頁.html">
+            <img src="網站Logo.png" alt="網站 Logo" />
+          </a>
+        </div>
+      </div>
+      <div class="nav-right">
+        <a href="首頁.html">關於我</a>
+        <div class="dropdown">
+          <a>亞洲旅遊</a>
+          <div class="dropdown-content">
+            <a href="中國.html">中國</a>
+            <a href="新加坡.html">新加坡</a>
+            <a href="馬來西亞.html">馬來西亞</a>
+            <a href="泰國.html">泰國</a>
+            <a href="印尼.html">印尼</a>
+            <a href="越南.html">越南</a>
+          </div>
+        </div>
+        <div class="dropdown">
+          <a>歐洲旅遊</a>
+          <div class="dropdown-content">
+            <a href="英國.html">英國</a>
+            <a href="法國.html">法國</a>
+            <a href="荷蘭.html">荷蘭</a>
+            <a href="比利時.html">比利時</a>
+            <a href="盧森堡.html">盧森堡</a>
+            <a href="瑞士.html">瑞士</a>
+            <a href="摩納哥.html">摩納哥</a>
+            <a href="西班牙.html">西班牙</a>
+            <a href="葡萄牙.html">葡萄牙</a>
+            <a href="安道爾.html">安道爾</a>
+            <a href="丹麥.html">丹麥</a>
+            <a href="瑞典.html">瑞典</a>
+            <a href="波蘭.html">波蘭</a>
+          </div>
+        </div>
+        <div class="dropdown">
+          <a>美洲旅遊</a>
+          <div class="dropdown-content">
+            <a href="美國.html">美國</a>
+            <a href="加拿大.html">加拿大</a>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <div class="intro-section">
+      <div class="left">
+        <h1>Tommy 在多倫多</h1>
+        <h4>
+          <b>多倫多 (Toronto) </b
+          >是加拿大最大城，也是安大略省的省會。19 世紀初期多倫多只是一個人口不足 1000 人的小鎮，主要從事皮草貿易和農業生產，隨著鐵路運輸的興建，多倫多迅速成長為東部最重要的商業中心，20 世紀初多倫多的人口爆發式增長，吞併了周邊的多個衛星城市。如今的多倫多是金融、商業、文化等領域的重要樞紐，擁有多元化的人口結構和發達的基礎設施。
+        </h4>
+      </div>
+      <div class="right">
+        <img src="加拿大照片\多倫多\多倫多_介紹.jpg" width="90%" height="350px" />
+      </div>
+    </div>
+
+    <div class="destination-section">
+      <div class="destination-main">
+        <h2>多倫多交通</h2>
+        <h3>機場交通</h3>
+        <h4>
+          從多倫多皮爾遜國際機場可以搭乘 UP Express 到終點站 Union Station 便抵達市中心，車程大約 30 分鐘。
+        </h4>
+        <h3>市區交通</h3>
+        <h4>
+          多倫多的地鐵及地面電車系統十分完善，絕大多數的景點都有地鐵或地面電車到達，是最主要的交通方式，各站都可以刷信用卡進站，十分方便。
+        </h4>
+        <div style="text-align: center">
+          <img src="加拿大照片\多倫多\多倫多_交通.png" width="1000px" />
+        </div>
+        <br /><br />
+        <h2>多倫多住宿</h2>
+        <h4>
+          在多倫多由於出行前往機場或其他城市都是在 Union Station 附近乘車，因此推薦住宿可以選在車站附近，比較省時省力。
+        </h4>
+        <div style="text-align: center">
+          <img src="加拿大照片\多倫多\多倫多_住宿.png" width="800px" />
+        </div>
+        <br /><br />
+        <h2>多倫多景點</h2>
+        <h3>彌敦菲利浦廣場 (Nathan Phillips Square)</h3>
+        <h4>
+          彌敦菲利浦廣場位於多倫多市政廳前，北臨 Queen 街，東到 Bay 街，於 1965 年落成啟用，是多倫多著名建築師艾里克·阿特金設計的，以綠色玻璃鋼制成的多倫多市政廳為中心，兩側矗立著現代主義風格的大型建築。彌敦菲利浦廣場也是多倫多重大節日慶典的主會場，每年 7 月 1 日的加拿大日慶祝活動以及新年倒計時等都在此舉行，冬季時廣場中央的人工湖還會冰封成溜冰場，也常舉辦藝術表演、音樂會等文化活動，例如每年的多倫多自由之夏音樂節。
+        </h4>
+        <div style="text-align: center">
+          <img src="加拿大照片\多倫多\TO1.jpg" width="800px" />
+          <img src="加拿大照片\多倫多\TO2.jpg" width="600px" />
+          <img src="加拿大照片\多倫多\TO3.jpg" width="600px" />
+        </div>
+        <br /><br /><br />
+        <h3>加拿大國家電視塔 (CN Tower)</h3>
+        <h4>
+          加拿大國家電視塔是加拿大最著名的建築，矗立在安大略湖畔，於 1976 年建成啟用，是當時世界上最高的建築物，這座電視通訊塔採用獨特的管心結構設計，塔高 555.33 米，是多倫多市中心的制高點，這座塔樓除了作為電視通訊設施外，還設有供遊客遊覽的觀景平台。遊客可以通過高速電梯登至頂層的觀景台，欣賞 360 度無阻擋的城市全景，內部還設有其他遊覽設施，如旋轉餐廳、商店及互動式遊戲體驗區等。
+        </h4>
+        <div style="text-align: center">
+          <img src="加拿大照片\多倫多\TO4.jpg" width="800px" />
+        </div>
+        <br /><br /><br />
+        <h3>Ward's Island</h3>
+        <h4>
+          Ward's Island 位於安大略湖的東部，與多倫多市中心隔著一條海峽相連，最早由來自北歐的移民於 19 世紀開始開發，
+          作為渡假村和避暑勝地，隨後它逐漸形成了一個獨立的小型社區，島上有住宅、商店等設施，是多倫多市民休憩和娛樂的好去處，可以漫步在蜿蜒的小路上，島上有許多美麗的沙灘和草坪，這裡也是觀賞多倫多市景的絕佳位置，務必要留到晚上的夜景，非常值得。
+        </h4>
+        <div style="text-align: center">
+          <img src="加拿大照片\多倫多\TO5.jpg" width="800px" />
+          <img src="加拿大照片\多倫多\TO6.jpg" width="800px" />
+          <img src="加拿大照片\多倫多\TO7.jpg" width="800px" />
+          <img src="加拿大照片\多倫多\TO8.jpg" width="800px" />
+          <img src="加拿大照片\多倫多\TO9.jpg" width="600px" />
+        </div>
+        <br /><br /><br />
+        <h3>伊頓中心 (Eaton Centre)</h3>
+        <h4>
+          伊頓中心是多倫多最大最著名的購物中心，毗鄰 Nathan Phillips Square 和多倫多市政廳，佔地近 50 萬平方米，匯集了超過 250 家各類商店、餐廳和娛樂設施，擁有多家知名的跨國品牌旗艦店，包括百貨公司、服飾店、電子產品店、書店等。伊頓中心內部的建築設計也是一大亮點，採用玻璃頂棚和開放式設計讓自然光照進，營造出明亮寬敞的購物環境，其中的天鵝雕塑廊是最受歡迎的拍照打卡點。
+        </h4>
+        <div style="text-align: center">
+          <img src="加拿大照片\多倫多\TO10.jpg" width="600px" />
+        </div>
+        <br /><br /><br />
+        <h3>央-登打士廣場 (Yonge-Dundas Square)</h3>
+        <h4>
+          央-登打士廣場位於 Yonge Street 和 Dundas Street 的交匯處，被譽為多倫多的 "時代廣場"，建於 2002 年，面積約 0.4 公頃，設有大型 LED 電子屏和高聳的建築物，聚集了許多大型商業綜合體，如購物中心、電影院、餐飲店等，營造出繁華的都市氣氛，經常成為大型活動的集中地，例如音樂會、燈光秀、慶典遊行等。
+        </h4>
+        <div style="text-align: center">
+          <img src="加拿大照片\多倫多\TO11.jpg" width="600px" />
+        </div>
+        <br /><br /><br />
+        <h3>聖羅倫斯市場 (St. Lawrence Market)</h3>
+        <h4>
+          聖羅倫斯市場於 1803 年建立，建築擁有古典風格的紅磚外觀，具有濃郁的歷史韻味，內部分為南北兩座大樓，從擺賣新鮮農產品的攤位到精緻的肉類海鮮店、烘焙坊、咖啡館等應有盡有。每個星期六，南樓會變成一處大型的古董市集，可以在此淘寶古董、手工藝品等獨特物品，市場內部的走道擺設充滿年代感，給人古舊市集的悠閒感。
+        </h4>
+        <div style="text-align: center">
+          <img src="加拿大照片\多倫多\TO12.jpg" width="600px" />
+        </div>
+        <br /><br /><br />
+        <h3>The Distillery Historic District</h3>
+        <h4>
+          The Distillery Historic District 於 19 世紀中期建立，當時集中了多家酒類醇造廠，成為了北美最大的威士忌生產基地，後來隨著工業的衰落，這里的酒廠陸續關閉，直到 2003 年這片古老的工業遺址進行了改造，重新變成一處獨特的文化旅遊景區，也保留了大量 19 世紀末 20 世紀初的紅磚建築和精美的維多利亞式裝飾，展現了工業興盛時期的獨特風采。如今 The Distillery Historic District 集中了眾多個性獨特的藝術畫廊、手工坊、設計商店、餐廳酒吧等，可以在此沉浸在歷史濃厚的氛圍中，漫步於古樸的石磚道，欣賞充滿創意的各類商品和表演。
+        </h4>
+        <div style="text-align: center">
+          <img src="加拿大照片\多倫多\TO13.jpg" width="600px" />
+        </div>
+        <br /><br />
+        <h2>多倫多近郊景點</h2>
+        <h3>尼加拉瀑布 (Niagara Falls)</h3>
+        <h4>
+          尼加拉瀑布位於加拿大和美國交界，由三座大小不同的瀑布組成，分別是馬掌瀑布 (Horseshoe Falls)、美國瀑布 (American Falls) 和新娘面紗瀑布 (Bridal Veil Falls)，其中以馬掌瀑布落差高達 51 米最為壯觀，每秒可流過 6 萬立方米的水量，氣勢磅礡。
+        </h4>
+        <h4>早在 18 世紀尼加拉瀑布就成為大量遊客的嚮往之地，吸引了諸多藝術家和探險家前來創作和探險。
+          如今尼加拉瀑布已經成為加拿大及美國東部最著名的旅遊目的地，可以<b>乘坐觀光船遊覽瀑布底部</b>，還能體驗刺激的高空纜車和空中觀光。在晚上會通過各種燈光效果，使瀑布在夜幕下更添神奇色彩。</h4>
+        <div style="text-align: center">
+          <img src="加拿大照片\多倫多\TO14.jpg" width="800px" />
+          <img src="加拿大照片\多倫多\TO15.jpg" width="800px" />
+          <img src="加拿大照片\多倫多\TO16.jpg" width="800px" />
+          <img src="加拿大照片\多倫多\TO17.jpg" width="800px" />
+          <img src="加拿大照片\多倫多\TO18.jpg" width="800px" />
+          <img src="加拿大照片\多倫多\TO19.jpg" width="800px" />
+          <img src="加拿大照片\多倫多\TO20.jpg" width="600px" />
+          <img src="加拿大照片\多倫多\TO21.jpg" width="800px" />
+          <img src="加拿大照片\多倫多\TO22.jpg" width="800px" />
+          <img src="加拿大照片\多倫多\TO23.jpg" width="800px" />
+          <img src="加拿大照片\多倫多\TO24.jpg" width="800px" />
+        </div>
+        <br /><br /><br />
+        <h3>彩虹橋 (Rainbow International Bridge)</h3>
+        <h4>
+          彩虹橋連接美國紐約州與加拿大安大略省，位於尼加拉瀑布附近，長 1.08 公里、寬約 23 米的鋼索吊橋於 1941 年落成，採用獨特的拱形設計，由純白色的鋼索支撐，橫跨尼亞加拉河，具有極高的工程技術含量。從橋上遠眺可以欣賞到壯美的尼亞加拉瀑布全景，也能俯瞰腳下湍急的河流和迷人的自然風光，尤其是在日落時分，橋梁上空的彩虹般的燈光倒影在水面，增添了整個景觀的夢幻氛圍。
+        </h4>
+        <div style="text-align: center">
+          <img src="加拿大照片\多倫多\TO25.jpg" width="800px" />
+        </div>
+        <br /><br /><br />
+        <h3>Niagara City Cruises</h3>
+        <h4>
+          Niagara City Cruises 經營多條遊船航線，可以近距離觀賞馬蹄瀑布 (Horseshoe Falls) 和美國瀑布 (American Falls)，最著名的就是"瀑布號" (Maid of the Mist) ，這艘白色雙層遊船自 1846 年便開始營運，是最早在尼亞加拉河上行駛的遊船。
+        </h4>
+        <h4>可以搭乘"瀑布號"穿梭在咆哮的瀑布之間，近距離感受瀑布的磅礡氣勢，遊船還會盡可能接近瀑布底部，使遊客能感受瀑布澎湃澎湃如萬駒奔騰的震撼景象，可以聽到雷鳴般的轟鳴聲，感受水花濺灑在臉上的涼爽，船員會提供相關的自然、歷史等介紹，增加遊客的知識性體驗，船上還配備雨衣等防潮設備，確保遊客即使處於瀑布的咆哮聲域中，也能安全舒適地欣賞美景。</h4>
+        <div style="text-align: center">
+          <img src="加拿大照片\多倫多\TO26.jpg" width="800px" />
+          <img src="加拿大照片\多倫多\TO27.jpg" width="800px" />
+        </div>
+        <br /><br />
+      </div>
+      <div class="destination-sidebar">
+        <div class="sidebar-image-container">
+          <img src="側邊欄自我介紹.jpg" />
+        </div>
+        <h5>
+          Hi!
+          我是Tommy，我熱愛旅遊也喜歡藉由影像紀錄旅程中的點點滴滴，透過文字將我在旅途中的所見所聞分享給大家。旅行對我而言不只是吃吃喝喝，而是能在行萬里路間感受世界的脈動，體驗不同的文化，希望藉由我的分享能讓大家看到更多世界的美好。
+        </h5>
+        <br />
+        <h5>
+          想更了解我或與我聯絡:
+          <a
+            href="https://www.instagram.com/tommy_techvoyage/"
+            target="_blank"
+            style="color: inherit; text-decoration: underline"
+          >
+            <b>Instagram</b>
+          </a>
+        </h5>
+        <div class="recommendation-section">
+          <h3>其他加拿大旅遊目的地</h3>
+          <div class="recommendation-buttons">
+            <a href="蒙特婁.html">
+              <button><h5>蒙特婁</h5></button>
+            </a>
+            <a href="渥太華.html">
+              <button><h5>渥太華</h5></button>
+            </a>
+            <a href="魁北克城.html">
+              <button><h5>魁北克城</h5></button>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="contact-section">
+      <div class="contact-item">
+        <h3>
+          想更了解我或與我聯絡:
+          <a
+            href="https://www.instagram.com/tommy_techvoyage/"
+            target="_blank"
+            style="color: inherit; text-decoration: underline"
+          >
+            Instagram
+          </a>
+        </h3>
+      </div>
+    </div>
+    <footer>
+      <h6>COPYRIGHT © 2025 Tommy 看世界 All rights reserved.</h6>
+    </footer>
+    <div id="expandable-menu">
+      <div id="menu-toggle"></div>
+      <!-- 收闔按鈕 -->
+      <div id="menu-content">
+        <h4>目錄</h4>
+        <ul id="menu-list"></ul>
+      </div>
+    </div>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const menu = document.getElementById("expandable-menu");
+        const toggle = document.getElementById("menu-toggle");
+        const menuList = document.getElementById("menu-list");
+        const destinationMain = document.querySelector(".destination-main");
+
+        // 點擊按鈕切換目錄狀態
+        toggle.addEventListener("click", () => {
+          menu.classList.toggle("open");
+        });
+
+        // 從 destination-main 區域提取 h2 和 h3，動態生成目錄
+        const headings = destinationMain.querySelectorAll("h2, h3");
+        headings.forEach((heading, index) => {
+          // 確保每個 h2 和 h3 都有唯一的 id
+          if (!heading.id) {
+            heading.id = `heading-${index}`;
+          }
+
+          const listItem = document.createElement("li");
+          const link = document.createElement("a");
+          link.textContent = heading.textContent;
+          link.href = `#${heading.id}`;
+          listItem.appendChild(link);
+
+          // 為 h3 添加縮排樣式
+          if (heading.tagName.toLowerCase() === "h3") {
+            listItem.classList.add("sub-item");
+          }
+
+          menuList.appendChild(listItem);
+        });
+
+        // 滾動至目標位置並加上 75px 偏移
+        menuList.addEventListener("click", (event) => {
+          if (event.target.tagName === "A") {
+            event.preventDefault(); // 阻止預設行為
+
+            const targetId = event.target.getAttribute("href").substring(1); // 取得目標 ID
+            const targetElement = document.getElementById(targetId);
+
+            if (targetElement) {
+              // 計算目標元素的位置並加上 75px 偏移
+              const targetPosition =
+                targetElement.getBoundingClientRect().top + window.scrollY;
+              const offset = 75; // 偏移的距離
+              window.scrollTo({
+                top: targetPosition - offset,
+                behavior: "smooth", // 平滑滾動
+              });
+            }
+          }
+        });
+      });
+    </script>
+  </body>
+</html>

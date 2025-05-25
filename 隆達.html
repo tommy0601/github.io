@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html lang="zh-hant-TW">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="曹旅瀚 Tommy" />
+    <meta name="description" content="探索隆達的魅力！從壯麗的峽谷到古老的橋梁，體驗這座西班牙安達盧西亞城市的歷史、文化和自然美景，感受隆達獨特的風情與浪漫氛圍。" />
+    <meta name="keywords" content="隆達旅遊, 隆達景點, 隆達峽谷, 隆達橋梁, 隆達自由行, 隆達文化, 隆達歷史, 隆達古城, 隆達安達盧西亞, 隆達美景" />
+    <title>Tommy 看世界 - 隆達</title>
+    <link rel="icon" href="網頁縮圖.ico" />
+    <style>
+      body {
+        font-family: Calibri, Arial, sans-serif; /* 首選 Calibri，次選 Arial */
+        margin: 0;
+        padding: 0;
+        overflow-x: hidden; /* 禁止水平滾動 */
+        background-color: #f4f4f9;
+        color: #333;
+      }
+
+      h1 {
+        font-size: 40px;
+        font-weight: bold;
+      }
+
+      h2 {
+        font-size: 32px;
+        font-weight: bold;
+        color: #2a90a7;
+        display: inline-block;
+        margin-bottom: 1rem; /* 縮小 h2 的底部邊距 */
+        background-color: #cee5e8;
+      }
+
+      h3 {
+        font-size: 26px;
+        margin: 0 0 1rem;
+        font-weight: bold;
+        text-decoration: underline; /* 加上底線 */
+      }
+
+      h4 {
+        font-size: 18px;
+        font-weight: normal;
+        line-height: 1.8;
+      }
+
+      h5 {
+        font-size: 16px;
+        font-weight: normal;
+        margin: 0;
+      }
+
+      h6 {
+        font-size: 10px;
+        color: #fff;
+        margin: 0;
+        text-align: center;
+        line-height: 50px; /* 高度對齊 */
+      }
+
+      nav {
+        background-color: #78bcc4;
+        display: flex;
+        justify-content: space-between; /* 保持分佈在兩側 */
+        width: calc(100% - 10rem); /* 與其他內容的邊界一致 */
+        padding: 0.5rem 5rem; /* 主導覽列的 padding 設置 */
+        position: fixed;
+        top: 0;
+        z-index: 1000;
+      }
+
+      .nav-left .logo img {
+        height: 50px; /* 控制 Logo 圖片的高度 */
+        transform: translateX(-1.5rem); /* 向右移動 2rem */
+      }
+
+      .nav-right {
+        display: flex;
+        align-items: center;
+        transform: translateX(2rem); /* 向右移動 2rem */
+      }
+
+      nav a {
+        color: #eff5f5;
+        text-decoration: none;
+        padding: 0.5rem 1rem;
+        margin: 0 0.5rem;
+        transition: transform 0.3s;
+      }
+
+      nav a:hover {
+        transform: translateY(-3px);
+      }
+
+      .dropdown {
+        position: relative;
+      }
+
+      .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #78bcc4;
+        min-width: 160px;
+        border-radius: 4px;
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        padding: 0.2rem 0;
+      }
+
+      .dropdown-content a {
+        color: #eff5f5;
+        display: block;
+        transition: transform 0.3s;
+        border-bottom: 1px solid #ddd;
+      }
+
+      .dropdown-content a:last-child {
+        border-bottom: none;
+      }
+
+      .dropdown-content a:hover {
+        transform: translateY(-3px);
+      }
+
+      .dropdown:hover .dropdown-content {
+        display: block;
+      }
+
+      .intro-section {
+        background-color: #eff5f5;
+        display: flex;
+        padding: 2rem;
+        margin-top: 60px; /* 根據導航列高度調整 */
+        justify-content: space-between;
+        align-items: flex-start;
+        width: 100%;
+        box-sizing: border-box; /* 包含 padding 在內 */
+        padding-left: 5rem;
+        padding-right: 5rem;
+      }
+
+      .intro-section h4 {
+        max-width: 700px;
+      }
+
+      .intro-section .left {
+        width: 60%;
+      }
+
+      .intro-section .right {
+        width: 40%;
+      }
+
+      .destination-section {
+        display: flex;
+        padding: 1rem 5%; /* 左右內間距為螢幕的10% */
+        background-color: white;
+      }
+
+      .destination-main {
+        width: 75%;
+        margin-right: 1.5rem; /* 增加右邊外邊距 */
+      }
+
+      .destination-sidebar {
+        width: 25%;
+        padding-left: 1.5rem; /* 增加左側內邊距 */
+        margin-top: 2rem; /* 向上或向下調整，負值表示向上 */
+      }
+
+      .sidebar-image-container {
+        margin-bottom: 1rem;
+        text-align: center; /* 確保圖片置中 */
+      }
+
+      .sidebar-image-container img {
+        height: 300px; /* 設置直式圖片的高度 */
+      }
+
+      .two-vertical-images {
+        display: flex; /* 彈性佈局，讓圖片並排 */
+        justify-content: space-between; /* 兩張圖片均勻分佈 */
+        gap: 2rem; /* 圖片之間的間距 */
+        margin-top: 2rem;
+        margin-bottom: 2rem; /* 與下方內容的距離 */
+      }
+
+      .two-vertical-images img {
+        width: calc(50% - 0.5rem); /* 每張圖片佔用容器的一半減去間距 */
+        text-align: center; /* 確保圖片置中 */
+        height: auto; /* 保持圖片的直式比例 */
+        object-fit: cover; /* 確保圖片內容適應容器 */
+      }
+
+      .recommendation-section {
+        margin-top: 1.5rem; /* 與上方文字的間距 */
+        text-align: center;
+        position: sticky;
+        top: 80px; /* 空出導覽列的高度，確保推薦區不被覆蓋 */
+        z-index: 10; /* 提高層級，避免被其他內容遮蓋 */
+      }
+
+      .recommendation-section h3 {
+        font-size: 18px;
+        font-weight: bold;
+        margin-bottom: 0.5rem; /* 與按鈕區的距離 */
+      }
+
+      .recommendation-buttons {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 0.5rem; /* 按鈕之間的間距 */
+      }
+
+      .recommendation-buttons button {
+        padding: 0.5rem 1rem;
+        font-size: 14px;
+        color: white;
+        background-color: #78bcc4;
+        border: none;
+        border-radius: 4px;
+        transition: transform 0.3s;
+        font-family: Arial, sans-serif;
+      }
+
+      .recommendation-buttons button:hover {
+        transform: translateY(-3px);
+      }
+
+      .contact-section {
+        padding: 2rem 5rem; /* 上下與左右間距 */
+        background-color: #eff5f5; /* 淺灰背景 */
+        text-align: center; /* 確保內容置中對齊 */
+      }
+
+      .contact-item h3 {
+        font-size: 18px; /* 調整標題字體大小 */
+        margin: 0; /* 移除多餘的間距 */
+        text-decoration: none; /* 移除底線 */
+      }
+
+      footer {
+        background-color: #000;
+        color: white;
+        height: 30px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      #expandable-menu {
+        position: fixed;
+        top: 70px; /* 與螢幕頂部的距離設為 60px */
+        right: 0;
+        height: calc(100% - 70px); /* 高度減去 60px，避免超出視窗 */
+        width: 395px; /* 目錄寬度與 sidebar 齊寬 */
+        transform: translateX(100%); /* 初始狀態：隱藏在右側 */
+        transition: transform 0.3s ease;
+        background-color: #f4f4f9; /* 與網站背景一致 */
+        z-index: 1000;
+      }
+
+      /* 收闔按鈕 */
+      #menu-toggle {
+        position: absolute;
+        top: 45%;
+        left: -40px; /* 調整按鈕的位置，適應按鈕變大後的寬度 */
+        transform: translateY(-50%);
+        width: 40px; /* 增大按鈕寬度 */
+        height: 80px; /* 增大按鈕高度 */
+        background-color: #78bcc4;
+        color: white;
+        border-radius: 4px;
+        display: flex;
+        justify-content: center; /* 水平居中 */
+        align-items: center; /* 垂直居中 */
+      }
+
+      #menu-toggle::after {
+        content: "目錄"; /* 在按鈕內顯示 "目錄" */
+        font-size: 17px;
+        color: white; /* 設定字體顏色為白色 */
+        writing-mode: vertical-rl; /* 使文字垂直排列 */
+      }
+
+      #menu-toggle:hover {
+        background-color: #78bcc4;
+      }
+
+      /* 目錄內容 */
+      #menu-content {
+        padding: 0.5rem 1rem;
+        overflow-y: auto;
+        height: 100%;
+      }
+
+      #menu-content h4 {
+        font-weight: bold;
+        margin-top: 0;
+      }
+
+      #menu-list {
+        list-style: none;
+        padding: 0;
+      }
+
+      #menu-list li {
+        margin-bottom: 0.5rem;
+      }
+
+      #menu-list a {
+        color: #2a90a7;
+        text-decoration: none;
+        transition: color 0.3s;
+      }
+
+      #menu-list a:hover {
+        color: #78bcc4;
+      }
+
+      #menu-list .sub-item {
+        margin-left: 1.5rem; /* 調整縮排距離 */
+        font-size: 0.9rem; /* 可選：調整子項目字體大小 */
+      }
+
+      /* 目錄展開狀態 */
+      #expandable-menu.open {
+        transform: translateX(0);
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <div class="nav-left">
+        <div class="logo">
+          <a href="首頁.html">
+            <img src="網站Logo.png" alt="網站 Logo" />
+          </a>
+        </div>
+      </div>
+      <div class="nav-right">
+        <a href="首頁.html">關於我</a>
+        <div class="dropdown">
+          <a>亞洲旅遊</a>
+          <div class="dropdown-content">
+            <a href="中國.html">中國</a>
+            <a href="新加坡.html">新加坡</a>
+            <a href="馬來西亞.html">馬來西亞</a>
+            <a href="泰國.html">泰國</a>
+            <a href="印尼.html">印尼</a>
+            <a href="越南.html">越南</a>
+          </div>
+        </div>
+        <div class="dropdown">
+          <a>歐洲旅遊</a>
+          <div class="dropdown-content">
+            <a href="英國.html">英國</a>
+            <a href="法國.html">法國</a>
+            <a href="荷蘭.html">荷蘭</a>
+            <a href="比利時.html">比利時</a>
+            <a href="盧森堡.html">盧森堡</a>
+            <a href="瑞士.html">瑞士</a>
+            <a href="摩納哥.html">摩納哥</a>
+            <a href="西班牙.html">西班牙</a>
+            <a href="葡萄牙.html">葡萄牙</a>
+            <a href="安道爾.html">安道爾</a>
+            <a href="丹麥.html">丹麥</a>
+            <a href="瑞典.html">瑞典</a>
+            <a href="波蘭.html">波蘭</a>
+          </div>
+        </div>
+        <div class="dropdown">
+          <a>美洲旅遊</a>
+          <div class="dropdown-content">
+            <a href="美國.html">美國</a>
+            <a href="加拿大.html">加拿大</a>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <div class="intro-section">
+      <div class="left">
+        <h1>Tommy 在隆達</h1>
+        <h4>
+          <b>隆達 (Ronda) </b
+          >位於安達魯西亞地區，坐落在塞拉尼亞山脈上，歷史可以追溯到古羅馬時代，當時被稱為「Arunda」，隨後在西哥德人和穆斯林統治下成為了重要的邊境城市，位於基督教國家和伊斯蘭國家之間的交界處。如今隆達成為旅遊業的重要目的地，以其壯麗的自然風景、古老的城市結構和傳統的文化活動而聞名，可以欣賞到壯麗的山景，參觀古老的城堡和教堂，並體驗到西班牙文化的獨特之處。
+        </h4>
+      </div>
+      <div class="right">
+        <img src="西班牙照片\隆達\隆達_介紹.jpg" width="90%" height="350px" />
+      </div>
+    </div>
+
+    <div class="destination-section">
+      <div class="destination-main">
+        <h2>隆達交通</h2>
+        <h3>前往隆達</h3>
+        <h4>
+          從塞維亞跟馬拉加都能乘坐大巴前往，也可以選擇火車較為舒適但是票價較高，可以根據自己的時間與預算做選擇。
+        </h4>
+        <h3>市區交通</h3>
+        <h4>
+          隆達小鎮範圍不大，景點也都相當集中，基本上步行即可。
+        </h4>
+        <div style="text-align: center">
+          <img src="西班牙照片\隆達\隆達_交通.jpg" width="600px" />
+        </div>
+        <br /><br />
+        <h2>隆達住宿</h2>
+        <h4>
+          火車和客運是抵達隆達的主要交通方式，因此住宿可以選擇離客運站及火車站都比較近的城北區，也就是新橋以北的城區，住宿跟餐飲的選擇也比較多。
+        </h4>
+        <div style="text-align: center">
+          <img src="西班牙照片\隆達\隆達_住宿.png" width="600px" />
+        </div>
+        <br /><br />
+        <h2>隆達景點</h2>
+        <h3>隆達皇家鬥牛場 (Plaza de Toros de la Real Maestranza de Caballería de Ronda)</h3>
+        <h4>
+          馬拉加主教座堂始建於 16 世紀，但由於多種因素的影響，工程一直持續了數個世紀，這也導致了教堂的建築風格上的變化。教堂的主立面展示了華麗的文藝復興風格，而其側面則呈現出哥特式的特徵。教堂內部極為壯觀，擁有高聳的拱頂、華麗的祭壇和豐富的藝術品，最著名的是由 Diego de Siloé 設計的聖心堂，以及由 Pedro de Mena 創作的耶穌受難像，也收藏了許多重要的宗教藝術品和古老的文物，展示了馬拉加的宗教和文化遺產。
+        </h4>
+        <div style="text-align: center">
+          <img src="西班牙照片\隆達\RO1.png" width="800px" />
+          <img src="西班牙照片\隆達\RO2.png" width="800px" />
+        </div>
+        <br /><br /><br />
+        <h3>隆達觀景台 (Mirador de Ronda)</h3>
+        <h4>
+          隆達觀景台位於塞拉尼亞山脈的高處，俯瞰著隆達峽谷 (El Tajo) 和隆達橋 (Puente Nuevo)，可以眺望到峽谷深處的壯觀景色，包括懸崖峭壁、流經的 Guadalevín 河以及跨越峽谷的橋樑，被視為隆達最美的觀景點。
+        </h4>
+        <div style="text-align: center">
+          <img src="西班牙照片\隆達\RO3.jpg" width="800px" />
+          <img src="西班牙照片\隆達\RO4.jpg" width="800px" />
+          <img src="西班牙照片\隆達\RO5.jpg" width="600px" />
+        </div>
+        <br /><br /><br />
+        <h3>新橋 (Puente Nuevo)</h3>
+        <h4>
+          新橋橫跨隆達峽谷 (El Tajo)，連接著隆達的新城區和老城區，建於 18 世紀，以穆德哈爾式風格設計，呈現出典型的安達魯西亞建築風格，由建築師 José Martin de Aldehuela 設計，並在 42 年的時間內完成。橋的建造對當時的技術和工程來說是一項巨大的壯舉，高度達 98 米，橋面寬度約 6 米，展示了人類的工藝和創造力。從橋上可以俯瞰到隆達峽谷的壯觀景色，包括懸崖峭壁和峽谷中的 Guadalevín 河，是隆達的象徵。
+        </h4>
+        <div style="text-align: center">
+          <img src="西班牙照片\隆達\RO6.jpg" width="600px" />
+          <img src="西班牙照片\隆達\RO7.jpg" width="800px" />
+        </div>
+        <br /><br /><br />
+        <h3>新橋觀景台 (Mirador Puente Nuevo)</h3>
+        <h4>
+          新橋觀景台可以欣賞到隆達峽谷 (El Tajo) 和隆達橋的壯麗景色，俯瞰到隆達峽谷的深淵和懸崖，欣賞到令人驚嘆的自然美景和建築壯觀。特別是在早晨或傍晚時分，陽光灑在峽谷上，營造出獨特的光影效果，也是欣賞隆達橋和峽谷的理想角度。
+        </h4>
+        <div style="text-align: center">
+          <img src="西班牙照片\隆達\RO8.jpg" width="600px" />
+          <img src="西班牙照片\隆達\RO9.jpg" width="600px" />
+        </div>
+        <br /><br /><br />
+        <h3>老橋 (Puente Viejo)</h3>
+        <h4>
+          老橋橫跨 Guadalevín 河，連接著城市的新城區和老城區，歷史可以追溯到 13 世紀，是隆達最古老的橋樑之一，以其石砌的結構和傳統的建築風格而聞名，展現了中世紀時期的工藝和建造技術。這座橋樑由三個拱門組成，長度約為 40 米，寬度約為 3 米，可以欣賞到河流和周圍環境的美麗景色。
+        </h4>
+        <div style="text-align: center">
+          <img src="西班牙照片\隆達\RO10.jpg" width="600px" />
+          <img src="西班牙照片\隆達\RO11.jpg" width="600px" />
+        </div>
+        <br /><br />
+        <h2>隆達美食</h2>
+        <h3>Las Maravillas</h3>
+        <h4>
+          安達魯西亞料理中，燉牛尾是非常經典的一道菜，用紅酒及香料醃的帶骨牛尾燉的非常爛，很容易就從骨頭上切下來，帶有些許紅酒味但不會太鹹，入口即化，配上一杯檸檬啤酒是最好的組合不過。
+        </h4>
+        <div style="text-align: center">
+          <img src="西班牙照片\隆達\RO12.jpg" width="800px" />
+        </div>
+        <br /><br />
+      </div>
+      <div class="destination-sidebar">
+        <div class="sidebar-image-container">
+          <img src="側邊欄自我介紹.jpg" />
+        </div>
+        <h5>
+          Hi!
+          我是Tommy，我熱愛旅遊也喜歡藉由影像紀錄旅程中的點點滴滴，透過文字將我在旅途中的所見所聞分享給大家。旅行對我而言不只是吃吃喝喝，而是能在行萬里路間感受世界的脈動，體驗不同的文化，希望藉由我的分享能讓大家看到更多世界的美好。
+        </h5>
+        <br />
+        <h5>
+          想更了解我或與我聯絡:
+          <a
+            href="https://www.instagram.com/tommy_techvoyage/"
+            target="_blank"
+            style="color: inherit; text-decoration: underline"
+          >
+            <b>Instagram</b>
+          </a>
+        </h5>
+        <div class="recommendation-section">
+          <h3>其他西班牙旅遊目的地</h3>
+          <div class="recommendation-buttons">
+            <a href="巴塞隆納.html">
+              <button><h5>巴塞隆納</h5></button>
+            </a>
+            <a href="馬德里.html">
+              <button><h5>馬德里</h5></button>
+            </a>
+            <a href="瓦倫西亞.html">
+              <button><h5>瓦倫西亞</h5></button>
+            </a>
+            <a href="格瑞那達.html">
+              <button><h5>格瑞那達</h5></button>
+            </a>
+            <a href="馬拉加.html">
+              <button><h5>馬拉加</h5></button>
+            </a>
+            <a href="直布羅陀.html">
+              <button><h5>直布羅陀</h5></button>
+            </a>
+            <a href="塞維亞.html">
+              <button><h5>塞維亞</h5></button>
+            </a>
+            <a href="馬略卡島.html">
+              <button><h5>馬略卡島</h5></button>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="contact-section">
+      <div class="contact-item">
+        <h3>
+          想更了解我或與我聯絡:
+          <a
+            href="https://www.instagram.com/tommy_techvoyage/"
+            target="_blank"
+            style="color: inherit; text-decoration: underline"
+          >
+            Instagram
+          </a>
+        </h3>
+      </div>
+    </div>
+    <footer>
+      <h6>COPYRIGHT © 2025 Tommy 看世界 All rights reserved.</h6>
+    </footer>
+    <div id="expandable-menu">
+      <div id="menu-toggle"></div>
+      <!-- 收闔按鈕 -->
+      <div id="menu-content">
+        <h4>目錄</h4>
+        <ul id="menu-list"></ul>
+      </div>
+    </div>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const menu = document.getElementById("expandable-menu");
+        const toggle = document.getElementById("menu-toggle");
+        const menuList = document.getElementById("menu-list");
+        const destinationMain = document.querySelector(".destination-main");
+
+        // 點擊按鈕切換目錄狀態
+        toggle.addEventListener("click", () => {
+          menu.classList.toggle("open");
+        });
+
+        // 從 destination-main 區域提取 h2 和 h3，動態生成目錄
+        const headings = destinationMain.querySelectorAll("h2, h3");
+        headings.forEach((heading, index) => {
+          // 確保每個 h2 和 h3 都有唯一的 id
+          if (!heading.id) {
+            heading.id = `heading-${index}`;
+          }
+
+          const listItem = document.createElement("li");
+          const link = document.createElement("a");
+          link.textContent = heading.textContent;
+          link.href = `#${heading.id}`;
+          listItem.appendChild(link);
+
+          // 為 h3 添加縮排樣式
+          if (heading.tagName.toLowerCase() === "h3") {
+            listItem.classList.add("sub-item");
+          }
+
+          menuList.appendChild(listItem);
+        });
+
+        // 滾動至目標位置並加上 75px 偏移
+        menuList.addEventListener("click", (event) => {
+          if (event.target.tagName === "A") {
+            event.preventDefault(); // 阻止預設行為
+
+            const targetId = event.target.getAttribute("href").substring(1); // 取得目標 ID
+            const targetElement = document.getElementById(targetId);
+
+            if (targetElement) {
+              // 計算目標元素的位置並加上 75px 偏移
+              const targetPosition =
+                targetElement.getBoundingClientRect().top + window.scrollY;
+              const offset = 75; // 偏移的距離
+              window.scrollTo({
+                top: targetPosition - offset,
+                behavior: "smooth", // 平滑滾動
+              });
+            }
+          }
+        });
+      });
+    </script>
+  </body>
+</html>

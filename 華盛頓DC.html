@@ -1,0 +1,648 @@
+<!DOCTYPE html>
+<html lang="zh-hant-TW">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="曹旅瀚 Tommy" />
+    <meta name="description" content="探索華盛頓DC的魅力！從國會大廈到林肯紀念堂，體驗美國首都的歷史、政治與文化遺產，並參觀眾多博物館與名勝，深入了解美國的歷史與政治。" />
+    <meta name="keywords" content="華盛頓DC旅遊, 華盛頓DC景點, 華盛頓DC國會大廈, 華盛頓DC林肯紀念堂, 華盛頓DC博物館, 華盛頓DC自由行, 華盛頓DC歷史, 華盛頓DC政治, 華盛頓DC名勝, 華盛頓DC文化遺產" />
+    <title>Tommy 看世界 - 華盛頓DC</title>
+    <link rel="icon" href="網頁縮圖.ico" />
+    <style>
+      body {
+        font-family: Calibri, Arial, sans-serif; /* 首選 Calibri，次選 Arial */
+        margin: 0;
+        padding: 0;
+        overflow-x: hidden; /* 禁止水平滾動 */
+        background-color: #f4f4f9;
+        color: #333;
+      }
+
+      h1 {
+        font-size: 40px;
+        font-weight: bold;
+      }
+
+      h2 {
+        font-size: 32px;
+        font-weight: bold;
+        color: #2a90a7;
+        display: inline-block;
+        margin-bottom: 1rem; /* 縮小 h2 的底部邊距 */
+        background-color: #cee5e8;
+      }
+
+      h3 {
+        font-size: 26px;
+        margin: 0 0 1rem;
+        font-weight: bold;
+        text-decoration: underline; /* 加上底線 */
+      }
+
+      h4 {
+        font-size: 18px;
+        font-weight: normal;
+        line-height: 1.8;
+      }
+
+      h5 {
+        font-size: 16px;
+        font-weight: normal;
+        margin: 0;
+      }
+
+      h6 {
+        font-size: 10px;
+        color: #fff;
+        margin: 0;
+        text-align: center;
+        line-height: 50px; /* 高度對齊 */
+      }
+
+      nav {
+        background-color: #78bcc4;
+        display: flex;
+        justify-content: space-between; /* 保持分佈在兩側 */
+        width: calc(100% - 10rem); /* 與其他內容的邊界一致 */
+        padding: 0.5rem 5rem; /* 主導覽列的 padding 設置 */
+        position: fixed;
+        top: 0;
+        z-index: 1000;
+      }
+
+      .nav-left .logo img {
+        height: 50px; /* 控制 Logo 圖片的高度 */
+        transform: translateX(-1.5rem); /* 向右移動 2rem */
+      }
+
+      .nav-right {
+        display: flex;
+        align-items: center;
+        transform: translateX(2rem); /* 向右移動 2rem */
+      }
+
+      nav a {
+        color: #eff5f5;
+        text-decoration: none;
+        padding: 0.5rem 1rem;
+        margin: 0 0.5rem;
+        transition: transform 0.3s;
+      }
+
+      nav a:hover {
+        transform: translateY(-3px);
+      }
+
+      .dropdown {
+        position: relative;
+      }
+
+      .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #78bcc4;
+        min-width: 160px;
+        border-radius: 4px;
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        padding: 0.2rem 0;
+      }
+
+      .dropdown-content a {
+        color: #eff5f5;
+        display: block;
+        transition: transform 0.3s;
+        border-bottom: 1px solid #ddd;
+      }
+
+      .dropdown-content a:last-child {
+        border-bottom: none;
+      }
+
+      .dropdown-content a:hover {
+        transform: translateY(-3px);
+      }
+
+      .dropdown:hover .dropdown-content {
+        display: block;
+      }
+
+      .intro-section {
+        background-color: #eff5f5;
+        display: flex;
+        padding: 2rem;
+        margin-top: 60px; /* 根據導航列高度調整 */
+        justify-content: space-between;
+        align-items: flex-start;
+        width: 100%;
+        box-sizing: border-box; /* 包含 padding 在內 */
+        padding-left: 5rem;
+        padding-right: 5rem;
+      }
+
+      .intro-section h4 {
+        max-width: 700px;
+      }
+
+      .intro-section .left {
+        width: 60%;
+      }
+
+      .intro-section .right {
+        width: 40%;
+      }
+
+      .destination-section {
+        display: flex;
+        padding: 1rem 5%; /* 左右內間距為螢幕的10% */
+        background-color: white;
+      }
+
+      .destination-main {
+        width: 75%;
+        margin-right: 1.5rem; /* 增加右邊外邊距 */
+      }
+
+      .destination-sidebar {
+        width: 25%;
+        padding-left: 1.5rem; /* 增加左側內邊距 */
+        margin-top: 2rem; /* 向上或向下調整，負值表示向上 */
+      }
+
+      .sidebar-image-container {
+        margin-bottom: 1rem;
+        text-align: center; /* 確保圖片置中 */
+      }
+
+      .sidebar-image-container img {
+        height: 300px; /* 設置直式圖片的高度 */
+      }
+
+      .two-vertical-images {
+        display: flex; /* 彈性佈局，讓圖片並排 */
+        justify-content: space-between; /* 兩張圖片均勻分佈 */
+        gap: 2rem; /* 圖片之間的間距 */
+        margin-top: 2rem;
+        margin-bottom: 2rem; /* 與下方內容的距離 */
+      }
+
+      .two-vertical-images img {
+        width: calc(50% - 0.5rem); /* 每張圖片佔用容器的一半減去間距 */
+        text-align: center; /* 確保圖片置中 */
+        height: auto; /* 保持圖片的直式比例 */
+        object-fit: cover; /* 確保圖片內容適應容器 */
+      }
+
+      .recommendation-section {
+        margin-top: 1.5rem; /* 與上方文字的間距 */
+        text-align: center;
+        position: sticky;
+        top: 80px; /* 空出導覽列的高度，確保推薦區不被覆蓋 */
+        z-index: 10; /* 提高層級，避免被其他內容遮蓋 */
+      }
+
+      .recommendation-section h3 {
+        font-size: 18px;
+        font-weight: bold;
+        margin-bottom: 0.5rem; /* 與按鈕區的距離 */
+      }
+
+      .recommendation-buttons {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 0.5rem; /* 按鈕之間的間距 */
+      }
+
+      .recommendation-buttons button {
+        padding: 0.5rem 1rem;
+        font-size: 14px;
+        color: white;
+        background-color: #78bcc4;
+        border: none;
+        border-radius: 4px;
+        transition: transform 0.3s;
+        font-family: Arial, sans-serif;
+      }
+
+      .recommendation-buttons button:hover {
+        transform: translateY(-3px);
+      }
+
+      .contact-section {
+        padding: 2rem 5rem; /* 上下與左右間距 */
+        background-color: #eff5f5; /* 淺灰背景 */
+        text-align: center; /* 確保內容置中對齊 */
+      }
+
+      .contact-item h3 {
+        font-size: 18px; /* 調整標題字體大小 */
+        margin: 0; /* 移除多餘的間距 */
+        text-decoration: none; /* 移除底線 */
+      }
+
+      footer {
+        background-color: #000;
+        color: white;
+        height: 30px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      #expandable-menu {
+        position: fixed;
+        top: 70px; /* 與螢幕頂部的距離設為 60px */
+        right: 0;
+        height: calc(100% - 70px); /* 高度減去 60px，避免超出視窗 */
+        width: 395px; /* 目錄寬度與 sidebar 齊寬 */
+        transform: translateX(100%); /* 初始狀態：隱藏在右側 */
+        transition: transform 0.3s ease;
+        background-color: #f4f4f9; /* 與網站背景一致 */
+        z-index: 1000;
+      }
+
+      /* 收闔按鈕 */
+      #menu-toggle {
+        position: absolute;
+        top: 45%;
+        left: -40px; /* 調整按鈕的位置，適應按鈕變大後的寬度 */
+        transform: translateY(-50%);
+        width: 40px; /* 增大按鈕寬度 */
+        height: 80px; /* 增大按鈕高度 */
+        background-color: #78bcc4;
+        color: white;
+        border-radius: 4px;
+        display: flex;
+        justify-content: center; /* 水平居中 */
+        align-items: center; /* 垂直居中 */
+      }
+
+      #menu-toggle::after {
+        content: "目錄"; /* 在按鈕內顯示 "目錄" */
+        font-size: 17px;
+        color: white; /* 設定字體顏色為白色 */
+        writing-mode: vertical-rl; /* 使文字垂直排列 */
+      }
+
+      #menu-toggle:hover {
+        background-color: #78bcc4;
+      }
+
+      /* 目錄內容 */
+      #menu-content {
+        padding: 0.5rem 1rem;
+        overflow-y: auto;
+        height: 100%;
+      }
+
+      #menu-content h4 {
+        font-weight: bold;
+        margin-top: 0;
+      }
+
+      #menu-list {
+        list-style: none;
+        padding: 0;
+      }
+
+      #menu-list li {
+        margin-bottom: 0.5rem;
+      }
+
+      #menu-list a {
+        color: #2a90a7;
+        text-decoration: none;
+        transition: color 0.3s;
+      }
+
+      #menu-list a:hover {
+        color: #78bcc4;
+      }
+
+      #menu-list .sub-item {
+        margin-left: 1.5rem; /* 調整縮排距離 */
+        font-size: 0.9rem; /* 可選：調整子項目字體大小 */
+      }
+
+      /* 目錄展開狀態 */
+      #expandable-menu.open {
+        transform: translateX(0);
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <div class="nav-left">
+        <div class="logo">
+          <a href="首頁.html">
+            <img src="網站Logo.png" alt="網站 Logo" />
+          </a>
+        </div>
+      </div>
+      <div class="nav-right">
+        <a href="首頁.html">關於我</a>
+        <div class="dropdown">
+          <a>亞洲旅遊</a>
+          <div class="dropdown-content">
+            <a href="中國.html">中國</a>
+            <a href="新加坡.html">新加坡</a>
+            <a href="馬來西亞.html">馬來西亞</a>
+            <a href="泰國.html">泰國</a>
+            <a href="印尼.html">印尼</a>
+            <a href="越南.html">越南</a>
+          </div>
+        </div>
+        <div class="dropdown">
+          <a>歐洲旅遊</a>
+          <div class="dropdown-content">
+            <a href="英國.html">英國</a>
+            <a href="法國.html">法國</a>
+            <a href="荷蘭.html">荷蘭</a>
+            <a href="比利時.html">比利時</a>
+            <a href="盧森堡.html">盧森堡</a>
+            <a href="瑞士.html">瑞士</a>
+            <a href="摩納哥.html">摩納哥</a>
+            <a href="西班牙.html">西班牙</a>
+            <a href="葡萄牙.html">葡萄牙</a>
+            <a href="安道爾.html">安道爾</a>
+            <a href="丹麥.html">丹麥</a>
+            <a href="瑞典.html">瑞典</a>
+            <a href="波蘭.html">波蘭</a>
+          </div>
+        </div>
+        <div class="dropdown">
+          <a>美洲旅遊</a>
+          <div class="dropdown-content">
+            <a href="美國.html">美國</a>
+            <a href="加拿大.html">加拿大</a>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <div class="intro-section">
+      <div class="left">
+        <h1>Tommy 在華盛頓DC</h1>
+        <h4>
+          <b>華盛頓特區 (Washington D.C.) </b
+          >在 19 世紀初取代費城成為美國的首都，19 世紀後期興建了許多巍峨的大理石建築，如國會山莊、最高法院大樓和白宮，以其優雅的新古典主義風格成為華盛頓的標誌性景觀，還建立了眾多的紀念碑和博物館。二戰後政府機構和私營企業大量進駐，成為美國政治、外交和文化的中心，這座城市的過去和現在交織在一起，彰顯了美國作為世界強國的地位和魅力。
+        </h4>
+      </div>
+      <div class="right">
+        <img src="美國照片\華盛頓DC\華盛頓_介紹.jpg" width="90%" height="350px" />
+      </div>
+    </div>
+
+    <div class="destination-section">
+      <div class="destination-main">
+        <h2>華盛頓DC交通</h2>
+        <h3>機場交通</h3>
+        <h4>
+          華盛頓特區共有兩個機場，分別是華盛頓杜勒斯國際機場及羅納德·裡根華盛頓國家機場，除了最輕鬆但最燒錢的機場直接接送服務跟計程車外，以下會分列各個機場的大眾交通方式:
+          <ul>
+            <li>
+              <b>羅納德·裡根華盛頓國家機場</b>: 可以搭乘地鐵黃線或藍線直接進市區，車程約 25 分鐘。
+            </li>
+            <li>
+              <b>華盛頓杜勒斯國際機場</b>: 可以搭乘地鐵灰色線直接進市區，車程大約 1 小時。
+            </li>
+          </ul>
+        </h4>
+        <h3>市區交通</h3>
+        <h4>
+          華盛頓特區的地鐵系統十分完善，絕大多數的景點都有地鐵到達，是最主要的交通方式，車站都可以刷信用卡進站十分方便。
+        </h4>
+        <div style="text-align: center">
+          <img src="美國照片\華盛頓DC\華盛頓_交通1.png" width="1000px" />
+          <img src="美國照片\華盛頓DC\華盛頓_交通2.jpg" width="800px" />
+        </div>
+        <br /><br />
+        <h2>華盛頓DC住宿</h2>
+        <h4>
+          華盛頓特區的景點相當集中，都在國會山莊到林肯紀念堂這一長帶中，但由於附近多屬與政要機關或公家單位，住宿選擇很少，推薦大家可以向北往沃爾特·華盛頓會議中心 (Walter E. Washington Convention Center) 一帶搜尋，相對會有比較多選項且機能較好。
+        </h4>
+        <div style="text-align: center">
+          <img src="美國照片\華盛頓DC\華盛頓_住宿.png" width="1000px" />
+        </div>
+        <br /><br />
+        <h2>華盛頓DC景點</h2>
+        <h3>美國國會大廈 (United States Capitol)</h3>
+        <h4>
+          美國國會大廈的建造始於 1793 年，經過數十年的建設才完工，設計融合了新古典主義和聯邦風格，呈現出壯麗宏偉的外觀，建築物由石灰石和大理石打造而成，中央屹立的穹頂更是成為了華盛頓的地標性建築。國會大廈內部空間分為參眾兩院，參議院位於東翼，眾議院則在西翼，在大廳中央聳立著一座華盛頓雕像，彰顯了國會的權威性，整個建築物充滿了藝術和雕塑作品，如天花板上的 "自由女神" 壁畫極盡華美之致。
+        </h4>
+        <h4>國會大廈不僅是政治中心，也是了解美國歷史和民主制度的重要場所，可以參觀國會大廈內部，感受連結過往的歷史氛圍，
+          象徵著美國政治和民主的核心。若想要入內參觀美國國會大廈需要先在<a href="https://www.visitthecapitol.gov/" target="_blank">官網</a>預約，要注意由於需要通過多層安檢，一定要比預約時間早至少 30 分鐘抵達，否則有可能會被排到候補的場次喔!
+        </h4>
+        <div style="text-align: center">
+          <img src="美國照片\華盛頓DC\DC1.jpg" width="800px" />
+          <img src="美國照片\華盛頓DC\DC2.jpg" width="800px" />
+          <img src="美國照片\華盛頓DC\DC3.jpg" width="800px" />
+          <img src="美國照片\華盛頓DC\DC4.jpg" width="600px" />
+          <img src="美國照片\華盛頓DC\DC5.jpg" width="600px" />
+          <img src="美國照片\華盛頓DC\DC6.jpg" width="600px" />
+        </div>
+        <br /><br /><br />
+        <h3>美國國立自然歷史博物館 (Smithsonian National Museum of Natural History)</h3>
+        <h4>
+          美國國立自然歷史博物館是世界上最大最著名的自然歷史博物館，成立於 1910 年，由著名建築師 Ernest Flagg 設計，建築風格屬於新古典主義，外觀以大理石和青銅打造而成，大廳中央矗立的鯨骨骼化石，成為博物館的標誌性展品。博物館的藏品涵蓋了自然界的各個領域，包括化石、礦物、動物、人類史及海洋生物，還定期舉辦各種特展，能接觸最新的自然科學發現。
+        </h4>
+        <div style="text-align: center">
+          <img src="美國照片\華盛頓DC\DC7.jpg" width="800px" />
+          <img src="美國照片\華盛頓DC\DC8.jpg" width="600px" />
+          <img src="美國照片\華盛頓DC\DC9.jpg" width="600px" />
+        </div>
+        <br /><br /><br />
+        <h3>白宮 (The White House)</h3>
+        <h4>
+          白宮是美國總統的官邸和工作場所，建造始於 1792 年，有 6 層樓共 132 間房間，建築外觀採用新古典主義風格，以白色石灰岩砌成呈現出典雅氣派的形象，中央的正門和兩側的翼廂構成了標誌性的外觀。白宮內部華美奢華，擁有各種藝術珍品和歷史文物，總統就職椅、第一家庭的居室、以及藝術畫廊等均能一睹其真實面貌。白宮不僅是總統的居所，也是總統公務的中心，既是重大外交活動的舞台，也是內政事務的核心，眾多重要決策和活動都在此展開，深深影響了美國及世界的歷史進程。
+        </h4>
+        <div style="text-align: center">
+          <img src="美國照片\華盛頓DC\DC10.jpg" width="800px" />
+          <img src="美國照片\華盛頓DC\DC11.jpg" width="800px" />
+        </div>
+        <br /><br /><br />
+        <h3>華盛頓紀念碑 (Washington Monument)</h3>
+        <h4>
+          華盛頓紀念碑是紀念美國開國元勳喬治·華盛頓而建造的，建造始於 1848 年，經歷了多次中斷和重啟，於 1884 年落成，
+          整座紀念碑由大理石和花崗岩建造，高 169 米是當時世界上最高的建築物，設計採用了古埃及方尖碑的樣式，充滿了莊重而簡潔的古典美感。
+          可以搭乘電梯到頂層的觀景台俯瞰整個華盛頓特區的景致，能夠 360 度欣賞到首都的壯麗景色。華盛頓紀念碑不僅是矗立在國家廣場的標誌性建築，
+          更成為了美國國家歷史和文化的重要象徵，代表著美國獨立戰爭期間華盛頓將軍的英勇事蹟，以及建立了美國這個國家的偉大貢獻。
+          欲前往紀念碑頂端的觀景台一定要先在<a href="https://www.nps.gov/wamo/index.htm" target="_blank">官網</a>預約，名額並不算很多記得要及早預約!
+        </h4>
+        <div style="text-align: center">
+          <img src="美國照片\華盛頓DC\DC12.jpg" width="600px" />
+          <img src="美國照片\華盛頓DC\DC13.jpg" width="600px" />
+          <img src="美國照片\華盛頓DC\DC14.jpg" width="600px" />
+          <img src="美國照片\華盛頓DC\DC15.jpg" width="600px" />
+          <img src="美國照片\華盛頓DC\DC16.jpg" width="600px" />
+          <img src="美國照片\華盛頓DC\DC17.jpg" width="600px" />
+          <img src="美國照片\華盛頓DC\DC18.jpg" width="600px" />
+        </div>
+        <br /><br /><br />
+        <h3>第二次世界大戰紀念碑 (World War II Memorial)</h3>
+        <h4>
+          第二次世界大戰紀念碑建於 2004 年，紀念第二次世界大戰中美國人民作出的巨大犧牲和貢獻，由兩個半圓形的柱廊組成，代表了當時的太平洋戰線和歐洲戰線，中央有一個水池，中心矗立著一座雄偉的石碑，上面鑲刻著當時 49 個州的名稱，紀念碑周圍還設有 58 個青銅雕像，分別代表了參加戰爭的各個軍種，這些雕像生動描繪了士兵們在戰爭中的英勇事蹟，另外還有兩個大理石的曲拱象徵了戰爭的勝利和和平，展現了那段艱難歲月中美國人民的苦難和犧牲，不僅是向逝去戰友們致以崇高敬意的紀念，也是向所有參戰者和平民的英勇付出表達由衷感謝的場所。
+        </h4>
+        <div style="text-align: center">
+          <img src="美國照片\華盛頓DC\DC19.jpg" width="800px" />
+          <img src="美國照片\華盛頓DC\DC20.jpg" width="800px" />
+        </div>
+        <br /><br /><br />
+        <h3>林肯紀念堂 (Lincoln Memorial)</h3>
+        <h4>
+          林肯紀念堂用於紀念美國第 16 任總統亞伯拉罕·林肯，始建於 1914 年並於 1922 年落成啟用，內部設有一座巨大的林肯雕像，造型肅穆莊重，林肯紀念堂共有 36 根科林斯式柱子，代表林肯生前所經歷的 36 年州長任期，正面銘刻有林肯的著名演說 "Gettysburg"，其中蘊含了 "人人生而平等" 的偉大理念，站在林肯紀念堂前也可以瞭望到國家廣場和華盛頓紀念碑的景致。
+        </h4>
+        <div style="text-align: center">
+          <img src="美國照片\華盛頓DC\DC21.jpg" width="800px" />
+          <img src="美國照片\華盛頓DC\DC22.jpg" width="600px" />
+          <img src="美國照片\華盛頓DC\DC23.jpg" width="800px" />
+        </div>
+        <br /><br /><br />
+        <h3>越戰紀念碑 (Vietnam Veterans Memorial)</h3>
+        <h4>
+          越戰紀念碑由設計師 Maya Lin 於 1982 年設計，採用了極簡主義的形式，由兩片傾斜的黑色花崗岩石壁組成，遠看如同一個深深的 V 型裂縫。石壁長 146.1 米，高 2.4 米，表面鑲嵌了 6022 枚名字，按照死亡或失蹤順序排列，這些名字代表了在越戰中犧牲的所有美國軍人，兩塊石壁的開口處朝向林肯紀念堂，與之遙相呼應。每年都有很多退伍軍人和家屬前來尋找摯愛的名字，成為了一個追思與悼念的神聖場所。
+        </h4>
+        <div style="text-align: center">
+          <img src="美國照片\華盛頓DC\DC24.jpg" width="800px" />
+          <img src="美國照片\華盛頓DC\DC25.jpg" width="800px" />
+        </div>
+        <br /><br />
+        <h2>華盛頓DC美食</h2>
+        <h3>Old Ebbitt Grill</h3>
+        <h4>
+          Old Ebbitt Grill 是華盛頓特區最古老的餐廳之一，開幕於 1856 年，歷史可以追溯到美國內戰期間，當時是一家著名的酒館和賭場，許多政客和總統都曾在這裡光顧，如艾森豪威爾、聯合國大使尼克松、甚至是現任總統的秘書都會來這裡用餐。這裡的氛圍悠閒，以其獨特的維多利亞式裝潢聞名，裝飾有許多古董、毛皮地毯和木質家具，迷人的大理石吧台、黃銅燈具和鐫刻在牆上的字樣，都能感受到濃濃的歷史氛圍。
+        </h4>
+        <h4>Old Ebbitt Grill 以優質的美式牛排及海鮮聞名，香煎的牛排配上經典的肉汁讓人停不下來，還有著名的蒸汽鮮蚌及各種創意的經典美式料理，非常推薦喜歡經典美式料理的大家。</h4>
+        <div style="text-align: center">
+          <img src="美國照片\華盛頓DC\DC26.jpg" width="800px" />
+        </div>
+        <br /><br />
+      </div>
+      <div class="destination-sidebar">
+        <div class="sidebar-image-container">
+          <img src="側邊欄自我介紹.jpg" />
+        </div>
+        <h5>
+          Hi!
+          我是Tommy，我熱愛旅遊也喜歡藉由影像紀錄旅程中的點點滴滴，透過文字將我在旅途中的所見所聞分享給大家。旅行對我而言不只是吃吃喝喝，而是能在行萬里路間感受世界的脈動，體驗不同的文化，希望藉由我的分享能讓大家看到更多世界的美好。
+        </h5>
+        <br />
+        <h5>
+          想更了解我或與我聯絡:
+          <a
+            href="https://www.instagram.com/tommy_techvoyage/"
+            target="_blank"
+            style="color: inherit; text-decoration: underline"
+          >
+            <b>Instagram</b>
+          </a>
+        </h5>
+        <div class="recommendation-section">
+          <h3>其他美國旅遊目的地</h3>
+          <div class="recommendation-buttons">
+            <a href="舊金山.html">
+              <button><h5>舊金山</h5></button>
+            </a>
+            <a href="矽谷.html">
+              <button><h5>矽谷</h5></button>
+            </a>
+            <a href="洛杉磯.html">
+              <button><h5>洛杉磯</h5></button>
+            </a>
+            <a href="聖地牙哥.html">
+              <button><h5>聖地牙哥</h5></button>
+            </a>
+            <a href="波士頓.html">
+              <button><h5>波士頓</h5></button>
+            </a>
+            <a href="紐約.html">
+              <button><h5>紐約</h5></button>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="contact-section">
+      <div class="contact-item">
+        <h3>
+          想更了解我或與我聯絡:
+          <a
+            href="https://www.instagram.com/tommy_techvoyage/"
+            target="_blank"
+            style="color: inherit; text-decoration: underline"
+          >
+            Instagram
+          </a>
+        </h3>
+      </div>
+    </div>
+    <footer>
+      <h6>COPYRIGHT © 2025 Tommy 看世界 All rights reserved.</h6>
+    </footer>
+    <div id="expandable-menu">
+      <div id="menu-toggle"></div>
+      <!-- 收闔按鈕 -->
+      <div id="menu-content">
+        <h4>目錄</h4>
+        <ul id="menu-list"></ul>
+      </div>
+    </div>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const menu = document.getElementById("expandable-menu");
+        const toggle = document.getElementById("menu-toggle");
+        const menuList = document.getElementById("menu-list");
+        const destinationMain = document.querySelector(".destination-main");
+
+        // 點擊按鈕切換目錄狀態
+        toggle.addEventListener("click", () => {
+          menu.classList.toggle("open");
+        });
+
+        // 從 destination-main 區域提取 h2 和 h3，動態生成目錄
+        const headings = destinationMain.querySelectorAll("h2, h3");
+        headings.forEach((heading, index) => {
+          // 確保每個 h2 和 h3 都有唯一的 id
+          if (!heading.id) {
+            heading.id = `heading-${index}`;
+          }
+
+          const listItem = document.createElement("li");
+          const link = document.createElement("a");
+          link.textContent = heading.textContent;
+          link.href = `#${heading.id}`;
+          listItem.appendChild(link);
+
+          // 為 h3 添加縮排樣式
+          if (heading.tagName.toLowerCase() === "h3") {
+            listItem.classList.add("sub-item");
+          }
+
+          menuList.appendChild(listItem);
+        });
+
+        // 滾動至目標位置並加上 75px 偏移
+        menuList.addEventListener("click", (event) => {
+          if (event.target.tagName === "A") {
+            event.preventDefault(); // 阻止預設行為
+
+            const targetId = event.target.getAttribute("href").substring(1); // 取得目標 ID
+            const targetElement = document.getElementById(targetId);
+
+            if (targetElement) {
+              // 計算目標元素的位置並加上 75px 偏移
+              const targetPosition =
+                targetElement.getBoundingClientRect().top + window.scrollY;
+              const offset = 75; // 偏移的距離
+              window.scrollTo({
+                top: targetPosition - offset,
+                behavior: "smooth", // 平滑滾動
+              });
+            }
+          }
+        });
+      });
+    </script>
+  </body>
+</html>

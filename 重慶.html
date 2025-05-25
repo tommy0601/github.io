@@ -1,0 +1,684 @@
+<!DOCTYPE html>
+<html lang="zh-hant-TW">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="曹旅瀚 Tommy" />
+    <meta name="description" content="探索重慶的魅力！從壯麗的山城景觀到歷史悠久的古跡，品嚐正宗的重慶火鍋，體驗這座融合傳統與現代的城市，發現重慶的獨特文化和美麗景點。" />
+    <meta name="keywords" content="重慶旅遊, 重慶景點, 重慶火鍋, 重慶自由行, 重慶山城, 重慶歷史, 重慶文化, 重慶美食, 重慶夜景, 重慶旅遊攻略" />
+    <title>Tommy 看世界 - 重慶</title>
+    <link rel="icon" href="網頁縮圖.ico" />
+    <style>
+      body {
+        font-family: Calibri, Arial, sans-serif; /* 首選 Calibri，次選 Arial */
+        margin: 0;
+        padding: 0;
+        overflow-x: hidden; /* 禁止水平滾動 */
+        background-color: #f4f4f9;
+        color: #333;
+      }
+
+      h1 {
+        font-size: 40px;
+        font-weight: bold;
+      }
+
+      h2 {
+        font-size: 32px;
+        font-weight: bold;
+        color: #2a90a7;
+        display: inline-block;
+        margin-bottom: 1rem; /* 縮小 h2 的底部邊距 */
+        background-color: #cee5e8;
+      }
+
+      h3 {
+        font-size: 26px;
+        margin: 0 0 1rem;
+        font-weight: bold;
+        text-decoration: underline; /* 加上底線 */
+      }
+
+      h4 {
+        font-size: 18px;
+        font-weight: normal;
+        line-height: 1.8;
+      }
+
+      h5 {
+        font-size: 16px;
+        font-weight: normal;
+        margin: 0;
+      }
+
+      h6 {
+        font-size: 10px;
+        color: #fff;
+        margin: 0;
+        text-align: center;
+        line-height: 50px; /* 高度對齊 */
+      }
+
+      nav {
+        background-color: #78bcc4;
+        display: flex;
+        justify-content: space-between; /* 保持分佈在兩側 */
+        width: calc(100% - 10rem); /* 與其他內容的邊界一致 */
+        padding: 0.5rem 5rem; /* 主導覽列的 padding 設置 */
+        position: fixed;
+        top: 0;
+        z-index: 1000;
+      }
+
+      .nav-left .logo img {
+        height: 50px; /* 控制 Logo 圖片的高度 */
+        transform: translateX(-1.5rem); /* 向右移動 2rem */
+      }
+
+      .nav-right {
+        display: flex;
+        align-items: center;
+        transform: translateX(2rem); /* 向右移動 2rem */
+      }
+
+      nav a {
+        color: #eff5f5;
+        text-decoration: none;
+        padding: 0.5rem 1rem;
+        margin: 0 0.5rem;
+        transition: transform 0.3s;
+      }
+
+      nav a:hover {
+        transform: translateY(-3px);
+      }
+
+      .dropdown {
+        position: relative;
+      }
+
+      .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #78bcc4;
+        min-width: 160px;
+        border-radius: 4px;
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        padding: 0.2rem 0;
+      }
+
+      .dropdown-content a {
+        color: #eff5f5;
+        display: block;
+        transition: transform 0.3s;
+        border-bottom: 1px solid #ddd;
+      }
+
+      .dropdown-content a:last-child {
+        border-bottom: none;
+      }
+
+      .dropdown-content a:hover {
+        transform: translateY(-3px);
+      }
+
+      .dropdown:hover .dropdown-content {
+        display: block;
+      }
+
+      .intro-section {
+        background-color: #eff5f5;
+        display: flex;
+        padding: 2rem;
+        margin-top: 60px; /* 根據導航列高度調整 */
+        justify-content: space-between;
+        align-items: flex-start;
+        width: 100%;
+        box-sizing: border-box; /* 包含 padding 在內 */
+        padding-left: 5rem;
+        padding-right: 5rem;
+      }
+
+      .intro-section h4 {
+        max-width: 700px;
+      }
+
+      .intro-section .left {
+        width: 60%;
+      }
+
+      .intro-section .right {
+        width: 40%;
+      }
+
+      .destination-section {
+        display: flex;
+        padding: 1rem 5%; /* 左右內間距為螢幕的10% */
+        background-color: white;
+      }
+
+      .destination-main {
+        width: 75%;
+        margin-right: 1.5rem; /* 增加右邊外邊距 */
+      }
+
+      .destination-sidebar {
+        width: 25%;
+        padding-left: 1.5rem; /* 增加左側內邊距 */
+        margin-top: 2rem; /* 向上或向下調整，負值表示向上 */
+      }
+
+      .sidebar-image-container {
+        margin-bottom: 1rem;
+        text-align: center; /* 確保圖片置中 */
+      }
+
+      .sidebar-image-container img {
+        height: 300px; /* 設置直式圖片的高度 */
+      }
+
+      .two-vertical-images {
+        display: flex; /* 彈性佈局，讓圖片並排 */
+        justify-content: space-between; /* 兩張圖片均勻分佈 */
+        gap: 2rem; /* 圖片之間的間距 */
+        margin-top: 2rem;
+        margin-bottom: 2rem; /* 與下方內容的距離 */
+      }
+
+      .two-vertical-images img {
+        width: calc(50% - 0.5rem); /* 每張圖片佔用容器的一半減去間距 */
+        text-align: center; /* 確保圖片置中 */
+        height: auto; /* 保持圖片的直式比例 */
+        object-fit: cover; /* 確保圖片內容適應容器 */
+      }
+
+      .recommendation-section {
+        margin-top: 1.5rem; /* 與上方文字的間距 */
+        text-align: center;
+        position: sticky;
+        top: 80px; /* 空出導覽列的高度，確保推薦區不被覆蓋 */
+        z-index: 10; /* 提高層級，避免被其他內容遮蓋 */
+      }
+
+      .recommendation-section h3 {
+        font-size: 18px;
+        font-weight: bold;
+        margin-bottom: 0.5rem; /* 與按鈕區的距離 */
+      }
+
+      .recommendation-buttons {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 0.5rem; /* 按鈕之間的間距 */
+      }
+
+      .recommendation-buttons button {
+        padding: 0.5rem 1rem;
+        font-size: 14px;
+        color: white;
+        background-color: #78bcc4;
+        border: none;
+        border-radius: 4px;
+        transition: transform 0.3s;
+        font-family: Arial, sans-serif;
+      }
+
+      .recommendation-buttons button:hover {
+        transform: translateY(-3px);
+      }
+
+      .contact-section {
+        padding: 2rem 5rem; /* 上下與左右間距 */
+        background-color: #eff5f5; /* 淺灰背景 */
+        text-align: center; /* 確保內容置中對齊 */
+      }
+
+      .contact-item h3 {
+        font-size: 18px; /* 調整標題字體大小 */
+        margin: 0; /* 移除多餘的間距 */
+        text-decoration: none; /* 移除底線 */
+      }
+
+      footer {
+        background-color: #000;
+        color: white;
+        height: 30px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      #expandable-menu {
+        position: fixed;
+        top: 70px; /* 與螢幕頂部的距離設為 60px */
+        right: 0;
+        height: calc(100% - 70px); /* 高度減去 60px，避免超出視窗 */
+        width: 395px; /* 目錄寬度與 sidebar 齊寬 */
+        transform: translateX(100%); /* 初始狀態：隱藏在右側 */
+        transition: transform 0.3s ease;
+        background-color: #f4f4f9; /* 與網站背景一致 */
+        z-index: 1000;
+      }
+
+      /* 收闔按鈕 */
+      #menu-toggle {
+        position: absolute;
+        top: 45%;
+        left: -40px; /* 調整按鈕的位置，適應按鈕變大後的寬度 */
+        transform: translateY(-50%);
+        width: 40px; /* 增大按鈕寬度 */
+        height: 80px; /* 增大按鈕高度 */
+        background-color: #78bcc4;
+        color: white;
+        border-radius: 4px;
+        display: flex;
+        justify-content: center; /* 水平居中 */
+        align-items: center; /* 垂直居中 */
+      }
+
+      #menu-toggle::after {
+        content: "目錄"; /* 在按鈕內顯示 "目錄" */
+        font-size: 17px;
+        color: white; /* 設定字體顏色為白色 */
+        writing-mode: vertical-rl; /* 使文字垂直排列 */
+      }
+
+      #menu-toggle:hover {
+        background-color: #78bcc4;
+      }
+
+      /* 目錄內容 */
+      #menu-content {
+        padding: 0.5rem 1rem;
+        overflow-y: auto;
+        height: 100%;
+      }
+
+      #menu-content h4 {
+        font-weight: bold;
+        margin-top: 0;
+      }
+
+      #menu-list {
+        list-style: none;
+        padding: 0;
+      }
+
+      #menu-list li {
+        margin-bottom: 0.5rem;
+      }
+
+      #menu-list a {
+        color: #2a90a7;
+        text-decoration: none;
+        transition: color 0.3s;
+      }
+
+      #menu-list a:hover {
+        color: #78bcc4;
+      }
+
+      #menu-list .sub-item {
+        margin-left: 1.5rem; /* 調整縮排距離 */
+        font-size: 0.9rem; /* 可選：調整子項目字體大小 */
+      }
+
+      /* 目錄展開狀態 */
+      #expandable-menu.open {
+        transform: translateX(0);
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <div class="nav-left">
+        <div class="logo">
+          <a href="首頁.html">
+            <img src="網站Logo.png" alt="網站 Logo" />
+          </a>
+        </div>
+      </div>
+      <div class="nav-right">
+        <a href="首頁.html">關於我</a>
+        <div class="dropdown">
+          <a>亞洲旅遊</a>
+          <div class="dropdown-content">
+            <a href="中國.html">中國</a>
+            <a href="新加坡.html">新加坡</a>
+            <a href="馬來西亞.html">馬來西亞</a>
+            <a href="泰國.html">泰國</a>
+            <a href="印尼.html">印尼</a>
+            <a href="越南.html">越南</a>
+          </div>
+        </div>
+        <div class="dropdown">
+          <a>歐洲旅遊</a>
+          <div class="dropdown-content">
+            <a href="英國.html">英國</a>
+            <a href="法國.html">法國</a>
+            <a href="荷蘭.html">荷蘭</a>
+            <a href="比利時.html">比利時</a>
+            <a href="盧森堡.html">盧森堡</a>
+            <a href="瑞士.html">瑞士</a>
+            <a href="摩納哥.html">摩納哥</a>
+            <a href="西班牙.html">西班牙</a>
+            <a href="葡萄牙.html">葡萄牙</a>
+            <a href="安道爾.html">安道爾</a>
+            <a href="丹麥.html">丹麥</a>
+            <a href="瑞典.html">瑞典</a>
+            <a href="波蘭.html">波蘭</a>
+          </div>
+        </div>
+        <div class="dropdown">
+          <a>美洲旅遊</a>
+          <div class="dropdown-content">
+            <a href="美國.html">美國</a>
+            <a href="加拿大.html">加拿大</a>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <div class="intro-section">
+      <div class="left">
+        <h1>Tommy 在重慶</h1>
+        <h4>
+          <b>重慶</b>位於中國西南部，地處長江上游，歷史可追溯至公元前 11 世紀的巴國時期，秦朝時納入中國版圖，歷經漢、唐、宋等朝代發展繁榮，抗日戰爭期間，重慶因其戰略地位被定為國民政府陪都，並在戰火中展現堅韌精神，被譽為 “英雄之城”。
+        </h4>
+        <h4>如今重慶是中國四大直轄市之一，是西部地區的經濟、金融、交通與科技中心，吸引眾多高新技術產業與國際企業落戶。城市景觀融合山水與現代摩天大樓，獨特的山城地貌與立體交通讓它成為備受遊客喜愛的城市，也以麻辣火鍋聞名。</h4>
+      </div>
+      <div class="right">
+        <img src="中國照片\重慶\重慶_介紹.jpg" width="90%" height="350px" />
+      </div>
+    </div>
+
+    <div class="destination-section">
+      <div class="destination-main">
+        <h2>重慶交通</h2>
+        <h3>機場交通</h3>
+        <h4>
+          從重慶江北機場可以搭乘地鐵 10 號線進入重慶市區，車程大約 1 小時。
+        </h4>
+        <h3>市區交通</h3>
+        <h4>
+          重慶的地鐵基本上覆蓋了所有景點，是出行的首要選擇，<b>在所有車站都能用支付寶或微信支付購買單程票，或是直接使用乘車碼進站</b>。
+        </h4>
+        <img src="中國照片\重慶\重慶_交通.png" width="1000px" />
+        <br /><br />
+        <h2>重慶住宿</h2>
+        <h4>
+          在重慶選住宿推薦可以找<b>解放碑</b>附近的住宿，附近比較熱鬧吃東西的選擇也多，能夠更好的感受重慶的夜生活，要去其他景點附近也有地鐵站，交通比較方便。
+        </h4>
+        <img src="中國照片\重慶\重慶_住宿.png" width="1000px" />
+        <br /><br />
+        <h2>重慶景點</h2>
+        <h3>解放碑</h3>
+        <h4>
+          解放碑位於渝中區，是重慶最具代表性的地標，也是中國唯一的抗戰勝利紀念碑，始建於 1940 年，最初名為“精神堡壘”，1945 年抗戰勝利後更名為 “重慶解放碑”，象徵中國人民的抗戰勝利與民族解放。如今解放碑也是繁華的商業中心，周圍高樓林立聚集了眾多購物商場、餐飲娛樂場所，是重慶最熱鬧的商圈。
+        </h4>
+        <div style="text-align: center">
+          <img src="中國照片\重慶\CQ1.jpg" width="600px" />
+          <img src="中國照片\重慶\CQ2.jpg" width="600px" />
+        </div>
+        <br /><br /><br />
+        <h3>朝天門</h3>
+        <h4>
+          朝天門位於長江與嘉陵江交匯處，歷史可追溯至明清時期，曾是古重慶城九大城門之一，朝天門之名寓意 “朝迎天子命，天子自此出”，曾是水運貿易的重要樞紐，今已發展為繁華的旅遊與商業區，擁有朝天門廣場和著名的來福士廣場，融合現代建築與歷史文化，作為遊船碼頭，朝天門是長江遊輪的起點，夜晚燈光璀璨，可欣賞壯麗的兩江夜景，感受重慶獨特的山城魅力。
+        </h4>
+        <div style="text-align: center">
+          <img src="中國照片\重慶\CQ3.jpg" width="600px" />
+          <img src="中國照片\重慶\CQ4.jpg" width="800px" />
+          <img src="中國照片\重慶\CQ5.jpg" width="800px" />
+        </div>
+        <br /><br /><br />
+        <h3>18 梯</h3>
+        <h4>
+          18 梯是一條承載重慶老城記憶的歷史街區，因依山而建的十八級台階得名，曾是老重慶居民的生活聚集地，見證了城市的發展與變遷，融合了傳統與現代，保留了石板路、吊腳樓等老街風貌，同時引入文創商店、特色餐飲與藝術展覽，可以品味地道的重慶小吃，如麻花、涼糕，還能感受濃厚的市井風情，體驗老重慶的歷史與人文魅力。
+        </h4>
+        <div style="text-align: center">
+          <img src="中國照片\重慶\CQ6.jpg" width="600px" />
+          <img src="中國照片\重慶\CQ7.jpg" width="600px" />
+        </div>
+        <br /><br /><br />
+        <h3>重慶山城步道</h3>
+        <h4>
+          重慶山城步道是一條極具特色的城市步道，串聯起老街巷、石梯、小院與歷史建築，展現重慶獨特的山城風貌，步道沿途可見吊腳樓、纜車、索道等傳統元素，並設有觀景台，能俯瞰長江與嘉陵江交匯的壯麗景色，夜晚燈光點綴下的步道更添韻味，讓人沉浸於重慶獨有的山水城市魅力之中。
+        </h4>
+        <div style="text-align: center">
+          <img src="中國照片\重慶\CQ8.jpg" width="600px" />
+          <img src="中國照片\重慶\CQ9.jpg" width="600px" />
+          <img src="中國照片\重慶\CQ10.jpg" width="800px" />
+        </div>
+        <br /><br /><br />
+        <h3>洪崖洞</h3>
+        <h4>
+          洪崖洞地處長江與嘉陵江交匯處，是重慶最具代表性的旅遊地標，山而建的建築群保留了傳統的吊腳樓風格，展現了巴渝地區的獨特山城風貌，擁有多層立體結構，集美食、購物、娛樂與觀光於一體，夜晚的洪崖洞尤為迷人，燈火輝煌與江邊高樓形成強烈對比，被譽為 “重慶版千與千尋”，不僅是拍照打卡的熱門地點，也是品嚐重慶火鍋、小面等地道美食的好去處，還設有觀景平台，可俯瞰長江與城市夜景，感受重慶獨特的山城夜色與濃厚的市井氣息。
+        </h4>
+        <div style="text-align: center">
+          <img src="中國照片\重慶\CQ11.jpg" width="600px" />
+          <img src="中國照片\重慶\CQ12.jpg" width="600px" />
+          <img src="中國照片\重慶\CQ13.jpg" width="800px" />
+        </div>
+        <h4>在白天洪崖洞的城牆邊有許多文青咖啡廳，坐在城牆邊伴著江景享受咖啡與甜點也是不錯的選擇!</h4>
+        <div style="text-align: center">
+          <img src="中國照片\重慶\CQ14.jpg" width="600px" />
+          <img src="中國照片\重慶\CQ15.jpg" width="600px" />
+        </div>
+        <br /><br /><br />
+        <h3>千廝門大橋</h3>
+        <h4>
+          千廝門大橋橫跨嘉陵江，連接渝中區與江北區，於 2015 年建成通車，全長約 1.4 公里，採用斜拉橋設計造型獨特，與周圍的現代都市景觀相融合，站在橋上可以俯瞰嘉陵江的壯麗景色，遠眺洪崖洞、來福士廣場等著名地標，在橋上能將洪崖洞盡收眼底十分壯觀，特別是在夜晚橋身燈光與城市霓虹交相輝映，呈現出迷人的都市夜景，大橋還設有步行道，方便遊客步行欣賞山城風光。
+        </h4>
+        <div style="text-align: center">
+          <img src="中國照片\重慶\CQ16.jpg" width="600px" />
+          <img src="中國照片\重慶\CQ17.jpg" width="600px" />
+          <img src="中國照片\重慶\CQ18.jpg" width="800px" />
+        </div>
+        <br /><br /><br />
+        <h3>魁星樓</h3>
+        <h4>
+          魁星樓位於重慶市渝中區，因為短影音而爆紅，最出名的就是 "你以為你在一樓，實際上是在 22 樓"，巨大的落差彰顯了重慶作為魔幻 8D 山城的魅力，在魁星樓可以拍出各種神奇的影片，因引許多人來訪，其位於附二院的後方，需要先經過醫院門口並上去到上方的廣場便能抵達。
+        </h4>
+        <div style="text-align: center">
+          <img src="中國照片\重慶\CQ19.jpg" width="600px" />
+          <img src="中國照片\重慶\CQ20.jpg" width="600px" />
+        </div>
+        <br /><br /><br />
+        <h3>李子壩輕軌站</h3>
+        <h4>
+          李子壩輕軌站是重慶軌道交通2號線上的一座特色車站，以 “輕軌穿樓” 景觀聞名於世，車站建於一座高層居民樓內，列車從樓中穿過，形成獨特的山城交通奇觀，充分展現重慶獨特的立體城市結構與空間利用智慧，因其特殊設計吸引大量遊客前來拍照打卡，站內設有觀景平台，方便遊客近距離欣賞輕軌穿樓的震撼景象，夜間當列車燈光與城市霓虹交相輝映更添視覺魅力，象徵著重慶獨特的山城文化與城市發展智慧，親身感受 “立體重慶” 的獨特魅力。
+        </h4>
+        <div style="text-align: center">
+          <img src="中國照片\重慶\CQ21.jpg" width="600px" />
+          <img src="中國照片\重慶\CQ22.jpg" width="600px" />
+          <img src="中國照片\重慶\CQ23.jpg" width="600px" />
+        </div>
+        <br /><br /><br />
+        <h3>紅岩村地鐵站</h3>
+        <h4>
+          紅岩村地鐵站位於重慶市沙坪壩區，緊鄰著名的紅岩革命紀念地，其中站體的 4 號出口是大陸第一深全世界第二深的地鐵出口，單一出口深達 116 公尺，總共有 860 階階梯，出去出口總共要搭 7 段很長的手扶梯，會有種無限循環的錯覺，而紅岩村站本身總高差高達 142 公尺，建設的難度非常大，真的不愧是基建王國，有機會可以來朝聖。
+        </h4>
+        <div style="text-align: center">
+          <img src="中國照片\重慶\CQ24.jpg" width="600px" />
+          <img src="中國照片\重慶\CQ25.jpg" width="600px" />
+          <img src="中國照片\重慶\CQ26.jpg" width="600px" />
+          <img src="中國照片\重慶\CQ27.jpg" width="600px" />
+        </div>
+        <br /><br /><br />
+        <h3>兩路口皇冠大扶梯</h3>
+        <h4>
+          兩路口皇冠大扶梯位於渝中區，是中國第二長、亞洲第二長的單體扶梯，全長 112 米，高度達 52.7 米，連接重慶軌道交通 1 號線與 3 號線的兩路口站與臨華路，成為山城獨特的城市交通景觀，扶梯運行時間約 2 分 30 秒，極大地方便了市民與遊客往返於山城的高低落差之間。皇冠大扶梯於 1996 年投入使用，至今仍是重慶最具代表性的立體交通設施，獨特的設計與壯觀的視覺效果，使其成為熱門旅遊打卡地，被譽為 “山城交通奇觀”。
+        </h4>
+        <div style="text-align: center">
+          <img src="中國照片\重慶\CQ28.jpg" width="600px" />
+          <img src="中國照片\重慶\CQ29.jpg" width="600px" />
+        </div>
+        <br /><br /><br />
+        <h3>南山一棵樹</h3>
+        <h4>
+          南山一棵樹觀景台位於南岸區南山上，是俯瞰重慶夜景的最佳地點，因早年山上有一棵獨立的大樹而得名，站在觀景台上可一覽無遺地欣賞長江與嘉陵江交匯的壯麗景色，並將重慶繁華的渝中半島盡收眼底，白天可遠眺層層堆疊的城市建築，而入夜後萬家燈火與霓虹閃爍交織出璀璨的山城夜景，吸引無數攝影愛好者前來拍照打卡，感受“霓虹山城”的獨特魅力。
+        </h4>
+        <div style="text-align: center">
+          <img src="中國照片\重慶\CQ30.jpg" width="800px" />
+        </div>
+        <br /><br /><br />
+        <h3>南濱路公園</h3>
+        <h4>
+          南濱路公園沿長江岸線綿延數公里，融合了現代景觀設計與自然生態環境，擁有寬敞的步道、綠樹成蔭的休憩區以及多個觀景平台，可遠眺對岸的渝中半島與解放碑商圈，特別是夜幕降臨時霓虹閃爍倒映江面構成壯麗的重慶夜景。南濱路沿線匯聚了眾多特色餐廳與茶館，可以一邊品味地道重慶美食，一邊欣賞長江美景。
+        </h4>
+        <div style="text-align: center">
+          <img src="中國照片\重慶\CQ31.jpg" width="800px" />
+          <img src="中國照片\重慶\CQ32.jpg" width="800px" />
+          <img src="中國照片\重慶\CQ33.jpg" width="800px" />
+          <img src="中國照片\重慶\CQ34.jpg" width="800px" />
+        </div>
+        <br /><br /><br />
+        <h2>重慶美食</h2>
+        <h3>阿福板凳麵</h3>
+        <h4>
+          豌雜麵是四川的經典小吃，以香濃的豌豆醬與豐富的臟雜為特色，麵條通常選用手工製作的細麵，口感滑爽有彈性，豌豆經慢火熬煮至綿密，再與滷好的豬雜（如豬肝、豬腸等）搭配，湯底醇厚味道層次分明，吃起來既有豌豆的甘甜也有滷味的濃香，撒上蔥花和紅油更添風味。
+        </h4>
+        <div style="text-align: center">
+          <img src="中國照片\重慶\CQ35.jpg" width="600px" />
+        </div>
+        <br /><br /><br />
+        <h3>好又來酸辣粉</h3>
+        <h4>
+          好又來酸辣粉是重慶著名的小吃品牌，其酸辣粉選用紅薯粉製作，粉條滑嫩有彈性，搭配自家特製的酸辣湯底，湯色紅亮、香氣撲鼻配料豐富，常見有花生、黃豆、蔥花、醋、辣椒油和肉末等，口感層次多變，每一口都能感受到酸、辣、麻、香的完美結合。
+        </h4>
+        <div style="text-align: center">
+          <img src="中國照片\重慶\CQ36.jpg" width="600px" />
+        </div>
+      </div>
+      <div class="destination-sidebar">
+        <div class="sidebar-image-container">
+          <img src="側邊欄自我介紹.jpg" />
+        </div>
+        <h5>
+          Hi!
+          我是Tommy，我熱愛旅遊也喜歡藉由影像紀錄旅程中的點點滴滴，透過文字將我在旅途中的所見所聞分享給大家。旅行對我而言不只是吃吃喝喝，而是能在行萬里路間感受世界的脈動，體驗不同的文化，希望藉由我的分享能讓大家看到更多世界的美好。
+        </h5>
+        <br />
+        <h5>
+          想更了解我或與我聯絡:
+          <a
+            href="https://www.instagram.com/tommy_techvoyage/"
+            target="_blank"
+            style="color: inherit; text-decoration: underline"
+          >
+            <b>Instagram</b>
+          </a>
+        </h5>
+        <div class="recommendation-section">
+          <h3>其他中國旅遊目的地</h3>
+          <div class="recommendation-buttons">
+            <a href="上海.html">
+              <button><h5>上海</h5></button>
+            </a>
+            <a href="廣州.html">
+              <button><h5>廣州</h5></button>
+            </a>
+            <a href="長沙.html">
+              <button><h5>長沙</h5></button>
+            </a>
+            <a href="成都.html">
+              <button><h5>成都</h5></button>
+            </a>
+            <a href="桂林.html">
+              <button><h5>桂林</h5></button>
+            </a>
+            <a href="陽朔.html">
+              <button><h5>陽朔</h5></button>
+            </a>
+            <a href="汕頭南澳島.html">
+              <button><h5>汕頭南澳島</h5></button>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="contact-section">
+      <div class="contact-item">
+        <h3>
+          想更了解我或與我聯絡:
+          <a
+            href="https://www.instagram.com/tommy_techvoyage/"
+            target="_blank"
+            style="color: inherit; text-decoration: underline"
+          >
+            Instagram
+          </a>
+        </h3>
+      </div>
+    </div>
+    <footer>
+      <h6>COPYRIGHT © 2025 Tommy 看世界 All rights reserved.</h6>
+    </footer>
+    <div id="expandable-menu">
+      <div id="menu-toggle"></div>
+      <!-- 收闔按鈕 -->
+      <div id="menu-content">
+        <h4>目錄</h4>
+        <ul id="menu-list"></ul>
+      </div>
+    </div>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const menu = document.getElementById("expandable-menu");
+        const toggle = document.getElementById("menu-toggle");
+        const menuList = document.getElementById("menu-list");
+        const destinationMain = document.querySelector(".destination-main");
+
+        // 點擊按鈕切換目錄狀態
+        toggle.addEventListener("click", () => {
+          menu.classList.toggle("open");
+        });
+
+        // 從 destination-main 區域提取 h2 和 h3，動態生成目錄
+        const headings = destinationMain.querySelectorAll("h2, h3");
+        headings.forEach((heading, index) => {
+          // 確保每個 h2 和 h3 都有唯一的 id
+          if (!heading.id) {
+            heading.id = `heading-${index}`;
+          }
+
+          const listItem = document.createElement("li");
+          const link = document.createElement("a");
+          link.textContent = heading.textContent;
+          link.href = `#${heading.id}`;
+          listItem.appendChild(link);
+
+          // 為 h3 添加縮排樣式
+          if (heading.tagName.toLowerCase() === "h3") {
+            listItem.classList.add("sub-item");
+          }
+
+          menuList.appendChild(listItem);
+        });
+
+        // 滾動至目標位置並加上 75px 偏移
+        menuList.addEventListener("click", (event) => {
+          if (event.target.tagName === "A") {
+            event.preventDefault(); // 阻止預設行為
+
+            const targetId = event.target.getAttribute("href").substring(1); // 取得目標 ID
+            const targetElement = document.getElementById(targetId);
+
+            if (targetElement) {
+              // 計算目標元素的位置並加上 75px 偏移
+              const targetPosition =
+                targetElement.getBoundingClientRect().top + window.scrollY;
+              const offset = 75; // 偏移的距離
+              window.scrollTo({
+                top: targetPosition - offset,
+                behavior: "smooth", // 平滑滾動
+              });
+            }
+          }
+        });
+      });
+    </script>
+  </body>
+</html>

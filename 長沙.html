@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<html lang="zh-hant-TW">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="曹旅瀚 Tommy" />
+    <meta name="description" content="探索長沙的魅力！走訪這座融合歷史、文化與現代氣息的城市，品嚐獨特的湘菜，了解岳麓山與橘子洲的歷史，體驗充滿活力的城市生活。" />
+    <meta name="keywords" content="長沙旅遊, 長沙景點, 長沙美食, 湘菜, 岳麓山, 橘子洲, 長沙自由行, 湖南旅遊, 長沙文化, 長沙歷史" />
+    <title>Tommy 看世界 - 長沙</title>
+    <link rel="icon" href="網頁縮圖.ico" />
+    <style>
+      body {
+        font-family: Calibri, Arial, sans-serif; /* 首選 Calibri，次選 Arial */
+        margin: 0;
+        padding: 0;
+        overflow-x: hidden; /* 禁止水平滾動 */
+        background-color: #f4f4f9;
+        color: #333;
+      }
+
+      h1 {
+        font-size: 40px;
+        font-weight: bold;
+      }
+
+      h2 {
+        font-size: 32px;
+        font-weight: bold;
+        color: #2a90a7;
+        display: inline-block;
+        margin-bottom: 1rem; /* 縮小 h2 的底部邊距 */
+        background-color: #cee5e8;
+      }
+
+      h3 {
+        font-size: 26px;
+        margin: 0 0 1rem;
+        font-weight: bold;
+        text-decoration: underline; /* 加上底線 */
+      }
+
+      h4 {
+        font-size: 18px;
+        font-weight: normal;
+        line-height: 1.8;
+      }
+
+      h5 {
+        font-size: 16px;
+        font-weight: normal;
+        margin: 0;
+      }
+
+      h6 {
+        font-size: 10px;
+        color: #fff;
+        margin: 0;
+        text-align: center;
+        line-height: 50px; /* 高度對齊 */
+      }
+
+      nav {
+        background-color: #78bcc4;
+        display: flex;
+        justify-content: space-between; /* 保持分佈在兩側 */
+        width: calc(100% - 10rem); /* 與其他內容的邊界一致 */
+        padding: 0.5rem 5rem; /* 主導覽列的 padding 設置 */
+        position: fixed;
+        top: 0;
+        z-index: 1000;
+      }
+
+      .nav-left .logo img {
+        height: 50px; /* 控制 Logo 圖片的高度 */
+        transform: translateX(-1.5rem); /* 向右移動 2rem */
+      }
+
+      .nav-right {
+        display: flex;
+        align-items: center;
+        transform: translateX(2rem); /* 向右移動 2rem */
+      }
+
+      nav a {
+        color: #eff5f5;
+        text-decoration: none;
+        padding: 0.5rem 1rem;
+        margin: 0 0.5rem;
+        transition: transform 0.3s;
+      }
+
+      nav a:hover {
+        transform: translateY(-3px);
+      }
+
+      .dropdown {
+        position: relative;
+      }
+
+      .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #78bcc4;
+        min-width: 160px;
+        border-radius: 4px;
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        padding: 0.2rem 0;
+      }
+
+      .dropdown-content a {
+        color: #eff5f5;
+        display: block;
+        transition: transform 0.3s;
+        border-bottom: 1px solid #ddd;
+      }
+
+      .dropdown-content a:last-child {
+        border-bottom: none;
+      }
+
+      .dropdown-content a:hover {
+        transform: translateY(-3px);
+      }
+
+      .dropdown:hover .dropdown-content {
+        display: block;
+      }
+
+      .intro-section {
+        background-color: #eff5f5;
+        display: flex;
+        padding: 2rem;
+        margin-top: 60px; /* 根據導航列高度調整 */
+        justify-content: space-between;
+        align-items: flex-start;
+        width: 100%;
+        box-sizing: border-box; /* 包含 padding 在內 */
+        padding-left: 5rem;
+        padding-right: 5rem;
+      }
+
+      .intro-section h4 {
+        max-width: 700px;
+      }
+
+      .intro-section .left {
+        width: 60%;
+      }
+
+      .intro-section .right {
+        width: 40%;
+      }
+
+      .destination-section {
+        display: flex;
+        padding: 1rem 5%; /* 左右內間距為螢幕的10% */
+        background-color: white;
+      }
+
+      .destination-main {
+        width: 75%;
+        margin-right: 1.5rem; /* 增加右邊外邊距 */
+      }
+
+      .destination-sidebar {
+        width: 25%;
+        padding-left: 1.5rem; /* 增加左側內邊距 */
+        margin-top: 2rem; /* 向上或向下調整，負值表示向上 */
+      }
+
+      .sidebar-image-container {
+        margin-bottom: 1rem;
+        text-align: center; /* 確保圖片置中 */
+      }
+
+      .sidebar-image-container img {
+        height: 300px; /* 設置直式圖片的高度 */
+      }
+
+      .two-vertical-images {
+        display: flex; /* 彈性佈局，讓圖片並排 */
+        justify-content: space-between; /* 兩張圖片均勻分佈 */
+        gap: 2rem; /* 圖片之間的間距 */
+        margin-top: 2rem;
+        margin-bottom: 2rem; /* 與下方內容的距離 */
+      }
+
+      .two-vertical-images img {
+        width: calc(50% - 0.5rem); /* 每張圖片佔用容器的一半減去間距 */
+        text-align: center; /* 確保圖片置中 */
+        height: auto; /* 保持圖片的直式比例 */
+        object-fit: cover; /* 確保圖片內容適應容器 */
+      }
+
+      .recommendation-section {
+        margin-top: 1.5rem; /* 與上方文字的間距 */
+        text-align: center;
+        position: sticky;
+        top: 80px; /* 空出導覽列的高度，確保推薦區不被覆蓋 */
+        z-index: 10; /* 提高層級，避免被其他內容遮蓋 */
+      }
+
+      .recommendation-section h3 {
+        font-size: 18px;
+        font-weight: bold;
+        margin-bottom: 0.5rem; /* 與按鈕區的距離 */
+      }
+
+      .recommendation-buttons {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 0.5rem; /* 按鈕之間的間距 */
+      }
+
+      .recommendation-buttons button {
+        padding: 0.5rem 1rem;
+        font-size: 14px;
+        color: white;
+        background-color: #78bcc4;
+        border: none;
+        border-radius: 4px;
+        transition: transform 0.3s;
+        font-family: Arial, sans-serif;
+      }
+
+      .recommendation-buttons button:hover {
+        transform: translateY(-3px);
+      }
+
+      .contact-section {
+        padding: 2rem 5rem; /* 上下與左右間距 */
+        background-color: #eff5f5; /* 淺灰背景 */
+        text-align: center; /* 確保內容置中對齊 */
+      }
+
+      .contact-item h3 {
+        font-size: 18px; /* 調整標題字體大小 */
+        margin: 0; /* 移除多餘的間距 */
+        text-decoration: none; /* 移除底線 */
+      }
+
+      footer {
+        background-color: #000;
+        color: white;
+        height: 30px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      #expandable-menu {
+        position: fixed;
+        top: 70px; /* 與螢幕頂部的距離設為 60px */
+        right: 0;
+        height: calc(100% - 70px); /* 高度減去 60px，避免超出視窗 */
+        width: 395px; /* 目錄寬度與 sidebar 齊寬 */
+        transform: translateX(100%); /* 初始狀態：隱藏在右側 */
+        transition: transform 0.3s ease;
+        background-color: #f4f4f9; /* 與網站背景一致 */
+        z-index: 1000;
+      }
+
+      /* 收闔按鈕 */
+      #menu-toggle {
+        position: absolute;
+        top: 45%;
+        left: -40px; /* 調整按鈕的位置，適應按鈕變大後的寬度 */
+        transform: translateY(-50%);
+        width: 40px; /* 增大按鈕寬度 */
+        height: 80px; /* 增大按鈕高度 */
+        background-color: #78bcc4;
+        color: white;
+        border-radius: 4px;
+        display: flex;
+        justify-content: center; /* 水平居中 */
+        align-items: center; /* 垂直居中 */
+      }
+
+      #menu-toggle::after {
+        content: "目錄"; /* 在按鈕內顯示 "目錄" */
+        font-size: 17px;
+        color: white; /* 設定字體顏色為白色 */
+        writing-mode: vertical-rl; /* 使文字垂直排列 */
+      }
+
+      #menu-toggle:hover {
+        background-color: #78bcc4;
+      }
+
+      /* 目錄內容 */
+      #menu-content {
+        padding: 0.5rem 1rem;
+        overflow-y: auto;
+        height: 100%;
+      }
+
+      #menu-content h4 {
+        font-weight: bold;
+        margin-top: 0;
+      }
+
+      #menu-list {
+        list-style: none;
+        padding: 0;
+      }
+
+      #menu-list li {
+        margin-bottom: 0.5rem;
+      }
+
+      #menu-list a {
+        color: #2a90a7;
+        text-decoration: none;
+        transition: color 0.3s;
+      }
+
+      #menu-list a:hover {
+        color: #78bcc4;
+      }
+
+      #menu-list .sub-item {
+        margin-left: 1.5rem; /* 調整縮排距離 */
+        font-size: 0.9rem; /* 可選：調整子項目字體大小 */
+      }
+
+      /* 目錄展開狀態 */
+      #expandable-menu.open {
+        transform: translateX(0);
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <div class="nav-left">
+        <div class="logo">
+          <a href="首頁.html">
+            <img src="網站Logo.png" alt="網站 Logo" />
+          </a>
+        </div>
+      </div>
+      <div class="nav-right">
+        <a href="首頁.html">關於我</a>
+        <div class="dropdown">
+          <a>亞洲旅遊</a>
+          <div class="dropdown-content">
+            <a href="中國.html">中國</a>
+            <a href="新加坡.html">新加坡</a>
+            <a href="馬來西亞.html">馬來西亞</a>
+            <a href="泰國.html">泰國</a>
+            <a href="印尼.html">印尼</a>
+            <a href="越南.html">越南</a>
+          </div>
+        </div>
+        <div class="dropdown">
+          <a>歐洲旅遊</a>
+          <div class="dropdown-content">
+            <a href="英國.html">英國</a>
+            <a href="法國.html">法國</a>
+            <a href="荷蘭.html">荷蘭</a>
+            <a href="比利時.html">比利時</a>
+            <a href="盧森堡.html">盧森堡</a>
+            <a href="瑞士.html">瑞士</a>
+            <a href="摩納哥.html">摩納哥</a>
+            <a href="西班牙.html">西班牙</a>
+            <a href="葡萄牙.html">葡萄牙</a>
+            <a href="安道爾.html">安道爾</a>
+            <a href="丹麥.html">丹麥</a>
+            <a href="瑞典.html">瑞典</a>
+            <a href="波蘭.html">波蘭</a>
+          </div>
+        </div>
+        <div class="dropdown">
+          <a>美洲旅遊</a>
+          <div class="dropdown-content">
+            <a href="美國.html">美國</a>
+            <a href="加拿大.html">加拿大</a>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <div class="intro-section">
+      <div class="left">
+        <h1>Tommy 在長沙</h1>
+        <h4>
+          <b>長沙</b>是湖南省省會，位於湘東北的湘江下游，是中國中部重要的城市，有兩千多年的歷史，秦代始設長沙郡，西漢建立長沙國，近代則成為了中國一大維新與革命運動中心。如今長沙擁有以工程機械、新材料為主的產業鏈，被譽為"世界工程機械之都"，傳媒、出版產業亦頗為突出，被聯合國教科文組織評為中國首個世界"媒體藝術之都"。
+        </h4>
+      </div>
+      <div class="right">
+        <img src="中國照片\長沙\長沙_介紹.jpg" width="90%" height="350px" />
+      </div>
+    </div>
+
+    <div class="destination-section">
+      <div class="destination-main">
+        <h2>長沙交通</h2>
+        <h3>機場交通</h3>
+        <h4>
+          長沙黃花機場有地鐵 6 號線通往市區，車程大約 1 小時，也有 20 分鐘車程磁浮列車直達長沙南站，算是非常方便。
+        </h4>
+        <h3>市區交通</h3>
+        <h4>
+          長沙的地鐵基本上覆蓋了除了橘子洲頭以外的所有景點，是出行的首要選擇，<b>在所有車站都能用微信支付寶購買單程票或掃碼進站</b>，另外在長沙這種二線城市打車也不會到非常貴，但上下班尖峰時段非常塞要注意避開。
+        </h4>
+        <img src="中國照片\長沙\長沙_交通.png" width="1000px" />
+        <br /><br />
+        <h2>長沙住宿</h2>
+        <h4>
+          從下圖可以看出大部分的景點都分佈在五一廣場附近，所以推薦可以住在<b>五一廣場一帶或附近沿線 (1、2 號線) 的地鐵站</b>，會省下打車跟走路的麻煩，在內陸城市不用很貴就能住到設備算新穎的星級酒店，非常推薦。
+        </h4>
+        <img src="中國照片\長沙\長沙_住宿.png" width="1000px" />
+        <br /><br />
+        <h2>長沙景點</h2>
+        <h3>太平老街</h3>
+        <h4>
+          太平老街充滿小吃和景點的街道，以南北走向的主街為中心，東西分岔的小巷子裡也有一些熙熙攘攘的商店，有賣小紀念品和銀工藝品的商店，還有臭豆腐、烤串和奶茶等，也有不少地方賣小龍蝦，算是當地的特色食品，在此可以感受湖南風情。這條街有限制車輛進入，但還是有許多電動摩托穿梭人群間，逛街時要特別注意。
+        </h4>
+        <div style="text-align: center">
+          <img src="中國照片\長沙\長沙1.jpg" width="600px" />
+          <img src="中國照片\長沙\長沙2.jpg" width="600px" />
+        </div>
+        <br /><br /><br />
+        <h3>長沙國際金融中心</h3>
+        <h4>
+          長沙國際金融中心是當地最重要的金融和商業地標，主樓高度達 80 層 320 米，是湖南省第二高的建築物，地上部分主要由幾座辦公大樓和商場組成，地下則設有大型停車場和地鐵站。長沙國際金融中心的建築採用了非常現代化的設計風格，外觀為玻璃幕牆造型，展現極具科技感和國際化氛圍的形象。
+        </h4>
+        <h4>
+          長沙國際金融中心還擁有先進的智能管理系統和豐富的商業配套設施，商場部分集合了許多奢侈品品牌，還設有餐飲、娛樂、健身等配套設施，入駐這裡的多是大型企業和金融機構的區域總部，有利於促進區域經濟發展。
+        </h4>
+        <div style="text-align: center">
+          <img src="中國照片\長沙\長沙3.jpg" width="600px" />
+        </div>
+        <h4>在商場頂樓的兩個巨型公仔算是這區的地標，一定要上來拍照!</h4>
+        <div style="text-align: center">
+          <img src="中國照片\長沙\長沙4.jpg" width="800px" />
+        </div>
+        <br /><br /><br />
+        <h3>五一廣場</h3>
+        <h4>
+          五一廣場是為紀念五一勞動節而建造的公共休憩場所，占地面積約 4.5 萬平方米，是長沙市最大的公園式廣場，廣場中央有一座華美宏大的勞動之塔，高 55 米，代表了勞動階級的偉大地位。五一廣場也是重要的文化藝術活動中心，每逢重大節日，這裡都會舉辦各種文藝演出、遊藝活動，每到周末也會有各種形式的街頭表演、讀書會等內容在這裡進行。
+        </h4>
+        <h4>五一廣場也是長沙市的重要商業區，周邊有大量的商舖和娛樂設施包括商場、餐廳、酒吧等，更是不夜城的代表，周末半夜到凌晨街上還是燈火通明充滿了人潮，喜歡夜生活的人千萬不能錯過!</h4>
+        <div style="text-align: center">
+          <img src="中國照片\長沙\長沙5.jpg" width="600px" />
+          <img src="中國照片\長沙\長沙6.jpg" width="600px" />
+        </div>
+        <br /><br /><br />
+        <h3>毛澤東青年藝術雕塑</h3>
+        <h4>
+          坐落於長沙橘子洲頭的毛澤東青年藝術雕塑，是紅色之洲的代表作，以 1925 年青年時期毛澤東形象為藝術原型，突出表現偉人青年時代胸懷大志、風華正茂的氣概。毛澤東青年藝術雕塑高 32 米，由 8000 多塊採自福建高山的永定紅花崗岩石拼接而成，是長沙的地標。要注意的是橘子洲頭交通不便 (只能坐地鐵 2 號縣道橘子洲站再步行前往) 而且觀光客眾多，上島常常需要好幾個小時，且幾乎沒有遮蔭，要衡量自己的時間與體力。
+        </h4>
+        <div style="text-align: center">
+          <img src="中國照片\長沙\長沙7.jpg" width="600px" />
+        </div>
+        <br /><br />
+        <h2>長沙美食</h2>
+        <h3>黑色經典臭豆腐</h3>
+        <h4>
+          黑色經典是臭豆腐連鎖品牌，現有 500 間加盟店。黑色經典臭豆腐名副其實是黑色，原因是在滷豆腐時加入墨魚汁，這種作法盛行於湖南長沙，豆腐先在工場完成擠壓、滷煮的程序，入真空袋後直送店中，客人點餐了才即時將臭豆腐炸熱，炸好後要在每件豆腐中央戳一個小孔，放入辣椒醬及淋上湯便完成。每塊豆腐都是一口大小，外層脆卻又吸收了湯的鮮味，入口不臭，反而因為加了辣椒醬更香了。
+        </h4>
+        <div style="text-align: center">
+          <img src="中國照片\長沙\長沙8.jpg" width="600px" />
+        </div>
+        <br /><br /><br />
+        <h3>茶顏悅色</h3>
+        <h4>
+          茶顏悅色是長沙的一個中式古風茶飲品牌，在長沙大概每個十字路口都至少會有一家，可見其風靡程度，製作茶飲時強調"中茶西做"，在形象上茶顏悅色的商標圖、飲料名稱、包裝、店鋪裝修等都體現了傳統的中國古典風格，最出名的幽蘭拿鐵是在奶茶上加了鮮奶油及榛果，讓人忍不住想一喝再喝，臨上高鐵前都要衝去買一杯。!
+        </h4>
+        <div style="text-align: center">
+          <img src="中國照片\長沙\長沙9.jpg" width="600px" />
+        </div>
+        <br /><br /><br />
+        <h3>炊煙小炒黃牛肉</h3>
+        <h4>
+          終於吃到最正統的湘菜了! 這家號稱是走入聯合國的湘菜，在大陸也有20多家分店，經典的小炒黃牛肉辣中帶香，超級下飯，讓人忍不住一口接一口，辣椒炒肉跟手撕包菜也都味道十足。湘菜系口味偏重，算是重油重鹹又很辣，要稍微著一下腸胃狀況不然很容易適應不良。
+        </h4>
+        <div style="text-align: center">
+          <img src="中國照片\長沙\長沙10.jpg" width="800px" />
+        </div>
+        <div class="two-vertical-images">
+          <img src="中國照片\長沙\長沙11-1.jpg" />
+          <img src="中國照片\長沙\長沙11-2.jpg" />
+        </div>
+        <br />
+      </div>
+      <div class="destination-sidebar">
+        <div class="sidebar-image-container">
+          <img src="側邊欄自我介紹.jpg" />
+        </div>
+        <h5>
+          Hi!
+          我是Tommy，我熱愛旅遊也喜歡藉由影像紀錄旅程中的點點滴滴，透過文字將我在旅途中的所見所聞分享給大家。旅行對我而言不只是吃吃喝喝，而是能在行萬里路間感受世界的脈動，體驗不同的文化，希望藉由我的分享能讓大家看到更多世界的美好。
+        </h5>
+        <br />
+        <h5>
+          想更了解我或與我聯絡:
+          <a
+            href="https://www.instagram.com/tommy_techvoyage/"
+            target="_blank"
+            style="color: inherit; text-decoration: underline"
+          >
+            <b>Instagram</b>
+          </a>
+        </h5>
+        <div class="recommendation-section">
+          <h3>其他中國旅遊目的地</h3>
+          <div class="recommendation-buttons">
+            <a href="上海.html">
+              <button><h5>上海</h5></button>
+            </a>
+            <a href="廣州.html">
+              <button><h5>廣州</h5></button>
+            </a>
+            <a href="成都.html">
+              <button><h5>成都</h5></button>
+            </a>
+            <a href="重慶.html">
+              <button><h5>重慶</h5></button>
+            </a>
+            <a href="桂林.html">
+              <button><h5>桂林</h5></button>
+            </a>
+            <a href="陽朔.html">
+              <button><h5>陽朔</h5></button>
+            </a>
+            <a href="汕頭南澳島.html">
+              <button><h5>汕頭南澳島</h5></button>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="contact-section">
+      <div class="contact-item">
+        <h3>
+          想更了解我或與我聯絡:
+          <a
+            href="https://www.instagram.com/tommy_techvoyage/"
+            target="_blank"
+            style="color: inherit; text-decoration: underline"
+          >
+            Instagram
+          </a>
+        </h3>
+      </div>
+    </div>
+    <footer>
+      <h6>COPYRIGHT © 2025 Tommy 看世界 All rights reserved.</h6>
+    </footer>
+    <div id="expandable-menu">
+      <div id="menu-toggle"></div>
+      <!-- 收闔按鈕 -->
+      <div id="menu-content">
+        <h4>目錄</h4>
+        <ul id="menu-list"></ul>
+      </div>
+    </div>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const menu = document.getElementById("expandable-menu");
+        const toggle = document.getElementById("menu-toggle");
+        const menuList = document.getElementById("menu-list");
+        const destinationMain = document.querySelector(".destination-main");
+
+        // 點擊按鈕切換目錄狀態
+        toggle.addEventListener("click", () => {
+          menu.classList.toggle("open");
+        });
+
+        // 從 destination-main 區域提取 h2 和 h3，動態生成目錄
+        const headings = destinationMain.querySelectorAll("h2, h3");
+        headings.forEach((heading, index) => {
+          // 確保每個 h2 和 h3 都有唯一的 id
+          if (!heading.id) {
+            heading.id = `heading-${index}`;
+          }
+
+          const listItem = document.createElement("li");
+          const link = document.createElement("a");
+          link.textContent = heading.textContent;
+          link.href = `#${heading.id}`;
+          listItem.appendChild(link);
+
+          // 為 h3 添加縮排樣式
+          if (heading.tagName.toLowerCase() === "h3") {
+            listItem.classList.add("sub-item");
+          }
+
+          menuList.appendChild(listItem);
+        });
+
+        // 滾動至目標位置並加上 75px 偏移
+        menuList.addEventListener("click", (event) => {
+          if (event.target.tagName === "A") {
+            event.preventDefault(); // 阻止預設行為
+
+            const targetId = event.target.getAttribute("href").substring(1); // 取得目標 ID
+            const targetElement = document.getElementById(targetId);
+
+            if (targetElement) {
+              // 計算目標元素的位置並加上 75px 偏移
+              const targetPosition =
+                targetElement.getBoundingClientRect().top + window.scrollY;
+              const offset = 75; // 偏移的距離
+              window.scrollTo({
+                top: targetPosition - offset,
+                behavior: "smooth", // 平滑滾動
+              });
+            }
+          }
+        });
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="zh-hant-TW">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="曹旅瀚 Tommy" />
+    <meta name="description" content="探索魁北克城的法國風情與歷史魅力！從壯觀的古城牆到美麗的舊城區，體驗這座充滿歐洲氛圍的加拿大城市，享受每個季節的獨特景觀與文化活動。" />
+    <meta name="keywords" content="魁北克城旅遊, 魁北克城景點, 魁北克城古城牆, 魁北克城舊城區, 魁北克城自由行, 魁北克城美食, 魁北克城冬季旅遊, 魁北克城節慶, 魁北克城歷史, 魁北克城文化" />
+    <title>Tommy 看世界 - 魁北克城</title>
+    <link rel="icon" href="網頁縮圖.ico" />
+    <style>
+      body {
+        font-family: Calibri, Arial, sans-serif; /* 首選 Calibri，次選 Arial */
+        margin: 0;
+        padding: 0;
+        overflow-x: hidden; /* 禁止水平滾動 */
+        background-color: #f4f4f9;
+        color: #333;
+      }
+
+      h1 {
+        font-size: 40px;
+        font-weight: bold;
+      }
+
+      h2 {
+        font-size: 32px;
+        font-weight: bold;
+        color: #2a90a7;
+        display: inline-block;
+        margin-bottom: 1rem; /* 縮小 h2 的底部邊距 */
+        background-color: #cee5e8;
+      }
+
+      h3 {
+        font-size: 26px;
+        margin: 0 0 1rem;
+        font-weight: bold;
+        text-decoration: underline; /* 加上底線 */
+      }
+
+      h4 {
+        font-size: 18px;
+        font-weight: normal;
+        line-height: 1.8;
+      }
+
+      h5 {
+        font-size: 16px;
+        font-weight: normal;
+        margin: 0;
+      }
+
+      h6 {
+        font-size: 10px;
+        color: #fff;
+        margin: 0;
+        text-align: center;
+        line-height: 50px; /* 高度對齊 */
+      }
+
+      nav {
+        background-color: #78bcc4;
+        display: flex;
+        justify-content: space-between; /* 保持分佈在兩側 */
+        width: calc(100% - 10rem); /* 與其他內容的邊界一致 */
+        padding: 0.5rem 5rem; /* 主導覽列的 padding 設置 */
+        position: fixed;
+        top: 0;
+        z-index: 1000;
+      }
+
+      .nav-left .logo img {
+        height: 50px; /* 控制 Logo 圖片的高度 */
+        transform: translateX(-1.5rem); /* 向右移動 2rem */
+      }
+
+      .nav-right {
+        display: flex;
+        align-items: center;
+        transform: translateX(2rem); /* 向右移動 2rem */
+      }
+
+      nav a {
+        color: #eff5f5;
+        text-decoration: none;
+        padding: 0.5rem 1rem;
+        margin: 0 0.5rem;
+        transition: transform 0.3s;
+      }
+
+      nav a:hover {
+        transform: translateY(-3px);
+      }
+
+      .dropdown {
+        position: relative;
+      }
+
+      .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #78bcc4;
+        min-width: 160px;
+        border-radius: 4px;
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        padding: 0.2rem 0;
+      }
+
+      .dropdown-content a {
+        color: #eff5f5;
+        display: block;
+        transition: transform 0.3s;
+        border-bottom: 1px solid #ddd;
+      }
+
+      .dropdown-content a:last-child {
+        border-bottom: none;
+      }
+
+      .dropdown-content a:hover {
+        transform: translateY(-3px);
+      }
+
+      .dropdown:hover .dropdown-content {
+        display: block;
+      }
+
+      .intro-section {
+        background-color: #eff5f5;
+        display: flex;
+        padding: 2rem;
+        margin-top: 60px; /* 根據導航列高度調整 */
+        justify-content: space-between;
+        align-items: flex-start;
+        width: 100%;
+        box-sizing: border-box; /* 包含 padding 在內 */
+        padding-left: 5rem;
+        padding-right: 5rem;
+      }
+
+      .intro-section h4 {
+        max-width: 700px;
+      }
+
+      .intro-section .left {
+        width: 60%;
+      }
+
+      .intro-section .right {
+        width: 40%;
+      }
+
+      .destination-section {
+        display: flex;
+        padding: 1rem 5%; /* 左右內間距為螢幕的10% */
+        background-color: white;
+      }
+
+      .destination-main {
+        width: 75%;
+        margin-right: 1.5rem; /* 增加右邊外邊距 */
+      }
+
+      .destination-sidebar {
+        width: 25%;
+        padding-left: 1.5rem; /* 增加左側內邊距 */
+        margin-top: 2rem; /* 向上或向下調整，負值表示向上 */
+      }
+
+      .sidebar-image-container {
+        margin-bottom: 1rem;
+        text-align: center; /* 確保圖片置中 */
+      }
+
+      .sidebar-image-container img {
+        height: 300px; /* 設置直式圖片的高度 */
+      }
+
+      .two-vertical-images {
+        display: flex; /* 彈性佈局，讓圖片並排 */
+        justify-content: space-between; /* 兩張圖片均勻分佈 */
+        gap: 2rem; /* 圖片之間的間距 */
+        margin-top: 2rem;
+        margin-bottom: 2rem; /* 與下方內容的距離 */
+      }
+
+      .two-vertical-images img {
+        width: calc(50% - 0.5rem); /* 每張圖片佔用容器的一半減去間距 */
+        text-align: center; /* 確保圖片置中 */
+        height: auto; /* 保持圖片的直式比例 */
+        object-fit: cover; /* 確保圖片內容適應容器 */
+      }
+
+      .recommendation-section {
+        margin-top: 1.5rem; /* 與上方文字的間距 */
+        text-align: center;
+        position: sticky;
+        top: 80px; /* 空出導覽列的高度，確保推薦區不被覆蓋 */
+        z-index: 10; /* 提高層級，避免被其他內容遮蓋 */
+      }
+
+      .recommendation-section h3 {
+        font-size: 18px;
+        font-weight: bold;
+        margin-bottom: 0.5rem; /* 與按鈕區的距離 */
+      }
+
+      .recommendation-buttons {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 0.5rem; /* 按鈕之間的間距 */
+      }
+
+      .recommendation-buttons button {
+        padding: 0.5rem 1rem;
+        font-size: 14px;
+        color: white;
+        background-color: #78bcc4;
+        border: none;
+        border-radius: 4px;
+        transition: transform 0.3s;
+        font-family: Arial, sans-serif;
+      }
+
+      .recommendation-buttons button:hover {
+        transform: translateY(-3px);
+      }
+
+      .contact-section {
+        padding: 2rem 5rem; /* 上下與左右間距 */
+        background-color: #eff5f5; /* 淺灰背景 */
+        text-align: center; /* 確保內容置中對齊 */
+      }
+
+      .contact-item h3 {
+        font-size: 18px; /* 調整標題字體大小 */
+        margin: 0; /* 移除多餘的間距 */
+        text-decoration: none; /* 移除底線 */
+      }
+
+      footer {
+        background-color: #000;
+        color: white;
+        height: 30px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      #expandable-menu {
+        position: fixed;
+        top: 70px; /* 與螢幕頂部的距離設為 60px */
+        right: 0;
+        height: calc(100% - 70px); /* 高度減去 60px，避免超出視窗 */
+        width: 395px; /* 目錄寬度與 sidebar 齊寬 */
+        transform: translateX(100%); /* 初始狀態：隱藏在右側 */
+        transition: transform 0.3s ease;
+        background-color: #f4f4f9; /* 與網站背景一致 */
+        z-index: 1000;
+      }
+
+      /* 收闔按鈕 */
+      #menu-toggle {
+        position: absolute;
+        top: 45%;
+        left: -40px; /* 調整按鈕的位置，適應按鈕變大後的寬度 */
+        transform: translateY(-50%);
+        width: 40px; /* 增大按鈕寬度 */
+        height: 80px; /* 增大按鈕高度 */
+        background-color: #78bcc4;
+        color: white;
+        border-radius: 4px;
+        display: flex;
+        justify-content: center; /* 水平居中 */
+        align-items: center; /* 垂直居中 */
+      }
+
+      #menu-toggle::after {
+        content: "目錄"; /* 在按鈕內顯示 "目錄" */
+        font-size: 17px;
+        color: white; /* 設定字體顏色為白色 */
+        writing-mode: vertical-rl; /* 使文字垂直排列 */
+      }
+
+      #menu-toggle:hover {
+        background-color: #78bcc4;
+      }
+
+      /* 目錄內容 */
+      #menu-content {
+        padding: 0.5rem 1rem;
+        overflow-y: auto;
+        height: 100%;
+      }
+
+      #menu-content h4 {
+        font-weight: bold;
+        margin-top: 0;
+      }
+
+      #menu-list {
+        list-style: none;
+        padding: 0;
+      }
+
+      #menu-list li {
+        margin-bottom: 0.5rem;
+      }
+
+      #menu-list a {
+        color: #2a90a7;
+        text-decoration: none;
+        transition: color 0.3s;
+      }
+
+      #menu-list a:hover {
+        color: #78bcc4;
+      }
+
+      #menu-list .sub-item {
+        margin-left: 1.5rem; /* 調整縮排距離 */
+        font-size: 0.9rem; /* 可選：調整子項目字體大小 */
+      }
+
+      /* 目錄展開狀態 */
+      #expandable-menu.open {
+        transform: translateX(0);
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <div class="nav-left">
+        <div class="logo">
+          <a href="首頁.html">
+            <img src="網站Logo.png" alt="網站 Logo" />
+          </a>
+        </div>
+      </div>
+      <div class="nav-right">
+        <a href="首頁.html">關於我</a>
+        <div class="dropdown">
+          <a>亞洲旅遊</a>
+          <div class="dropdown-content">
+            <a href="中國.html">中國</a>
+            <a href="新加坡.html">新加坡</a>
+            <a href="馬來西亞.html">馬來西亞</a>
+            <a href="泰國.html">泰國</a>
+            <a href="印尼.html">印尼</a>
+            <a href="越南.html">越南</a>
+          </div>
+        </div>
+        <div class="dropdown">
+          <a>歐洲旅遊</a>
+          <div class="dropdown-content">
+            <a href="英國.html">英國</a>
+            <a href="法國.html">法國</a>
+            <a href="荷蘭.html">荷蘭</a>
+            <a href="比利時.html">比利時</a>
+            <a href="盧森堡.html">盧森堡</a>
+            <a href="瑞士.html">瑞士</a>
+            <a href="摩納哥.html">摩納哥</a>
+            <a href="西班牙.html">西班牙</a>
+            <a href="葡萄牙.html">葡萄牙</a>
+            <a href="安道爾.html">安道爾</a>
+            <a href="丹麥.html">丹麥</a>
+            <a href="瑞典.html">瑞典</a>
+            <a href="波蘭.html">波蘭</a>
+          </div>
+        </div>
+        <div class="dropdown">
+          <a>美洲旅遊</a>
+          <div class="dropdown-content">
+            <a href="美國.html">美國</a>
+            <a href="加拿大.html">加拿大</a>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <div class="intro-section">
+      <div class="left">
+        <h1>Tommy 在魁北克城</h1>
+        <h4>
+          <b>魁北克城 (Quebec City) </b
+          >是魁北克省的首府，也是北美洲最古老的城市，始建於 1608 年，在法國統治時期成為加拿大重要的商業和軍事中心。1759 年英國在亞伯拉罕高地戰役中擊敗法國，魁北克城被割讓給英國，但仍保留了濃厚的法語文化傳統，城市的建築、語言、飲食等都反映了強烈的法國文化影響。二十世紀後期，魁北克城經歷了一些政治動盪，城市語言政策和分裂獨立議題引發了熱烈的公眾辯論。如今魁北克城保留了很多歷史建築，能徜徉在狹窄的街道上感受濃厚的歐洲風情。
+        </h4>
+      </div>
+      <div class="right">
+        <img src="加拿大照片\魁北克城\魁北克城_介紹.jpg" width="90%" height="350px" />
+      </div>
+    </div>
+
+    <div class="destination-section">
+      <div class="destination-main">
+        <h2>魁北克城交通</h2>
+        <h3>機場交通</h3>
+        <h4>
+          從魁北克讓·勒薩熱國際機場必須要搭兩趟公車才可以進到市中心，對於帶行李的人相當不方便，因此建議<b>直接從機場叫車前往旅館</b>最省力。
+        </h4>
+        <h3>市區交通</h3>
+        <h4>
+          魁北克城區非常小，景點也多集中在芳緹娜城堡飯店附近，因此只用步行即可，不太有需要搭乘大眾交通運輸情況。
+        </h4>
+        <br /><br />
+        <h2>魁北克城住宿</h2>
+        <h4>
+          在魁北克城選住宿可以附近機能為考量，推薦住在離觀光區不遠的 Esplande Park 和 Place D'Youville 附近，距離熱鬧的商店接近之外，周邊的餐廳選擇也多。
+        </h4>
+        <div style="text-align: center">
+          <img src="加拿大照片\魁北克城\魁北克城_住宿.png" width="1000px" />
+        </div>
+        <br /><br />
+        <h2>魁北克城景點</h2>
+        <h3>蒙特摩倫西瀑布 (Chute Montmorency)</h3>
+        <h4>
+          蒙特摩倫西瀑布位於聖羅倫斯河谷附近，距離魁北克城約 15 公里，瀑布高度達 83 米，比尼加拉瀑布還要高出 30 米，是加拿大東部最高的瀑布。蒙特摩倫西瀑布景色秀麗四季分明，每個季節都有其獨特的魅力: 春天瀑布融冰後水勢洶湧激流澎湃，夏日瀑布彷彿被一層薄紗覆蓋，溫柔的水幕遮蔽了底部的岩石，秋天周圍的楓樹染成火紅與瀑布形成強烈對比，冬天瀑布結冰後化成一座冰雕，呈現出寒冬的寧靜，可以通過纜車或階梯登上瀑布頂端的觀景台，欣賞這一絕美的自然奇觀，感受瀑布的磅礡氣勢。
+        </h4>
+        <div style="text-align: center">
+          <img src="加拿大照片\魁北克城\QB1.jpg" width="600px" />
+          <img src="加拿大照片\魁北克城\QB2.jpg" width="800px" />
+        </div>
+        <br /><br /><br />
+        <h3>魁北克大壁畫 (La Fresque des Québécois)</h3>
+        <h4>
+          魁北克大壁畫於 1999 年完成，是北美最大的壁畫，描繪了魁北克的歷史以及魁北克人民的生活、文化和特點。這幅壁畫描繪 17 世紀法國開拓者的到來以及 19 世紀英國統治下魁北克的變革，畫面上還有學者、農民、藝術家等代表各界的魁北克人物形象，生動展現了這個地區獨特的文化氣質。從原住民的狩獵生活到工業化時期的繁榮，再到現代社會的多元發展，畫面中的每一個細節都抓住了魁北克人獨特的生活情懷和精神追求。
+        </h4>
+        <div style="text-align: center">
+          <img src="加拿大照片\魁北克城\QB3.jpg" width="600px" />
+          <img src="加拿大照片\魁北克城\QB4.jpg" width="600px" />
+        </div>
+        <br /><br /><br />
+        <h3>芳堤娜城堡 (Fairmont Le Château Frontenac)</h3>
+        <h4>
+          芳堤娜城堡是魁北克城的地標性建築，建於 1893 年，最初由加拿大太平洋鐵路公司建造，以法國國王路易十四的名字命名，代表了魁北克的法國文化根源。酒店大樓高耸入雲，整體呈現出氣派恢弘的城堡建築特徵，映襯著下方古老街巷的優雅風貌。芳堤娜城堡飯店擁有 600 多間客房，設有餐廳、會議中心、健身房等設施，酒店內部裝飾奢華，保留了許多古典元素，不少重要歷史人物曾在此下榻，如邱吉爾、羅斯福等。晚上城堡在燈光的照耀下更添迷人風采，成為魁北克城夜晚的壯麗的風景線。
+        </h4>
+        <div style="text-align: center">
+          <img src="加拿大照片\魁北克城\QB5.jpg" width="800px" />
+          <img src="加拿大照片\魁北克城\QB6.jpg" width="800px" />
+          <img src="加拿大照片\魁北克城\QB7.jpg" width="800px" />
+          <img src="加拿大照片\魁北克城\QB8.jpg" width="800px" />
+        </div>
+        <br /><br /><br />
+        <h3>魁北克老城纜車 (Funiculaire du Vieux-Québec)</h3>
+        <h4>
+          魁北克老城纜車於 1879 年，是加拿大的第一座有軌電梯，連接了魁北克城上城區的 Dufferin Terrace 和下城區的 Saint-Laurent Boulevard，全長 58 米，垂直高差 49 米。這座有軌電梯採用纜車設計，由兩個小型車廂在鋼軌上上下滑動運行，車廂的外觀採用木質結構，保留了古老的製造工藝特色，見證了 150 年前加拿大交通史的發展軌跡。
+        </h4>
+        <div style="text-align: center">
+          <img src="加拿大照片\魁北克城\QB9.jpg" width="600px" />
+          <img src="加拿大照片\魁北克城\QB10.jpg" width="600px" />
+        </div>
+        <br /><br /><br />
+        <h3>小尚普蘭街 (Quartier Petit Champlain)</h3>
+        <h4>
+          小尚普蘭街位於魁北克城的下城區，最早可以追溯到 17 世紀，是魁北克城市中心的商業和工業區，街區內保留了大量 18 和 19 世紀的法式建築，造型優雅色彩鮮明，狹窄的街道和小巷上散布著各式精品店、藝術畫廊、手工藝品店、咖啡館、餐廳等，彷彿置身於歐洲的小鎮。
+        </h4>
+        <div style="text-align: center">
+          <img src="加拿大照片\魁北克城\QB11.jpg" width="600px" />
+          <img src="加拿大照片\魁北克城\QB12.jpg" width="600px" />
+          <img src="加拿大照片\魁北克城\QB13.jpg" width="800px" />
+        </div>
+        <br /><br />
+      </div>
+      <div class="destination-sidebar">
+        <div class="sidebar-image-container">
+          <img src="側邊欄自我介紹.jpg" />
+        </div>
+        <h5>
+          Hi!
+          我是Tommy，我熱愛旅遊也喜歡藉由影像紀錄旅程中的點點滴滴，透過文字將我在旅途中的所見所聞分享給大家。旅行對我而言不只是吃吃喝喝，而是能在行萬里路間感受世界的脈動，體驗不同的文化，希望藉由我的分享能讓大家看到更多世界的美好。
+        </h5>
+        <br />
+        <h5>
+          想更了解我或與我聯絡:
+          <a
+            href="https://www.instagram.com/tommy_techvoyage/"
+            target="_blank"
+            style="color: inherit; text-decoration: underline"
+          >
+            <b>Instagram</b>
+          </a>
+        </h5>
+        <div class="recommendation-section">
+          <h3>其他加拿大旅遊目的地</h3>
+          <div class="recommendation-buttons">
+            <a href="多倫多.html">
+              <button><h5>多倫多</h5></button>
+            </a>
+            <a href="蒙特婁.html">
+              <button><h5>蒙特婁</h5></button>
+            </a>
+            <a href="渥太華.html">
+              <button><h5>渥太華</h5></button>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="contact-section">
+      <div class="contact-item">
+        <h3>
+          想更了解我或與我聯絡:
+          <a
+            href="https://www.instagram.com/tommy_techvoyage/"
+            target="_blank"
+            style="color: inherit; text-decoration: underline"
+          >
+            Instagram
+          </a>
+        </h3>
+      </div>
+    </div>
+    <footer>
+      <h6>COPYRIGHT © 2025 Tommy 看世界 All rights reserved.</h6>
+    </footer>
+    <div id="expandable-menu">
+      <div id="menu-toggle"></div>
+      <!-- 收闔按鈕 -->
+      <div id="menu-content">
+        <h4>目錄</h4>
+        <ul id="menu-list"></ul>
+      </div>
+    </div>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const menu = document.getElementById("expandable-menu");
+        const toggle = document.getElementById("menu-toggle");
+        const menuList = document.getElementById("menu-list");
+        const destinationMain = document.querySelector(".destination-main");
+
+        // 點擊按鈕切換目錄狀態
+        toggle.addEventListener("click", () => {
+          menu.classList.toggle("open");
+        });
+
+        // 從 destination-main 區域提取 h2 和 h3，動態生成目錄
+        const headings = destinationMain.querySelectorAll("h2, h3");
+        headings.forEach((heading, index) => {
+          // 確保每個 h2 和 h3 都有唯一的 id
+          if (!heading.id) {
+            heading.id = `heading-${index}`;
+          }
+
+          const listItem = document.createElement("li");
+          const link = document.createElement("a");
+          link.textContent = heading.textContent;
+          link.href = `#${heading.id}`;
+          listItem.appendChild(link);
+
+          // 為 h3 添加縮排樣式
+          if (heading.tagName.toLowerCase() === "h3") {
+            listItem.classList.add("sub-item");
+          }
+
+          menuList.appendChild(listItem);
+        });
+
+        // 滾動至目標位置並加上 75px 偏移
+        menuList.addEventListener("click", (event) => {
+          if (event.target.tagName === "A") {
+            event.preventDefault(); // 阻止預設行為
+
+            const targetId = event.target.getAttribute("href").substring(1); // 取得目標 ID
+            const targetElement = document.getElementById(targetId);
+
+            if (targetElement) {
+              // 計算目標元素的位置並加上 75px 偏移
+              const targetPosition =
+                targetElement.getBoundingClientRect().top + window.scrollY;
+              const offset = 75; // 偏移的距離
+              window.scrollTo({
+                top: targetPosition - offset,
+                behavior: "smooth", // 平滑滾動
+              });
+            }
+          }
+        });
+      });
+    </script>
+  </body>
+</html>

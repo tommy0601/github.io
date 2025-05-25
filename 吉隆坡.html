@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+<html lang="zh-hant-TW">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="曹旅瀚 Tommy" />
+    <meta name="description" content="探索馬來西亞首都吉隆坡的城市魅力！走訪雙子星塔、獨立廣場、唐人街與清真寺，品嚐道地美食、感受多元文化與現代都市的完美融合。" />
+    <meta name="keywords" content="吉隆坡旅遊, 馬來西亞自由行, 雙子星塔, 吉隆坡景點, 唐人街, 吉隆坡美食, 吉隆坡清真寺, 東南亞旅遊, 吉隆坡購物, 吉隆坡文化" />
+    <title>Tommy 看世界 - 吉隆坡</title>
+    <link rel="icon" href="網頁縮圖.ico" />
+    <style>
+      body {
+        font-family: Calibri, Arial, sans-serif; /* 首選 Calibri，次選 Arial */
+        margin: 0;
+        padding: 0;
+        overflow-x: hidden; /* 禁止水平滾動 */
+        background-color: #f4f4f9;
+        color: #333;
+      }
+
+      h1 {
+        font-size: 40px;
+        font-weight: bold;
+      }
+
+      h2 {
+        font-size: 32px;
+        font-weight: bold;
+        color: #2a90a7;
+        display: inline-block;
+        margin-bottom: 1rem; /* 縮小 h2 的底部邊距 */
+        background-color: #cee5e8;
+      }
+
+      h3 {
+        font-size: 26px;
+        margin: 0 0 1rem;
+        font-weight: bold;
+        text-decoration: underline; /* 加上底線 */
+      }
+
+      h4 {
+        font-size: 18px;
+        font-weight: normal;
+        line-height: 1.8;
+      }
+
+      h5 {
+        font-size: 16px;
+        font-weight: normal;
+        margin: 0;
+      }
+
+      h6 {
+        font-size: 10px;
+        color: #fff;
+        margin: 0;
+        text-align: center;
+        line-height: 50px; /* 高度對齊 */
+      }
+
+      nav {
+        background-color: #78bcc4;
+        display: flex;
+        justify-content: space-between; /* 保持分佈在兩側 */
+        width: calc(100% - 10rem); /* 與其他內容的邊界一致 */
+        padding: 0.5rem 5rem; /* 主導覽列的 padding 設置 */
+        position: fixed;
+        top: 0;
+        z-index: 1000;
+      }
+
+      .nav-left .logo img {
+        height: 50px; /* 控制 Logo 圖片的高度 */
+        transform: translateX(-1.5rem); /* 向右移動 2rem */
+      }
+
+      .nav-right {
+        display: flex;
+        align-items: center;
+        transform: translateX(2rem); /* 向右移動 2rem */
+      }
+
+      nav a {
+        color: #eff5f5;
+        text-decoration: none;
+        padding: 0.5rem 1rem;
+        margin: 0 0.5rem;
+        transition: transform 0.3s;
+      }
+
+      nav a:hover {
+        transform: translateY(-3px);
+      }
+
+      .dropdown {
+        position: relative;
+      }
+
+      .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #78bcc4;
+        min-width: 160px;
+        border-radius: 4px;
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        padding: 0.2rem 0;
+      }
+
+      .dropdown-content a {
+        color: #eff5f5;
+        display: block;
+        transition: transform 0.3s;
+        border-bottom: 1px solid #ddd;
+      }
+
+      .dropdown-content a:last-child {
+        border-bottom: none;
+      }
+
+      .dropdown-content a:hover {
+        transform: translateY(-3px);
+      }
+
+      .dropdown:hover .dropdown-content {
+        display: block;
+      }
+
+      .intro-section {
+        background-color: #eff5f5;
+        display: flex;
+        padding: 2rem;
+        margin-top: 60px; /* 根據導航列高度調整 */
+        justify-content: space-between;
+        align-items: flex-start;
+        width: 100%;
+        box-sizing: border-box; /* 包含 padding 在內 */
+        padding-left: 5rem;
+        padding-right: 5rem;
+      }
+
+      .intro-section h4 {
+        max-width: 700px;
+      }
+
+      .intro-section .left {
+        width: 60%;
+      }
+
+      .intro-section .right {
+        width: 40%;
+      }
+
+      .destination-section {
+        display: flex;
+        padding: 1rem 5%; /* 左右內間距為螢幕的10% */
+        background-color: white;
+      }
+
+      .destination-main {
+        width: 75%;
+        margin-right: 1.5rem; /* 增加右邊外邊距 */
+      }
+
+      .destination-sidebar {
+        width: 25%;
+        padding-left: 1.5rem; /* 增加左側內邊距 */
+        margin-top: 2rem; /* 向上或向下調整，負值表示向上 */
+      }
+
+      .sidebar-image-container {
+        margin-bottom: 1rem;
+        text-align: center; /* 確保圖片置中 */
+      }
+
+      .sidebar-image-container img {
+        height: 300px; /* 設置直式圖片的高度 */
+      }
+
+      .two-vertical-images {
+        display: flex; /* 彈性佈局，讓圖片並排 */
+        justify-content: space-between; /* 兩張圖片均勻分佈 */
+        gap: 2rem; /* 圖片之間的間距 */
+        margin-top: 2rem;
+        margin-bottom: 2rem; /* 與下方內容的距離 */
+      }
+
+      .two-vertical-images img {
+        width: calc(50% - 0.5rem); /* 每張圖片佔用容器的一半減去間距 */
+        text-align: center; /* 確保圖片置中 */
+        height: auto; /* 保持圖片的直式比例 */
+        object-fit: cover; /* 確保圖片內容適應容器 */
+      }
+
+      .recommendation-section {
+        margin-top: 1.5rem; /* 與上方文字的間距 */
+        text-align: center;
+        position: sticky;
+        top: 80px; /* 空出導覽列的高度，確保推薦區不被覆蓋 */
+        z-index: 10; /* 提高層級，避免被其他內容遮蓋 */
+      }
+
+      .recommendation-section h3 {
+        font-size: 18px;
+        font-weight: bold;
+        margin-bottom: 0.5rem; /* 與按鈕區的距離 */
+      }
+
+      .recommendation-buttons {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 0.5rem; /* 按鈕之間的間距 */
+      }
+
+      .recommendation-buttons button {
+        padding: 0.5rem 1rem;
+        font-size: 14px;
+        color: white;
+        background-color: #78bcc4;
+        border: none;
+        border-radius: 4px;
+        transition: transform 0.3s;
+        font-family: Arial, sans-serif;
+      }
+
+      .recommendation-buttons button:hover {
+        transform: translateY(-3px);
+      }
+
+      .contact-section {
+        padding: 2rem 5rem; /* 上下與左右間距 */
+        background-color: #eff5f5; /* 淺灰背景 */
+        text-align: center; /* 確保內容置中對齊 */
+      }
+
+      .contact-item h3 {
+        font-size: 18px; /* 調整標題字體大小 */
+        margin: 0; /* 移除多餘的間距 */
+        text-decoration: none; /* 移除底線 */
+      }
+
+      footer {
+        background-color: #000;
+        color: white;
+        height: 30px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      #expandable-menu {
+        position: fixed;
+        top: 70px; /* 與螢幕頂部的距離設為 60px */
+        right: 0;
+        height: calc(100% - 70px); /* 高度減去 60px，避免超出視窗 */
+        width: 395px; /* 目錄寬度與 sidebar 齊寬 */
+        transform: translateX(100%); /* 初始狀態：隱藏在右側 */
+        transition: transform 0.3s ease;
+        background-color: #f4f4f9; /* 與網站背景一致 */
+        z-index: 1000;
+      }
+
+      /* 收闔按鈕 */
+      #menu-toggle {
+        position: absolute;
+        top: 45%;
+        left: -40px; /* 調整按鈕的位置，適應按鈕變大後的寬度 */
+        transform: translateY(-50%);
+        width: 40px; /* 增大按鈕寬度 */
+        height: 80px; /* 增大按鈕高度 */
+        background-color: #78bcc4;
+        color: white;
+        border-radius: 4px;
+        display: flex;
+        justify-content: center; /* 水平居中 */
+        align-items: center; /* 垂直居中 */
+      }
+
+      #menu-toggle::after {
+        content: "目錄"; /* 在按鈕內顯示 "目錄" */
+        font-size: 17px;
+        color: white; /* 設定字體顏色為白色 */
+        writing-mode: vertical-rl; /* 使文字垂直排列 */
+      }
+
+      #menu-toggle:hover {
+        background-color: #78bcc4;
+      }
+
+      /* 目錄內容 */
+      #menu-content {
+        padding: 0.5rem 1rem;
+        overflow-y: auto;
+        height: 100%;
+      }
+
+      #menu-content h4 {
+        font-weight: bold;
+        margin-top: 0;
+      }
+
+      #menu-list {
+        list-style: none;
+        padding: 0;
+      }
+
+      #menu-list li {
+        margin-bottom: 0.5rem;
+      }
+
+      #menu-list a {
+        color: #2a90a7;
+        text-decoration: none;
+        transition: color 0.3s;
+      }
+
+      #menu-list a:hover {
+        color: #78bcc4;
+      }
+
+      #menu-list .sub-item {
+        margin-left: 1.5rem; /* 調整縮排距離 */
+        font-size: 0.9rem; /* 可選：調整子項目字體大小 */
+      }
+
+      /* 目錄展開狀態 */
+      #expandable-menu.open {
+        transform: translateX(0);
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <div class="nav-left">
+        <div class="logo">
+          <a href="首頁.html">
+            <img src="網站Logo.png" alt="網站 Logo" />
+          </a>
+        </div>
+      </div>
+      <div class="nav-right">
+        <a href="首頁.html">關於我</a>
+        <div class="dropdown">
+          <a>亞洲旅遊</a>
+          <div class="dropdown-content">
+            <a href="中國.html">中國</a>
+            <a href="新加坡.html">新加坡</a>
+            <a href="馬來西亞.html">馬來西亞</a>
+            <a href="泰國.html">泰國</a>
+            <a href="印尼.html">印尼</a>
+            <a href="越南.html">越南</a>
+          </div>
+        </div>
+        <div class="dropdown">
+          <a>歐洲旅遊</a>
+          <div class="dropdown-content">
+            <a href="英國.html">英國</a>
+            <a href="法國.html">法國</a>
+            <a href="荷蘭.html">荷蘭</a>
+            <a href="比利時.html">比利時</a>
+            <a href="盧森堡.html">盧森堡</a>
+            <a href="瑞士.html">瑞士</a>
+            <a href="摩納哥.html">摩納哥</a>
+            <a href="西班牙.html">西班牙</a>
+            <a href="葡萄牙.html">葡萄牙</a>
+            <a href="安道爾.html">安道爾</a>
+            <a href="丹麥.html">丹麥</a>
+            <a href="瑞典.html">瑞典</a>
+            <a href="波蘭.html">波蘭</a>
+          </div>
+        </div>
+        <div class="dropdown">
+          <a>美洲旅遊</a>
+          <div class="dropdown-content">
+            <a href="美國.html">美國</a>
+            <a href="加拿大.html">加拿大</a>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <div class="intro-section">
+      <div class="left">
+        <h1>Tommy 在吉隆坡</h1>
+        <h4>
+          <b>吉隆坡 (Kuala Lumpur)</b> 是馬來西亞的首都和政治、經濟和文化的中心，位於馬來半島中部。吉隆坡的文化和人口非常多樣化，居住著馬來人、華人、印度人和其他民族的社群，每個社群都保留著自己的獨特文化和傳統，多元文化在吉隆坡的飲食文化中得到體現，從馬來菜、中國菜到印度菜應有盡有，尤其是融合式的料理更是一定要嘗試。我特別喜歡吉隆坡融合各民族的城市樣貌，讓我感覺能在一個城市中遊歷不同的國家。
+        </h4>
+      </div>
+      <div class="right">
+        <img src="馬來西亞照片\吉隆坡\KL_介紹.jpg" width="90%" height="350px" />
+      </div>
+    </div>
+
+    <div class="destination-section">
+      <div class="destination-main">
+        <h2>吉隆坡交通</h2>
+        <h3>機場交通</h3>
+        <h4>
+          吉隆坡國際機場距離市區光是開車就要 1 小時的時間，大概就是台北到桃機的概念，可以乘坐吉隆坡機場快線 <a href="https://www.kliaekspres.com/" target="_blank">KLIA Ekspres</a>，大約 30 分鐘可以把你送到中央車站，但是到中央車站之後還是要轉地鐵或計程車到飯店，所以我私心推薦<b>直接從機場叫 Grab 去飯店</b>，省事又方便。
+        </h4>
+        <h3>市區交通</h3>
+        <h4>
+          <b>在市區我一律推薦叫 Grab</b>，實在是太便宜了可以實現叫車自由，但要注意上下班尖峰時期可能要等比較久，建議可以提早先按叫車。另外在市區內坐地鐵短程移動也是個不錯的選擇。
+        </h4>
+        <img src="馬來西亞照片\吉隆坡\KL_交通.png" width="1000px" />
+        <br /><br />
+        <h2>吉隆坡住宿</h2>
+        <h4>
+          吉隆坡市區的景點大致分成三個區域，分別是<b>吉隆坡雙塔周邊、柏威年廣場周邊以及獨立廣場周邊</b>三個區域，推薦可以住在吉隆坡雙塔周邊或柏威年廣場周邊，周邊能逛得吃的比較多，多數知名的飯店也都在那兩區。
+        </h4>
+        <h4>吉隆坡的住宿是相對便宜的，不用花大價錢就可以住到蠻不錯的連鎖星級酒店品牌，另外吉隆坡也有許多日租型的酒店式公寓，價位比連鎖五星酒店的房間大小、景端及設施不一定輸五星級酒店，也是個不錯的選擇。</h4>
+        <div style="text-align: center">
+          <img src="馬來西亞照片\吉隆坡\KL_住宿.png" width="800px" />
+        </div>
+        <br /><br />
+        <h2>吉隆坡景點</h2>
+        <h3>吉隆坡雙子星塔 (Menara Berkembar Petronas)</h3>
+        <h4>
+          雙子星塔是馬來西亞的國際大地標，也是世界上第二高的雙塔式建築，於 1998 年完工，高度為 452 米共有 88 層，由著名的美國建築師賓·范·柏蒂倫設計，結合了伊斯蘭藝術與現代建築元素的特殊造型。兩座塔樓頂部以雙弧形連結在一起形成了一個巨大的天橋，這種獨特的設計在建築界甚為矚目。雙子星塔還擁有一座著名的購物中心陽光廣場 (Suria KLCC) ，是吉隆坡的大型商場，也是當地人熱門逛街地點之一，進駐了一籮筐的國際知名品牌，喜愛逛街的人可以在這邊消磨許多時間。
+        </h4>
+        <div style="text-align: center">
+          <img src="馬來西亞照片\吉隆坡\KL1.jpg" width="600px" />
+        </div>
+        <h4>從正面 (靠近大眾銀行一側) 欣賞吉隆坡雙塔。</h4>
+        <div style="text-align: center">
+          <img src="馬來西亞照片\吉隆坡\KL2.jpg" width="600px" />
+        </div>
+        <h4>雙塔後面的城中城公園 (Taman KLCC) 也是步錯的拍照點，同時也能欣賞水舞表演，晚上點了燈的雙塔顯得格外典雅，注意晚上 12 點會熄燈喔!。</h4>
+        <div style="text-align: center">
+          <img src="馬來西亞照片\吉隆坡\KL3.jpg" width="600px" />
+        </div>
+        <br /><br /><br />
+        <h3>吉隆坡塔 (Menara Kuala Lumpur)</h3>
+        <h4>
+          吉隆坡塔是一座電視通訊塔，於 1994 年落成，是東南亞第三高的塔樓，高為 421 米，由馬來西亞著名的建築師阿卜都·哈迪·普吉設計，外觀採用了馬來西亞傳統建築元素，融合了伊斯蘭及現代建築美學，主塔體由一系列倒錐形組成，頂端有一個長達 100 米的尖頭天線塔。若想眺望吉隆坡市區的景觀可以到吉隆坡塔，在塔頂的觀景台一覽吉隆坡的全景，除了頂樓有旋轉觀景台及餐廳，底下也有商店街跟餐廳。吉隆坡塔在 2009 年被選為東南亞最佳地標建築，不僅在建築設計上頗具創意，更代表了馬來西亞建築藝術的發展成就。
+        </h4>
+        <div style="text-align: center">
+          <img src="馬來西亞照片\吉隆坡\KL4.jpg" width="800px" />
+        </div>
+        <br /><br /><br />
+        <h3>占美回教堂 (Masjid Jamek Sultan Abdul Samad)</h3>
+        <h4>
+          占美回教堂始建於 1907 年，由英國殖民時期的建築師艾德格·蕭作設計，融合了印度-摩爾風格和馬來建築元素，充分體現了東方建築風格的魅力，共有兩座高聳的尖塔屋頂，主殿外表面覆蓋大量黃金裝飾，呈現出優雅華麗的外觀，又被譽為"吉隆坡清真寺之母"。這裡曾經是殖民時期政府所在地的中心，有著深厚的歷史底蘊。入內參觀免費但務必遵守規定，
+          <b>男生不能穿著短褲，女生則必須穿著穆斯林蔽體衣</b>，而且一天開放參觀時間不長 (10:00 ~ 12:30、14:30 ~ 16:00)，需要注意時間。
+        </h4>
+        <div style="text-align: center">
+          <img src="馬來西亞照片\吉隆坡\KL5.jpg" width="800px" />
+        </div>
+        <br /><br /><br />
+        <h3>獨立廣場 (Dataran Merdeka)</h3>
+        <h4>
+          獨立廣場是馬來西亞在 1957 年脫離英國殖民統治而宣告獨立的地點，廣場長約 295 米，寬約 165 米，面積約為 4.5 公頃，中心林立著一座高 116 米的獨立紀念鐘塔，代表馬來西亞自主獨立的重要象徵，不僅是馬來西亞國家的重要歷史舞台，也是吉隆坡市民喜愛聚集的公共活動中心，每年 8 月 31 日的獨立日當天都會在獨立廣場舉行盛大的國慶遊行和慶祝活動。要特別注意由於是個草坪廣場遮蔽較少，要小心中暑或選擇早上或傍晚來此。
+        </h4>
+        <div style="text-align: center">
+          <img src="馬來西亞照片\吉隆坡\KL6.jpg" width="600px" />
+        </div>
+        <br /><br /><br />
+        <h3>蘇丹阿都沙末大廈 (Bangunan Sultan Abdul Samad)</h3>
+        <h4>
+          蘇丹阿都沙末大廈位於獨立廣場旁，由英國殖民時期的政府所建並於 1897 年啟用，是馬來西亞最重要的哥特式建築代表，由英國建築師 A.C. Norman 設計，外觀充滿了東西方建築元素的融合，主體由紅磚砌造，頂部鑲嵌玻璃馬賽克，雙塔尖頂則鑲以銅製的月牙造型，建築樣式典雅華麗，充分體現了當時英國殖民者建築審美觀，自建成以來一直擔任著重要的行政機構辦公場所，直到現在仍然是馬來西亞司法部和憲法法院的所在地。在晚上的時候大樓會打上橘色的燈，與白天的感覺蠻不一樣的，推薦大家晚上也可以繞過來欣賞。
+        </h4>
+        <div style="text-align: center">
+          <img src="馬來西亞照片\吉隆坡\KL7.jpg" width="800px" />
+          <img src="馬來西亞照片\吉隆坡\KL8.jpg" width="800px" />
+        </div>
+        <br /><br /><br />
+        <h3>中央市場 (Pasar Seni)</h3>
+        <h4>
+          中央市場始建於 1899 年，是一處歷史悠久的傳統市場，販售各式各樣的手工藝品，包括木雕、編織品、陶瓷器、蠟染布料、各式的紀念品，也有玉器、中東地毯、印度風的服飾等，是個適合購買特色禮物的地方，但市場內部的價格不一定便宜，最好貨比三家再下手。除了工藝品，中央市場還是馬來西亞藝術創作的重鎮，有許多畫廊和表演藝術空間，展出各類繪畫、雕塑、服裝設計、舞蹈等藝術形式的精品，可以在此觀賞現場表演，感受馬來文化的魅力。
+        </h4>
+        <div style="text-align: center">
+          <img src="馬來西亞照片\吉隆坡\KL9.jpg" width="800px" />
+        </div>
+        <br /><br /><br />
+        <h3>茨廠街 (Jalan Petaling)</h3>
+        <h4>
+          茨廠街位於吉隆坡的唐人街中心地帶，是馬來西亞最著名的夜市商業街之一，發展始於 1800 年代中期，曾經是城中最重要的商貿聚集地，以販售各種廉價商品而聞名，包括服飾、鞋子、手工藝品、電子產品等，近年來還陸續開設了各類餐館、酒吧和娛樂場所，夜間是茨廠街最熱鬧的時候，商店瞬間變身為林立的夜市攤位，販賣各種小吃和手工藝品。茨廠街代表著吉隆坡市區多元文化的融合，不僅有華人經營的商鋪，還有印度人和馬來人的攤位，能感受到馬來西亞獨特的文化交融，也能體會殺價的樂趣。
+          <b>我特別推薦路邊的"義欽豆腐花"，與台灣的豆花不同，它的糖水帶有薑汁味</b>，同時也帶點焦香，值得一試。
+        </h4>
+        <div style="text-align: center">
+          <img src="馬來西亞照片\吉隆坡\KL10.jpg" width="600px" />
+        </div>
+        <br /><br /><br />
+        <h3>亞羅街 (Jalan Alor)</h3>
+        <h4>
+          亞羅街集合了各種不同地方的小吃，從馬來西亞各地的料理到中式、泰式、越式等東南亞料理的攤位應有盡有，多數攤位式從傍晚開始營業到凌晨，在晚上可以來覓食就像在台灣逛夜市。特別推薦如果想嘗試馬來西亞料理燒魔鬼魚可以去<b>"明記燒魚店"</b>，如果是想吃沙嗲燒烤當宵夜的話可以選擇<b>"黃亞華小食店"</b>，但由於式燒烤店附近會煙霧瀰漫 XD，穿什麼衣服要稍微注意一下。
+        </h4>
+        <div style="text-align: center">
+          <img src="馬來西亞照片\吉隆坡\KL11.jpg" width="600px" />
+        </div>
+        <br /><br /><br />
+        <h3>武吉免登(Bukit Bintang)</h3>
+        <h4>
+          武吉免登是吉隆坡的商場集中地，大概就是信義商圈的概念，最知名的就屬柏威年廣場 (Pavillion)、樂天廣場 (Lot 10)、華氏88廣場 (Fahrenheit 88)，如果忍受不了吉隆坡 30 幾度的白天，不妨躲進商場中逛街吃喝，商場間也有地下通道連接，不須出去外面曝曬，雖然連鎖品牌的價格和台灣差不多，但 outlet 的部分真的是非常便宜阿。
+        </h4>
+        <div style="text-align: center">
+          <img src="馬來西亞照片\吉隆坡\KL12.jpg" width="600px" />
+        </div>
+        <br /><br />
+        <h2>吉隆坡美食</h2>
+        <h3>Nasi Lemak Wanjo Kg Baru</h3>
+        <h4>
+          來馬來西亞絕對不能沒吃到椰漿飯 (Nasi Lemak)，這家店類似於新加坡的熟食中心，可以自助式的選擇椰漿飯裡的配菜，在點上一杯馬來西亞國民飲料美露或是芒果拉西 (Mango Lasi) 根本絕配，缺點就是這邊沒有冷氣而且環境比較嘈雜，建議晚上來吃不會到那麼悶熱。
+        </h4>
+        <div style="text-align: center">
+          <img src="馬來西亞照片\吉隆坡\KL13.jpg" width="600px" />
+        </div>
+        <br /><br /><br />
+        <h3>RSMY</h3>
+        <h4>
+          RSMY 有號稱馬來西亞最好吃的 Naan，爆量的水牛起司 naan 真的有夠罪惡，再配上 Nana、Chapati 與咖喱汁及燉菜搭配實在美味，也不忘點一杯印度拉茶作為結尾，是適合觀光客的 makmak 檔。
+        </h4>
+        <div style="text-align: center">
+          <img src="馬來西亞照片\吉隆坡\KL14.jpg" width="800px" />
+          <img src="馬來西亞照片\吉隆坡\KL15.jpg" width="800px" />
+          <img src="馬來西亞照片\吉隆坡\KL16.jpg" width="800px" />
+        </div>
+        <br /><br /><br />
+        <h3>鎰記茶餐館(Yut Kee Restaurant)</h3>
+        <h4>
+          鎰記茶餐館是創始於 1928 年的海南餐館，最有名的是咖椰蛋糕捲，很像是古早味蛋糕就是了。福建麵還有海南麵的味道也很讚合當作早餐或中餐，但號稱最有名的豬排其實很柴，自己不太推，而且店內是沒有空調的要自己評估一下。
+        </h4>
+        <div style="text-align: center">
+          <img src="馬來西亞照片\吉隆坡\KL17.jpg" width="600px" />
+          <img src="馬來西亞照片\吉隆坡\KL18.jpg" width="600px" />
+        </div>
+        <br /><br /><br />
+        <h3>Halab KL</h3>
+        <h4>
+          馬來西亞的宗教是以伊斯蘭教較為大宗，因此吉隆坡也有非常多中東料理，這家的羊肉 kebak 還有羊腿排十分推薦，阿拉伯烤餅配上站有薄荷醬的羊排真是絕配，坐位也是十分舒適，價錢也不算很高，是 CP 值非常高的選項。
+        </h4>
+        <div style="text-align: center">
+          <img src="馬來西亞照片\吉隆坡\KL19.jpg" width="600px" />
+        </div>
+        <br /><br /><br />
+        <h3>新峰肉骨茶(Sun Fong Bak Kut Teh)</h3>
+        <h4>
+          馬來西亞的肉骨茶是黑肉骨茶，湯頭是以藥膳熬煮而成，乾的肉骨茶肉塊浸滿湯汁非常下飯，湯的部分除了藥膳以外還帶有點炭香味，在冷氣房中喝完一碗非常滿足，新峰肉骨茶還有其他的炒菜料理，但礙於實在吃不下就沒有點了。
+        </h4>
+        <div style="text-align: center">
+          <img src="馬來西亞照片\吉隆坡\KL20.jpg" width="600px" />
+        </div>
+        <br />
+      </div>
+      <div class="destination-sidebar">
+        <div class="sidebar-image-container">
+          <img src="側邊欄自我介紹.jpg" />
+        </div>
+        <h5>
+          Hi!
+          我是Tommy，我熱愛旅遊也喜歡藉由影像紀錄旅程中的點點滴滴，透過文字將我在旅途中的所見所聞分享給大家。旅行對我而言不只是吃吃喝喝，而是能在行萬里路間感受世界的脈動，體驗不同的文化，希望藉由我的分享能讓大家看到更多世界的美好。
+        </h5>
+        <br />
+        <h5>
+          想更了解我或與我聯絡:
+          <a
+            href="https://www.instagram.com/tommy_techvoyage/"
+            target="_blank"
+            style="color: inherit; text-decoration: underline"
+          >
+            <b>Instagram</b>
+          </a>
+        </h5>
+        <div class="recommendation-section">
+          <h3>其他馬來西亞旅遊目的地</h3>
+          <div class="recommendation-buttons">
+            <a href="馬六甲.html">
+              <button><h5>馬六甲</h5></button>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="contact-section">
+      <div class="contact-item">
+        <h3>
+          想更了解我或與我聯絡:
+          <a
+            href="https://www.instagram.com/tommy_techvoyage/"
+            target="_blank"
+            style="color: inherit; text-decoration: underline"
+          >
+            Instagram
+          </a>
+        </h3>
+      </div>
+    </div>
+    <footer>
+      <h6>COPYRIGHT © 2025 Tommy 看世界 All rights reserved.</h6>
+    </footer>
+    <div id="expandable-menu">
+      <div id="menu-toggle"></div>
+      <!-- 收闔按鈕 -->
+      <div id="menu-content">
+        <h4>目錄</h4>
+        <ul id="menu-list"></ul>
+      </div>
+    </div>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const menu = document.getElementById("expandable-menu");
+        const toggle = document.getElementById("menu-toggle");
+        const menuList = document.getElementById("menu-list");
+        const destinationMain = document.querySelector(".destination-main");
+
+        // 點擊按鈕切換目錄狀態
+        toggle.addEventListener("click", () => {
+          menu.classList.toggle("open");
+        });
+
+        // 從 destination-main 區域提取 h2 和 h3，動態生成目錄
+        const headings = destinationMain.querySelectorAll("h2, h3");
+        headings.forEach((heading, index) => {
+          // 確保每個 h2 和 h3 都有唯一的 id
+          if (!heading.id) {
+            heading.id = `heading-${index}`;
+          }
+
+          const listItem = document.createElement("li");
+          const link = document.createElement("a");
+          link.textContent = heading.textContent;
+          link.href = `#${heading.id}`;
+          listItem.appendChild(link);
+
+          // 為 h3 添加縮排樣式
+          if (heading.tagName.toLowerCase() === "h3") {
+            listItem.classList.add("sub-item");
+          }
+
+          menuList.appendChild(listItem);
+        });
+
+        // 滾動至目標位置並加上 75px 偏移
+        menuList.addEventListener("click", (event) => {
+          if (event.target.tagName === "A") {
+            event.preventDefault(); // 阻止預設行為
+
+            const targetId = event.target.getAttribute("href").substring(1); // 取得目標 ID
+            const targetElement = document.getElementById(targetId);
+
+            if (targetElement) {
+              // 計算目標元素的位置並加上 75px 偏移
+              const targetPosition =
+                targetElement.getBoundingClientRect().top + window.scrollY;
+              const offset = 75; // 偏移的距離
+              window.scrollTo({
+                top: targetPosition - offset,
+                behavior: "smooth", // 平滑滾動
+              });
+            }
+          }
+        });
+      });
+    </script>
+  </body>
+</html>

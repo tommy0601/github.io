@@ -1,0 +1,768 @@
+<!DOCTYPE html>
+<html lang="zh-hant-TW">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="曹旅瀚 Tommy" />
+    <meta name="description" content="探索哥本哈根的魅力！從美麗的運河到著名的小美人魚像，體驗北歐城市的獨特魅力，欣賞丹麥的文化、設計和歷史，發現哥本哈根的現代與傳統融合。" />
+    <meta name="keywords" content="哥本哈根旅遊, 哥本哈根景點, 小美人魚, 哥本哈根運河, 哥本哈根自由行, 哥本哈根歷史, 哥本哈根文化, 哥本哈根設計, 哥本哈根美食, 北歐旅遊" />
+    <title>Tommy 看世界 - 哥本哈根</title>
+    <link rel="icon" href="網頁縮圖.ico" />
+    <style>
+      body {
+        font-family: Calibri, Arial, sans-serif; /* 首選 Calibri，次選 Arial */
+        margin: 0;
+        padding: 0;
+        overflow-x: hidden; /* 禁止水平滾動 */
+        background-color: #f4f4f9;
+        color: #333;
+      }
+
+      h1 {
+        font-size: 40px;
+        font-weight: bold;
+      }
+
+      h2 {
+        font-size: 32px;
+        font-weight: bold;
+        color: #2a90a7;
+        display: inline-block;
+        margin-bottom: 1rem; /* 縮小 h2 的底部邊距 */
+        background-color: #cee5e8;
+      }
+
+      h3 {
+        font-size: 26px;
+        margin: 0 0 1rem;
+        font-weight: bold;
+        text-decoration: underline; /* 加上底線 */
+      }
+
+      h4 {
+        font-size: 18px;
+        font-weight: normal;
+        line-height: 1.8;
+      }
+
+      h5 {
+        font-size: 16px;
+        font-weight: normal;
+        margin: 0;
+      }
+
+      h6 {
+        font-size: 10px;
+        color: #fff;
+        margin: 0;
+        text-align: center;
+        line-height: 50px; /* 高度對齊 */
+      }
+
+      nav {
+        background-color: #78bcc4;
+        display: flex;
+        justify-content: space-between; /* 保持分佈在兩側 */
+        width: calc(100% - 10rem); /* 與其他內容的邊界一致 */
+        padding: 0.5rem 5rem; /* 主導覽列的 padding 設置 */
+        position: fixed;
+        top: 0;
+        z-index: 1000;
+      }
+
+      .nav-left .logo img {
+        height: 50px; /* 控制 Logo 圖片的高度 */
+        transform: translateX(-1.5rem); /* 向右移動 2rem */
+      }
+
+      .nav-right {
+        display: flex;
+        align-items: center;
+        transform: translateX(2rem); /* 向右移動 2rem */
+      }
+
+      nav a {
+        color: #eff5f5;
+        text-decoration: none;
+        padding: 0.5rem 1rem;
+        margin: 0 0.5rem;
+        transition: transform 0.3s;
+      }
+
+      nav a:hover {
+        transform: translateY(-3px);
+      }
+
+      .dropdown {
+        position: relative;
+      }
+
+      .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #78bcc4;
+        min-width: 160px;
+        border-radius: 4px;
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        padding: 0.2rem 0;
+      }
+
+      .dropdown-content a {
+        color: #eff5f5;
+        display: block;
+        transition: transform 0.3s;
+        border-bottom: 1px solid #ddd;
+      }
+
+      .dropdown-content a:last-child {
+        border-bottom: none;
+      }
+
+      .dropdown-content a:hover {
+        transform: translateY(-3px);
+      }
+
+      .dropdown:hover .dropdown-content {
+        display: block;
+      }
+
+      .intro-section {
+        background-color: #eff5f5;
+        display: flex;
+        padding: 2rem;
+        margin-top: 60px; /* 根據導航列高度調整 */
+        justify-content: space-between;
+        align-items: flex-start;
+        width: 100%;
+        box-sizing: border-box; /* 包含 padding 在內 */
+        padding-left: 5rem;
+        padding-right: 5rem;
+      }
+
+      .intro-section h4 {
+        max-width: 700px;
+      }
+
+      .intro-section .left {
+        width: 60%;
+      }
+
+      .intro-section .right {
+        width: 40%;
+      }
+
+      .destination-section {
+        display: flex;
+        padding: 1rem 5%; /* 左右內間距為螢幕的10% */
+        background-color: white;
+      }
+
+      .destination-main {
+        width: 75%;
+        margin-right: 1.5rem; /* 增加右邊外邊距 */
+      }
+
+      .destination-sidebar {
+        width: 25%;
+        padding-left: 1.5rem; /* 增加左側內邊距 */
+        margin-top: 2rem; /* 向上或向下調整，負值表示向上 */
+      }
+
+      .sidebar-image-container {
+        margin-bottom: 1rem;
+        text-align: center; /* 確保圖片置中 */
+      }
+
+      .sidebar-image-container img {
+        height: 300px; /* 設置直式圖片的高度 */
+      }
+
+      .two-vertical-images {
+        display: flex; /* 彈性佈局，讓圖片並排 */
+        justify-content: space-between; /* 兩張圖片均勻分佈 */
+        gap: 2rem; /* 圖片之間的間距 */
+        margin-top: 2rem;
+        margin-bottom: 2rem; /* 與下方內容的距離 */
+      }
+
+      .two-vertical-images img {
+        width: calc(50% - 0.5rem); /* 每張圖片佔用容器的一半減去間距 */
+        text-align: center; /* 確保圖片置中 */
+        height: auto; /* 保持圖片的直式比例 */
+        object-fit: cover; /* 確保圖片內容適應容器 */
+      }
+
+      .recommendation-section {
+        margin-top: 1.5rem; /* 與上方文字的間距 */
+        text-align: center;
+        position: sticky;
+        top: 80px; /* 空出導覽列的高度，確保推薦區不被覆蓋 */
+        z-index: 10; /* 提高層級，避免被其他內容遮蓋 */
+      }
+
+      .recommendation-section h3 {
+        font-size: 18px;
+        font-weight: bold;
+        margin-bottom: 0.5rem; /* 與按鈕區的距離 */
+      }
+
+      .recommendation-buttons {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 0.5rem; /* 按鈕之間的間距 */
+      }
+
+      .recommendation-buttons button {
+        padding: 0.5rem 1rem;
+        font-size: 14px;
+        color: white;
+        background-color: #78bcc4;
+        border: none;
+        border-radius: 4px;
+        transition: transform 0.3s;
+        font-family: Arial, sans-serif;
+      }
+
+      .recommendation-buttons button:hover {
+        transform: translateY(-3px);
+      }
+
+      .contact-section {
+        padding: 2rem 5rem; /* 上下與左右間距 */
+        background-color: #eff5f5; /* 淺灰背景 */
+        text-align: center; /* 確保內容置中對齊 */
+      }
+
+      .contact-item h3 {
+        font-size: 18px; /* 調整標題字體大小 */
+        margin: 0; /* 移除多餘的間距 */
+        text-decoration: none; /* 移除底線 */
+      }
+
+      footer {
+        background-color: #000;
+        color: white;
+        height: 30px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      #expandable-menu {
+        position: fixed;
+        top: 70px; /* 與螢幕頂部的距離設為 60px */
+        right: 0;
+        height: calc(100% - 70px); /* 高度減去 60px，避免超出視窗 */
+        width: 395px; /* 目錄寬度與 sidebar 齊寬 */
+        transform: translateX(100%); /* 初始狀態：隱藏在右側 */
+        transition: transform 0.3s ease;
+        background-color: #f4f4f9; /* 與網站背景一致 */
+        z-index: 1000;
+      }
+
+      /* 收闔按鈕 */
+      #menu-toggle {
+        position: absolute;
+        top: 45%;
+        left: -40px; /* 調整按鈕的位置，適應按鈕變大後的寬度 */
+        transform: translateY(-50%);
+        width: 40px; /* 增大按鈕寬度 */
+        height: 80px; /* 增大按鈕高度 */
+        background-color: #78bcc4;
+        color: white;
+        border-radius: 4px;
+        display: flex;
+        justify-content: center; /* 水平居中 */
+        align-items: center; /* 垂直居中 */
+      }
+
+      #menu-toggle::after {
+        content: "目錄"; /* 在按鈕內顯示 "目錄" */
+        font-size: 17px;
+        color: white; /* 設定字體顏色為白色 */
+        writing-mode: vertical-rl; /* 使文字垂直排列 */
+      }
+
+      #menu-toggle:hover {
+        background-color: #78bcc4;
+      }
+
+      /* 目錄內容 */
+      #menu-content {
+        padding: 0.5rem 1rem;
+        overflow-y: auto;
+        height: 100%;
+      }
+
+      #menu-content h4 {
+        font-weight: bold;
+        margin-top: 0;
+      }
+
+      #menu-list {
+        list-style: none;
+        padding: 0;
+      }
+
+      #menu-list li {
+        margin-bottom: 0.5rem;
+      }
+
+      #menu-list a {
+        color: #2a90a7;
+        text-decoration: none;
+        transition: color 0.3s;
+      }
+
+      #menu-list a:hover {
+        color: #78bcc4;
+      }
+
+      #menu-list .sub-item {
+        margin-left: 1.5rem; /* 調整縮排距離 */
+        font-size: 0.9rem; /* 可選：調整子項目字體大小 */
+      }
+
+      /* 目錄展開狀態 */
+      #expandable-menu.open {
+        transform: translateX(0);
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <div class="nav-left">
+        <div class="logo">
+          <a href="首頁.html">
+            <img src="網站Logo.png" alt="網站 Logo" />
+          </a>
+        </div>
+      </div>
+      <div class="nav-right">
+        <a href="首頁.html">關於我</a>
+        <div class="dropdown">
+          <a>亞洲旅遊</a>
+          <div class="dropdown-content">
+            <a href="中國.html">中國</a>
+            <a href="新加坡.html">新加坡</a>
+            <a href="馬來西亞.html">馬來西亞</a>
+            <a href="泰國.html">泰國</a>
+            <a href="印尼.html">印尼</a>
+            <a href="越南.html">越南</a>
+          </div>
+        </div>
+        <div class="dropdown">
+          <a>歐洲旅遊</a>
+          <div class="dropdown-content">
+            <a href="英國.html">英國</a>
+            <a href="法國.html">法國</a>
+            <a href="荷蘭.html">荷蘭</a>
+            <a href="比利時.html">比利時</a>
+            <a href="盧森堡.html">盧森堡</a>
+            <a href="瑞士.html">瑞士</a>
+            <a href="摩納哥.html">摩納哥</a>
+            <a href="西班牙.html">西班牙</a>
+            <a href="葡萄牙.html">葡萄牙</a>
+            <a href="安道爾.html">安道爾</a>
+            <a href="丹麥.html">丹麥</a>
+            <a href="瑞典.html">瑞典</a>
+            <a href="波蘭.html">波蘭</a>
+          </div>
+        </div>
+        <div class="dropdown">
+          <a>美洲旅遊</a>
+          <div class="dropdown-content">
+            <a href="美國.html">美國</a>
+            <a href="加拿大.html">加拿大</a>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <div class="intro-section">
+      <div class="left">
+        <h1>Tommy 在哥本哈根</h1>
+        <h4>
+          <b>哥本哈根 (Copenhagen) </b>是丹麥的首都，位於丹麥東部的西蘭島上，歷史可以追溯到 12 世紀，哥本哈根逐漸成為北歐地區的政治經濟和文化中心，並在 17 世紀經歷了一系列的蓬勃發展並經歷了現代化的轉型。現今哥本哈根擁有許多國際組織的總部，包括世界衛生組織 (WHO) 的區域辦事處和國際海事組織 (IMO)，也是一個綠色和可持續發展的城市，致力於減少碳排放，提倡自行車和公共交通，並鼓勵使用可再生能源。
+        </h4>
+      </div>
+      <div class="right">
+        <img
+          src="丹麥照片\哥本哈根\哥本哈根_介紹.jpg"
+          width="90%"
+          height="350px"
+        />
+      </div>
+    </div>
+
+    <div class="destination-section">
+      <div class="destination-main">
+        <h2>哥本哈根交通</h2>
+        <h3>機場交通</h3>
+        <h4>
+          從哥本哈根凱斯楚普機場可以搭乘地鐵 M2 線抵達市中心 Kongens Nytorv 站，車程約 20 分鐘。
+        </h4>
+        <h3>市區交通</h3>
+        <h4>
+          遊覽哥本哈根除了步行外，也可以乘坐地鐵出行，如果天氣好的時候也可以選擇騎單車，哥本哈根的城市腳踏車道設計可以說是全世界最好的非常推薦。
+        </h4>
+        <div style="text-align: center">
+          <img src="丹麥照片\哥本哈根\哥本哈根_交通.png" width="1000px" />
+        </div>
+        <br /><br />
+        <h2>哥本哈根住宿</h2>
+        <h4>
+          哥本哈根的治安良好，選擇住宿可以交通跟景點來考量，但由於市中心 Kongens Nytorv 站附近的住宿價格偏高，所以推薦是住 København H 站附近是比較經濟實惠的選項。
+        </h4>
+        <div style="text-align: center">
+          <img src="丹麥照片\哥本哈根\哥本哈根_住宿.png" width="800px" />
+        </div>
+        <br /><br />
+        <h2>哥本哈根景點</h2>
+        <h3>市政廳廣場 (Rådhuspladsen)</h3>
+        <h4>
+          市政廳廣場鄰近市政廳 (Rådhus) 和著名的斯特劳埃德音樂廳 (Tivoli Gardens)。哥本哈根市政廳是一座宏偉的建築，建於 1905 年，以其獨特的哥特式風格和豪華的內部裝飾而聞名，在市政廳前有一座高達 105.6 米的鐘塔，上面裝有丹麥最大的鐘。每年的聖誕節期間，這裡舉行著著名的哥本哈根聖誕市集，吸引大量遊客參與。
+        </h4>
+        <div style="text-align: center">
+          <img src="丹麥照片\哥本哈根\CO1.jpg" width="800px" />
+          <img src="丹麥照片\哥本哈根\CO2.jpg" width="800px" />
+          <img src="丹麥照片\哥本哈根\CO3.jpg" width="800px" />
+        </div>
+        <br /><br /><br />
+        <h3>斯楚格街 (Strøget)</h3>
+        <h4>
+          斯楚格街是哥本哈根最著名的購物街，全長約為 1.1 公里，起源於 1962 年，當時哥本哈根市決定將一條街道封閉並轉為步行街，以提供更好的購物和步行體驗，這條步行街上有各種各樣的商店和品牌，從國際知名的時尚品牌到當地設計師的精品店應有盡有。
+        </h4>
+        <div style="text-align: center">
+          <img src="丹麥照片\哥本哈根\CO4.jpg" width="600px" />
+          <img src="丹麥照片\哥本哈根\CO5.jpg" width="600px" />
+        </div>
+        <br /><br /><br />
+        <h3>圓塔 (Rundetaarn)</h3>
+        <h4>
+          圓塔建於 17 世紀，是丹麥文藝復興時期建築的代表作之一，最大特點是其圓形塔身和螺旋形的上升通道。這座塔高約 36 米，直徑約 15 米，是當時丹麥最高的建築，塔身由厚重的黃磚砌成，外觀簡潔而堅固。進入圓塔是一段平緩的螺旋坡道，而不是一般的樓梯。這條坡道以 17 世紀的建築方式設計，使得人們可以輕鬆地走上塔頂，而不需要攀爬陡峭的樓梯。在塔的頂部有一個寬敞的展望台，從那裡可以欣賞到哥本哈根市中心的壯麗全景，還有一個獨特的天文台及觀測室，供天文學家觀察星星和行星。
+        </h4>
+        <div style="text-align: center">
+          <img src="丹麥照片\哥本哈根\CO6.jpg" width="600px" />
+        </div>
+        <div class="two-vertical-images">
+          <img src="丹麥照片\哥本哈根\CO7-1.jpg" />
+          <img src="丹麥照片\哥本哈根\CO7-2.jpg" />
+        </div>
+        <div style="text-align: center">
+          <img src="丹麥照片\哥本哈根\CO8.jpg" width="800px" />
+        </div>
+        <br /><br /><br />
+        <h3>羅森堡城堡 (Rosenborg Slot)</h3>
+        <h4>
+          羅森堡城堡是丹麥文藝復興時期建築的代表之一，建於 17 世紀初，是丹麥王室的皇家宮殿和皇家收藏的所在地。羅森堡城堡的建築風格獨特，結合了文藝復興和荷蘭風格的元素，宮殿外觀以紅色磚石為主，搭配華麗的尖頂和精美的裝飾，展現了當時丹麥王室的豪華和富麗堂皇。宮殿內部保存著大量的藝術品和歷史文物，其中最著名的是丹麥王室的珍寶收藏，可以欣賞到金銀飾品、王冠、皇家珠寶、古董家具和繪畫等珍貴物品，其中最引人注目的是丹麥王冠寶座，是丹麥君主加冕禮儀中使用的重要象徵。
+        </h4>
+        <div style="text-align: center">
+          <img src="丹麥照片\哥本哈根\CO9.jpg" width="800px" />
+          <img src="丹麥照片\哥本哈根\CO10.jpg" width="800px" />
+        </div>
+        <div class="two-vertical-images">
+          <img src="丹麥照片\哥本哈根\CO11-1.jpg" />
+          <img src="丹麥照片\哥本哈根\CO11-2.jpg" />
+        </div>
+        <div style="text-align: center">
+          <img src="丹麥照片\哥本哈根\CO12.jpg" width="800px" />
+          <img src="丹麥照片\哥本哈根\CO13.jpg" width="800px" />
+        </div>
+        <br /><br /><br />
+        <h3>國王新廣場 (Kongens Nytorv)</h3>
+        <h4>
+          國王新廣場可以追溯到 17 世紀，由丹麥國王克里斯蒂安五世下令建造的，旨在擴大城市並標誌王權的力量。廣場的設計是由法國建築師 Lambert van Haven 負責，他將其打造成一個寬敞而典雅的空間，廣場周圍環繞哥本哈根劇院 (Det Kongelige Teater) 和豪華的酒店和商店，這些建築物的風格多樣，從新古典主義到巴洛克風格都有。
+        </h4>
+        <h4>
+          現在國王新廣場是哥本哈根的交通樞紐，是公共交通工具如地鐵、巴士和火車的重要站點，成為遊客和居民流動的中心，同時也是購物和娛樂的熱門目的地。
+        </h4>
+        <div style="text-align: center">
+          <img src="丹麥照片\哥本哈根\CO14.jpg" width="800px" />
+          <img src="丹麥照片\哥本哈根\CO15.jpg" width="800px" />
+          <img src="丹麥照片\哥本哈根\CO16.jpg" width="800px" />
+          <img src="丹麥照片\哥本哈根\CO17.jpg" width="800px" />
+        </div>
+        <br /><br /><br />
+        <h3>新港 (Nyhavn)</h3>
+        <h4>
+          新港可以追溯到 17 世紀，最初建於 1670 年代，是作為一個繁忙的商業港口而興起的，用於卸貨、貿易和海軍活動。新港的最大特色就是沿著運河排列的彩色房屋，這些房屋建於 18 世紀，一共有 17 個彩色房屋，每座房屋都有不同的顏色和外觀，帶來了繽紛和迷人的視覺效果，成為了哥本哈根的標誌性景點。運河是新港的核心，沿著運河有許多餐廳、咖啡館和酒吧，在夏天人們會坐在露天座位上欣賞河岸的風景。
+        </h4>
+        <h4>從新港可以乘船遊覽哥本哈根的運河和港口，包括哥本哈根的皇家堡壘 (Kastellet) 和人魚像 (The Little Mermaid) 等著名景點。</h4>
+        <div style="text-align: center">
+          <img src="丹麥照片\哥本哈根\CO18.jpg" width="800px" />
+          <img src="丹麥照片\哥本哈根\CO19.jpg" width="800px" />
+          <img src="丹麥照片\哥本哈根\CO20.jpg" width="600px" />
+          <img src="丹麥照片\哥本哈根\CO21.jpg" width="800px" />
+          <img src="丹麥照片\哥本哈根\CO22.jpg" width="800px" />
+          <img src="丹麥照片\哥本哈根\CO23.jpg" width="800px" />
+        </div>
+        <br /><br /><br />
+        <h3>美人魚雕像 (Den Lille Havfrue)</h3>
+        <h4>
+          美人魚雕像是哥本哈根最具代表性和受歡迎的旅遊景點，是根據丹麥作家漢斯·克里斯蒂安·安徒生的童話故事《小美人魚》而建造。這座雕塑由丹麥雕塑家愛德華·埃里克森 (Edvard Eriksen) 於 1913 年創作，作為對安徒生的故事的紀念，雕塑描繪了一個坐在岩石上的裸體女性，她的下半身是魚尾巴。美人魚雕像位於哥本哈根港口的一個岩石上，面向著海洋，使遊客可以欣賞到壯麗的海景，但它並不是一個巨大的雕塑，實際上只有約 1.25 米高，使得它在遊客中間具有一種迷人的獨特感。
+        </h4>
+        <div style="text-align: center">
+          <img src="丹麥照片\哥本哈根\CO24.jpg" width="600px" />
+          <img src="丹麥照片\哥本哈根\CO25.jpg" width="600px" />
+        </div>
+        <br /><br /><br />
+        <h3>吉菲昂噴泉 (Gefionspringvandet)</h3>
+        <h4>
+          吉菲昂噴泉以丹麥神話中的女神吉菲昂 (Gefion) 為主題，該噴泉建於 1908 年，由丹麥雕塑家安德斯·安徒生·維納爾 (Anders Bundgaard) 設計，噴泉的中心是一個巨大的銅質雕像，描繪了蓋菲昂女神駕駛四匹牛的場景。傳說中吉菲昂女神用牛拉著犁在地上劃出了西蘭島的形狀，這個雕像栩栩如生地展現了女神和牛的細節，呈現出優雅和力量的結合。
+        </h4>
+        <div style="text-align: center">
+          <img src="丹麥照片\哥本哈根\CO26.jpg" width="800px" />
+          <img src="丹麥照片\哥本哈根\CO27.jpg" width="600px" />
+        </div>
+        <br /><br /><br />
+        <h3>卡斯特雷特 (Kastellet)</h3>
+        <h4>
+          卡斯特雷特是一座獨特的星形要塞，於 1626 年至 1664 年間由丹麥國王克里斯蒂安四世 (Christian IV) 下令建造，旨在加強哥本哈根的防禦能力，該要塞的獨特星形設計是當時防禦工事的新概念，並成為後來許多要塞建設的標誌。卡斯特雷特位於一個小島上，周圍被護城河環繞，由一系列的堡壘、城牆和堡頭組成，形成了一個幾乎完整的星形要塞，要塞內部保留了許多古老的建築物，包括官邸、教堂、軍械庫和孤兒院等。
+        </h4>
+        <h4>卡斯特雷特也是一個綠地公園，有著綠茵茵的草坪、花園、湖泊和步道，提供了一個寧靜和放鬆的環境，欣賞到要塞的壯麗景色和周邊地區的美景。</h4>
+        <div style="text-align: center">
+          <img src="丹麥照片\哥本哈根\CO28.jpg" width="800px" />
+          <img src="丹麥照片\哥本哈根\CO29.jpg" width="800px" />
+        </div>
+        <br /><br /><br />
+        <h3>腓特列教堂 (Frederiks Kirke)</h3>
+        <h4>
+          腓特列教堂的建造始於 1749 年，但由於資金問題和其他困難，工程一度中斷，最終於 1894 年完工，花費了數代建築師和工匠的努力。它的設計靈感來自義大利的巴洛克建築風格，特別是聖彼得大教堂。這座教堂的最引人注目的特點是它的外觀，由白色大理石建造而成，教堂的主尖頂高達約 46 米，融合了巴洛克和新古典主義風格，並展示了精細的雕刻和裝飾。
+        </h4>
+        <div style="text-align: center">
+          <img src="丹麥照片\哥本哈根\CO30.jpg" width="600px" />
+        </div>
+        <br /><br /><br />
+        <h3>阿馬林堡宮 (Amalienborg)</h3>
+        <h4>
+          阿馬林堡宮毗鄰哥本哈根港口和王宮廣場。歷史可以追溯到 18 世紀，最初是作為丹麥的皇家宮殿而建造的，以紀念丹麥國王弗雷德里克五世的王后索菲·阿瑪莉 (Sophie Amalie)。宮殿複合體由四座相同的獨立建築組成，圍繞著一個中央廣場，四座宮殿分別命名為克里斯蒂安七世宮 (Christian VII's Palace)、克里斯蒂安八世宮 (Christian VIII's Palace)、弗雷德里克八世宮 (Frederik VIII's Palace) 和克里斯蒂安九世宮 (Christian IX's Palace)，其中一座宮殿是丹麥現任女王瑪格麗特二世及其家人的主要住所。
+        </h4>
+        <h4>
+          阿馬林堡宮的建築風格主要是洛可可風格，具有優雅和精緻的特點，宮殿的外牆呈現出精心雕刻的細節和華麗的裝飾，內部則保存了許多古董家具和藝術品。每天正午可以欣賞到守衛換班儀式，這是一個傳統的軍事儀式，由皇家近衛軍隊進行精確而協調的儀式，給人一種優雅和威嚴的感覺。
+        </h4>
+        <div style="text-align: center">
+          <img src="丹麥照片\哥本哈根\CO31.jpg" width="800px" />
+          <img src="丹麥照片\哥本哈根\CO32.jpg" width="800px" />
+          <img src="丹麥照片\哥本哈根\CO33.jpg" width="600px" />
+        </div>
+        <br /><br /><br />
+        <h3>克里斯蒂安堡宮 (Christiansborg Slot)</h3>
+        <h4>
+          克里斯蒂安堡宮是丹麥政府的中心和國會大樓，歷史可以追溯到 12 世紀，曾多次被毀壞和重建，目前的建築是在 20 世紀初重建的，宮殿的建築風格融合了巴洛克、新古典主義和現代風格，展示了不同時期的建築特色。宮殿內部保存著豪華的宴會廳、國王和皇后的宮殿、國家圖書館和各種政府辦公室，可以參觀國會大廳並了解丹麥的政治體系和歷史。
+        </h4>
+        <div style="text-align: center">
+          <img src="丹麥照片\哥本哈根\CO34.jpg" width="800px" />
+          <img src="丹麥照片\哥本哈根\CO35.jpg" width="800px" />
+          <img src="丹麥照片\哥本哈根\CO36.jpg" width="800px" />
+          <img src="丹麥照片\哥本哈根\CO37.jpg" width="800px" />
+          <img src="丹麥照片\哥本哈根\CO38.jpg" width="800px" />
+          <img src="丹麥照片\哥本哈根\CO39.jpg" width="800px" />
+        </div>
+        <br /><br /><br />
+        <h3>TorvehallerneKBH</h3>
+        <h4>
+          TorvehallerneKBH 靠近劍橋廣場 (Nørreport Station)，由兩個現代化的玻璃建築組成，提供了一個室內的開放式市場空間，於 2011 年開業，是一個集合了各種各樣的美食攤位、餐廳和特色商店的地方，可以找到各種丹麥和國際美食，品嚐傳統丹麥風格的三明治 (smørrebrød)、丹麥甜點 (wienerbrød)、奶酪、海鮮和當地特色食品，還有許多餐廳供應各種美食，包括日本料理、墨西哥美食、意大利面食和當地特色菜，還有一些特色商店，出售當地特產、美食禮品、烹飪用具和餐具等。
+        </h4>
+        <div style="text-align: center">
+          <img src="丹麥照片\哥本哈根\CO40.jpg" width="800px" />
+          <img src="丹麥照片\哥本哈根\CO41.jpg" width="800px" />
+          <img src="丹麥照片\哥本哈根\CO42.jpg" width="800px" />
+          <img src="丹麥照片\哥本哈根\CO43.jpg" width="800px" />
+        </div>
+        <br /><br />
+        <h2>哥本哈根近郊景點</h2>
+        <h3>克倫堡 (Kronborg)</h3>
+        <h4>
+          克倫堡位於赫爾辛格市 (Helsingør)，也被稱為哈姆雷特城堡 (Hamlet's Castle)，俯瞰丹麥和瑞典之間的狹窄海峽，也是歐洲最繁忙的航運路線之一。克倫堡的歷史可以追溯到 1420 年代，原本是一座要塞，目的是控制海峽的通行，在 16 世紀被重建為一座宏偉的文藝復興風格城堡，成為丹麥王室的重要堡壘和皇家宮殿。
+        </h4>
+        <h4>
+          克倫堡以其與莎士比亞的戲劇《哈姆雷特》(Hamlet) 相關聯而聞名於世，根據戲劇劇情，這座城堡被描述為丹麥王國的王宮，是主角哈姆雷特的故事背景之一，使得克倫堡成為丹麥文學和戲劇重要的象徵。每年夏季，克倫堡還舉辦著名的「哈姆雷特」戲劇表演，吸引了全球觀眾的注意，表演通常在城堡內部和庭院中進行，為遊客帶來獨特的戲劇體驗。
+        </h4>
+        <h4>克倫堡是一座壯觀的城堡，具有防禦性的建築結構和精美的細節，由四座角樓和一座主要建築物組成，圍繞著一個中央的庭院。城堡的外牆被雕刻和裝飾，室內則保留了許多古董家具、藝術品和壁畫。遊客可以參觀宮殿的一部分，了解丹麥王室的歷史和宮廷生活。</h4>
+        <h4>前往克倫堡可以從 København H 搭乘火車到 Helsingor 站後再步行 15 鐘即可到達，在車站都能購買火車票。</h4>
+        <div style="text-align: center">
+          <img src="丹麥照片\哥本哈根\CO44.jpg" width="800px" />
+          <img src="丹麥照片\哥本哈根\CO45.jpg" width="800px" />
+          <img src="丹麥照片\哥本哈根\CO46.jpg" width="800px" />
+          <img src="丹麥照片\哥本哈根\CO47.jpg" width="800px" />
+          <img src="丹麥照片\哥本哈根\CO48.jpg" width="600px" />
+        </div>
+        <br /><br /><br />
+        <h3>腓特烈堡城堡 (Frederiksborg Slot)</h3>
+        <h4>
+          腓特烈堡城堡位於 Hillerød，建於 17 世紀初，由丹麥國王克里斯蒂安四世下令建造，旨在作為丹麥王室的夏季宮殿。宮殿坐落在三個島嶼上，被一個大型湖泊包圍，形成了壯麗的景觀，建築風格結合了文藝復興和巴洛克元素，展示了當時的皇家奢華和權力。
+        </h4>
+        <h4>
+          宮殿的外觀令人印象深刻，由紅磚結構和精美的尖塔組成。它的主要建築物被稱為「長廊翼」，是一條長長的建築，連接著兩座塔樓。宮殿的內部裝飾華麗，包括宏偉的大廳、宴會廳、皇家套房和數個宴會場所，還擁有丹麥最大的收藏品，包括藝術品、家具、繪畫和皇家珍藏品，展示了丹麥的藝術和歷史。
+        </h4>
+        <h4>宮殿周圍的花園是宮殿的一大亮點，被設計為法國式花園，擁有修剪整齊的草坪、噴泉和花壇，以及迷人的湖泊和遠處的森林，可以在花園中漫步，欣賞壯麗的景色和宮殿的建築。</h4>
+        <h4>前往腓特烈堡城堡可以搭乘 A 路線城際火車抵達終點站 Hillerød St. 站，再步行約 20 分鐘即可抵達。</h4>
+        <div style="text-align: center">
+          <img src="丹麥照片\哥本哈根\CO49.jpg" width="800px" />
+          <img src="丹麥照片\哥本哈根\CO50.jpg" width="600px" />
+          <img src="丹麥照片\哥本哈根\CO51.jpg" width="600px" />
+        </div>
+        <div class="two-vertical-images">
+          <img src="丹麥照片\哥本哈根\CO52-1.jpg" />
+          <img src="丹麥照片\哥本哈根\CO52-2.jpg" />
+        </div>
+        <div class="two-vertical-images">
+          <img src="丹麥照片\哥本哈根\CO53-1.jpg" />
+          <img src="丹麥照片\哥本哈根\CO53-2.jpg" />
+        </div>
+        <div style="text-align: center">
+          <img src="丹麥照片\哥本哈根\CO54.jpg" width="600px" />
+        </div>
+        <br /><br />
+        <h2>哥本哈根美食</h2>
+        <h3>Restaurant Tight</h3>
+        <h4>
+          位於斯楚格街附近的傳統丹麥料理，是丹麥排名前 15 名的餐廳，點了招牌的鱈魚排，鱈魚煎得很香不會很柴，沾著龍蝦醬配著薯泥讓人停不下來，
+          裝飾用的小紅莓與橄欖菜也很好的發揮解膩的作用。這家的肋排根菸牛肉也十分出名，推薦大家一定要來嘗試這家，<b>客流量蠻大的推薦要先訂位</b>。
+        </h4>
+        <div style="text-align: center">
+          <img src="丹麥照片\哥本哈根\CO55.jpg" width="600px" />
+        </div>
+        <br /><br /><br />
+        <h3>Restaurant 1733</h3>
+        <h4>
+          位於護城河邊的傳統丹麥料理，最有名的是烤牛肉 Open sandwich，是最經典的丹麥傳統料理，有點類似西班牙的 Tapas，是在黑麥餅上加上烤牛肉、醃洋蔥還有煎蛋，一口吃下全部配料味道及口感十分豐富，牛肉大約是 7 分熟不會很乾。這家的午市套餐十分划算價格合理，來丹麥一定要試試看。
+        </h4>
+        <div style="text-align: center">
+          <img src="丹麥照片\哥本哈根\CO56.jpg" width="600px" />
+        </div>
+        <br /><br /><br />
+        <h3>Hallernes Smørrebrød</h3>
+        <h4>
+          Hallernes Smørrebrød 是位於 TorvehallerneKBH 中的一個攤位，標榜是全哥本哈根最好吃的 Open Sandwich，跟前一家餐廳比感覺更精緻
+          一些，這次嘗試丹麥的魚餅，是由鱸魚跟鱈魚混合而成，吃起來像是有魚的味道的磅蛋糕，蠻特別的口感就是一個人吃到後面會有點膩，建議兩個人點一份比較好。
+        </h4>
+        <div style="text-align: center">
+          <img src="丹麥照片\哥本哈根\CO57.jpg" width="600px" />
+        </div>
+        <br /><br /><br />
+        <h3>BUKA BAKERY</h3>
+        <h4>
+          來丹麥肯定要吃丹麥麵包了，其中又以可頌最為出彩，這家位於司楚格街上的麵包店號稱是全城最好吃的丹麥麵包，我三天早上都經過這家門口，每天人潮絡繹不絕，招牌的開心果可頌麵包外酥內軟，配上甜甜的開心果奶油完全是熱量炸彈，配上一杯咖啡便可以撐一整個早上，另外點的蔓越莓千層酥是丹麥特色的麵包，脆脆的口感十足又帶有野莓的酸味，十分推薦來這家吃早餐或外帶邊走邊吃。
+        </h4>
+        <div style="text-align: center">
+          <img src="丹麥照片\哥本哈根\CO58.jpg" width="600px" />
+          <img src="丹麥照片\哥本哈根\CO59.jpg" width="600px" />
+        </div>
+        <br /><br /><br />
+        <h3>Ruby</h3>
+        <h4>
+          Ruby 位於護城河畔老宅中的酒吧，裝潢氣氛渲染得非常好，感覺自己就像在北歐的人家中喝著小酒，點了香蕉橘子混和口味的調酒，看似衝突的組合加在一起卻意外地搭配，尾蘊也十分的香，但歐洲的調酒普遍酒精濃度都比較高，記得要慢慢品嘗。
+        </h4>
+        <div style="text-align: center">
+          <img src="丹麥照片\哥本哈根\CO60.jpg" width="600px" />
+        </div>
+        <br /><br />
+      </div>
+      <div class="destination-sidebar">
+        <div class="sidebar-image-container">
+          <img src="側邊欄自我介紹.jpg" />
+        </div>
+        <h5>
+          Hi!
+          我是Tommy，我熱愛旅遊也喜歡藉由影像紀錄旅程中的點點滴滴，透過文字將我在旅途中的所見所聞分享給大家。旅行對我而言不只是吃吃喝喝，而是能在行萬里路間感受世界的脈動，體驗不同的文化，希望藉由我的分享能讓大家看到更多世界的美好。
+        </h5>
+        <br />
+        <h5>
+          想更了解我或與我聯絡:
+          <a
+            href="https://www.instagram.com/tommy_techvoyage/"
+            target="_blank"
+            style="color: inherit; text-decoration: underline"
+          >
+            <b>Instagram</b>
+          </a>
+        </h5>
+      </div>
+    </div>
+    <div class="contact-section">
+      <div class="contact-item">
+        <h3>
+          想更了解我或與我聯絡:
+          <a
+            href="https://www.instagram.com/tommy_techvoyage/"
+            target="_blank"
+            style="color: inherit; text-decoration: underline"
+          >
+            Instagram
+          </a>
+        </h3>
+      </div>
+    </div>
+    <footer>
+      <h6>COPYRIGHT © 2025 Tommy 看世界 All rights reserved.</h6>
+    </footer>
+    <div id="expandable-menu">
+      <div id="menu-toggle"></div>
+      <!-- 收闔按鈕 -->
+      <div id="menu-content">
+        <h4>目錄</h4>
+        <ul id="menu-list"></ul>
+      </div>
+    </div>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const menu = document.getElementById("expandable-menu");
+        const toggle = document.getElementById("menu-toggle");
+        const menuList = document.getElementById("menu-list");
+        const destinationMain = document.querySelector(".destination-main");
+
+        // 點擊按鈕切換目錄狀態
+        toggle.addEventListener("click", () => {
+          menu.classList.toggle("open");
+        });
+
+        // 從 destination-main 區域提取 h2 和 h3，動態生成目錄
+        const headings = destinationMain.querySelectorAll("h2, h3");
+        headings.forEach((heading, index) => {
+          // 確保每個 h2 和 h3 都有唯一的 id
+          if (!heading.id) {
+            heading.id = `heading-${index}`;
+          }
+
+          const listItem = document.createElement("li");
+          const link = document.createElement("a");
+          link.textContent = heading.textContent;
+          link.href = `#${heading.id}`;
+          listItem.appendChild(link);
+
+          // 為 h3 添加縮排樣式
+          if (heading.tagName.toLowerCase() === "h3") {
+            listItem.classList.add("sub-item");
+          }
+
+          menuList.appendChild(listItem);
+        });
+
+        // 滾動至目標位置並加上 75px 偏移
+        menuList.addEventListener("click", (event) => {
+          if (event.target.tagName === "A") {
+            event.preventDefault(); // 阻止預設行為
+
+            const targetId = event.target.getAttribute("href").substring(1); // 取得目標 ID
+            const targetElement = document.getElementById(targetId);
+
+            if (targetElement) {
+              // 計算目標元素的位置並加上 75px 偏移
+              const targetPosition =
+                targetElement.getBoundingClientRect().top + window.scrollY;
+              const offset = 75; // 偏移的距離
+              window.scrollTo({
+                top: targetPosition - offset,
+                behavior: "smooth", // 平滑滾動
+              });
+            }
+          }
+        });
+      });
+    </script>
+  </body>
+</html>

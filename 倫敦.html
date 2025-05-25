@@ -1,0 +1,820 @@
+<!DOCTYPE html>
+<html lang="zh-hant-TW">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="曹旅瀚 Tommy" />
+    <meta name="description" content="探索倫敦的魅力！從大笨鐘到倫敦塔，從博物館到西區劇院，體驗這座充滿歷史與現代氣息的城市，發現倫敦無盡的文化、藝術與景點。" />
+    <meta name="keywords" content="倫敦旅遊, 倫敦景點, 倫敦大笨鐘, 倫敦塔, 倫敦博物館, 倫敦劇院, 倫敦自由行, 倫敦文化, 倫敦美食, 倫敦歷史" />
+    <title>Tommy 看世界 - 倫敦</title>
+    <link rel="icon" href="網頁縮圖.ico" />
+    <style>
+      body {
+        font-family: Calibri, Arial, sans-serif; /* 首選 Calibri，次選 Arial */
+        margin: 0;
+        padding: 0;
+        overflow-x: hidden; /* 禁止水平滾動 */
+        background-color: #f4f4f9;
+        color: #333;
+      }
+
+      h1 {
+        font-size: 40px;
+        font-weight: bold;
+      }
+
+      h2 {
+        font-size: 32px;
+        font-weight: bold;
+        color: #2a90a7;
+        display: inline-block;
+        margin-bottom: 1rem; /* 縮小 h2 的底部邊距 */
+        background-color: #cee5e8;
+      }
+
+      h3 {
+        font-size: 26px;
+        margin: 0 0 1rem;
+        font-weight: bold;
+        text-decoration: underline; /* 加上底線 */
+      }
+
+      h4 {
+        font-size: 18px;
+        font-weight: normal;
+        line-height: 1.8;
+      }
+
+      h5 {
+        font-size: 16px;
+        font-weight: normal;
+        margin: 0;
+      }
+
+      h6 {
+        font-size: 10px;
+        color: #fff;
+        margin: 0;
+        text-align: center;
+        line-height: 50px; /* 高度對齊 */
+      }
+
+      nav {
+        background-color: #78bcc4;
+        display: flex;
+        justify-content: space-between; /* 保持分佈在兩側 */
+        width: calc(100% - 10rem); /* 與其他內容的邊界一致 */
+        padding: 0.5rem 5rem; /* 主導覽列的 padding 設置 */
+        position: fixed;
+        top: 0;
+        z-index: 1000;
+      }
+
+      .nav-left .logo img {
+        height: 50px; /* 控制 Logo 圖片的高度 */
+        transform: translateX(-1.5rem); /* 向右移動 2rem */
+      }
+
+      .nav-right {
+        display: flex;
+        align-items: center;
+        transform: translateX(2rem); /* 向右移動 2rem */
+      }
+
+      nav a {
+        color: #eff5f5;
+        text-decoration: none;
+        padding: 0.5rem 1rem;
+        margin: 0 0.5rem;
+        transition: transform 0.3s;
+      }
+
+      nav a:hover {
+        transform: translateY(-3px);
+      }
+
+      .dropdown {
+        position: relative;
+      }
+
+      .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #78bcc4;
+        min-width: 160px;
+        border-radius: 4px;
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        padding: 0.2rem 0;
+      }
+
+      .dropdown-content a {
+        color: #eff5f5;
+        display: block;
+        transition: transform 0.3s;
+        border-bottom: 1px solid #ddd;
+      }
+
+      .dropdown-content a:last-child {
+        border-bottom: none;
+      }
+
+      .dropdown-content a:hover {
+        transform: translateY(-3px);
+      }
+
+      .dropdown:hover .dropdown-content {
+        display: block;
+      }
+
+      .intro-section {
+        background-color: #eff5f5;
+        display: flex;
+        padding: 2rem;
+        margin-top: 60px; /* 根據導航列高度調整 */
+        justify-content: space-between;
+        align-items: flex-start;
+        width: 100%;
+        box-sizing: border-box; /* 包含 padding 在內 */
+        padding-left: 5rem;
+        padding-right: 5rem;
+      }
+
+      .intro-section h4 {
+        max-width: 700px;
+      }
+
+      .intro-section .left {
+        width: 60%;
+      }
+
+      .intro-section .right {
+        width: 40%;
+      }
+
+      .destination-section {
+        display: flex;
+        padding: 1rem 5%; /* 左右內間距為螢幕的10% */
+        background-color: white;
+      }
+
+      .destination-main {
+        width: 75%;
+        margin-right: 1.5rem; /* 增加右邊外邊距 */
+      }
+
+      .destination-sidebar {
+        width: 25%;
+        padding-left: 1.5rem; /* 增加左側內邊距 */
+        margin-top: 2rem; /* 向上或向下調整，負值表示向上 */
+      }
+
+      .sidebar-image-container {
+        margin-bottom: 1rem;
+        text-align: center; /* 確保圖片置中 */
+      }
+
+      .sidebar-image-container img {
+        height: 300px; /* 設置直式圖片的高度 */
+      }
+
+      .two-vertical-images {
+        display: flex; /* 彈性佈局，讓圖片並排 */
+        justify-content: space-between; /* 兩張圖片均勻分佈 */
+        gap: 2rem; /* 圖片之間的間距 */
+        margin-top: 2rem;
+        margin-bottom: 2rem; /* 與下方內容的距離 */
+      }
+
+      .two-vertical-images img {
+        width: calc(50% - 0.5rem); /* 每張圖片佔用容器的一半減去間距 */
+        text-align: center; /* 確保圖片置中 */
+        height: auto; /* 保持圖片的直式比例 */
+        object-fit: cover; /* 確保圖片內容適應容器 */
+      }
+
+      .recommendation-section {
+        margin-top: 1.5rem; /* 與上方文字的間距 */
+        text-align: center;
+        position: sticky;
+        top: 80px; /* 空出導覽列的高度，確保推薦區不被覆蓋 */
+        z-index: 10; /* 提高層級，避免被其他內容遮蓋 */
+      }
+
+      .recommendation-section h3 {
+        font-size: 18px;
+        font-weight: bold;
+        margin-bottom: 0.5rem; /* 與按鈕區的距離 */
+      }
+
+      .recommendation-buttons {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 0.5rem; /* 按鈕之間的間距 */
+      }
+
+      .recommendation-buttons button {
+        padding: 0.5rem 1rem;
+        font-size: 14px;
+        color: white;
+        background-color: #78bcc4;
+        border: none;
+        border-radius: 4px;
+        transition: transform 0.3s;
+        font-family: Arial, sans-serif;
+      }
+
+      .recommendation-buttons button:hover {
+        transform: translateY(-3px);
+      }
+
+      .contact-section {
+        padding: 2rem 5rem; /* 上下與左右間距 */
+        background-color: #eff5f5; /* 淺灰背景 */
+        text-align: center; /* 確保內容置中對齊 */
+      }
+
+      .contact-item h3 {
+        font-size: 18px; /* 調整標題字體大小 */
+        margin: 0; /* 移除多餘的間距 */
+        text-decoration: none; /* 移除底線 */
+      }
+
+      footer {
+        background-color: #000;
+        color: white;
+        height: 30px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      #expandable-menu {
+        position: fixed;
+        top: 70px; /* 與螢幕頂部的距離設為 60px */
+        right: 0;
+        height: calc(100% - 70px); /* 高度減去 60px，避免超出視窗 */
+        width: 395px; /* 目錄寬度與 sidebar 齊寬 */
+        transform: translateX(100%); /* 初始狀態：隱藏在右側 */
+        transition: transform 0.3s ease;
+        background-color: #f4f4f9; /* 與網站背景一致 */
+        z-index: 1000;
+      }
+
+      /* 收闔按鈕 */
+      #menu-toggle {
+        position: absolute;
+        top: 45%;
+        left: -40px; /* 調整按鈕的位置，適應按鈕變大後的寬度 */
+        transform: translateY(-50%);
+        width: 40px; /* 增大按鈕寬度 */
+        height: 80px; /* 增大按鈕高度 */
+        background-color: #78bcc4;
+        color: white;
+        border-radius: 4px;
+        display: flex;
+        justify-content: center; /* 水平居中 */
+        align-items: center; /* 垂直居中 */
+      }
+
+      #menu-toggle::after {
+        content: "目錄"; /* 在按鈕內顯示 "目錄" */
+        font-size: 17px;
+        color: white; /* 設定字體顏色為白色 */
+        writing-mode: vertical-rl; /* 使文字垂直排列 */
+      }
+
+      #menu-toggle:hover {
+        background-color: #78bcc4;
+      }
+
+      /* 目錄內容 */
+      #menu-content {
+        padding: 0.5rem 1rem;
+        overflow-y: auto;
+        height: 100%;
+      }
+
+      #menu-content h4 {
+        font-weight: bold;
+        margin-top: 0;
+      }
+
+      #menu-list {
+        list-style: none;
+        padding: 0;
+      }
+
+      #menu-list li {
+        margin-bottom: 0.5rem;
+      }
+
+      #menu-list a {
+        color: #2a90a7;
+        text-decoration: none;
+        transition: color 0.3s;
+      }
+
+      #menu-list a:hover {
+        color: #78bcc4;
+      }
+
+      #menu-list .sub-item {
+        margin-left: 1.5rem; /* 調整縮排距離 */
+        font-size: 0.9rem; /* 可選：調整子項目字體大小 */
+      }
+
+      /* 目錄展開狀態 */
+      #expandable-menu.open {
+        transform: translateX(0);
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <div class="nav-left">
+        <div class="logo">
+          <a href="首頁.html">
+            <img src="網站Logo.png" alt="網站 Logo" />
+          </a>
+        </div>
+      </div>
+      <div class="nav-right">
+        <a href="首頁.html">關於我</a>
+        <div class="dropdown">
+          <a>亞洲旅遊</a>
+          <div class="dropdown-content">
+            <a href="中國.html">中國</a>
+            <a href="新加坡.html">新加坡</a>
+            <a href="馬來西亞.html">馬來西亞</a>
+            <a href="泰國.html">泰國</a>
+            <a href="印尼.html">印尼</a>
+            <a href="越南.html">越南</a>
+          </div>
+        </div>
+        <div class="dropdown">
+          <a>歐洲旅遊</a>
+          <div class="dropdown-content">
+            <a href="英國.html">英國</a>
+            <a href="法國.html">法國</a>
+            <a href="荷蘭.html">荷蘭</a>
+            <a href="比利時.html">比利時</a>
+            <a href="盧森堡.html">盧森堡</a>
+            <a href="瑞士.html">瑞士</a>
+            <a href="摩納哥.html">摩納哥</a>
+            <a href="西班牙.html">西班牙</a>
+            <a href="葡萄牙.html">葡萄牙</a>
+            <a href="安道爾.html">安道爾</a>
+            <a href="丹麥.html">丹麥</a>
+            <a href="瑞典.html">瑞典</a>
+            <a href="波蘭.html">波蘭</a>
+          </div>
+        </div>
+        <div class="dropdown">
+          <a>美洲旅遊</a>
+          <div class="dropdown-content">
+            <a href="美國.html">美國</a>
+            <a href="加拿大.html">加拿大</a>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <div class="intro-section">
+      <div class="left">
+        <h1>Tommy 在倫敦</h1>
+        <h4>
+          <b>倫敦 (London) </b
+          >是英國的首都及富有多樣性的國際都市，在中世紀倫敦逐漸發展成為英格蘭的政治和商業中心，成為了一個繁榮的城市，並在 16 至 19 世紀間經歷了工業革命的巨大變革，這一時期見證了倫敦的快速擴張和現代化，大量的工廠和倉庫建立起來，帶動了城市的經濟發展，成為了全球最大的城市之一。倫敦也是文化藝術的樞紐，擁有世界一流的博物館、藝廊和劇院，展示了豐富的藝術品和表演藝術。
+        </h4>
+      </div>
+      <div class="right">
+        <img src="英國照片\倫敦\倫敦_intro.jpg" width="90%" height="350px" />
+      </div>
+    </div>
+
+    <div class="destination-section">
+      <div class="destination-main">
+        <h2>倫敦交通</h2>
+        <h3>機場交通</h3>
+        <h4>
+          作為國際大都市，倫敦總共有三個機場，分別是主要負責國際航班的希斯路機場，以及負責國內或歐洲區域航班的格域機場及斯坦斯特德機場，除了最輕鬆但最燒錢的機場直接接送服務外，以下會分列各個機場的大眾交通方式:
+          <ul>
+            <li>
+              <b>希斯路機場</b>: 可以搭乘城際火車 Southern 或 Gatwick Express
+              直接進城，車程大約 1 小時。
+            </li>
+            <li>
+              <b>格域機場</b>: 可以搭乘地鐵 Piccadilly 線直接進城，車程大約 1
+              小時。
+            </li>
+            <li>
+              <b>斯坦斯特德機場</b>: 可以搭乘城際火車 Standard Express
+              抵達終點站 Liverpool Street 後轉乘地鐵，約 70-80 分鐘。
+            </li>
+          </ul>
+        </h4>
+        <h3>市區交通</h3>
+        <h4>
+          在倫敦<b>最主要的交通方式就是地鐵和巴士</b>，幾乎能覆蓋到所有景點，倫敦的地鐵是統是全球最古老的，自
+          1863 年開始營運，又因為其形狀而被稱為 "Tube"，
+          雖然車站老舊但治安還算不錯可以放心搭乘，比較大的缺點是下到<b>車站層或月台層後會完全沒有信號</b>，沒錯你沒看錯不是一格兩格那種是直接會顯示沒有服務，因此如果要用
+          Google Map
+          找路的一定要事先查詢並截圖，才不會在地鐵裡叫天天不靈，基於這個因素，巴士便是個不錯的選擇，除了一樣方便外也能同時欣賞倫敦的城市風景。
+        </h4>
+        <h4>
+          <b>倫敦的地鐵跟公車都可以直接刷信用卡</b
+          >，算是非常方便，如果覺得自己乘坐量大可以考慮買<a href="https://tfl.gov.uk/fares/how-to-pay-and-where-to-buy-tickets-and-oyster/bus-and-tram-pass"
+          target="_blank">日票 (1 天) 或周票
+          (7 天)</a>
+          ，基本上遊客都只會在地鐵 Zone 1 和 2
+          活動，可以在期限內無限次數搭乘公車、地鐵、電車跟船，對於當天想暴走的旅客是划算的選項，在地鐵主要站點櫃台都可以買到。
+        </h4>
+        <div style="text-align: center">
+          <img src="英國照片\倫敦\倫敦_交通1.png" width="1000px" />
+          <img src="英國照片\倫敦\倫敦_交通2.jpg" width="600px" />
+          <img src="英國照片\倫敦\倫敦_交通3.png" width="600px" />
+        </div>
+        <br /><br />
+        <h2>倫敦住宿</h2>
+        <h4>
+          首先要先來認識倫敦的分區，倫敦大都會區相當大，但一般旅客就只會在下標紅色底的區域活動，剩餘地區大多都是住宅區為主，其中東倫敦是治安較差的地區，盡量選擇避開那邊。
+        </h4>
+        <div style="text-align: center">
+          <img src="英國照片\倫敦\倫敦_住宿1.png" width="1000px" />
+        </div>
+        <h4>
+          將地圖放大後，推薦的住宿區大致分成兩區，一個是倫敦市中心北側及西側，是比較多連鎖飯店的集中區域，前往市中心也非常快;
+          另一個是住在南岸，有比較多新的獨立旅館，價錢相對便宜，是小資族的好選擇。
+        </h4>
+        <div style="text-align: center">
+          <img src="英國照片\倫敦\倫敦_住宿2.png" width="1000px" />
+        </div>
+        <br /><br />
+        <h2>倫敦景點</h2>
+        <h3>格林威治皇家天文台 (Royal Observatory Greenwich)</h3>
+        <h4>
+          格林威治皇家天文台位於倫敦郊區的格林威治，是一個歷史悠久且聞名於世的天文觀測站，成立於 1675 年成立，目的是提供準確的時間和天文觀測資訊，以支持航海和地理定位。天文台最著名的特點之一是格林威治子午線 (Greenwich Meridian)，它被定為世界的基準子午線，分隔東西兩個半球。這條子午線於 1884 年確定，並通過一個特殊的銅柱標示在天文台內，在天文台內可以參觀多個展覽和博物館，了解天文學和航海歷史的重要性。這裡展示了各種天文儀器、航海工具和觀測器材，包括 18 世紀建造的哈里遜海事時計 (Harrison chronometers) 和瑞士天文鐘。天文台的最著名建築是弗蘭斯西斯·查爾斯·裡奇 (Christopher Wren) 設計的八角形天文台大樓，這座建築具有巴洛克風格，並能欣賞壯觀的倫敦市景。
+        </h4>
+        <div style="text-align: center">
+          <img src="英國照片\倫敦\倫敦1.jpg" width="800px" />
+          <img src="英國照片\倫敦\倫敦2.jpg" width="600px" />
+          <img src="英國照片\倫敦\倫敦3.png" width="600px" />
+        </div>
+        <br /><br /><br />
+        <h3>國家海事博物館 (National Maritime Museum)</h3>
+        <h4>
+          國家海事博物館位於倫敦格林威治，是世界上最大的海事博物館之一，成立於 1934 年，旨在展示和保存與英國海上歷史和海洋文化有關的物品和資料。博物館的收藏包括船舶模型、航海圖表、藝術品、海洋導航工具、航海服裝、船舶裝飾品等多種展品，展廳提供了深入了解英國海事歷史的機會，涵蓋了從古代航海探險到現代船舶技術的各個時期。
+        </h4>
+        <h4>
+          博物館內最引人注目的展品之一是英國皇家海軍的舊皇家船隻「勝利號」，這是拿破崙戰爭時期的一艘戰列艦，也是英國歷史上最著名的船隻。
+        </h4>
+        <div style="text-align: center">
+          <img src="英國照片\倫敦\倫敦4.jpg" width="800px" />
+        </div>
+        <br /><br /><br />
+        <h3>格林威治市集 (Greenwich Market)</h3>
+        <h4>
+          格林威治市集是倫敦最古老的市集，可以追溯到 17 世紀，以其多樣性和獨特性而聞名，擁有逾 150 個攤位，有各種商品和手工藝品、珠寶、時尚服飾、古董、家居裝飾品和手工產品，也可以品嚐到來自世界各地的美食，包括傳統英國料理、國際美食、街頭小吃和甜點。
+        </h4>
+        <div style="text-align: center">
+          <img src="英國照片\倫敦\倫敦5.jpg" width="800px" />
+        </div>
+        <br /><br /><br />
+        <h3>倫敦唐人街 (London Chinatown)</h3>
+        <h4>
+          倫敦唐人街的歷史可以追溯到 19 世紀末，當時一些中國移民開始在此建立家庭和事業，隨著時間的推移逐漸成為倫敦華人社區的中心，色彩繽紛的中國門牌、裝飾華麗的門面和中文標誌在異國連綿出一幅不同的風景，也可以品嚐到各種地區的中國菜，包括廣東菜、四川菜、湖南菜、北京烤鴨等。
+        </h4>
+        <div style="text-align: center">
+          <img src="英國照片\倫敦\倫敦6.jpg" width="600px" />
+        </div>
+        <br /><br /><br />
+        <h3>白金漢宮 (Buckingham Palace)</h3>
+        <h4>
+          白金漢宮是英國君主的官方居所和辦公地點，可以追溯到 18 世紀，當時它是一座格奧爾基亞風格的城堡，後來在 19 世紀進行了擴建和改建，成為現在的宮殿。建築風格主要是新古典主義風格，宮殿外部以希臘邊柱、雕塑和華麗的立面裝飾著稱。白金漢宮是英國君主接待國家元首和舉辦重要官方活動的場所，擁有超過 700 間房間，包括宴會廳、會議室、客房和辦公室等，其中最著名的是宮殿的正面中央部分，是皇家衛隊交接儀式的舉行地點，<b>每周一、三、五、日的早上 11 點會有衛兵交接</b>，千萬不要錯過! 記得要提早過來卡位!
+        </h4>
+        <div style="text-align: center">
+          <img src="英國照片\倫敦\倫敦7.jpg" width="800px" />
+          <img src="英國照片\倫敦\倫敦8.jpg" width="600px" />
+        </div>
+        <br /><br /><br />
+        <h3>綠園 (The Green Park)</h3>
+        <h4>
+          綠園位於白金漢宮和聖詹姆士公園之間，被視為倫敦最古老和最原始的皇家公園，可以追溯到 16 世紀，當時它是亨利八世的獵場，被用於皇家狩獵和遊戲，隨著時間的推移逐漸被改造為一個公園，成為倫敦居民休憩和散步的場所。這裡還有一些雕塑和紀念碑，其中最著名的是位於公園南端的約翰·甘迺迪紀念碑 (The Memorial to the Queen's beloved Grandmother)，是一座紀念維多利亞女王的雕像。
+        </h4>
+        <div style="text-align: center">
+          <img src="英國照片\倫敦\倫敦9.jpg" width="800px" />
+        </div>
+        <br /><br /><br />
+        <h3>肯辛頓公園 (Arc de Triomphe)</h3>
+        <h4>
+          肯辛頓公園的歷史可以追溯到 17 世紀，當時是肯辛頓皇宮的皇家花園，公園內有許多古老的樹木和花壇，營造出原始的自然環境。公園中央有一個名為 The Long Water 的人工湖，可以在湖邊漫步或者租船遊覽湖面。公園內有一座著名的建築物肯辛頓宮，是英國皇室的住所之一，可以參觀宮殿的一部分，如國家收藏和肯辛頓宮花園。
+        </h4>
+        <div style="text-align: center">
+          <img src="英國照片\倫敦\倫敦10.jpg" width="800px" />
+          <img src="英國照片\倫敦\倫敦11.jpg" width="800px" />
+        </div>
+        <br /><br /><br />
+        <h3>大英博物館 (The British Museum)</h3>
+        <h4>
+          大英博物館是英國最重要的文化機構，成立於 1753 年，是世界上第一座向公眾開放的國家博物館。大英博物館包括來自世界各地的兩百多萬件文物和藝術品。這些藏品涵蓋了人類歷史的各個時期和文化的各個方面，從古埃及和古希臘的藝術品到亞洲、非洲、美洲和歐洲的文物，以如羅塞塔石碑和死者之書。
+        </h4>
+        <h4>博物館的建築本身也非常壯麗，以希臘多立克柱式風格設計，大理石為材料，展現出宏偉的氣勢。其中最著名的部分是大廳 (The Great Court)，是一個由玻璃和鋼結構建成的巨大中庭，是世界上最大的室內廣場之一。</h4>
+        <div style="text-align: center">
+          <img src="英國照片\倫敦\倫敦12.jpg" width="800px" />
+          <img src="英國照片\倫敦\倫敦13.jpg" width="800px" />
+        </div>
+        <div class="two-vertical-images">
+          <img src="英國照片\倫敦\倫敦14-1.jpg" />
+          <img src="英國照片\倫敦\倫敦14-2.jpg" />
+        </div>
+        <div class="two-vertical-images">
+          <img src="英國照片\倫敦\倫敦15-1.jpg" />
+          <img src="英國照片\倫敦\倫敦15-2.jpg" />
+        </div>
+        <div style="text-align: center">
+          <img src="英國照片\倫敦\倫敦16.jpg" width="800px" />
+          <img src="英國照片\倫敦\倫敦17.jpg" width="800px" />
+        </div>
+        <br /><br /><br />
+        <h3>福爾摩斯紀念館 (The Sherlock Holmes Museum)</h3>
+        <h4>
+          福爾摩斯紀念館位於倫敦貝克街 221B，致力於紀念世界著名偵探小說角色夏洛克·福爾摩斯 (Sherlock Holmes)。夏洛克·福爾摩斯是由阿瑟·柯南·道爾 (Arthur Conan Doyle) 創作的虛構角色，是一位聰明、機智和推理能力非凡的偵探。夏洛克·福爾摩斯的故事在世界各地廣受歡迎，他的形象成為了偵探小說的代表之一。
+        </h4>
+        <h4>博物館的建築本身是一座維多利亞時代的房屋，以當時的風格裝飾。進入博物館會感覺彷彿進入了夏洛克·福爾摩斯的世界。博物館內部被布置成福爾摩斯和他的助手華生醫生的居所，展示了他們的客廳、臥室和辦公室，以及一些典型的物品和道具，如福爾摩斯的煙斗、放大鏡和犀牛角鞭等。</h4>
+        <h4>可以在博物館中探索福爾摩斯的生活和工作環境，感受他的故事和角色。博物館還展示了關於夏洛克·福爾摩斯的相關展品、書籍和影視作品，以及與阿瑟·柯南·道爾和他的創作過程有關的資料。</h4>
+        <div style="text-align: center">
+          <img src="英國照片\倫敦\倫敦18.jpg" width="800px" />
+          <img src="英國照片\倫敦\倫敦19.jpg" width="600px" />
+          <img src="英國照片\倫敦\倫敦20.jpg" width="600px" />
+        </div>
+        <br /><br /><br />
+        <h3>自然史博物館 (Natural History Museum)</h3>
+        <h4>
+          自然歷史博物館是一座龐大而壯觀的建築，建於 19 世紀後期，以哥特復興式風格為特色。它以其獨特的羅馬式外觀和中央冠式圓頂而聞名，外立面裝飾有豐富的雕刻和細節。博物館的展品非常豐富多樣，涵蓋了地球上生物多樣性和地球科學的各個領域，擁有大約 8 千萬件物品和標本，包括植物、動物、昆蟲、化石和礦物等。博物館最著名的展品是一隻巨大的恐龍模型，名為「迪普洛迪科斯」，以及一隻保存完好的藍鯨骨架。
+        </h4>
+        <div style="text-align: center">
+          <img src="英國照片\倫敦\倫敦21.jpg" width="800px" />
+          <img src="英國照片\倫敦\倫敦22.jpg" width="800px" />
+        </div>
+        <br /><br /><br />
+        <h3>大笨鐘 (Big Ben)</h3>
+        <h4>
+          大笨鐘是倫敦的標誌性建築物，是倫敦塔橋宮 (Palace of Westminster) 中的一座鐘樓，也是英國議會的一部分。塔高 96 米的鐘樓擁有四個面向的大時鐘，每個時鐘面的直徑約為 7 米，鐘樓的建築風格屬於哥德復興式，以其雄偉和華麗的外觀而聞名。大鐘本身是世界上最著名和最具辨識度的時鐘之一，於 1859 年鑄造，重達 13.5 噸，並以本杰明·霍爾 (Benjamin Hall) 的名字命名，大鐘每小時報時，其聲音可在倫敦市區廣泛聽到，成為倫敦的重要象徵。
+        </h4>
+        <div style="text-align: center">
+          <img src="英國照片\倫敦\倫敦23.jpg" width="600px" />
+          <img src="英國照片\倫敦\倫敦24.jpg" width="800px" />
+          <img src="英國照片\倫敦\倫敦25.jpg" width="800px" />
+        </div>
+        <br /><br /><br />
+        <h3>倫敦眼 (London Eye)</h3>
+        <h4>
+          倫敦眼是位於泰晤士河畔的一座摩天輪，建於 2000 年，是為了慶祝新千年而興建的。設計靈感來自於傳統的摩天觀景輪，但採用了現代化的技術和材料。倫敦眼的高度達 135 米，曾經是世界上最高的摩天觀景輪，直到後來被新加坡的「新加坡摩天觀景輪」超越。
+        </h4>
+        <h4>倫敦眼的外觀獨特，由 32 個玻璃纖維和鋼鐵構成的透明觀景艙組成，每個觀景艙都可以容納約 25 名乘客，乘客可以在艙內自由移動，欣賞到倫敦市區的壯麗景色。</h4>
+        <div style="text-align: center">
+          <img src="英國照片\倫敦\倫敦26.jpg" width="600px" />
+        </div>
+        <br /><br /><br />
+        <h3>西敏寺 (Westminster Abbey)</h3>
+        <h4>
+          西敏寺是英國國教的重要場所，建於 11 世紀，最初是一座本篤會修道院。這座教堂是英國君主加冕禮和皇家婚禮的場所，許多英國國王和王后，包括威廉一世、伊莉莎白一世、結婚的威廉王子和凱特王妃等，都在這裡舉行了重要的宗教儀式。西敏寺也是許多著名人物的安葬地，包括作家查爾斯·狄更斯、科學家伊薩克·牛頓和多位英國國王和女王。
+        </h4>
+        <h4>威斯敏斯特教堂的建築風格融合了羅馬式、哥特式和文藝復興風格，外觀壯麗，拱形天花板和尖塔塔尖令人印象深刻，內部有許多華麗的禮拜堂、陵墓和藝術品，展示了英國歷史和文化的豐富內涵。</h4>
+        <div style="text-align: center">
+          <img src="英國照片\倫敦\倫敦27.jpg" width="600px" />
+          <img src="英國照片\倫敦\倫敦28.jpg" width="800px" />
+        </div>
+        <br /><br /><br />
+        <h3>唐寧街 (Downing St)</h3>
+        <h4>
+          唐寧街是英國政治的核心地帶，最知名的地方是位於該街道的英國首相府 (10 Downing Street)，是英國首相的官邸和辦公地點，自1735年以來一直是英國首相的官邸，因為它是英國政府的重要場所，有著高度的安全措施，該地點經常成為媒體和公眾關注的焦點，尤其是在重大政治事件和首相交替時。
+        </h4>
+        <h4>除了首相府外，唐寧街還有其他政府官邸，例如 11 Downing Street，是英國財政大臣的辦公地點，這些建築物都具有政治和歷史上的重要性，成為了英國政府運作的核心。</h4>
+        <div style="text-align: center">
+          <img src="英國照片\倫敦\倫敦29.jpg" width="600px" />
+          <img src="英國照片\倫敦\倫敦30.jpg" width="600px" />
+        </div>
+        <br /><br /><br />
+        <h3>特拉法加廣場 (Trafalgar Square)</h3>
+        <h4>
+          特拉法加廣場是一個具有重要歷史和文化意義的公共空間，紀念拿破崙時代的著名海戰——特拉法加海戰 (Battle of Trafalgar) 而得名。廣場的中心是一座高聳的柱子，上面豎立著一尊拿破崙時代的英雄: 海軍上將霍雷肖·納爾遜 (Horatio Nelson) 的雕像。
+        </h4>
+        <h4>廣場常年舉辦各種活動和集會，包括音樂表演、藝術展覽、節日慶典等。每年的新年除夕，數千人聚集在這裡慶祝，觀賞煙火表演，也是政治抗議和集會的熱點之一。</h4>
+        <div style="text-align: center">
+          <img src="英國照片\倫敦\倫敦31.jpg" width="800px" />
+        </div>
+        <br /><br /><br />
+        <h3>倫敦塔橋 (Tower Bridge)</h3>
+        <h4>
+          倫敦塔橋是一座橫跨泰晤士河的懸索橋，是倫敦市景中最具辨識度的建築物之一。塔橋建於 1886 年至 1894 年間，是為了滿足當時日益增長的倫敦市交通需求而興建的，包括兩座塔樓和中間可升降的行車道，以容許大型船隻通過。塔橋的外觀以哥德式和維多利亞式風格為主，具有優雅和壯麗的特點。橋上的行人道可以欣賞到倫敦市區的壯麗景色，包括塔橋附近的塔樓、倫敦塔和泰晤士河畔的著名建築。塔橋最大特點是其可升降的中間行車道，當有船舶通過時，橋上的行車道會分開，中間的部分會升起，以便船隻通過。
+        </h4>
+        <div style="text-align: center">
+          <img src="英國照片\倫敦\倫敦32.jpg" width="800px" />
+          <img src="英國照片\倫敦\倫敦33.jpg" width="800px" />
+          <img src="英國照片\倫敦\倫敦34.jpg" width="600px" />
+        </div>
+        <br /><br /><br />
+        <h3>波羅市場 (Borough Market)</h3>
+        <h4>
+          波羅市場有超過 1000 年的歷史，以新鮮的農產品、特色食品和各式各樣的美食聞名。市場內有數百個攤位和商店，提供各種類型的食品和飲料，包括新鮮的水果、蔬菜、肉類、魚類、乳製品、糕點、熟食、調味品和國際美食等。這裡也是尋找特色食材和烹飪用品的理想場所，吸引著廚師、美食家和烹飪愛好者。
+        </h4>
+        <h4>波羅市場不僅是一個美食的天堂，也是一個重要的社區聚集地，與當地農民和供應商建立了緊密的聯繫，支持可持續和有機食品的種植和銷售。</h4>
+        <div style="text-align: center">
+          <img src="英國照片\倫敦\倫敦35.png" width="800px" />
+        </div>
+        <br /><br /><br />
+        <h3>赫麥殿堂劇院 (His Majesty's Theatre)</h3>
+        <h4>
+          赫麥殿堂劇院建於 1897 年，由建築師查理斯·普特南 (Charles J. Phipps) 設計，其風格融合了新古典主義和新文藝復興風格。劇院的外觀精美華麗，充滿細膩的雕塑和裝飾，展現了當時的繁榮和奢華。劇院的內部設計同樣壯麗，擁有華麗的吊燈、豪華的裝飾和舒適的座位，為觀眾提供了一個極致的觀劇環境。
+        </h4>
+        <h4>赫麥殿堂劇院主要上演音樂劇和音樂劇劇場作品，如安德魯·洛伊·韋伯的《歌劇魅影》(The Phantom of the Opera) 和《貓》(Cats)，以及其他經典作品如《音樂之聲》(The Sound of Music) 和《馬戲團之夜》(Cirque du Soleil's Varekai)，可以直接去<a href="https://lwtheatres.co.uk/whats-on/?all"
+          target="_blank">官網</a>查看表演場次並購票。
+        </h4>
+        <div style="text-align: center">
+          <img src="英國照片\倫敦\倫敦36.jpg" width="600px" />
+          <img src="英國照片\倫敦\倫敦37.jpg" width="800px" />
+        </div>
+        <br /><br /><br />
+        <h3>九又四分之三月台 (Platform 9¾)</h3>
+        <h4>
+          9¾ 號月台是位於倫敦國王十字車站 (King's Cross Station) 的一個虛構月台，出現在 J.K.羅琳的哈利波特系列小說中。在哈利波特的故事中，這個月台是通往霍格華茲魔法學校的入口，只有魔法人士才能找到並穿越它。為了迎合哈利波特迷的熱情，國王十字車站在 2000 年設立了一個紀念品商店，並在車站內一個牆壁上裝置了一個特別的裝飾，模擬出 9¾ 號月台的出入口。這個裝飾包括一個倚靠在牆上的行李推車，其中插著一半的行李箱，仿佛正在穿越月台。
+        </h4>
+        <div style="text-align: center">
+          <img src="英國照片\倫敦\倫敦38.jpg" width="600px" />
+        </div>
+        <br /><br /><br />
+        <h2>倫敦近郊景點</h2>
+        <h3>劍橋大學 (Cambridge University)</h3>
+        <h4>
+          劍橋大學是世界上最古老、聲譽最卓越的大學之一，歷史可以追溯到13世紀初。劍橋大學由18 個學院組成，每個學院都是獨立的學術單位，擁有自己的校舍。這些學院中有些成立於中世紀，有些則是在近代才建立的，但都擁有悠久的歷史和卓越的學術傳統。
+        </h4>
+        <h4>劍橋大學擁有豐富的學科領域，涵蓋了人文、社會科學、自然科學、工程、醫學等，大學的教職員和校友中有眾多諾貝爾獎得主、菲爾茲獎得主、國際知名學者和政治領袖，對世界的貢獻和影響深遠。除了學術研究，劍橋大學也以其美麗的校園建築和悠久的傳統聞名，校園內有許多歷史悠久的建築，包括宏偉的校舍、古老的圖書館和精美的教堂。</h4>
+        <h4>前往劍橋可以<b>從倫敦國王十字車站搭火車到劍橋站</b>，車程大約 50 分鐘，下車後再步行大約 15 分鐘就到校園的範圍內了。</h4>
+        <div style="text-align: center">
+          <img src="英國照片\倫敦\倫敦39.jpg" width="600px" />
+          <img src="英國照片\倫敦\倫敦40.jpg" width="800px" />
+          <img src="英國照片\倫敦\倫敦41.jpg" width="800px" />
+          <img src="英國照片\倫敦\倫敦42.jpg" width="800px" />
+          <img src="英國照片\倫敦\倫敦43.jpg" width="800px" />
+          <img src="英國照片\倫敦\倫敦44.jpg" width="800px" />
+          <img src="英國照片\倫敦\倫敦45.jpg" width="600px" />
+        </div>
+        <br /><br /><br />
+        <h2>倫敦美食</h2>
+        <h3>Poppies Fish & Chips</h3>
+        <h4>
+          俗話說英國人什麼都會，就是不會做菜 XD，唯一能吃的就是炸魚薯條，因此來嘗試了這家號稱全倫敦最好吃的炸魚薯條。炸魚本身味道很不錯，不會炸過頭讓整個肉質變的很乾柴，擠了檸檬汁再配上附的可愛番茄醬及莎莎醬後味道更豐富，薯條本身就十分普通，來倫敦可以嘗試看看。
+        </h4>
+        <div style="text-align: center">
+          <img src="英國照片\倫敦\倫敦46.jpg" width="800px" />
+        </div>
+        <br />
+        <h3>旺記</h3>
+        <h4>
+          旺記是位於唐人街上的港式餐廳，有各種港式粉麵類及炒菜，店家也都是用粵語溝通，感覺好像一下子穿梭回了香港一樣，牛腩粉的肉燉的十分爛，配上吸飽牛腩湯的米粉，在滿是西餐料理的旅行中回味中式口味，也是個不錯的選擇。但要特別注意的是，唐人街大部分餐廳都只收現金無法刷卡，記得要先問清楚再進去用餐。
+        </h4>
+        <div style="text-align: center">
+          <img src="英國照片\倫敦\倫敦47.jpg" width="600px" />
+        </div>
+        <br /><br /><br />
+        <h3>Roti King</h3>
+        <h4>
+          大家都說倫敦好吃的東西都不是英國料理，這句話似乎是真的 XD，這家位於 Euston 火車站旁，是倫敦最好吃的馬來西亞料理，快要到用餐時間就已經大排長龍，大約排了 40 分鐘才進去。招牌的抓餅配上不同口味的咖哩非常好吃，算是還原度非常高的馬來料理。
+        </h4>
+        <div style="text-align: center">
+          <img src="英國照片\倫敦\倫敦48.jpg" width="800px" />
+        </div>
+        <br /><br /><br />
+        <h3>The Breakfast Club</h3>
+        <h4>
+          來英國一定要吃最正宗的英式大早餐，煎蛋、薯餅、香腸、培根在配上番茄焗豆 (雖然我發現台灣人好像大都不喜歡這個)，是最好開啟有活力的一天的方式，雖然在最熱鬧的蘇豪區，但價錢也不會非常高昂，是早餐非常好的選擇。
+        </h4>
+        <div style="text-align: center">
+          <img src="英國照片\倫敦\倫敦49.jpg" width="600px" />
+        </div>
+        <br />
+      </div>
+      <div class="destination-sidebar">
+        <div class="sidebar-image-container">
+          <img src="側邊欄自我介紹.jpg" />
+        </div>
+        <h5>
+          Hi!
+          我是Tommy，我熱愛旅遊也喜歡藉由影像紀錄旅程中的點點滴滴，透過文字將我在旅途中的所見所聞分享給大家。旅行對我而言不只是吃吃喝喝，而是能在行萬里路間感受世界的脈動，體驗不同的文化，希望藉由我的分享能讓大家看到更多世界的美好。
+        </h5>
+        <br />
+        <h5>
+          想更了解我或與我聯絡:
+          <a
+            href="https://www.instagram.com/tommy_techvoyage/"
+            target="_blank"
+            style="color: inherit; text-decoration: underline"
+          >
+            <b>Instagram</b>
+          </a>
+        </h5>
+        <div class="recommendation-section">
+          <h3>其他英國旅遊目的地</h3>
+          <div class="recommendation-buttons">
+            <a href="曼徹斯特.html">
+              <button><h5>曼徹斯特</h5></button>
+            </a>
+            <a href="利物浦.html">
+              <button><h5>利物浦</h5></button>
+            </a>
+            <a href="約克.html">
+              <button><h5>約克</h5></button>
+            </a>
+            <a href="愛丁堡.html">
+              <button><h5>愛丁堡</h5></button>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="contact-section">
+      <div class="contact-item">
+        <h3>
+          想更了解我或與我聯絡:
+          <a
+            href="https://www.instagram.com/tommy_techvoyage/"
+            target="_blank"
+            style="color: inherit; text-decoration: underline"
+          >
+            Instagram
+          </a>
+        </h3>
+      </div>
+    </div>
+    <footer>
+      <h6>COPYRIGHT © 2025 Tommy 看世界 All rights reserved.</h6>
+    </footer>
+    <div id="expandable-menu">
+      <div id="menu-toggle"></div>
+      <!-- 收闔按鈕 -->
+      <div id="menu-content">
+        <h4>目錄</h4>
+        <ul id="menu-list"></ul>
+      </div>
+    </div>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const menu = document.getElementById("expandable-menu");
+        const toggle = document.getElementById("menu-toggle");
+        const menuList = document.getElementById("menu-list");
+        const destinationMain = document.querySelector(".destination-main");
+
+        // 點擊按鈕切換目錄狀態
+        toggle.addEventListener("click", () => {
+          menu.classList.toggle("open");
+        });
+
+        // 從 destination-main 區域提取 h2 和 h3，動態生成目錄
+        const headings = destinationMain.querySelectorAll("h2, h3");
+        headings.forEach((heading, index) => {
+          // 確保每個 h2 和 h3 都有唯一的 id
+          if (!heading.id) {
+            heading.id = `heading-${index}`;
+          }
+
+          const listItem = document.createElement("li");
+          const link = document.createElement("a");
+          link.textContent = heading.textContent;
+          link.href = `#${heading.id}`;
+          listItem.appendChild(link);
+
+          // 為 h3 添加縮排樣式
+          if (heading.tagName.toLowerCase() === "h3") {
+            listItem.classList.add("sub-item");
+          }
+
+          menuList.appendChild(listItem);
+        });
+
+        // 滾動至目標位置並加上 75px 偏移
+        menuList.addEventListener("click", (event) => {
+          if (event.target.tagName === "A") {
+            event.preventDefault(); // 阻止預設行為
+
+            const targetId = event.target.getAttribute("href").substring(1); // 取得目標 ID
+            const targetElement = document.getElementById(targetId);
+
+            if (targetElement) {
+              // 計算目標元素的位置並加上 75px 偏移
+              const targetPosition =
+                targetElement.getBoundingClientRect().top + window.scrollY;
+              const offset = 75; // 偏移的距離
+              window.scrollTo({
+                top: targetPosition - offset,
+                behavior: "smooth", // 平滑滾動
+              });
+            }
+          }
+        });
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html lang="zh-hant-TW">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="曹旅瀚 Tommy" />
+    <meta name="description" content="探索比利時首都布魯塞爾的獨特魅力！從大廣場、撒尿小童到在地巧克力與啤酒文化，走進這座融合歷史與現代的歐洲心臟城市。" />
+    <meta name="keywords" content="布魯塞爾旅遊, 比利時自由行, 布魯塞爾景點, 大廣場, 尿尿小童, 比利時巧克力, 布魯塞爾啤酒, 歐盟總部, 歐洲城市推薦" />
+    <title>Tommy 看世界 - 布魯塞爾</title>
+    <link rel="icon" href="網頁縮圖.ico" />
+    <style>
+      body {
+        font-family: Calibri, Arial, sans-serif; /* 首選 Calibri，次選 Arial */
+        margin: 0;
+        padding: 0;
+        overflow-x: hidden; /* 禁止水平滾動 */
+        background-color: #f4f4f9;
+        color: #333;
+      }
+
+      h1 {
+        font-size: 40px;
+        font-weight: bold;
+      }
+
+      h2 {
+        font-size: 32px;
+        font-weight: bold;
+        color: #2a90a7;
+        display: inline-block;
+        margin-bottom: 1rem; /* 縮小 h2 的底部邊距 */
+        background-color: #cee5e8;
+      }
+
+      h3 {
+        font-size: 26px;
+        margin: 0 0 1rem;
+        font-weight: bold;
+        text-decoration: underline; /* 加上底線 */
+      }
+
+      h4 {
+        font-size: 18px;
+        font-weight: normal;
+        line-height: 1.8;
+      }
+
+      h5 {
+        font-size: 16px;
+        font-weight: normal;
+        margin: 0;
+      }
+
+      h6 {
+        font-size: 10px;
+        color: #fff;
+        margin: 0;
+        text-align: center;
+        line-height: 50px; /* 高度對齊 */
+      }
+
+      nav {
+        background-color: #78bcc4;
+        display: flex;
+        justify-content: space-between; /* 保持分佈在兩側 */
+        width: calc(100% - 10rem); /* 與其他內容的邊界一致 */
+        padding: 0.5rem 5rem; /* 主導覽列的 padding 設置 */
+        position: fixed;
+        top: 0;
+        z-index: 1000;
+      }
+
+      .nav-left .logo img {
+        height: 50px; /* 控制 Logo 圖片的高度 */
+        transform: translateX(-1.5rem); /* 向右移動 2rem */
+      }
+
+      .nav-right {
+        display: flex;
+        align-items: center;
+        transform: translateX(2rem); /* 向右移動 2rem */
+      }
+
+      nav a {
+        color: #eff5f5;
+        text-decoration: none;
+        padding: 0.5rem 1rem;
+        margin: 0 0.5rem;
+        transition: transform 0.3s;
+      }
+
+      nav a:hover {
+        transform: translateY(-3px);
+      }
+
+      .dropdown {
+        position: relative;
+      }
+
+      .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #78bcc4;
+        min-width: 160px;
+        border-radius: 4px;
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        padding: 0.2rem 0;
+      }
+
+      .dropdown-content a {
+        color: #eff5f5;
+        display: block;
+        transition: transform 0.3s;
+        border-bottom: 1px solid #ddd;
+      }
+
+      .dropdown-content a:last-child {
+        border-bottom: none;
+      }
+
+      .dropdown-content a:hover {
+        transform: translateY(-3px);
+      }
+
+      .dropdown:hover .dropdown-content {
+        display: block;
+      }
+
+      .intro-section {
+        background-color: #eff5f5;
+        display: flex;
+        padding: 2rem;
+        margin-top: 60px; /* 根據導航列高度調整 */
+        justify-content: space-between;
+        align-items: flex-start;
+        width: 100%;
+        box-sizing: border-box; /* 包含 padding 在內 */
+        padding-left: 5rem;
+        padding-right: 5rem;
+      }
+
+      .intro-section h4 {
+        max-width: 700px;
+      }
+
+      .intro-section .left {
+        width: 60%;
+      }
+
+      .intro-section .right {
+        width: 40%;
+      }
+
+      .destination-section {
+        display: flex;
+        padding: 1rem 5%; /* 左右內間距為螢幕的10% */
+        background-color: white;
+      }
+
+      .destination-main {
+        width: 75%;
+        margin-right: 1.5rem; /* 增加右邊外邊距 */
+      }
+
+      .destination-sidebar {
+        width: 25%;
+        padding-left: 1.5rem; /* 增加左側內邊距 */
+        margin-top: 2rem; /* 向上或向下調整，負值表示向上 */
+      }
+
+      .sidebar-image-container {
+        margin-bottom: 1rem;
+        text-align: center; /* 確保圖片置中 */
+      }
+
+      .sidebar-image-container img {
+        height: 300px; /* 設置直式圖片的高度 */
+      }
+
+      .two-vertical-images {
+        display: flex; /* 彈性佈局，讓圖片並排 */
+        justify-content: space-between; /* 兩張圖片均勻分佈 */
+        gap: 2rem; /* 圖片之間的間距 */
+        margin-top: 2rem;
+        margin-bottom: 2rem; /* 與下方內容的距離 */
+      }
+
+      .two-vertical-images img {
+        width: calc(50% - 0.5rem); /* 每張圖片佔用容器的一半減去間距 */
+        text-align: center; /* 確保圖片置中 */
+        height: auto; /* 保持圖片的直式比例 */
+        object-fit: cover; /* 確保圖片內容適應容器 */
+      }
+
+      .recommendation-section {
+        margin-top: 1.5rem; /* 與上方文字的間距 */
+        text-align: center;
+        position: sticky;
+        top: 80px; /* 空出導覽列的高度，確保推薦區不被覆蓋 */
+        z-index: 10; /* 提高層級，避免被其他內容遮蓋 */
+      }
+
+      .recommendation-section h3 {
+        font-size: 18px;
+        font-weight: bold;
+        margin-bottom: 0.5rem; /* 與按鈕區的距離 */
+      }
+
+      .recommendation-buttons {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 0.5rem; /* 按鈕之間的間距 */
+      }
+
+      .recommendation-buttons button {
+        padding: 0.5rem 1rem;
+        font-size: 14px;
+        color: white;
+        background-color: #78bcc4;
+        border: none;
+        border-radius: 4px;
+        transition: transform 0.3s;
+        font-family: Arial, sans-serif;
+      }
+
+      .recommendation-buttons button:hover {
+        transform: translateY(-3px);
+      }
+
+      .contact-section {
+        padding: 2rem 5rem; /* 上下與左右間距 */
+        background-color: #eff5f5; /* 淺灰背景 */
+        text-align: center; /* 確保內容置中對齊 */
+      }
+
+      .contact-item h3 {
+        font-size: 18px; /* 調整標題字體大小 */
+        margin: 0; /* 移除多餘的間距 */
+        text-decoration: none; /* 移除底線 */
+      }
+
+      footer {
+        background-color: #000;
+        color: white;
+        height: 30px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      #expandable-menu {
+        position: fixed;
+        top: 70px; /* 與螢幕頂部的距離設為 60px */
+        right: 0;
+        height: calc(100% - 70px); /* 高度減去 60px，避免超出視窗 */
+        width: 395px; /* 目錄寬度與 sidebar 齊寬 */
+        transform: translateX(100%); /* 初始狀態：隱藏在右側 */
+        transition: transform 0.3s ease;
+        background-color: #f4f4f9; /* 與網站背景一致 */
+        z-index: 1000;
+      }
+
+      /* 收闔按鈕 */
+      #menu-toggle {
+        position: absolute;
+        top: 45%;
+        left: -40px; /* 調整按鈕的位置，適應按鈕變大後的寬度 */
+        transform: translateY(-50%);
+        width: 40px; /* 增大按鈕寬度 */
+        height: 80px; /* 增大按鈕高度 */
+        background-color: #78bcc4;
+        color: white;
+        border-radius: 4px;
+        display: flex;
+        justify-content: center; /* 水平居中 */
+        align-items: center; /* 垂直居中 */
+      }
+
+      #menu-toggle::after {
+        content: "目錄"; /* 在按鈕內顯示 "目錄" */
+        font-size: 17px;
+        color: white; /* 設定字體顏色為白色 */
+        writing-mode: vertical-rl; /* 使文字垂直排列 */
+      }
+
+      #menu-toggle:hover {
+        background-color: #78bcc4;
+      }
+
+      /* 目錄內容 */
+      #menu-content {
+        padding: 0.5rem 1rem;
+        overflow-y: auto;
+        height: 100%;
+      }
+
+      #menu-content h4 {
+        font-weight: bold;
+        margin-top: 0;
+      }
+
+      #menu-list {
+        list-style: none;
+        padding: 0;
+      }
+
+      #menu-list li {
+        margin-bottom: 0.5rem;
+      }
+
+      #menu-list a {
+        color: #2a90a7;
+        text-decoration: none;
+        transition: color 0.3s;
+      }
+
+      #menu-list a:hover {
+        color: #78bcc4;
+      }
+
+      #menu-list .sub-item {
+        margin-left: 1.5rem; /* 調整縮排距離 */
+        font-size: 0.9rem; /* 可選：調整子項目字體大小 */
+      }
+
+      /* 目錄展開狀態 */
+      #expandable-menu.open {
+        transform: translateX(0);
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <div class="nav-left">
+        <div class="logo">
+          <a href="首頁.html">
+            <img src="網站Logo.png" alt="網站 Logo" />
+          </a>
+        </div>
+      </div>
+      <div class="nav-right">
+        <a href="首頁.html">關於我</a>
+        <div class="dropdown">
+          <a>亞洲旅遊</a>
+          <div class="dropdown-content">
+            <a href="中國.html">中國</a>
+            <a href="新加坡.html">新加坡</a>
+            <a href="馬來西亞.html">馬來西亞</a>
+            <a href="泰國.html">泰國</a>
+            <a href="印尼.html">印尼</a>
+            <a href="越南.html">越南</a>
+          </div>
+        </div>
+        <div class="dropdown">
+          <a>歐洲旅遊</a>
+          <div class="dropdown-content">
+            <a href="英國.html">英國</a>
+            <a href="法國.html">法國</a>
+            <a href="荷蘭.html">荷蘭</a>
+            <a href="比利時.html">比利時</a>
+            <a href="盧森堡.html">盧森堡</a>
+            <a href="瑞士.html">瑞士</a>
+            <a href="摩納哥.html">摩納哥</a>
+            <a href="西班牙.html">西班牙</a>
+            <a href="葡萄牙.html">葡萄牙</a>
+            <a href="安道爾.html">安道爾</a>
+            <a href="丹麥.html">丹麥</a>
+            <a href="瑞典.html">瑞典</a>
+            <a href="波蘭.html">波蘭</a>
+          </div>
+        </div>
+        <div class="dropdown">
+          <a>美洲旅遊</a>
+          <div class="dropdown-content">
+            <a href="美國.html">美國</a>
+            <a href="加拿大.html">加拿大</a>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <div class="intro-section">
+      <div class="left">
+        <h1>Tommy 在布魯塞爾</h1>
+        <h4>
+          <b>布魯塞爾 (Brussel) </b>是比利時的首都和最大城，歷史可以追溯到公元 10 世紀，在中世紀成為了勃艮第公爵的領地，並逐漸發展成為一個經濟和文化中心。現在的布魯塞爾是一個現代化的國際都會，擁有歐洲聯盟和北約的總部，是政治經濟和文化的中心，並在國際事務中發揮重要作用。布魯塞爾的城市景觀融合了中世紀的建築、現代化的摩天大樓和綠樹成蔭的公園，完成了十分自然的融合。
+        </h4>
+      </div>
+      <div class="right">
+        <img
+          src="比利時照片\布魯塞爾\布魯塞爾_介紹.jpg"
+          width="90%"
+          height="350px"
+        />
+      </div>
+    </div>
+
+    <div class="destination-section">
+      <div class="destination-main">
+        <h2>布魯塞爾交通</h2>
+        <h3>機場交通</h3>
+        <h4>
+          從布魯塞爾機場可以坐 Intercity Direct 火車直接抵達布魯塞爾中央車站，車程大約 25 分鐘。
+        </h4>
+        <h3>市區交通</h3>
+        <h4>
+          布魯塞爾的景點相當集中，基本上都可以步行抵達，走累了也可以搭乘路面電車和地鐵，另外比利時也是個相當單車友善的國家，可以選擇租個單車漫遊這座城市。
+        </h4>
+        <br /><br />
+        <h2>布魯塞爾住宿</h2>
+        <h4>
+          在布魯塞爾選擇住宿可以交通做為考量，推薦選擇離中央車站、北站還有大廣場都不算遠的 City2 購物中心附近，交通方便餐飲選擇也較多，也屬於布魯塞爾治安較好的區域。
+        </h4>
+        <div style="text-align: center">
+          <img src="比利時照片\布魯塞爾\布魯塞爾_住宿.png" width="800px" />
+        </div>
+        <br /><br />
+        <h2>布魯塞爾景點</h2>
+        <h3>聖彌額爾聖古都勒主教座堂 (Cathédrale Saints-Michel-et-Gudule)</h3>
+        <h4>
+          聖彌額爾聖古都勒主教座堂是比利時布魯塞爾的主教座堂，也是一個重要的宗教和文化地標，歷史可以追溯到 11 世紀，當時在同一個位置上建造了一座羅馬式教堂，隨著時間的推移教堂經歷了擴建和重建，最終形成了現在的哥特式建築風格。教堂的外觀壯觀，擁有雙塔和華麗的尖頂，充分展現了中世紀建築的藝術特色，在教堂內部可以欣賞到精美的彩色玻璃窗、石雕、壁畫和祭壇等藝術品，其中最著名的是內陣的玫瑰窗，以及聖米歇爾和聖古杜勒的聖像。
+        </h4>
+        <div style="text-align: center">
+          <img src="比利時照片\布魯塞爾\BR1.jpg" width="600px" />
+        </div>
+        <br /><br /><br />
+        <h3>布魯塞爾公園 (Parc de Bruxelles)</h3>
+        <h4>
+          布魯塞爾公園位於皇家廣場 (Place Royale) 的旁邊，佔地約 11 公頃，歷史可以追溯到 1775 年，當時它是奧地利統治者瑪麗亞·特蕾莎的私人花園，隨著時間的推移公園逐漸向公眾開放，並成為布魯塞爾市民休閒活動的場所。公園的設計融合了法國式和英式花園風格，擁有寬敞的草坪、花壇、噴泉和大量的樹木，可以漫步於綠樹成蔭的小徑上，欣賞到各種樹木和花卉的美麗景色。公園中還有許多雕塑和紀念碑，其中最著名的是勒波爾將軍的騎馬雕像，他是比利時獨立戰爭的英雄。
+        </h4>
+        <div style="text-align: center">
+          <img src="比利時照片\布魯塞爾\BR2.jpg" width="600px" />
+        </div>
+        <br /><br /><br />
+        <h3>布魯塞爾王宮 (Palais de Bruxelles)</h3>
+        <h4>
+          布魯塞爾王宮是比利時君主居住和執行公務的地方，建築始於 1783 年，當時它是奧地利統治者卡爾·馮·洛林斯的皇家宮殿。宮殿的建築風格獨特，融合了新古典主義和羅馬式風格，擁有壯麗的立面和華麗的裝飾。宮殿的設計由多位建築師參與，包括法國建築師查理-亨利·贝克 (Charles-Henri-Joseph Béthune) 和比利時建築師阿查·波拉爾 (Alphonse Balat)。
+        </h4>
+        <h4>每年夏季布魯塞爾宮殿會對公眾開放，布魯塞爾宮殿的內部裝飾豪華，展示了比利時的藝術和工藝。可以參觀宮殿的一些宴會廳、接待廳和皇家收藏的藝術品，其中最著名的是大廳 (Grand Hall) 和鏡廳 (Mirror Room)，以其壯觀的裝飾和精美的家具而聞名。</h4>
+        <div style="text-align: center">
+          <img src="比利時照片\布魯塞爾\BR3.jpg" width="800px" />
+          <img src="比利時照片\布魯塞爾\BR4.jpg" width="800px" />
+        </div>
+        <br /><br /><br />
+        <h3>皇家廣場 (Place Royale Bruxelles)</h3>
+        <h4>
+          皇家廣場的建設始於 18 世紀晚期，當時是奧地利統治者瑪麗亞·特蕾莎的計劃的一部分。廣場的設計受到法國巴洛克風格的影響，呈現出宏偉和尊貴的氛圍，周圍的建築物有著統一的立面風格，包括布魯塞爾宮殿 (Palais de Bruxelles)、布魯塞爾市政廳 (Hôtel de Ville de Bruxelles) 和比利時王室美術館 (Musées royaux des Beaux-Arts de Belgique)。皇家廣場本身呈現出開闊和寬敞的格局，中央是一個大型花園，種植著各種花卉和樹木，廣場上有許多長椅，可以在這裡欣賞到布魯塞爾市中心的美麗景色。
+        </h4>
+        <div style="text-align: center">
+          <img src="比利時照片\布魯塞爾\BR5.jpg" width="600px" />
+        </div>
+        <br /><br /><br />
+        <h3>藝術之丘 (Mont des Arts)</h3>
+        <h4>
+          藝術之丘是一個由花園、廣場和步道組成的綠地，能眺望壯觀的城市景觀和迷人的景色，包括布魯塞爾市政廳、布魯塞爾宮殿和布魯塞爾大教堂等建築物。藝術之丘還經常舉辦各種文化活動和藝術展覽，包括音樂會、戲劇表演和藝術節，可以在這裡欣賞到多樣化的藝術表演，深入了解比利時的文化和藝術場景。
+        </h4>
+        <div style="text-align: center">
+          <img src="比利時照片\布魯塞爾\BR6.jpg" width="800px" />
+        </div>
+        <br /><br /><br />
+        <h3>聖休伯特拱廊街 (Galeries Royales Saint Hubert)</h3>
+        <h4>
+          聖休伯特拱廊街是布魯塞爾的一個著名的室內購物街，也是歐洲最早的購物中心。建於 1847 年，是由建築師讓-皮埃爾·克拉斯 (Jean-Pierre Cluysenaar) 設計的，以其精美的建築和玻璃圓頂而聞名，結合了新古典主義和新文藝復興風格。
+        </h4>
+        <h4>聖休伯特皇家廊的結構由兩條平行的廊道組成，分別稱為皇家畫廊 (Galerie du Roi)、皇后畫廊 (Galerie de la Reine) 和國王畫廊 (Galerie des Princes)，這些廊道都有華麗的拱頂和精美的裝飾，充滿了歷史和藝術氛圍。</h4>
+        <h4>比利時的巧克力是世界聞名的，可以在這裡品嚐到各種精緻的巧克力產品，廊道還有一些咖啡館和餐廳，能品味當地美食及甜點。</h4>
+        <div style="text-align: center">
+          <img src="比利時照片\布魯塞爾\BR7.jpg" width="600px" />
+        </div>
+        <div class="two-vertical-images">
+          <img src="比利時照片\布魯塞爾\BR8-1.jpg" />
+          <img src="比利時照片\布魯塞爾\BR8-2.jpg" />
+        </div>
+        <div class="two-vertical-images">
+          <img src="比利時照片\布魯塞爾\BR9-1.jpg" />
+          <img src="比利時照片\布魯塞爾\BR9-2.jpg" />
+        </div>
+        <br /><br /><br />
+        <h3>尿尿小童 (Manneken Pis)</h3>
+        <h4>
+          尿尿小童是布魯塞爾的象徵性地標，是一個小男孩的銅像，他正站在一個小噴泉上，尿尿的姿態成為了它的特色。雕塑的起源可以追溯到 17 世紀，是由布魯塞爾的雕塑家設計和製作的，歷史和傳說有很多版本，但它一直以來都被視為布魯塞爾市民的幸運象徵和幽默的標誌。尿尿小童的造型小巧可愛，穿著不同的服裝，是根據不同的節日、紀念日和特殊場合而更換的，並且有一個專門的團隊負責管理和維護這些服裝。
+        </h4>
+        <h4>有趣的是尿尿小童的姊妹作品還包括尿尿小妹 (Jeanneke Pis) 和尿尿小狗 (Zinneke Pis)，它們分別位於布魯塞爾的其他地方，一同成為了城市的特色景點。</h4>
+        <div style="text-align: center">
+          <img src="比利時照片\布魯塞爾\BR10.jpg" width="600px" />
+          <img src="比利時照片\布魯塞爾\BR11.jpg" width="600px" />
+          <img src="比利時照片\布魯塞爾\BR12.jpg" width="600px" />
+        </div>
+        <br /><br /><br />
+        <h3>布魯塞爾大廣場 (Grand-Place)</h3>
+        <h4>
+          布魯塞爾大廣場世界上最美麗的廣場之一，被列為世界文化遺產，被周圍的建築物所環繞，包括市政廳 (Hôtel de Ville) 和行會 (Guildhalls)，這些建築物展示了不同的建築風格，如哥特式、巴洛克式和文藝復興式，彰顯了布魯塞爾的建築豐富多樣性。
+        </h4>
+        <h4>市政廳是最引人注目的建築之一，建於 15 世紀，是哥特式建築的典範，它的尖塔和華麗的外觀使其成為了布魯塞爾的標誌性建築。另外行會建築則是由不同的行業組成，如織布業、麵包師傅和肉類行業等，這些行會建築以其精美的立面和裝飾著稱，呈現了布魯塞爾的繁榮和貿易歷史。</h4>
+        <h4>每兩年舉辦一次的花卉地毯展覽 (Flower Carpet) 是布魯塞爾大廣場最受矚目的活動，成千上萬的鮮花被用來製作出壯觀的花卉地毯，非常壯觀。</h4>
+        <div style="text-align: center">
+          <img src="比利時照片\布魯塞爾\BR13.jpg" width="600px" />
+          <img src="比利時照片\布魯塞爾\BR14.jpg" width="600px" />
+          <img src="比利時照片\布魯塞爾\BR15.jpg" width="800px" />
+        </div>
+        <br /><br /><br />
+        <h3>五十週年紀念公園 (Parc du Cinquantenaire)</h3>
+        <h4>
+          五十週年紀念公園紀念比利時獨立五十周年的慶祝活動，公園的中心是一個巨大而宏偉的拱門，被稱為 Triumphal Arch，拱門建於 19 世紀末，是為了慶祝比利時獨立並展示其國家實力而建造的。
+        </h4>
+        <h4>公園擁有一個寬敞的草坪區域，供人們野餐、休閒和慢跑。在夏季公園會舉辦各種戶外活動和音樂節，此外公園的周邊還有一些博物館、展覽館和藝術機構，提供了豐富的文化和藝術體驗。</h4>
+        <div style="text-align: center">
+          <img src="比利時照片\布魯塞爾\BR16.jpg" width="800px" />
+        </div>
+        <br /><br />
+        <h2>布魯塞爾美食</h2>
+        <h3>Fritland</h3>
+        <h4>
+          比利時是薯條的故鄉，這家又是其中翹楚，要有大排長龍的準備，一個人點了小份薯條剛剛好，加 Dallas 醬微辣酸甜，薯條本身沒有放鹽，外酥脆內綿密但盒中細碎炸物渣有點多，很適合搭配飲品當點心。
+        </h4>
+        <div style="text-align: center">
+          <img src="比利時照片\布魯塞爾\BR17.jpg" width="800px" />
+        </div>
+        <br /><br /><br />
+        <h3>Waffle Factory</h3>
+        <h4>
+          比利時鬆餅也是來布魯塞爾必吃的，鬆餅店的密度非常高，這家的位置非常好寬間也寬敞，點了巧克力煉乳口味的列日鬆餅，端上來還冒著陣陣白煙，融化的巧克力煉乳加上鬆餅真是絕配，但整體來說甜度非常高，適合兩人分食一份，店內的油煙味有點重，適合進來稍微休息一下。
+        </h4>
+        <div style="text-align: center">
+          <img src="比利時照片\布魯塞爾\BR18.jpg" width="600px" />
+        </div>
+        <br /><br />
+      </div>
+      <div class="destination-sidebar">
+        <div class="sidebar-image-container">
+          <img src="側邊欄自我介紹.jpg" />
+        </div>
+        <h5>
+          Hi!
+          我是Tommy，我熱愛旅遊也喜歡藉由影像紀錄旅程中的點點滴滴，透過文字將我在旅途中的所見所聞分享給大家。旅行對我而言不只是吃吃喝喝，而是能在行萬里路間感受世界的脈動，體驗不同的文化，希望藉由我的分享能讓大家看到更多世界的美好。
+        </h5>
+        <br />
+        <h5>
+          想更了解我或與我聯絡:
+          <a
+            href="https://www.instagram.com/tommy_techvoyage/"
+            target="_blank"
+            style="color: inherit; text-decoration: underline"
+          >
+            <b>Instagram</b>
+          </a>
+        </h5>
+      </div>
+    </div>
+    <div class="contact-section">
+      <div class="contact-item">
+        <h3>
+          想更了解我或與我聯絡:
+          <a
+            href="https://www.instagram.com/tommy_techvoyage/"
+            target="_blank"
+            style="color: inherit; text-decoration: underline"
+          >
+            Instagram
+          </a>
+        </h3>
+      </div>
+    </div>
+    <footer>
+      <h6>COPYRIGHT © 2025 Tommy 看世界 All rights reserved.</h6>
+    </footer>
+    <div id="expandable-menu">
+      <div id="menu-toggle"></div>
+      <!-- 收闔按鈕 -->
+      <div id="menu-content">
+        <h4>目錄</h4>
+        <ul id="menu-list"></ul>
+      </div>
+    </div>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const menu = document.getElementById("expandable-menu");
+        const toggle = document.getElementById("menu-toggle");
+        const menuList = document.getElementById("menu-list");
+        const destinationMain = document.querySelector(".destination-main");
+
+        // 點擊按鈕切換目錄狀態
+        toggle.addEventListener("click", () => {
+          menu.classList.toggle("open");
+        });
+
+        // 從 destination-main 區域提取 h2 和 h3，動態生成目錄
+        const headings = destinationMain.querySelectorAll("h2, h3");
+        headings.forEach((heading, index) => {
+          // 確保每個 h2 和 h3 都有唯一的 id
+          if (!heading.id) {
+            heading.id = `heading-${index}`;
+          }
+
+          const listItem = document.createElement("li");
+          const link = document.createElement("a");
+          link.textContent = heading.textContent;
+          link.href = `#${heading.id}`;
+          listItem.appendChild(link);
+
+          // 為 h3 添加縮排樣式
+          if (heading.tagName.toLowerCase() === "h3") {
+            listItem.classList.add("sub-item");
+          }
+
+          menuList.appendChild(listItem);
+        });
+
+        // 滾動至目標位置並加上 75px 偏移
+        menuList.addEventListener("click", (event) => {
+          if (event.target.tagName === "A") {
+            event.preventDefault(); // 阻止預設行為
+
+            const targetId = event.target.getAttribute("href").substring(1); // 取得目標 ID
+            const targetElement = document.getElementById(targetId);
+
+            if (targetElement) {
+              // 計算目標元素的位置並加上 75px 偏移
+              const targetPosition =
+                targetElement.getBoundingClientRect().top + window.scrollY;
+              const offset = 75; // 偏移的距離
+              window.scrollTo({
+                top: targetPosition - offset,
+                behavior: "smooth", // 平滑滾動
+              });
+            }
+          }
+        });
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,777 @@
+<!DOCTYPE html>
+<html lang="zh-hant-TW">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="曹旅瀚 Tommy" />
+    <meta name="description" content="走進巴黎，感受浪漫之都的魅力！探索艾菲爾鐵塔、羅浮宮、塞納河畔與法式甜點，深入體驗巴黎的藝術、時尚與歷史風華。" />
+    <meta name="keywords" content="巴黎旅遊, 巴黎景點, 艾菲爾鐵塔, 羅浮宮, 巴黎自由行, 巴黎美食, 法國旅遊, 巴黎甜點, 巴黎藝術, 巴黎時尚" />
+    <title>Tommy 看世界 - 巴黎</title>
+    <link rel="icon" href="網頁縮圖.ico" />
+    <style>
+      body {
+        font-family: Calibri, Arial, sans-serif; /* 首選 Calibri，次選 Arial */
+        margin: 0;
+        padding: 0;
+        overflow-x: hidden; /* 禁止水平滾動 */
+        background-color: #f4f4f9;
+        color: #333;
+      }
+
+      h1 {
+        font-size: 40px;
+        font-weight: bold;
+      }
+
+      h2 {
+        font-size: 32px;
+        font-weight: bold;
+        color: #2a90a7;
+        display: inline-block;
+        margin-bottom: 1rem; /* 縮小 h2 的底部邊距 */
+        background-color: #cee5e8;
+      }
+
+      h3 {
+        font-size: 26px;
+        margin: 0 0 1rem;
+        font-weight: bold;
+        text-decoration: underline; /* 加上底線 */
+      }
+
+      h4 {
+        font-size: 18px;
+        font-weight: normal;
+        line-height: 1.8;
+      }
+
+      h5 {
+        font-size: 16px;
+        font-weight: normal;
+        margin: 0;
+      }
+
+      h6 {
+        font-size: 10px;
+        color: #fff;
+        margin: 0;
+        text-align: center;
+        line-height: 50px; /* 高度對齊 */
+      }
+
+      nav {
+        background-color: #78bcc4;
+        display: flex;
+        justify-content: space-between; /* 保持分佈在兩側 */
+        width: calc(100% - 10rem); /* 與其他內容的邊界一致 */
+        padding: 0.5rem 5rem; /* 主導覽列的 padding 設置 */
+        position: fixed;
+        top: 0;
+        z-index: 1000;
+      }
+
+      .nav-left .logo img {
+        height: 50px; /* 控制 Logo 圖片的高度 */
+        transform: translateX(-1.5rem); /* 向右移動 2rem */
+      }
+
+      .nav-right {
+        display: flex;
+        align-items: center;
+        transform: translateX(2rem); /* 向右移動 2rem */
+      }
+
+      nav a {
+        color: #eff5f5;
+        text-decoration: none;
+        padding: 0.5rem 1rem;
+        margin: 0 0.5rem;
+        transition: transform 0.3s;
+      }
+
+      nav a:hover {
+        transform: translateY(-3px);
+      }
+
+      .dropdown {
+        position: relative;
+      }
+
+      .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #78bcc4;
+        min-width: 160px;
+        border-radius: 4px;
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        padding: 0.2rem 0;
+      }
+
+      .dropdown-content a {
+        color: #eff5f5;
+        display: block;
+        transition: transform 0.3s;
+        border-bottom: 1px solid #ddd;
+      }
+
+      .dropdown-content a:last-child {
+        border-bottom: none;
+      }
+
+      .dropdown-content a:hover {
+        transform: translateY(-3px);
+      }
+
+      .dropdown:hover .dropdown-content {
+        display: block;
+      }
+
+      .intro-section {
+        background-color: #eff5f5;
+        display: flex;
+        padding: 2rem;
+        margin-top: 60px; /* 根據導航列高度調整 */
+        justify-content: space-between;
+        align-items: flex-start;
+        width: 100%;
+        box-sizing: border-box; /* 包含 padding 在內 */
+        padding-left: 5rem;
+        padding-right: 5rem;
+      }
+
+      .intro-section h4 {
+        max-width: 700px;
+      }
+
+      .intro-section .left {
+        width: 60%;
+      }
+
+      .intro-section .right {
+        width: 40%;
+      }
+
+      .destination-section {
+        display: flex;
+        padding: 1rem 5%; /* 左右內間距為螢幕的10% */
+        background-color: white;
+      }
+
+      .destination-main {
+        width: 75%;
+        margin-right: 1.5rem; /* 增加右邊外邊距 */
+      }
+
+      .destination-sidebar {
+        width: 25%;
+        padding-left: 1.5rem; /* 增加左側內邊距 */
+        margin-top: 2rem; /* 向上或向下調整，負值表示向上 */
+      }
+
+      .sidebar-image-container {
+        margin-bottom: 1rem;
+        text-align: center; /* 確保圖片置中 */
+      }
+
+      .sidebar-image-container img {
+        height: 300px; /* 設置直式圖片的高度 */
+      }
+
+      .two-vertical-images {
+        display: flex; /* 彈性佈局，讓圖片並排 */
+        justify-content: space-between; /* 兩張圖片均勻分佈 */
+        gap: 2rem; /* 圖片之間的間距 */
+        margin-top: 2rem;
+        margin-bottom: 2rem; /* 與下方內容的距離 */
+      }
+
+      .two-vertical-images img {
+        width: calc(50% - 0.5rem); /* 每張圖片佔用容器的一半減去間距 */
+        text-align: center; /* 確保圖片置中 */
+        height: auto; /* 保持圖片的直式比例 */
+        object-fit: cover; /* 確保圖片內容適應容器 */
+      }
+
+      .recommendation-section {
+        margin-top: 1.5rem; /* 與上方文字的間距 */
+        text-align: center;
+        position: sticky;
+        top: 80px; /* 空出導覽列的高度，確保推薦區不被覆蓋 */
+        z-index: 10; /* 提高層級，避免被其他內容遮蓋 */
+      }
+
+      .recommendation-section h3 {
+        font-size: 18px;
+        font-weight: bold;
+        margin-bottom: 0.5rem; /* 與按鈕區的距離 */
+      }
+
+      .recommendation-buttons {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 0.5rem; /* 按鈕之間的間距 */
+      }
+
+      .recommendation-buttons button {
+        padding: 0.5rem 1rem;
+        font-size: 14px;
+        color: white;
+        background-color: #78bcc4;
+        border: none;
+        border-radius: 4px;
+        transition: transform 0.3s;
+        font-family: Arial, sans-serif;
+      }
+
+      .recommendation-buttons button:hover {
+        transform: translateY(-3px);
+      }
+
+      .contact-section {
+        padding: 2rem 5rem; /* 上下與左右間距 */
+        background-color: #eff5f5; /* 淺灰背景 */
+        text-align: center; /* 確保內容置中對齊 */
+      }
+
+      .contact-item h3 {
+        font-size: 18px; /* 調整標題字體大小 */
+        margin: 0; /* 移除多餘的間距 */
+        text-decoration: none; /* 移除底線 */
+      }
+
+      footer {
+        background-color: #000;
+        color: white;
+        height: 30px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      #expandable-menu {
+        position: fixed;
+        top: 70px; /* 與螢幕頂部的距離設為 60px */
+        right: 0;
+        height: calc(100% - 70px); /* 高度減去 60px，避免超出視窗 */
+        width: 395px; /* 目錄寬度與 sidebar 齊寬 */
+        transform: translateX(100%); /* 初始狀態：隱藏在右側 */
+        transition: transform 0.3s ease;
+        background-color: #f4f4f9; /* 與網站背景一致 */
+        z-index: 1000;
+      }
+
+      /* 收闔按鈕 */
+      #menu-toggle {
+        position: absolute;
+        top: 45%;
+        left: -40px; /* 調整按鈕的位置，適應按鈕變大後的寬度 */
+        transform: translateY(-50%);
+        width: 40px; /* 增大按鈕寬度 */
+        height: 80px; /* 增大按鈕高度 */
+        background-color: #78bcc4;
+        color: white;
+        border-radius: 4px;
+        display: flex;
+        justify-content: center; /* 水平居中 */
+        align-items: center; /* 垂直居中 */
+      }
+
+      #menu-toggle::after {
+        content: "目錄"; /* 在按鈕內顯示 "目錄" */
+        font-size: 17px;
+        color: white; /* 設定字體顏色為白色 */
+        writing-mode: vertical-rl; /* 使文字垂直排列 */
+      }
+
+      #menu-toggle:hover {
+        background-color: #78bcc4;
+      }
+
+      /* 目錄內容 */
+      #menu-content {
+        padding: 0.5rem 1rem;
+        overflow-y: auto;
+        height: 100%;
+      }
+
+      #menu-content h4 {
+        font-weight: bold;
+        margin-top: 0;
+      }
+
+      #menu-list {
+        list-style: none;
+        padding: 0;
+      }
+
+      #menu-list li {
+        margin-bottom: 0.5rem;
+      }
+
+      #menu-list a {
+        color: #2a90a7;
+        text-decoration: none;
+        transition: color 0.3s;
+      }
+
+      #menu-list a:hover {
+        color: #78bcc4;
+      }
+
+      #menu-list .sub-item {
+        margin-left: 1.5rem; /* 調整縮排距離 */
+        font-size: 0.9rem; /* 可選：調整子項目字體大小 */
+      }
+
+      /* 目錄展開狀態 */
+      #expandable-menu.open {
+        transform: translateX(0);
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <div class="nav-left">
+        <div class="logo">
+          <a href="首頁.html">
+            <img src="網站Logo.png" alt="網站 Logo" />
+          </a>
+        </div>
+      </div>
+      <div class="nav-right">
+        <a href="首頁.html">關於我</a>
+        <div class="dropdown">
+          <a>亞洲旅遊</a>
+          <div class="dropdown-content">
+            <a href="中國.html">中國</a>
+            <a href="新加坡.html">新加坡</a>
+            <a href="馬來西亞.html">馬來西亞</a>
+            <a href="泰國.html">泰國</a>
+            <a href="印尼.html">印尼</a>
+            <a href="越南.html">越南</a>
+          </div>
+        </div>
+        <div class="dropdown">
+          <a>歐洲旅遊</a>
+          <div class="dropdown-content">
+            <a href="英國.html">英國</a>
+            <a href="法國.html">法國</a>
+            <a href="荷蘭.html">荷蘭</a>
+            <a href="比利時.html">比利時</a>
+            <a href="盧森堡.html">盧森堡</a>
+            <a href="瑞士.html">瑞士</a>
+            <a href="摩納哥.html">摩納哥</a>
+            <a href="西班牙.html">西班牙</a>
+            <a href="葡萄牙.html">葡萄牙</a>
+            <a href="安道爾.html">安道爾</a>
+            <a href="丹麥.html">丹麥</a>
+            <a href="瑞典.html">瑞典</a>
+            <a href="波蘭.html">波蘭</a>
+          </div>
+        </div>
+        <div class="dropdown">
+          <a>美洲旅遊</a>
+          <div class="dropdown-content">
+            <a href="美國.html">美國</a>
+            <a href="加拿大.html">加拿大</a>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <div class="intro-section">
+      <div class="left">
+        <h1>Tommy 在巴黎</h1>
+        <h4>
+          <b>巴黎 (Paris) </b
+          >是法國的首都，在中世紀時期便成為了法蘭克王國的首都，在路易十四的統治下成為了當時最富盛名的歐洲城市之一，18 世紀的法國大革命更是在這座城市掀起了波瀾壯闊的歷史。二戰期間巴黎經歷了沉重的襲擊，但很快恢復了勃勃生機。如今已是一座繁榮的大都會，無論是歷史悠久的建築還是迷人的街景景致，都散發著獨特的浪漫氣息，時尚及美妝產業也非常的發達，持續吸引著世界各地的遊客前來一探其城市之光。
+        </h4>
+      </div>
+      <div class="right">
+        <img src="法國照片\巴黎\巴黎_介紹.jpg" width="90%" height="350px" />
+      </div>
+    </div>
+
+    <div class="destination-section">
+      <div class="destination-main">
+        <h2>巴黎交通</h2>
+        <h3>機場交通</h3>
+        <h4>
+          身為國際大都市，巴黎總共有兩個機場，分別是主要負責國際航班的戴高樂機場，以及負責國內或歐洲區域航班的奧利機場，除了最輕鬆但最燒錢的機場直接接送服務外，以下會分列各個機場的大眾交通方式:
+          <ul>
+            <li>
+              <b>戴高樂機場</b>: 可搭乘 RER 火車 B 路線直接進城。
+            </li>
+            <li>
+              <b>奧利機場</b>: 先搭乘奧利機場鐵路 Orlyval 到 Antony，再轉乘 RER 火車 B 路線進城。
+            </li>
+          </ul>
+        </h4>
+        <h3>市區交通</h3>
+        <h4>
+          巴黎市區非常大，絕大多數的景點都可以坐地鐵或公車抵達，地鐵雖然方便，但由於車站的環境有時候偏髒亂，而且在列車上要非常非常注意自己的貴重物品，小偷扒手常常在人多擁擠時下手，因此坐公車也不失一個好選擇，公車上相對安全許多，如果是女生出行的話會感覺安全很多。由於大部分人旅遊在巴黎應該都至少會待到 4 ~ 5 天以上，推薦可以在車站購買 <a href="https://www.iledefrance-mobilites.fr/en/titres-et-tarifs/supports"
+          target="_blank">Navigo 週票</a>，便可以在時間內無限次數搭乘地鐵、公車還有城際火車。
+        </h4>
+        <div style="text-align: center">
+          <img src="法國照片\巴黎\巴黎_交通.png" width="1000px" />
+        </div>
+        <br /><br />
+        <h2>巴黎住宿</h2>
+        <h4>
+          巴黎不算是一個很安全的城市，因此在挑選住宿時要以旅館所在的區域作為首要篩選標準。巴黎總共有 20 區，其中 1 ~ 8 區是多數景點聚集區域，
+          也是治安相對最好的區域，靠南邊的 12 ~ 16 區也是相對安全但是離觀光區較遠，8 ~ 11、17 區治安普通，走在路上要注意自身安全，
+          而<b>北邊 18 ~ 20 區是治安最差的地區</b>，要盡量減少在這些區域活動，要去的話也最好是結伴，
+          在篩選住宿的時候可以根據以此為根據挑選地點，也<b>建議是住在 1 ~ 7 區最好</b>。
+        </h4>
+        <div style="text-align: center">
+          <img src="法國照片\巴黎\巴黎_住宿1.png" width="1000px" />
+          <img src="法國照片\巴黎\巴黎_住宿2.png" width="1000px" />
+        </div>
+        <br /><br />
+        <h2>巴黎景點</h2>
+        <h3>聖心堂 (Basilique du Sacré-Cœur de Montmartre)</h3>
+        <h4>
+          聖心堂是一座著名的天主教教堂，位於市中心的蒙馬特山頂，建築始於 1875 年，但直到 1914 年第一次世界大戰期間才完成。這座教堂由建築師 Paul Abadie 設計，建築風格融合了羅馬式和拜占庭式的特點，具有壯麗的圓頂和白色石材建築，圓頂高達 80 米，在內部可以參觀美麗的宗教藝術作品，包括壁畫、彩繪玻璃窗和雕塑。從教堂外也可以欣賞到巴黎市中心的壯麗景色，包括巴黎市區的其他地標。要特別注意的是聖心堂位於 18 區，是相對治安最糟的地區，走在路上一定要非常小心，如果有人向你靠近千萬要馬上閃開，因為很有可能是會往你手上繫手環再強制收費的手環黨。
+        </h4>
+        <div style="text-align: center">
+          <img src="法國照片\巴黎\PR1.jpg" width="600px" />
+          <img src="法國照片\巴黎\PR2.jpg" width="800px" />
+          <img src="法國照片\巴黎\PR3.jpg" width="800px" />
+        </div>
+        <br /><br /><br />
+        <h3>愛牆 (Le Mur des Je t'aime)</h3>
+        <h4>
+          愛牆位於蒙馬特區，是一個象徵著愛和和平的特殊景點。這面牆壁被彩色瓷磚覆蓋，上面用超過 250 種語言書寫著「我愛你」，呈現出一種多樣性和包容性的象徵。概念來自法國藝術家 Frédéric Baron 和 Claire Kito，他們在世界各地旅行時意識到「我愛你」這個簡單而又強大的詞語在不同語言和文化中的重要性，於是決定創建這個跨文化的愛的紀念碑。這個地方也經常成為情侶們表達愛意、拍照留念的地方，是一個浪漫的巴黎地標。
+        </h4>
+        <div style="text-align: center">
+          <img src="法國照片\巴黎\PR4.jpg" width="800px" />
+        </div>
+        <br /><br /><br />
+        <h3>紅磨坊 (Moulin Rouge)</h3>
+        <h4>
+          紅磨坊是世界著名的歌舞表演場所，最初建於 1889 年，是為了慶祝法國大革命一百週年而建造的。紅磨坊以其醒目的紅色風車標誌和奢華的歌舞表演而聞名於世，融合了現代舞蹈、歌唱、戲劇和傳統的法式歌舞，並以鮮豔的服裝和華麗的舞台設計著稱，表演以其精湛的技藝和性感的氛圍吸引了全球觀眾，成為了巴黎夜生活的代表，這裡也是許多電影和音樂作品的取景地，成為了法國文化的象徵，可以參考<a href="https://www.moulinrouge.fr/en/homepage/"
+          target="_blank">官網</a>的場次購票。
+        </h4>
+        <div style="text-align: center">
+          <img src="法國照片\巴黎\PR5.jpg" width="800px" />
+        </div>
+        <br /><br /><br />
+        <h3>盧森堡宮 (Palais du Luxembourg)</h3>
+        <h4>
+          盧森堡宮建於 1615 年至 1627 年之間，由法國國王亨利四世的皇后瑪麗·德·美第奇訂造作為她的住所，現在是法國參議院的所在地。盧森堡宮以其華麗的建築風格和壯觀的花園而聞名，建築風格為文藝复興時期的義大利風格，擁有精美的立面、華麗的圓頂和壯麗的內部裝飾，宮殿的建築物包括參議院議事廳、展覽廳和一些官邸。盧森堡宮的花園也是一個著名的景點，佔地約 23 公頃，是巴黎最大的公共花園之一，以其精美的設計和豐富多彩的植物而聞名，包括花壇、噴泉和雕塑。
+        </h4>
+        <div style="text-align: center">
+          <img src="法國照片\巴黎\PR6.jpg" width="800px" />
+        </div>
+        <br /><br /><br />
+        <h3>聖母院 (Notre-Dame de Paris)</h3>
+        <h4>
+          聖母院是巴黎最著名的天主教教堂，是世界上最具代表性的哥特式建築之一，位於塞納河右岸的伊莉莎白大道上，是巴黎市中心的地標。聖母院始建於 1163 年，建築工程歷時約 200 年，直到 1345 年才完工。
+        </h4>
+        <h4>聖母院的建築風格是典型的哥特式，具有高聳的拱頂、尖塔、精美的彩色玻璃窗和華麗的浮雕，教堂的西立面有三座巨大的玫瑰窗。聖母院不僅是一座宗教建築，也是法國歷史和文化的象徵，曾經歷了許多重要的歷史事件，包括法國大革命期間的破壞和重建。在維克多·雨果的小說《巴黎聖母院》中，聖母院被描繪成一個神秘而又浪漫的地方，成為了文學作品和電影的靈感來源，也可以登上的塔頂，俯瞰整個巴黎市景。</h4>
+        <h4>雖然先前聖母院有發生火災，但現在已經重新開放了，可以在<a href="https://www.notredamedeparis.fr/en/" target="_blank">官網</a>提前購票。</h4>
+        <div style="text-align: center">
+          <img src="法國照片\巴黎\PR7.jpg" width="600px" />
+          <img src="法國照片\巴黎\PR8.jpg" width="600px" />
+        </div>
+        <br /><br /><br />
+        <h3>艾菲爾鐵塔 (Eiffel Tower)</h3>
+        <h4>
+          艾菲爾鐵塔是世界上最著名的建築之一，也是巴黎的象徵性地標，由法國工程師古斯塔夫·艾菲爾 (Gustave Eiffel) 設計和建造的，於 1889 年落成，為了展示法國工業革命的成就而建造。艾菲爾鐵塔的高度為約 330 米，直到 1929 年帝國大廈的建成是當時世界上最高的建築物，可以搭乘電梯或爬樓梯到達不同的觀景平台欣賞巴黎市景。艾菲爾鐵塔成為了巴黎的象徵之一，不僅因為其壯觀的建築和獨特的設計，還因為它代表了法國的歷史和文化，
+          吸引了來自世界各地的遊客和藝術家，建議先在<a href="https://www.toureiffel.paris/en/rates-opening-times" target="_blank">官網</a>上先訂票以免額滿撲空喔。
+        </h4>
+        <div style="text-align: center">
+          <img src="法國照片\巴黎\PR9.jpg" width="600px" />
+          <img src="法國照片\巴黎\PR10.jpg" width="600px" />
+          <img src="法國照片\巴黎\PR11.jpg" width="600px" />
+        </div>
+        <br /><br /><br />
+        <h3>凱旋門 (Arc de Triomphe)</h3>
+        <h4>
+          凱旋門位於香榭麗舍大道 (Champs-Élysées) 的西端，在戰爭與和平廣場 (Place Charles de Gaulle) 的中心，是為紀念拿破崙戰爭時期的勝利而建造的，特別是拿破崙於 1805 年在阿斯滕戰役中的勝利，建造始於 1806 年，但直到1836年拿破崙戰爭的結束後才完工。設計靈感來自古羅馬的凱旋門，具有壯觀的拱形結構和浮雕裝飾，象徵著法國的勝利和英雄主義精神，在凱旋門的柱子上刻有許多著名的法國戰役和將領的名字，以紀念他們的英勇行為。每年的法國國慶 (7月14日) 和其他重要節日，
+          凱旋門都是舉辦慶祝活動和遊行的重要場所，更多細節與購票資訊可以參考<a href="https://tickets.monuments-nationaux.fr/en-GB/families?site=2032863779450400197" target="_blank">官網</a>喔!
+        </h4>
+        <div style="text-align: center">
+          <img src="法國照片\巴黎\PR12.jpg" width="600px" />
+          <img src="法國照片\巴黎\PR13.jpg" width="600px" />
+        </div>
+        <br /><br /><br />
+        <h3>香榭麗舍大道 (Champs-Élysées)</h3>
+        <h4>
+          香榭麗舍大道是世界上最著名的大道，位於巴黎的第 8 區，從協和廣場 (Place de la Concorde) 一路延伸至凱旋門，曾是法國貴族的遊樂場所，如今則是巴黎最受歡迎的購物和休閒街區，大道兩旁是一系列高檔時裝店、豪華酒店、劇院、咖啡館和餐廳。每年的 7 月 14 日法國國慶日，大道上會舉行盛大的閱兵儀式和慶祝活動。
+        </h4>
+        <div style="text-align: center">
+          <img src="法國照片\巴黎\PR14.jpg" width="600px" />
+          <img src="法國照片\巴黎\PR15.jpg" width="800px" />
+          <img src="法國照片\巴黎\PR16.jpg" width="600px" />
+          <img src="法國照片\巴黎\PR17.jpg" width="800px" />
+        </div>
+        <br /><br /><br />
+        <h3>巴黎歌劇院 (Palais Garnier)</h3>
+        <h4>
+          巴黎歌劇院位於巴黎第 9 區，由建築師夏爾·加尼爾 (Charles Garnier) 設計，於 1875 年正式開幕，外觀充滿了古典主義和巴洛克風格的元素，包括巨大的圓頂、浮雕、雕塑和壁畫，展現出當時法國建築的繁榮和奢華。歌劇院內部更是華麗絢麗，包括金碧輝煌的大理石大廳、精美的吊燈、壯麗的大樓梯、雕像和壁畫，每一處都充滿了藝術氣息。劇院主要的音樂廳可容納近 2000 名觀眾，是世界上最大的歌劇院之一。
+        </h4>
+        <div style="text-align: center">
+          <img src="法國照片\巴黎\PR18.jpg" width="800px" />
+        </div>
+        <br /><br /><br />
+        <h3>羅浮宮 (Louvre)</h3>
+        <h4>
+          羅浮宮是世界上最著名、最受歡迎的博物館之一，也是巴黎最重要的文化遺產，它原本是法國國王的皇宮，巨大的建築群包括了中世紀、文藝復興和巴洛克風格，其中最著名的部分是玻璃金字塔入口，由世界知名的建築師伊姆·佩倫設計。羅浮宮內部收藏了超過三十萬件藝術品和文物，其中包括了古代埃及、古希臘、羅馬的文物，歐洲藝術作品，以及來自世界各地的文化遺產。最著名的展品是達文西的《蒙娜麗莎》，以及米開朗基羅的《大衛像》，還有許多其他著名的畫作、雕塑和珍貴文物。
+        </h4>
+        <h4>如果在巴黎有計畫要去比較多不同的美術館或博物館的話，非常推薦可以購買 <a href="https://www.parismuseumpass.fr/en" target="_blank">Paris Museum Pass</a> ，
+          只要計算好參觀時間跟數量的話可以省下一些旅費，也可以參考羅浮宮<a href="https://www.louvre.fr/en" target="_blank">官網</a>喔!
+        </h4>
+        <div style="text-align: center">
+          <img src="法國照片\巴黎\PR19.jpg" width="800px" />
+          <img src="法國照片\巴黎\PR20.jpg" width="800px" />
+          <img src="法國照片\巴黎\PR21.jpg" width="800px" />
+        </div>
+        <div class="two-vertical-images">
+          <img src="法國照片\巴黎\PR22-1.jpg" />
+          <img src="法國照片\巴黎\PR22-2.jpg" />
+        </div>
+        <div class="two-vertical-images">
+          <img src="法國照片\巴黎\PR23-1.jpg" />
+          <img src="法國照片\巴黎\PR23-2.jpg" />
+        </div>
+        <br /><br /><br />
+        <h3>龐比度中心 (Centre Pompidou)</h3>
+        <h4>
+          龐比度中心是一座現代藝術博物館和文化中心，建築本身就是一件藝術品，由建築師雷蒙德·佩雷設計，於 1977 年開幕。它的外觀非常獨特，以鋼鐵結構和彩色管道外露而聞名，顛覆了傳統建築的觀念，被譽為現代主義建築的經典之作。博物館內部收藏了 20 世紀及以後的現代和當代藝術作品，包括繪畫、雕塑、攝影、電影和多媒體藝術等，擁有世界上最重要的現代藝術收藏之一《藍色二號》，包括畢卡索、馬蒂斯、克利姆特等著名藝術家的作品，以及許多當代藝術家的作品。
+        </h4>
+        <h4>如果在巴黎有計畫要去比較多不同的美術館或博物館的話，非常推薦可以購買 <a href="https://www.parismuseumpass.fr/en" target="_blank">Paris Museum Pass</a> ，
+          只要計算好參觀時間跟數量的話可以省下一些旅費，也可以參考羅浮宮<a href="https://www.centrepompidou.fr/en/" target="_blank">官網</a>喔!
+        </h4>
+        <div style="text-align: center">
+          <img src="法國照片\巴黎\PR24.jpg" width="800px" />
+          <img src="法國照片\巴黎\PR25.jpg" width="800px" />
+          <img src="法國照片\巴黎\PR26.jpg" width="800px" />
+        </div>
+        <br /><br /><br />
+        <h3>奧賽美術館 (Musée d'Orsay)</h3>
+        <h4>
+          奧賽美術館是巴黎著名的博物館之一，毗鄰盧浮宮，於 1986 年開幕，專門收藏 19 世紀後半葉至 20 世紀初的歐洲藝術作品，在奧賽美術館的展覽中，你可以欣賞到包括印象派、後印象派、現實主義、象徵主義等藝術流派的作品。館藏包括著名畫家如莫內、雷諾瓦、德加、梵谷等人的作品，展示了這一時期歐洲藝術的豐富多彩和獨特魅力。
+        </h4>
+        <h4>如果在巴黎有計畫要去比較多不同的美術館或博物館的話，非常推薦可以購買 <a href="https://www.parismuseumpass.fr/en" target="_blank">Paris Museum Pass</a> ，
+          只要計算好參觀時間跟數量的話可以省下一些旅費，也可以參考羅浮宮<a href="https://www.musee-orsay.fr/en" target="_blank">官網</a>喔!
+        </h4>
+        <div class="two-vertical-images">
+          <img src="法國照片\巴黎\PR27-1.jpg" />
+          <img src="法國照片\巴黎\PR27-2.jpg" />
+        </div>
+        <div style="text-align: center">
+          <img src="法國照片\巴黎\PR28.jpg" width="800px" />
+        </div>
+        <br /><br /><br />
+        <h3>橘園美術館 (Musée de l'Orangerie)</h3>
+        <h4>
+          橘園美術館是一座知名博物館，主要收藏 19 至 20 世紀的藝術品，以法國印象派和現代藝術為主，最著名的展品是克勞德·莫內的《睡蓮》系列，這是一系列壯麗的大型壁畫，展示了莫內在吉维尼花園的花池中所繪製的睡蓮花。這些壁畫被安置在两個橢圓形展廳中，營造出一種獨特的環境，讓觀眾仿佛置身於自然之中。橘園美術館還收藏了其他印象派和現代藝術家的作品，包括保羅·塞尚、安德烈·德·拉克羅瓦、亨利·馬蒂斯等人的作品，這些藝術品展示了這一時期法國藝術的獨特風格和創新精神。
+        </h4>
+        <h4>如果在巴黎有計畫要去比較多不同的美術館或博物館的話，非常推薦可以購買 <a href="https://www.parismuseumpass.fr/en" target="_blank">Paris Museum Pass</a> ，
+          只要計算好參觀時間跟數量的話可以省下一些旅費，也可以參考羅浮宮<a href="https://www.musee-orangerie.fr/en" target="_blank">官網</a>喔!
+        </h4>
+        <div style="text-align: center">
+          <img src="法國照片\巴黎\PR29.jpg" width="800px" />
+        </div>
+        <div class="two-vertical-images">
+          <img src="法國照片\巴黎\PR30-1.jpg" />
+          <img src="法國照片\巴黎\PR30-2.jpg" />
+        </div>
+        <br /><br /><br />
+        <h3>巴士底廣場 (Place de la Bastille)</h3>
+        <h4>
+          巴士底廣場在法國歷史上扮演了重要角色，是 1789 年法國大革命的象徵，在廣場的中心有一座高達 52米 的巴士底圓柱 (Colonne de Juillet)，為了紀念 1830 年七月革命而建立的。革命爆發時，人們推翻了查理十世的王朝，成立了立憲君主制，而圓柱頂端則鑲嵌著巴黎市民在這次革命中喪生的烈士的名字。巴士底廣場周圍還有許多歷史建築和文化景點，例如著名的歌劇院巴士底歌劇院 (Opéra Bastille)、法國民族歌劇院 (Opéra National de Paris) 等。
+        </h4>
+        <div style="text-align: center">
+          <img src="法國照片\巴黎\PR31.jpg" width="600px" />
+        </div>
+        <br /><br /><br />
+        <h3>勒內·杜蒙綠色長廊 (Promenade plantée)</h3>
+        <h4>
+          勒內·杜蒙綠色長廊被譽為「天空中的花園」，位於法國巴黎的第 12 區，是在 20 世紀 90 年代初由城市規劃師菲利普·馬特朗 (Philippe Mathieux) 和雅克·酋伯 (Jacques Vergely) 設計的，利用了一條廢棄的鐵路線路，並將其改造成了一個充滿綠植、花園和公共空間的美麗步行道，全長約 4.7 公里，起點位於巴黎東部的巴士底廣場，終點則是市郊的韋爾西 (Vincennes)。長廊上種植著各種植物，形成了一個生態友好的環境，可以在繁忙的城市中感受到一絲清新和寧靜。
+        </h4>
+        <div style="text-align: center">
+          <img src="法國照片\巴黎\PR32.jpg" width="600px" />
+          <img src="法國照片\巴黎\PR33.jpg" width="600px" />
+        </div>
+        <br />
+        <h2>巴黎近郊景點</h2>
+        <h3>聖米歇爾堡 (Mont Saint-Michel)</h3>
+        <h4>
+          聖米歇爾堡坐落在法國西北部的諾曼底地區，因其壯麗的修道院和獨特的地理位置而聞名，歷史可以追溯到 8 世紀，當時一位叫做奧貝爾 (Aubert) 的主教聲稱在這座島上見到了天使，並受命在此興建一座教堂。這座教堂逐漸發展成為一座宏偉的修道院，成為歐洲中世紀時期最重要的宗教中心之一。聖米歇爾堡被聯合國教科文組織列為世界文化遺產，在潮汐的影響下，聖米歇爾堡有時會成為一座孤立的島嶼，有時會與陸地相連，呈現出不同的風貌。
+        </h4>
+        <h4>聖米歇爾堡離巴黎車程要 4 小時，算非常遠的距離，推薦大家可以報名 <a href="https://www.klook.com/zh-TW/activity/3315-mont-saint-michel-full-day-tour-paris/" target="_blank">Klook</a> 的一日團，有大巴車接送來回並有導覽員介紹城堡內部的故事，算是比較輕鬆的遊覽方式，推薦給大家。</h4>
+        <div style="text-align: center">
+          <img src="法國照片\巴黎\PR34.jpg" width="800px" />
+          <img src="法國照片\巴黎\PR35.jpg" width="800px" />
+          <img src="法國照片\巴黎\PR36.jpg" width="600px" />
+          <img src="法國照片\巴黎\PR37.jpg" width="600px" />
+          <img src="法國照片\巴黎\PR38.jpg" width="600px" />
+        </div>
+        <br /><br />
+        <h2>巴黎美食</h2>
+        <h3>Holybelly</h3>
+        <h4>
+          Hollybelly 以早午餐料理聞名，最出名的是鬆餅早午餐，略帶鹹味的鬆餅沾著蜂蜜，再配上兩顆半熟蛋及培根，真的非常好吃，它們的醬料和調料都是自製，並盡量採用有機食材強調健康飲食。店內裝潢簡約而溫暖，營造出一種悠閒友善的氛圍，創造了一個融合鄉村氛圍與城市風情的獨特空間。
+        </h4>
+        <div style="text-align: center">
+          <img src="法國照片\巴黎\PR39.jpg" width="600px" />
+        </div>
+        <br /><br /><br />
+        <h3>Le Relais Gascon</h3>
+        <h4>
+          來到法國絕對要好好吃幾頓法式料理，但通常也會讓荷包大失血，但這家位於聖心堂附近的餐廳主打的是平價法餐，味道卻一點都不輸其他貴森森的餐廳，法式烤田螺作為前菜，再配上慢烤的油封鴨腿，把肉汁全部都鎖在鴨腿中，非常鮮嫩好吃，洋蔥湯與紅酒燉牛肉也是本店的主打，非常值得一試。
+        </h4>
+        <div style="text-align: center">
+          <img src="法國照片\巴黎\PR40.jpg" width="600px" />
+        </div>
+        <br /><br /><br />
+        <h3>Crêperie Beaubourg</h3>
+        <h4>
+          可麗餅也是法國有名的料理之一，這家位於龐比度中心附近的餐廳專研餅類料理，有別於台灣夜市攤販的可麗餅大多是甜的，法國可麗餅也有鹹的做法，可麗餅中包有火腿、蛋以及起司，一口咬下蛋液沿著餅皮流出真的非常好吃，甜可麗餅的做法則有點接近我們一般吃的法式吐司，有提供套餐的選項能讓你一次嘗試甜鹹兩種口味，非常划算。
+        </h4>
+        <div style="text-align: center">
+          <img src="法國照片\巴黎\PR41.jpg" width="600px" />
+          <img src="法國照片\巴黎\PR42.jpg" width="600px" />
+        </div>
+        <br /><br /><br />
+        <h3>Le Procope</h3>
+        <h4>
+          Le Procope 開幕於 1686 年，相傳拿破崙大軍行經至此卻沒有帶錢，因此將他的帽子抵押給咖啡館，這頂帽子也成為了鎮店之寶。據說在十八世紀這是伏爾泰最常報到的咖啡館，每天都要在這裡喝上幾杯咖啡作為創作的泉源。而在十九世紀，此間咖啡館則是巴爾札克和雨果的最愛。而除了下午茶以外，這家的洋蔥湯與法式牛排也非常出名，湯上覆蓋著厚厚一層起司，襯著洋蔥湯頭的甜味，讓人忍不住就一飲而盡，帶有湯汁的醃牛排也十分軟嫩，非常推薦除了下午茶外也能品嚐它的正餐。
+        </h4>
+        <div style="text-align: center">
+          <img src="法國照片\巴黎\PR43.jpg" width="600px" />
+          <img src="法國照片\巴黎\PR44.jpg" width="600px" />
+        </div>
+        <br /><br /><br />
+        <h3>Les Antiquaires</h3>
+        <h4>
+          Les Antiquaires 位於奧賽美術館旁的塞納河左岸，號稱全巴黎最好吃的紅酒燉牛肉，牛肉本身非常軟嫩入口即化，帶著紅酒的香氣，用牛油烤過的馬鈴薯蘸著紅酒牛肉汁，是再完美的組合不過了。
+        </h4>
+        <div style="text-align: center">
+          <img src="法國照片\巴黎\PR45.jpg" width="600px" />
+        </div>
+        <br />
+        <br />
+      </div>
+      <div class="destination-sidebar">
+        <div class="sidebar-image-container">
+          <img src="側邊欄自我介紹.jpg" />
+        </div>
+        <h5>
+          Hi!
+          我是Tommy，我熱愛旅遊也喜歡藉由影像紀錄旅程中的點點滴滴，透過文字將我在旅途中的所見所聞分享給大家。旅行對我而言不只是吃吃喝喝，而是能在行萬里路間感受世界的脈動，體驗不同的文化，希望藉由我的分享能讓大家看到更多世界的美好。
+        </h5>
+        <br />
+        <h5>
+          想更了解我或與我聯絡:
+          <a
+            href="https://www.instagram.com/tommy_techvoyage/"
+            target="_blank"
+            style="color: inherit; text-decoration: underline"
+          >
+            <b>Instagram</b>
+          </a>
+        </h5>
+        <div class="recommendation-section">
+          <h3>其他法國旅遊目的地</h3>
+          <div class="recommendation-buttons">
+            <a href="里昂.html">
+              <button><h5>里昂</h5></button>
+            </a>
+            <a href="馬賽.html">
+              <button><h5>馬賽</h5></button>
+            </a>
+            <a href="尼斯.html">
+              <button><h5>尼斯</h5></button>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="contact-section">
+      <div class="contact-item">
+        <h3>
+          想更了解我或與我聯絡:
+          <a
+            href="https://www.instagram.com/tommy_techvoyage/"
+            target="_blank"
+            style="color: inherit; text-decoration: underline"
+          >
+            Instagram
+          </a>
+        </h3>
+      </div>
+    </div>
+    <footer>
+      <h6>COPYRIGHT © 2025 Tommy 看世界 All rights reserved.</h6>
+    </footer>
+    <div id="expandable-menu">
+      <div id="menu-toggle"></div>
+      <!-- 收闔按鈕 -->
+      <div id="menu-content">
+        <h4>目錄</h4>
+        <ul id="menu-list"></ul>
+      </div>
+    </div>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const menu = document.getElementById("expandable-menu");
+        const toggle = document.getElementById("menu-toggle");
+        const menuList = document.getElementById("menu-list");
+        const destinationMain = document.querySelector(".destination-main");
+
+        // 點擊按鈕切換目錄狀態
+        toggle.addEventListener("click", () => {
+          menu.classList.toggle("open");
+        });
+
+        // 從 destination-main 區域提取 h2 和 h3，動態生成目錄
+        const headings = destinationMain.querySelectorAll("h2, h3");
+        headings.forEach((heading, index) => {
+          // 確保每個 h2 和 h3 都有唯一的 id
+          if (!heading.id) {
+            heading.id = `heading-${index}`;
+          }
+
+          const listItem = document.createElement("li");
+          const link = document.createElement("a");
+          link.textContent = heading.textContent;
+          link.href = `#${heading.id}`;
+          listItem.appendChild(link);
+
+          // 為 h3 添加縮排樣式
+          if (heading.tagName.toLowerCase() === "h3") {
+            listItem.classList.add("sub-item");
+          }
+
+          menuList.appendChild(listItem);
+        });
+
+        // 滾動至目標位置並加上 75px 偏移
+        menuList.addEventListener("click", (event) => {
+          if (event.target.tagName === "A") {
+            event.preventDefault(); // 阻止預設行為
+
+            const targetId = event.target.getAttribute("href").substring(1); // 取得目標 ID
+            const targetElement = document.getElementById(targetId);
+
+            if (targetElement) {
+              // 計算目標元素的位置並加上 75px 偏移
+              const targetPosition =
+                targetElement.getBoundingClientRect().top + window.scrollY;
+              const offset = 75; // 偏移的距離
+              window.scrollTo({
+                top: targetPosition - offset,
+                behavior: "smooth", // 平滑滾動
+              });
+            }
+          }
+        });
+      });
+    </script>
+  </body>
+</html>

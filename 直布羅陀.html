@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html lang="zh-hant-TW">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="曹旅瀚 Tommy" />
+    <meta name="description" content="探索直布羅陀的獨特魅力！走訪著名的直布羅陀岩石、欣賞海峽壯麗景色，了解這座充滿歷史與文化的英國海外領土，並體驗地中海與大西洋交匯的特殊地理景觀。" />
+    <meta name="keywords" content="直布羅陀旅遊, 直布羅陀岩石, 直布羅陀景點, 直布羅陀自由行, 直布羅陀歷史, 直布羅陀英國海外領土, 直布羅陀海峽, 直布羅陀自然景觀, 地中海與大西洋, 直布羅陀文化" />
+    <title>Tommy 看世界 - 直布羅陀</title>
+    <link rel="icon" href="網頁縮圖.ico" />
+    <style>
+      body {
+        font-family: Calibri, Arial, sans-serif; /* 首選 Calibri，次選 Arial */
+        margin: 0;
+        padding: 0;
+        overflow-x: hidden; /* 禁止水平滾動 */
+        background-color: #f4f4f9;
+        color: #333;
+      }
+
+      h1 {
+        font-size: 40px;
+        font-weight: bold;
+      }
+
+      h2 {
+        font-size: 32px;
+        font-weight: bold;
+        color: #2a90a7;
+        display: inline-block;
+        margin-bottom: 1rem; /* 縮小 h2 的底部邊距 */
+        background-color: #cee5e8;
+      }
+
+      h3 {
+        font-size: 26px;
+        margin: 0 0 1rem;
+        font-weight: bold;
+        text-decoration: underline; /* 加上底線 */
+      }
+
+      h4 {
+        font-size: 18px;
+        font-weight: normal;
+        line-height: 1.8;
+      }
+
+      h5 {
+        font-size: 16px;
+        font-weight: normal;
+        margin: 0;
+      }
+
+      h6 {
+        font-size: 10px;
+        color: #fff;
+        margin: 0;
+        text-align: center;
+        line-height: 50px; /* 高度對齊 */
+      }
+
+      nav {
+        background-color: #78bcc4;
+        display: flex;
+        justify-content: space-between; /* 保持分佈在兩側 */
+        width: calc(100% - 10rem); /* 與其他內容的邊界一致 */
+        padding: 0.5rem 5rem; /* 主導覽列的 padding 設置 */
+        position: fixed;
+        top: 0;
+        z-index: 1000;
+      }
+
+      .nav-left .logo img {
+        height: 50px; /* 控制 Logo 圖片的高度 */
+        transform: translateX(-1.5rem); /* 向右移動 2rem */
+      }
+
+      .nav-right {
+        display: flex;
+        align-items: center;
+        transform: translateX(2rem); /* 向右移動 2rem */
+      }
+
+      nav a {
+        color: #eff5f5;
+        text-decoration: none;
+        padding: 0.5rem 1rem;
+        margin: 0 0.5rem;
+        transition: transform 0.3s;
+      }
+
+      nav a:hover {
+        transform: translateY(-3px);
+      }
+
+      .dropdown {
+        position: relative;
+      }
+
+      .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #78bcc4;
+        min-width: 160px;
+        border-radius: 4px;
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        padding: 0.2rem 0;
+      }
+
+      .dropdown-content a {
+        color: #eff5f5;
+        display: block;
+        transition: transform 0.3s;
+        border-bottom: 1px solid #ddd;
+      }
+
+      .dropdown-content a:last-child {
+        border-bottom: none;
+      }
+
+      .dropdown-content a:hover {
+        transform: translateY(-3px);
+      }
+
+      .dropdown:hover .dropdown-content {
+        display: block;
+      }
+
+      .intro-section {
+        background-color: #eff5f5;
+        display: flex;
+        padding: 2rem;
+        margin-top: 60px; /* 根據導航列高度調整 */
+        justify-content: space-between;
+        align-items: flex-start;
+        width: 100%;
+        box-sizing: border-box; /* 包含 padding 在內 */
+        padding-left: 5rem;
+        padding-right: 5rem;
+      }
+
+      .intro-section h4 {
+        max-width: 700px;
+      }
+
+      .intro-section .left {
+        width: 60%;
+      }
+
+      .intro-section .right {
+        width: 40%;
+      }
+
+      .destination-section {
+        display: flex;
+        padding: 1rem 5%; /* 左右內間距為螢幕的10% */
+        background-color: white;
+      }
+
+      .destination-main {
+        width: 75%;
+        margin-right: 1.5rem; /* 增加右邊外邊距 */
+      }
+
+      .destination-sidebar {
+        width: 25%;
+        padding-left: 1.5rem; /* 增加左側內邊距 */
+        margin-top: 2rem; /* 向上或向下調整，負值表示向上 */
+      }
+
+      .sidebar-image-container {
+        margin-bottom: 1rem;
+        text-align: center; /* 確保圖片置中 */
+      }
+
+      .sidebar-image-container img {
+        height: 300px; /* 設置直式圖片的高度 */
+      }
+
+      .two-vertical-images {
+        display: flex; /* 彈性佈局，讓圖片並排 */
+        justify-content: space-between; /* 兩張圖片均勻分佈 */
+        gap: 2rem; /* 圖片之間的間距 */
+        margin-top: 2rem;
+        margin-bottom: 2rem; /* 與下方內容的距離 */
+      }
+
+      .two-vertical-images img {
+        width: calc(50% - 0.5rem); /* 每張圖片佔用容器的一半減去間距 */
+        text-align: center; /* 確保圖片置中 */
+        height: auto; /* 保持圖片的直式比例 */
+        object-fit: cover; /* 確保圖片內容適應容器 */
+      }
+
+      .recommendation-section {
+        margin-top: 1.5rem; /* 與上方文字的間距 */
+        text-align: center;
+        position: sticky;
+        top: 80px; /* 空出導覽列的高度，確保推薦區不被覆蓋 */
+        z-index: 10; /* 提高層級，避免被其他內容遮蓋 */
+      }
+
+      .recommendation-section h3 {
+        font-size: 18px;
+        font-weight: bold;
+        margin-bottom: 0.5rem; /* 與按鈕區的距離 */
+      }
+
+      .recommendation-buttons {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 0.5rem; /* 按鈕之間的間距 */
+      }
+
+      .recommendation-buttons button {
+        padding: 0.5rem 1rem;
+        font-size: 14px;
+        color: white;
+        background-color: #78bcc4;
+        border: none;
+        border-radius: 4px;
+        transition: transform 0.3s;
+        font-family: Arial, sans-serif;
+      }
+
+      .recommendation-buttons button:hover {
+        transform: translateY(-3px);
+      }
+
+      .contact-section {
+        padding: 2rem 5rem; /* 上下與左右間距 */
+        background-color: #eff5f5; /* 淺灰背景 */
+        text-align: center; /* 確保內容置中對齊 */
+      }
+
+      .contact-item h3 {
+        font-size: 18px; /* 調整標題字體大小 */
+        margin: 0; /* 移除多餘的間距 */
+        text-decoration: none; /* 移除底線 */
+      }
+
+      footer {
+        background-color: #000;
+        color: white;
+        height: 30px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      #expandable-menu {
+        position: fixed;
+        top: 70px; /* 與螢幕頂部的距離設為 60px */
+        right: 0;
+        height: calc(100% - 70px); /* 高度減去 60px，避免超出視窗 */
+        width: 395px; /* 目錄寬度與 sidebar 齊寬 */
+        transform: translateX(100%); /* 初始狀態：隱藏在右側 */
+        transition: transform 0.3s ease;
+        background-color: #f4f4f9; /* 與網站背景一致 */
+        z-index: 1000;
+      }
+
+      /* 收闔按鈕 */
+      #menu-toggle {
+        position: absolute;
+        top: 45%;
+        left: -40px; /* 調整按鈕的位置，適應按鈕變大後的寬度 */
+        transform: translateY(-50%);
+        width: 40px; /* 增大按鈕寬度 */
+        height: 80px; /* 增大按鈕高度 */
+        background-color: #78bcc4;
+        color: white;
+        border-radius: 4px;
+        display: flex;
+        justify-content: center; /* 水平居中 */
+        align-items: center; /* 垂直居中 */
+      }
+
+      #menu-toggle::after {
+        content: "目錄"; /* 在按鈕內顯示 "目錄" */
+        font-size: 17px;
+        color: white; /* 設定字體顏色為白色 */
+        writing-mode: vertical-rl; /* 使文字垂直排列 */
+      }
+
+      #menu-toggle:hover {
+        background-color: #78bcc4;
+      }
+
+      /* 目錄內容 */
+      #menu-content {
+        padding: 0.5rem 1rem;
+        overflow-y: auto;
+        height: 100%;
+      }
+
+      #menu-content h4 {
+        font-weight: bold;
+        margin-top: 0;
+      }
+
+      #menu-list {
+        list-style: none;
+        padding: 0;
+      }
+
+      #menu-list li {
+        margin-bottom: 0.5rem;
+      }
+
+      #menu-list a {
+        color: #2a90a7;
+        text-decoration: none;
+        transition: color 0.3s;
+      }
+
+      #menu-list a:hover {
+        color: #78bcc4;
+      }
+
+      #menu-list .sub-item {
+        margin-left: 1.5rem; /* 調整縮排距離 */
+        font-size: 0.9rem; /* 可選：調整子項目字體大小 */
+      }
+
+      /* 目錄展開狀態 */
+      #expandable-menu.open {
+        transform: translateX(0);
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <div class="nav-left">
+        <div class="logo">
+          <a href="首頁.html">
+            <img src="網站Logo.png" alt="網站 Logo" />
+          </a>
+        </div>
+      </div>
+      <div class="nav-right">
+        <a href="首頁.html">關於我</a>
+        <div class="dropdown">
+          <a>亞洲旅遊</a>
+          <div class="dropdown-content">
+            <a href="中國.html">中國</a>
+            <a href="新加坡.html">新加坡</a>
+            <a href="馬來西亞.html">馬來西亞</a>
+            <a href="泰國.html">泰國</a>
+            <a href="印尼.html">印尼</a>
+            <a href="越南.html">越南</a>
+          </div>
+        </div>
+        <div class="dropdown">
+          <a>歐洲旅遊</a>
+          <div class="dropdown-content">
+            <a href="英國.html">英國</a>
+            <a href="法國.html">法國</a>
+            <a href="荷蘭.html">荷蘭</a>
+            <a href="比利時.html">比利時</a>
+            <a href="盧森堡.html">盧森堡</a>
+            <a href="瑞士.html">瑞士</a>
+            <a href="摩納哥.html">摩納哥</a>
+            <a href="西班牙.html">西班牙</a>
+            <a href="葡萄牙.html">葡萄牙</a>
+            <a href="安道爾.html">安道爾</a>
+            <a href="丹麥.html">丹麥</a>
+            <a href="瑞典.html">瑞典</a>
+            <a href="波蘭.html">波蘭</a>
+          </div>
+        </div>
+        <div class="dropdown">
+          <a>美洲旅遊</a>
+          <div class="dropdown-content">
+            <a href="美國.html">美國</a>
+            <a href="加拿大.html">加拿大</a>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <div class="intro-section">
+      <div class="left">
+        <h1>Tommy 在直布羅陀</h1>
+        <h4>
+          <b>直布羅陀 (Gibraltar) </b
+          >是位於歐洲和非洲之間，是英國的海外領土，曾經是多個帝國的統治地，然而最引人注目的歷史事件是在 1713 年的烏特勒支條約中，西班牙將直布羅陀割讓給英國，自此直布羅陀成為英國的要塞和海軍基地，並在 19 世紀成為英國帝國的重要據點。
+        </h4>
+        <h4>在第二次世界大戰期間，直布羅陀成為了關鍵的軍事基地，並受到了德國和意大利的威脅，也是英國和西班牙之間爭議的焦點，兩國長期爭論該地區的主權問題。如今直布羅陀保留著它的英國特色，同時也有著自己獨特的西班牙文化和社會。</h4>
+      </div>
+      <div class="right">
+        <img src="西班牙照片\直布羅陀\直布羅陀_介紹.jpg" width="90%" height="350px" />
+      </div>
+    </div>
+
+    <div class="destination-section">
+      <div class="destination-main">
+        <h2>直布羅陀交通</h2>
+        <h3>前往直布羅陀</h3>
+        <h4>
+          通常是從西班牙的馬拉加坐大巴到 La Linea 後再過關進入直布羅陀，也可以直接搭機抵達直布羅陀機場，但航班較少且價格價高。
+        </h4>
+        <h3>市區交通</h3>
+        <h4>
+          直布羅陀半島非常小，基本上都可以由步行抵達，若前往最南端燈塔可以搭乘公車，上車可以刷信用卡。
+        </h4>
+        <br /><br />
+        <h2>直布羅陀住宿</h2>
+        <h4>
+          直布羅陀本身的住宿非常昂貴且選擇很少，推薦可以住在西班牙境內的 La Linea 或 Algeciras 並搭乘公車抵達通關口。
+        </h4>
+        <div style="text-align: center">
+          <img src="西班牙照片\直布羅陀\直布羅陀_住宿1.png" width="800px" />
+          <img src="西班牙照片\直布羅陀\直布羅陀_住宿2.png" width="600px" />
+        </div>
+        <br /><br />
+        <h2>直布羅陀景點</h2>
+        <h3>直布羅陀國際機場 (Gibraltar Airport)</h3>
+        <h4>
+          直布羅陀機場位於直布羅陀的北部，機場的跑道長 1829 公尺，足夠接待小型和中型客機。由於周圍被海洋和山脈所包圍，
+          因此飛行和降落在這個機場需要特殊的技巧和訓練。直布羅陀機場的跑道橫越了國際公路，當飛機需要起降時，道路必須臨時關閉，
+          並由當地警察負責交通管制，入關後可以體驗走在飛機跑道上十分特別，這種獨特的設計使得飛機起降時的交通流量受到限制，機場的運營也需要高度協調和準確的時程安排。除了定期航班，英國皇家空軍和英國皇家海軍在這裡有一個基地，提供支持和保護直布羅陀地區的安全。
+        </h4>
+        <div style="text-align: center">
+          <img src="西班牙照片\直布羅陀\GB1.jpg" width="800px" />
+          <img src="西班牙照片\直布羅陀\GB2.jpg" width="800px" />
+          <img src="西班牙照片\直布羅陀\GB3.jpg" width="600px" />
+        </div>
+        <br /><br /><br />
+        <h3>直布羅陀纜車 (Gibraltar Cable Car)</h3>
+        <h4>
+          直布羅陀纜車建於 1966 年，是一條單纜系統，連接著直布羅陀的基地區和直布羅陀山頂。纜車的起點位於基地區的總站，
+          可以在那裡購買門票乘坐纜車上山，沿著一條長約 1.5 公里的路線，穿越山脊到達山頂站。在纜車的旅程中可以欣賞到壯觀的景色，
+          包括直布羅陀海峽、摩洛哥的阿非利加山脈以及周圍的海洋景觀，直布羅陀山頂海拔約 426 米，可以俯瞰整個直布羅陀地區以及周圍的海洋和山脈。
+        </h4>
+        <div style="text-align: center">
+          <img src="西班牙照片\直布羅陀\GB4.jpg" width="800px" />
+        </div>
+        <br /><br /><br />
+        <h3>直布羅陀天空步道 (Skywalk Gibraltar)</h3>
+        <h4>
+          直布羅陀天空步道建在直布羅陀山頂的一個懸崖上，是一個由玻璃和鋼結構建成的平台，可以欣賞到直布羅陀山脈、直布羅陀本島、
+          直布羅陀海峽和非洲的摩洛哥海岸線，可以感受到直布羅陀獨特的地理位置和壯麗的自然風景。
+          直布羅陀天空步道的玻璃地板讓遊客可以步行在透明的平台上，感受到腳下的懸崖和深淵，
+          這種極致的高度和透明度帶來了一種刺激和驚奇的感覺，同時也能夠欣賞到下方的壯觀景色。
+        </h4>
+        <div style="text-align: center">
+          <img src="西班牙照片\直布羅陀\GB5.jpg" width="800px" />
+          <img src="西班牙照片\直布羅陀\GB6.jpg" width="800px" />
+        </div>
+        <br /><br /><br />
+        <h3>直布羅陀巨巖 (Rock of Gibraltar)</h3>
+        <h4>
+          直布羅陀巨巖的高度為 426 米，從山頂上可以俯瞰到直布羅陀市區、直布羅陀海峽以及非洲大陸的摩洛哥海岸線，壯觀景色和戰略地理位置使其成為了重要的軍事和地理標誌。山丘是由堅固的石灰岩組成，形成了垂直的懸崖和陡峭的山脊。這裡的地質結構擁有許多天然洞穴，還是一個重要的自然保護區，擁有豐富的野生動植物，直布羅陀的 Barbary macaques (巴巴里獼猴) 是歐洲唯一的自然野生猴群，經常可以在山上的自然保護區中看到它們。
+        </h4>
+        <div style="text-align: center">
+          <img src="西班牙照片\直布羅陀\GB7.jpg" width="800px" />
+          <img src="西班牙照片\直布羅陀\GB8.jpg" width="600px" />
+          <img src="西班牙照片\直布羅陀\GB9.jpg" width="600px" />
+        </div>
+        <br /><br /><br />
+        <h3>O'Hara's Battery</h3>
+        <h4>
+          O'Hara's Battery 得名於一位在 18 世紀中期服役於直布羅陀的英國將領 Charles O'Hara。建於 1787 年，砲台作為直布羅陀防禦體系的一部分，用於保護直布羅陀免受敵對軍隊的攻擊。O'Hara's Battery 位於直布羅陀山頂的一個突出點，可以欣賞到壯觀的景色和直布羅陀海峽的景觀，俯瞰直布羅陀市區、直布羅陀海峽以及非洲的摩洛哥海岸線。
+        </h4>
+        <h4>O'Hara's Battery 保存了一些古老的大炮和軍事設施，展示了過去的軍事技術和防禦能力，可以參觀炮台的內部了解其歷史和功能。</h4>
+        <div style="text-align: center">
+          <img src="西班牙照片\直布羅陀\GB10.jpg" width="800px" />
+          <img src="西班牙照片\直布羅陀\GB11.jpg" width="800px" />
+          <img src="西班牙照片\直布羅陀\GB12.jpg" width="600px" />
+          <img src="西班牙照片\直布羅陀\GB13.jpg" width="600px" />
+        </div>
+        <br /><br /><br />
+        <h3>聖米迦勒洞穴 (Saint Michael's Cave)</h3>
+        <h4>
+          聖米迦勒洞穴的歷史可以追溯到數百萬年前，是由水在石灰岩中侵蝕形成的。這個洞穴有多個巨大的洞廳，其中最著名的是大型的上廳 (Upper Hall) 和小型的下廳 (Lower Hall)。這些洞廳充滿了各種形狀各異的鍾乳石和石筍，創造出令人驚嘆的景觀。聖米迦勒洞穴在過去曾經被用作不同的目的，包括軍事用途和娛樂場所，在第二次世界大戰期間，被用作防空洞和醫療站。現在洞穴已經改造成觀光景點，洞穴內部照明燈光的設置使得這些地下景觀更加壯觀，還舉辦各種文化和藝術活動，如音樂會和劇院表演。
+        </h4>
+        <div style="text-align: center">
+          <img src="西班牙照片\直布羅陀\GB14.jpg" width="600px" />
+        </div>
+        <br /><br /><br />
+        <h3>查理五世城牆 (Charles V Wall)</h3>
+        <h4>
+          查爾斯五世城牆建於 16 世紀，是為了加強直布羅陀的防禦能力而建造的，由厚重的石塊和石灰岩組成，構成了一道堅固的防禦結構。在歷史上它曾多次受到敵軍的攻擊和圍困，城牆上有許多堡壘、瞭望塔和防禦工事，提供了良好的戰略位置和觀察點。
+        </h4>
+        <div style="text-align: center">
+          <img src="西班牙照片\直布羅陀\GB15.jpg" width="600px" />
+        </div>
+        <br /><br /><br />
+        <h3>歐洲角燈塔 (Europa Point Lighthouse)</h3>
+        <h4>
+          歐洲角燈塔位於歐洲角 (Europa Point) 的最南端，建於 1838 年，是由英國政府在直布羅陀設立的。燈塔高 20 米，建造於直布羅陀海峽和地中海的交界處，主要目的是提供船隻在進入和離開直布羅陀海峽時的導航和航行指引。燈塔的燈光具有強大的照明能力，可以在夜間和惡劣天氣中為船隻提供可靠的航行標誌，幫助船隻避免礁石和危險地形，歐洲角燈塔的存在對於直布羅陀這個戰略位置的航行安全至關重要。
+        </h4>
+        <div style="text-align: center">
+          <img src="西班牙照片\直布羅陀\GB16.jpg" width="800px" />
+          <img src="西班牙照片\直布羅陀\GB17.jpg" width="600px" />
+        </div>
+        <br /><br />
+      </div>
+      <div class="destination-sidebar">
+        <div class="sidebar-image-container">
+          <img src="側邊欄自我介紹.jpg" />
+        </div>
+        <h5>
+          Hi!
+          我是Tommy，我熱愛旅遊也喜歡藉由影像紀錄旅程中的點點滴滴，透過文字將我在旅途中的所見所聞分享給大家。旅行對我而言不只是吃吃喝喝，而是能在行萬里路間感受世界的脈動，體驗不同的文化，希望藉由我的分享能讓大家看到更多世界的美好。
+        </h5>
+        <br />
+        <h5>
+          想更了解我或與我聯絡:
+          <a
+            href="https://www.instagram.com/tommy_techvoyage/"
+            target="_blank"
+            style="color: inherit; text-decoration: underline"
+          >
+            <b>Instagram</b>
+          </a>
+        </h5>
+        <div class="recommendation-section">
+          <h3>其他西班牙旅遊目的地</h3>
+          <div class="recommendation-buttons">
+            <a href="巴塞隆納.html">
+              <button><h5>巴塞隆納</h5></button>
+            </a>
+            <a href="馬德里.html">
+              <button><h5>馬德里</h5></button>
+            </a>
+            <a href="瓦倫西亞.html">
+              <button><h5>瓦倫西亞</h5></button>
+            </a>
+            <a href="格瑞那達.html">
+              <button><h5>格瑞那達</h5></button>
+            </a>
+            <a href="馬拉加.html">
+              <button><h5>馬拉加</h5></button>
+            </a>
+            <a href="隆達.html">
+              <button><h5>隆達</h5></button>
+            </a>
+            <a href="塞維亞.html">
+              <button><h5>塞維亞</h5></button>
+            </a>
+            <a href="馬略卡島.html">
+              <button><h5>馬略卡島</h5></button>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="contact-section">
+      <div class="contact-item">
+        <h3>
+          想更了解我或與我聯絡:
+          <a
+            href="https://www.instagram.com/tommy_techvoyage/"
+            target="_blank"
+            style="color: inherit; text-decoration: underline"
+          >
+            Instagram
+          </a>
+        </h3>
+      </div>
+    </div>
+    <footer>
+      <h6>COPYRIGHT © 2025 Tommy 看世界 All rights reserved.</h6>
+    </footer>
+    <div id="expandable-menu">
+      <div id="menu-toggle"></div>
+      <!-- 收闔按鈕 -->
+      <div id="menu-content">
+        <h4>目錄</h4>
+        <ul id="menu-list"></ul>
+      </div>
+    </div>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const menu = document.getElementById("expandable-menu");
+        const toggle = document.getElementById("menu-toggle");
+        const menuList = document.getElementById("menu-list");
+        const destinationMain = document.querySelector(".destination-main");
+
+        // 點擊按鈕切換目錄狀態
+        toggle.addEventListener("click", () => {
+          menu.classList.toggle("open");
+        });
+
+        // 從 destination-main 區域提取 h2 和 h3，動態生成目錄
+        const headings = destinationMain.querySelectorAll("h2, h3");
+        headings.forEach((heading, index) => {
+          // 確保每個 h2 和 h3 都有唯一的 id
+          if (!heading.id) {
+            heading.id = `heading-${index}`;
+          }
+
+          const listItem = document.createElement("li");
+          const link = document.createElement("a");
+          link.textContent = heading.textContent;
+          link.href = `#${heading.id}`;
+          listItem.appendChild(link);
+
+          // 為 h3 添加縮排樣式
+          if (heading.tagName.toLowerCase() === "h3") {
+            listItem.classList.add("sub-item");
+          }
+
+          menuList.appendChild(listItem);
+        });
+
+        // 滾動至目標位置並加上 75px 偏移
+        menuList.addEventListener("click", (event) => {
+          if (event.target.tagName === "A") {
+            event.preventDefault(); // 阻止預設行為
+
+            const targetId = event.target.getAttribute("href").substring(1); // 取得目標 ID
+            const targetElement = document.getElementById(targetId);
+
+            if (targetElement) {
+              // 計算目標元素的位置並加上 75px 偏移
+              const targetPosition =
+                targetElement.getBoundingClientRect().top + window.scrollY;
+              const offset = 75; // 偏移的距離
+              window.scrollTo({
+                top: targetPosition - offset,
+                behavior: "smooth", // 平滑滾動
+              });
+            }
+          }
+        });
+      });
+    </script>
+  </body>
+</html>
