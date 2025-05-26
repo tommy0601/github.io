@@ -235,22 +235,27 @@
       /* === 響應式調整：針對手機與小螢幕設備 === */
       @media (max-width: 768px) {
         nav {
-          flex-direction: column;
-          align-items: flex-start;
-          padding: 1rem 3vw;  /* 窄螢幕時減少左右留白 */
+          flex-direction: row;
+          flex-wrap: wrap;
+          align-items: center;
+          justify-content: space-between;
+          padding: 1rem 5vw;  /* 窄螢幕時減少左右留白 */
           width: 100%;
         }
 
         .nav-right {
-          flex-direction: column;
-          align-items: flex-start;
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          gap: 0.5rem;
           transform: none;
-          width: 100%;
+          width: auto;
         }
 
         nav a {
-          padding: 0.5rem 0;
-          margin: 0.2rem 0;
+          padding: 0.5rem 0.5rem;           /* 減少垂直padding */
+          margin: 0 0.3rem;
+          font-size: 0.9rem;
         }
 
         .intro-section {
