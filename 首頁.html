@@ -216,6 +216,62 @@
         justify-content: center;
         align-items: center;
       }
+
+      /* === 響應式調整：針對手機與小螢幕設備 === */
+    @media (max-width: 768px) {
+      nav {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 1rem;
+        width: 100%;
+      }
+    
+      .nav-right {
+        flex-direction: column;
+        align-items: flex-start;
+        transform: none;
+        width: 100%;
+      }
+    
+      nav a {
+        padding: 0.5rem 0;
+        margin: 0.2rem 0;
+      }
+    
+      .intro-section {
+        flex-direction: column;
+        padding: 1rem;
+      }
+    
+      .intro-section .left,
+      .intro-section .right {
+        width: 100%;
+      }
+    
+      .intro-section .right img {
+        width: 100%;
+        height: auto;
+      }
+    
+      .destination-grid {
+        flex-direction: column;
+        gap: 1rem;
+      }
+    
+      .destination-item {
+        max-width: 100%;
+        width: 100%;
+      }
+    
+      .destination-item.a_role_with_2 {
+        position: static;
+        left: auto;
+      }
+    
+      .contact-section {
+        padding: 1rem;
+      }
+    }
     </style>
   </head>
   <body>
