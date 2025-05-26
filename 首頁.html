@@ -241,6 +241,7 @@
           justify-content: space-between;
           padding: 1rem 5vw;  /* 窄螢幕時減少左右留白 */
           width: 100%;
+          box-sizing: border-box;
         }
 
         .nav-right {
@@ -250,12 +251,16 @@
           gap: 0.5rem;
           transform: none;
           width: auto;
+          white-space: nowrap;               /* 禁止內容自動換行 */
         }
 
         nav a {
           padding: 0.5rem 0.5rem;           /* 減少垂直padding */
           margin: 0 0.3rem;
-          font-size: 0.9rem;
+          font-size: 0.85rem;
+          white-space: nowrap;               /* 確保文字不換行 */
+          overflow: hidden;
+          text-overflow: ellipsis;           /* 若內容超出，顯示省略號 */
         }
 
         .intro-section {
