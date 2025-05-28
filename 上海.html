@@ -487,7 +487,7 @@
     </style>
   </head>
   <body>
-    <nav id="navbar">
+    <nav>
       <div class="nav-left">
         <div class="logo">
           <a href="首頁.html">
@@ -909,21 +909,6 @@
           }
         });
       });
-
-        function adjustMenuPosition() {
-          const navbar = document.getElementById("navbar");
-          const menu = document.getElementById("expandable-menu");
-      
-          if (navbar && menu) {
-            const navHeight = navbar.offsetHeight;
-            menu.style.top = navHeight + "px";
-            menu.style.height = `calc(100vh - ${navHeight}px)`;
-          }
-        }
-      
-        // 初始化與視窗大小變動時都執行
-        window.addEventListener("load", adjustMenuPosition);
-        window.addEventListener("resize", adjustMenuPosition);
     </script>
   </body>
 </html>
