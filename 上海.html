@@ -381,6 +381,18 @@
           text-overflow: ellipsis;           /* 若內容超出，顯示省略號 */
         }
 
+        .nav-dropdown {
+          width: 60%; /* 或者用 max-content, fit-content 看需求 */
+          font-size: 1rem; /* 調整字體大小和導覽列一致 */
+          padding: 0.5rem;
+        }
+      
+        .nav-dropdown a {
+          font-size: inherit; /* 確保跟 .nav-dropdown 一樣大 */
+          padding: 0.5rem 1rem;
+          white-space: normal; /* 可選：讓字在必要時換行 */
+        }
+
         .intro-section {
           flex-direction: column;
           padding: 8%;
