@@ -451,43 +451,6 @@
           width: 100%; /* 小螢幕按鈕全寬排列 */
         }
 
-        #expandable-menu {
-        position: fixed;
-        top: 70px;                      /* 對齊導覽列底部 */
-        bottom: 0;                      /* 貼齊螢幕下緣 */
-        right: 0;
-        width: 50vw;                   /* 手機寬度調整為 80% 的螢幕寬度 */
-        height: auto;                  /* 自動高度配合 top 和 bottom */
-        transform: translateX(100%);
-        transition: transform 0.3s ease;
-        background-color: #f4f4f9;
-        z-index: 1000;
-        overflow-y: auto;              /* 加上滾動避免內容超出 */
-        }
-
-        /* 「目錄」按鈕變窄與略短 */
-        #menu-toggle {
-          width: 32px;
-          height: 64px;
-          left: -32px; /* 按鈕略縮小後，調整位置 */
-        }
-      
-        #menu-toggle::after {
-          font-size: 14px; /* 文字稍小一點，避免擠出邊界 */
-        }
-
-        #menu-content {
-          padding: 1rem 5vw;
-        }
-
-        #menu-content, 
-        #menu-list li, 
-        #menu-list a {
-          white-space: normal;    /* 允許換行 */
-          word-wrap: break-word;  /* 長單字/網址強制斷行 */
-          overflow-wrap: break-word;
-        }
-
         .contact-section {
           padding: 3vh 5vw;
         }
