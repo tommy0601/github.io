@@ -191,14 +191,14 @@
       .destination-grid {
         display: flex;
         flex-wrap: wrap;
-        justify-content: space-between;
+        justify-content: flex-start;
         gap: 2em;
         margin-bottom: 2em;
       }
 
       .destination-item {
-        flex: 1;
-        max-width: 30%;
+        flex: 0 0 27%;
+        max-width: 27%;
         text-align: center;
         background-color: white;
         padding: 1vw;
@@ -215,9 +215,16 @@
         margin-bottom: 1em;
       }
 
-      .destination-item.a_role_with_2 {
-        position: relative; /* 確保可以進行單獨調整 */
-        left: -33.33%; /* 移動到網格區三等分的中間 */
+      .destination-item.placeholder {
+        visibility: hidden;
+        pointer-events: none;
+        flex: 0 0 27%;
+        max-width: 27%;
+        height: 0;
+        margin: 0;
+        padding: 0;
+        border: none;
+        box-shadow: none;
       }
 
       .destination-item button {
@@ -237,14 +244,7 @@
         transform: translateY(-0.2em);
       }
 
-      .destination-sidebar {
-        width: 25%;                    /* 側邊欄佔 25% */
-        padding-left: 2%;             /* 相對內邊距 */
-        margin-top: 2rem;
-        box-sizing: border-box;
-      }
-
-       .recommendation-section {
+      .recommendation-section {
         margin-top: 3vh; /* 與上方文字的間距 */
         text-align: center;
         position: sticky;
@@ -515,12 +515,13 @@
               <button><h5>陽朔</h5></button>
             </a>
           </div>
-          <div class="destination-item a_role_with_2">
+           <div class="destination-item">
             <img src="中國照片\中國_汕頭南澳島.jpeg" />
             <a href="汕頭南澳島.html">
               <button><h5>汕頭南澳島</h5></button>
             </a>
           </div>
+          <div class="destination-item placeholder"></div>
         </div>
       </div>
       <div class="destination-sidebar">
