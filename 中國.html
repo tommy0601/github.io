@@ -198,19 +198,20 @@
       
       .destination-item {
         flex: 0 0 27%;
-        max-width: 27%;
+        max-width: 27%; /* 使用百分比單位，已是相對 */
         text-align: center;
         background-color: white;
-        padding: 1vw;
-        border: 0.1em solid #ddd;
+        padding: 2%; /* 用百分比取代 1vw，更與容器寬度關聯 */
+        border: 0.1em solid #ddd; /* 替換為相對單位 */
         border-radius: 0.5em;
         box-shadow: 0 0.5em 1em rgba(0, 0, 0, 0.1);
+        box-sizing: border-box; /* 確保 padding 不會溢出 */
       }
       
       .destination-item img {
-        width: 100%;
+        width: 95%;
         height: auto;
-        max-height: 22vh; /* 相對視窗高度，避免圖片過長 */
+        max-height: 22vh; /* 相對視口高度，已是相對單位 */
         object-fit: cover;
         margin-bottom: 1em;
       }
@@ -228,7 +229,8 @@
       }
       
       .destination-item button {
-        width: 100%; /* 與圖片同寬 */
+        width: 95%;
+        margin: 0 auto;
         padding: 0.5em 1em;
         color: white;
         background-color: #78bcc4;
@@ -237,6 +239,7 @@
         transition: transform 0.3s;
         font-family: Arial, sans-serif;
         font-size: 1em;
+        box-sizing: border-box;
       }
       
       .destination-item button:hover {
@@ -332,6 +335,16 @@
           white-space: nowrap;               /* 確保文字不換行 */
           overflow: hidden;
           text-overflow: ellipsis;           /* 若內容超出，顯示省略號 */
+        }
+
+        .dropdown-content {
+          width: 12vw;
+          min-width: 8em; /* 保證至少能顯示幾個字 */
+          max-width: none;
+        }
+
+        .dropdown-content a {
+          font-size: 0.85rem;
         }
 
         .intro-section {
