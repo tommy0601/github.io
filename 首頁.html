@@ -167,38 +167,39 @@
         gap: 2em;
         margin-bottom: 2em;
       }
-
+      
       .destination-item {
-        flex: 0 0 29%;
-        max-width: 29%;
+        flex: 0 1 calc(33.33% - 2em); /* 每列3個，扣除 gap */
+        max-width: calc(33.33% - 2em);
+        box-sizing: border-box;
         text-align: center;
         background-color: white;
-        padding: 1vw;
+        padding: 1.5vw;
         border: 1px solid #ddd;
         border-radius: 0.5em;
         box-shadow: 0 0.5em 1em rgba(0, 0, 0, 0.1);
       }
-
+      
       .destination-item img {
-        width: 95%;
+        width: 100%;
         height: auto;
-        max-height: 30vh; /* 用相對高度控制圖片高度不過長 */
+        max-height: 30vh;
         object-fit: cover;
         margin-bottom: 1em;
       }
-
+      
       .destination-item.placeholder {
         visibility: hidden;
         pointer-events: none;
-        flex: 0 0 29%;
-        max-width: 29%;
+        flex: 0 1 calc(33.33% - 2em);
+        max-width: calc(33.33% - 2em);
         height: 0;
         margin: 0;
         padding: 0;
         border: none;
         box-shadow: none;
       }
-
+      
       .destination-item button {
         width: 95%;
         margin: 0 auto;
@@ -211,7 +212,7 @@
         font-family: Arial, sans-serif;
         font-size: 1em;
       }
-
+      
       .destination-item button:hover {
         transform: translateY(-0.2em);
       }
