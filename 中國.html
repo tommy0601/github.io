@@ -195,26 +195,26 @@
         gap: 2em;
         margin-bottom: 2em;
       }
-
+      
       .destination-item {
         flex: 0 0 27%;
         max-width: 27%;
         text-align: center;
         background-color: white;
         padding: 1vw;
-        border: 1px solid #ddd;
+        border: 0.1em solid #ddd;
         border-radius: 0.5em;
         box-shadow: 0 0.5em 1em rgba(0, 0, 0, 0.1);
       }
-
+      
       .destination-item img {
-        width: 95%;
+        width: 100%;
         height: auto;
-        max-height: 22vh; /* 用相對高度控制圖片高度不過長 */
+        max-height: 22vh; /* 相對視窗高度，避免圖片過長 */
         object-fit: cover;
         margin-bottom: 1em;
       }
-
+      
       .destination-item.placeholder {
         visibility: hidden;
         pointer-events: none;
@@ -226,10 +226,9 @@
         border: none;
         box-shadow: none;
       }
-
+      
       .destination-item button {
-        width: 95%;
-        margin: 0 auto;
+        width: 100%; /* 與圖片同寬 */
         padding: 0.5em 1em;
         color: white;
         background-color: #78bcc4;
@@ -239,7 +238,7 @@
         font-family: Arial, sans-serif;
         font-size: 1em;
       }
-
+      
       .destination-item button:hover {
         transform: translateY(-0.2em);
       }
