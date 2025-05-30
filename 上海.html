@@ -268,7 +268,6 @@
       #expandable-menu {
         position: fixed; 
         right: 0;
-        height: calc(100% - 10.6vh); 
         width: 26vw; /* 目錄寬度與 sidebar 齊寬 */
         max-width: 90%; /* 避免在小螢幕太寬 */
         transform: translateX(100%); /* 初始狀態：隱藏在右側 */
@@ -396,6 +395,16 @@
           white-space: normal; /* 可選：讓字在必要時換行 */
         }
 
+        .dropdown-content {
+          width: 12vw;
+          min-width: 8em; /* 保證至少能顯示幾個字 */
+          max-width: none;
+        }
+
+        .dropdown-content a {
+          font-size: 0.85rem;
+        }
+        
         .intro-section {
           flex-direction: column;
           padding: 8%;
