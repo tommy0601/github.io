@@ -266,8 +266,7 @@
       }
 
       #expandable-menu {
-        position: fixed;
-        top: 10.6vh; 
+        position: fixed; 
         right: 0;
         height: calc(100% - 10.6vh); 
         width: 26vw; /* 目錄寬度與 sidebar 齊寬 */
@@ -900,6 +899,25 @@
           menuList.appendChild(listItem);
         });
 
+        function adjustMenuPosition() {
+          const nav = document.querySelector("nav");
+          const menu = document.getElementById("expandable-menu");
+      
+          if (nav && menu) {
+            const navBottom = nav.getBoundingClientRect().bottom + window.scrollY;
+            menu.style.top = `${navBottom}px`;
+      
+            // 重新計算高度，避免超出畫面
+            const availableHeight = window.innerHeight - navBottom;
+            menu.style.height = `${availableHeight}px`;
+          }
+        }
+      
+        // 初始調整
+        window.addEventListener("DOMContentLoaded", adjustMenuPosition);
+        // 螢幕大小變化時也調整
+        window.addEventListener("resize", adjustMenuPosition);
+        
         // 滾動至目標位置並加上 75px 偏移
         menuList.addEventListener("click", (event) => {
           if (event.target.tagName === "A") {
