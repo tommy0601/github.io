@@ -281,8 +281,9 @@
 
       /* 收闔按鈕 */
       #menu-toggle {
-        position: absolute;
+        position: fixed;
         top: 45%;
+        right: 0;
         left: -2.5vw; /* 調整按鈕的位置，適應按鈕變大後的寬度 */
         transform: translateY(-50%);
         width: 2.5vw; /* 增大按鈕寬度 */
@@ -291,11 +292,13 @@
         min-height: 5em;
         background-color: #78bcc4;
         color: white;
-        border-radius: 0.4em;
+        border-radius: 0.4em 0 0 0.4em;
         display: flex;
         justify-content: center; /* 水平居中 */
         align-items: center; /* 垂直居中 */
-        box-sizing: border-box;
+        z-index: 1100; /* 要比 expandable-menu 更高，避免被蓋住 */
+        cursor: pointer;
+        box-shadow: -0.1em 0 0.3em rgba(0,0,0,0.1);
       }
 
       #menu-toggle::after {
