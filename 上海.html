@@ -462,6 +462,18 @@
           font-size: 1rem;
         }
 
+        /* 目錄區寬度改為螢幕寬度的40% */
+        #expandable-menu {
+          width: 40vw !important; /* 用vw方便響應螢幕寬度 */
+          max-width: 90%; /* 保留原本max-width避免太寬 */
+        }
+      
+        /* 目錄區裡面字體縮小成60% */
+        #expandable-menu,
+        #expandable-menu * {
+          font-size: 60% !important;
+        }
+              
         #menu-toggle {
           width: 75%;
           max-width: 1.875em;
