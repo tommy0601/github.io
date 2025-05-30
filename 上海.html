@@ -904,18 +904,16 @@
           const menu = document.getElementById("expandable-menu");
       
           if (nav && menu) {
-            const navBottom = nav.getBoundingClientRect().bottom + window.scrollY;
-            menu.style.top = `${navBottom}px`;
+            const navHeight = nav.offsetHeight;
       
-            // 重新計算高度，避免超出畫面
-            const availableHeight = window.innerHeight - navBottom;
-            menu.style.height = `${availableHeight}px`;
+            // 設定 menu 的 top 與高度
+            menu.style.top = `${navHeight}px`;
+            menu.style.height = `calc(100vh - ${navHeight}px)`;
           }
         }
       
-        // 初始調整
+        // 載入與尺寸變化時調整
         window.addEventListener("DOMContentLoaded", adjustMenuPosition);
-        // 螢幕大小變化時也調整
         window.addEventListener("resize", adjustMenuPosition);
         
         // 滾動至目標位置並加上 75px 偏移
