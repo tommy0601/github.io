@@ -99,6 +99,7 @@
 
       .dropdown {
         position: relative;
+        display: inline-block;
       }
 
       .dropdown-content {
@@ -111,6 +112,7 @@
         border-radius: 0.25em;
         box-shadow: 0 0.5em 1em rgba(0, 0, 0, 0.2); /* 改為相對單位 */
         padding: 0.2rem 0;
+        z-index: 999;
       }
 
       .dropdown-content a {
@@ -129,11 +131,7 @@
       .dropdown-content a:hover {
         transform: translateY(-0.25em); /* 改為相對單位 */
       }
-
-      .dropdown:hover .dropdown-content {
-        display: block;
-      }
-
+      
       .intro-section {
         background-color: #eff5f5;
         display: flex;
@@ -426,7 +424,7 @@
       <div class="nav-right">
         <a href="首頁.html">關於我</a>
         <div class="dropdown">
-          <a>亞洲旅遊</a>
+          <a class="dropdown-toggle">亞洲旅遊</a>
           <div class="dropdown-content">
             <a href="中國.html">中國</a>
             <a href="新加坡.html">新加坡</a>
@@ -437,7 +435,7 @@
           </div>
         </div>
         <div class="dropdown">
-          <a>歐洲旅遊</a>
+          <a class="dropdown-toggle">歐洲旅遊</a>
           <div class="dropdown-content">
             <a href="英國.html">英國</a>
             <a href="法國.html">法國</a>
@@ -455,7 +453,7 @@
           </div>
         </div>
         <div class="dropdown">
-          <a>美洲旅遊</a>
+          <a class="dropdown-toggle">美洲旅遊</a>
           <div class="dropdown-content">
             <a href="美國.html">美國</a>
             <a href="加拿大.html">加拿大</a>
@@ -594,5 +592,33 @@
     <footer>
       <h6>COPYRIGHT © 2025 Tommy 看世界 All rights reserved.</h6>
     </footer>
+
+    <script>
+        // 手機 Safari 相容：點擊展開 dropdown
+        const dropdownToggles = document.querySelectorAll(".dropdown-toggle");
+
+        dropdownToggles.forEach((toggle) => {
+          toggle.addEventListener("click", function (e) {
+            e.stopPropagation(); // 防止冒泡，避免點擊外層時也觸發關閉
+            const dropdown = this.nextElementSibling;
+            const isVisible = dropdown.style.display === "block";
+            
+            // 關閉所有其他 dropdown（可選）
+            document.querySelectorAll(".dropdown-content").forEach((menu) => {
+              menu.style.display = "none";
+            });
+
+            // 切換目前這一個 dropdown
+            dropdown.style.display = isVisible ? "none" : "block";
+          });
+        });
+
+        // 點擊其他地方時關閉 dropdown
+        window.addEventListener("click", function () {
+          document.querySelectorAll(".dropdown-content").forEach((menu) => {
+            menu.style.display = "none";
+          });
+        });
+    </script>
   </body>
 </html>
