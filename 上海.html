@@ -99,6 +99,7 @@
 
       .dropdown {
         position: relative;
+        display: inline-block;
       }
 
       .dropdown-content {
@@ -111,6 +112,7 @@
         border-radius: 0.25em;
         box-shadow: 0 0.5em 1em rgba(0, 0, 0, 0.2); /* 改為相對單位 */
         padding: 0.2rem 0;
+        z-index: 999;
       }
 
       .dropdown-content a {
@@ -128,10 +130,6 @@
 
       .dropdown-content a:hover {
         transform: translateY(-0.25em); /* 改為相對單位 */
-      }
-
-      .dropdown:hover .dropdown-content {
-        display: block;
       }
 
       .intro-section {
@@ -501,7 +499,7 @@
       <div class="nav-right">
         <a href="首頁.html">關於我</a>
         <div class="dropdown">
-          <a>亞洲旅遊</a>
+          <a class="dropdown-toggle">亞洲旅遊</a>
           <div class="dropdown-content">
             <a href="中國.html">中國</a>
             <a href="新加坡.html">新加坡</a>
@@ -512,7 +510,7 @@
           </div>
         </div>
         <div class="dropdown">
-          <a>歐洲旅遊</a>
+          <a class="dropdown-toggle">歐洲旅遊</a>
           <div class="dropdown-content">
             <a href="英國.html">英國</a>
             <a href="法國.html">法國</a>
@@ -530,7 +528,7 @@
           </div>
         </div>
         <div class="dropdown">
-          <a>美洲旅遊</a>
+          <a class="dropdown-toggle">美洲旅遊</a>
           <div class="dropdown-content">
             <a href="美國.html">美國</a>
             <a href="加拿大.html">加拿大</a>
@@ -543,8 +541,8 @@
       <div class="left">
         <h1>Tommy 在上海</h1>
         <h4>
-          <b>上海</b>在 19
-          世紀初隨著鴉片戰爭被開放為通商口岸，才開始了其飛速發展，成長為中國最大的商業中心，融匯了中西文化特色，也保留了悠久的中華文化。近代透過科技創新、金融業等現代產業蓬勃發展，中國經濟版圖的重要一角，城市的文化藝術事業也蒸蒸日上，已然成為中國最重要的文化中心。
+          <b>上海</b>地處中國東部、長江入海口，自古為漁鹽小鎮，明清時期因港口開發而繁榮。1843 年《南京條約》簽訂後，上海開埠成為通商口岸，迅速發展為中國對外貿易與金融中心，十九世紀末至二十世紀初設立租界，各國勢力進駐帶來西方建築與文化，使上海成為 “遠東第一大都會”。
+          新中國成立後，上海成為重要的工業基地，改革開放後經濟迅速騰飛，陸家嘴金融區崛起，標誌性建築如東方明珠、金茂大廈、上海中心等相繼落成，如今的上海是中國的經濟、金融、貿易和航運中心，亦是世界知名的國際大都市。
         </h4>
       </div>
       <div class="right">
@@ -943,6 +941,31 @@
               });
             }
           }
+        });
+        // 手機 Safari 相容：點擊展開 dropdown
+        const dropdownToggles = document.querySelectorAll(".dropdown-toggle");
+
+        dropdownToggles.forEach((toggle) => {
+          toggle.addEventListener("click", function (e) {
+            e.stopPropagation(); // 防止冒泡，避免點擊外層時也觸發關閉
+            const dropdown = this.nextElementSibling;
+            const isVisible = dropdown.style.display === "block";
+            
+            // 關閉所有其他 dropdown（可選）
+            document.querySelectorAll(".dropdown-content").forEach((menu) => {
+              menu.style.display = "none";
+            });
+
+            // 切換目前這一個 dropdown
+            dropdown.style.display = isVisible ? "none" : "block";
+          });
+        });
+
+        // 點擊其他地方時關閉 dropdown
+        window.addEventListener("click", function () {
+          document.querySelectorAll(".dropdown-content").forEach((menu) => {
+            menu.style.display = "none";
+          });
         });
       });
     </script>
