@@ -12,7 +12,6 @@
       body {
         font-family: Calibri, Arial, sans-serif; /* 首選 Calibri，次選 Arial */
         margin: 0;
-        padding: 0;
         overflow-x: hidden; /* 禁止水平滾動 */
         background-color: #f4f4f9;
         color: #333;
@@ -28,7 +27,6 @@
         font-weight: bold;
         color: #2a90a7;
         display: inline-block;
-        margin-bottom: 1rem; /* 縮小 h2 的底部邊距 */
         background-color: #cee5e8;
       }
 
@@ -36,7 +34,7 @@
         font-size: 26px;
         margin: 0 0 1rem;
         font-weight: bold;
-        text-decoration: underline; /* 加上底線 */
+        text-decoration: underline;
       }
 
       h4 {
@@ -62,56 +60,68 @@
       nav {
         background-color: #78bcc4;
         display: flex;
-        justify-content: space-between; /* 保持分佈在兩側 */
-        width: calc(100% - 10rem); /* 與其他內容的邊界一致 */
-        padding: 0.5rem 5rem; /* 主導覽列的 padding 設置 */
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;                     /* 讓 nav 寬度隨螢幕自適應 */
+        padding: 0.8rem 5vw;               /* 左右 padding 用 5% 寬度 */
+        box-sizing: border-box;         /* 確保 padding 不會影響寬度總長 */
         position: fixed;
         top: 0;
         z-index: 1000;
       }
 
       .nav-left .logo img {
-        height: 50px; /* 控制 Logo 圖片的高度 */
-        transform: translateX(-1.5rem); /* 向右移動 2rem */
+        height: 5vw; /* 高度為螢幕寬度的 5% */
+        transform: translateX(-2vw); /* 向左移動 2% 寬度 */
+        max-width: 100%; /* 確保不會超過容器 */
+        height: auto; /* 保持圖片比例（建議與 max-height 搭配） */
+        max-height: 3rem;
       }
 
       .nav-right {
         display: flex;
         align-items: center;
-        transform: translateX(2rem); /* 向右移動 2rem */
+        margin-left: auto; /* 推到右側 */
+        padding-left: 5%;   /* 內部元素間距，彈性設計 */
       }
 
       nav a {
         color: #eff5f5;
         text-decoration: none;
-        padding: 0.5rem 1rem;
-        margin: 0 0.5rem;
+        padding: 1vh 1vw;
+        margin: 0 1vw;
         transition: transform 0.3s;
       }
 
       nav a:hover {
-        transform: translateY(-3px);
+        transform: translateY(-0.5vh); /* 根據視窗高度調整 */
       }
 
       .dropdown {
         position: relative;
+        display: inline-block;
       }
 
       .dropdown-content {
+        width: 100%; /* 佔滿父層寬度 */
+        max-width: 20vw; /* 限制最大寬度 */
         display: none;
         position: absolute;
         background-color: #78bcc4;
-        min-width: 160px;
-        border-radius: 4px;
-        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        min-width: 10em; /* 取代 160px，以字體大小作為比例單位 */
+        border-radius: 0.25em;
+        box-shadow: 0 0.5em 1em rgba(0, 0, 0, 0.2); /* 改為相對單位 */
         padding: 0.2rem 0;
+        z-index: 999;
       }
 
       .dropdown-content a {
         color: #eff5f5;
         display: block;
         transition: transform 0.3s;
-        border-bottom: 1px solid #ddd;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.3); /* 更淡配色、柔和過渡 */
+        padding: 0.6em 1em;
+        font-size: 1em;
       }
 
       .dropdown-content a:last-child {
@@ -119,107 +129,109 @@
       }
 
       .dropdown-content a:hover {
-        transform: translateY(-3px);
-      }
-
-      .dropdown:hover .dropdown-content {
-        display: block;
+        transform: translateY(-0.25em); /* 改為相對單位 */
       }
 
       .intro-section {
         background-color: #eff5f5;
         display: flex;
-        padding: 2rem;
-        margin-top: 60px; /* 根據導航列高度調整 */
-        justify-content: space-between;
-        align-items: flex-start;
-        width: 100%;
-        box-sizing: border-box; /* 包含 padding 在內 */
-        padding-left: 5rem;
-        padding-right: 5rem;
+        flex-wrap: wrap; /* 確保在小螢幕可換行 */
+        padding: 2rem 5%;
+        margin-top: 4em; /* 根據導航列高度調整 */
       }
 
       .intro-section h4 {
-        max-width: 700px;
+        max-width: 85%; /* 改為相對單位，避免固定寬度限制 */
+        line-height: 1.8;
       }
 
       .intro-section .left {
         width: 60%;
+        padding-right: 1%;
       }
 
       .intro-section .right {
-        width: 40%;
+        width: 39%;
       }
 
       .destination-section {
         display: flex;
+        flex-wrap: wrap;               /* 小螢幕時允許換行 */
         padding: 1rem 5%; /* 左右內間距為螢幕的10% */
         background-color: white;
       }
 
       .destination-main {
-        width: 75%;
-        margin-right: 1.5rem; /* 增加右邊外邊距 */
+        width: 72%;                    /* 主要內容佔 72%，略縮以保留間距 */
+        margin-right: 3%;              /* 與 sidebar 間保留間距（約為 3%） */
+        box-sizing: border-box;
       }
 
       .destination-sidebar {
-        width: 25%;
-        padding-left: 1.5rem; /* 增加左側內邊距 */
-        margin-top: 2rem; /* 向上或向下調整，負值表示向上 */
+        width: 25%;                    /* 側邊欄佔 25% */
+        padding-left: 2%;             /* 相對內邊距 */
+        margin-top: 2rem;
+        box-sizing: border-box;
       }
 
       .sidebar-image-container {
         margin-bottom: 1rem;
-        text-align: center; /* 確保圖片置中 */
+        text-align: center; /* 置中圖片 */
       }
 
       .sidebar-image-container img {
-        height: 300px; /* 設置直式圖片的高度 */
+        width: 90%;         /* 圖片寬度為容器寬度的 90% */
+        height: auto;       /* 高度自動，保持比例 */
+        max-height: 60vh;   /* 避免圖片過高，佔螢幕最大 60% 高 */
+        object-fit: cover;  /* 裁切處理長圖 */
       }
 
       .two-vertical-images {
-        display: flex; /* 彈性佈局，讓圖片並排 */
-        justify-content: space-between; /* 兩張圖片均勻分佈 */
-        gap: 2rem; /* 圖片之間的間距 */
+        display: flex;
+        justify-content: space-between;
+        gap: 4%; /* 使用百分比間距更彈性 */
         margin-top: 2rem;
-        margin-bottom: 2rem; /* 與下方內容的距離 */
+        margin-bottom: 2rem;
+        flex-wrap: wrap; /* 若畫面太小，允許換行 */
       }
 
       .two-vertical-images img {
-        width: calc(50% - 0.5rem); /* 每張圖片佔用容器的一半減去間距 */
-        text-align: center; /* 確保圖片置中 */
-        height: auto; /* 保持圖片的直式比例 */
-        object-fit: cover; /* 確保圖片內容適應容器 */
+        width: 48%; /* 每張圖片約佔一半（加上 gap 剛好 100%） */
+        height: auto; /* 保持原比例 */
+        object-fit: cover;
+        display: block;
+        margin: 0 auto;
       }
 
       .recommendation-section {
-        margin-top: 1.5rem; /* 與上方文字的間距 */
+        margin-top: 3vh; /* 與上方文字的間距 */
         text-align: center;
         position: sticky;
         top: 80px; /* 空出導覽列的高度，確保推薦區不被覆蓋 */
         z-index: 10; /* 提高層級，避免被其他內容遮蓋 */
+        padding: 0 5%;
       }
 
       .recommendation-section h3 {
-        font-size: 18px;
+        font-size: 1.125rem;
         font-weight: bold;
-        margin-bottom: 0.5rem; /* 與按鈕區的距離 */
+        margin-bottom: 1vh; /* 與按鈕區的距離 */
       }
 
       .recommendation-buttons {
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
-        gap: 0.5rem; /* 按鈕之間的間距 */
+        gap: 0.5em; /* 按鈕之間的間距 */
       }
 
       .recommendation-buttons button {
-        padding: 0.5rem 1rem;
-        font-size: 14px;
+        padding: 0.5em 1em;
+        font-size: 0.875rem;
         color: white;
         background-color: #78bcc4;
         border: none;
-        border-radius: 4px;
+        border-radius: 0.25rem;
         transition: transform 0.3s;
         font-family: Arial, sans-serif;
       }
@@ -229,13 +241,13 @@
       }
 
       .contact-section {
-        padding: 2rem 5rem; /* 上下與左右間距 */
+        padding: 4vh 8vw; /* 上下與左右間距 */
         background-color: #eff5f5; /* 淺灰背景 */
         text-align: center; /* 確保內容置中對齊 */
       }
 
       .contact-item h3 {
-        font-size: 18px; /* 調整標題字體大小 */
+        font-size: 1.125rem; /* 調整標題字體大小 */
         margin: 0; /* 移除多餘的間距 */
         text-decoration: none; /* 移除底線 */
       }
@@ -243,43 +255,49 @@
       footer {
         background-color: #000;
         color: white;
-        height: 30px;
+        height: 3vh; /* 使用相對單位，高度占螢幕高度的 3% */
         display: flex;
         justify-content: center;
         align-items: center;
+        font-size: 1.5rem; /* 使用相對字體大小 */
+        padding: 0.5rem 0; /* 確保小螢幕時內容不擠壓 */
       }
 
       #expandable-menu {
-        position: fixed;
-        top: 70px; /* 與螢幕頂部的距離設為 60px */
+        position: fixed; 
         right: 0;
-        height: calc(100% - 70px); /* 高度減去 60px，避免超出視窗 */
-        width: 395px; /* 目錄寬度與 sidebar 齊寬 */
+        width: 26vw; /* 目錄寬度與 sidebar 齊寬 */
+        max-width: 90%; /* 避免在小螢幕太寬 */
         transform: translateX(100%); /* 初始狀態：隱藏在右側 */
         transition: transform 0.3s ease;
         background-color: #f4f4f9; /* 與網站背景一致 */
         z-index: 1000;
+        box-sizing: border-box;
       }
 
       /* 收闔按鈕 */
       #menu-toggle {
-        position: absolute;
+        position: fixed;
         top: 45%;
-        left: -40px; /* 調整按鈕的位置，適應按鈕變大後的寬度 */
-        transform: translateY(-50%);
-        width: 40px; /* 增大按鈕寬度 */
-        height: 80px; /* 增大按鈕高度 */
+        right: 0; /* 永遠貼在右側 */
+        transform: translateY(-50%) translateX(0);
+        width: 2.5em; /* 增大按鈕寬度 */
+        height: 5em; /* 增大按鈕高度 */
         background-color: #78bcc4;
         color: white;
-        border-radius: 4px;
+        border-radius: 0.4em 0 0 0.4em;
         display: flex;
         justify-content: center; /* 水平居中 */
         align-items: center; /* 垂直居中 */
+        z-index: 2000; /* 要比 expandable-menu 更高，避免被蓋住 */
+        cursor: pointer;
+        box-shadow: -0.1em 0 0.3em rgba(0,0,0,0.1);
+        transition: transform 0.3s ease; /* 平滑移動 */
       }
 
       #menu-toggle::after {
         content: "目錄"; /* 在按鈕內顯示 "目錄" */
-        font-size: 17px;
+        font-size: 1rem;
         color: white; /* 設定字體顏色為白色 */
         writing-mode: vertical-rl; /* 使文字垂直排列 */
       }
@@ -290,14 +308,16 @@
 
       /* 目錄內容 */
       #menu-content {
-        padding: 0.5rem 1rem;
+        padding: 0.5rem 5%;
         overflow-y: auto;
         height: 100%;
+        box-sizing: border-box;
       }
 
       #menu-content h4 {
         font-weight: bold;
         margin-top: 0;
+        font-size: 1.2rem;
       }
 
       #menu-list {
@@ -306,13 +326,14 @@
       }
 
       #menu-list li {
-        margin-bottom: 0.5rem;
+        margin-bottom: 1vh;
       }
 
       #menu-list a {
         color: #2a90a7;
         text-decoration: none;
         transition: color 0.3s;
+        font-size: 1rem; /* 使用相對字體大小 */
       }
 
       #menu-list a:hover {
@@ -320,13 +341,149 @@
       }
 
       #menu-list .sub-item {
-        margin-left: 1.5rem; /* 調整縮排距離 */
+        margin-left: 8%; /* 調整縮排距離 */
         font-size: 0.9rem; /* 可選：調整子項目字體大小 */
       }
 
       /* 目錄展開狀態 */
       #expandable-menu.open {
         transform: translateX(0);
+      }
+
+      /* === 響應式調整：針對手機與小螢幕設備 === */
+      @media (max-width: 768px) {
+        nav {
+          flex-direction: row;
+          flex-wrap: wrap;
+          align-items: center;
+          justify-content: space-between;
+          padding: 1rem 5vw;  /* 窄螢幕時減少左右留白 */
+          width: 100%;
+          box-sizing: border-box;
+        }
+
+        .nav-right {
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          gap: 0.5rem;
+          transform: none;
+          width: auto;
+          white-space: nowrap;               /* 禁止內容自動換行 */
+        }
+
+        nav a {
+          padding: 0.5rem 0.5rem;           /* 減少垂直padding */
+          margin: 0 0.3rem;
+          font-size: 0.85rem;
+          white-space: nowrap;               /* 確保文字不換行 */
+          overflow: hidden;
+          text-overflow: ellipsis;           /* 若內容超出，顯示省略號 */
+        }
+
+        .nav-dropdown {
+          width: 60%; /* 或者用 max-content, fit-content 看需求 */
+          font-size: 0.85rem; /* 調整字體大小和導覽列一致 */
+          padding: 0.5rem;
+        }
+      
+        .nav-dropdown a {
+          font-size: inherit; /* 確保跟 .nav-dropdown 一樣大 */
+          padding: 0.5rem 1rem;
+          white-space: normal; /* 可選：讓字在必要時換行 */
+        }
+
+        .dropdown-content {
+          width: 12vw;
+          min-width: 8em; /* 保證至少能顯示幾個字 */
+          max-width: none;
+        }
+
+        .dropdown-content a {
+          font-size: 0.85rem;
+        }
+        
+        .intro-section {
+          flex-direction: column;
+          padding: 8%;
+        }
+
+        .intro-section .left,
+        .intro-section .right {
+          width: 100%;
+          padding: 0;
+          flex: 1 1 100%;
+        }
+
+        .intro-section .right {
+          margin-top: 1.5rem;
+          display: flex;
+          justify-content: center;
+        }
+
+        .intro-section h4 {
+          max-width: 100%;
+          font-size: 1rem;
+        }
+
+        .destination-grid {
+          flex-direction: column;
+          gap: 1rem;
+        }
+
+        .destination-section h4 {
+          font-size: 1rem;
+        }
+
+        .destination-item {
+          max-width: 100%;
+          width: 100%;
+        }
+
+        .destination-item.a_role_with_2 {
+          position: static;
+          left: auto;
+        }
+
+        .destination-main,
+        .destination-sidebar {
+          width: 100%;
+          margin: 0;
+          padding: 0;
+        }
+
+        .destination-sidebar {
+          margin-top: 2rem;
+        }
+
+        .recommendation-buttons button {
+          width: 100%; /* 小螢幕按鈕全寬排列 */
+        }
+
+        .contact-section {
+          padding: 3vh 5vw;
+        }
+
+        .contact-item h3 {
+          font-size: 1rem;
+        }
+
+        /* 目錄區寬度改為螢幕寬度的40% */
+        #expandable-menu {
+          width: 40vw !important; /* 用vw方便響應螢幕寬度 */
+          max-width: 90%; /* 保留原本max-width避免太寬 */
+        }
+      
+        #expandable-menu,
+        #expandable-menu * {
+          font-size: 85% !important;
+        }
+              
+        #menu-toggle {
+          width: 75%;
+          max-width: 1.875em;
+          min-width: 1.875em;
+        }
       }
     </style>
   </head>
@@ -342,7 +499,7 @@
       <div class="nav-right">
         <a href="首頁.html">關於我</a>
         <div class="dropdown">
-          <a>亞洲旅遊</a>
+          <a class="dropdown-toggle">亞洲旅遊</a>
           <div class="dropdown-content">
             <a href="中國.html">中國</a>
             <a href="新加坡.html">新加坡</a>
@@ -353,7 +510,7 @@
           </div>
         </div>
         <div class="dropdown">
-          <a>歐洲旅遊</a>
+          <a class="dropdown-toggle">歐洲旅遊</a>
           <div class="dropdown-content">
             <a href="英國.html">英國</a>
             <a href="法國.html">法國</a>
@@ -371,7 +528,7 @@
           </div>
         </div>
         <div class="dropdown">
-          <a>美洲旅遊</a>
+          <a class="dropdown-toggle">美洲旅遊</a>
           <div class="dropdown-content">
             <a href="美國.html">美國</a>
             <a href="加拿大.html">加拿大</a>
@@ -388,7 +545,7 @@
         </h4>
       </div>
       <div class="right">
-        <img src="新加坡照片\新加坡_介紹.jpg" width="90%" height="350px" />
+        <img src="新加坡照片\新加坡_介紹.jpg" style="width: 100%; height: auto; max-width: 100%;" />
       </div>
     </div>
 
@@ -403,14 +560,14 @@
         <h4>
           新加坡地鐵和公車班次密集，可以抵達幾乎全部的熱門新加坡景點美食，基本上就和在台北沒有兩樣，建議從樟宜機場要搭地鐵的時候，就直接去地鐵服務檯買一張 <a href="https://ezlink.simplygo.com.sg/" target="_blank">ez-link</a> 卡，使用方法就像悠遊卡，方便乘坐公車及地鐵，如果嫌麻煩的話也可以直接刷信用卡搭車喔!
         </h4>
-        <img src="新加坡照片\SG_交通.png" width="1000px" />
+        <img src="新加坡照片\SG_交通.png" style="width: 100%; max-width: 90vw; height: auto;" />
         <br /><br />
         <h2>新加坡住宿</h2>
         <h4>
           在新加坡自由行，建議以熱門捷運站週邊來規劃新加坡住宿，市區像是 City Hall、Orchard、Bugis 附近都很好，或是最熱門的濱海灣金沙酒店，而聖淘沙島上也有度假飯店，交通方便是首要，從高級到平價的選擇都有。
         </h4>
         <div style="text-align: center">
-          <img src="新加坡照片\SG_住宿.png" width="800px" />
+          <img src="新加坡照片\SG_住宿.png" style="width: 100%; max-width: 90vw; height: auto; margin: 0.5rem;" />
         </div>
         <br /><br />
         <h2>新加坡景點</h2>
@@ -419,8 +576,8 @@
           魚尾獅由當時的 Van Kleef 水族館館長 Fraser Brunner 先生所設計，已成為新加坡的代表，如同法國的巴黎鐵塔或美國的自由女神像。魚尾獅獅頭的設計靈感來自關於新加坡歷史的一個傳說: 公元 11 世紀時一位來自三佛齊，名叫聖尼羅烏達瑪的王子在前往馬六甲的途中來到了新加坡，他一登陸就看到一隻神奇的野獸，隨從告訴他那是一隻獅子，於是他為新加坡取名為「新加坡拉」，而魚尾則是因為新加坡是一個海島，它的一切都跟海密切相關。魚代表著該國的過去，從前新加坡只是一個漁村，是一個海之鎮; 獅子則有雙重含義，它代表著新加坡原本的名字，同時也象徵新加坡在當今世界經濟的力量。從地鐵走到魚尾獅公園大約 10 分鐘，在炎熱的夏季走起來非常辛苦，要注意防曬，許多遊客也會拍錯位照，好像自己正用口接魚尾獅噴出的水，十分逗趣。
         </h4>
         <div style="text-align: center">
-          <img src="新加坡照片\SG1.jpg" width="600px" />
-          <img src="新加坡照片\SG2.jpg" width="800px" />
+          <img src="新加坡照片\SG1.jpg" style="width: 90%; max-width: 600px; height: auto; margin: 0.5rem;" />
+          <img src="新加坡照片\SG2.jpg" style="width: 100%; max-width: 90vw; height: auto; margin: 0.5rem;" />
         </div>
         <br /><br /><br />
         <h3>樟宜機場 (Changi Airport)</h3>
@@ -428,8 +585,8 @@
           樟宜機場是新加坡的航空樞紐，也是全球最大和最繁忙的機場之一，於 1981 年啟用，至今已發展成為一個集航空運輸、旅遊休閒、商務服務於一體的現代化機場。樟宜機場擁有 5 條跑道和 4 個航廈，2023 年旅客吞吐量超過 5000 萬人次，機場內部設施先進，設計和運營上高度重視環境保護，如採用太陽能發電、雨水收集利用等節能措施，展現出對生態環境的重視，也有相當多的綠化，最著名的便是位於 1 航廈的星耀樟宜，成為新加坡的重要標誌性建築，也為新加坡帶來巨大的經濟和社會效益。
         </h4>
         <div style="text-align: center">
-          <img src="新加坡照片\SG3.jpg" width="600px" />
-          <img src="新加坡照片\SG4.jpg" width="600px" />
+          <img src="新加坡照片\SG3.jpg" style="width: 90%; max-width: 600px; height: auto; margin: 0.5rem;" />
+          <img src="新加坡照片\SG4.jpg" style="width: 90%; max-width: 600px; height: auto; margin: 0.5rem;" />
         </div>
         <br /><br /><br />
         <h3>牛車水 (Chinatown)</h3>
@@ -437,8 +594,8 @@
           牛車水是 19 世紀華人移民聚集的區域，名稱源於當時運送水的牛車，這些牛車駛過狹窄的街道為居民供應食水，走在牛車水的街道上會感受到濃郁的中華文化氛圍，欣賞到精美的唐式建築如天后宮、藥材店和各種特色小店，保留了中式屋簷、磚牆和木雕裝飾。牛車水還擁有眾多富有特色的餐廳和小吃攤位，可以品嘗到各種正宗的廣東、福建和海南美食，如叻沙、肉骨茶和潮州粿條，反映了新加坡多元文化的融匯。
         </h4>
         <div style="text-align: center">
-          <img src="新加坡照片\SG5.jpg" width="600px" />
-          <img src="新加坡照片\SG6.jpg" width="600px" />
+          <img src="新加坡照片\SG5.jpg" style="width: 90%; max-width: 600px; height: auto; margin: 0.5rem;" />
+          <img src="新加坡照片\SG6.jpg" style="width: 90%; max-width: 600px; height: auto; margin: 0.5rem;" />
         </div>
         <br /><br /><br />
         <h3>麥士威熟食中心 (Maxwell Food Centre)</h3>
@@ -446,7 +603,7 @@
           麥士威熟食中心是新加坡最著名的美食中心之一，建於 1986 年，從各式各樣的小吃攤位到特色的熟食店應有盡有，可以品嘗到新加坡最地道的美食，包括著名的叻沙、肉骨茶、海南雞飯和潮州粿條等，設有簡單但整潔的用餐環境，讓人感受到濃濃的本地氣息，可以觀察到當地人享受美食的情景，窺見新加坡人的飲食文化。
         </h4>
         <div style="text-align: center">
-          <img src="新加坡照片\SG7.jpg" width="600px" />
+          <img src="新加坡照片\SG7.jpg" style="width: 90%; max-width: 600px; height: auto; margin: 0.5rem;" />
         </div>
         <br /><br /><br />
         <h3>新加坡城市規劃展覽館 (Singapore City Gallery)</h3>
@@ -454,7 +611,7 @@
           新加坡城市規劃展覽館展示了這個城市的城市規劃和發展歷程，由新加坡城市發展局運營，主要通過展示模型、互動裝置和影音展示來呈現新加坡的城市規劃及其成就。進入展館首先會看到一個巨大的 3D 實體模型，生動地展示了整個新加坡島嶼的地理和城市布局，隨後可以參觀各個主題區域，了解新加坡不同時期的發展歷程，從殖民時期到獨立後的快速發展，再到現代城市規劃，每個區域都用生動的文字和展品詳細介紹了新加坡城市發展的里程碑事件。其中最吸引人的要數「未來城市」區域，利用多媒體技術通過互動體驗讓遊客親身感受新加坡未來城市的願景，包括智慧交通、綠色建築和可再生能源等，探索新加坡如何運用技術和創新來建設可持續發展的未來城市。
         </h4>
         <div style="text-align: center">
-          <img src="新加坡照片\SG8.jpg" width="600px" />
+          <img src="新加坡照片\SG8.jpg" style="width: 90%; max-width: 600px; height: auto; margin: 0.5rem;" />
         </div>
         <br /><br /><br />
         <h3>濱海灣金沙酒店 (Marina Bay Sands)</h3>
@@ -462,21 +619,21 @@
           濱海灣金沙酒店是座由三座 57 層樓高的酒店大樓和一座彎曲的 Sky Park 連接而成的建築群，在新加坡天際線上格外耀眼奪目。Sky Park 位於三座酒店大樓頂端，形成一個巨大的懸臂平台，長達 200 米，上面有無邊際泳池和觀景台，在這裡登高望遠可以俯瞰整個新加坡市區，金沙酒店內部也富有多樣化的設施，擁有頂級的購物商場、頂級餐廳、劇院、博物館、會展中心等，是新加坡旅遊、購物、娛樂的一站式集散地。夜晚的金沙酒店更是一派絢麗迷人的景象，大樓的外牆常會投射各種色彩變幻的燈光，令整個建築群宛如一件巨大的發光藝術品，是新加坡近年的新地標。
         </h4>
         <div style="text-align: center">
-          <img src="新加坡照片\SG10.jpg" width="600px" />
-          <img src="新加坡照片\SG11.jpg" width="800px" />
+          <img src="新加坡照片\SG10.jpg" style="width: 90%; max-width: 600px; height: auto; margin: 0.5rem;" />
+          <img src="新加坡照片\SG11.jpg" style="width: 100%; max-width: 90vw; height: auto; margin: 0.5rem;" />
         </div>
         <h4>如果是住客或有預訂頂層餐廳及酒吧就可以上到 57 樓的泳池區，能夠俯瞰整個新加坡的景致。</h4>
         <div style="text-align: center">
-          <img src="新加坡照片\SG12.jpg" width="800px" />
-          <img src="新加坡照片\SG13.jpg" width="800px" />
-          <img src="新加坡照片\SG14.jpg" width="600px" />
+          <img src="新加坡照片\SG12.jpg" style="width: 100%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+          <img src="新加坡照片\SG13.jpg" style="width: 100%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+          <img src="新加坡照片\SG14.jpg" style="width: 90%; max-width: 600px; height: auto; margin: 0.5rem;" />
         </div>
         <h4>酒店下方是長條型的購物中心，匯聚了非常多知名品牌，喜歡逛街的千萬不能錯過。<b>每天晚上 8 點及 9 點在靠近濱海灣一側會有水舞表演</b>，長達 15 分鐘非常值得一看。</h4>
         <div style="text-align: center">
-          <img src="新加坡照片\SG15.jpg" width="600px" />
-          <img src="新加坡照片\SG9.jpg" width="800px" />
-          <img src="新加坡照片\SG16.jpg" width="800px" />
-          <img src="新加坡照片\SG17.jpg" width="800px" />
+          <img src="新加坡照片\SG15.jpg" style="width: 90%; max-width: 600px; height: auto; margin: 0.5rem;" />
+          <img src="新加坡照片\SG9.jpg" style="width: 100%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+          <img src="新加坡照片\SG16.jpg" style="width: 100%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+          <img src="新加坡照片\SG17.jpg" style="width: 100%; max-width: 90vw; height: auto; margin: 0.5rem;" />
         </div>
         <br /><br /><br />
         <h3>濱海灣花園 (Gardens by the Bay)</h3>
@@ -485,12 +642,12 @@
         </h4>
         <h4>濱海灣花園還有 15 ~ 50 米高的擎天大樹 (Supertrees)，這十一棵樹具有環保及可吸收太陽能的功能，發光發亮讓人讚嘆不已，還可以登上"空中花園橋"俯瞰整個園區的全景，很像阿凡達星球的感覺，沿著河岸走非常舒服，有看到非常多人在這邊運動，晚上還會有燈光表演秀可以注意一下時間。</h4>
         <div style="text-align: center">
-          <img src="新加坡照片\SG18.jpg" width="800px" />
-          <img src="新加坡照片\SG19.jpg" width="600px" />
-          <img src="新加坡照片\SG20.jpg" width="600px" />
-          <img src="新加坡照片\SG21.jpg" width="600px" />
-          <img src="新加坡照片\SG22.jpg" width="800px" />
-          <img src="新加坡照片\SG23.jpg" width="800px" />
+          <img src="新加坡照片\SG18.jpg" style="width: 100%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+          <img src="新加坡照片\SG19.jpg" style="width: 90%; max-width: 600px; height: auto; margin: 0.5rem;" />
+          <img src="新加坡照片\SG20.jpg" style="width: 90%; max-width: 600px; height: auto; margin: 0.5rem;" />
+          <img src="新加坡照片\SG21.jpg" style="width: 90%; max-width: 600px; height: auto; margin: 0.5rem;" />
+          <img src="新加坡照片\SG22.jpg" style="width: 100%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+          <img src="新加坡照片\SG23.jpg" style="width: 100%; max-width: 90vw; height: auto; margin: 0.5rem;" />
         </div>
         <br /><br /><br />
         <h3>雲霧林 (Cloud Forest)</h3>
@@ -499,9 +656,9 @@
         </h4>
         <h4>在瀑布背後是一個由六層樓高的玻璃熱帶雨林穹頂所覆蓋的巨型溫室，穹頂內營造了一個真實的熱帶雨林生態，匯集了來自世界各地的珍稀植物，可以沿著螺旋樓梯攀登至頂層，俯瞰這個壯麗的人工雨林景觀，也可以近距離欣賞到各種瀕危植物，如肉質的凸葉海芋、罕見的熱帶蘭花等，還可以欣賞到漫山遍野的苔蘚、藤蔓和熱帶喬木，講解全球氣候變化對熱帶雨林的影響以及植物保育的重要性。</h4>
         <div style="text-align: center">
-          <img src="新加坡照片\SG24.jpg" width="600px" />
-          <img src="新加坡照片\SG25.jpg" width="600px" />
-          <img src="新加坡照片\SG26.jpg" width="600px" />
+          <img src="新加坡照片\SG24.jpg" style="width: 90%; max-width: 600px; height: auto; margin: 0.5rem;" />
+          <img src="新加坡照片\SG25.jpg" style="width: 90%; max-width: 600px; height: auto; margin: 0.5rem;" />
+          <img src="新加坡照片\SG26.jpg" style="width: 90%; max-width: 600px; height: auto; margin: 0.5rem;" />
         </div>
         <br /><br /><br />
         <h3>蘇丹回教堂 (Sultan Mosque)</h3>
@@ -509,9 +666,9 @@
           蘇丹回教堂以其獨特的建築風格和歷史地位而聞名，建築始於 19 世紀初，由當時的新加坡蘇丹皇室資助興建，寺廟採用了明顯的阿拉伯風格，以黃金色的圓頂和尖塔為特色，反映出強烈的伊斯蘭教徒影響。進入寺廟內部，寬敞明亮的禱告大殿裝飾著漂亮的阿拉伯風格花紋圖案和五彩繽紛的玻璃彩窗，在中央祈禱大殿的上方，高聳入雲的金色圓頂映射出整個建築的宏偉氣勢，不僅是新加坡馬來人的精神寄託，也是一塊重要的歷史遺跡。
         </h4>
         <div style="text-align: center">
-          <img src="新加坡照片\SG27.jpg" width="600px" />
-          <img src="新加坡照片\SG28.jpg" width="600px" />
-          <img src="新加坡照片\SG29.jpg" width="600px" />
+          <img src="新加坡照片\SG27.jpg" style="width: 90%; max-width: 600px; height: auto; margin: 0.5rem;" />
+          <img src="新加坡照片\SG28.jpg" style="width: 90%; max-width: 600px; height: auto; margin: 0.5rem;" />
+          <img src="新加坡照片\SG29.jpg" style="width: 90%; max-width: 600px; height: auto; margin: 0.5rem;" />
         </div>
         <br /><br /><br />
         <h3>老巴剎 (Lau Pa Sat)</h3>
@@ -519,7 +676,7 @@
           老巴剎是新加坡最著名的傳統美食中心之一，位於金融中心區的核心地段，歷史可以追溯到 19 世紀中期，最初是一個用鐵製成的八角形建築，專門販售各種海鮮，如今的老巴剎保留了當初的八角形鐵架設計，融合了維多利亞時期的帝國主義風格，營造出一種獨特的殖民地風情。老巴剎最有名的一景便是在路邊一整條的燒烤攤位，與旁邊的辦公大廈群形成鮮明的對比，非常推薦大家來嘗試一番。
         </h4>
         <div style="text-align: center">
-          <img src="新加坡照片\SG30.jpg" width="600px" />
+          <img src="新加坡照片\SG30.jpg" style="width: 90%; max-width: 600px; height: auto; margin: 0.5rem;" />
         </div>
         <br /><br /><br />
         <h3>克拉碼頭 (Clarke Quay)</h3>
@@ -528,9 +685,9 @@
         </h4>
         <h4>克拉碼頭最著名的就是其豐富多彩的娛樂項目，可以盡情品嘗各種美食，從地道的新加坡小吃到精緻的異國料理應有盡有，夜晚時分克拉碼頭更是熱鬧非凡，酒吧和夜店百花齊放，也可以乘坐特色小船遊覽新加坡河景。</h4>
         <div style="text-align: center">
-          <img src="新加坡照片\SG31.jpg" width="600px" />
-          <img src="新加坡照片\SG32.jpg" width="800px" />
-          <img src="新加坡照片\SG33.jpg" width="800px" />
+          <img src="新加坡照片\SG31.jpg" style="width: 90%; max-width: 600px; height: auto; margin: 0.5rem;" />
+          <img src="新加坡照片\SG32.jpg" style="width: 100%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+          <img src="新加坡照片\SG33.jpg" style="width: 100%; max-width: 90vw; height: auto; margin: 0.5rem;" />
         </div>
         <br /><br /><br />
         <h3>愛雍烏節 (ION Orchard)</h3>
@@ -538,8 +695,8 @@
           愛雍烏節是新加坡著名的購物中心，位於 Orchard Road 的核心地段，於 2009 年開業，建築由著名設計師 Daniel Libeskind 操刀，外觀採用大量玻璃幕牆，內部空間寬敞明亮層層遞進，集結了新加坡乃至亞洲最頂尖的奢侈品牌和時尚零售商，感受新加坡獨特的購物文化。愛雍烏節的屋頂設有觀景平台，可以俯瞰整個 Orchard Road 的美景，是欣賞新加坡天際線和城市風光的絕佳去處。
         </h4>
         <div style="text-align: center">
-          <img src="新加坡照片\SG34.jpg" width="600px" />
-          <img src="新加坡照片\SG35.jpg" width="600px" />
+          <img src="新加坡照片\SG34.jpg" style="width: 90%; max-width: 600px; height: auto; margin: 0.5rem;" />
+          <img src="新加坡照片\SG35.jpg" style="width: 90%; max-width: 600px; height: auto; margin: 0.5rem;" />
         </div>
         <br /><br /><br />
         <h3>讚美廣場 (CHIJMES)</h3>
@@ -547,9 +704,9 @@
           讚美廣場最初是一所天主教修女會的修道院，建於 1852 年，如今已變成一個獨特的文化藝術中心，但修道院的主教堂和修女宿舍等建築如今都被保存下來，保持了其原有的哥特式建築風格，也成為了新加坡著名的餐飲及娛樂區，整個園區內設有多家餐廳酒吧，在夜晚會變得更加生氣蓬勃，樓宇和噴泉亮起璀璨的燈光，營造出浪漫優雅的氛圍。讚美廣場也不時會舉辦各種文化藝術活動，如展覽、音樂會、戲劇演出等，這裡還是新加坡人熱衷的婚禮場地之一，見證了無數對新人的喜悅時刻。
         </h4>
         <div style="text-align: center">
-          <img src="新加坡照片\SG36.jpg" width="600px" />
-          <img src="新加坡照片\SG37.jpg" width="600px" />
-          <img src="新加坡照片\SG38.jpg" width="800px" />
+          <img src="新加坡照片\SG36.jpg" style="width: 90%; max-width: 600px; height: auto; margin: 0.5rem;" />
+          <img src="新加坡照片\SG37.jpg" style="width: 90%; max-width: 600px; height: auto; margin: 0.5rem;" />
+          <img src="新加坡照片\SG38.jpg" style="width: 100%; max-width: 90vw; height: auto; margin: 0.5rem;" />
         </div>
         <br /><br /><br />
         <h2>新加坡美食</h2>
@@ -558,8 +715,8 @@
           Killiney Kopitiam 是新加坡的國民早餐店，我們去了總店所以人潮非常多，從咖椰吐司到半熟蛋，再到一杯熱氣騰騰的當地咖啡，每一道菜都散發著新加坡美食的精髓。咖椰吐司非常酥脆，咖椰醬是甜味和奶油的完美結合，招牌的叻沙麵和椰漿飯也都很好吃。Killiney Kopitiam 的與眾不同之處在於其簡單性，菜單並不過分複雜，重點是提供精心製作的傳統菜餚，這種簡單的方法不僅可以確保您獲得真實的體驗，而且可以保持合理的價格。
         </h4>
         <div style="text-align: center">
-          <img src="新加坡照片\SG39.jpg" width="800px" />
-          <img src="新加坡照片\SG40.jpg" width="800px" />
+          <img src="新加坡照片\SG39.jpg" style="width: 100%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+          <img src="新加坡照片\SG40.jpg" style="width: 100%; max-width: 90vw; height: auto; margin: 0.5rem;" />
         </div>
         <br /><br /><br />
         <h3>松發肉骨茶 (Song Fa Bak Kut Teh)</h3>
@@ -567,7 +724,7 @@
           松發肉骨茶創立於 1969 年，早期始用一台手推車就賣起了肉骨茶，直到現在成了跨國連鎖的新加坡美食。基本款是排骨肉骨茶，另外還有特極龍骨湯、肋骨湯、腰肉片湯等，都是採用同樣中藥胡椒湯底，只是肉不一樣，建議別只單點一碗湯，可以學在地人加點些滷味、滷豬腳、青菜、米飯、飲料等，吃起來味道也比較豐富。
         </h4>
         <div style="text-align: center">
-          <img src="新加坡照片\SG41.jpg" width="600px" />
+          <img src="新加坡照片\SG41.jpg" style="width: 90%; max-width: 600px; height: auto; margin: 0.5rem;" />
         </div>
         <br /><br /><br />
         <h3>結霜橋叻沙 (Sungei Road Laksa)</h3>
@@ -575,8 +732,8 @@
           結霜橋叻沙是新加坡知名的傳統小吃，早期攤販聚集在蘇美路 (Sungei Road) 一帶開始販售這款特色的辛辣湯麵，湯底是由雞肉和海鮮熬煮而成,滋味鮮美濃郁，麵條使用傳統的米製粗麵，具有彈牙的口感，最令人難忘的是這道菜所使用的香料和調味料，包括麻油、檸檬草、蒜頭、辣椒等綜合起來創造出一種獨特的香味和辣度。餐點的每一個步驟，從下麵、添加湯底、配上各式配料都需要豐富的經驗和高超的技藝。
         </h4>
         <div style="text-align: center">
-          <img src="新加坡照片\SG42.jpg" width="600px" />
-          <img src="新加坡照片\SG43.jpg" width="600px" />
+          <img src="新加坡照片\SG42.jpg" style="width: 90%; max-width: 600px; height: auto; margin: 0.5rem;" />
+          <img src="新加坡照片\SG43.jpg" style="width: 90%; max-width: 600px; height: auto; margin: 0.5rem;" />
         </div>
         <br /><br /><br />
         <h3>天天海南雞飯 (Tian Tian Hainanese Chicken Rice)</h3>
@@ -584,7 +741,7 @@
           天天海南雞飯是新加坡代表性的本地美食，從海南移民到此的人們開始把海南雞飯這種傳統菜餚引入新加坡，天天海南雞飯的特色在於它簡單卻又精細的烹飪工藝，主料是使用優質的雞肉和大米，透過緩慢烹煮的方式將雞肉煮熟後，再與大米一起煮成一鍋香氣四溢的雞飯，配料包括蒜泥、薑、醬油等搭配上切碎的海南雞肉，既有肉質鮮嫩的雞肉又有綿密柔軟的米飯，海南雞飯還有幾種常見的配菜如雞湯、自製醃菜等，能夠進一步增加這道菜的層次感和風味。由於來朝聖的人非常多，建議可以避開飯點的時候光顧，可以減少在烈日之下排隊的時間。
         </h4>
         <div style="text-align: center">
-          <img src="新加坡照片\SG44.jpg" width="600px" />
+          <img src="新加坡照片\SG44.jpg" style="width: 90%; max-width: 600px; height: auto; margin: 0.5rem;" />
         </div>
         <br /><br /><br />
         <h3>Khansama Little India</h3>
@@ -592,8 +749,8 @@
           Khansama Little India 是小印度區內一家享有盛名的印度餐廳，餐廳內部裝潢典雅大氣，融合了北印度特有的藝術元素，招牌菜式主要來自北印度地區，包括咖哩雞、羊肉咖哩、豆沙飯、烤餅等經典菜品，不僅使用了眾多印度特色香料,如孜然、芝麻籽、豆蔻等，遵循了北印度傳統的烹飪方法，還提供各式印度飲料和甜點，如甜酪梨汁、香料蜜茶、奶酪球等，很好地搭配主菜令人回味無窮。
         </h4>
         <div style="text-align: center">
-          <img src="新加坡照片\SG45.jpg" width="800px" />
-          <img src="新加坡照片\SG46.jpg" width="800px" />
+          <img src="新加坡照片\SG45.jpg" style="width: 100%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+          <img src="新加坡照片\SG46.jpg" style="width: 100%; max-width: 90vw; height: auto; margin: 0.5rem;" />
         </div>
         <br /><br /><br />
         <h3>Spago Bar & Lounge</h3>
@@ -601,8 +758,8 @@
           Spago Bar & Lounge 坐落於新加坡地標性建築物金沙酒店的 57 層樓頂，擁有絕美的濱海景觀，裝潢融合了現代簡約風格和亞洲元素，營造出高雅時尚的用餐氛圍，菜單由世界知名的米其林星級主廚 Wolfgang Puck 精心設計，融合了地中海風味和亞洲風味的創意料理，餐廳還擁有一個令人嘆為觀止的露天酒吧區域，可以一邊欣賞美麗的濱海景致，一邊品嚐精心調製的雞尾酒，享受城市夜景帶來的悠閒時光。<b>強烈建議依定要先訂位才能保留到靠邊有景觀的位置!</b>
         </h4>
         <div style="text-align: center">
-          <img src="新加坡照片\SG47.jpg" width="600px" />
-          <img src="新加坡照片\SG48.jpg" width="600px" />
+          <img src="新加坡照片\SG47.jpg" style="width: 90%; max-width: 600px; height: auto; margin: 0.5rem;" />
+          <img src="新加坡照片\SG48.jpg" style="width: 90%; max-width: 600px; height: auto; margin: 0.5rem;" />
         </div>
         <br /><br /><br />
         <h3>Zam Zam Restaurant</h3>
@@ -610,7 +767,7 @@
           Zam Zam Restaurant 位於新加坡北橋巷內，以正宗的馬來料理聞名於世，主打菜品包括馬來咖哩雞、炒河粉、馬來煎餅等經典風味，使用當地食材和馬來特色調料烹製而成，最大限度地保留了馬來美食的正宗口味，還提供各式馬來飲料，如冰糖水和冰傣茶，能夠很好地搭配主菜。餐點的份量偏大，基本上只需要點小份的就可以吃得很飽了!
         </h4>
         <div style="text-align: center">
-          <img src="新加坡照片\SG49.jpg" width="600px" />
+          <img src="新加坡照片\SG49.jpg" style="width: 90%; max-width: 600px; height: auto; margin: 0.5rem;" />
         </div>
         <br />
       </div>
@@ -672,9 +829,8 @@
     <footer>
       <h6>COPYRIGHT © 2025 Tommy 看世界 All rights reserved.</h6>
     </footer>
+    <div id="menu-toggle"></div>
     <div id="expandable-menu">
-      <div id="menu-toggle"></div>
-      <!-- 收闔按鈕 -->
       <div id="menu-content">
         <h4>目錄</h4>
         <ul id="menu-list"></ul>
@@ -691,6 +847,23 @@
         // 點擊按鈕切換目錄狀態
         toggle.addEventListener("click", () => {
           menu.classList.toggle("open");
+
+          const menuWidth = menu.offsetWidth; // 獲取目前展開的目錄寬度
+
+          if (menu.classList.contains("open")) {
+            // 讓按鈕向左平移與 menu 一樣的寬度
+            toggle.style.transform = `translateY(-50%) translateX(-${menuWidth}px)`;
+          } else {
+            // 收回原位
+            toggle.style.transform = `translateY(-50%) translateX(0)`;
+          }
+        });
+
+        window.addEventListener("load", () => {
+          if (menu.classList.contains("open")) {
+            const menuWidth = menu.offsetWidth;
+            toggle.style.transform = `translateY(-50%) translateX(-${menuWidth}px)`;
+          }
         });
 
         // 從 destination-main 區域提取 h2 和 h3，動態生成目錄
@@ -715,6 +888,23 @@
           menuList.appendChild(listItem);
         });
 
+        function adjustMenuPosition() {
+          const nav = document.querySelector("nav");
+          const menu = document.getElementById("expandable-menu");
+      
+          if (nav && menu) {
+            const navHeight = nav.offsetHeight;
+      
+            // 設定 menu 的 top 與高度
+            menu.style.top = `${navHeight}px`;
+            menu.style.height = `calc(100vh - ${navHeight}px)`;
+          }
+        }
+      
+        // 載入與尺寸變化時調整
+        window.addEventListener("DOMContentLoaded", adjustMenuPosition);
+        window.addEventListener("resize", adjustMenuPosition);
+        
         // 滾動至目標位置並加上 75px 偏移
         menuList.addEventListener("click", (event) => {
           if (event.target.tagName === "A") {
@@ -734,6 +924,31 @@
               });
             }
           }
+        });
+        // 手機 Safari 相容：點擊展開 dropdown
+        const dropdownToggles = document.querySelectorAll(".dropdown-toggle");
+
+        dropdownToggles.forEach((toggle) => {
+          toggle.addEventListener("click", function (e) {
+            e.stopPropagation(); // 防止冒泡，避免點擊外層時也觸發關閉
+            const dropdown = this.nextElementSibling;
+            const isVisible = dropdown.style.display === "block";
+            
+            // 關閉所有其他 dropdown（可選）
+            document.querySelectorAll(".dropdown-content").forEach((menu) => {
+              menu.style.display = "none";
+            });
+
+            // 切換目前這一個 dropdown
+            dropdown.style.display = isVisible ? "none" : "block";
+          });
+        });
+
+        // 點擊其他地方時關閉 dropdown
+        window.addEventListener("click", function () {
+          document.querySelectorAll(".dropdown-content").forEach((menu) => {
+            menu.style.display = "none";
+          });
         });
       });
     </script>
