@@ -12,7 +12,6 @@
       body {
         font-family: Calibri, Arial, sans-serif; /* 首選 Calibri，次選 Arial */
         margin: 0;
-        padding: 0;
         overflow-x: hidden; /* 禁止水平滾動 */
         background-color: #f4f4f9;
         color: #333;
@@ -28,7 +27,6 @@
         font-weight: bold;
         color: #2a90a7;
         display: inline-block;
-        margin-bottom: 1rem; /* 縮小 h2 的底部邊距 */
         background-color: #cee5e8;
       }
 
@@ -36,7 +34,7 @@
         font-size: 26px;
         margin: 0 0 1rem;
         font-weight: bold;
-        text-decoration: underline; /* 加上底線 */
+        text-decoration: underline;
       }
 
       h4 {
@@ -62,56 +60,68 @@
       nav {
         background-color: #78bcc4;
         display: flex;
-        justify-content: space-between; /* 保持分佈在兩側 */
-        width: calc(100% - 10rem); /* 與其他內容的邊界一致 */
-        padding: 0.5rem 5rem; /* 主導覽列的 padding 設置 */
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;                     /* 讓 nav 寬度隨螢幕自適應 */
+        padding: 0.8rem 5vw;               /* 左右 padding 用 5% 寬度 */
+        box-sizing: border-box;         /* 確保 padding 不會影響寬度總長 */
         position: fixed;
         top: 0;
         z-index: 1000;
       }
 
       .nav-left .logo img {
-        height: 50px; /* 控制 Logo 圖片的高度 */
-        transform: translateX(-1.5rem); /* 向右移動 2rem */
+        height: 5vw; /* 高度為螢幕寬度的 5% */
+        transform: translateX(-2vw); /* 向左移動 2% 寬度 */
+        max-width: 100%; /* 確保不會超過容器 */
+        height: auto; /* 保持圖片比例（建議與 max-height 搭配） */
+        max-height: 3rem;
       }
 
       .nav-right {
         display: flex;
         align-items: center;
-        transform: translateX(2rem); /* 向右移動 2rem */
+        margin-left: auto; /* 推到右側 */
+        padding-left: 5%;   /* 內部元素間距，彈性設計 */
       }
 
       nav a {
         color: #eff5f5;
         text-decoration: none;
-        padding: 0.5rem 1rem;
-        margin: 0 0.5rem;
+        padding: 1vh 1vw;
+        margin: 0 1vw;
         transition: transform 0.3s;
       }
 
       nav a:hover {
-        transform: translateY(-3px);
+        transform: translateY(-0.5vh); /* 根據視窗高度調整 */
       }
 
       .dropdown {
         position: relative;
+        display: inline-block;
       }
 
       .dropdown-content {
+        width: 100%; /* 佔滿父層寬度 */
+        max-width: 20vw; /* 限制最大寬度 */
         display: none;
         position: absolute;
         background-color: #78bcc4;
-        min-width: 160px;
-        border-radius: 4px;
-        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        min-width: 10em; /* 取代 160px，以字體大小作為比例單位 */
+        border-radius: 0.25em;
+        box-shadow: 0 0.5em 1em rgba(0, 0, 0, 0.2); /* 改為相對單位 */
         padding: 0.2rem 0;
+        z-index: 999;
       }
 
       .dropdown-content a {
         color: #eff5f5;
         display: block;
         transition: transform 0.3s;
-        border-bottom: 1px solid #ddd;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.3); /* 更淡配色、柔和過渡 */
+        padding: 0.6em 1em;
+        font-size: 1em;
       }
 
       .dropdown-content a:last-child {
@@ -119,107 +129,109 @@
       }
 
       .dropdown-content a:hover {
-        transform: translateY(-3px);
-      }
-
-      .dropdown:hover .dropdown-content {
-        display: block;
+        transform: translateY(-0.25em); /* 改為相對單位 */
       }
 
       .intro-section {
         background-color: #eff5f5;
         display: flex;
-        padding: 2rem;
-        margin-top: 60px; /* 根據導航列高度調整 */
-        justify-content: space-between;
-        align-items: flex-start;
-        width: 100%;
-        box-sizing: border-box; /* 包含 padding 在內 */
-        padding-left: 5rem;
-        padding-right: 5rem;
+        flex-wrap: wrap; /* 確保在小螢幕可換行 */
+        padding: 2rem 5%;
+        margin-top: 4em; /* 根據導航列高度調整 */
       }
 
       .intro-section h4 {
-        max-width: 700px;
+        max-width: 85%; /* 改為相對單位，避免固定寬度限制 */
+        line-height: 1.8;
       }
 
       .intro-section .left {
         width: 60%;
+        padding-right: 1%;
       }
 
       .intro-section .right {
-        width: 40%;
+        width: 39%;
       }
 
       .destination-section {
         display: flex;
+        flex-wrap: wrap;               /* 小螢幕時允許換行 */
         padding: 1rem 5%; /* 左右內間距為螢幕的10% */
         background-color: white;
       }
 
       .destination-main {
-        width: 75%;
-        margin-right: 1.5rem; /* 增加右邊外邊距 */
+        width: 72%;                    /* 主要內容佔 72%，略縮以保留間距 */
+        margin-right: 3%;              /* 與 sidebar 間保留間距（約為 3%） */
+        box-sizing: border-box;
       }
 
       .destination-sidebar {
-        width: 25%;
-        padding-left: 1.5rem; /* 增加左側內邊距 */
-        margin-top: 2rem; /* 向上或向下調整，負值表示向上 */
+        width: 25%;                    /* 側邊欄佔 25% */
+        padding-left: 2%;             /* 相對內邊距 */
+        margin-top: 2rem;
+        box-sizing: border-box;
       }
 
       .sidebar-image-container {
         margin-bottom: 1rem;
-        text-align: center; /* 確保圖片置中 */
+        text-align: center; /* 置中圖片 */
       }
 
       .sidebar-image-container img {
-        height: 300px; /* 設置直式圖片的高度 */
+        width: 90%;         /* 圖片寬度為容器寬度的 90% */
+        height: auto;       /* 高度自動，保持比例 */
+        max-height: 60vh;   /* 避免圖片過高，佔螢幕最大 60% 高 */
+        object-fit: cover;  /* 裁切處理長圖 */
       }
 
       .two-vertical-images {
-        display: flex; /* 彈性佈局，讓圖片並排 */
-        justify-content: space-between; /* 兩張圖片均勻分佈 */
-        gap: 2rem; /* 圖片之間的間距 */
+        display: flex;
+        justify-content: space-between;
+        gap: 4%; /* 使用百分比間距更彈性 */
         margin-top: 2rem;
-        margin-bottom: 2rem; /* 與下方內容的距離 */
+        margin-bottom: 2rem;
+        flex-wrap: wrap; /* 若畫面太小，允許換行 */
       }
 
       .two-vertical-images img {
-        width: calc(50% - 0.5rem); /* 每張圖片佔用容器的一半減去間距 */
-        text-align: center; /* 確保圖片置中 */
-        height: auto; /* 保持圖片的直式比例 */
-        object-fit: cover; /* 確保圖片內容適應容器 */
+        width: 48%; /* 每張圖片約佔一半（加上 gap 剛好 100%） */
+        height: auto; /* 保持原比例 */
+        object-fit: cover;
+        display: block;
+        margin: 0 auto;
       }
 
       .recommendation-section {
-        margin-top: 1.5rem; /* 與上方文字的間距 */
+        margin-top: 3vh; /* 與上方文字的間距 */
         text-align: center;
         position: sticky;
         top: 80px; /* 空出導覽列的高度，確保推薦區不被覆蓋 */
         z-index: 10; /* 提高層級，避免被其他內容遮蓋 */
+        padding: 0 5%;
       }
 
       .recommendation-section h3 {
-        font-size: 18px;
+        font-size: 1.125rem;
         font-weight: bold;
-        margin-bottom: 0.5rem; /* 與按鈕區的距離 */
+        margin-bottom: 1vh; /* 與按鈕區的距離 */
       }
 
       .recommendation-buttons {
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
-        gap: 0.5rem; /* 按鈕之間的間距 */
+        gap: 0.5em; /* 按鈕之間的間距 */
       }
 
       .recommendation-buttons button {
-        padding: 0.5rem 1rem;
-        font-size: 14px;
+        padding: 0.5em 1em;
+        font-size: 0.875rem;
         color: white;
         background-color: #78bcc4;
         border: none;
-        border-radius: 4px;
+        border-radius: 0.25rem;
         transition: transform 0.3s;
         font-family: Arial, sans-serif;
       }
@@ -229,13 +241,13 @@
       }
 
       .contact-section {
-        padding: 2rem 5rem; /* 上下與左右間距 */
+        padding: 4vh 8vw; /* 上下與左右間距 */
         background-color: #eff5f5; /* 淺灰背景 */
         text-align: center; /* 確保內容置中對齊 */
       }
 
       .contact-item h3 {
-        font-size: 18px; /* 調整標題字體大小 */
+        font-size: 1.125rem; /* 調整標題字體大小 */
         margin: 0; /* 移除多餘的間距 */
         text-decoration: none; /* 移除底線 */
       }
@@ -243,43 +255,49 @@
       footer {
         background-color: #000;
         color: white;
-        height: 30px;
+        height: 3vh; /* 使用相對單位，高度占螢幕高度的 3% */
         display: flex;
         justify-content: center;
         align-items: center;
+        font-size: 1.5rem; /* 使用相對字體大小 */
+        padding: 0.5rem 0; /* 確保小螢幕時內容不擠壓 */
       }
 
       #expandable-menu {
-        position: fixed;
-        top: 70px; /* 與螢幕頂部的距離設為 60px */
+        position: fixed; 
         right: 0;
-        height: calc(100% - 70px); /* 高度減去 60px，避免超出視窗 */
-        width: 395px; /* 目錄寬度與 sidebar 齊寬 */
+        width: 26vw; /* 目錄寬度與 sidebar 齊寬 */
+        max-width: 90%; /* 避免在小螢幕太寬 */
         transform: translateX(100%); /* 初始狀態：隱藏在右側 */
         transition: transform 0.3s ease;
         background-color: #f4f4f9; /* 與網站背景一致 */
         z-index: 1000;
+        box-sizing: border-box;
       }
 
       /* 收闔按鈕 */
       #menu-toggle {
-        position: absolute;
+        position: fixed;
         top: 45%;
-        left: -40px; /* 調整按鈕的位置，適應按鈕變大後的寬度 */
-        transform: translateY(-50%);
-        width: 40px; /* 增大按鈕寬度 */
-        height: 80px; /* 增大按鈕高度 */
+        right: 0; /* 永遠貼在右側 */
+        transform: translateY(-50%) translateX(0);
+        width: 2.5em; /* 增大按鈕寬度 */
+        height: 5em; /* 增大按鈕高度 */
         background-color: #78bcc4;
         color: white;
-        border-radius: 4px;
+        border-radius: 0.4em 0 0 0.4em;
         display: flex;
         justify-content: center; /* 水平居中 */
         align-items: center; /* 垂直居中 */
+        z-index: 2000; /* 要比 expandable-menu 更高，避免被蓋住 */
+        cursor: pointer;
+        box-shadow: -0.1em 0 0.3em rgba(0,0,0,0.1);
+        transition: transform 0.3s ease; /* 平滑移動 */
       }
 
       #menu-toggle::after {
         content: "目錄"; /* 在按鈕內顯示 "目錄" */
-        font-size: 17px;
+        font-size: 1rem;
         color: white; /* 設定字體顏色為白色 */
         writing-mode: vertical-rl; /* 使文字垂直排列 */
       }
@@ -290,14 +308,16 @@
 
       /* 目錄內容 */
       #menu-content {
-        padding: 0.5rem 1rem;
+        padding: 0.5rem 5%;
         overflow-y: auto;
         height: 100%;
+        box-sizing: border-box;
       }
 
       #menu-content h4 {
         font-weight: bold;
         margin-top: 0;
+        font-size: 1.2rem;
       }
 
       #menu-list {
@@ -306,13 +326,14 @@
       }
 
       #menu-list li {
-        margin-bottom: 0.5rem;
+        margin-bottom: 1vh;
       }
 
       #menu-list a {
         color: #2a90a7;
         text-decoration: none;
         transition: color 0.3s;
+        font-size: 1rem; /* 使用相對字體大小 */
       }
 
       #menu-list a:hover {
@@ -320,13 +341,149 @@
       }
 
       #menu-list .sub-item {
-        margin-left: 1.5rem; /* 調整縮排距離 */
+        margin-left: 8%; /* 調整縮排距離 */
         font-size: 0.9rem; /* 可選：調整子項目字體大小 */
       }
 
       /* 目錄展開狀態 */
       #expandable-menu.open {
         transform: translateX(0);
+      }
+
+      /* === 響應式調整：針對手機與小螢幕設備 === */
+      @media (max-width: 768px) {
+        nav {
+          flex-direction: row;
+          flex-wrap: wrap;
+          align-items: center;
+          justify-content: space-between;
+          padding: 1rem 5vw;  /* 窄螢幕時減少左右留白 */
+          width: 100%;
+          box-sizing: border-box;
+        }
+
+        .nav-right {
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          gap: 0.5rem;
+          transform: none;
+          width: auto;
+          white-space: nowrap;               /* 禁止內容自動換行 */
+        }
+
+        nav a {
+          padding: 0.5rem 0.5rem;           /* 減少垂直padding */
+          margin: 0 0.3rem;
+          font-size: 0.85rem;
+          white-space: nowrap;               /* 確保文字不換行 */
+          overflow: hidden;
+          text-overflow: ellipsis;           /* 若內容超出，顯示省略號 */
+        }
+
+        .nav-dropdown {
+          width: 60%; /* 或者用 max-content, fit-content 看需求 */
+          font-size: 0.85rem; /* 調整字體大小和導覽列一致 */
+          padding: 0.5rem;
+        }
+      
+        .nav-dropdown a {
+          font-size: inherit; /* 確保跟 .nav-dropdown 一樣大 */
+          padding: 0.5rem 1rem;
+          white-space: normal; /* 可選：讓字在必要時換行 */
+        }
+
+        .dropdown-content {
+          width: 12vw;
+          min-width: 8em; /* 保證至少能顯示幾個字 */
+          max-width: none;
+        }
+
+        .dropdown-content a {
+          font-size: 0.85rem;
+        }
+        
+        .intro-section {
+          flex-direction: column;
+          padding: 8%;
+        }
+
+        .intro-section .left,
+        .intro-section .right {
+          width: 100%;
+          padding: 0;
+          flex: 1 1 100%;
+        }
+
+        .intro-section .right {
+          margin-top: 1.5rem;
+          display: flex;
+          justify-content: center;
+        }
+
+        .intro-section h4 {
+          max-width: 100%;
+          font-size: 1rem;
+        }
+
+        .destination-grid {
+          flex-direction: column;
+          gap: 1rem;
+        }
+
+        .destination-section h4 {
+          font-size: 1rem;
+        }
+
+        .destination-item {
+          max-width: 100%;
+          width: 100%;
+        }
+
+        .destination-item.a_role_with_2 {
+          position: static;
+          left: auto;
+        }
+
+        .destination-main,
+        .destination-sidebar {
+          width: 100%;
+          margin: 0;
+          padding: 0;
+        }
+
+        .destination-sidebar {
+          margin-top: 2rem;
+        }
+
+        .recommendation-buttons button {
+          width: 100%; /* 小螢幕按鈕全寬排列 */
+        }
+
+        .contact-section {
+          padding: 3vh 5vw;
+        }
+
+        .contact-item h3 {
+          font-size: 1rem;
+        }
+
+        /* 目錄區寬度改為螢幕寬度的40% */
+        #expandable-menu {
+          width: 40vw !important; /* 用vw方便響應螢幕寬度 */
+          max-width: 90%; /* 保留原本max-width避免太寬 */
+        }
+      
+        #expandable-menu,
+        #expandable-menu * {
+          font-size: 85% !important;
+        }
+              
+        #menu-toggle {
+          width: 75%;
+          max-width: 1.875em;
+          min-width: 1.875em;
+        }
       }
     </style>
   </head>
@@ -342,7 +499,7 @@
       <div class="nav-right">
         <a href="首頁.html">關於我</a>
         <div class="dropdown">
-          <a>亞洲旅遊</a>
+          <a class="dropdown-toggle">亞洲旅遊</a>
           <div class="dropdown-content">
             <a href="中國.html">中國</a>
             <a href="新加坡.html">新加坡</a>
@@ -353,7 +510,7 @@
           </div>
         </div>
         <div class="dropdown">
-          <a>歐洲旅遊</a>
+          <a class="dropdown-toggle">歐洲旅遊</a>
           <div class="dropdown-content">
             <a href="英國.html">英國</a>
             <a href="法國.html">法國</a>
@@ -371,7 +528,7 @@
           </div>
         </div>
         <div class="dropdown">
-          <a>美洲旅遊</a>
+          <a class="dropdown-toggle">美洲旅遊</a>
           <div class="dropdown-content">
             <a href="美國.html">美國</a>
             <a href="加拿大.html">加拿大</a>
@@ -389,7 +546,7 @@
         </h4>
       </div>
       <div class="right">
-        <img src="加拿大照片\多倫多\多倫多_介紹.jpg" width="90%" height="350px" />
+        <img src="加拿大照片\多倫多\多倫多_介紹.jpg" style="width: 100%; height: auto; max-width: 100%;" />
       </div>
     </div>
 
@@ -405,7 +562,7 @@
           多倫多的地鐵及地面電車系統十分完善，絕大多數的景點都有地鐵或地面電車到達，是最主要的交通方式，各站都可以刷信用卡進站，十分方便。
         </h4>
         <div style="text-align: center">
-          <img src="加拿大照片\多倫多\多倫多_交通.png" width="1000px" />
+          <img src="加拿大照片\多倫多\多倫多_交通.png" style="width: 100%; max-width: 90vw; height: auto;" />
         </div>
         <br /><br />
         <h2>多倫多住宿</h2>
@@ -413,7 +570,7 @@
           在多倫多由於出行前往機場或其他城市都是在 Union Station 附近乘車，因此推薦住宿可以選在車站附近，比較省時省力。
         </h4>
         <div style="text-align: center">
-          <img src="加拿大照片\多倫多\多倫多_住宿.png" width="800px" />
+          <img src="加拿大照片\多倫多\多倫多_住宿.png" style="width: 100%; max-width: 90vw; height: auto; margin: 0.5rem;" />
         </div>
         <br /><br />
         <h2>多倫多景點</h2>
@@ -422,9 +579,9 @@
           彌敦菲利浦廣場位於多倫多市政廳前，北臨 Queen 街，東到 Bay 街，於 1965 年落成啟用，是多倫多著名建築師艾里克·阿特金設計的，以綠色玻璃鋼制成的多倫多市政廳為中心，兩側矗立著現代主義風格的大型建築。彌敦菲利浦廣場也是多倫多重大節日慶典的主會場，每年 7 月 1 日的加拿大日慶祝活動以及新年倒計時等都在此舉行，冬季時廣場中央的人工湖還會冰封成溜冰場，也常舉辦藝術表演、音樂會等文化活動，例如每年的多倫多自由之夏音樂節。
         </h4>
         <div style="text-align: center">
-          <img src="加拿大照片\多倫多\TO1.jpg" width="800px" />
-          <img src="加拿大照片\多倫多\TO2.jpg" width="600px" />
-          <img src="加拿大照片\多倫多\TO3.jpg" width="600px" />
+          <img src="加拿大照片\多倫多\TO1.jpg" style="width: 100%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+          <img src="加拿大照片\多倫多\TO2.jpg" style="width: 90%; max-width: 600px; height: auto; margin: 0.5rem;" />
+          <img src="加拿大照片\多倫多\TO3.jpg" style="width: 90%; max-width: 600px; height: auto; margin: 0.5rem;" />
         </div>
         <br /><br /><br />
         <h3>加拿大國家電視塔 (CN Tower)</h3>
@@ -432,7 +589,7 @@
           加拿大國家電視塔是加拿大最著名的建築，矗立在安大略湖畔，於 1976 年建成啟用，是當時世界上最高的建築物，這座電視通訊塔採用獨特的管心結構設計，塔高 555.33 米，是多倫多市中心的制高點，這座塔樓除了作為電視通訊設施外，還設有供遊客遊覽的觀景平台。遊客可以通過高速電梯登至頂層的觀景台，欣賞 360 度無阻擋的城市全景，內部還設有其他遊覽設施，如旋轉餐廳、商店及互動式遊戲體驗區等。
         </h4>
         <div style="text-align: center">
-          <img src="加拿大照片\多倫多\TO4.jpg" width="800px" />
+          <img src="加拿大照片\多倫多\TO4.jpg" style="width: 100%; max-width: 90vw; height: auto; margin: 0.5rem;" />
         </div>
         <br /><br /><br />
         <h3>Ward's Island</h3>
@@ -441,11 +598,11 @@
           作為渡假村和避暑勝地，隨後它逐漸形成了一個獨立的小型社區，島上有住宅、商店等設施，是多倫多市民休憩和娛樂的好去處，可以漫步在蜿蜒的小路上，島上有許多美麗的沙灘和草坪，這裡也是觀賞多倫多市景的絕佳位置，務必要留到晚上的夜景，非常值得。
         </h4>
         <div style="text-align: center">
-          <img src="加拿大照片\多倫多\TO5.jpg" width="800px" />
-          <img src="加拿大照片\多倫多\TO6.jpg" width="800px" />
-          <img src="加拿大照片\多倫多\TO7.jpg" width="800px" />
-          <img src="加拿大照片\多倫多\TO8.jpg" width="800px" />
-          <img src="加拿大照片\多倫多\TO9.jpg" width="600px" />
+          <img src="加拿大照片\多倫多\TO5.jpg" style="width: 100%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+          <img src="加拿大照片\多倫多\TO6.jpg" style="width: 100%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+          <img src="加拿大照片\多倫多\TO7.jpg" style="width: 100%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+          <img src="加拿大照片\多倫多\TO8.jpg" style="width: 100%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+          <img src="加拿大照片\多倫多\TO9.jpg" style="width: 90%; max-width: 600px; height: auto; margin: 0.5rem;" />
         </div>
         <br /><br /><br />
         <h3>伊頓中心 (Eaton Centre)</h3>
@@ -453,7 +610,7 @@
           伊頓中心是多倫多最大最著名的購物中心，毗鄰 Nathan Phillips Square 和多倫多市政廳，佔地近 50 萬平方米，匯集了超過 250 家各類商店、餐廳和娛樂設施，擁有多家知名的跨國品牌旗艦店，包括百貨公司、服飾店、電子產品店、書店等。伊頓中心內部的建築設計也是一大亮點，採用玻璃頂棚和開放式設計讓自然光照進，營造出明亮寬敞的購物環境，其中的天鵝雕塑廊是最受歡迎的拍照打卡點。
         </h4>
         <div style="text-align: center">
-          <img src="加拿大照片\多倫多\TO10.jpg" width="600px" />
+          <img src="加拿大照片\多倫多\TO10.jpg" style="width: 90%; max-width: 600px; height: auto; margin: 0.5rem;" />
         </div>
         <br /><br /><br />
         <h3>央-登打士廣場 (Yonge-Dundas Square)</h3>
@@ -461,7 +618,7 @@
           央-登打士廣場位於 Yonge Street 和 Dundas Street 的交匯處，被譽為多倫多的 "時代廣場"，建於 2002 年，面積約 0.4 公頃，設有大型 LED 電子屏和高聳的建築物，聚集了許多大型商業綜合體，如購物中心、電影院、餐飲店等，營造出繁華的都市氣氛，經常成為大型活動的集中地，例如音樂會、燈光秀、慶典遊行等。
         </h4>
         <div style="text-align: center">
-          <img src="加拿大照片\多倫多\TO11.jpg" width="600px" />
+          <img src="加拿大照片\多倫多\TO11.jpg" style="width: 90%; max-width: 600px; height: auto; margin: 0.5rem;" />
         </div>
         <br /><br /><br />
         <h3>聖羅倫斯市場 (St. Lawrence Market)</h3>
@@ -469,7 +626,7 @@
           聖羅倫斯市場於 1803 年建立，建築擁有古典風格的紅磚外觀，具有濃郁的歷史韻味，內部分為南北兩座大樓，從擺賣新鮮農產品的攤位到精緻的肉類海鮮店、烘焙坊、咖啡館等應有盡有。每個星期六，南樓會變成一處大型的古董市集，可以在此淘寶古董、手工藝品等獨特物品，市場內部的走道擺設充滿年代感，給人古舊市集的悠閒感。
         </h4>
         <div style="text-align: center">
-          <img src="加拿大照片\多倫多\TO12.jpg" width="600px" />
+          <img src="加拿大照片\多倫多\TO12.jpg" style="width: 90%; max-width: 600px; height: auto; margin: 0.5rem;" />
         </div>
         <br /><br /><br />
         <h3>The Distillery Historic District</h3>
@@ -477,7 +634,7 @@
           The Distillery Historic District 於 19 世紀中期建立，當時集中了多家酒類醇造廠，成為了北美最大的威士忌生產基地，後來隨著工業的衰落，這里的酒廠陸續關閉，直到 2003 年這片古老的工業遺址進行了改造，重新變成一處獨特的文化旅遊景區，也保留了大量 19 世紀末 20 世紀初的紅磚建築和精美的維多利亞式裝飾，展現了工業興盛時期的獨特風采。如今 The Distillery Historic District 集中了眾多個性獨特的藝術畫廊、手工坊、設計商店、餐廳酒吧等，可以在此沉浸在歷史濃厚的氛圍中，漫步於古樸的石磚道，欣賞充滿創意的各類商品和表演。
         </h4>
         <div style="text-align: center">
-          <img src="加拿大照片\多倫多\TO13.jpg" width="600px" />
+          <img src="加拿大照片\多倫多\TO13.jpg" style="width: 90%; max-width: 600px; height: auto; margin: 0.5rem;" />
         </div>
         <br /><br />
         <h2>多倫多近郊景點</h2>
@@ -488,17 +645,17 @@
         <h4>早在 18 世紀尼加拉瀑布就成為大量遊客的嚮往之地，吸引了諸多藝術家和探險家前來創作和探險。
           如今尼加拉瀑布已經成為加拿大及美國東部最著名的旅遊目的地，可以<b>乘坐觀光船遊覽瀑布底部</b>，還能體驗刺激的高空纜車和空中觀光。在晚上會通過各種燈光效果，使瀑布在夜幕下更添神奇色彩。</h4>
         <div style="text-align: center">
-          <img src="加拿大照片\多倫多\TO14.jpg" width="800px" />
-          <img src="加拿大照片\多倫多\TO15.jpg" width="800px" />
-          <img src="加拿大照片\多倫多\TO16.jpg" width="800px" />
-          <img src="加拿大照片\多倫多\TO17.jpg" width="800px" />
-          <img src="加拿大照片\多倫多\TO18.jpg" width="800px" />
-          <img src="加拿大照片\多倫多\TO19.jpg" width="800px" />
-          <img src="加拿大照片\多倫多\TO20.jpg" width="600px" />
-          <img src="加拿大照片\多倫多\TO21.jpg" width="800px" />
-          <img src="加拿大照片\多倫多\TO22.jpg" width="800px" />
-          <img src="加拿大照片\多倫多\TO23.jpg" width="800px" />
-          <img src="加拿大照片\多倫多\TO24.jpg" width="800px" />
+          <img src="加拿大照片\多倫多\TO14.jpg" style="width: 100%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+          <img src="加拿大照片\多倫多\TO15.jpg" style="width: 100%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+          <img src="加拿大照片\多倫多\TO16.jpg" style="width: 100%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+          <img src="加拿大照片\多倫多\TO17.jpg" style="width: 100%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+          <img src="加拿大照片\多倫多\TO18.jpg" style="width: 100%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+          <img src="加拿大照片\多倫多\TO19.jpg" style="width: 100%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+          <img src="加拿大照片\多倫多\TO20.jpg" style="width: 90%; max-width: 600px; height: auto; margin: 0.5rem;" />
+          <img src="加拿大照片\多倫多\TO21.jpg" style="width: 100%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+          <img src="加拿大照片\多倫多\TO22.jpg" style="width: 100%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+          <img src="加拿大照片\多倫多\TO23.jpg" style="width: 100%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+          <img src="加拿大照片\多倫多\TO24.jpg" style="width: 100%; max-width: 90vw; height: auto; margin: 0.5rem;" />
         </div>
         <br /><br /><br />
         <h3>彩虹橋 (Rainbow International Bridge)</h3>
@@ -506,7 +663,7 @@
           彩虹橋連接美國紐約州與加拿大安大略省，位於尼加拉瀑布附近，長 1.08 公里、寬約 23 米的鋼索吊橋於 1941 年落成，採用獨特的拱形設計，由純白色的鋼索支撐，橫跨尼亞加拉河，具有極高的工程技術含量。從橋上遠眺可以欣賞到壯美的尼亞加拉瀑布全景，也能俯瞰腳下湍急的河流和迷人的自然風光，尤其是在日落時分，橋梁上空的彩虹般的燈光倒影在水面，增添了整個景觀的夢幻氛圍。
         </h4>
         <div style="text-align: center">
-          <img src="加拿大照片\多倫多\TO25.jpg" width="800px" />
+          <img src="加拿大照片\多倫多\TO25.jpg" style="width: 100%; max-width: 90vw; height: auto; margin: 0.5rem;" />
         </div>
         <br /><br /><br />
         <h3>Niagara City Cruises</h3>
@@ -515,8 +672,8 @@
         </h4>
         <h4>可以搭乘"瀑布號"穿梭在咆哮的瀑布之間，近距離感受瀑布的磅礡氣勢，遊船還會盡可能接近瀑布底部，使遊客能感受瀑布澎湃澎湃如萬駒奔騰的震撼景象，可以聽到雷鳴般的轟鳴聲，感受水花濺灑在臉上的涼爽，船員會提供相關的自然、歷史等介紹，增加遊客的知識性體驗，船上還配備雨衣等防潮設備，確保遊客即使處於瀑布的咆哮聲域中，也能安全舒適地欣賞美景。</h4>
         <div style="text-align: center">
-          <img src="加拿大照片\多倫多\TO26.jpg" width="800px" />
-          <img src="加拿大照片\多倫多\TO27.jpg" width="800px" />
+          <img src="加拿大照片\多倫多\TO26.jpg" style="width: 100%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+          <img src="加拿大照片\多倫多\TO27.jpg" style="width: 100%; max-width: 90vw; height: auto; margin: 0.5rem;" />
         </div>
         <br /><br />
       </div>
@@ -572,9 +729,8 @@
     <footer>
       <h6>COPYRIGHT © 2025 Tommy 看世界 All rights reserved.</h6>
     </footer>
+    <div id="menu-toggle"></div>
     <div id="expandable-menu">
-      <div id="menu-toggle"></div>
-      <!-- 收闔按鈕 -->
       <div id="menu-content">
         <h4>目錄</h4>
         <ul id="menu-list"></ul>
@@ -591,6 +747,23 @@
         // 點擊按鈕切換目錄狀態
         toggle.addEventListener("click", () => {
           menu.classList.toggle("open");
+
+          const menuWidth = menu.offsetWidth; // 獲取目前展開的目錄寬度
+
+          if (menu.classList.contains("open")) {
+            // 讓按鈕向左平移與 menu 一樣的寬度
+            toggle.style.transform = `translateY(-50%) translateX(-${menuWidth}px)`;
+          } else {
+            // 收回原位
+            toggle.style.transform = `translateY(-50%) translateX(0)`;
+          }
+        });
+
+        window.addEventListener("load", () => {
+          if (menu.classList.contains("open")) {
+            const menuWidth = menu.offsetWidth;
+            toggle.style.transform = `translateY(-50%) translateX(-${menuWidth}px)`;
+          }
         });
 
         // 從 destination-main 區域提取 h2 和 h3，動態生成目錄
@@ -615,6 +788,23 @@
           menuList.appendChild(listItem);
         });
 
+        function adjustMenuPosition() {
+          const nav = document.querySelector("nav");
+          const menu = document.getElementById("expandable-menu");
+      
+          if (nav && menu) {
+            const navHeight = nav.offsetHeight;
+      
+            // 設定 menu 的 top 與高度
+            menu.style.top = `${navHeight}px`;
+            menu.style.height = `calc(100vh - ${navHeight}px)`;
+          }
+        }
+      
+        // 載入與尺寸變化時調整
+        window.addEventListener("DOMContentLoaded", adjustMenuPosition);
+        window.addEventListener("resize", adjustMenuPosition);
+        
         // 滾動至目標位置並加上 75px 偏移
         menuList.addEventListener("click", (event) => {
           if (event.target.tagName === "A") {
@@ -634,6 +824,31 @@
               });
             }
           }
+        });
+        // 手機 Safari 相容：點擊展開 dropdown
+        const dropdownToggles = document.querySelectorAll(".dropdown-toggle");
+
+        dropdownToggles.forEach((toggle) => {
+          toggle.addEventListener("click", function (e) {
+            e.stopPropagation(); // 防止冒泡，避免點擊外層時也觸發關閉
+            const dropdown = this.nextElementSibling;
+            const isVisible = dropdown.style.display === "block";
+            
+            // 關閉所有其他 dropdown（可選）
+            document.querySelectorAll(".dropdown-content").forEach((menu) => {
+              menu.style.display = "none";
+            });
+
+            // 切換目前這一個 dropdown
+            dropdown.style.display = isVisible ? "none" : "block";
+          });
+        });
+
+        // 點擊其他地方時關閉 dropdown
+        window.addEventListener("click", function () {
+          document.querySelectorAll(".dropdown-content").forEach((menu) => {
+            menu.style.display = "none";
+          });
         });
       });
     </script>
