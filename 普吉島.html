@@ -12,7 +12,6 @@
       body {
         font-family: Calibri, Arial, sans-serif; /* 首選 Calibri，次選 Arial */
         margin: 0;
-        padding: 0;
         overflow-x: hidden; /* 禁止水平滾動 */
         background-color: #f4f4f9;
         color: #333;
@@ -28,7 +27,6 @@
         font-weight: bold;
         color: #2a90a7;
         display: inline-block;
-        margin-bottom: 1rem; /* 縮小 h2 的底部邊距 */
         background-color: #cee5e8;
       }
 
@@ -36,7 +34,7 @@
         font-size: 26px;
         margin: 0 0 1rem;
         font-weight: bold;
-        text-decoration: underline; /* 加上底線 */
+        text-decoration: underline;
       }
 
       h4 {
@@ -62,56 +60,68 @@
       nav {
         background-color: #78bcc4;
         display: flex;
-        justify-content: space-between; /* 保持分佈在兩側 */
-        width: calc(100% - 10rem); /* 與其他內容的邊界一致 */
-        padding: 0.5rem 5rem; /* 主導覽列的 padding 設置 */
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;                     /* 讓 nav 寬度隨螢幕自適應 */
+        padding: 0.8rem 5vw;               /* 左右 padding 用 5% 寬度 */
+        box-sizing: border-box;         /* 確保 padding 不會影響寬度總長 */
         position: fixed;
         top: 0;
         z-index: 1000;
       }
 
       .nav-left .logo img {
-        height: 50px; /* 控制 Logo 圖片的高度 */
-        transform: translateX(-1.5rem); /* 向右移動 2rem */
+        height: 5vw; /* 高度為螢幕寬度的 5% */
+        transform: translateX(-2vw); /* 向左移動 2% 寬度 */
+        max-width: 100%; /* 確保不會超過容器 */
+        height: auto; /* 保持圖片比例（建議與 max-height 搭配） */
+        max-height: 3rem;
       }
 
       .nav-right {
         display: flex;
         align-items: center;
-        transform: translateX(2rem); /* 向右移動 2rem */
+        margin-left: auto; /* 推到右側 */
+        padding-left: 5%;   /* 內部元素間距，彈性設計 */
       }
 
       nav a {
         color: #eff5f5;
         text-decoration: none;
-        padding: 0.5rem 1rem;
-        margin: 0 0.5rem;
+        padding: 1vh 1vw;
+        margin: 0 1vw;
         transition: transform 0.3s;
       }
 
       nav a:hover {
-        transform: translateY(-3px);
+        transform: translateY(-0.5vh); /* 根據視窗高度調整 */
       }
 
       .dropdown {
         position: relative;
+        display: inline-block;
       }
 
       .dropdown-content {
+        width: 100%; /* 佔滿父層寬度 */
+        max-width: 20vw; /* 限制最大寬度 */
         display: none;
         position: absolute;
         background-color: #78bcc4;
-        min-width: 160px;
-        border-radius: 4px;
-        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        min-width: 10em; /* 取代 160px，以字體大小作為比例單位 */
+        border-radius: 0.25em;
+        box-shadow: 0 0.5em 1em rgba(0, 0, 0, 0.2); /* 改為相對單位 */
         padding: 0.2rem 0;
+        z-index: 999;
       }
 
       .dropdown-content a {
         color: #eff5f5;
         display: block;
         transition: transform 0.3s;
-        border-bottom: 1px solid #ddd;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.3); /* 更淡配色、柔和過渡 */
+        padding: 0.6em 1em;
+        font-size: 1em;
       }
 
       .dropdown-content a:last-child {
@@ -119,107 +129,109 @@
       }
 
       .dropdown-content a:hover {
-        transform: translateY(-3px);
-      }
-
-      .dropdown:hover .dropdown-content {
-        display: block;
+        transform: translateY(-0.25em); /* 改為相對單位 */
       }
 
       .intro-section {
         background-color: #eff5f5;
         display: flex;
-        padding: 2rem;
-        margin-top: 60px; /* 根據導航列高度調整 */
-        justify-content: space-between;
-        align-items: flex-start;
-        width: 100%;
-        box-sizing: border-box; /* 包含 padding 在內 */
-        padding-left: 5rem;
-        padding-right: 5rem;
+        flex-wrap: wrap; /* 確保在小螢幕可換行 */
+        padding: 2rem 5%;
+        margin-top: 4em; /* 根據導航列高度調整 */
       }
 
       .intro-section h4 {
-        max-width: 700px;
+        max-width: 85%; /* 改為相對單位，避免固定寬度限制 */
+        line-height: 1.8;
       }
 
       .intro-section .left {
         width: 60%;
+        padding-right: 1%;
       }
 
       .intro-section .right {
-        width: 40%;
+        width: 39%;
       }
 
       .destination-section {
         display: flex;
+        flex-wrap: wrap;               /* 小螢幕時允許換行 */
         padding: 1rem 5%; /* 左右內間距為螢幕的10% */
         background-color: white;
       }
 
       .destination-main {
-        width: 75%;
-        margin-right: 1.5rem; /* 增加右邊外邊距 */
+        width: 72%;                    /* 主要內容佔 72%，略縮以保留間距 */
+        margin-right: 3%;              /* 與 sidebar 間保留間距（約為 3%） */
+        box-sizing: border-box;
       }
 
       .destination-sidebar {
-        width: 25%;
-        padding-left: 1.5rem; /* 增加左側內邊距 */
-        margin-top: 2rem; /* 向上或向下調整，負值表示向上 */
+        width: 25%;                    /* 側邊欄佔 25% */
+        padding-left: 2%;             /* 相對內邊距 */
+        margin-top: 2rem;
+        box-sizing: border-box;
       }
 
       .sidebar-image-container {
         margin-bottom: 1rem;
-        text-align: center; /* 確保圖片置中 */
+        text-align: center; /* 置中圖片 */
       }
 
       .sidebar-image-container img {
-        height: 300px; /* 設置直式圖片的高度 */
+        width: 90%;         /* 圖片寬度為容器寬度的 90% */
+        height: auto;       /* 高度自動，保持比例 */
+        max-height: 60vh;   /* 避免圖片過高，佔螢幕最大 60% 高 */
+        object-fit: cover;  /* 裁切處理長圖 */
       }
 
       .two-vertical-images {
-        display: flex; /* 彈性佈局，讓圖片並排 */
-        justify-content: space-between; /* 兩張圖片均勻分佈 */
-        gap: 2rem; /* 圖片之間的間距 */
+        display: flex;
+        justify-content: space-between;
+        gap: 4%; /* 使用百分比間距更彈性 */
         margin-top: 2rem;
-        margin-bottom: 2rem; /* 與下方內容的距離 */
+        margin-bottom: 2rem;
+        flex-wrap: wrap; /* 若畫面太小，允許換行 */
       }
 
       .two-vertical-images img {
-        width: calc(50% - 0.5rem); /* 每張圖片佔用容器的一半減去間距 */
-        text-align: center; /* 確保圖片置中 */
-        height: auto; /* 保持圖片的直式比例 */
-        object-fit: cover; /* 確保圖片內容適應容器 */
+        width: 48%; /* 每張圖片約佔一半（加上 gap 剛好 100%） */
+        height: auto; /* 保持原比例 */
+        object-fit: cover;
+        display: block;
+        margin: 0 auto;
       }
 
       .recommendation-section {
-        margin-top: 1.5rem; /* 與上方文字的間距 */
+        margin-top: 3vh; /* 與上方文字的間距 */
         text-align: center;
         position: sticky;
         top: 80px; /* 空出導覽列的高度，確保推薦區不被覆蓋 */
         z-index: 10; /* 提高層級，避免被其他內容遮蓋 */
+        padding: 0 5%;
       }
 
       .recommendation-section h3 {
-        font-size: 18px;
+        font-size: 1.125rem;
         font-weight: bold;
-        margin-bottom: 0.5rem; /* 與按鈕區的距離 */
+        margin-bottom: 1vh; /* 與按鈕區的距離 */
       }
 
       .recommendation-buttons {
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
-        gap: 0.5rem; /* 按鈕之間的間距 */
+        gap: 0.5em; /* 按鈕之間的間距 */
       }
 
       .recommendation-buttons button {
-        padding: 0.5rem 1rem;
-        font-size: 14px;
+        padding: 0.5em 1em;
+        font-size: 0.875rem;
         color: white;
         background-color: #78bcc4;
         border: none;
-        border-radius: 4px;
+        border-radius: 0.25rem;
         transition: transform 0.3s;
         font-family: Arial, sans-serif;
       }
@@ -229,13 +241,13 @@
       }
 
       .contact-section {
-        padding: 2rem 5rem; /* 上下與左右間距 */
+        padding: 4vh 8vw; /* 上下與左右間距 */
         background-color: #eff5f5; /* 淺灰背景 */
         text-align: center; /* 確保內容置中對齊 */
       }
 
       .contact-item h3 {
-        font-size: 18px; /* 調整標題字體大小 */
+        font-size: 1.125rem; /* 調整標題字體大小 */
         margin: 0; /* 移除多餘的間距 */
         text-decoration: none; /* 移除底線 */
       }
@@ -243,43 +255,49 @@
       footer {
         background-color: #000;
         color: white;
-        height: 30px;
+        height: 3vh; /* 使用相對單位，高度占螢幕高度的 3% */
         display: flex;
         justify-content: center;
         align-items: center;
+        font-size: 1.5rem; /* 使用相對字體大小 */
+        padding: 0.5rem 0; /* 確保小螢幕時內容不擠壓 */
       }
 
       #expandable-menu {
-        position: fixed;
-        top: 70px; /* 與螢幕頂部的距離設為 60px */
+        position: fixed; 
         right: 0;
-        height: calc(100% - 70px); /* 高度減去 60px，避免超出視窗 */
-        width: 395px; /* 目錄寬度與 sidebar 齊寬 */
+        width: 26vw; /* 目錄寬度與 sidebar 齊寬 */
+        max-width: 90%; /* 避免在小螢幕太寬 */
         transform: translateX(100%); /* 初始狀態：隱藏在右側 */
         transition: transform 0.3s ease;
         background-color: #f4f4f9; /* 與網站背景一致 */
         z-index: 1000;
+        box-sizing: border-box;
       }
 
       /* 收闔按鈕 */
       #menu-toggle {
-        position: absolute;
+        position: fixed;
         top: 45%;
-        left: -40px; /* 調整按鈕的位置，適應按鈕變大後的寬度 */
-        transform: translateY(-50%);
-        width: 40px; /* 增大按鈕寬度 */
-        height: 80px; /* 增大按鈕高度 */
+        right: 0; /* 永遠貼在右側 */
+        transform: translateY(-50%) translateX(0);
+        width: 2.5em; /* 增大按鈕寬度 */
+        height: 5em; /* 增大按鈕高度 */
         background-color: #78bcc4;
         color: white;
-        border-radius: 4px;
+        border-radius: 0.4em 0 0 0.4em;
         display: flex;
         justify-content: center; /* 水平居中 */
         align-items: center; /* 垂直居中 */
+        z-index: 2000; /* 要比 expandable-menu 更高，避免被蓋住 */
+        cursor: pointer;
+        box-shadow: -0.1em 0 0.3em rgba(0,0,0,0.1);
+        transition: transform 0.3s ease; /* 平滑移動 */
       }
 
       #menu-toggle::after {
         content: "目錄"; /* 在按鈕內顯示 "目錄" */
-        font-size: 17px;
+        font-size: 1rem;
         color: white; /* 設定字體顏色為白色 */
         writing-mode: vertical-rl; /* 使文字垂直排列 */
       }
@@ -290,14 +308,16 @@
 
       /* 目錄內容 */
       #menu-content {
-        padding: 0.5rem 1rem;
+        padding: 0.5rem 5%;
         overflow-y: auto;
         height: 100%;
+        box-sizing: border-box;
       }
 
       #menu-content h4 {
         font-weight: bold;
         margin-top: 0;
+        font-size: 1.2rem;
       }
 
       #menu-list {
@@ -306,13 +326,14 @@
       }
 
       #menu-list li {
-        margin-bottom: 0.5rem;
+        margin-bottom: 1vh;
       }
 
       #menu-list a {
         color: #2a90a7;
         text-decoration: none;
         transition: color 0.3s;
+        font-size: 1rem; /* 使用相對字體大小 */
       }
 
       #menu-list a:hover {
@@ -320,13 +341,149 @@
       }
 
       #menu-list .sub-item {
-        margin-left: 1.5rem; /* 調整縮排距離 */
+        margin-left: 8%; /* 調整縮排距離 */
         font-size: 0.9rem; /* 可選：調整子項目字體大小 */
       }
 
       /* 目錄展開狀態 */
       #expandable-menu.open {
         transform: translateX(0);
+      }
+
+      /* === 響應式調整：針對手機與小螢幕設備 === */
+      @media (max-width: 768px) {
+        nav {
+          flex-direction: row;
+          flex-wrap: wrap;
+          align-items: center;
+          justify-content: space-between;
+          padding: 1rem 5vw;  /* 窄螢幕時減少左右留白 */
+          width: 100%;
+          box-sizing: border-box;
+        }
+
+        .nav-right {
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          gap: 0.5rem;
+          transform: none;
+          width: auto;
+          white-space: nowrap;               /* 禁止內容自動換行 */
+        }
+
+        nav a {
+          padding: 0.5rem 0.5rem;           /* 減少垂直padding */
+          margin: 0 0.3rem;
+          font-size: 0.85rem;
+          white-space: nowrap;               /* 確保文字不換行 */
+          overflow: hidden;
+          text-overflow: ellipsis;           /* 若內容超出，顯示省略號 */
+        }
+
+        .nav-dropdown {
+          width: 60%; /* 或者用 max-content, fit-content 看需求 */
+          font-size: 0.85rem; /* 調整字體大小和導覽列一致 */
+          padding: 0.5rem;
+        }
+      
+        .nav-dropdown a {
+          font-size: inherit; /* 確保跟 .nav-dropdown 一樣大 */
+          padding: 0.5rem 1rem;
+          white-space: normal; /* 可選：讓字在必要時換行 */
+        }
+
+        .dropdown-content {
+          width: 12vw;
+          min-width: 8em; /* 保證至少能顯示幾個字 */
+          max-width: none;
+        }
+
+        .dropdown-content a {
+          font-size: 0.85rem;
+        }
+        
+        .intro-section {
+          flex-direction: column;
+          padding: 8%;
+        }
+
+        .intro-section .left,
+        .intro-section .right {
+          width: 100%;
+          padding: 0;
+          flex: 1 1 100%;
+        }
+
+        .intro-section .right {
+          margin-top: 1.5rem;
+          display: flex;
+          justify-content: center;
+        }
+
+        .intro-section h4 {
+          max-width: 100%;
+          font-size: 1rem;
+        }
+
+        .destination-grid {
+          flex-direction: column;
+          gap: 1rem;
+        }
+
+        .destination-section h4 {
+          font-size: 1rem;
+        }
+
+        .destination-item {
+          max-width: 100%;
+          width: 100%;
+        }
+
+        .destination-item.a_role_with_2 {
+          position: static;
+          left: auto;
+        }
+
+        .destination-main,
+        .destination-sidebar {
+          width: 100%;
+          margin: 0;
+          padding: 0;
+        }
+
+        .destination-sidebar {
+          margin-top: 2rem;
+        }
+
+        .recommendation-buttons button {
+          width: 100%; /* 小螢幕按鈕全寬排列 */
+        }
+
+        .contact-section {
+          padding: 3vh 5vw;
+        }
+
+        .contact-item h3 {
+          font-size: 1rem;
+        }
+
+        /* 目錄區寬度改為螢幕寬度的40% */
+        #expandable-menu {
+          width: 40vw !important; /* 用vw方便響應螢幕寬度 */
+          max-width: 90%; /* 保留原本max-width避免太寬 */
+        }
+      
+        #expandable-menu,
+        #expandable-menu * {
+          font-size: 85% !important;
+        }
+              
+        #menu-toggle {
+          width: 75%;
+          max-width: 1.875em;
+          min-width: 1.875em;
+        }
       }
     </style>
   </head>
@@ -342,7 +499,7 @@
       <div class="nav-right">
         <a href="首頁.html">關於我</a>
         <div class="dropdown">
-          <a>亞洲旅遊</a>
+          <a class="dropdown-toggle">亞洲旅遊</a>
           <div class="dropdown-content">
             <a href="中國.html">中國</a>
             <a href="新加坡.html">新加坡</a>
@@ -353,7 +510,7 @@
           </div>
         </div>
         <div class="dropdown">
-          <a>歐洲旅遊</a>
+          <a class="dropdown-toggle">歐洲旅遊</a>
           <div class="dropdown-content">
             <a href="英國.html">英國</a>
             <a href="法國.html">法國</a>
@@ -371,7 +528,7 @@
           </div>
         </div>
         <div class="dropdown">
-          <a>美洲旅遊</a>
+          <a class="dropdown-toggle">美洲旅遊</a>
           <div class="dropdown-content">
             <a href="美國.html">美國</a>
             <a href="加拿大.html">加拿大</a>
@@ -390,7 +547,7 @@
         <h4>近代普吉島轉型為泰國最受歡迎的旅遊勝地之一，擁有美麗的海灘、熱帶自然景觀、豐富的水上活動與多元的國際餐飲與住宿選擇，也積極發展永續觀光與文化保育，結合歷史與現代展現出獨特的南洋魅力。</h4>
       </div>
       <div class="right">
-        <img src="泰國照片\普吉島\普吉島_介紹.jpg" width="90%" height="350px" />
+        <img src="泰國照片\普吉島\普吉島_介紹.jpg" style="width: 100%; height: auto; max-width: 100%;" />
       </div>
     </div>
 
@@ -422,8 +579,8 @@
           </ul>
         </h4>
         <div style="text-align: center">
-          <img src="泰國照片\普吉島\普吉島_住宿1.png" width="800px" />
-          <img src="泰國照片\普吉島\普吉島_住宿2.png" width="1000px" />
+          <img src="泰國照片\普吉島\普吉島_住宿1.png" style="width: 100%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+          <img src="泰國照片\普吉島\普吉島_住宿2.png" style="width: 100%; max-width: 90vw; height: auto;" />
         </div>
         <br /><br />
         <h2>普吉島景點</h2>
@@ -432,7 +589,7 @@
           巴東海灘是普吉島最著名、最熱鬧的海灘，海灘全長約 3 公里，不僅適合放鬆度假，也是水上運動愛好者的天堂，可在此享受日光浴、游泳、摩托艇、滑翔傘等多種水上活動。白天的巴東海灘充滿悠閒氛圍，而入夜後則變身為普吉島的夜生活中心，著名的邦古拉街 (Bangla Road) 是最熱鬧的夜生活中心，以絢爛的燈光、熱鬧的氛圍和豐富的娛樂活動聞名，這條街白天車輛可通行，但入夜後便成為步行街，聚集了各式各樣的酒吧、夜店、餐廳和現場音樂表演場所，街道兩旁遍布各種酒吧與夜總會，從現場樂隊演奏、DJ 電子音樂到特色舞蹈表演應有盡有，街頭還常見雜技、火舞等精彩表演，增添熱鬧氛圍，無論是想找個酒吧放鬆小酌還是徹夜狂歡，邦古拉步行街都能滿足，吸引全球遊客前來體驗熱鬧的夜生活。
         </h4>
         <div style="text-align: center">
-          <img src="泰國照片\普吉島\PH1.jpg" width="600px" />
+          <img src="泰國照片\普吉島\PH1.jpg" style="width: 90%; max-width: 600px; height: auto; margin: 0.5rem;" />
         </div>
         <br /><br /><br />
         <h3>查龍寺 (Chalong Temple)</h3>
@@ -440,8 +597,8 @@
           查龍寺是普吉島最著名的佛教寺廟，位於普吉島南部的查龍區，建於 19 世紀，以其精美的建築風格、金碧輝煌的佛塔和寧靜的氛圍著稱，寺廟的主體建築是一座金色的佛塔 (Chedi)，內部供奉著佛教聖物，還有許多小型佛像和壁畫，展示著泰國佛教的藝術和信仰。查龍寺不僅是宗教活動的中心，查龍寺周圍的花園和池塘增添了寺廟的靜謐與美麗。
         </h4>
         <div style="text-align: center">
-          <img src="泰國照片\普吉島\PH2.jpg" width="600px" />
-          <img src="泰國照片\普吉島\PH3.jpg" width="600px" />
+          <img src="泰國照片\普吉島\PH2.jpg" style="width: 90%; max-width: 600px; height: auto; margin: 0.5rem;" />
+          <img src="泰國照片\普吉島\PH3.jpg" style="width: 90%; max-width: 600px; height: auto; margin: 0.5rem;" />
         </div>
         <br /><br /><br />
         <h3>普吉島舊城區 (Phuket Old Town)</h3>
@@ -449,10 +606,10 @@
           普吉島舊城區位於普吉島的市中心，是最具歷史和文化魅力的地區，每週日會開放成為步行街，吸引眾多遊客和當地人前來遊覽、購物和品味地道的美食，舊城區的街道兩旁充滿了色彩繽紛的中式、葡萄牙式建築，建築風格融合了多元文化的影響。步行街上有各種攤位，販售當地特色手工藝品、衣物、飾品以及新鮮的熱帶水果，還有各種小吃和傳統美食，如泰國街頭小吃、炒米粉、炸香蕉等，也是藝術家和手工藝人的聚集地，可以看到許多當地創作的藝術品和手工藝品展出。
         </h4>
         <div style="text-align: center">
-          <img src="泰國照片\普吉島\PH4.jpg" width="600px" />
-          <img src="泰國照片\普吉島\PH5.jpg" width="800px" />
-          <img src="泰國照片\普吉島\PH6.jpg" width="600px" />
-          <img src="泰國照片\普吉島\PH7.jpg" width="600px" />
+          <img src="泰國照片\普吉島\PH4.jpg" style="width: 90%; max-width: 600px; height: auto; margin: 0.5rem;" />
+          <img src="泰國照片\普吉島\PH5.jpg" style="width: 100%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+          <img src="泰國照片\普吉島\PH6.jpg" style="width: 90%; max-width: 600px; height: auto; margin: 0.5rem;" />
+          <img src="泰國照片\普吉島\PH7.jpg" style="width: 90%; max-width: 600px; height: auto; margin: 0.5rem;" />
         </div>
         <br /><br /><br />
         <h3>Promthep Cape</h3>
@@ -460,7 +617,7 @@
           Promthep Cape 位於島的南端，是觀看安達曼海日落的最佳地點，吸引大量遊客來此觀賞天空與海洋交織的奇妙景象，站在觀景台上可以俯瞰普吉島的海岸線，遠處可見小島點綴其間十分迷人。除了日落觀賞，這裡也是攝影愛好者的天堂，許多人選擇在這裡拍攝壯麗的風景，周圍還有一些小商店，販售當地的紀念品和小吃，是一個放鬆心靈、遠離喧囂的理想場所。
         </h4>
         <div style="text-align: center">
-          <img src="泰國照片\普吉島\PH8.jpg" width="600px" />
+          <img src="泰國照片\普吉島\PH8.jpg" style="width: 90%; max-width: 600px; height: auto; margin: 0.5rem;" />
         </div>
         <br /><br /><br />
         <h3>卡倫海灘 (Karon Beach)</h3>
@@ -468,9 +625,9 @@
           卡倫海灘位於普吉島西部，是該島第三大海灘，長達 3 公里的金色沙灘擁有寬闊的海岸線，沙質細膩水質清澈，非常適合遊客放鬆、日光浴、游泳或進行水上運動，與普吉島其他較為熱鬧的海灘相比，卡倫海灘相對較為寧靜，是尋求放鬆和安靜度假的理想場所。卡倫海灘附近有許多度假村、餐廳和商店，提供各種設施和服務，滿足遊客的需求，海灘活動包括浮潛、滑水、衝浪等，卡倫海灘也擁有美麗的日落景觀，是許多人喜愛的觀賞日落的好地方。
         </h4>
         <div style="text-align: center">
-          <img src="泰國照片\普吉島\PH9.jpg" width="800px" />
-          <img src="泰國照片\普吉島\PH10.jpg" width="800px" />
-          <img src="泰國照片\普吉島\PH11.jpg" width="800px" />
+          <img src="泰國照片\普吉島\PH9.jpg" style="width: 100%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+          <img src="泰國照片\普吉島\PH10.jpg" style="width: 100%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+          <img src="泰國照片\普吉島\PH11.jpg" style="width: 100%; max-width: 90vw; height: auto; margin: 0.5rem;" />
         </div>
         <br /><br /><br />
         <h3>卡塔海灘 (Kata Beach)</h3>
@@ -478,9 +635,9 @@
           卡塔海灘位於島的西南部，與卡倫海灘相鄰，擁有潔白的沙灘和清澈湛藍的海水，海浪平緩非常適合家庭、夫妻或朋友前來度假，卡塔海灘的海岸線較為短小，給人一種更加寧靜和私密的感覺，比較適合喜愛安靜的遊客。卡塔海灘是進行水上運動的理想場所，許多遊客來此衝浪、浮潛或享受其他水上活動，日落景色也十分迷人，是觀賞日落的理想地點。
         </h4>
         <div style="text-align: center">
-          <img src="泰國照片\普吉島\PH12.jpg" width="800px" />
-          <img src="泰國照片\普吉島\PH13.jpg" width="800px" />
-          <img src="泰國照片\普吉島\PH14.jpg" width="800px" />
+          <img src="泰國照片\普吉島\PH12.jpg" style="width: 100%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+          <img src="泰國照片\普吉島\PH13.jpg" style="width: 100%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+          <img src="泰國照片\普吉島\PH14.jpg" style="width: 100%; max-width: 90vw; height: auto; margin: 0.5rem;" />
         </div>
         <br /><br /><br />
         <h2>普吉島近郊景點</h2>
@@ -491,9 +648,9 @@
         <h4>要前往皮皮島最推薦的是參加 <a href="https://www.klook.com/zh-TW/activity/6556-phi-phi-island-snorkeling-day-trip-phuket/" target="_blank">Klook 的一日團</a>
           ，能直接從普吉島各處把你載到碼頭，並備好船隻與行程讓你能在各個島嶼間自由穿梭，欣賞皮皮島的景點，是最舒服省事的方式。</h4>
         <div style="text-align: center">
-          <img src="泰國照片\普吉島\PH15.jpg" width="600px" />
-          <img src="泰國照片\普吉島\PH16.jpg" width="800px" />
-          <img src="泰國照片\普吉島\PH17.jpg" width="800px" />
+          <img src="泰國照片\普吉島\PH15.jpg" style="width: 90%; max-width: 600px; height: auto; margin: 0.5rem;" />
+          <img src="泰國照片\普吉島\PH16.jpg" style="width: 100%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+          <img src="泰國照片\普吉島\PH17.jpg" style="width: 100%; max-width: 90vw; height: auto; margin: 0.5rem;" />
         </div>
         <br /><br /><br />
         <h3>瑪雅灣 (Maya Bay)</h3>
@@ -502,9 +659,9 @@
         </h4>
         <h4>要前往瑪雅灣最推薦的是參加 <a href="https://www.klook.com/zh-TW/activity/6556-phi-phi-island-snorkeling-day-trip-phuket/" target="_blank">Klook 的一日團</a>，能直接從普吉島各處把你載到碼頭，並備好船隻與行程讓你能在各個島嶼間自由穿梭，欣賞瑪雅灣的景點，是最舒服省事的方式。</h4>
         <div style="text-align: center">
-          <img src="泰國照片\普吉島\PH18.jpg" width="600px" />
-          <img src="泰國照片\普吉島\PH19.jpg" width="800px" />
-          <img src="泰國照片\普吉島\PH20.jpg" width="800px" />
+          <img src="泰國照片\普吉島\PH18.jpg" style="width: 90%; max-width: 600px; height: auto; margin: 0.5rem;" />
+          <img src="泰國照片\普吉島\PH19.jpg" style="width: 100%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+          <img src="泰國照片\普吉島\PH20.jpg" style="width: 100%; max-width: 90vw; height: auto; margin: 0.5rem;" />
         </div>
         <br /><br /><br />
         <h3>詹姆士龐德島 (James Bond Island)</h3>
@@ -513,9 +670,9 @@
         </h4>
         <h4>要前往詹姆士龐德島最推薦的是參加 <a href="https://www.klook.com/zh-TW/activity/3227-james-bond-day-tour-big-boat-longtail-speedboat/" target="_blank">Klook 的一日團</a>，能直接從普吉島各處把你載到碼頭，並備好船隻與行程讓你能在各個島嶼間自由穿梭，欣賞詹姆士龐德島的景點，是最舒服省事的方式。</h4>
         <div style="text-align: center">
-          <img src="泰國照片\普吉島\PH21.jpg" width="600px" />
-          <img src="泰國照片\普吉島\PH22.jpg" width="800px" />
-          <img src="泰國照片\普吉島\PH23.jpg" width="800px" />
+          <img src="泰國照片\普吉島\PH21.jpg" style="width: 90%; max-width: 600px; height: auto; margin: 0.5rem;" />
+          <img src="泰國照片\普吉島\PH22.jpg" style="width: 100%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+          <img src="泰國照片\普吉島\PH23.jpg" style="width: 100%; max-width: 90vw; height: auto; margin: 0.5rem;" />
         </div>
         <br /><br />
         <h3>Hong Island</h3>
@@ -523,11 +680,11 @@
           Hong Island 位於泰國甲米省 (Krabi) 的港灣群島 (Than Bok Khorani National Park) 內，是一個風景如畫的小島，因其清澈湛藍的海水、細白的沙灘和壯麗的石灰岩懸崖而聞名，小島的名字“Hong”在泰語中意為“房間”，指的是其獨特的內陸湖泊或洞穴，遊客可以穿過岩洞進入，探索這個隱秘的自然景觀。Hong Island 的主要特色是它的寧靜與未受污染的自然環境，海水非常清澈，是浮潛和潛水愛好者的理想之地，潛水者可以近距離觀察到五光十色的珊瑚礁和熱帶魚群。
         </h4>
         <div style="text-align: center">
-          <img src="泰國照片\普吉島\PH24.jpg" width="600px" />
-          <img src="泰國照片\普吉島\PH25.jpg" width="600px" />
-          <img src="泰國照片\普吉島\PH26.jpg" width="600px" />
-          <img src="泰國照片\普吉島\PH27.jpg" width="600px" />
-          <img src="泰國照片\普吉島\PH28.jpg" width="800px" />
+          <img src="泰國照片\普吉島\PH24.jpg" style="width: 90%; max-width: 600px; height: auto; margin: 0.5rem;" />
+          <img src="泰國照片\普吉島\PH25.jpg" style="width: 90%; max-width: 600px; height: auto; margin: 0.5rem;" />
+          <img src="泰國照片\普吉島\PH26.jpg" style="width: 90%; max-width: 600px; height: auto; margin: 0.5rem;" />
+          <img src="泰國照片\普吉島\PH27.jpg" style="width: 90%; max-width: 600px; height: auto; margin: 0.5rem;" />
+          <img src="泰國照片\普吉島\PH28.jpg" style="width: 100%; max-width: 90vw; height: auto; margin: 0.5rem;" />
         </div>
         <br /><br /><br />
         <h3>攀牙灣 (Phang Nga Bay)</h3>
@@ -535,7 +692,7 @@
           攀牙灣位於泰國南部，介於普吉島與攀牙府之間，面積約 400 平方公里，為攀牙國家公園的一部分。，因其壯麗的石灰岩地貌而聞名，數百座石灰岩島嶼矗立於碧綠的海水中，形成獨特的海上景觀，被譽為「泰國小桂林」，帕納克島 (Panak Island) 和割喉島 (Ko Thalu Nok) 等地的鐘乳石洞穴和隱秘潟湖，吸引眾多遊客前來探險，獨特地貌和豐富的生態系統，使其成為泰國最受歡迎的自然旅遊目的地。
         </h4>
         <div style="text-align: center">
-          <img src="泰國照片\普吉島\PH29.jpg" width="600px" />
+          <img src="泰國照片\普吉島\PH29.jpg" style="width: 90%; max-width: 600px; height: auto; margin: 0.5rem;" />
         </div>
         <br /><br />
         <h2>普吉島美食</h2>
@@ -544,11 +701,11 @@
           Day & Night of Phuket 是位於普吉市中心，融合泰式與歐洲風格的舒適料理，具備歐洲風味的泰國料理非常值得一試，餐廳由擁有超過 20 年經驗的主廚團隊主理，裝潢融合復古與現代元素，營造出輕鬆愉悅的用餐氛圍，還提供各式創意雞尾酒、精選葡萄酒與咖啡，並在夜晚時段搭配現場音樂表演，是米其林推薦的餐廳，來到普吉市中心絕對不能錯過。
         </h4>
         <div style="text-align: center">
-          <img src="泰國照片\普吉島\PH30.jpg" width="600px" />
-          <img src="泰國照片\普吉島\PH31.jpg" width="600px" />
-          <img src="泰國照片\普吉島\PH32.jpg" width="600px" />
-          <img src="泰國照片\普吉島\PH33.jpg" width="600px" />
-          <img src="泰國照片\普吉島\PH34.jpg" width="600px" />
+          <img src="泰國照片\普吉島\PH30.jpg" style="width: 90%; max-width: 600px; height: auto; margin: 0.5rem;" />
+          <img src="泰國照片\普吉島\PH31.jpg" style="width: 90%; max-width: 600px; height: auto; margin: 0.5rem;" />
+          <img src="泰國照片\普吉島\PH32.jpg" style="width: 90%; max-width: 600px; height: auto; margin: 0.5rem;" />
+          <img src="泰國照片\普吉島\PH33.jpg" style="width: 90%; max-width: 600px; height: auto; margin: 0.5rem;" />
+          <img src="泰國照片\普吉島\PH34.jpg" style="width: 90%; max-width: 600px; height: auto; margin: 0.5rem;" />
         </div>
         <br /><br /><br />
         <h3>Check Off Restaurant</h3>
@@ -556,8 +713,8 @@
           由於俄烏戰爭的緣故，許多烏克蘭人與俄羅斯人移居至對兩國免簽的普吉島，也因此當地有非常多俄國料理，店家的菜單除了英文和泰文之外最常出現的就是俄文，Check Off Restaurant 便是位於卡塔海灘著名的俄式料理，俄式烤鱸魚與甜菜羅宋湯都是出名菜餚，想要嘗嘗不同口味的非常推薦來試試。
         </h4>
         <div style="text-align: center">
-          <img src="泰國照片\普吉島\PH35.jpg" width="800px" />
-          <img src="泰國照片\普吉島\PH36.jpg" width="800px" />
+          <img src="泰國照片\普吉島\PH35.jpg" style="width: 100%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+          <img src="泰國照片\普吉島\PH36.jpg" style="width: 100%; max-width: 90vw; height: auto; margin: 0.5rem;" />
         </div>
         <br /><br /><br />
         <h3>The Commune Terrace & Bar</h3>
@@ -565,7 +722,7 @@
           The Commune Terrace & Bar 位於卡倫海灘與卡塔海灘之間，緊鄰海岸的峭壁上，能讓你坐在崖邊面著海吹這海風喝酒聊天，也能一邊欣賞卡倫海灘的夜景，現場也有 DJ 在播音樂，氛圍感十足，非常適合三兩好友夜晚來放鬆小聚。
         </h4>
         <div style="text-align: center">
-          <img src="泰國照片\普吉島\PH37.jpg" width="600px" />
+          <img src="泰國照片\普吉島\PH37.jpg" style="width: 90%; max-width: 600px; height: auto; margin: 0.5rem;" />
         </div>
         <br />
       </div>
@@ -615,9 +772,8 @@
     <footer>
       <h6>COPYRIGHT © 2025 Tommy 看世界 All rights reserved.</h6>
     </footer>
+    <div id="menu-toggle"></div>
     <div id="expandable-menu">
-      <div id="menu-toggle"></div>
-      <!-- 收闔按鈕 -->
       <div id="menu-content">
         <h4>目錄</h4>
         <ul id="menu-list"></ul>
@@ -634,6 +790,23 @@
         // 點擊按鈕切換目錄狀態
         toggle.addEventListener("click", () => {
           menu.classList.toggle("open");
+
+          const menuWidth = menu.offsetWidth; // 獲取目前展開的目錄寬度
+
+          if (menu.classList.contains("open")) {
+            // 讓按鈕向左平移與 menu 一樣的寬度
+            toggle.style.transform = `translateY(-50%) translateX(-${menuWidth}px)`;
+          } else {
+            // 收回原位
+            toggle.style.transform = `translateY(-50%) translateX(0)`;
+          }
+        });
+
+        window.addEventListener("load", () => {
+          if (menu.classList.contains("open")) {
+            const menuWidth = menu.offsetWidth;
+            toggle.style.transform = `translateY(-50%) translateX(-${menuWidth}px)`;
+          }
         });
 
         // 從 destination-main 區域提取 h2 和 h3，動態生成目錄
@@ -658,6 +831,23 @@
           menuList.appendChild(listItem);
         });
 
+        function adjustMenuPosition() {
+          const nav = document.querySelector("nav");
+          const menu = document.getElementById("expandable-menu");
+      
+          if (nav && menu) {
+            const navHeight = nav.offsetHeight;
+      
+            // 設定 menu 的 top 與高度
+            menu.style.top = `${navHeight}px`;
+            menu.style.height = `calc(100vh - ${navHeight}px)`;
+          }
+        }
+      
+        // 載入與尺寸變化時調整
+        window.addEventListener("DOMContentLoaded", adjustMenuPosition);
+        window.addEventListener("resize", adjustMenuPosition);
+        
         // 滾動至目標位置並加上 75px 偏移
         menuList.addEventListener("click", (event) => {
           if (event.target.tagName === "A") {
@@ -677,6 +867,31 @@
               });
             }
           }
+        });
+        // 手機 Safari 相容：點擊展開 dropdown
+        const dropdownToggles = document.querySelectorAll(".dropdown-toggle");
+
+        dropdownToggles.forEach((toggle) => {
+          toggle.addEventListener("click", function (e) {
+            e.stopPropagation(); // 防止冒泡，避免點擊外層時也觸發關閉
+            const dropdown = this.nextElementSibling;
+            const isVisible = dropdown.style.display === "block";
+            
+            // 關閉所有其他 dropdown（可選）
+            document.querySelectorAll(".dropdown-content").forEach((menu) => {
+              menu.style.display = "none";
+            });
+
+            // 切換目前這一個 dropdown
+            dropdown.style.display = isVisible ? "none" : "block";
+          });
+        });
+
+        // 點擊其他地方時關閉 dropdown
+        window.addEventListener("click", function () {
+          document.querySelectorAll(".dropdown-content").forEach((menu) => {
+            menu.style.display = "none";
+          });
         });
       });
     </script>
