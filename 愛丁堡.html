@@ -12,7 +12,6 @@
       body {
         font-family: Calibri, Arial, sans-serif; /* 首選 Calibri，次選 Arial */
         margin: 0;
-        padding: 0;
         overflow-x: hidden; /* 禁止水平滾動 */
         background-color: #f4f4f9;
         color: #333;
@@ -28,7 +27,6 @@
         font-weight: bold;
         color: #2a90a7;
         display: inline-block;
-        margin-bottom: 1rem; /* 縮小 h2 的底部邊距 */
         background-color: #cee5e8;
       }
 
@@ -36,7 +34,7 @@
         font-size: 26px;
         margin: 0 0 1rem;
         font-weight: bold;
-        text-decoration: underline; /* 加上底線 */
+        text-decoration: underline;
       }
 
       h4 {
@@ -62,56 +60,68 @@
       nav {
         background-color: #78bcc4;
         display: flex;
-        justify-content: space-between; /* 保持分佈在兩側 */
-        width: calc(100% - 10rem); /* 與其他內容的邊界一致 */
-        padding: 0.5rem 5rem; /* 主導覽列的 padding 設置 */
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;                     /* 讓 nav 寬度隨螢幕自適應 */
+        padding: 0.8rem 5vw;               /* 左右 padding 用 5% 寬度 */
+        box-sizing: border-box;         /* 確保 padding 不會影響寬度總長 */
         position: fixed;
         top: 0;
         z-index: 1000;
       }
 
       .nav-left .logo img {
-        height: 50px; /* 控制 Logo 圖片的高度 */
-        transform: translateX(-1.5rem); /* 向右移動 2rem */
+        height: 5vw; /* 高度為螢幕寬度的 5% */
+        transform: translateX(-2vw); /* 向左移動 2% 寬度 */
+        max-width: 100%; /* 確保不會超過容器 */
+        height: auto; /* 保持圖片比例（建議與 max-height 搭配） */
+        max-height: 3rem;
       }
 
       .nav-right {
         display: flex;
         align-items: center;
-        transform: translateX(2rem); /* 向右移動 2rem */
+        margin-left: auto; /* 推到右側 */
+        padding-left: 5%;   /* 內部元素間距，彈性設計 */
       }
 
       nav a {
         color: #eff5f5;
         text-decoration: none;
-        padding: 0.5rem 1rem;
-        margin: 0 0.5rem;
+        padding: 1vh 1vw;
+        margin: 0 1vw;
         transition: transform 0.3s;
       }
 
       nav a:hover {
-        transform: translateY(-3px);
+        transform: translateY(-0.5vh); /* 根據視窗高度調整 */
       }
 
       .dropdown {
         position: relative;
+        display: inline-block;
       }
 
       .dropdown-content {
+        width: 100%; /* 佔滿父層寬度 */
+        max-width: 20vw; /* 限制最大寬度 */
         display: none;
         position: absolute;
         background-color: #78bcc4;
-        min-width: 160px;
-        border-radius: 4px;
-        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        min-width: 10em; /* 取代 160px，以字體大小作為比例單位 */
+        border-radius: 0.25em;
+        box-shadow: 0 0.5em 1em rgba(0, 0, 0, 0.2); /* 改為相對單位 */
         padding: 0.2rem 0;
+        z-index: 999;
       }
 
       .dropdown-content a {
         color: #eff5f5;
         display: block;
         transition: transform 0.3s;
-        border-bottom: 1px solid #ddd;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.3); /* 更淡配色、柔和過渡 */
+        padding: 0.6em 1em;
+        font-size: 1em;
       }
 
       .dropdown-content a:last-child {
@@ -119,107 +129,109 @@
       }
 
       .dropdown-content a:hover {
-        transform: translateY(-3px);
-      }
-
-      .dropdown:hover .dropdown-content {
-        display: block;
+        transform: translateY(-0.25em); /* 改為相對單位 */
       }
 
       .intro-section {
         background-color: #eff5f5;
         display: flex;
-        padding: 2rem;
-        margin-top: 60px; /* 根據導航列高度調整 */
-        justify-content: space-between;
-        align-items: flex-start;
-        width: 100%;
-        box-sizing: border-box; /* 包含 padding 在內 */
-        padding-left: 5rem;
-        padding-right: 5rem;
+        flex-wrap: wrap; /* 確保在小螢幕可換行 */
+        padding: 2rem 5%;
+        margin-top: 4em; /* 根據導航列高度調整 */
       }
 
       .intro-section h4 {
-        max-width: 700px;
+        max-width: 85%; /* 改為相對單位，避免固定寬度限制 */
+        line-height: 1.8;
       }
 
       .intro-section .left {
         width: 60%;
+        padding-right: 1%;
       }
 
       .intro-section .right {
-        width: 40%;
+        width: 39%;
       }
 
       .destination-section {
         display: flex;
+        flex-wrap: wrap;               /* 小螢幕時允許換行 */
         padding: 1rem 5%; /* 左右內間距為螢幕的10% */
         background-color: white;
       }
 
       .destination-main {
-        width: 75%;
-        margin-right: 1.5rem; /* 增加右邊外邊距 */
+        width: 72%;                    /* 主要內容佔 72%，略縮以保留間距 */
+        margin-right: 3%;              /* 與 sidebar 間保留間距（約為 3%） */
+        box-sizing: border-box;
       }
 
       .destination-sidebar {
-        width: 25%;
-        padding-left: 1.5rem; /* 增加左側內邊距 */
-        margin-top: 2rem; /* 向上或向下調整，負值表示向上 */
+        width: 25%;                    /* 側邊欄佔 25% */
+        padding-left: 2%;             /* 相對內邊距 */
+        margin-top: 2rem;
+        box-sizing: border-box;
       }
 
       .sidebar-image-container {
         margin-bottom: 1rem;
-        text-align: center; /* 確保圖片置中 */
+        text-align: center; /* 置中圖片 */
       }
 
       .sidebar-image-container img {
-        height: 300px; /* 設置直式圖片的高度 */
+        width: 90%;         /* 圖片寬度為容器寬度的 90% */
+        height: auto;       /* 高度自動，保持比例 */
+        max-height: 60vh;   /* 避免圖片過高，佔螢幕最大 60% 高 */
+        object-fit: cover;  /* 裁切處理長圖 */
       }
 
       .two-vertical-images {
-        display: flex; /* 彈性佈局，讓圖片並排 */
-        justify-content: space-between; /* 兩張圖片均勻分佈 */
-        gap: 2rem; /* 圖片之間的間距 */
+        display: flex;
+        justify-content: space-between;
+        gap: 4%; /* 使用百分比間距更彈性 */
         margin-top: 2rem;
-        margin-bottom: 2rem; /* 與下方內容的距離 */
+        margin-bottom: 2rem;
+        flex-wrap: wrap; /* 若畫面太小，允許換行 */
       }
 
       .two-vertical-images img {
-        width: calc(50% - 0.5rem); /* 每張圖片佔用容器的一半減去間距 */
-        text-align: center; /* 確保圖片置中 */
-        height: auto; /* 保持圖片的直式比例 */
-        object-fit: cover; /* 確保圖片內容適應容器 */
+        width: 48%; /* 每張圖片約佔一半（加上 gap 剛好 100%） */
+        height: auto; /* 保持原比例 */
+        object-fit: cover;
+        display: block;
+        margin: 0 auto;
       }
 
       .recommendation-section {
-        margin-top: 1.5rem; /* 與上方文字的間距 */
+        margin-top: 3vh; /* 與上方文字的間距 */
         text-align: center;
         position: sticky;
         top: 80px; /* 空出導覽列的高度，確保推薦區不被覆蓋 */
         z-index: 10; /* 提高層級，避免被其他內容遮蓋 */
+        padding: 0 5%;
       }
 
       .recommendation-section h3 {
-        font-size: 18px;
+        font-size: 1.125rem;
         font-weight: bold;
-        margin-bottom: 0.5rem; /* 與按鈕區的距離 */
+        margin-bottom: 1vh; /* 與按鈕區的距離 */
       }
 
       .recommendation-buttons {
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
-        gap: 0.5rem; /* 按鈕之間的間距 */
+        gap: 0.5em; /* 按鈕之間的間距 */
       }
 
       .recommendation-buttons button {
-        padding: 0.5rem 1rem;
-        font-size: 14px;
+        padding: 0.5em 1em;
+        font-size: 0.875rem;
         color: white;
         background-color: #78bcc4;
         border: none;
-        border-radius: 4px;
+        border-radius: 0.25rem;
         transition: transform 0.3s;
         font-family: Arial, sans-serif;
       }
@@ -229,13 +241,13 @@
       }
 
       .contact-section {
-        padding: 2rem 5rem; /* 上下與左右間距 */
+        padding: 4vh 8vw; /* 上下與左右間距 */
         background-color: #eff5f5; /* 淺灰背景 */
         text-align: center; /* 確保內容置中對齊 */
       }
 
       .contact-item h3 {
-        font-size: 18px; /* 調整標題字體大小 */
+        font-size: 1.125rem; /* 調整標題字體大小 */
         margin: 0; /* 移除多餘的間距 */
         text-decoration: none; /* 移除底線 */
       }
@@ -243,43 +255,49 @@
       footer {
         background-color: #000;
         color: white;
-        height: 30px;
+        height: 3vh; /* 使用相對單位，高度占螢幕高度的 3% */
         display: flex;
         justify-content: center;
         align-items: center;
+        font-size: 1.5rem; /* 使用相對字體大小 */
+        padding: 0.5rem 0; /* 確保小螢幕時內容不擠壓 */
       }
 
       #expandable-menu {
-        position: fixed;
-        top: 70px; /* 與螢幕頂部的距離設為 60px */
+        position: fixed; 
         right: 0;
-        height: calc(100% - 70px); /* 高度減去 60px，避免超出視窗 */
-        width: 395px; /* 目錄寬度與 sidebar 齊寬 */
+        width: 26vw; /* 目錄寬度與 sidebar 齊寬 */
+        max-width: 90%; /* 避免在小螢幕太寬 */
         transform: translateX(100%); /* 初始狀態：隱藏在右側 */
         transition: transform 0.3s ease;
         background-color: #f4f4f9; /* 與網站背景一致 */
         z-index: 1000;
+        box-sizing: border-box;
       }
 
       /* 收闔按鈕 */
       #menu-toggle {
-        position: absolute;
+        position: fixed;
         top: 45%;
-        left: -40px; /* 調整按鈕的位置，適應按鈕變大後的寬度 */
-        transform: translateY(-50%);
-        width: 40px; /* 增大按鈕寬度 */
-        height: 80px; /* 增大按鈕高度 */
+        right: 0; /* 永遠貼在右側 */
+        transform: translateY(-50%) translateX(0);
+        width: 2.5em; /* 增大按鈕寬度 */
+        height: 5em; /* 增大按鈕高度 */
         background-color: #78bcc4;
         color: white;
-        border-radius: 4px;
+        border-radius: 0.4em 0 0 0.4em;
         display: flex;
         justify-content: center; /* 水平居中 */
         align-items: center; /* 垂直居中 */
+        z-index: 2000; /* 要比 expandable-menu 更高，避免被蓋住 */
+        cursor: pointer;
+        box-shadow: -0.1em 0 0.3em rgba(0,0,0,0.1);
+        transition: transform 0.3s ease; /* 平滑移動 */
       }
 
       #menu-toggle::after {
         content: "目錄"; /* 在按鈕內顯示 "目錄" */
-        font-size: 17px;
+        font-size: 1rem;
         color: white; /* 設定字體顏色為白色 */
         writing-mode: vertical-rl; /* 使文字垂直排列 */
       }
@@ -290,14 +308,16 @@
 
       /* 目錄內容 */
       #menu-content {
-        padding: 0.5rem 1rem;
+        padding: 0.5rem 5%;
         overflow-y: auto;
         height: 100%;
+        box-sizing: border-box;
       }
 
       #menu-content h4 {
         font-weight: bold;
         margin-top: 0;
+        font-size: 1.2rem;
       }
 
       #menu-list {
@@ -306,13 +326,14 @@
       }
 
       #menu-list li {
-        margin-bottom: 0.5rem;
+        margin-bottom: 1vh;
       }
 
       #menu-list a {
         color: #2a90a7;
         text-decoration: none;
         transition: color 0.3s;
+        font-size: 1rem; /* 使用相對字體大小 */
       }
 
       #menu-list a:hover {
@@ -320,13 +341,149 @@
       }
 
       #menu-list .sub-item {
-        margin-left: 1.5rem; /* 調整縮排距離 */
+        margin-left: 8%; /* 調整縮排距離 */
         font-size: 0.9rem; /* 可選：調整子項目字體大小 */
       }
 
       /* 目錄展開狀態 */
       #expandable-menu.open {
         transform: translateX(0);
+      }
+
+      /* === 響應式調整：針對手機與小螢幕設備 === */
+      @media (max-width: 768px) {
+        nav {
+          flex-direction: row;
+          flex-wrap: wrap;
+          align-items: center;
+          justify-content: space-between;
+          padding: 1rem 5vw;  /* 窄螢幕時減少左右留白 */
+          width: 100%;
+          box-sizing: border-box;
+        }
+
+        .nav-right {
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          gap: 0.5rem;
+          transform: none;
+          width: auto;
+          white-space: nowrap;               /* 禁止內容自動換行 */
+        }
+
+        nav a {
+          padding: 0.5rem 0.5rem;           /* 減少垂直padding */
+          margin: 0 0.3rem;
+          font-size: 0.85rem;
+          white-space: nowrap;               /* 確保文字不換行 */
+          overflow: hidden;
+          text-overflow: ellipsis;           /* 若內容超出，顯示省略號 */
+        }
+
+        .nav-dropdown {
+          width: 60%; /* 或者用 max-content, fit-content 看需求 */
+          font-size: 0.85rem; /* 調整字體大小和導覽列一致 */
+          padding: 0.5rem;
+        }
+      
+        .nav-dropdown a {
+          font-size: inherit; /* 確保跟 .nav-dropdown 一樣大 */
+          padding: 0.5rem 1rem;
+          white-space: normal; /* 可選：讓字在必要時換行 */
+        }
+
+        .dropdown-content {
+          width: 12vw;
+          min-width: 8em; /* 保證至少能顯示幾個字 */
+          max-width: none;
+        }
+
+        .dropdown-content a {
+          font-size: 0.85rem;
+        }
+        
+        .intro-section {
+          flex-direction: column;
+          padding: 8%;
+        }
+
+        .intro-section .left,
+        .intro-section .right {
+          width: 100%;
+          padding: 0;
+          flex: 1 1 100%;
+        }
+
+        .intro-section .right {
+          margin-top: 1.5rem;
+          display: flex;
+          justify-content: center;
+        }
+
+        .intro-section h4 {
+          max-width: 100%;
+          font-size: 1rem;
+        }
+
+        .destination-grid {
+          flex-direction: column;
+          gap: 1rem;
+        }
+
+        .destination-section h4 {
+          font-size: 1rem;
+        }
+
+        .destination-item {
+          max-width: 100%;
+          width: 100%;
+        }
+
+        .destination-item.a_role_with_2 {
+          position: static;
+          left: auto;
+        }
+
+        .destination-main,
+        .destination-sidebar {
+          width: 100%;
+          margin: 0;
+          padding: 0;
+        }
+
+        .destination-sidebar {
+          margin-top: 2rem;
+        }
+
+        .recommendation-buttons button {
+          width: 100%; /* 小螢幕按鈕全寬排列 */
+        }
+
+        .contact-section {
+          padding: 3vh 5vw;
+        }
+
+        .contact-item h3 {
+          font-size: 1rem;
+        }
+
+        /* 目錄區寬度改為螢幕寬度的40% */
+        #expandable-menu {
+          width: 40vw !important; /* 用vw方便響應螢幕寬度 */
+          max-width: 90%; /* 保留原本max-width避免太寬 */
+        }
+      
+        #expandable-menu,
+        #expandable-menu * {
+          font-size: 85% !important;
+        }
+              
+        #menu-toggle {
+          width: 75%;
+          max-width: 1.875em;
+          min-width: 1.875em;
+        }
       }
     </style>
   </head>
@@ -342,7 +499,7 @@
       <div class="nav-right">
         <a href="首頁.html">關於我</a>
         <div class="dropdown">
-          <a>亞洲旅遊</a>
+          <a class="dropdown-toggle">亞洲旅遊</a>
           <div class="dropdown-content">
             <a href="中國.html">中國</a>
             <a href="新加坡.html">新加坡</a>
@@ -353,7 +510,7 @@
           </div>
         </div>
         <div class="dropdown">
-          <a>歐洲旅遊</a>
+          <a class="dropdown-toggle">歐洲旅遊</a>
           <div class="dropdown-content">
             <a href="英國.html">英國</a>
             <a href="法國.html">法國</a>
@@ -371,7 +528,7 @@
           </div>
         </div>
         <div class="dropdown">
-          <a>美洲旅遊</a>
+          <a class="dropdown-toggle">美洲旅遊</a>
           <div class="dropdown-content">
             <a href="美國.html">美國</a>
             <a href="加拿大.html">加拿大</a>
@@ -389,7 +546,7 @@
         </h4>
       </div>
       <div class="right">
-        <img src="英國照片\愛丁堡\愛丁堡_intro.jpg" width="90%" height="350px" />
+        <img src="英國照片\愛丁堡\愛丁堡_intro.jpg" style="width: 100%; height: auto; max-width: 100%;" />
       </div>
     </div>
 
@@ -410,7 +567,7 @@
           在愛丁堡住宿主要以觀光作為首要考量，基本上景點大多都在 High Street 上，<b>推薦大家住在 High Street 附近</b>，飯店選擇多也方便。
         </h4>
         <div style="text-align: center">
-          <img src="英國照片\愛丁堡\愛丁堡_住宿.png" width="1000px" />
+          <img src="英國照片\愛丁堡\愛丁堡_住宿.png" style="width: 100%; max-width: 90vw; height: auto;" />
         </div>
         <br /><br />
         <h2>愛丁堡景點</h2>
@@ -419,7 +576,7 @@
           Royal Mile 是愛丁堡最著名的一條街道，連接了愛丁堡城堡和愛丁堡皇家宮殿，沿著街道兩旁有許多保存完好的中世紀和文藝復興時期建築，具有悠久的歷史和豐富的文化遺產，包括聖吉爾斯大教堂 (St. Giles' Cathedral)、約翰·諾克斯之家 (John Knox House) 和皇家愛丁堡騎士團 (The Palace of Holyroodhouse) 等，街道兩側有許多商店、餐廳、咖啡館和酒吧，也會舉辦一些重要的節日和活動，其中包括愛丁堡藝穗節 (Edinburgh Festival Fringe) 和愛丁堡皇家遊行 (Edinburgh's Royal Military Tattoo)。
         </h4>
         <div style="text-align: center">
-          <img src="英國照片\愛丁堡\ED1.jpg" width="600px" />
+          <img src="英國照片\愛丁堡\ED1.jpg" style="width: 90%; max-width: 600px; height: auto; margin: 0.5rem;" />
         </div>
         <br /><br /><br />
         <h3>愛丁堡城堡 (Edinburgh Castle)</h3>
@@ -430,13 +587,13 @@
           每天正午可以在城堡內觀看一場傳統的炮擊儀式，稱為「一點炮」 (One O'Clock Gun)，這個儀式源於 19 世紀，目的是為了讓在愛丁堡港工作的船員們準確校準他們的時鐘。
         </h4>
         <div style="text-align: center">
-          <img src="英國照片\愛丁堡\ED2.jpg" width="800px" />
+          <img src="英國照片\愛丁堡\ED2.jpg" style="width: 100%; max-width: 90vw; height: auto; margin: 0.5rem;" />
         </div>
         <h4>
           從山下的羅斯噴泉 (Ross Fountain) 可以更完整的拍出愛丁堡城堡的雄偉。
         </h4>
         <div style="text-align: center">
-          <img src="英國照片\愛丁堡\ED3.jpg" width="800px" />
+          <img src="英國照片\愛丁堡\ED3.jpg" style="width: 100%; max-width: 90vw; height: auto; margin: 0.5rem;" />
         </div>
         <br /><br /><br />
         <h3>聖吉爾斯大教堂 (St Giles' Cathedral)</h3>
@@ -444,9 +601,9 @@
           聖吉爾斯大教堂的歷史可以追溯到公元 12 世紀，是獻給被視為愛丁堡的守護聖人的聖吉爾斯 (St. Giles)，教堂在過去的幾個世紀中經歷了多次擴建和改建，呈現出不同的建築風格，包括哥特式和文藝復興風格。教堂的外觀令人印象深刻，特別是其尖塔和華麗的尖頂，內部裝飾精美，包括彩繪玻璃窗、石雕和木雕等藝術品。教堂的中殿是一個寬敞的空間，擁有漂亮的拱頂和教堂的中心特色: 瑪利女王禮拜堂 (The Chapel of the Order of the Thistle)，這個禮拜堂是蘇格蘭最高榮譽勳章「蘇格蘭薊花勳章」(Order of the Thistle) 的會所。
         </h4>
         <div style="text-align: center">
-          <img src="英國照片\愛丁堡\ED4.jpg" width="600px" />
-          <img src="英國照片\愛丁堡\ED5.jpg" width="600px" />
-          <img src="英國照片\愛丁堡\ED6.jpg" width="600px" />
+          <img src="英國照片\愛丁堡\ED4.jpg" style="width: 90%; max-width: 600px; height: auto; margin: 0.5rem;" />
+          <img src="英國照片\愛丁堡\ED5.jpg" style="width: 90%; max-width: 600px; height: auto; margin: 0.5rem;"" />
+          <img src="英國照片\愛丁堡\ED6.jpg" style="width: 90%; max-width: 600px; height: auto; margin: 0.5rem;" />
         </div>
         <br /><br /><br />
         <h3>蘇格蘭國立博物館 (National Museum of Scotland)</h3>
@@ -454,7 +611,7 @@
           蘇格蘭國立博物館成立於 1854 年，並於 2011 年進行了擴建和重新開放，展示了來自不同文化和時期的廣泛收藏，典藏包括自然科學、人類學、藝術和設計等領域的物品，涵蓋了蘇格蘭、英國和全球的歷史和文化，可以在自然科學部門探索地球的演變，了解動植物的多樣性，並觀察珍貴的化石和礦物標本。人類學部門則展示了人類文明的發展，包括古代埃及、古希臘和其他文明的藝術品和文物。藝術和設計部門則展示了從中世紀到現代的蘇格蘭和國際藝術作品，包括名家的繪畫、雕塑和裝飾藝術品。博物館還有一些特色展覽，包括關於蘇格蘭歷史和文化的展覽，以及關於科學和技術的互動展覽。
         </h4>
         <div style="text-align: center">
-          <img src="英國照片\愛丁堡\ED7.jpg" width="600px" />
+          <img src="英國照片\愛丁堡\ED7.jpg" style="width: 90%; max-width: 600px; height: auto; margin: 0.5rem;" />
         </div>
         <br /><br /><br />
         <h3>司各特紀念塔 (Scott Monument)</h3>
@@ -465,7 +622,7 @@
           紀念碑的設計靈感來自於司各特作品中的描述，外部裝飾著對司各特及其作品的雕像和浮雕。在紀念碑的基座上有四個大型雕像代表著史考特筆下的角色，包括《艾薇兒湖》(The Lady of the Lake) 中的艾薇兒湖女主角和《羅伯·羅伊》(Rob Roy) 中的羅伯·羅伊，在紀念碑的頂部，則是一尊巨大的司各特雕像，他手持一本書，底座上刻有他的名言和作品名稱。
         </h4>
         <div style="text-align: center">
-          <img src="英國照片\愛丁堡\ED8.jpg" width="600px" />
+          <img src="英國照片\愛丁堡\ED8.jpg" style="width: 90%; max-width: 600px; height: auto; margin: 0.5rem;" />
         </div>
         <br /><br /><br />
         <h3>卡爾頓山 (Calton Hill)</h3>
@@ -476,10 +633,10 @@
           卡爾頓山還有其他建築物，如「卡爾頓山觀測台」 (Calton Hill Observatory) 和「愛丁堡市議會」(City Observatory)，這些建築物代表了愛丁堡作為科學和文化中心的歷史地位。從卡爾頓山山頂可以欣賞到壯觀的景色，包括愛丁堡城堡、愛丁堡新城區、愛丁堡舊城區和寬闊的弗思河 (Firth of Forth)，特別是在日落時分，這裡的景色尤為令人難以忘懷。
         </h4>
         <div style="text-align: center">
-          <img src="英國照片\愛丁堡\ED9.jpg" width="800px" />
-          <img src="英國照片\愛丁堡\ED10.jpg" width="800px" />
-          <img src="英國照片\愛丁堡\ED11.jpg" width="800px" />
-          <img src="英國照片\愛丁堡\ED12.jpg" width="800px" />
+          <img src="英國照片\愛丁堡\ED9.jpg" style="width: 100%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+          <img src="英國照片\愛丁堡\ED10.jpg" style="width: 100%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+          <img src="英國照片\愛丁堡\ED11.jpg" style="width: 100%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+          <img src="英國照片\愛丁堡\ED12.jpg" style="width: 100%; max-width: 90vw; height: auto; margin: 0.5rem;" />
         </div>
         <br /><br /><br />
         <h3>Holyrood Park</h3>
@@ -487,10 +644,10 @@
           Holyrood Park 以其獨特的地質和地貌而聞名，最著名的特徵是位於公園中心的「亞瑟座」 (Arthur's Seat)，是一個海拔 251 米的古火山口，是愛丁堡最高的山丘之一，可以攀登到阿瑟座的山頂，從那裡欣賞到壯觀的全景，包括愛丁堡市中心、愛丁堡城堡、愛丁堡新城區以及愛丁堡的海岸線。Holyrood Park 也是豐富的生態系統的家園，擁有多樣的植物和野生動物，可能會看到各種鳥類、兔子和甚至是狐狸和鹿。
         </h4>
         <div style="text-align: center">
-          <img src="英國照片\愛丁堡\ED13.jpg" width="600px" />
-          <img src="英國照片\愛丁堡\ED14.jpg" width="600px" />
-          <img src="英國照片\愛丁堡\ED15.jpg" width="800px" />
-          <img src="英國照片\愛丁堡\ED16.jpg" width="800px" />
+          <img src="英國照片\愛丁堡\ED13.jpg" style="width: 90%; max-width: 600px; height: auto; margin: 0.5rem;" />
+          <img src="英國照片\愛丁堡\ED14.jpg" style="width: 90%; max-width: 600px; height: auto; margin: 0.5rem;" />
+          <img src="英國照片\愛丁堡\ED15.jpg" style="width: 100%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+          <img src="英國照片\愛丁堡\ED16.jpg" style="width: 100%; max-width: 90vw; height: auto; margin: 0.5rem;" />
         </div>
         <br /><br /><br />
         <h3>Dean Village</h3>
@@ -499,10 +656,10 @@
         </h4>
         <h4>Dean Village 的建築特色包括色彩鮮豔的石頭房屋、傾斜的屋頂、傳統的窗戶和裝飾性的石雕，反映了愛丁堡過去的歷史和建築風格，給人一種迷人而寧靜的感覺。</h4>
         <div style="text-align: center">
-          <img src="英國照片\愛丁堡\ED17.jpg" width="800px" />
-          <img src="英國照片\愛丁堡\ED18.jpg" width="800px" />
-          <img src="英國照片\愛丁堡\ED19.jpg" width="800px" />
-          <img src="英國照片\愛丁堡\ED20.jpg" width="800px" />
+          <img src="英國照片\愛丁堡\ED17.jpg" style="width: 100%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+          <img src="英國照片\愛丁堡\ED18.jpg" style="width: 100%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+          <img src="英國照片\愛丁堡\ED19.jpg" style="width: 100%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+          <img src="英國照片\愛丁堡\ED20.jpg" style="width: 100%; max-width: 90vw; height: auto; margin: 0.5rem;" />
         </div>
         <br /><br /><br />
         <h2>愛丁堡美食</h2>
@@ -511,8 +668,8 @@
           來到蘇格蘭肯定要吃蘇格蘭料理，精挑細選了這家網紅餐廳，比一般用餐時間早來卻還是須要等個 15 分鐘，點了慢燉羊腿配起司薯泥，羊腿燉的非常軟爛但不會有騷味，第一次嘗試蘇格蘭炸蛋，外皮脆脆的口感十分特別，像是裹了炸皮的水煮蛋，再配上酸洋蔥醬非常好吃，<b>建議大家要事先訂位</b>。
         </h4>
         <div style="text-align: center">
-          <img src="英國照片\愛丁堡\ED21.jpg" width="800px" />
-          <img src="英國照片\愛丁堡\ED22.png" width="800px" />
+          <img src="英國照片\愛丁堡\ED21.jpg" style="width: 100%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+          <img src="英國照片\愛丁堡\ED22.png" style="width: 100%; max-width: 90vw; height: auto; margin: 0.5rem;" />
         </div>
         <br />
       </div>
@@ -571,9 +728,8 @@
     <footer>
       <h6>COPYRIGHT © 2025 Tommy 看世界 All rights reserved.</h6>
     </footer>
+    <div id="menu-toggle"></div>
     <div id="expandable-menu">
-      <div id="menu-toggle"></div>
-      <!-- 收闔按鈕 -->
       <div id="menu-content">
         <h4>目錄</h4>
         <ul id="menu-list"></ul>
@@ -590,6 +746,23 @@
         // 點擊按鈕切換目錄狀態
         toggle.addEventListener("click", () => {
           menu.classList.toggle("open");
+
+          const menuWidth = menu.offsetWidth; // 獲取目前展開的目錄寬度
+
+          if (menu.classList.contains("open")) {
+            // 讓按鈕向左平移與 menu 一樣的寬度
+            toggle.style.transform = `translateY(-50%) translateX(-${menuWidth}px)`;
+          } else {
+            // 收回原位
+            toggle.style.transform = `translateY(-50%) translateX(0)`;
+          }
+        });
+
+        window.addEventListener("load", () => {
+          if (menu.classList.contains("open")) {
+            const menuWidth = menu.offsetWidth;
+            toggle.style.transform = `translateY(-50%) translateX(-${menuWidth}px)`;
+          }
         });
 
         // 從 destination-main 區域提取 h2 和 h3，動態生成目錄
@@ -614,6 +787,23 @@
           menuList.appendChild(listItem);
         });
 
+        function adjustMenuPosition() {
+          const nav = document.querySelector("nav");
+          const menu = document.getElementById("expandable-menu");
+      
+          if (nav && menu) {
+            const navHeight = nav.offsetHeight;
+      
+            // 設定 menu 的 top 與高度
+            menu.style.top = `${navHeight}px`;
+            menu.style.height = `calc(100vh - ${navHeight}px)`;
+          }
+        }
+      
+        // 載入與尺寸變化時調整
+        window.addEventListener("DOMContentLoaded", adjustMenuPosition);
+        window.addEventListener("resize", adjustMenuPosition);
+        
         // 滾動至目標位置並加上 75px 偏移
         menuList.addEventListener("click", (event) => {
           if (event.target.tagName === "A") {
@@ -633,6 +823,31 @@
               });
             }
           }
+        });
+        // 手機 Safari 相容：點擊展開 dropdown
+        const dropdownToggles = document.querySelectorAll(".dropdown-toggle");
+
+        dropdownToggles.forEach((toggle) => {
+          toggle.addEventListener("click", function (e) {
+            e.stopPropagation(); // 防止冒泡，避免點擊外層時也觸發關閉
+            const dropdown = this.nextElementSibling;
+            const isVisible = dropdown.style.display === "block";
+            
+            // 關閉所有其他 dropdown（可選）
+            document.querySelectorAll(".dropdown-content").forEach((menu) => {
+              menu.style.display = "none";
+            });
+
+            // 切換目前這一個 dropdown
+            dropdown.style.display = isVisible ? "none" : "block";
+          });
+        });
+
+        // 點擊其他地方時關閉 dropdown
+        window.addEventListener("click", function () {
+          document.querySelectorAll(".dropdown-content").forEach((menu) => {
+            menu.style.display = "none";
+          });
         });
       });
     </script>
