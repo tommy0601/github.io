@@ -12,7 +12,6 @@
       body {
         font-family: Calibri, Arial, sans-serif; /* 首選 Calibri，次選 Arial */
         margin: 0;
-        padding: 0;
         overflow-x: hidden; /* 禁止水平滾動 */
         background-color: #f4f4f9;
         color: #333;
@@ -28,7 +27,6 @@
         font-weight: bold;
         color: #2a90a7;
         display: inline-block;
-        margin-bottom: 1rem; /* 縮小 h2 的底部邊距 */
         background-color: #cee5e8;
       }
 
@@ -36,7 +34,7 @@
         font-size: 26px;
         margin: 0 0 1rem;
         font-weight: bold;
-        text-decoration: underline; /* 加上底線 */
+        text-decoration: underline;
       }
 
       h4 {
@@ -62,56 +60,68 @@
       nav {
         background-color: #78bcc4;
         display: flex;
-        justify-content: space-between; /* 保持分佈在兩側 */
-        width: calc(100% - 10rem); /* 與其他內容的邊界一致 */
-        padding: 0.5rem 5rem; /* 主導覽列的 padding 設置 */
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;                     /* 讓 nav 寬度隨螢幕自適應 */
+        padding: 0.8rem 5vw;               /* 左右 padding 用 5% 寬度 */
+        box-sizing: border-box;         /* 確保 padding 不會影響寬度總長 */
         position: fixed;
         top: 0;
         z-index: 1000;
       }
 
       .nav-left .logo img {
-        height: 50px; /* 控制 Logo 圖片的高度 */
-        transform: translateX(-1.5rem); /* 向右移動 2rem */
+        height: 5vw; /* 高度為螢幕寬度的 5% */
+        transform: translateX(-2vw); /* 向左移動 2% 寬度 */
+        max-width: 100%; /* 確保不會超過容器 */
+        height: auto; /* 保持圖片比例（建議與 max-height 搭配） */
+        max-height: 3rem;
       }
 
       .nav-right {
         display: flex;
         align-items: center;
-        transform: translateX(2rem); /* 向右移動 2rem */
+        margin-left: auto; /* 推到右側 */
+        padding-left: 5%;   /* 內部元素間距，彈性設計 */
       }
 
       nav a {
         color: #eff5f5;
         text-decoration: none;
-        padding: 0.5rem 1rem;
-        margin: 0 0.5rem;
+        padding: 1vh 1vw;
+        margin: 0 1vw;
         transition: transform 0.3s;
       }
 
       nav a:hover {
-        transform: translateY(-3px);
+        transform: translateY(-0.5vh); /* 根據視窗高度調整 */
       }
 
       .dropdown {
         position: relative;
+        display: inline-block;
       }
 
       .dropdown-content {
+        width: 100%; /* 佔滿父層寬度 */
+        max-width: 20vw; /* 限制最大寬度 */
         display: none;
         position: absolute;
         background-color: #78bcc4;
-        min-width: 160px;
-        border-radius: 4px;
-        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        min-width: 10em; /* 取代 160px，以字體大小作為比例單位 */
+        border-radius: 0.25em;
+        box-shadow: 0 0.5em 1em rgba(0, 0, 0, 0.2); /* 改為相對單位 */
         padding: 0.2rem 0;
+        z-index: 999;
       }
 
       .dropdown-content a {
         color: #eff5f5;
         display: block;
         transition: transform 0.3s;
-        border-bottom: 1px solid #ddd;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.3); /* 更淡配色、柔和過渡 */
+        padding: 0.6em 1em;
+        font-size: 1em;
       }
 
       .dropdown-content a:last-child {
@@ -119,107 +129,109 @@
       }
 
       .dropdown-content a:hover {
-        transform: translateY(-3px);
-      }
-
-      .dropdown:hover .dropdown-content {
-        display: block;
+        transform: translateY(-0.25em); /* 改為相對單位 */
       }
 
       .intro-section {
         background-color: #eff5f5;
         display: flex;
-        padding: 2rem;
-        margin-top: 60px; /* 根據導航列高度調整 */
-        justify-content: space-between;
-        align-items: flex-start;
-        width: 100%;
-        box-sizing: border-box; /* 包含 padding 在內 */
-        padding-left: 5rem;
-        padding-right: 5rem;
+        flex-wrap: wrap; /* 確保在小螢幕可換行 */
+        padding: 2rem 5%;
+        margin-top: 4em; /* 根據導航列高度調整 */
       }
 
       .intro-section h4 {
-        max-width: 700px;
+        max-width: 85%; /* 改為相對單位，避免固定寬度限制 */
+        line-height: 1.8;
       }
 
       .intro-section .left {
         width: 60%;
+        padding-right: 1%;
       }
 
       .intro-section .right {
-        width: 40%;
+        width: 39%;
       }
 
       .destination-section {
         display: flex;
+        flex-wrap: wrap;               /* 小螢幕時允許換行 */
         padding: 1rem 5%; /* 左右內間距為螢幕的10% */
         background-color: white;
       }
 
       .destination-main {
-        width: 75%;
-        margin-right: 1.5rem; /* 增加右邊外邊距 */
+        width: 72%;                    /* 主要內容佔 72%，略縮以保留間距 */
+        margin-right: 3%;              /* 與 sidebar 間保留間距（約為 3%） */
+        box-sizing: border-box;
       }
 
       .destination-sidebar {
-        width: 25%;
-        padding-left: 1.5rem; /* 增加左側內邊距 */
-        margin-top: 2rem; /* 向上或向下調整，負值表示向上 */
+        width: 25%;                    /* 側邊欄佔 25% */
+        padding-left: 2%;             /* 相對內邊距 */
+        margin-top: 2rem;
+        box-sizing: border-box;
       }
 
       .sidebar-image-container {
         margin-bottom: 1rem;
-        text-align: center; /* 確保圖片置中 */
+        text-align: center; /* 置中圖片 */
       }
 
       .sidebar-image-container img {
-        height: 300px; /* 設置直式圖片的高度 */
+        width: 90%;         /* 圖片寬度為容器寬度的 90% */
+        height: auto;       /* 高度自動，保持比例 */
+        max-height: 60vh;   /* 避免圖片過高，佔螢幕最大 60% 高 */
+        object-fit: cover;  /* 裁切處理長圖 */
       }
 
       .two-vertical-images {
-        display: flex; /* 彈性佈局，讓圖片並排 */
-        justify-content: space-between; /* 兩張圖片均勻分佈 */
-        gap: 2rem; /* 圖片之間的間距 */
+        display: flex;
+        justify-content: space-between;
+        gap: 4%; /* 使用百分比間距更彈性 */
         margin-top: 2rem;
-        margin-bottom: 2rem; /* 與下方內容的距離 */
+        margin-bottom: 2rem;
+        flex-wrap: wrap; /* 若畫面太小，允許換行 */
       }
 
       .two-vertical-images img {
-        width: calc(50% - 0.5rem); /* 每張圖片佔用容器的一半減去間距 */
-        text-align: center; /* 確保圖片置中 */
-        height: auto; /* 保持圖片的直式比例 */
-        object-fit: cover; /* 確保圖片內容適應容器 */
+        width: 48%; /* 每張圖片約佔一半（加上 gap 剛好 100%） */
+        height: auto; /* 保持原比例 */
+        object-fit: cover;
+        display: block;
+        margin: 0 auto;
       }
 
       .recommendation-section {
-        margin-top: 1.5rem; /* 與上方文字的間距 */
+        margin-top: 3vh; /* 與上方文字的間距 */
         text-align: center;
         position: sticky;
         top: 80px; /* 空出導覽列的高度，確保推薦區不被覆蓋 */
         z-index: 10; /* 提高層級，避免被其他內容遮蓋 */
+        padding: 0 5%;
       }
 
       .recommendation-section h3 {
-        font-size: 18px;
+        font-size: 1.125rem;
         font-weight: bold;
-        margin-bottom: 0.5rem; /* 與按鈕區的距離 */
+        margin-bottom: 1vh; /* 與按鈕區的距離 */
       }
 
       .recommendation-buttons {
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
-        gap: 0.5rem; /* 按鈕之間的間距 */
+        gap: 0.5em; /* 按鈕之間的間距 */
       }
 
       .recommendation-buttons button {
-        padding: 0.5rem 1rem;
-        font-size: 14px;
+        padding: 0.5em 1em;
+        font-size: 0.875rem;
         color: white;
         background-color: #78bcc4;
         border: none;
-        border-radius: 4px;
+        border-radius: 0.25rem;
         transition: transform 0.3s;
         font-family: Arial, sans-serif;
       }
@@ -229,13 +241,13 @@
       }
 
       .contact-section {
-        padding: 2rem 5rem; /* 上下與左右間距 */
+        padding: 4vh 8vw; /* 上下與左右間距 */
         background-color: #eff5f5; /* 淺灰背景 */
         text-align: center; /* 確保內容置中對齊 */
       }
 
       .contact-item h3 {
-        font-size: 18px; /* 調整標題字體大小 */
+        font-size: 1.125rem; /* 調整標題字體大小 */
         margin: 0; /* 移除多餘的間距 */
         text-decoration: none; /* 移除底線 */
       }
@@ -243,43 +255,49 @@
       footer {
         background-color: #000;
         color: white;
-        height: 30px;
+        height: 3vh; /* 使用相對單位，高度占螢幕高度的 3% */
         display: flex;
         justify-content: center;
         align-items: center;
+        font-size: 1.5rem; /* 使用相對字體大小 */
+        padding: 0.5rem 0; /* 確保小螢幕時內容不擠壓 */
       }
 
       #expandable-menu {
-        position: fixed;
-        top: 70px; /* 與螢幕頂部的距離設為 60px */
+        position: fixed; 
         right: 0;
-        height: calc(100% - 70px); /* 高度減去 60px，避免超出視窗 */
-        width: 395px; /* 目錄寬度與 sidebar 齊寬 */
+        width: 26vw; /* 目錄寬度與 sidebar 齊寬 */
+        max-width: 90%; /* 避免在小螢幕太寬 */
         transform: translateX(100%); /* 初始狀態：隱藏在右側 */
         transition: transform 0.3s ease;
         background-color: #f4f4f9; /* 與網站背景一致 */
         z-index: 1000;
+        box-sizing: border-box;
       }
 
       /* 收闔按鈕 */
       #menu-toggle {
-        position: absolute;
+        position: fixed;
         top: 45%;
-        left: -40px; /* 調整按鈕的位置，適應按鈕變大後的寬度 */
-        transform: translateY(-50%);
-        width: 40px; /* 增大按鈕寬度 */
-        height: 80px; /* 增大按鈕高度 */
+        right: 0; /* 永遠貼在右側 */
+        transform: translateY(-50%) translateX(0);
+        width: 2.5em; /* 增大按鈕寬度 */
+        height: 5em; /* 增大按鈕高度 */
         background-color: #78bcc4;
         color: white;
-        border-radius: 4px;
+        border-radius: 0.4em 0 0 0.4em;
         display: flex;
         justify-content: center; /* 水平居中 */
         align-items: center; /* 垂直居中 */
+        z-index: 2000; /* 要比 expandable-menu 更高，避免被蓋住 */
+        cursor: pointer;
+        box-shadow: -0.1em 0 0.3em rgba(0,0,0,0.1);
+        transition: transform 0.3s ease; /* 平滑移動 */
       }
 
       #menu-toggle::after {
         content: "目錄"; /* 在按鈕內顯示 "目錄" */
-        font-size: 17px;
+        font-size: 1rem;
         color: white; /* 設定字體顏色為白色 */
         writing-mode: vertical-rl; /* 使文字垂直排列 */
       }
@@ -290,14 +308,16 @@
 
       /* 目錄內容 */
       #menu-content {
-        padding: 0.5rem 1rem;
+        padding: 0.5rem 5%;
         overflow-y: auto;
         height: 100%;
+        box-sizing: border-box;
       }
 
       #menu-content h4 {
         font-weight: bold;
         margin-top: 0;
+        font-size: 1.2rem;
       }
 
       #menu-list {
@@ -306,13 +326,14 @@
       }
 
       #menu-list li {
-        margin-bottom: 0.5rem;
+        margin-bottom: 1vh;
       }
 
       #menu-list a {
         color: #2a90a7;
         text-decoration: none;
         transition: color 0.3s;
+        font-size: 1rem; /* 使用相對字體大小 */
       }
 
       #menu-list a:hover {
@@ -320,13 +341,149 @@
       }
 
       #menu-list .sub-item {
-        margin-left: 1.5rem; /* 調整縮排距離 */
+        margin-left: 8%; /* 調整縮排距離 */
         font-size: 0.9rem; /* 可選：調整子項目字體大小 */
       }
 
       /* 目錄展開狀態 */
       #expandable-menu.open {
         transform: translateX(0);
+      }
+
+      /* === 響應式調整：針對手機與小螢幕設備 === */
+      @media (max-width: 768px) {
+        nav {
+          flex-direction: row;
+          flex-wrap: wrap;
+          align-items: center;
+          justify-content: space-between;
+          padding: 1rem 5vw;  /* 窄螢幕時減少左右留白 */
+          width: 100%;
+          box-sizing: border-box;
+        }
+
+        .nav-right {
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          gap: 0.5rem;
+          transform: none;
+          width: auto;
+          white-space: nowrap;               /* 禁止內容自動換行 */
+        }
+
+        nav a {
+          padding: 0.5rem 0.5rem;           /* 減少垂直padding */
+          margin: 0 0.3rem;
+          font-size: 0.85rem;
+          white-space: nowrap;               /* 確保文字不換行 */
+          overflow: hidden;
+          text-overflow: ellipsis;           /* 若內容超出，顯示省略號 */
+        }
+
+        .nav-dropdown {
+          width: 60%; /* 或者用 max-content, fit-content 看需求 */
+          font-size: 0.85rem; /* 調整字體大小和導覽列一致 */
+          padding: 0.5rem;
+        }
+      
+        .nav-dropdown a {
+          font-size: inherit; /* 確保跟 .nav-dropdown 一樣大 */
+          padding: 0.5rem 1rem;
+          white-space: normal; /* 可選：讓字在必要時換行 */
+        }
+
+        .dropdown-content {
+          width: 12vw;
+          min-width: 8em; /* 保證至少能顯示幾個字 */
+          max-width: none;
+        }
+
+        .dropdown-content a {
+          font-size: 0.85rem;
+        }
+        
+        .intro-section {
+          flex-direction: column;
+          padding: 8%;
+        }
+
+        .intro-section .left,
+        .intro-section .right {
+          width: 100%;
+          padding: 0;
+          flex: 1 1 100%;
+        }
+
+        .intro-section .right {
+          margin-top: 1.5rem;
+          display: flex;
+          justify-content: center;
+        }
+
+        .intro-section h4 {
+          max-width: 100%;
+          font-size: 1rem;
+        }
+
+        .destination-grid {
+          flex-direction: column;
+          gap: 1rem;
+        }
+
+        .destination-section h4 {
+          font-size: 1rem;
+        }
+
+        .destination-item {
+          max-width: 100%;
+          width: 100%;
+        }
+
+        .destination-item.a_role_with_2 {
+          position: static;
+          left: auto;
+        }
+
+        .destination-main,
+        .destination-sidebar {
+          width: 100%;
+          margin: 0;
+          padding: 0;
+        }
+
+        .destination-sidebar {
+          margin-top: 2rem;
+        }
+
+        .recommendation-buttons button {
+          width: 100%; /* 小螢幕按鈕全寬排列 */
+        }
+
+        .contact-section {
+          padding: 3vh 5vw;
+        }
+
+        .contact-item h3 {
+          font-size: 1rem;
+        }
+
+        /* 目錄區寬度改為螢幕寬度的40% */
+        #expandable-menu {
+          width: 40vw !important; /* 用vw方便響應螢幕寬度 */
+          max-width: 90%; /* 保留原本max-width避免太寬 */
+        }
+      
+        #expandable-menu,
+        #expandable-menu * {
+          font-size: 85% !important;
+        }
+              
+        #menu-toggle {
+          width: 75%;
+          max-width: 1.875em;
+          min-width: 1.875em;
+        }
       }
     </style>
   </head>
@@ -342,7 +499,7 @@
       <div class="nav-right">
         <a href="首頁.html">關於我</a>
         <div class="dropdown">
-          <a>亞洲旅遊</a>
+          <a class="dropdown-toggle">亞洲旅遊</a>
           <div class="dropdown-content">
             <a href="中國.html">中國</a>
             <a href="新加坡.html">新加坡</a>
@@ -353,7 +510,7 @@
           </div>
         </div>
         <div class="dropdown">
-          <a>歐洲旅遊</a>
+          <a class="dropdown-toggle">歐洲旅遊</a>
           <div class="dropdown-content">
             <a href="英國.html">英國</a>
             <a href="法國.html">法國</a>
@@ -371,7 +528,7 @@
           </div>
         </div>
         <div class="dropdown">
-          <a>美洲旅遊</a>
+          <a class="dropdown-toggle">美洲旅遊</a>
           <div class="dropdown-content">
             <a href="美國.html">美國</a>
             <a href="加拿大.html">加拿大</a>
@@ -389,7 +546,7 @@
         </h4>
       </div>
       <div class="right">
-        <img src="法國照片\巴黎\巴黎_介紹.jpg" width="90%" height="350px" />
+        <img src="法國照片\巴黎\巴黎_介紹.jpg" style="width: 100%; height: auto; max-width: 100%;" />
       </div>
     </div>
 
@@ -414,7 +571,7 @@
           target="_blank">Navigo 週票</a>，便可以在時間內無限次數搭乘地鐵、公車還有城際火車。
         </h4>
         <div style="text-align: center">
-          <img src="法國照片\巴黎\巴黎_交通.png" width="1000px" />
+          <img src="法國照片\巴黎\巴黎_交通.png" style="width: 100%; height: auto; max-width: 100%;" />
         </div>
         <br /><br />
         <h2>巴黎住宿</h2>
@@ -425,8 +582,8 @@
           在篩選住宿的時候可以根據以此為根據挑選地點，也<b>建議是住在 1 ~ 7 區最好</b>。
         </h4>
         <div style="text-align: center">
-          <img src="法國照片\巴黎\巴黎_住宿1.png" width="1000px" />
-          <img src="法國照片\巴黎\巴黎_住宿2.png" width="1000px" />
+          <img src="法國照片\巴黎\巴黎_住宿1.png" style="width: 100%; height: auto; max-width: 100%;" />
+          <img src="法國照片\巴黎\巴黎_住宿2.png" style="width: 100%; height: auto; max-width: 100%;" />
         </div>
         <br /><br />
         <h2>巴黎景點</h2>
@@ -435,9 +592,9 @@
           聖心堂是一座著名的天主教教堂，位於市中心的蒙馬特山頂，建築始於 1875 年，但直到 1914 年第一次世界大戰期間才完成。這座教堂由建築師 Paul Abadie 設計，建築風格融合了羅馬式和拜占庭式的特點，具有壯麗的圓頂和白色石材建築，圓頂高達 80 米，在內部可以參觀美麗的宗教藝術作品，包括壁畫、彩繪玻璃窗和雕塑。從教堂外也可以欣賞到巴黎市中心的壯麗景色，包括巴黎市區的其他地標。要特別注意的是聖心堂位於 18 區，是相對治安最糟的地區，走在路上一定要非常小心，如果有人向你靠近千萬要馬上閃開，因為很有可能是會往你手上繫手環再強制收費的手環黨。
         </h4>
         <div style="text-align: center">
-          <img src="法國照片\巴黎\PR1.jpg" width="600px" />
-          <img src="法國照片\巴黎\PR2.jpg" width="800px" />
-          <img src="法國照片\巴黎\PR3.jpg" width="800px" />
+          <img src="法國照片\巴黎\PR1.jpg" style="width: 90%; max-width: 600px; height: auto; margin: 0.5rem;" />
+          <img src="法國照片\巴黎\PR2.jpg" style="width: 100%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+          <img src="法國照片\巴黎\PR3.jpg" style="width: 100%; max-width: 90vw; height: auto; margin: 0.5rem;" />
         </div>
         <br /><br /><br />
         <h3>愛牆 (Le Mur des Je t'aime)</h3>
@@ -445,7 +602,7 @@
           愛牆位於蒙馬特區，是一個象徵著愛和和平的特殊景點。這面牆壁被彩色瓷磚覆蓋，上面用超過 250 種語言書寫著「我愛你」，呈現出一種多樣性和包容性的象徵。概念來自法國藝術家 Frédéric Baron 和 Claire Kito，他們在世界各地旅行時意識到「我愛你」這個簡單而又強大的詞語在不同語言和文化中的重要性，於是決定創建這個跨文化的愛的紀念碑。這個地方也經常成為情侶們表達愛意、拍照留念的地方，是一個浪漫的巴黎地標。
         </h4>
         <div style="text-align: center">
-          <img src="法國照片\巴黎\PR4.jpg" width="800px" />
+          <img src="法國照片\巴黎\PR4.jpg" style="width: 100%; max-width: 90vw; height: auto; margin: 0.5rem;" />
         </div>
         <br /><br /><br />
         <h3>紅磨坊 (Moulin Rouge)</h3>
@@ -454,7 +611,7 @@
           target="_blank">官網</a>的場次購票。
         </h4>
         <div style="text-align: center">
-          <img src="法國照片\巴黎\PR5.jpg" width="800px" />
+          <img src="法國照片\巴黎\PR5.jpg" style="width: 100%; max-width: 90vw; height: auto; margin: 0.5rem;" />
         </div>
         <br /><br /><br />
         <h3>盧森堡宮 (Palais du Luxembourg)</h3>
@@ -462,7 +619,7 @@
           盧森堡宮建於 1615 年至 1627 年之間，由法國國王亨利四世的皇后瑪麗·德·美第奇訂造作為她的住所，現在是法國參議院的所在地。盧森堡宮以其華麗的建築風格和壯觀的花園而聞名，建築風格為文藝复興時期的義大利風格，擁有精美的立面、華麗的圓頂和壯麗的內部裝飾，宮殿的建築物包括參議院議事廳、展覽廳和一些官邸。盧森堡宮的花園也是一個著名的景點，佔地約 23 公頃，是巴黎最大的公共花園之一，以其精美的設計和豐富多彩的植物而聞名，包括花壇、噴泉和雕塑。
         </h4>
         <div style="text-align: center">
-          <img src="法國照片\巴黎\PR6.jpg" width="800px" />
+          <img src="法國照片\巴黎\PR6.jpg" style="width: 100%; max-width: 90vw; height: auto; margin: 0.5rem;" />
         </div>
         <br /><br /><br />
         <h3>聖母院 (Notre-Dame de Paris)</h3>
@@ -472,8 +629,8 @@
         <h4>聖母院的建築風格是典型的哥特式，具有高聳的拱頂、尖塔、精美的彩色玻璃窗和華麗的浮雕，教堂的西立面有三座巨大的玫瑰窗。聖母院不僅是一座宗教建築，也是法國歷史和文化的象徵，曾經歷了許多重要的歷史事件，包括法國大革命期間的破壞和重建。在維克多·雨果的小說《巴黎聖母院》中，聖母院被描繪成一個神秘而又浪漫的地方，成為了文學作品和電影的靈感來源，也可以登上的塔頂，俯瞰整個巴黎市景。</h4>
         <h4>雖然先前聖母院有發生火災，但現在已經重新開放了，可以在<a href="https://www.notredamedeparis.fr/en/" target="_blank">官網</a>提前購票。</h4>
         <div style="text-align: center">
-          <img src="法國照片\巴黎\PR7.jpg" width="600px" />
-          <img src="法國照片\巴黎\PR8.jpg" width="600px" />
+          <img src="法國照片\巴黎\PR7.jpg" style="width: 90%; max-width: 600px; height: auto; margin: 0.5rem;" />
+          <img src="法國照片\巴黎\PR8.jpg" style="width: 90%; max-width: 600px; height: auto; margin: 0.5rem;" />
         </div>
         <br /><br /><br />
         <h3>艾菲爾鐵塔 (Eiffel Tower)</h3>
@@ -482,9 +639,9 @@
           吸引了來自世界各地的遊客和藝術家，建議先在<a href="https://www.toureiffel.paris/en/rates-opening-times" target="_blank">官網</a>上先訂票以免額滿撲空喔。
         </h4>
         <div style="text-align: center">
-          <img src="法國照片\巴黎\PR9.jpg" width="600px" />
-          <img src="法國照片\巴黎\PR10.jpg" width="600px" />
-          <img src="法國照片\巴黎\PR11.jpg" width="600px" />
+          <img src="法國照片\巴黎\PR9.jpg" style="width: 90%; max-width: 600px; height: auto; margin: 0.5rem;" />
+          <img src="法國照片\巴黎\PR10.jpg" style="width: 90%; max-width: 600px; height: auto; margin: 0.5rem;" />
+          <img src="法國照片\巴黎\PR11.jpg" style="width: 90%; max-width: 600px; height: auto; margin: 0.5rem;" />
         </div>
         <br /><br /><br />
         <h3>凱旋門 (Arc de Triomphe)</h3>
@@ -493,8 +650,8 @@
           凱旋門都是舉辦慶祝活動和遊行的重要場所，更多細節與購票資訊可以參考<a href="https://tickets.monuments-nationaux.fr/en-GB/families?site=2032863779450400197" target="_blank">官網</a>喔!
         </h4>
         <div style="text-align: center">
-          <img src="法國照片\巴黎\PR12.jpg" width="600px" />
-          <img src="法國照片\巴黎\PR13.jpg" width="600px" />
+          <img src="法國照片\巴黎\PR12.jpg" style="width: 90%; max-width: 600px; height: auto; margin: 0.5rem;" />
+          <img src="法國照片\巴黎\PR13.jpg" style="width: 90%; max-width: 600px; height: auto; margin: 0.5rem;" />
         </div>
         <br /><br /><br />
         <h3>香榭麗舍大道 (Champs-Élysées)</h3>
@@ -502,10 +659,10 @@
           香榭麗舍大道是世界上最著名的大道，位於巴黎的第 8 區，從協和廣場 (Place de la Concorde) 一路延伸至凱旋門，曾是法國貴族的遊樂場所，如今則是巴黎最受歡迎的購物和休閒街區，大道兩旁是一系列高檔時裝店、豪華酒店、劇院、咖啡館和餐廳。每年的 7 月 14 日法國國慶日，大道上會舉行盛大的閱兵儀式和慶祝活動。
         </h4>
         <div style="text-align: center">
-          <img src="法國照片\巴黎\PR14.jpg" width="600px" />
-          <img src="法國照片\巴黎\PR15.jpg" width="800px" />
-          <img src="法國照片\巴黎\PR16.jpg" width="600px" />
-          <img src="法國照片\巴黎\PR17.jpg" width="800px" />
+          <img src="法國照片\巴黎\PR14.jpg" style="width: 90%; max-width: 600px; height: auto; margin: 0.5rem;" />
+          <img src="法國照片\巴黎\PR15.jpg" style="width: 100%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+          <img src="法國照片\巴黎\PR16.jpg" style="width: 90%; max-width: 600px; height: auto; margin: 0.5rem;" />
+          <img src="法國照片\巴黎\PR17.jpg" style="width: 100%; max-width: 90vw; height: auto; margin: 0.5rem;" />
         </div>
         <br /><br /><br />
         <h3>巴黎歌劇院 (Palais Garnier)</h3>
@@ -513,7 +670,7 @@
           巴黎歌劇院位於巴黎第 9 區，由建築師夏爾·加尼爾 (Charles Garnier) 設計，於 1875 年正式開幕，外觀充滿了古典主義和巴洛克風格的元素，包括巨大的圓頂、浮雕、雕塑和壁畫，展現出當時法國建築的繁榮和奢華。歌劇院內部更是華麗絢麗，包括金碧輝煌的大理石大廳、精美的吊燈、壯麗的大樓梯、雕像和壁畫，每一處都充滿了藝術氣息。劇院主要的音樂廳可容納近 2000 名觀眾，是世界上最大的歌劇院之一。
         </h4>
         <div style="text-align: center">
-          <img src="法國照片\巴黎\PR18.jpg" width="800px" />
+          <img src="法國照片\巴黎\PR18.jpg" style="width: 100%; max-width: 90vw; height: auto; margin: 0.5rem;" />
         </div>
         <br /><br /><br />
         <h3>羅浮宮 (Louvre)</h3>
@@ -524,9 +681,9 @@
           只要計算好參觀時間跟數量的話可以省下一些旅費，也可以參考羅浮宮<a href="https://www.louvre.fr/en" target="_blank">官網</a>喔!
         </h4>
         <div style="text-align: center">
-          <img src="法國照片\巴黎\PR19.jpg" width="800px" />
-          <img src="法國照片\巴黎\PR20.jpg" width="800px" />
-          <img src="法國照片\巴黎\PR21.jpg" width="800px" />
+          <img src="法國照片\巴黎\PR19.jpg" style="width: 100%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+          <img src="法國照片\巴黎\PR20.jpg" style="width: 100%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+          <img src="法國照片\巴黎\PR21.jpg" style="width: 100%; max-width: 90vw; height: auto; margin: 0.5rem;" />
         </div>
         <div class="two-vertical-images">
           <img src="法國照片\巴黎\PR22-1.jpg" />
@@ -545,9 +702,9 @@
           只要計算好參觀時間跟數量的話可以省下一些旅費，也可以參考羅浮宮<a href="https://www.centrepompidou.fr/en/" target="_blank">官網</a>喔!
         </h4>
         <div style="text-align: center">
-          <img src="法國照片\巴黎\PR24.jpg" width="800px" />
-          <img src="法國照片\巴黎\PR25.jpg" width="800px" />
-          <img src="法國照片\巴黎\PR26.jpg" width="800px" />
+          <img src="法國照片\巴黎\PR24.jpg" style="width: 100%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+          <img src="法國照片\巴黎\PR25.jpg" style="width: 100%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+          <img src="法國照片\巴黎\PR26.jpg" style="width: 100%; max-width: 90vw; height: auto; margin: 0.5rem;" />
         </div>
         <br /><br /><br />
         <h3>奧賽美術館 (Musée d'Orsay)</h3>
@@ -562,7 +719,7 @@
           <img src="法國照片\巴黎\PR27-2.jpg" />
         </div>
         <div style="text-align: center">
-          <img src="法國照片\巴黎\PR28.jpg" width="800px" />
+          <img src="法國照片\巴黎\PR28.jpg" style="width: 100%; max-width: 90vw; height: auto; margin: 0.5rem;" />
         </div>
         <br /><br /><br />
         <h3>橘園美術館 (Musée de l'Orangerie)</h3>
@@ -573,7 +730,7 @@
           只要計算好參觀時間跟數量的話可以省下一些旅費，也可以參考羅浮宮<a href="https://www.musee-orangerie.fr/en" target="_blank">官網</a>喔!
         </h4>
         <div style="text-align: center">
-          <img src="法國照片\巴黎\PR29.jpg" width="800px" />
+          <img src="法國照片\巴黎\PR29.jpg" style="width: 100%; max-width: 90vw; height: auto; margin: 0.5rem;" />
         </div>
         <div class="two-vertical-images">
           <img src="法國照片\巴黎\PR30-1.jpg" />
@@ -585,7 +742,7 @@
           巴士底廣場在法國歷史上扮演了重要角色，是 1789 年法國大革命的象徵，在廣場的中心有一座高達 52米 的巴士底圓柱 (Colonne de Juillet)，為了紀念 1830 年七月革命而建立的。革命爆發時，人們推翻了查理十世的王朝，成立了立憲君主制，而圓柱頂端則鑲嵌著巴黎市民在這次革命中喪生的烈士的名字。巴士底廣場周圍還有許多歷史建築和文化景點，例如著名的歌劇院巴士底歌劇院 (Opéra Bastille)、法國民族歌劇院 (Opéra National de Paris) 等。
         </h4>
         <div style="text-align: center">
-          <img src="法國照片\巴黎\PR31.jpg" width="600px" />
+          <img src="法國照片\巴黎\PR31.jpg" style="width: 90%; max-width: 600px; height: auto; margin: 0.5rem;" />
         </div>
         <br /><br /><br />
         <h3>勒內·杜蒙綠色長廊 (Promenade plantée)</h3>
@@ -593,8 +750,8 @@
           勒內·杜蒙綠色長廊被譽為「天空中的花園」，位於法國巴黎的第 12 區，是在 20 世紀 90 年代初由城市規劃師菲利普·馬特朗 (Philippe Mathieux) 和雅克·酋伯 (Jacques Vergely) 設計的，利用了一條廢棄的鐵路線路，並將其改造成了一個充滿綠植、花園和公共空間的美麗步行道，全長約 4.7 公里，起點位於巴黎東部的巴士底廣場，終點則是市郊的韋爾西 (Vincennes)。長廊上種植著各種植物，形成了一個生態友好的環境，可以在繁忙的城市中感受到一絲清新和寧靜。
         </h4>
         <div style="text-align: center">
-          <img src="法國照片\巴黎\PR32.jpg" width="600px" />
-          <img src="法國照片\巴黎\PR33.jpg" width="600px" />
+          <img src="法國照片\巴黎\PR32.jpg" style="width: 90%; max-width: 600px; height: auto; margin: 0.5rem;" />
+          <img src="法國照片\巴黎\PR33.jpg" style="width: 90%; max-width: 600px; height: auto; margin: 0.5rem;" />
         </div>
         <br />
         <h2>巴黎近郊景點</h2>
@@ -604,11 +761,11 @@
         </h4>
         <h4>聖米歇爾堡離巴黎車程要 4 小時，算非常遠的距離，推薦大家可以報名 <a href="https://www.klook.com/zh-TW/activity/3315-mont-saint-michel-full-day-tour-paris/" target="_blank">Klook</a> 的一日團，有大巴車接送來回並有導覽員介紹城堡內部的故事，算是比較輕鬆的遊覽方式，推薦給大家。</h4>
         <div style="text-align: center">
-          <img src="法國照片\巴黎\PR34.jpg" width="800px" />
-          <img src="法國照片\巴黎\PR35.jpg" width="800px" />
-          <img src="法國照片\巴黎\PR36.jpg" width="600px" />
-          <img src="法國照片\巴黎\PR37.jpg" width="600px" />
-          <img src="法國照片\巴黎\PR38.jpg" width="600px" />
+          <img src="法國照片\巴黎\PR34.jpg" style="width: 100%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+          <img src="法國照片\巴黎\PR35.jpg" style="width: 100%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+          <img src="法國照片\巴黎\PR36.jpg" style="width: 90%; max-width: 600px; height: auto; margin: 0.5rem;" />
+          <img src="法國照片\巴黎\PR37.jpg" style="width: 90%; max-width: 600px; height: auto; margin: 0.5rem;" />
+          <img src="法國照片\巴黎\PR38.jpg" style="width: 90%; max-width: 600px; height: auto; margin: 0.5rem;" />
         </div>
         <br /><br />
         <h2>巴黎美食</h2>
@@ -617,7 +774,7 @@
           Hollybelly 以早午餐料理聞名，最出名的是鬆餅早午餐，略帶鹹味的鬆餅沾著蜂蜜，再配上兩顆半熟蛋及培根，真的非常好吃，它們的醬料和調料都是自製，並盡量採用有機食材強調健康飲食。店內裝潢簡約而溫暖，營造出一種悠閒友善的氛圍，創造了一個融合鄉村氛圍與城市風情的獨特空間。
         </h4>
         <div style="text-align: center">
-          <img src="法國照片\巴黎\PR39.jpg" width="600px" />
+          <img src="法國照片\巴黎\PR39.jpg" style="width: 90%; max-width: 600px; height: auto; margin: 0.5rem;" />
         </div>
         <br /><br /><br />
         <h3>Le Relais Gascon</h3>
@@ -625,7 +782,7 @@
           來到法國絕對要好好吃幾頓法式料理，但通常也會讓荷包大失血，但這家位於聖心堂附近的餐廳主打的是平價法餐，味道卻一點都不輸其他貴森森的餐廳，法式烤田螺作為前菜，再配上慢烤的油封鴨腿，把肉汁全部都鎖在鴨腿中，非常鮮嫩好吃，洋蔥湯與紅酒燉牛肉也是本店的主打，非常值得一試。
         </h4>
         <div style="text-align: center">
-          <img src="法國照片\巴黎\PR40.jpg" width="600px" />
+          <img src="法國照片\巴黎\PR40.jpg" style="width: 90%; max-width: 600px; height: auto; margin: 0.5rem;" />
         </div>
         <br /><br /><br />
         <h3>Crêperie Beaubourg</h3>
@@ -633,8 +790,8 @@
           可麗餅也是法國有名的料理之一，這家位於龐比度中心附近的餐廳專研餅類料理，有別於台灣夜市攤販的可麗餅大多是甜的，法國可麗餅也有鹹的做法，可麗餅中包有火腿、蛋以及起司，一口咬下蛋液沿著餅皮流出真的非常好吃，甜可麗餅的做法則有點接近我們一般吃的法式吐司，有提供套餐的選項能讓你一次嘗試甜鹹兩種口味，非常划算。
         </h4>
         <div style="text-align: center">
-          <img src="法國照片\巴黎\PR41.jpg" width="600px" />
-          <img src="法國照片\巴黎\PR42.jpg" width="600px" />
+          <img src="法國照片\巴黎\PR41.jpg" style="width: 90%; max-width: 600px; height: auto; margin: 0.5rem;" />
+          <img src="法國照片\巴黎\PR42.jpg" style="width: 90%; max-width: 600px; height: auto; margin: 0.5rem;" />
         </div>
         <br /><br /><br />
         <h3>Le Procope</h3>
@@ -642,8 +799,8 @@
           Le Procope 開幕於 1686 年，相傳拿破崙大軍行經至此卻沒有帶錢，因此將他的帽子抵押給咖啡館，這頂帽子也成為了鎮店之寶。據說在十八世紀這是伏爾泰最常報到的咖啡館，每天都要在這裡喝上幾杯咖啡作為創作的泉源。而在十九世紀，此間咖啡館則是巴爾札克和雨果的最愛。而除了下午茶以外，這家的洋蔥湯與法式牛排也非常出名，湯上覆蓋著厚厚一層起司，襯著洋蔥湯頭的甜味，讓人忍不住就一飲而盡，帶有湯汁的醃牛排也十分軟嫩，非常推薦除了下午茶外也能品嚐它的正餐。
         </h4>
         <div style="text-align: center">
-          <img src="法國照片\巴黎\PR43.jpg" width="600px" />
-          <img src="法國照片\巴黎\PR44.jpg" width="600px" />
+          <img src="法國照片\巴黎\PR43.jpg" style="width: 90%; max-width: 600px; height: auto; margin: 0.5rem;" />
+          <img src="法國照片\巴黎\PR44.jpg" style="width: 90%; max-width: 600px; height: auto; margin: 0.5rem;" />
         </div>
         <br /><br /><br />
         <h3>Les Antiquaires</h3>
@@ -651,7 +808,7 @@
           Les Antiquaires 位於奧賽美術館旁的塞納河左岸，號稱全巴黎最好吃的紅酒燉牛肉，牛肉本身非常軟嫩入口即化，帶著紅酒的香氣，用牛油烤過的馬鈴薯蘸著紅酒牛肉汁，是再完美的組合不過了。
         </h4>
         <div style="text-align: center">
-          <img src="法國照片\巴黎\PR45.jpg" width="600px" />
+          <img src="法國照片\巴黎\PR45.jpg" style="width: 90%; max-width: 600px; height: auto; margin: 0.5rem;" />
         </div>
         <br />
         <br />
@@ -708,9 +865,8 @@
     <footer>
       <h6>COPYRIGHT © 2025 Tommy 看世界 All rights reserved.</h6>
     </footer>
+    <div id="menu-toggle"></div>
     <div id="expandable-menu">
-      <div id="menu-toggle"></div>
-      <!-- 收闔按鈕 -->
       <div id="menu-content">
         <h4>目錄</h4>
         <ul id="menu-list"></ul>
@@ -727,6 +883,23 @@
         // 點擊按鈕切換目錄狀態
         toggle.addEventListener("click", () => {
           menu.classList.toggle("open");
+
+          const menuWidth = menu.offsetWidth; // 獲取目前展開的目錄寬度
+
+          if (menu.classList.contains("open")) {
+            // 讓按鈕向左平移與 menu 一樣的寬度
+            toggle.style.transform = `translateY(-50%) translateX(-${menuWidth}px)`;
+          } else {
+            // 收回原位
+            toggle.style.transform = `translateY(-50%) translateX(0)`;
+          }
+        });
+
+        window.addEventListener("load", () => {
+          if (menu.classList.contains("open")) {
+            const menuWidth = menu.offsetWidth;
+            toggle.style.transform = `translateY(-50%) translateX(-${menuWidth}px)`;
+          }
         });
 
         // 從 destination-main 區域提取 h2 和 h3，動態生成目錄
@@ -751,6 +924,23 @@
           menuList.appendChild(listItem);
         });
 
+        function adjustMenuPosition() {
+          const nav = document.querySelector("nav");
+          const menu = document.getElementById("expandable-menu");
+      
+          if (nav && menu) {
+            const navHeight = nav.offsetHeight;
+      
+            // 設定 menu 的 top 與高度
+            menu.style.top = `${navHeight}px`;
+            menu.style.height = `calc(100vh - ${navHeight}px)`;
+          }
+        }
+      
+        // 載入與尺寸變化時調整
+        window.addEventListener("DOMContentLoaded", adjustMenuPosition);
+        window.addEventListener("resize", adjustMenuPosition);
+        
         // 滾動至目標位置並加上 75px 偏移
         menuList.addEventListener("click", (event) => {
           if (event.target.tagName === "A") {
@@ -770,6 +960,31 @@
               });
             }
           }
+        });
+        // 手機 Safari 相容：點擊展開 dropdown
+        const dropdownToggles = document.querySelectorAll(".dropdown-toggle");
+
+        dropdownToggles.forEach((toggle) => {
+          toggle.addEventListener("click", function (e) {
+            e.stopPropagation(); // 防止冒泡，避免點擊外層時也觸發關閉
+            const dropdown = this.nextElementSibling;
+            const isVisible = dropdown.style.display === "block";
+            
+            // 關閉所有其他 dropdown（可選）
+            document.querySelectorAll(".dropdown-content").forEach((menu) => {
+              menu.style.display = "none";
+            });
+
+            // 切換目前這一個 dropdown
+            dropdown.style.display = isVisible ? "none" : "block";
+          });
+        });
+
+        // 點擊其他地方時關閉 dropdown
+        window.addEventListener("click", function () {
+          document.querySelectorAll(".dropdown-content").forEach((menu) => {
+            menu.style.display = "none";
+          });
         });
       });
     </script>
