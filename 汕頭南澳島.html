@@ -12,7 +12,6 @@
       body {
         font-family: Calibri, Arial, sans-serif; /* 首選 Calibri，次選 Arial */
         margin: 0;
-        padding: 0;
         overflow-x: hidden; /* 禁止水平滾動 */
         background-color: #f4f4f9;
         color: #333;
@@ -28,7 +27,6 @@
         font-weight: bold;
         color: #2a90a7;
         display: inline-block;
-        margin-bottom: 1rem; /* 縮小 h2 的底部邊距 */
         background-color: #cee5e8;
       }
 
@@ -36,7 +34,7 @@
         font-size: 26px;
         margin: 0 0 1rem;
         font-weight: bold;
-        text-decoration: underline; /* 加上底線 */
+        text-decoration: underline;
       }
 
       h4 {
@@ -62,56 +60,68 @@
       nav {
         background-color: #78bcc4;
         display: flex;
-        justify-content: space-between; /* 保持分佈在兩側 */
-        width: calc(100% - 10rem); /* 與其他內容的邊界一致 */
-        padding: 0.5rem 5rem; /* 主導覽列的 padding 設置 */
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;                     /* 讓 nav 寬度隨螢幕自適應 */
+        padding: 0.8rem 5vw;               /* 左右 padding 用 5% 寬度 */
+        box-sizing: border-box;         /* 確保 padding 不會影響寬度總長 */
         position: fixed;
         top: 0;
         z-index: 1000;
       }
 
       .nav-left .logo img {
-        height: 50px; /* 控制 Logo 圖片的高度 */
-        transform: translateX(-1.5rem); /* 向右移動 2rem */
+        height: 5vw; /* 高度為螢幕寬度的 5% */
+        transform: translateX(-2vw); /* 向左移動 2% 寬度 */
+        max-width: 100%; /* 確保不會超過容器 */
+        height: auto; /* 保持圖片比例（建議與 max-height 搭配） */
+        max-height: 3rem;
       }
 
       .nav-right {
         display: flex;
         align-items: center;
-        transform: translateX(2rem); /* 向右移動 2rem */
+        margin-left: auto; /* 推到右側 */
+        padding-left: 5%;   /* 內部元素間距，彈性設計 */
       }
 
       nav a {
         color: #eff5f5;
         text-decoration: none;
-        padding: 0.5rem 1rem;
-        margin: 0 0.5rem;
+        padding: 1vh 1vw;
+        margin: 0 1vw;
         transition: transform 0.3s;
       }
 
       nav a:hover {
-        transform: translateY(-3px);
+        transform: translateY(-0.5vh); /* 根據視窗高度調整 */
       }
 
       .dropdown {
         position: relative;
+        display: inline-block;
       }
 
       .dropdown-content {
+        width: 100%; /* 佔滿父層寬度 */
+        max-width: 20vw; /* 限制最大寬度 */
         display: none;
         position: absolute;
         background-color: #78bcc4;
-        min-width: 160px;
-        border-radius: 4px;
-        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        min-width: 10em; /* 取代 160px，以字體大小作為比例單位 */
+        border-radius: 0.25em;
+        box-shadow: 0 0.5em 1em rgba(0, 0, 0, 0.2); /* 改為相對單位 */
         padding: 0.2rem 0;
+        z-index: 999;
       }
 
       .dropdown-content a {
         color: #eff5f5;
         display: block;
         transition: transform 0.3s;
-        border-bottom: 1px solid #ddd;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.3); /* 更淡配色、柔和過渡 */
+        padding: 0.6em 1em;
+        font-size: 1em;
       }
 
       .dropdown-content a:last-child {
@@ -119,107 +129,109 @@
       }
 
       .dropdown-content a:hover {
-        transform: translateY(-3px);
-      }
-
-      .dropdown:hover .dropdown-content {
-        display: block;
+        transform: translateY(-0.25em); /* 改為相對單位 */
       }
 
       .intro-section {
         background-color: #eff5f5;
         display: flex;
-        padding: 2rem;
-        margin-top: 60px; /* 根據導航列高度調整 */
-        justify-content: space-between;
-        align-items: flex-start;
-        width: 100%;
-        box-sizing: border-box; /* 包含 padding 在內 */
-        padding-left: 5rem;
-        padding-right: 5rem;
+        flex-wrap: wrap; /* 確保在小螢幕可換行 */
+        padding: 2rem 5%;
+        margin-top: 4em; /* 根據導航列高度調整 */
       }
 
       .intro-section h4 {
-        max-width: 700px;
+        max-width: 85%; /* 改為相對單位，避免固定寬度限制 */
+        line-height: 1.8;
       }
 
       .intro-section .left {
         width: 60%;
+        padding-right: 1%;
       }
 
       .intro-section .right {
-        width: 40%;
+        width: 39%;
       }
 
       .destination-section {
         display: flex;
+        flex-wrap: wrap;               /* 小螢幕時允許換行 */
         padding: 1rem 5%; /* 左右內間距為螢幕的10% */
         background-color: white;
       }
 
       .destination-main {
-        width: 75%;
-        margin-right: 1.5rem; /* 增加右邊外邊距 */
+        width: 72%;                    /* 主要內容佔 72%，略縮以保留間距 */
+        margin-right: 3%;              /* 與 sidebar 間保留間距（約為 3%） */
+        box-sizing: border-box;
       }
 
       .destination-sidebar {
-        width: 25%;
-        padding-left: 1.5rem; /* 增加左側內邊距 */
-        margin-top: 2rem; /* 向上或向下調整，負值表示向上 */
+        width: 25%;                    /* 側邊欄佔 25% */
+        padding-left: 2%;             /* 相對內邊距 */
+        margin-top: 2rem;
+        box-sizing: border-box;
       }
 
       .sidebar-image-container {
         margin-bottom: 1rem;
-        text-align: center; /* 確保圖片置中 */
+        text-align: center; /* 置中圖片 */
       }
 
       .sidebar-image-container img {
-        height: 300px; /* 設置直式圖片的高度 */
+        width: 90%;         /* 圖片寬度為容器寬度的 90% */
+        height: auto;       /* 高度自動，保持比例 */
+        max-height: 60vh;   /* 避免圖片過高，佔螢幕最大 60% 高 */
+        object-fit: cover;  /* 裁切處理長圖 */
       }
 
       .two-vertical-images {
-        display: flex; /* 彈性佈局，讓圖片並排 */
-        justify-content: space-between; /* 兩張圖片均勻分佈 */
-        gap: 2rem; /* 圖片之間的間距 */
+        display: flex;
+        justify-content: space-between;
+        gap: 4%; /* 使用百分比間距更彈性 */
         margin-top: 2rem;
-        margin-bottom: 2rem; /* 與下方內容的距離 */
+        margin-bottom: 2rem;
+        flex-wrap: wrap; /* 若畫面太小，允許換行 */
       }
 
       .two-vertical-images img {
-        width: calc(50% - 0.5rem); /* 每張圖片佔用容器的一半減去間距 */
-        text-align: center; /* 確保圖片置中 */
-        height: auto; /* 保持圖片的直式比例 */
-        object-fit: cover; /* 確保圖片內容適應容器 */
+        width: 48%; /* 每張圖片約佔一半（加上 gap 剛好 100%） */
+        height: auto; /* 保持原比例 */
+        object-fit: cover;
+        display: block;
+        margin: 0 auto;
       }
 
       .recommendation-section {
-        margin-top: 1.5rem; /* 與上方文字的間距 */
+        margin-top: 3vh; /* 與上方文字的間距 */
         text-align: center;
         position: sticky;
         top: 80px; /* 空出導覽列的高度，確保推薦區不被覆蓋 */
         z-index: 10; /* 提高層級，避免被其他內容遮蓋 */
+        padding: 0 5%;
       }
 
       .recommendation-section h3 {
-        font-size: 18px;
+        font-size: 1.125rem;
         font-weight: bold;
-        margin-bottom: 0.5rem; /* 與按鈕區的距離 */
+        margin-bottom: 1vh; /* 與按鈕區的距離 */
       }
 
       .recommendation-buttons {
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
-        gap: 0.5rem; /* 按鈕之間的間距 */
+        gap: 0.5em; /* 按鈕之間的間距 */
       }
 
       .recommendation-buttons button {
-        padding: 0.5rem 1rem;
-        font-size: 14px;
+        padding: 0.5em 1em;
+        font-size: 0.875rem;
         color: white;
         background-color: #78bcc4;
         border: none;
-        border-radius: 4px;
+        border-radius: 0.25rem;
         transition: transform 0.3s;
         font-family: Arial, sans-serif;
       }
@@ -229,13 +241,13 @@
       }
 
       .contact-section {
-        padding: 2rem 5rem; /* 上下與左右間距 */
+        padding: 4vh 8vw; /* 上下與左右間距 */
         background-color: #eff5f5; /* 淺灰背景 */
         text-align: center; /* 確保內容置中對齊 */
       }
 
       .contact-item h3 {
-        font-size: 18px; /* 調整標題字體大小 */
+        font-size: 1.125rem; /* 調整標題字體大小 */
         margin: 0; /* 移除多餘的間距 */
         text-decoration: none; /* 移除底線 */
       }
@@ -243,43 +255,49 @@
       footer {
         background-color: #000;
         color: white;
-        height: 30px;
+        height: 3vh; /* 使用相對單位，高度占螢幕高度的 3% */
         display: flex;
         justify-content: center;
         align-items: center;
+        font-size: 1.5rem; /* 使用相對字體大小 */
+        padding: 0.5rem 0; /* 確保小螢幕時內容不擠壓 */
       }
 
       #expandable-menu {
-        position: fixed;
-        top: 70px; /* 與螢幕頂部的距離設為 60px */
+        position: fixed; 
         right: 0;
-        height: calc(100% - 70px); /* 高度減去 60px，避免超出視窗 */
-        width: 395px; /* 目錄寬度與 sidebar 齊寬 */
+        width: 26vw; /* 目錄寬度與 sidebar 齊寬 */
+        max-width: 90%; /* 避免在小螢幕太寬 */
         transform: translateX(100%); /* 初始狀態：隱藏在右側 */
         transition: transform 0.3s ease;
         background-color: #f4f4f9; /* 與網站背景一致 */
         z-index: 1000;
+        box-sizing: border-box;
       }
 
       /* 收闔按鈕 */
       #menu-toggle {
-        position: absolute;
+        position: fixed;
         top: 45%;
-        left: -40px; /* 調整按鈕的位置，適應按鈕變大後的寬度 */
-        transform: translateY(-50%);
-        width: 40px; /* 增大按鈕寬度 */
-        height: 80px; /* 增大按鈕高度 */
+        right: 0; /* 永遠貼在右側 */
+        transform: translateY(-50%) translateX(0);
+        width: 2.5em; /* 增大按鈕寬度 */
+        height: 5em; /* 增大按鈕高度 */
         background-color: #78bcc4;
         color: white;
-        border-radius: 4px;
+        border-radius: 0.4em 0 0 0.4em;
         display: flex;
         justify-content: center; /* 水平居中 */
         align-items: center; /* 垂直居中 */
+        z-index: 2000; /* 要比 expandable-menu 更高，避免被蓋住 */
+        cursor: pointer;
+        box-shadow: -0.1em 0 0.3em rgba(0,0,0,0.1);
+        transition: transform 0.3s ease; /* 平滑移動 */
       }
 
       #menu-toggle::after {
         content: "目錄"; /* 在按鈕內顯示 "目錄" */
-        font-size: 17px;
+        font-size: 1rem;
         color: white; /* 設定字體顏色為白色 */
         writing-mode: vertical-rl; /* 使文字垂直排列 */
       }
@@ -290,14 +308,16 @@
 
       /* 目錄內容 */
       #menu-content {
-        padding: 0.5rem 1rem;
+        padding: 0.5rem 5%;
         overflow-y: auto;
         height: 100%;
+        box-sizing: border-box;
       }
 
       #menu-content h4 {
         font-weight: bold;
         margin-top: 0;
+        font-size: 1.2rem;
       }
 
       #menu-list {
@@ -306,13 +326,14 @@
       }
 
       #menu-list li {
-        margin-bottom: 0.5rem;
+        margin-bottom: 1vh;
       }
 
       #menu-list a {
         color: #2a90a7;
         text-decoration: none;
         transition: color 0.3s;
+        font-size: 1rem; /* 使用相對字體大小 */
       }
 
       #menu-list a:hover {
@@ -320,13 +341,149 @@
       }
 
       #menu-list .sub-item {
-        margin-left: 1.5rem; /* 調整縮排距離 */
+        margin-left: 8%; /* 調整縮排距離 */
         font-size: 0.9rem; /* 可選：調整子項目字體大小 */
       }
 
       /* 目錄展開狀態 */
       #expandable-menu.open {
         transform: translateX(0);
+      }
+
+      /* === 響應式調整：針對手機與小螢幕設備 === */
+      @media (max-width: 768px) {
+        nav {
+          flex-direction: row;
+          flex-wrap: wrap;
+          align-items: center;
+          justify-content: space-between;
+          padding: 1rem 5vw;  /* 窄螢幕時減少左右留白 */
+          width: 100%;
+          box-sizing: border-box;
+        }
+
+        .nav-right {
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          gap: 0.5rem;
+          transform: none;
+          width: auto;
+          white-space: nowrap;               /* 禁止內容自動換行 */
+        }
+
+        nav a {
+          padding: 0.5rem 0.5rem;           /* 減少垂直padding */
+          margin: 0 0.3rem;
+          font-size: 0.85rem;
+          white-space: nowrap;               /* 確保文字不換行 */
+          overflow: hidden;
+          text-overflow: ellipsis;           /* 若內容超出，顯示省略號 */
+        }
+
+        .nav-dropdown {
+          width: 60%; /* 或者用 max-content, fit-content 看需求 */
+          font-size: 0.85rem; /* 調整字體大小和導覽列一致 */
+          padding: 0.5rem;
+        }
+      
+        .nav-dropdown a {
+          font-size: inherit; /* 確保跟 .nav-dropdown 一樣大 */
+          padding: 0.5rem 1rem;
+          white-space: normal; /* 可選：讓字在必要時換行 */
+        }
+
+        .dropdown-content {
+          width: 12vw;
+          min-width: 8em; /* 保證至少能顯示幾個字 */
+          max-width: none;
+        }
+
+        .dropdown-content a {
+          font-size: 0.85rem;
+        }
+        
+        .intro-section {
+          flex-direction: column;
+          padding: 8%;
+        }
+
+        .intro-section .left,
+        .intro-section .right {
+          width: 100%;
+          padding: 0;
+          flex: 1 1 100%;
+        }
+
+        .intro-section .right {
+          margin-top: 1.5rem;
+          display: flex;
+          justify-content: center;
+        }
+
+        .intro-section h4 {
+          max-width: 100%;
+          font-size: 1rem;
+        }
+
+        .destination-grid {
+          flex-direction: column;
+          gap: 1rem;
+        }
+
+        .destination-section h4 {
+          font-size: 1rem;
+        }
+
+        .destination-item {
+          max-width: 100%;
+          width: 100%;
+        }
+
+        .destination-item.a_role_with_2 {
+          position: static;
+          left: auto;
+        }
+
+        .destination-main,
+        .destination-sidebar {
+          width: 100%;
+          margin: 0;
+          padding: 0;
+        }
+
+        .destination-sidebar {
+          margin-top: 2rem;
+        }
+
+        .recommendation-buttons button {
+          width: 100%; /* 小螢幕按鈕全寬排列 */
+        }
+
+        .contact-section {
+          padding: 3vh 5vw;
+        }
+
+        .contact-item h3 {
+          font-size: 1rem;
+        }
+
+        /* 目錄區寬度改為螢幕寬度的40% */
+        #expandable-menu {
+          width: 40vw !important; /* 用vw方便響應螢幕寬度 */
+          max-width: 90%; /* 保留原本max-width避免太寬 */
+        }
+      
+        #expandable-menu,
+        #expandable-menu * {
+          font-size: 85% !important;
+        }
+              
+        #menu-toggle {
+          width: 75%;
+          max-width: 1.875em;
+          min-width: 1.875em;
+        }
       }
     </style>
   </head>
@@ -342,7 +499,7 @@
       <div class="nav-right">
         <a href="首頁.html">關於我</a>
         <div class="dropdown">
-          <a>亞洲旅遊</a>
+          <a class="dropdown-toggle">亞洲旅遊</a>
           <div class="dropdown-content">
             <a href="中國.html">中國</a>
             <a href="新加坡.html">新加坡</a>
@@ -353,7 +510,7 @@
           </div>
         </div>
         <div class="dropdown">
-          <a>歐洲旅遊</a>
+          <a class="dropdown-toggle">歐洲旅遊</a>
           <div class="dropdown-content">
             <a href="英國.html">英國</a>
             <a href="法國.html">法國</a>
@@ -371,7 +528,7 @@
           </div>
         </div>
         <div class="dropdown">
-          <a>美洲旅遊</a>
+          <a class="dropdown-toggle">美洲旅遊</a>
           <div class="dropdown-content">
             <a href="美國.html">美國</a>
             <a href="加拿大.html">加拿大</a>
@@ -391,9 +548,7 @@
       </div>
       <div class="right">
         <img
-          src="中國照片\汕頭南澳島\南澳_介紹.jpg"
-          width="90%"
-          height="350px"
+          src="中國照片\汕頭南澳島\南澳_介紹.jpg" style="width: 100%; height: auto; max-width: 100%;"
         />
       </div>
     </div>
@@ -409,7 +564,7 @@
           (電動摩托車)
           馳騁於公路，機動性更高也比較不會有停車的問題，畢竟南澳島旺季時遊客非常多大機率會塞車喔。
         </h4>
-        <img src="中國照片\汕頭南澳島\南澳_交通.png" width="1000px" />
+        <img src="中國照片\汕頭南澳島\南澳_交通.png" style="width: 100%; max-width: 90vw; height: auto;" />
         <br /><br />
         <h2>南澳島住宿</h2>
         <h4>
@@ -419,7 +574,7 @@
           地點的部分會推薦住在離<b>後宅鎮</b>不要太遠的地方，除了吃的東西比較多選擇之外，交通也比較便利喔。如果是想要欣賞日出的話則可以選擇住在<b>青澳灣</b>周圍，是面東方的海景第一排。
         </h4>
         <div style="text-align: center">
-          <img src="中國照片\汕頭南澳島\南澳_住宿.jpg" width="800px" />
+          <img src="中國照片\汕頭南澳島\南澳_住宿.jpg" style="width: 100%; max-width: 90vw; height: auto; margin: 0.5rem;" />
         </div>
         <br /><br />
         <h2>南澳島景點</h2>
@@ -428,8 +583,8 @@
           錢澳灣燈塔位於南澳島西南側，是南澳島著名的三個燈塔之一，雖然沒辦法抵達燈塔下方，但是在附近的礁石及觀景台就能拍出很美的照片，算是小紅書帶紅的景點之一，路過可以停下來花個 30 ~ 40 分鐘遊覽拍照。
         </h4>
         <div style="text-align: center">
-          <img src="中國照片\汕頭南澳島\南澳1.jpg" width="600px" />
-          <img src="中國照片\汕頭南澳島\南澳2.jpg" width="800px" />
+          <img src="中國照片\汕頭南澳島\南澳1.jpg" style="width: 90%; max-width: 600px; height: auto; margin: 0.5rem;" />
+          <img src="中國照片\汕頭南澳島\南澳2.jpg" style="width: 100%; max-width: 90vw; height: auto; margin: 0.5rem;" />
         </div>
         <br /><br /><br />
         <h3>長山尾燈塔</h3>
@@ -437,9 +592,9 @@
           長山尾燈塔位於南澳島西側，緊鄰南澳島跨海大橋，是廣東省第一座跨海大橋，總長 9.3 公里並耗時 20 年完工，在海邊可以欣賞跨海大橋一路延伸至彼岸的汕頭，也是欣賞日落的絕佳位置，推薦可以日落前 30 分鐘抵達，可以看著橙黃的夕陽緩緩落下。
         </h4>
         <div style="text-align: center">
-          <img src="中國照片\汕頭南澳島\南澳3.jpg" width="600px" />
-          <img src="中國照片\汕頭南澳島\南澳4.jpg" width="600px" />
-          <img src="中國照片\汕頭南澳島\南澳5.jpg" width="800px" />
+          <img src="中國照片\汕頭南澳島\南澳3.jpg" style="width: 90%; max-width: 600px; height: auto; margin: 0.5rem;" />
+          <img src="中國照片\汕頭南澳島\南澳4.jpg" style="width: 90%; max-width: 600px; height: auto; margin: 0.5rem;" />
+          <img src="中國照片\汕頭南澳島\南澳5.jpg" style="width: 100%; max-width: 90vw; height: auto; margin: 0.5rem;" />
         </div>
         <br /><br /><br />
         <h3>三囪崖燈塔</h3>
@@ -447,8 +602,8 @@
           三囪崖燈塔位於南澳島東南側，面朝台灣海峽，可以欣賞 180 度無死角的絕美海景。入口處並不好找，但自從這邊爆紅後入口處便停了許多遊客車輛及餐車，變得十分明顯 XD，走進來大約需要 10 分鐘，全路完全無遮蔭夏天必須做好防曬，最靠近只能走到下圖的地方，無法走到燈塔下方，攀爬岩石要注意跌落的風險。另外在入口處附近也是通往後方"石頭山"的入口，但由於當時在網上查了說十分高難度最好要搭乘當地居民的農車，便沒有排進計畫中了，有興趣與風電風車拍照的可以小紅書上找找。
         </h4>
         <div style="text-align: center">
-          <img src="中國照片\汕頭南澳島\南澳6.jpg" width="600px" />
-          <img src="中國照片\汕頭南澳島\南澳7.jpg" width="800px" />
+          <img src="中國照片\汕頭南澳島\南澳6.jpg" style="width: 90%; max-width: 600px; height: auto; margin: 0.5rem;" />
+          <img src="中國照片\汕頭南澳島\南澳7.jpg" style="width: 100%; max-width: 90vw; height: auto; margin: 0.5rem;" />
         </div>
         <br /><br /><br />
         <h3>青澳灣北回歸線標誌塔</h3>
@@ -458,7 +613,7 @@
           <b>當夏至正中午 12 點時陽光會從正上方直落而下在地上形成光點</b>，算是一大特色。
         </h4>
         <div style="text-align: center">
-          <img src="中國照片\汕頭南澳島\南澳8.jpg" width="600px" />
+          <img src="中國照片\汕頭南澳島\南澳8.jpg" style="width: 90%; max-width: 600px; height: auto; margin: 0.5rem;" />
         </div>
         <br /><br /><br />
         <h3>雲杉公路</h3>
@@ -466,9 +621,9 @@
           雲杉公路位於南澳鳥谷動物園與雲深古寺之間的 064 縣道上，一整排雲杉排列於公路兩旁，長約 300 公尺，好像在歡迎遊客上雲深古寺一覽南澳島風光一般，從樹枝間也能隱約遠眺深澳鎮及隔海的大唐發電廠，是個非常好拍照的地方。
         </h4>
         <div style="text-align: center">
-          <img src="中國照片\汕頭南澳島\南澳9.jpg" width="600px" />
-          <img src="中國照片\汕頭南澳島\南澳10.jpg" width="600px" />
-          <img src="中國照片\汕頭南澳島\南澳11.jpg" width="600px" />
+          <img src="中國照片\汕頭南澳島\南澳9.jpg" style="width: 90%; max-width: 600px; height: auto; margin: 0.5rem;" />
+          <img src="中國照片\汕頭南澳島\南澳10.jpg" style="width: 90%; max-width: 600px; height: auto; margin: 0.5rem;" />
+          <img src="中國照片\汕頭南澳島\南澳11.jpg" style="width: 90%; max-width: 600px; height: auto; margin: 0.5rem;" />
         </div>
         <br /><br /><br />
         <h3>雄鎮關</h3>
@@ -476,8 +631,8 @@
           雄鎮關位於深澳鎮南面的雲澳與深澳交界的山坳，地勢比較險要，是當年深澳總兵府南面的屏障，也是出征時必爭的軍事要地。傳說明朝嘉靖年間，浙江總兵戚繼光奉旨到南澳平定吳平時，就在雄鎮關出奇兵而獲勝，這個戰役曾出動了閩粵兩省官兵，是當年有名的戰役，雄鎮關也從此名聞。從附近的公路也能遠眺整個深澳鎮，天氣好的時候可以清楚的看到海上紅色一點一點的養殖棚架，更可以看到大陸的其他鄉鎮。
         </h4>
         <div style="text-align: center">
-          <img src="中國照片\汕頭南澳島\南澳12.jpg" width="600px" />
-          <img src="中國照片\汕頭南澳島\南澳13.jpg" width="800px" />
+          <img src="中國照片\汕頭南澳島\南澳12.jpg" style="width: 90%; max-width: 600px; height: auto; margin: 0.5rem;" />
+          <img src="中國照片\汕頭南澳島\南澳13.jpg" style="width: 100%; max-width: 90vw; height: auto; margin: 0.5rem;" />
         </div>
         <br /><br /><br />
         <h3>風電場遊覽區</h3>
@@ -485,7 +640,7 @@
           位於南澳島正中心的 057 縣道上，整個南澳島都不乏風力發電裝置的影子，包括在海上都有許多風能裝置，在公路上能欣賞兩旁山頭上滿滿的風車，景致十分壯觀。
         </h4>
         <div style="text-align: center">
-          <img src="中國照片\汕頭南澳島\南澳14.jpg" width="800px" />
+          <img src="中國照片\汕頭南澳島\南澳14.jpg" style="width: 100%; max-width: 90vw; height: auto; margin: 0.5rem;" />
         </div>
         <br /><br />
         <h2>南澳島美食</h2>
@@ -495,7 +650,7 @@
           等多嘗試了幾次之後應該就會挑戰蝦蟹類了，<b>要特別斟酌自己的腸胃狀況再決定要點什麼吃喔!</b>
         </h4>
         <div style="text-align: center">
-          <img src="中國照片\汕頭南澳島\南澳15.jpg" width="600px" />
+          <img src="中國照片\汕頭南澳島\南澳15.jpg" style="width: 90%; max-width: 600px; height: auto; margin: 0.5rem;" />
         </div>
         <br /><br /><br />
         <h3>炳忠粿麵條</h3>
@@ -503,7 +658,7 @@
           炳忠粿麵條位於后宅鎮的市場中，<b>附近不好停車建議騎車前往</b>，最有名的海鮮瘦肉粿條，一整晚有一大半都是蝦、蚵仔還有瘦豬肉，讓吸滿湯汁的粿條十分鮮甜，早上或中午來上一碗，很補整天都很有活力。
         </h4>
         <div style="text-align: center">
-          <img src="中國照片\汕頭南澳島\南澳16.jpg" width="600px" />
+          <img src="中國照片\汕頭南澳島\南澳16.jpg" style="width: 90%; max-width: 600px; height: auto; margin: 0.5rem;" />
         </div>
         <br /><br /><br />
         <h3>許大姊的菜</h3>
@@ -511,8 +666,8 @@
           位於青澳北回歸線標誌附近，價格非常實惠，兩個人不到 150 人民幣便可以有一整桌的海鮮，從花甲、鮮蝦、蚵仔到扇貝應有盡有，且一定要點南澳島最有名的紫菜炒飯，帶鹹味的紫菜配上些許海膽超級好吃，想吃海鮮的推薦這一家。
         </h4>
         <div style="text-align: center">
-          <img src="中國照片\汕頭南澳島\南澳17.jpg" width="800px" />
-          <img src="中國照片\汕頭南澳島\南澳18.jpg" width="800px" />
+          <img src="中國照片\汕頭南澳島\南澳17.jpg" style="width: 100%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+          <img src="中國照片\汕頭南澳島\南澳18.jpg" style="width: 100%; max-width: 90vw; height: auto; margin: 0.5rem;" />
         </div>
         <br /><br />
       </div>
@@ -580,9 +735,8 @@
     <footer>
       <h6>COPYRIGHT © 2025 Tommy 看世界 All rights reserved.</h6>
     </footer>
+    <div id="menu-toggle"></div>
     <div id="expandable-menu">
-      <div id="menu-toggle"></div>
-      <!-- 收闔按鈕 -->
       <div id="menu-content">
         <h4>目錄</h4>
         <ul id="menu-list"></ul>
@@ -599,6 +753,23 @@
         // 點擊按鈕切換目錄狀態
         toggle.addEventListener("click", () => {
           menu.classList.toggle("open");
+
+          const menuWidth = menu.offsetWidth; // 獲取目前展開的目錄寬度
+
+          if (menu.classList.contains("open")) {
+            // 讓按鈕向左平移與 menu 一樣的寬度
+            toggle.style.transform = `translateY(-50%) translateX(-${menuWidth}px)`;
+          } else {
+            // 收回原位
+            toggle.style.transform = `translateY(-50%) translateX(0)`;
+          }
+        });
+
+        window.addEventListener("load", () => {
+          if (menu.classList.contains("open")) {
+            const menuWidth = menu.offsetWidth;
+            toggle.style.transform = `translateY(-50%) translateX(-${menuWidth}px)`;
+          }
         });
 
         // 從 destination-main 區域提取 h2 和 h3，動態生成目錄
@@ -623,6 +794,23 @@
           menuList.appendChild(listItem);
         });
 
+        function adjustMenuPosition() {
+          const nav = document.querySelector("nav");
+          const menu = document.getElementById("expandable-menu");
+      
+          if (nav && menu) {
+            const navHeight = nav.offsetHeight;
+      
+            // 設定 menu 的 top 與高度
+            menu.style.top = `${navHeight}px`;
+            menu.style.height = `calc(100vh - ${navHeight}px)`;
+          }
+        }
+      
+        // 載入與尺寸變化時調整
+        window.addEventListener("DOMContentLoaded", adjustMenuPosition);
+        window.addEventListener("resize", adjustMenuPosition);
+        
         // 滾動至目標位置並加上 75px 偏移
         menuList.addEventListener("click", (event) => {
           if (event.target.tagName === "A") {
@@ -642,6 +830,31 @@
               });
             }
           }
+        });
+        // 手機 Safari 相容：點擊展開 dropdown
+        const dropdownToggles = document.querySelectorAll(".dropdown-toggle");
+
+        dropdownToggles.forEach((toggle) => {
+          toggle.addEventListener("click", function (e) {
+            e.stopPropagation(); // 防止冒泡，避免點擊外層時也觸發關閉
+            const dropdown = this.nextElementSibling;
+            const isVisible = dropdown.style.display === "block";
+            
+            // 關閉所有其他 dropdown（可選）
+            document.querySelectorAll(".dropdown-content").forEach((menu) => {
+              menu.style.display = "none";
+            });
+
+            // 切換目前這一個 dropdown
+            dropdown.style.display = isVisible ? "none" : "block";
+          });
+        });
+
+        // 點擊其他地方時關閉 dropdown
+        window.addEventListener("click", function () {
+          document.querySelectorAll(".dropdown-content").forEach((menu) => {
+            menu.style.display = "none";
+          });
         });
       });
     </script>
