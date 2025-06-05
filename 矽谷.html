@@ -12,7 +12,6 @@
       body {
         font-family: Calibri, Arial, sans-serif; /* 首選 Calibri，次選 Arial */
         margin: 0;
-        padding: 0;
         overflow-x: hidden; /* 禁止水平滾動 */
         background-color: #f4f4f9;
         color: #333;
@@ -28,7 +27,6 @@
         font-weight: bold;
         color: #2a90a7;
         display: inline-block;
-        margin-bottom: 1rem; /* 縮小 h2 的底部邊距 */
         background-color: #cee5e8;
       }
 
@@ -36,7 +34,7 @@
         font-size: 26px;
         margin: 0 0 1rem;
         font-weight: bold;
-        text-decoration: underline; /* 加上底線 */
+        text-decoration: underline;
       }
 
       h4 {
@@ -62,56 +60,68 @@
       nav {
         background-color: #78bcc4;
         display: flex;
-        justify-content: space-between; /* 保持分佈在兩側 */
-        width: calc(100% - 10rem); /* 與其他內容的邊界一致 */
-        padding: 0.5rem 5rem; /* 主導覽列的 padding 設置 */
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;                     /* 讓 nav 寬度隨螢幕自適應 */
+        padding: 0.8rem 5vw;               /* 左右 padding 用 5% 寬度 */
+        box-sizing: border-box;         /* 確保 padding 不會影響寬度總長 */
         position: fixed;
         top: 0;
         z-index: 1000;
       }
 
       .nav-left .logo img {
-        height: 50px; /* 控制 Logo 圖片的高度 */
-        transform: translateX(-1.5rem); /* 向右移動 2rem */
+        height: 5vw; /* 高度為螢幕寬度的 5% */
+        transform: translateX(-2vw); /* 向左移動 2% 寬度 */
+        max-width: 100%; /* 確保不會超過容器 */
+        height: auto; /* 保持圖片比例（建議與 max-height 搭配） */
+        max-height: 3rem;
       }
 
       .nav-right {
         display: flex;
         align-items: center;
-        transform: translateX(2rem); /* 向右移動 2rem */
+        margin-left: auto; /* 推到右側 */
+        padding-left: 5%;   /* 內部元素間距，彈性設計 */
       }
 
       nav a {
         color: #eff5f5;
         text-decoration: none;
-        padding: 0.5rem 1rem;
-        margin: 0 0.5rem;
+        padding: 1vh 1vw;
+        margin: 0 1vw;
         transition: transform 0.3s;
       }
 
       nav a:hover {
-        transform: translateY(-3px);
+        transform: translateY(-0.5vh); /* 根據視窗高度調整 */
       }
 
       .dropdown {
         position: relative;
+        display: inline-block;
       }
 
       .dropdown-content {
+        width: 100%; /* 佔滿父層寬度 */
+        max-width: 20vw; /* 限制最大寬度 */
         display: none;
         position: absolute;
         background-color: #78bcc4;
-        min-width: 160px;
-        border-radius: 4px;
-        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        min-width: 10em; /* 取代 160px，以字體大小作為比例單位 */
+        border-radius: 0.25em;
+        box-shadow: 0 0.5em 1em rgba(0, 0, 0, 0.2); /* 改為相對單位 */
         padding: 0.2rem 0;
+        z-index: 999;
       }
 
       .dropdown-content a {
         color: #eff5f5;
         display: block;
         transition: transform 0.3s;
-        border-bottom: 1px solid #ddd;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.3); /* 更淡配色、柔和過渡 */
+        padding: 0.6em 1em;
+        font-size: 1em;
       }
 
       .dropdown-content a:last-child {
@@ -119,107 +129,109 @@
       }
 
       .dropdown-content a:hover {
-        transform: translateY(-3px);
-      }
-
-      .dropdown:hover .dropdown-content {
-        display: block;
+        transform: translateY(-0.25em); /* 改為相對單位 */
       }
 
       .intro-section {
         background-color: #eff5f5;
         display: flex;
-        padding: 2rem;
-        margin-top: 60px; /* 根據導航列高度調整 */
-        justify-content: space-between;
-        align-items: flex-start;
-        width: 100%;
-        box-sizing: border-box; /* 包含 padding 在內 */
-        padding-left: 5rem;
-        padding-right: 5rem;
+        flex-wrap: wrap; /* 確保在小螢幕可換行 */
+        padding: 2rem 5%;
+        margin-top: 4em; /* 根據導航列高度調整 */
       }
 
       .intro-section h4 {
-        max-width: 700px;
+        max-width: 85%; /* 改為相對單位，避免固定寬度限制 */
+        line-height: 1.8;
       }
 
       .intro-section .left {
         width: 60%;
+        padding-right: 1%;
       }
 
       .intro-section .right {
-        width: 40%;
+        width: 39%;
       }
 
       .destination-section {
         display: flex;
+        flex-wrap: wrap;               /* 小螢幕時允許換行 */
         padding: 1rem 5%; /* 左右內間距為螢幕的10% */
         background-color: white;
       }
 
       .destination-main {
-        width: 75%;
-        margin-right: 1.5rem; /* 增加右邊外邊距 */
+        width: 72%;                    /* 主要內容佔 72%，略縮以保留間距 */
+        margin-right: 3%;              /* 與 sidebar 間保留間距（約為 3%） */
+        box-sizing: border-box;
       }
 
       .destination-sidebar {
-        width: 25%;
-        padding-left: 1.5rem; /* 增加左側內邊距 */
-        margin-top: 2rem; /* 向上或向下調整，負值表示向上 */
+        width: 25%;                    /* 側邊欄佔 25% */
+        padding-left: 2%;             /* 相對內邊距 */
+        margin-top: 2rem;
+        box-sizing: border-box;
       }
 
       .sidebar-image-container {
         margin-bottom: 1rem;
-        text-align: center; /* 確保圖片置中 */
+        text-align: center; /* 置中圖片 */
       }
 
       .sidebar-image-container img {
-        height: 300px; /* 設置直式圖片的高度 */
+        width: 90%;         /* 圖片寬度為容器寬度的 90% */
+        height: auto;       /* 高度自動，保持比例 */
+        max-height: 60vh;   /* 避免圖片過高，佔螢幕最大 60% 高 */
+        object-fit: cover;  /* 裁切處理長圖 */
       }
 
       .two-vertical-images {
-        display: flex; /* 彈性佈局，讓圖片並排 */
-        justify-content: space-between; /* 兩張圖片均勻分佈 */
-        gap: 2rem; /* 圖片之間的間距 */
+        display: flex;
+        justify-content: space-between;
+        gap: 4%; /* 使用百分比間距更彈性 */
         margin-top: 2rem;
-        margin-bottom: 2rem; /* 與下方內容的距離 */
+        margin-bottom: 2rem;
+        flex-wrap: wrap; /* 若畫面太小，允許換行 */
       }
 
       .two-vertical-images img {
-        width: calc(50% - 0.5rem); /* 每張圖片佔用容器的一半減去間距 */
-        text-align: center; /* 確保圖片置中 */
-        height: auto; /* 保持圖片的直式比例 */
-        object-fit: cover; /* 確保圖片內容適應容器 */
+        width: 48%; /* 每張圖片約佔一半（加上 gap 剛好 100%） */
+        height: auto; /* 保持原比例 */
+        object-fit: cover;
+        display: block;
+        margin: 0 auto;
       }
 
       .recommendation-section {
-        margin-top: 1.5rem; /* 與上方文字的間距 */
+        margin-top: 3vh; /* 與上方文字的間距 */
         text-align: center;
         position: sticky;
         top: 80px; /* 空出導覽列的高度，確保推薦區不被覆蓋 */
         z-index: 10; /* 提高層級，避免被其他內容遮蓋 */
+        padding: 0 5%;
       }
 
       .recommendation-section h3 {
-        font-size: 18px;
+        font-size: 1.125rem;
         font-weight: bold;
-        margin-bottom: 0.5rem; /* 與按鈕區的距離 */
+        margin-bottom: 1vh; /* 與按鈕區的距離 */
       }
 
       .recommendation-buttons {
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
-        gap: 0.5rem; /* 按鈕之間的間距 */
+        gap: 0.5em; /* 按鈕之間的間距 */
       }
 
       .recommendation-buttons button {
-        padding: 0.5rem 1rem;
-        font-size: 14px;
+        padding: 0.5em 1em;
+        font-size: 0.875rem;
         color: white;
         background-color: #78bcc4;
         border: none;
-        border-radius: 4px;
+        border-radius: 0.25rem;
         transition: transform 0.3s;
         font-family: Arial, sans-serif;
       }
@@ -229,13 +241,13 @@
       }
 
       .contact-section {
-        padding: 2rem 5rem; /* 上下與左右間距 */
+        padding: 4vh 8vw; /* 上下與左右間距 */
         background-color: #eff5f5; /* 淺灰背景 */
         text-align: center; /* 確保內容置中對齊 */
       }
 
       .contact-item h3 {
-        font-size: 18px; /* 調整標題字體大小 */
+        font-size: 1.125rem; /* 調整標題字體大小 */
         margin: 0; /* 移除多餘的間距 */
         text-decoration: none; /* 移除底線 */
       }
@@ -243,43 +255,49 @@
       footer {
         background-color: #000;
         color: white;
-        height: 30px;
+        height: 3vh; /* 使用相對單位，高度占螢幕高度的 3% */
         display: flex;
         justify-content: center;
         align-items: center;
+        font-size: 1.5rem; /* 使用相對字體大小 */
+        padding: 0.5rem 0; /* 確保小螢幕時內容不擠壓 */
       }
 
       #expandable-menu {
-        position: fixed;
-        top: 70px; /* 與螢幕頂部的距離設為 60px */
+        position: fixed; 
         right: 0;
-        height: calc(100% - 70px); /* 高度減去 60px，避免超出視窗 */
-        width: 395px; /* 目錄寬度與 sidebar 齊寬 */
+        width: 26vw; /* 目錄寬度與 sidebar 齊寬 */
+        max-width: 90%; /* 避免在小螢幕太寬 */
         transform: translateX(100%); /* 初始狀態：隱藏在右側 */
         transition: transform 0.3s ease;
         background-color: #f4f4f9; /* 與網站背景一致 */
         z-index: 1000;
+        box-sizing: border-box;
       }
 
       /* 收闔按鈕 */
       #menu-toggle {
-        position: absolute;
+        position: fixed;
         top: 45%;
-        left: -40px; /* 調整按鈕的位置，適應按鈕變大後的寬度 */
-        transform: translateY(-50%);
-        width: 40px; /* 增大按鈕寬度 */
-        height: 80px; /* 增大按鈕高度 */
+        right: 0; /* 永遠貼在右側 */
+        transform: translateY(-50%) translateX(0);
+        width: 2.5em; /* 增大按鈕寬度 */
+        height: 5em; /* 增大按鈕高度 */
         background-color: #78bcc4;
         color: white;
-        border-radius: 4px;
+        border-radius: 0.4em 0 0 0.4em;
         display: flex;
         justify-content: center; /* 水平居中 */
         align-items: center; /* 垂直居中 */
+        z-index: 2000; /* 要比 expandable-menu 更高，避免被蓋住 */
+        cursor: pointer;
+        box-shadow: -0.1em 0 0.3em rgba(0,0,0,0.1);
+        transition: transform 0.3s ease; /* 平滑移動 */
       }
 
       #menu-toggle::after {
         content: "目錄"; /* 在按鈕內顯示 "目錄" */
-        font-size: 17px;
+        font-size: 1rem;
         color: white; /* 設定字體顏色為白色 */
         writing-mode: vertical-rl; /* 使文字垂直排列 */
       }
@@ -290,14 +308,16 @@
 
       /* 目錄內容 */
       #menu-content {
-        padding: 0.5rem 1rem;
+        padding: 0.5rem 5%;
         overflow-y: auto;
         height: 100%;
+        box-sizing: border-box;
       }
 
       #menu-content h4 {
         font-weight: bold;
         margin-top: 0;
+        font-size: 1.2rem;
       }
 
       #menu-list {
@@ -306,13 +326,14 @@
       }
 
       #menu-list li {
-        margin-bottom: 0.5rem;
+        margin-bottom: 1vh;
       }
 
       #menu-list a {
         color: #2a90a7;
         text-decoration: none;
         transition: color 0.3s;
+        font-size: 1rem; /* 使用相對字體大小 */
       }
 
       #menu-list a:hover {
@@ -320,13 +341,149 @@
       }
 
       #menu-list .sub-item {
-        margin-left: 1.5rem; /* 調整縮排距離 */
+        margin-left: 8%; /* 調整縮排距離 */
         font-size: 0.9rem; /* 可選：調整子項目字體大小 */
       }
 
       /* 目錄展開狀態 */
       #expandable-menu.open {
         transform: translateX(0);
+      }
+
+      /* === 響應式調整：針對手機與小螢幕設備 === */
+      @media (max-width: 768px) {
+        nav {
+          flex-direction: row;
+          flex-wrap: wrap;
+          align-items: center;
+          justify-content: space-between;
+          padding: 1rem 5vw;  /* 窄螢幕時減少左右留白 */
+          width: 100%;
+          box-sizing: border-box;
+        }
+
+        .nav-right {
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          gap: 0.5rem;
+          transform: none;
+          width: auto;
+          white-space: nowrap;               /* 禁止內容自動換行 */
+        }
+
+        nav a {
+          padding: 0.5rem 0.5rem;           /* 減少垂直padding */
+          margin: 0 0.3rem;
+          font-size: 0.85rem;
+          white-space: nowrap;               /* 確保文字不換行 */
+          overflow: hidden;
+          text-overflow: ellipsis;           /* 若內容超出，顯示省略號 */
+        }
+
+        .nav-dropdown {
+          width: 60%; /* 或者用 max-content, fit-content 看需求 */
+          font-size: 0.85rem; /* 調整字體大小和導覽列一致 */
+          padding: 0.5rem;
+        }
+      
+        .nav-dropdown a {
+          font-size: inherit; /* 確保跟 .nav-dropdown 一樣大 */
+          padding: 0.5rem 1rem;
+          white-space: normal; /* 可選：讓字在必要時換行 */
+        }
+
+        .dropdown-content {
+          width: 12vw;
+          min-width: 8em; /* 保證至少能顯示幾個字 */
+          max-width: none;
+        }
+
+        .dropdown-content a {
+          font-size: 0.85rem;
+        }
+        
+        .intro-section {
+          flex-direction: column;
+          padding: 8%;
+        }
+
+        .intro-section .left,
+        .intro-section .right {
+          width: 100%;
+          padding: 0;
+          flex: 1 1 100%;
+        }
+
+        .intro-section .right {
+          margin-top: 1.5rem;
+          display: flex;
+          justify-content: center;
+        }
+
+        .intro-section h4 {
+          max-width: 100%;
+          font-size: 1rem;
+        }
+
+        .destination-grid {
+          flex-direction: column;
+          gap: 1rem;
+        }
+
+        .destination-section h4 {
+          font-size: 1rem;
+        }
+
+        .destination-item {
+          max-width: 100%;
+          width: 100%;
+        }
+
+        .destination-item.a_role_with_2 {
+          position: static;
+          left: auto;
+        }
+
+        .destination-main,
+        .destination-sidebar {
+          width: 100%;
+          margin: 0;
+          padding: 0;
+        }
+
+        .destination-sidebar {
+          margin-top: 2rem;
+        }
+
+        .recommendation-buttons button {
+          width: 100%; /* 小螢幕按鈕全寬排列 */
+        }
+
+        .contact-section {
+          padding: 3vh 5vw;
+        }
+
+        .contact-item h3 {
+          font-size: 1rem;
+        }
+
+        /* 目錄區寬度改為螢幕寬度的40% */
+        #expandable-menu {
+          width: 40vw !important; /* 用vw方便響應螢幕寬度 */
+          max-width: 90%; /* 保留原本max-width避免太寬 */
+        }
+      
+        #expandable-menu,
+        #expandable-menu * {
+          font-size: 85% !important;
+        }
+              
+        #menu-toggle {
+          width: 75%;
+          max-width: 1.875em;
+          min-width: 1.875em;
+        }
       }
     </style>
   </head>
@@ -342,7 +499,7 @@
       <div class="nav-right">
         <a href="首頁.html">關於我</a>
         <div class="dropdown">
-          <a>亞洲旅遊</a>
+          <a class="dropdown-toggle">亞洲旅遊</a>
           <div class="dropdown-content">
             <a href="中國.html">中國</a>
             <a href="新加坡.html">新加坡</a>
@@ -353,7 +510,7 @@
           </div>
         </div>
         <div class="dropdown">
-          <a>歐洲旅遊</a>
+          <a class="dropdown-toggle">歐洲旅遊</a>
           <div class="dropdown-content">
             <a href="英國.html">英國</a>
             <a href="法國.html">法國</a>
@@ -371,7 +528,7 @@
           </div>
         </div>
         <div class="dropdown">
-          <a>美洲旅遊</a>
+          <a class="dropdown-toggle">美洲旅遊</a>
           <div class="dropdown-content">
             <a href="美國.html">美國</a>
             <a href="加拿大.html">加拿大</a>
@@ -389,7 +546,7 @@
         </h4>
       </div>
       <div class="right">
-        <img src="美國照片\矽谷\矽谷_介紹.jpg" width="90%" height="350px" />
+        <img src="美國照片\矽谷\矽谷_介紹.jpg" style="width: 100%; height: auto; max-width: 100%;" />
       </div>
     </div>
 
@@ -427,13 +584,13 @@
           整體建築採用玻璃、碳纖維屋頂與金屬材質，與 Apple Park 的設計理念相呼應，是探索蘋果品牌文化的最佳地點！
         </h4>
         <div style="text-align: center">
-          <img src="美國照片\矽谷\SV1.jpg" width="600px" />
-          <img src="美國照片\矽谷\SV2.jpg" width="600px" />
-          <img src="美國照片\矽谷\SV3.jpg" width="800px" />
-          <img src="美國照片\矽谷\SV4.jpg" width="800px" />
-          <img src="美國照片\矽谷\SV5.jpg" width="800px" />
-          <img src="美國照片\矽谷\SV6.jpg" width="800px" />
-          <img src="美國照片\矽谷\SV7.jpg" width="600px" />
+          <img src="美國照片\矽谷\SV1.jpg" style="width: 90%; max-width: 600px; height: auto; margin: 0.5rem;" />
+          <img src="美國照片\矽谷\SV2.jpg" style="width: 90%; max-width: 600px; height: auto; margin: 0.5rem;" />
+          <img src="美國照片\矽谷\SV3.jpg" style="width: 100%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+          <img src="美國照片\矽谷\SV4.jpg" style="width: 100%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+          <img src="美國照片\矽谷\SV5.jpg" style="width: 100%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+          <img src="美國照片\矽谷\SV6.jpg" style="width: 100%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+          <img src="美國照片\矽谷\SV7.jpg" style="width: 90%; max-width: 600px; height: auto; margin: 0.5rem;" />
         </div>
         <br /><br /><br />
         <h3>Googleplex</h3>
@@ -442,14 +599,14 @@
         </h4>
         <h4>儘管 Googleplex 並未對外開放參觀內部辦公區域，但普通民眾可以自由參觀園區的部分公共區域，如 Android 草地雕像公園，這裡展示著歷代 Android 系統版本吉祥物，如 Cupcake、Marshmallow 等，吸引許多科技迷拍照打卡，園區內還有 Google Store，販售獨家品牌商品。</h4>
         <div style="text-align: center">
-          <img src="美國照片\矽谷\SV8.jpg" width="600px" />
-          <img src="美國照片\矽谷\SV9.jpg" width="600px" />
-          <img src="美國照片\矽谷\SV10.jpg" width="800px" />
-          <img src="美國照片\矽谷\SV11.jpg" width="600px" />
-          <img src="美國照片\矽谷\SV12.jpg" width="600px" />
-          <img src="美國照片\矽谷\SV13.jpg" width="800px" />
-          <img src="美國照片\矽谷\SV14.jpg" width="800px" />
-          <img src="美國照片\矽谷\SV15.jpg" width="800px" />
+          <img src="美國照片\矽谷\SV8.jpg" style="width: 90%; max-width: 600px; height: auto; margin: 0.5rem;" />
+          <img src="美國照片\矽谷\SV9.jpg" style="width: 90%; max-width: 600px; height: auto; margin: 0.5rem;" />
+          <img src="美國照片\矽谷\SV10.jpg" style="width: 100%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+          <img src="美國照片\矽谷\SV11.jpg" style="width: 90%; max-width: 600px; height: auto; margin: 0.5rem;" />
+          <img src="美國照片\矽谷\SV12.jpg" style="width: 90%; max-width: 600px; height: auto; margin: 0.5rem;" />
+          <img src="美國照片\矽谷\SV13.jpg" style="width: 100%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+          <img src="美國照片\矽谷\SV14.jpg" style="width: 100%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+          <img src="美國照片\矽谷\SV15.jpg" style="width: 100%; max-width: 90vw; height: auto; margin: 0.5rem;" />
         </div>
         <br /><br /><br />
         <h3>史丹佛大學 (Stanford University)</h3>
@@ -459,11 +616,11 @@
         </h4>
         <h4>其中胡佛塔 (Hoover Tower) 是史丹佛大學的地標建築，高 87 公尺，建於 1941 年，以美國第 31 任總統赫伯特·胡佛命名，塔內設有胡佛研究所，收藏大量珍貴歷史檔案，可以登上觀景台俯瞰史丹佛校園與矽谷美景，其獨特的西班牙文藝復興風格，使其成為史丹佛最具代表性的建築。</h4>
         <div style="text-align: center">
-          <img src="美國照片\矽谷\SV16.jpg" width="800px" />
-          <img src="美國照片\矽谷\SV17.jpg" width="800px" />
-          <img src="美國照片\矽谷\SV18.jpg" width="600px" />
-          <img src="美國照片\矽谷\SV19.jpg" width="800px" />
-          <img src="美國照片\矽谷\SV20.jpg" width="800px" />
+          <img src="美國照片\矽谷\SV16.jpg" style="width: 100%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+          <img src="美國照片\矽谷\SV17.jpg" style="width: 100%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+          <img src="美國照片\矽谷\SV18.jpg" style="width: 90%; max-width: 600px; height: auto; margin: 0.5rem;" />
+          <img src="美國照片\矽谷\SV19.jpg" style="width: 100%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+          <img src="美國照片\矽谷\SV20.jpg" style="width: 100%; max-width: 90vw; height: auto; margin: 0.5rem;" />
         </div>
         <br /><br /><br />
         <h3>電腦歷史博物館 (Computer History Museum)</h3>
@@ -476,8 +633,8 @@
           <img src="美國照片\矽谷\SV21-2.jpg" />
         </div>
         <div style="text-align: center">
-          <img src="美國照片\矽谷\SV22.jpg" width="800px" />
-          <img src="美國照片\矽谷\SV23.jpg" width="800px" />
+          <img src="美國照片\矽谷\SV22.jpg" style="width: 100%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+          <img src="美國照片\矽谷\SV23.jpg" style="width: 100%; max-width: 90vw; height: auto; margin: 0.5rem;" />
         </div>
         <br /><br /><br />
         <h3>英特爾博物館 (Intel Museum)</h3>
@@ -485,8 +642,8 @@
           英特爾博物館位於聖塔克拉拉 (Santa Clara)，是全球半導體巨頭英特爾設立的科技博物館，展示半導體技術的發展歷程與創新成果，透過互動展覽、影片和歷史文物，介紹從 Intel 4004 (全球第一款商業微處理器) 到現代高效能晶片的發展歷程，可以看到晶圓製造過程、無塵室技術、奈米級電路設計，並親身體驗如何將矽晶圓轉化為運算核心。
         </h4>
         <div style="text-align: center">
-          <img src="美國照片\矽谷\SV24.jpg" width="600px" />
-          <img src="美國照片\矽谷\SV25.jpg" width="800px" />
+          <img src="美國照片\矽谷\SV24.jpg" style="width: 90%; max-width: 600px; height: auto; margin: 0.5rem;" />
+          <img src="美國照片\矽谷\SV25.jpg" style="width: 100%; max-width: 90vw; height: auto; margin: 0.5rem;" />
         </div>
         <br /><br />
         <h2>矽谷美食</h2>
@@ -495,8 +652,8 @@
           In-N-Out Burger 是美國西岸最具代表性的速食漢堡連鎖店，於 1948 年在加州鮑德溫公園 (Baldwin Park) 創立，以新鮮食材、簡單菜單與高品質漢堡聞名，品牌堅持現點現做，不使用冷凍肉或微波食品，所有漢堡均以 100% 純牛肉製成，並搭配新鮮生菜、番茄、自製醬料及手工切製的薯條，經典菜單包括 Double-Double (雙層牛肉雙層起司漢堡) 和 Animal Style (隱藏版醬料與煎洋蔥)，深受顧客喜愛。
         </h4>
         <div style="text-align: center">
-          <img src="美國照片\矽谷\SV26.jpg" width="600px" />
-          <img src="美國照片\矽谷\SV27.jpg" width="600px" />
+          <img src="美國照片\矽谷\SV26.jpg" style="width: 90%; max-width: 600px; height: auto; margin: 0.5rem;" />
+          <img src="美國照片\矽谷\SV27.jpg" style="width: 90%; max-width: 600px; height: auto; margin: 0.5rem;" />
         </div>
         <br /><br /><br />
         <h3>Meyhouse</h3>
@@ -506,10 +663,10 @@
           自製優格與地道的甜點，還供應來自土耳其與加州的精選葡萄酒，打造絕佳的搭配體驗。
         </h4>
         <div style="text-align: center">
-          <img src="美國照片\矽谷\SV28.jpg" width="800px" />
-          <img src="美國照片\矽谷\SV29.jpg" width="800px" />
-          <img src="美國照片\矽谷\SV30.jpg" width="800px" />
-          <img src="美國照片\矽谷\SV31.jpg" width="800px" />
+          <img src="美國照片\矽谷\SV28.jpg" style="width: 100%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+          <img src="美國照片\矽谷\SV29.jpg" style="width: 100%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+          <img src="美國照片\矽谷\SV30.jpg" style="width: 100%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+          <img src="美國照片\矽谷\SV31.jpg" style="width: 100%; max-width: 90vw; height: auto; margin: 0.5rem;" />
         </div>
         <br /><br />
       </div>
@@ -574,9 +731,8 @@
     <footer>
       <h6>COPYRIGHT © 2025 Tommy 看世界 All rights reserved.</h6>
     </footer>
+    <div id="menu-toggle"></div>
     <div id="expandable-menu">
-      <div id="menu-toggle"></div>
-      <!-- 收闔按鈕 -->
       <div id="menu-content">
         <h4>目錄</h4>
         <ul id="menu-list"></ul>
@@ -593,6 +749,23 @@
         // 點擊按鈕切換目錄狀態
         toggle.addEventListener("click", () => {
           menu.classList.toggle("open");
+
+          const menuWidth = menu.offsetWidth; // 獲取目前展開的目錄寬度
+
+          if (menu.classList.contains("open")) {
+            // 讓按鈕向左平移與 menu 一樣的寬度
+            toggle.style.transform = `translateY(-50%) translateX(-${menuWidth}px)`;
+          } else {
+            // 收回原位
+            toggle.style.transform = `translateY(-50%) translateX(0)`;
+          }
+        });
+
+        window.addEventListener("load", () => {
+          if (menu.classList.contains("open")) {
+            const menuWidth = menu.offsetWidth;
+            toggle.style.transform = `translateY(-50%) translateX(-${menuWidth}px)`;
+          }
         });
 
         // 從 destination-main 區域提取 h2 和 h3，動態生成目錄
@@ -617,6 +790,23 @@
           menuList.appendChild(listItem);
         });
 
+        function adjustMenuPosition() {
+          const nav = document.querySelector("nav");
+          const menu = document.getElementById("expandable-menu");
+      
+          if (nav && menu) {
+            const navHeight = nav.offsetHeight;
+      
+            // 設定 menu 的 top 與高度
+            menu.style.top = `${navHeight}px`;
+            menu.style.height = `calc(100vh - ${navHeight}px)`;
+          }
+        }
+      
+        // 載入與尺寸變化時調整
+        window.addEventListener("DOMContentLoaded", adjustMenuPosition);
+        window.addEventListener("resize", adjustMenuPosition);
+        
         // 滾動至目標位置並加上 75px 偏移
         menuList.addEventListener("click", (event) => {
           if (event.target.tagName === "A") {
@@ -636,6 +826,31 @@
               });
             }
           }
+        });
+        // 手機 Safari 相容：點擊展開 dropdown
+        const dropdownToggles = document.querySelectorAll(".dropdown-toggle");
+
+        dropdownToggles.forEach((toggle) => {
+          toggle.addEventListener("click", function (e) {
+            e.stopPropagation(); // 防止冒泡，避免點擊外層時也觸發關閉
+            const dropdown = this.nextElementSibling;
+            const isVisible = dropdown.style.display === "block";
+            
+            // 關閉所有其他 dropdown（可選）
+            document.querySelectorAll(".dropdown-content").forEach((menu) => {
+              menu.style.display = "none";
+            });
+
+            // 切換目前這一個 dropdown
+            dropdown.style.display = isVisible ? "none" : "block";
+          });
+        });
+
+        // 點擊其他地方時關閉 dropdown
+        window.addEventListener("click", function () {
+          document.querySelectorAll(".dropdown-content").forEach((menu) => {
+            menu.style.display = "none";
+          });
         });
       });
     </script>
