@@ -12,7 +12,6 @@
       body {
         font-family: Calibri, Arial, sans-serif; /* 首選 Calibri，次選 Arial */
         margin: 0;
-        padding: 0;
         overflow-x: hidden; /* 禁止水平滾動 */
         background-color: #f4f4f9;
         color: #333;
@@ -28,7 +27,6 @@
         font-weight: bold;
         color: #2a90a7;
         display: inline-block;
-        margin-bottom: 1rem; /* 縮小 h2 的底部邊距 */
         background-color: #cee5e8;
       }
 
@@ -36,7 +34,7 @@
         font-size: 26px;
         margin: 0 0 1rem;
         font-weight: bold;
-        text-decoration: underline; /* 加上底線 */
+        text-decoration: underline;
       }
 
       h4 {
@@ -62,56 +60,68 @@
       nav {
         background-color: #78bcc4;
         display: flex;
-        justify-content: space-between; /* 保持分佈在兩側 */
-        width: calc(100% - 10rem); /* 與其他內容的邊界一致 */
-        padding: 0.5rem 5rem; /* 主導覽列的 padding 設置 */
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;                     /* 讓 nav 寬度隨螢幕自適應 */
+        padding: 0.8rem 5vw;               /* 左右 padding 用 5% 寬度 */
+        box-sizing: border-box;         /* 確保 padding 不會影響寬度總長 */
         position: fixed;
         top: 0;
         z-index: 1000;
       }
 
       .nav-left .logo img {
-        height: 50px; /* 控制 Logo 圖片的高度 */
-        transform: translateX(-1.5rem); /* 向右移動 2rem */
+        height: 5vw; /* 高度為螢幕寬度的 5% */
+        transform: translateX(-2vw); /* 向左移動 2% 寬度 */
+        max-width: 100%; /* 確保不會超過容器 */
+        height: auto; /* 保持圖片比例（建議與 max-height 搭配） */
+        max-height: 3rem;
       }
 
       .nav-right {
         display: flex;
         align-items: center;
-        transform: translateX(2rem); /* 向右移動 2rem */
+        margin-left: auto; /* 推到右側 */
+        padding-left: 5%;   /* 內部元素間距，彈性設計 */
       }
 
       nav a {
         color: #eff5f5;
         text-decoration: none;
-        padding: 0.5rem 1rem;
-        margin: 0 0.5rem;
+        padding: 1vh 1vw;
+        margin: 0 1vw;
         transition: transform 0.3s;
       }
 
       nav a:hover {
-        transform: translateY(-3px);
+        transform: translateY(-0.5vh); /* 根據視窗高度調整 */
       }
 
       .dropdown {
         position: relative;
+        display: inline-block;
       }
 
       .dropdown-content {
+        width: 100%; /* 佔滿父層寬度 */
+        max-width: 20vw; /* 限制最大寬度 */
         display: none;
         position: absolute;
         background-color: #78bcc4;
-        min-width: 160px;
-        border-radius: 4px;
-        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        min-width: 10em; /* 取代 160px，以字體大小作為比例單位 */
+        border-radius: 0.25em;
+        box-shadow: 0 0.5em 1em rgba(0, 0, 0, 0.2); /* 改為相對單位 */
         padding: 0.2rem 0;
+        z-index: 999;
       }
 
       .dropdown-content a {
         color: #eff5f5;
         display: block;
         transition: transform 0.3s;
-        border-bottom: 1px solid #ddd;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.3); /* 更淡配色、柔和過渡 */
+        padding: 0.6em 1em;
+        font-size: 1em;
       }
 
       .dropdown-content a:last-child {
@@ -119,107 +129,109 @@
       }
 
       .dropdown-content a:hover {
-        transform: translateY(-3px);
-      }
-
-      .dropdown:hover .dropdown-content {
-        display: block;
+        transform: translateY(-0.25em); /* 改為相對單位 */
       }
 
       .intro-section {
         background-color: #eff5f5;
         display: flex;
-        padding: 2rem;
-        margin-top: 60px; /* 根據導航列高度調整 */
-        justify-content: space-between;
-        align-items: flex-start;
-        width: 100%;
-        box-sizing: border-box; /* 包含 padding 在內 */
-        padding-left: 5rem;
-        padding-right: 5rem;
+        flex-wrap: wrap; /* 確保在小螢幕可換行 */
+        padding: 2rem 5%;
+        margin-top: 4em; /* 根據導航列高度調整 */
       }
 
       .intro-section h4 {
-        max-width: 700px;
+        max-width: 85%; /* 改為相對單位，避免固定寬度限制 */
+        line-height: 1.8;
       }
 
       .intro-section .left {
         width: 60%;
+        padding-right: 1%;
       }
 
       .intro-section .right {
-        width: 40%;
+        width: 39%;
       }
 
       .destination-section {
         display: flex;
+        flex-wrap: wrap;               /* 小螢幕時允許換行 */
         padding: 1rem 5%; /* 左右內間距為螢幕的10% */
         background-color: white;
       }
 
       .destination-main {
-        width: 75%;
-        margin-right: 1.5rem; /* 增加右邊外邊距 */
+        width: 72%;                    /* 主要內容佔 72%，略縮以保留間距 */
+        margin-right: 3%;              /* 與 sidebar 間保留間距（約為 3%） */
+        box-sizing: border-box;
       }
 
       .destination-sidebar {
-        width: 25%;
-        padding-left: 1.5rem; /* 增加左側內邊距 */
-        margin-top: 2rem; /* 向上或向下調整，負值表示向上 */
+        width: 25%;                    /* 側邊欄佔 25% */
+        padding-left: 2%;             /* 相對內邊距 */
+        margin-top: 2rem;
+        box-sizing: border-box;
       }
 
       .sidebar-image-container {
         margin-bottom: 1rem;
-        text-align: center; /* 確保圖片置中 */
+        text-align: center; /* 置中圖片 */
       }
 
       .sidebar-image-container img {
-        height: 300px; /* 設置直式圖片的高度 */
+        width: 90%;         /* 圖片寬度為容器寬度的 90% */
+        height: auto;       /* 高度自動，保持比例 */
+        max-height: 60vh;   /* 避免圖片過高，佔螢幕最大 60% 高 */
+        object-fit: cover;  /* 裁切處理長圖 */
       }
 
       .two-vertical-images {
-        display: flex; /* 彈性佈局，讓圖片並排 */
-        justify-content: space-between; /* 兩張圖片均勻分佈 */
-        gap: 2rem; /* 圖片之間的間距 */
+        display: flex;
+        justify-content: space-between;
+        gap: 4%; /* 使用百分比間距更彈性 */
         margin-top: 2rem;
-        margin-bottom: 2rem; /* 與下方內容的距離 */
+        margin-bottom: 2rem;
+        flex-wrap: wrap; /* 若畫面太小，允許換行 */
       }
 
       .two-vertical-images img {
-        width: calc(50% - 0.5rem); /* 每張圖片佔用容器的一半減去間距 */
-        text-align: center; /* 確保圖片置中 */
-        height: auto; /* 保持圖片的直式比例 */
-        object-fit: cover; /* 確保圖片內容適應容器 */
+        width: 48%; /* 每張圖片約佔一半（加上 gap 剛好 100%） */
+        height: auto; /* 保持原比例 */
+        object-fit: cover;
+        display: block;
+        margin: 0 auto;
       }
 
       .recommendation-section {
-        margin-top: 1.5rem; /* 與上方文字的間距 */
+        margin-top: 3vh; /* 與上方文字的間距 */
         text-align: center;
         position: sticky;
         top: 80px; /* 空出導覽列的高度，確保推薦區不被覆蓋 */
         z-index: 10; /* 提高層級，避免被其他內容遮蓋 */
+        padding: 0 5%;
       }
 
       .recommendation-section h3 {
-        font-size: 18px;
+        font-size: 1.125rem;
         font-weight: bold;
-        margin-bottom: 0.5rem; /* 與按鈕區的距離 */
+        margin-bottom: 1vh; /* 與按鈕區的距離 */
       }
 
       .recommendation-buttons {
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
-        gap: 0.5rem; /* 按鈕之間的間距 */
+        gap: 0.5em; /* 按鈕之間的間距 */
       }
 
       .recommendation-buttons button {
-        padding: 0.5rem 1rem;
-        font-size: 14px;
+        padding: 0.5em 1em;
+        font-size: 0.875rem;
         color: white;
         background-color: #78bcc4;
         border: none;
-        border-radius: 4px;
+        border-radius: 0.25rem;
         transition: transform 0.3s;
         font-family: Arial, sans-serif;
       }
@@ -229,13 +241,13 @@
       }
 
       .contact-section {
-        padding: 2rem 5rem; /* 上下與左右間距 */
+        padding: 4vh 8vw; /* 上下與左右間距 */
         background-color: #eff5f5; /* 淺灰背景 */
         text-align: center; /* 確保內容置中對齊 */
       }
 
       .contact-item h3 {
-        font-size: 18px; /* 調整標題字體大小 */
+        font-size: 1.125rem; /* 調整標題字體大小 */
         margin: 0; /* 移除多餘的間距 */
         text-decoration: none; /* 移除底線 */
       }
@@ -243,43 +255,49 @@
       footer {
         background-color: #000;
         color: white;
-        height: 30px;
+        height: 3vh; /* 使用相對單位，高度占螢幕高度的 3% */
         display: flex;
         justify-content: center;
         align-items: center;
+        font-size: 1.5rem; /* 使用相對字體大小 */
+        padding: 0.5rem 0; /* 確保小螢幕時內容不擠壓 */
       }
 
       #expandable-menu {
-        position: fixed;
-        top: 70px; /* 與螢幕頂部的距離設為 60px */
+        position: fixed; 
         right: 0;
-        height: calc(100% - 70px); /* 高度減去 60px，避免超出視窗 */
-        width: 395px; /* 目錄寬度與 sidebar 齊寬 */
+        width: 26vw; /* 目錄寬度與 sidebar 齊寬 */
+        max-width: 90%; /* 避免在小螢幕太寬 */
         transform: translateX(100%); /* 初始狀態：隱藏在右側 */
         transition: transform 0.3s ease;
         background-color: #f4f4f9; /* 與網站背景一致 */
         z-index: 1000;
+        box-sizing: border-box;
       }
 
       /* 收闔按鈕 */
       #menu-toggle {
-        position: absolute;
+        position: fixed;
         top: 45%;
-        left: -40px; /* 調整按鈕的位置，適應按鈕變大後的寬度 */
-        transform: translateY(-50%);
-        width: 40px; /* 增大按鈕寬度 */
-        height: 80px; /* 增大按鈕高度 */
+        right: 0; /* 永遠貼在右側 */
+        transform: translateY(-50%) translateX(0);
+        width: 2.5em; /* 增大按鈕寬度 */
+        height: 5em; /* 增大按鈕高度 */
         background-color: #78bcc4;
         color: white;
-        border-radius: 4px;
+        border-radius: 0.4em 0 0 0.4em;
         display: flex;
         justify-content: center; /* 水平居中 */
         align-items: center; /* 垂直居中 */
+        z-index: 2000; /* 要比 expandable-menu 更高，避免被蓋住 */
+        cursor: pointer;
+        box-shadow: -0.1em 0 0.3em rgba(0,0,0,0.1);
+        transition: transform 0.3s ease; /* 平滑移動 */
       }
 
       #menu-toggle::after {
         content: "目錄"; /* 在按鈕內顯示 "目錄" */
-        font-size: 17px;
+        font-size: 1rem;
         color: white; /* 設定字體顏色為白色 */
         writing-mode: vertical-rl; /* 使文字垂直排列 */
       }
@@ -290,14 +308,16 @@
 
       /* 目錄內容 */
       #menu-content {
-        padding: 0.5rem 1rem;
+        padding: 0.5rem 5%;
         overflow-y: auto;
         height: 100%;
+        box-sizing: border-box;
       }
 
       #menu-content h4 {
         font-weight: bold;
         margin-top: 0;
+        font-size: 1.2rem;
       }
 
       #menu-list {
@@ -306,13 +326,14 @@
       }
 
       #menu-list li {
-        margin-bottom: 0.5rem;
+        margin-bottom: 1vh;
       }
 
       #menu-list a {
         color: #2a90a7;
         text-decoration: none;
         transition: color 0.3s;
+        font-size: 1rem; /* 使用相對字體大小 */
       }
 
       #menu-list a:hover {
@@ -320,13 +341,149 @@
       }
 
       #menu-list .sub-item {
-        margin-left: 1.5rem; /* 調整縮排距離 */
+        margin-left: 8%; /* 調整縮排距離 */
         font-size: 0.9rem; /* 可選：調整子項目字體大小 */
       }
 
       /* 目錄展開狀態 */
       #expandable-menu.open {
         transform: translateX(0);
+      }
+
+      /* === 響應式調整：針對手機與小螢幕設備 === */
+      @media (max-width: 768px) {
+        nav {
+          flex-direction: row;
+          flex-wrap: wrap;
+          align-items: center;
+          justify-content: space-between;
+          padding: 1rem 5vw;  /* 窄螢幕時減少左右留白 */
+          width: 100%;
+          box-sizing: border-box;
+        }
+
+        .nav-right {
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          gap: 0.5rem;
+          transform: none;
+          width: auto;
+          white-space: nowrap;               /* 禁止內容自動換行 */
+        }
+
+        nav a {
+          padding: 0.5rem 0.5rem;           /* 減少垂直padding */
+          margin: 0 0.3rem;
+          font-size: 0.85rem;
+          white-space: nowrap;               /* 確保文字不換行 */
+          overflow: hidden;
+          text-overflow: ellipsis;           /* 若內容超出，顯示省略號 */
+        }
+
+        .nav-dropdown {
+          width: 60%; /* 或者用 max-content, fit-content 看需求 */
+          font-size: 0.85rem; /* 調整字體大小和導覽列一致 */
+          padding: 0.5rem;
+        }
+      
+        .nav-dropdown a {
+          font-size: inherit; /* 確保跟 .nav-dropdown 一樣大 */
+          padding: 0.5rem 1rem;
+          white-space: normal; /* 可選：讓字在必要時換行 */
+        }
+
+        .dropdown-content {
+          width: 12vw;
+          min-width: 8em; /* 保證至少能顯示幾個字 */
+          max-width: none;
+        }
+
+        .dropdown-content a {
+          font-size: 0.85rem;
+        }
+        
+        .intro-section {
+          flex-direction: column;
+          padding: 8%;
+        }
+
+        .intro-section .left,
+        .intro-section .right {
+          width: 100%;
+          padding: 0;
+          flex: 1 1 100%;
+        }
+
+        .intro-section .right {
+          margin-top: 1.5rem;
+          display: flex;
+          justify-content: center;
+        }
+
+        .intro-section h4 {
+          max-width: 100%;
+          font-size: 1rem;
+        }
+
+        .destination-grid {
+          flex-direction: column;
+          gap: 1rem;
+        }
+
+        .destination-section h4 {
+          font-size: 1rem;
+        }
+
+        .destination-item {
+          max-width: 100%;
+          width: 100%;
+        }
+
+        .destination-item.a_role_with_2 {
+          position: static;
+          left: auto;
+        }
+
+        .destination-main,
+        .destination-sidebar {
+          width: 100%;
+          margin: 0;
+          padding: 0;
+        }
+
+        .destination-sidebar {
+          margin-top: 2rem;
+        }
+
+        .recommendation-buttons button {
+          width: 100%; /* 小螢幕按鈕全寬排列 */
+        }
+
+        .contact-section {
+          padding: 3vh 5vw;
+        }
+
+        .contact-item h3 {
+          font-size: 1rem;
+        }
+
+        /* 目錄區寬度改為螢幕寬度的40% */
+        #expandable-menu {
+          width: 40vw !important; /* 用vw方便響應螢幕寬度 */
+          max-width: 90%; /* 保留原本max-width避免太寬 */
+        }
+      
+        #expandable-menu,
+        #expandable-menu * {
+          font-size: 85% !important;
+        }
+              
+        #menu-toggle {
+          width: 75%;
+          max-width: 1.875em;
+          min-width: 1.875em;
+        }
       }
     </style>
   </head>
@@ -342,7 +499,7 @@
       <div class="nav-right">
         <a href="首頁.html">關於我</a>
         <div class="dropdown">
-          <a>亞洲旅遊</a>
+          <a class="dropdown-toggle">亞洲旅遊</a>
           <div class="dropdown-content">
             <a href="中國.html">中國</a>
             <a href="新加坡.html">新加坡</a>
@@ -353,7 +510,7 @@
           </div>
         </div>
         <div class="dropdown">
-          <a>歐洲旅遊</a>
+          <a class="dropdown-toggle">歐洲旅遊</a>
           <div class="dropdown-content">
             <a href="英國.html">英國</a>
             <a href="法國.html">法國</a>
@@ -371,7 +528,7 @@
           </div>
         </div>
         <div class="dropdown">
-          <a>美洲旅遊</a>
+          <a class="dropdown-toggle">美洲旅遊</a>
           <div class="dropdown-content">
             <a href="美國.html">美國</a>
             <a href="加拿大.html">加拿大</a>
@@ -389,7 +546,7 @@
         </h4>
       </div>
       <div class="right">
-        <img src="越南照片\胡志明市\胡志明市_介紹.jpg" width="90%" height="350px" />
+        <img src="越南照片\胡志明市\胡志明市_介紹.jpg" style="width: 100%; height: auto; max-width: 100%;" />
       </div>
     </div>
 
@@ -405,7 +562,7 @@
           胡志明市的景點相當集中，基本上遊客活動範圍都在第一郡，因此可以步行觀光，也可以叫 Grab。胡志明市的交通非常亂，機車非常多，過馬路的時候因為沒有紅綠燈，大家都是舉手示意自己要穿越馬路，不然可能永遠都過不去喔！
         </h4>
         <div style="text-align: center">
-          <img src="越南照片\胡志明市\胡志明市_交通.jpg" width="600px" />
+          <img src="越南照片\胡志明市\胡志明市_交通.jpg" style="width: 90%; max-width: 600px; height: auto; margin: 0.5rem;" />
         </div>
         <br /><br />
         <h2>胡志明市住宿</h2>
@@ -413,7 +570,7 @@
           胡志明市的景點除了戰爭遺跡博物館在第三郡外，其他都在第一郡，因此如果追求方便的話可以選擇第一郡市中心的酒店，如果想省錢則可以看看第三郡的房間，也有許多不錯的選項。
         </h4>
         <div style="text-align: center">
-          <img src="越南照片\胡志明市\胡志明市_住宿.png" width="800px" />
+          <img src="越南照片\胡志明市\胡志明市_住宿.png" style="width: 100%; max-width: 90vw; height: auto; margin: 0.5rem;" />
         </div>
         <br /><br />
         <h2>胡志明市景點</h2>
@@ -422,17 +579,17 @@
           獨立宮又名統一宮，最早是南越政府的總統府，除了有中西合璧風格的宴會廳、起居室等等，在地下也有許多軍事情報相關的設施，充分展現了南北越分裂時期的緊張感，後來北越軍隊於 1975 年攻破獨立宮完成越南統一，因此獨立宮在越南歷史中有十分重要的意義，推薦喜歡歷史文化及軍事的人可以花上 2 ~ 3 個小時慢慢感受及欣賞。另外要特別注意的是<b>售票處是在靠近噴水池一側</b>，另一頭只能出場無法買票進場喔!
         </h4>
         <div style="text-align: center">
-          <img src="越南照片\胡志明市\HC1.jpg" width="800px" />
+          <img src="越南照片\胡志明市\HC1.jpg" style="width: 100%; max-width: 90vw; height: auto; margin: 0.5rem;" />
         </div>
         <h4>融合中西式建築風格的賓客廳</h4>
         <div style="text-align: center">
-          <img src="越南照片\胡志明市\HC2.jpg" width="800px" />
-          <img src="越南照片\胡志明市\HC3.jpg" width="800px" />
+          <img src="越南照片\胡志明市\HC2.jpg" style="width: 100%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+          <img src="越南照片\胡志明市\HC3.jpg" style="width: 100%; max-width: 90vw; height: auto; margin: 0.5rem;" />
         </div>
         <h4>地底下的畫風突變成非常緊張及肅殺</h4>
         <div style="text-align: center">
-          <img src="越南照片\胡志明市\HC4.jpg" width="800px" />
-          <img src="越南照片\胡志明市\HC5.jpg" width="800px" />
+          <img src="越南照片\胡志明市\HC4.jpg" style="width: 100%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+          <img src="越南照片\胡志明市\HC5.jpg" style="width: 100%; max-width: 90vw; height: auto; margin: 0.5rem;" />
         </div>
         <br /><br /><br />
         <h3>紅教堂 (Notre Dame Cathedral of Saigon)</h3>
@@ -440,7 +597,7 @@
           紅教堂正式名稱為西貢聖母無原罪主教座堂，，是當地最具代表性的法式殖民建築，建於 1863 年至 1880 年間，由法國殖民政府所建，全由法國運來的紅磚砌成，歷經百年風雨依然色澤鮮明，教堂外觀雄偉對稱，擁有兩座高達 58 公尺的尖塔，頂端設有十字架，象徵天主教的信仰與力量。內部空間莊嚴寧靜，以哥德式風格為主，設有大型彩繪玻璃與聖母像，為信徒祈禱與旅人拍照的熱門地點，讓你有置身歐洲的錯覺，可惜我去的時候在大整修，不只裡面進不去外面還整個包起來...。
         </h4>
         <div style="text-align: center">
-          <img src="越南照片\胡志明市\HC6.jpg" width="600px" />
+          <img src="越南照片\胡志明市\HC6.jpg" style="width: 90%; max-width: 600px; height: auto; margin: 0.5rem;" />
         </div>
         <br /><br /><br />
         <h3>西貢中心郵政局 (Bưu điện trung tâm Sài Gòn)</h3>
@@ -448,8 +605,8 @@
           西貢中心郵政局與紅教堂相鄰，是由法國於 1886 年至 1891 年間興建，至 1892 年正式啟用。工程建築風格充滿法式風情，是法國殖民時期的第一座郵政局。現在除了郵局的功能之外，也身兼紀念品明信片販售處的功能，是許多觀光客來淘寶的地方。
         </h4>
         <div style="text-align: center">
-          <img src="越南照片\胡志明市\HC7.jpg" width="800px" />
-          <img src="越南照片\胡志明市\HC8.jpg" width="600px" />
+          <img src="越南照片\胡志明市\HC7.jpg" style="width: 100%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+          <img src="越南照片\胡志明市\HC8.jpg" style="width: 90%; max-width: 600px; height: auto; margin: 0.5rem;" />
         </div>
         <br /><br /><br />
         <h3>胡志明市書街 (Đường sách Thành phố Hồ Chí Minh)</h3>
@@ -457,7 +614,7 @@
           書街位於紅教堂還有郵政總局旁，在胡志明的喧囂中猶如綠洲秘境般的存在，茂密的行道樹好似隔絕了嘈雜，短短的街上有書店、咖啡廳、文創商店，不少是半開放式座位，也有在街上擺攤的舊書販，營造悠閒的氣氛，現在是許多網美的打卡聖地。
         </h4>
         <div style="text-align: center">
-          <img src="越南照片\胡志明市\HC9.jpg" width="600px" />
+          <img src="越南照片\胡志明市\HC9.jpg" style="width: 90%; max-width: 600px; height: auto; margin: 0.5rem;" />
         </div>
         <br /><br /><br />
         <h3>胡志明市人民委員會大廳 (Ủy ban Nhân dân Thành phố Hồ Chí Minh)</h3>
@@ -465,8 +622,8 @@
           胡志明市人民委員會大廳是現在胡志明市委員會的辦公室，興建於 1902 年，並於 1908 年落成，建築風格深受法國風格影響。在大廳前的公園中擺放了胡志明的雕像，面朝著直通西貢河的 Đ. Nguyễn Huệ，是胡志明市著名的大街，經常舉辦不同的活動。人民委員會大廳在白天與夜晚看起來的感覺十分不同，晚間時分裝置燈則會開啟，別具另一番風味。
         </h4>
         <div style="text-align: center">
-          <img src="越南照片\胡志明市\HC10.jpg" width="800px" />
-          <img src="越南照片\胡志明市\HC11.jpg" width="600px" />
+          <img src="越南照片\胡志明市\HC10.jpg" style="width: 100%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+          <img src="越南照片\胡志明市\HC11.jpg" style="width: 90%; max-width: 600px; height: auto; margin: 0.5rem;" />
         </div>
         <br /><br /><br />
         <h3>咖啡公寓 (Arabica)</h3>
@@ -474,7 +631,7 @@
           咖啡公寓可以說是胡志明市最文青的區域，老舊的建築物中隱藏許多特色咖啡廳，行程跑累了不妨上來休息一下，品嘗越南特色的咖啡，公寓外不同咖啡廳的招牌爭奇鬥艷也蔚為一景。
         </h4>
         <div style="text-align: center">
-          <img src="越南照片\胡志明市\HC12.jpg" width="600px" />
+          <img src="越南照片\胡志明市\HC12.jpg" style="width: 90%; max-width: 600px; height: auto; margin: 0.5rem;" />
         </div>
         <br /><br /><br />
         <h3>濱城市場 (Chợ Bến Thành)</h3>
@@ -482,7 +639,7 @@
           如果想要逛街或買伴手禮，像是果乾、咖啡或腰果等等，則絕對不能錯過這邊，除了伴手禮外也有熟食，小東西跟服飾可供選購。但要特別注意的是有些店家會拉高價格，所以請盡情的殺價或貨比三家，內部沒有冷氣也<b>可能有扒手</b>，貴重物品要稍微注意一下。
         </h4>
         <div style="text-align: center">
-          <img src="越南照片\胡志明市\HC13.jpg" width="800px" />
+          <img src="越南照片\胡志明市\HC13.jpg" style="width: 100%; max-width: 90vw; height: auto; margin: 0.5rem;" />
         </div>
         <br /><br /><br />
         <h3>戰爭遺跡博物館 (Bảo tàng Chứng tích Chiến tranh)</h3>
@@ -490,8 +647,8 @@
           戰爭遺跡博物館是詳細介紹越南戰爭史的博物館，除了戶外展示了許多武器及模擬牢房，場館內也有許多照片去呈現當時戰爭的殘酷，慢慢閱讀文字的話大約需要 2 小時，敘述了美軍在越戰中的戰爭罪行。運用相當多的史料如新聞剪報，戰地記者的相片，以及口述歷史等，充分反應美軍的惡行以及越戰時及戰後對當地人的影響，從另一個角度再次去審視這段歷史。館內十分赤裸的展示戰爭對平民的傷害，並不適合小朋友，需要斟酌觀看。
         </h4>
         <div style="text-align: center">
-          <img src="越南照片\胡志明市\HC14.jpg" width="800px" />
-          <img src="越南照片\胡志明市\HC15.jpg" width="600px" />
+          <img src="越南照片\胡志明市\HC14.jpg" style="width: 100%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+          <img src="越南照片\胡志明市\HC15.jpg" style="width: 90%; max-width: 600px; height: auto; margin: 0.5rem;" />
         </div>
         <br /><br /><br />
         <h3>裴援步行街 (Phố đi bộ Bùi Viện)</h3>
@@ -499,8 +656,8 @@
           裴援步行街酒吧夜店一條街，入夜之後是年輕人的天堂，各家都用動感的音樂、快閃瞎人的霓虹燈還有在桌邊小舞台上跳舞的舞者攬客，是個十分特別的體驗，但要注意自己的隨身物品，還有這條街價格不一定便宜要自己斟酌。<b>這一帶的店家音樂會放到快 3 點，所以選旅館請遠離這一帶</b>。
         </h4>
         <div style="text-align: center">
-          <img src="越南照片\胡志明市\HC16.jpg" width="800px" />
-          <img src="越南照片\胡志明市\HC17.jpg" width="600px" />
+          <img src="越南照片\胡志明市\HC16.jpg" style="width: 100%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+          <img src="越南照片\胡志明市\HC17.jpg" style="width: 90%; max-width: 600px; height: auto; margin: 0.5rem;" />
         </div>
         <br /><br /><br />
         <h3>Bitexco Financial Tower</h3>
@@ -508,10 +665,10 @@
           Bitexco Financial Tower Bitexco 樓高 262 公尺共 68 層，於 2010 年落成啟用，建築靈感來自越南國花蓮花，外型優雅流線展現現代與傳統之美的結合，設有辦公室、購物商場、餐廳以及觀景台 Skydeck，位於 49 樓，可 360 度俯瞰胡志明市的壯麗市景與西貢河，特別引人注目的是 52 樓外突的直升機停機坪，成為建築的一大特色，有獨立的電梯可以直達頂樓的觀景台，推薦大家可以傍晚的時候上塔，可以一次欣賞白天、日落與夜景，夜景的部分超乎我期待的美，非常值得。
         </h4>
         <div style="text-align: center">
-          <img src="越南照片\胡志明市\HC18.jpg" width="600px" />
-          <img src="越南照片\胡志明市\HC19.jpg" width="800px" />
-          <img src="越南照片\胡志明市\HC20.jpg" width="600px" />
-          <img src="越南照片\胡志明市\HC21.jpg" width="800px" />
+          <img src="越南照片\胡志明市\HC18.jpg" style="width: 90%; max-width: 600px; height: auto; margin: 0.5rem;" />
+          <img src="越南照片\胡志明市\HC19.jpg" style="width: 100%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+          <img src="越南照片\胡志明市\HC20.jpg" style="width: 90%; max-width: 600px; height: auto; margin: 0.5rem;" />
+          <img src="越南照片\胡志明市\HC21.jpg" style="width: 100%; max-width: 90vw; height: auto; margin: 0.5rem;" />
         </div>
         <br /><br /><br />
         <h3>白滕碼頭公園 (Công viên Bến Bạch Đằng)</h3>
@@ -519,7 +676,7 @@
           白滕碼頭公園是許多當地人休閒娛樂的地方，可以欣賞第一郡經典的西貢河景，還有 landmark 81 建築群及守添二斜張橋的夜景，但是前往此處必須穿越沿河的 tôn đức thắng，下班時間的車潮相當可怕，感覺能過那條馬路你就能駕馭全世界的斑馬線了哈哈哈。
         </h4>
         <div style="text-align: center">
-          <img src="越南照片\胡志明市\HC22.jpg" width="800px" />
+          <img src="越南照片\胡志明市\HC22.jpg" style="width: 100%; max-width: 90vw; height: auto; margin: 0.5rem;" />
         </div>
         <br /><br />
         <h2>胡志明市近郊景點</h2>
@@ -529,15 +686,15 @@
           ，也配有解說讓你更能了解這段歷史。
         </h4>
         <div style="text-align: center">
-          <img src="越南照片\胡志明市\HC23.jpg" width="600px" />
+          <img src="越南照片\胡志明市\HC23.jpg" style="width: 90%; max-width: 600px; height: auto; margin: 0.5rem;" />
         </div>
         <h4>
           位於地下的伏擊口。
         </h4>
         <div style="text-align: center">
-          <img src="越南照片\胡志明市\HC24.jpg" width="800px" />
-          <img src="越南照片\胡志明市\HC25.jpg" width="600px" />
-          <img src="越南照片\胡志明市\HC26.jpg" width="600px" />
+          <img src="越南照片\胡志明市\HC24.jpg" style="width: 100%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+          <img src="越南照片\胡志明市\HC25.jpg" style="width: 90%; max-width: 600px; height: auto; margin: 0.5rem;" />
+          <img src="越南照片\胡志明市\HC26.jpg" style="width: 90%; max-width: 600px; height: auto; margin: 0.5rem;" />
         </div>
         <br />
         <h2>胡志明市美食</h2>
@@ -546,7 +703,7 @@
           Phu Vuong Pho 從食物到裝潢都非常正宗的牛肉河粉，熱騰騰的生牛肉河粉加上一些檸檬汁及菩提葉，是在炎熱的天氣下最好的開胃方式，再配上一杯冰沙就更完美了，但在越南的河粉店要注意<b>店家附上的濕紙巾是要收費的</b>，記得不要隨意拆封使用喔!
         </h4>
         <div style="text-align: center">
-          <img src="越南照片\胡志明市\HC27.jpg" width="800px" />
+          <img src="越南照片\胡志明市\HC27.jpg" style="width: 100%; max-width: 90vw; height: auto; margin: 0.5rem;" />
         </div>
         <br /><br /><br />
         <h3>Cocotte法式料理 (Cocotte Bến Thành)</h3>
@@ -567,7 +724,7 @@
           胖媽廚房在 Cocotte 法式料理的隔壁，是米其林推薦的越式傳統料理，口味手法都十分優秀，招牌的海鮮煎餅酥軟鬆，脆夾著大量蔬菜十分美味，另外點的滷肉是口味一般的好吃，加點蒜味炒飯鬆脆鹹香。尖峰時段需要排隊才能吃到，建議可以錯峰前往品嚐。
         </h4>
         <div style="text-align: center">
-          <img src="越南照片\胡志明市\HC30.jpg" width="800px" />
+          <img src="越南照片\胡志明市\HC30.jpg" style="width: 100%; max-width: 90vw; height: auto; margin: 0.5rem;" />
         </div>
         <div class="two-vertical-images">
           <img src="越南照片\胡志明市\HC31-1.jpg" />
@@ -579,7 +736,7 @@
           來越南肯定不能錯過越南法國麵包，Bánh Mì Huynh Hoa 是當地也非常受歡迎的一家，分為外賣店跟現場店，但要注意店內位置非常少，因此幾乎都是外帶。法國麵包的份量非常大，完全可以點一個對半切兩個人分，鵝肝醬糊上去完全沒有在手軟，再配上不同肉及蔬菜，幾乎可以把它當成一餐了。
         </h4>
         <div style="text-align: center">
-          <img src="越南照片\胡志明市\HC33.jpg" width="600px" />
+          <img src="越南照片\胡志明市\HC33.jpg" style="width: 90%; max-width: 600px; height: auto; margin: 0.5rem;" />
         </div>
         <br /><br /><br />
         <h3>Ngon Restaurant</h3>
@@ -591,7 +748,7 @@
           <img src="越南照片\胡志明市\HC34-2.jpg" />
         </div>
         <div style="text-align: center">
-          <img src="越南照片\胡志明市\HC35-1.jpg" width="600px" />
+          <img src="越南照片\胡志明市\HC35-1.jpg" style="width: 90%; max-width: 600px; height: auto; margin: 0.5rem;" />
         </div>
         <br /><br /><br />
         <h3>鴉片工廠 (Bar Refinery)</h3>
@@ -612,7 +769,7 @@
           作為越南重要的經濟作物之一，品嚐咖啡也是來越南非常重要的一環，這家位於市中心的咖啡廳除了文青的裝潢，也提供了不同種咖啡品種選擇，逛累了行程想要避暑喝一杯特色的越式咖啡的話十分推薦，這邊也是許多自由工作者出沒的地方。
         </h4>
         <div style="text-align: center">
-          <img src="越南照片\胡志明市\HC38.jpg" width="600px" />
+          <img src="越南照片\胡志明市\HC38.jpg" style="width: 90%; max-width: 600px; height: auto; margin: 0.5rem;" />
         </div>
         <br /><br /><br />
         <h3>The Alley Cocktail Bar & Kitchen</h3>
@@ -620,8 +777,8 @@
           The Alley Cocktail Bar & Kitchen 是隱藏於小巷中的調酒吧，店內偏昏暗氣氛很足，調酒的表現也很好，週末還有現場樂隊的演出，店內一處的地板下是透明的地下酒窖算是一大特色。
         </h4>
         <div style="text-align: center">
-          <img src="越南照片\胡志明市\HC39.jpg" width="600px" />
-          <img src="越南照片\胡志明市\HC40.jpg" width="600px" />
+          <img src="越南照片\胡志明市\HC39.jpg" style="width: 90%; max-width: 600px; height: auto; margin: 0.5rem;" />
+          <img src="越南照片\胡志明市\HC40.jpg" style="width: 90%; max-width: 600px; height: auto; margin: 0.5rem;" />
         </div>
         <br />
       </div>
@@ -663,9 +820,8 @@
     <footer>
       <h6>COPYRIGHT © 2025 Tommy 看世界 All rights reserved.</h6>
     </footer>
+    <div id="menu-toggle"></div>
     <div id="expandable-menu">
-      <div id="menu-toggle"></div>
-      <!-- 收闔按鈕 -->
       <div id="menu-content">
         <h4>目錄</h4>
         <ul id="menu-list"></ul>
@@ -682,6 +838,23 @@
         // 點擊按鈕切換目錄狀態
         toggle.addEventListener("click", () => {
           menu.classList.toggle("open");
+
+          const menuWidth = menu.offsetWidth; // 獲取目前展開的目錄寬度
+
+          if (menu.classList.contains("open")) {
+            // 讓按鈕向左平移與 menu 一樣的寬度
+            toggle.style.transform = `translateY(-50%) translateX(-${menuWidth}px)`;
+          } else {
+            // 收回原位
+            toggle.style.transform = `translateY(-50%) translateX(0)`;
+          }
+        });
+
+        window.addEventListener("load", () => {
+          if (menu.classList.contains("open")) {
+            const menuWidth = menu.offsetWidth;
+            toggle.style.transform = `translateY(-50%) translateX(-${menuWidth}px)`;
+          }
         });
 
         // 從 destination-main 區域提取 h2 和 h3，動態生成目錄
@@ -706,6 +879,23 @@
           menuList.appendChild(listItem);
         });
 
+        function adjustMenuPosition() {
+          const nav = document.querySelector("nav");
+          const menu = document.getElementById("expandable-menu");
+      
+          if (nav && menu) {
+            const navHeight = nav.offsetHeight;
+      
+            // 設定 menu 的 top 與高度
+            menu.style.top = `${navHeight}px`;
+            menu.style.height = `calc(100vh - ${navHeight}px)`;
+          }
+        }
+      
+        // 載入與尺寸變化時調整
+        window.addEventListener("DOMContentLoaded", adjustMenuPosition);
+        window.addEventListener("resize", adjustMenuPosition);
+        
         // 滾動至目標位置並加上 75px 偏移
         menuList.addEventListener("click", (event) => {
           if (event.target.tagName === "A") {
@@ -725,6 +915,31 @@
               });
             }
           }
+        });
+        // 手機 Safari 相容：點擊展開 dropdown
+        const dropdownToggles = document.querySelectorAll(".dropdown-toggle");
+
+        dropdownToggles.forEach((toggle) => {
+          toggle.addEventListener("click", function (e) {
+            e.stopPropagation(); // 防止冒泡，避免點擊外層時也觸發關閉
+            const dropdown = this.nextElementSibling;
+            const isVisible = dropdown.style.display === "block";
+            
+            // 關閉所有其他 dropdown（可選）
+            document.querySelectorAll(".dropdown-content").forEach((menu) => {
+              menu.style.display = "none";
+            });
+
+            // 切換目前這一個 dropdown
+            dropdown.style.display = isVisible ? "none" : "block";
+          });
+        });
+
+        // 點擊其他地方時關閉 dropdown
+        window.addEventListener("click", function () {
+          document.querySelectorAll(".dropdown-content").forEach((menu) => {
+            menu.style.display = "none";
+          });
         });
       });
     </script>
