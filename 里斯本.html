@@ -12,7 +12,6 @@
       body {
         font-family: Calibri, Arial, sans-serif; /* 首選 Calibri，次選 Arial */
         margin: 0;
-        padding: 0;
         overflow-x: hidden; /* 禁止水平滾動 */
         background-color: #f4f4f9;
         color: #333;
@@ -28,7 +27,6 @@
         font-weight: bold;
         color: #2a90a7;
         display: inline-block;
-        margin-bottom: 1rem; /* 縮小 h2 的底部邊距 */
         background-color: #cee5e8;
       }
 
@@ -36,7 +34,7 @@
         font-size: 26px;
         margin: 0 0 1rem;
         font-weight: bold;
-        text-decoration: underline; /* 加上底線 */
+        text-decoration: underline;
       }
 
       h4 {
@@ -62,56 +60,68 @@
       nav {
         background-color: #78bcc4;
         display: flex;
-        justify-content: space-between; /* 保持分佈在兩側 */
-        width: calc(100% - 10rem); /* 與其他內容的邊界一致 */
-        padding: 0.5rem 5rem; /* 主導覽列的 padding 設置 */
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;                     /* 讓 nav 寬度隨螢幕自適應 */
+        padding: 0.8rem 5vw;               /* 左右 padding 用 5% 寬度 */
+        box-sizing: border-box;         /* 確保 padding 不會影響寬度總長 */
         position: fixed;
         top: 0;
         z-index: 1000;
       }
 
       .nav-left .logo img {
-        height: 50px; /* 控制 Logo 圖片的高度 */
-        transform: translateX(-1.5rem); /* 向右移動 2rem */
+        height: 5vw; /* 高度為螢幕寬度的 5% */
+        transform: translateX(-2vw); /* 向左移動 2% 寬度 */
+        max-width: 100%; /* 確保不會超過容器 */
+        height: auto; /* 保持圖片比例（建議與 max-height 搭配） */
+        max-height: 3rem;
       }
 
       .nav-right {
         display: flex;
         align-items: center;
-        transform: translateX(2rem); /* 向右移動 2rem */
+        margin-left: auto; /* 推到右側 */
+        padding-left: 5%;   /* 內部元素間距，彈性設計 */
       }
 
       nav a {
         color: #eff5f5;
         text-decoration: none;
-        padding: 0.5rem 1rem;
-        margin: 0 0.5rem;
+        padding: 1vh 1vw;
+        margin: 0 1vw;
         transition: transform 0.3s;
       }
 
       nav a:hover {
-        transform: translateY(-3px);
+        transform: translateY(-0.5vh); /* 根據視窗高度調整 */
       }
 
       .dropdown {
         position: relative;
+        display: inline-block;
       }
 
       .dropdown-content {
+        width: 100%; /* 佔滿父層寬度 */
+        max-width: 20vw; /* 限制最大寬度 */
         display: none;
         position: absolute;
         background-color: #78bcc4;
-        min-width: 160px;
-        border-radius: 4px;
-        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        min-width: 10em; /* 取代 160px，以字體大小作為比例單位 */
+        border-radius: 0.25em;
+        box-shadow: 0 0.5em 1em rgba(0, 0, 0, 0.2); /* 改為相對單位 */
         padding: 0.2rem 0;
+        z-index: 999;
       }
 
       .dropdown-content a {
         color: #eff5f5;
         display: block;
         transition: transform 0.3s;
-        border-bottom: 1px solid #ddd;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.3); /* 更淡配色、柔和過渡 */
+        padding: 0.6em 1em;
+        font-size: 1em;
       }
 
       .dropdown-content a:last-child {
@@ -119,107 +129,109 @@
       }
 
       .dropdown-content a:hover {
-        transform: translateY(-3px);
-      }
-
-      .dropdown:hover .dropdown-content {
-        display: block;
+        transform: translateY(-0.25em); /* 改為相對單位 */
       }
 
       .intro-section {
         background-color: #eff5f5;
         display: flex;
-        padding: 2rem;
-        margin-top: 60px; /* 根據導航列高度調整 */
-        justify-content: space-between;
-        align-items: flex-start;
-        width: 100%;
-        box-sizing: border-box; /* 包含 padding 在內 */
-        padding-left: 5rem;
-        padding-right: 5rem;
+        flex-wrap: wrap; /* 確保在小螢幕可換行 */
+        padding: 2rem 5%;
+        margin-top: 4em; /* 根據導航列高度調整 */
       }
 
       .intro-section h4 {
-        max-width: 700px;
+        max-width: 85%; /* 改為相對單位，避免固定寬度限制 */
+        line-height: 1.8;
       }
 
       .intro-section .left {
         width: 60%;
+        padding-right: 1%;
       }
 
       .intro-section .right {
-        width: 40%;
+        width: 39%;
       }
 
       .destination-section {
         display: flex;
+        flex-wrap: wrap;               /* 小螢幕時允許換行 */
         padding: 1rem 5%; /* 左右內間距為螢幕的10% */
         background-color: white;
       }
 
       .destination-main {
-        width: 75%;
-        margin-right: 1.5rem; /* 增加右邊外邊距 */
+        width: 72%;                    /* 主要內容佔 72%，略縮以保留間距 */
+        margin-right: 3%;              /* 與 sidebar 間保留間距（約為 3%） */
+        box-sizing: border-box;
       }
 
       .destination-sidebar {
-        width: 25%;
-        padding-left: 1.5rem; /* 增加左側內邊距 */
-        margin-top: 2rem; /* 向上或向下調整，負值表示向上 */
+        width: 25%;                    /* 側邊欄佔 25% */
+        padding-left: 2%;             /* 相對內邊距 */
+        margin-top: 2rem;
+        box-sizing: border-box;
       }
 
       .sidebar-image-container {
         margin-bottom: 1rem;
-        text-align: center; /* 確保圖片置中 */
+        text-align: center; /* 置中圖片 */
       }
 
       .sidebar-image-container img {
-        height: 300px; /* 設置直式圖片的高度 */
+        width: 90%;         /* 圖片寬度為容器寬度的 90% */
+        height: auto;       /* 高度自動，保持比例 */
+        max-height: 60vh;   /* 避免圖片過高，佔螢幕最大 60% 高 */
+        object-fit: cover;  /* 裁切處理長圖 */
       }
 
       .two-vertical-images {
-        display: flex; /* 彈性佈局，讓圖片並排 */
-        justify-content: space-between; /* 兩張圖片均勻分佈 */
-        gap: 2rem; /* 圖片之間的間距 */
+        display: flex;
+        justify-content: space-between;
+        gap: 4%; /* 使用百分比間距更彈性 */
         margin-top: 2rem;
-        margin-bottom: 2rem; /* 與下方內容的距離 */
+        margin-bottom: 2rem;
+        flex-wrap: wrap; /* 若畫面太小，允許換行 */
       }
 
       .two-vertical-images img {
-        width: calc(50% - 0.5rem); /* 每張圖片佔用容器的一半減去間距 */
-        text-align: center; /* 確保圖片置中 */
-        height: auto; /* 保持圖片的直式比例 */
-        object-fit: cover; /* 確保圖片內容適應容器 */
+        width: 48%; /* 每張圖片約佔一半（加上 gap 剛好 100%） */
+        height: auto; /* 保持原比例 */
+        object-fit: cover;
+        display: block;
+        margin: 0 auto;
       }
 
       .recommendation-section {
-        margin-top: 1.5rem; /* 與上方文字的間距 */
+        margin-top: 3vh; /* 與上方文字的間距 */
         text-align: center;
         position: sticky;
         top: 80px; /* 空出導覽列的高度，確保推薦區不被覆蓋 */
         z-index: 10; /* 提高層級，避免被其他內容遮蓋 */
+        padding: 0 5%;
       }
 
       .recommendation-section h3 {
-        font-size: 18px;
+        font-size: 1.125rem;
         font-weight: bold;
-        margin-bottom: 0.5rem; /* 與按鈕區的距離 */
+        margin-bottom: 1vh; /* 與按鈕區的距離 */
       }
 
       .recommendation-buttons {
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
-        gap: 0.5rem; /* 按鈕之間的間距 */
+        gap: 0.5em; /* 按鈕之間的間距 */
       }
 
       .recommendation-buttons button {
-        padding: 0.5rem 1rem;
-        font-size: 14px;
+        padding: 0.5em 1em;
+        font-size: 0.875rem;
         color: white;
         background-color: #78bcc4;
         border: none;
-        border-radius: 4px;
+        border-radius: 0.25rem;
         transition: transform 0.3s;
         font-family: Arial, sans-serif;
       }
@@ -229,13 +241,13 @@
       }
 
       .contact-section {
-        padding: 2rem 5rem; /* 上下與左右間距 */
+        padding: 4vh 8vw; /* 上下與左右間距 */
         background-color: #eff5f5; /* 淺灰背景 */
         text-align: center; /* 確保內容置中對齊 */
       }
 
       .contact-item h3 {
-        font-size: 18px; /* 調整標題字體大小 */
+        font-size: 1.125rem; /* 調整標題字體大小 */
         margin: 0; /* 移除多餘的間距 */
         text-decoration: none; /* 移除底線 */
       }
@@ -243,43 +255,49 @@
       footer {
         background-color: #000;
         color: white;
-        height: 30px;
+        height: 3vh; /* 使用相對單位，高度占螢幕高度的 3% */
         display: flex;
         justify-content: center;
         align-items: center;
+        font-size: 1.5rem; /* 使用相對字體大小 */
+        padding: 0.5rem 0; /* 確保小螢幕時內容不擠壓 */
       }
 
       #expandable-menu {
-        position: fixed;
-        top: 70px; /* 與螢幕頂部的距離設為 60px */
+        position: fixed; 
         right: 0;
-        height: calc(100% - 70px); /* 高度減去 60px，避免超出視窗 */
-        width: 395px; /* 目錄寬度與 sidebar 齊寬 */
+        width: 26vw; /* 目錄寬度與 sidebar 齊寬 */
+        max-width: 90%; /* 避免在小螢幕太寬 */
         transform: translateX(100%); /* 初始狀態：隱藏在右側 */
         transition: transform 0.3s ease;
         background-color: #f4f4f9; /* 與網站背景一致 */
         z-index: 1000;
+        box-sizing: border-box;
       }
 
       /* 收闔按鈕 */
       #menu-toggle {
-        position: absolute;
+        position: fixed;
         top: 45%;
-        left: -40px; /* 調整按鈕的位置，適應按鈕變大後的寬度 */
-        transform: translateY(-50%);
-        width: 40px; /* 增大按鈕寬度 */
-        height: 80px; /* 增大按鈕高度 */
+        right: 0; /* 永遠貼在右側 */
+        transform: translateY(-50%) translateX(0);
+        width: 2.5em; /* 增大按鈕寬度 */
+        height: 5em; /* 增大按鈕高度 */
         background-color: #78bcc4;
         color: white;
-        border-radius: 4px;
+        border-radius: 0.4em 0 0 0.4em;
         display: flex;
         justify-content: center; /* 水平居中 */
         align-items: center; /* 垂直居中 */
+        z-index: 2000; /* 要比 expandable-menu 更高，避免被蓋住 */
+        cursor: pointer;
+        box-shadow: -0.1em 0 0.3em rgba(0,0,0,0.1);
+        transition: transform 0.3s ease; /* 平滑移動 */
       }
 
       #menu-toggle::after {
         content: "目錄"; /* 在按鈕內顯示 "目錄" */
-        font-size: 17px;
+        font-size: 1rem;
         color: white; /* 設定字體顏色為白色 */
         writing-mode: vertical-rl; /* 使文字垂直排列 */
       }
@@ -290,14 +308,16 @@
 
       /* 目錄內容 */
       #menu-content {
-        padding: 0.5rem 1rem;
+        padding: 0.5rem 5%;
         overflow-y: auto;
         height: 100%;
+        box-sizing: border-box;
       }
 
       #menu-content h4 {
         font-weight: bold;
         margin-top: 0;
+        font-size: 1.2rem;
       }
 
       #menu-list {
@@ -306,13 +326,14 @@
       }
 
       #menu-list li {
-        margin-bottom: 0.5rem;
+        margin-bottom: 1vh;
       }
 
       #menu-list a {
         color: #2a90a7;
         text-decoration: none;
         transition: color 0.3s;
+        font-size: 1rem; /* 使用相對字體大小 */
       }
 
       #menu-list a:hover {
@@ -320,13 +341,149 @@
       }
 
       #menu-list .sub-item {
-        margin-left: 1.5rem; /* 調整縮排距離 */
+        margin-left: 8%; /* 調整縮排距離 */
         font-size: 0.9rem; /* 可選：調整子項目字體大小 */
       }
 
       /* 目錄展開狀態 */
       #expandable-menu.open {
         transform: translateX(0);
+      }
+
+      /* === 響應式調整：針對手機與小螢幕設備 === */
+      @media (max-width: 768px) {
+        nav {
+          flex-direction: row;
+          flex-wrap: wrap;
+          align-items: center;
+          justify-content: space-between;
+          padding: 1rem 5vw;  /* 窄螢幕時減少左右留白 */
+          width: 100%;
+          box-sizing: border-box;
+        }
+
+        .nav-right {
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          gap: 0.5rem;
+          transform: none;
+          width: auto;
+          white-space: nowrap;               /* 禁止內容自動換行 */
+        }
+
+        nav a {
+          padding: 0.5rem 0.5rem;           /* 減少垂直padding */
+          margin: 0 0.3rem;
+          font-size: 0.85rem;
+          white-space: nowrap;               /* 確保文字不換行 */
+          overflow: hidden;
+          text-overflow: ellipsis;           /* 若內容超出，顯示省略號 */
+        }
+
+        .nav-dropdown {
+          width: 60%; /* 或者用 max-content, fit-content 看需求 */
+          font-size: 0.85rem; /* 調整字體大小和導覽列一致 */
+          padding: 0.5rem;
+        }
+      
+        .nav-dropdown a {
+          font-size: inherit; /* 確保跟 .nav-dropdown 一樣大 */
+          padding: 0.5rem 1rem;
+          white-space: normal; /* 可選：讓字在必要時換行 */
+        }
+
+        .dropdown-content {
+          width: 12vw;
+          min-width: 8em; /* 保證至少能顯示幾個字 */
+          max-width: none;
+        }
+
+        .dropdown-content a {
+          font-size: 0.85rem;
+        }
+        
+        .intro-section {
+          flex-direction: column;
+          padding: 8%;
+        }
+
+        .intro-section .left,
+        .intro-section .right {
+          width: 100%;
+          padding: 0;
+          flex: 1 1 100%;
+        }
+
+        .intro-section .right {
+          margin-top: 1.5rem;
+          display: flex;
+          justify-content: center;
+        }
+
+        .intro-section h4 {
+          max-width: 100%;
+          font-size: 1rem;
+        }
+
+        .destination-grid {
+          flex-direction: column;
+          gap: 1rem;
+        }
+
+        .destination-section h4 {
+          font-size: 1rem;
+        }
+
+        .destination-item {
+          max-width: 100%;
+          width: 100%;
+        }
+
+        .destination-item.a_role_with_2 {
+          position: static;
+          left: auto;
+        }
+
+        .destination-main,
+        .destination-sidebar {
+          width: 100%;
+          margin: 0;
+          padding: 0;
+        }
+
+        .destination-sidebar {
+          margin-top: 2rem;
+        }
+
+        .recommendation-buttons button {
+          width: 100%; /* 小螢幕按鈕全寬排列 */
+        }
+
+        .contact-section {
+          padding: 3vh 5vw;
+        }
+
+        .contact-item h3 {
+          font-size: 1rem;
+        }
+
+        /* 目錄區寬度改為螢幕寬度的40% */
+        #expandable-menu {
+          width: 40vw !important; /* 用vw方便響應螢幕寬度 */
+          max-width: 90%; /* 保留原本max-width避免太寬 */
+        }
+      
+        #expandable-menu,
+        #expandable-menu * {
+          font-size: 85% !important;
+        }
+              
+        #menu-toggle {
+          width: 75%;
+          max-width: 1.875em;
+          min-width: 1.875em;
+        }
       }
     </style>
   </head>
@@ -342,7 +499,7 @@
       <div class="nav-right">
         <a href="首頁.html">關於我</a>
         <div class="dropdown">
-          <a>亞洲旅遊</a>
+          <a class="dropdown-toggle">亞洲旅遊</a>
           <div class="dropdown-content">
             <a href="中國.html">中國</a>
             <a href="新加坡.html">新加坡</a>
@@ -353,7 +510,7 @@
           </div>
         </div>
         <div class="dropdown">
-          <a>歐洲旅遊</a>
+          <a class="dropdown-toggle">歐洲旅遊</a>
           <div class="dropdown-content">
             <a href="英國.html">英國</a>
             <a href="法國.html">法國</a>
@@ -371,7 +528,7 @@
           </div>
         </div>
         <div class="dropdown">
-          <a>美洲旅遊</a>
+          <a class="dropdown-toggle">美洲旅遊</a>
           <div class="dropdown-content">
             <a href="美國.html">美國</a>
             <a href="加拿大.html">加拿大</a>
@@ -389,7 +546,7 @@
         </h4>
       </div>
       <div class="right">
-        <img src="葡萄牙照片\里斯本\里斯本_介紹.jpg" width="90%" height="350px" />
+        <img src="葡萄牙照片\里斯本\里斯本_介紹.jpg" style="width: 100%; height: auto; max-width: 100%;" />
       </div>
     </div>
 
@@ -405,7 +562,7 @@
           里斯本的舊城區遍布了許多路面電車路線，在起伏的里斯本是非常省力的代步工具，可以採用走路及坐電車混搭的方式進行觀光，省時又省力。
         </h4>
         <div style="text-align: center">
-          <img src="葡萄牙照片\里斯本\里斯本_交通.png" width="1000px" />
+          <img src="葡萄牙照片\里斯本\里斯本_交通.png" style="width: 100%; max-width: 90vw; height: auto;" />
         </div>
         <br /><br />
         <h2>里斯本住宿</h2>
@@ -413,7 +570,7 @@
           里斯本分成北邊的新城區及南邊靠河的老城區，老城區飯店較舊價格也較高，因此會推薦住在新城區且是自由大道或 Palma Rd. 沿線，有地鐵或路面電車等交通方式選擇較多元。
         </h4>
         <div style="text-align: center">
-          <img src="葡萄牙照片\里斯本\里斯本_住宿.png" width="1000px" />
+          <img src="葡萄牙照片\里斯本\里斯本_住宿.png" style="width: 100%; max-width: 90vw; height: auto;" />
         </div>
         <br /><br />
         <h2>里斯本景點</h2>
@@ -422,9 +579,9 @@
           Praça do Comércio 始建於 18 世紀，原名Terreiro do Paço (皇家廣場)，是里斯本王宮的所在地，1755 年的地震摧毀了王宮和周圍的建築物，此後廣場進行了重建，新設計採用了優雅的巴洛克風格，呈現出一個典型的矩形配置，馬蹄形的建築圍繞著廣場，建有拱門和弧形柱廊，中心立有一尊葡萄牙國王約瑟一世的銅像。廣場毗鄰泰霍河，結合碼頭和關鍵的交通地位，曾是葡萄牙航海事業和貿易中心的重要樞紐。
         </h4>
         <div style="text-align: center">
-          <img src="葡萄牙照片\里斯本\LI1.jpg" width="600px" />
-          <img src="葡萄牙照片\里斯本\LI2.jpg" width="800px" />
-          <img src="葡萄牙照片\里斯本\LI3.jpg" width="800px" />
+          <img src="葡萄牙照片\里斯本\LI1.jpg" style="width: 90%; max-width: 600px; height: auto; margin: 0.5rem;" />
+          <img src="葡萄牙照片\里斯本\LI2.jpg" style="width: 100%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+          <img src="葡萄牙照片\里斯本\LI3.jpg" style="width: 100%; max-width: 90vw; height: auto; margin: 0.5rem;" />
         </div>
         <br /><br /><br />
         <h3>聖若熱城堡 (Castelo de S. Jorge)</h3>
@@ -434,9 +591,9 @@
           葡萄牙國王阿方索一世收復了里斯本，聖若熱城堡成為葡萄牙王室的官方寓所直到 16 世紀，儘管在 1755 年的大地震中遭到嚴重破壞，聖喬治城堡還是保存下來了許多古老的建築和遺跡。登上城堡高塔可以欣賞到里斯本全景，俯瞰藍色的泰霍河、城市舊城區的紅瓦房頂以及其他著名地標如貝倫修道院。
         </h4>
         <div style="text-align: center">
-          <img src="葡萄牙照片\里斯本\LI4.jpg" width="800px" />
-          <img src="葡萄牙照片\里斯本\LI5.jpg" width="800px" />
-          <img src="葡萄牙照片\里斯本\LI6.jpg" width="800px" />
+          <img src="葡萄牙照片\里斯本\LI4.jpg" style="width: 100%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+          <img src="葡萄牙照片\里斯本\LI5.jpg" style="width: 100%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+          <img src="葡萄牙照片\里斯本\LI6.jpg" style="width: 100%; max-width: 90vw; height: auto; margin: 0.5rem;" />
         </div>
         <br /><br /><br />
         <h3>聖胡斯塔升降機 (Elevador de Santa Justa)</h3>
@@ -444,8 +601,8 @@
           聖胡斯塔升降機建於 1902 年，由工程師埃利亞斯·里弗斯 (Raul Mesnier du Ponsard) 設計，採用了鑄鐵和鋼結構，結合了哥特式和新古典主義的建築元素，現出獨特的工藝美感。電梯的功能原本是用來連接市中心的下城區和上城區，這個地方地勢起伏較大，在電梯出現之前居民只能沿樓梯上下往來，乘坐電梯可以抵達聖祖塔高塔上的觀景台，可以俯瞰整個市區，眺望泰霍河和對岸的貝倫區。
         </h4>
         <div style="text-align: center">
-          <img src="葡萄牙照片\里斯本\LI7.jpg" width="600px" />
-          <img src="葡萄牙照片\里斯本\LI8.jpg" width="800px" />
+          <img src="葡萄牙照片\里斯本\LI7.jpg" style="width: 90%; max-width: 600px; height: auto; margin: 0.5rem;" />
+          <img src="葡萄牙照片\里斯本\LI8.jpg" style="width: 100%; max-width: 90vw; height: auto; margin: 0.5rem;" />
         </div>
         <br /><br /><br />
         <h3>發現者紀念碑 (Padrão dos Descobrimentos)</h3>
@@ -453,7 +610,7 @@
           發現者紀念碑於 1960 年落成，是為了紀念葡萄牙在 15 ~ 16 世紀的偉大航海探險和殖民事業而建造，造型如同一艘停泊在河邊的帆船，主題突出了葡萄牙在海洋探險領域的輝煌成就。塔身高度為 52 米，共有 33 個雕像，分別代表了歷史上參與葡萄牙航海探險的重要人物，包括國王、航海家、學者、藝術家等，在塔頂的是一尊大型雕像，代表葡萄牙國王恩里克王子，他被譽為"大航海時代的始祖"。可以步入塔身內部，登上頂端的觀景台，俯瞰泰霍河和貝倫區的景致，特別是傍晚時分，整座紀念碑在日落的餘暉下呈現出一種神聖肅穆的氣氛。
         </h4>
         <div style="text-align: center">
-          <img src="葡萄牙照片\里斯本\LI9.jpg" width="600px" />
+          <img src="葡萄牙照片\里斯本\LI9.jpg" style="width: 90%; max-width: 600px; height: auto; margin: 0.5rem;" />
         </div>
         <br /><br /><br />
         <h3>貝倫塔 (Torre de Belém)</h3>
@@ -461,7 +618,7 @@
           貝倫塔始建於 16 世紀初，原為防禦性建築，主要用於保衛里斯本的河口和監視進港船隻，建築以曼努埃爾式 (Manueline) 風格為主，融合了哥德式、阿拉伯式和印度風格於一體，展現出葡萄牙獨特的建築審美。塔樓外牆飾有精緻的雕刻裝飾，如繩索編織紋樣、海洋生物等，充滿航海探險的風采。走進塔內可以沿著狹窄的螺旋樓梯登頂，在頂層的觀景台上可以俯瞰泰霍河和貝倫區的景致，也是賞看日出和日落的絕佳地點。
         </h4>
         <div style="text-align: center">
-          <img src="葡萄牙照片\里斯本\LI10.jpg" width="600px" />
+          <img src="葡萄牙照片\里斯本\LI10.jpg" style="width: 90%; max-width: 600px; height: auto; margin: 0.5rem;" />
         </div>
         <br /><br /><br />
         <h3>4 月 25 日大橋 (Ponte 25 de Abril)</h3>
@@ -472,7 +629,7 @@
           景致。橋梁的命名與 1974 年的葡萄牙革命有關，那年 4 月 25 日，一場無流血的軍事政變推翻了獨裁政權，建立了民主制度，這場革命被稱為"康花革命"，因此 4 月 25 日大橋就以這一重要歷史事件命名，成為葡萄牙民主化的標誌性建築。
         </h4>
         <div style="text-align: center">
-          <img src="葡萄牙照片\里斯本\LI11.jpg" width="800px" />
+          <img src="葡萄牙照片\里斯本\LI11.jpg" style="width: 100%; max-width: 90vw; height: auto; margin: 0.5rem;" />
         </div>
         <br /><br /><br />
         <h3>賈梅士前地 (Praça de Luís de Camões)</h3>
@@ -480,7 +637,7 @@
           賈梅士前地坐落在里斯本舊城區街巷交匯處，是一處半露天的開放式廣場，廣場的正中心豎立著著名詩人路易斯·卡蒙斯的銅像，他被稱為葡萄牙國民詩人，寫作了史詩巨作《盧西亞達》，背景環繞著典型的葡式建築，紅色瓦頂、石牆立面，充滿了濃郁的歷史風情。這裡也是里斯本藝術文化的集中展現場所，廣場上常有各種音樂表演、戲劇表演等文化活動。
         </h4>
         <div style="text-align: center">
-          <img src="葡萄牙照片\里斯本\LI12.jpg" width="600px" />
+          <img src="葡萄牙照片\里斯本\LI12.jpg" style="width: 90%; max-width: 600px; height: auto; margin: 0.5rem;" />
         </div>
         <br /><br /><br />
         <h3>里斯本主教座堂 (Sé de Lisboa)</h3>
@@ -488,11 +645,11 @@
           里斯本主教座堂建於 12 世紀，是葡萄牙第一座主教座堂，位於里斯本城中心的艾菲爾高地上，教堂的外觀采用了典型的羅馬式建築風格，充滿了威嚴與肅穆，其灰色穹頂、鏨刻的石柱和拱門以及厚重的堅實外牆，造就了一種堅固、冷峻的建築美學。內部空間也有著濃郁的宗教氛圍，以哥德式風格為主導，神殿中的薩爾公爵墓碑、多處美麗的彩色玻璃窗、獨特的管風琴都是值得細細欣賞的珍貴藝術品。
         </h4>
         <div style="text-align: center">
-          <img src="葡萄牙照片\里斯本\LI13.jpg" width="600px" />
+          <img src="葡萄牙照片\里斯本\LI13.jpg" style="width: 90%; max-width: 600px; height: auto; margin: 0.5rem;" />
         </div>
         <h4>里斯本的 28 路線電車路線連接了大部分的觀光景點，也是里斯本的一大象徵，一定要與電車拍照!</h4>
         <div style="text-align: center">
-          <img src="葡萄牙照片\里斯本\LI14.jpg" width="600px" />
+          <img src="葡萄牙照片\里斯本\LI14.jpg" style="width: 90%; max-width: 600px; height: auto; margin: 0.5rem;" />
         </div>
         <br /><br /><br />
         <h3>聖露西亞觀景台 (Miradouro de Santa Luzia)</h3>
@@ -500,8 +657,8 @@
           聖路西亞觀景台位於古城區阿爾法馬區，背靠一座 17 世紀建築，可以清晰地欣賞到市中心的特徵性建築和街景，一眼望去佇立在山坡上的著名蓮花教堂、曲折的狹窄街道、河對岸的克里斯多大橋等都一一納入眼簾。景觀的另一個亮點就是眼前的泰霍河，這條蜿蜒的河流將里斯本一分為二，廣闊的河面上往來著各種船隻，彰顯出里斯本作為海洋之城的特質。
         </h4>
         <div style="text-align: center">
-          <img src="葡萄牙照片\里斯本\LI15.jpg" width="600px" />
-          <img src="葡萄牙照片\里斯本\LI16.jpg" width="600px" />
+          <img src="葡萄牙照片\里斯本\LI15.jpg" style="width: 90%; max-width: 600px; height: auto; margin: 0.5rem;" />
+          <img src="葡萄牙照片\里斯本\LI16.jpg" style="width: 90%; max-width: 600px; height: auto; margin: 0.5rem;" />
         </div>
         <br /><br /><br />
         <h3>卡爾莫修道院 (Museu Arqueológico do Carmo)</h3>
@@ -509,7 +666,7 @@
           卡爾莫修道院址位於卡爾默修道院的廢墟之上，收藏品包括各個時代的考古文物，涵蓋從新石器時代到中世紀的大量珍貴文物，其中最著名的是里斯本地區出土的一些美麗雕塑作品，如埃及羅馬時期的石膏雕像以及各種墓葬壁畫，還可以在館內欣賞到許多其他珍稀文物,如瓷器、青銅器、金銀器等，這些都折射出葡萄牙悠久的歷史文明。
         </h4>
         <div style="text-align: center">
-          <img src="葡萄牙照片\里斯本\LI17.jpg" width="600px" />
+          <img src="葡萄牙照片\里斯本\LI17.jpg" style="width: 90%; max-width: 600px; height: auto; margin: 0.5rem;" />
         </div>
         <br /><br />
         <h2>里斯本近郊景點</h2>
@@ -519,13 +676,13 @@
         </h4>
         <h4>佩納宮殿在 2007 年被列為聯合國教科文組織世界文化遺產，是葡萄牙最著名的國寶級景觀，代表了 19 世紀浪漫主義時期葡萄牙藝術和建築的最高成就。前往佩納宮可以從里斯本的 Rossio 火車站搭乘火車到 Sintra 站，火車票本身就包含了在當地坐公車的票，可以搭乘園區內的公車前往山上的不同宮殿。</h4>
         <div style="text-align: center">
-          <img src="葡萄牙照片\里斯本\LI18.jpg" width="600px" />
-          <img src="葡萄牙照片\里斯本\LI19.jpg" width="600px" />
-          <img src="葡萄牙照片\里斯本\LI20.jpg" width="600px" />
-          <img src="葡萄牙照片\里斯本\LI21.jpg" width="600px" />
-          <img src="葡萄牙照片\里斯本\LI22.jpg" width="600px" />
-          <img src="葡萄牙照片\里斯本\LI23.jpg" width="800px" />
-          <img src="葡萄牙照片\里斯本\LI24.jpg" width="800px" />
+          <img src="葡萄牙照片\里斯本\LI18.jpg" style="width: 90%; max-width: 600px; height: auto; margin: 0.5rem;" />
+          <img src="葡萄牙照片\里斯本\LI19.jpg" style="width: 90%; max-width: 600px; height: auto; margin: 0.5rem;" />
+          <img src="葡萄牙照片\里斯本\LI20.jpg" style="width: 90%; max-width: 600px; height: auto; margin: 0.5rem;" />
+          <img src="葡萄牙照片\里斯本\LI21.jpg" style="width: 90%; max-width: 600px; height: auto; margin: 0.5rem;" />
+          <img src="葡萄牙照片\里斯本\LI22.jpg" style="width: 90%; max-width: 600px; height: auto; margin: 0.5rem;" />
+          <img src="葡萄牙照片\里斯本\LI23.jpg" style="width: 100%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+          <img src="葡萄牙照片\里斯本\LI24.jpg" style="width: 100%; max-width: 90vw; height: auto; margin: 0.5rem;" />
         </div>
         <br /><br /><br />
         <h3>辛特拉宮 (Palácio Nacional de Sintra)</h3>
@@ -533,10 +690,10 @@
           辛特拉宮最早可追溯到 15 世紀，是許多葡萄牙國王的夏宮和居所，宮殿的標誌性建築就是兩座白色的矮而肥壯的煙囪塔，它們的獨特造型已成為辛特拉最著名的地標之一。宮殿內部裝飾富麗堂皇，處處可見細緻入微的裝飾藝術，其中最著名的就是天鵝廳，這些房間牆面和天花板上布滿了華麗的阿拉伯風格馬賽克圖案和浮雕。辛特拉宮一直是葡萄牙國寶級景點，也是聯合國教科文組織世界文化遺產的組成部分。
         </h4>
         <div style="text-align: center">
-          <img src="葡萄牙照片\里斯本\LI25.jpg" width="800px" />
-          <img src="葡萄牙照片\里斯本\LI26.jpg" width="800px" />
-          <img src="葡萄牙照片\里斯本\LI27.jpg" width="600px" />
-          <img src="葡萄牙照片\里斯本\LI28.jpg" width="600px" />
+          <img src="葡萄牙照片\里斯本\LI25.jpg" style="width: 100%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+          <img src="葡萄牙照片\里斯本\LI26.jpg" style="width: 100%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+          <img src="葡萄牙照片\里斯本\LI27.jpg" style="width: 90%; max-width: 600px; height: auto; margin: 0.5rem;" />
+          <img src="葡萄牙照片\里斯本\LI28.jpg" style="width: 90%; max-width: 600px; height: auto; margin: 0.5rem;" />
         </div>
         <br /><br /><br />
         <h3>羅卡角 (Cabo da Roca)</h3>
@@ -545,10 +702,10 @@
         </h4>
         <h4>在城市中心林立的教堂中最著名的要算是赫羅納大教堂，它擁有哥特式建築特色，是加泰羅尼亞地區最大的天主教教堂。</h4>
         <div style="text-align: center">
-          <img src="葡萄牙照片\里斯本\LI29.jpg" width="800px" />
-          <img src="葡萄牙照片\里斯本\LI30.jpg" width="600px" />
-          <img src="葡萄牙照片\里斯本\LI31.jpg" width="600px" />
-          <img src="葡萄牙照片\里斯本\LI32.jpg" width="600px" />
+          <img src="葡萄牙照片\里斯本\LI29.jpg" style="width: 100%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+          <img src="葡萄牙照片\里斯本\LI30.jpg" style="width: 90%; max-width: 600px; height: auto; margin: 0.5rem;" />
+          <img src="葡萄牙照片\里斯本\LI31.jpg" style="width: 90%; max-width: 600px; height: auto; margin: 0.5rem;" />
+          <img src="葡萄牙照片\里斯本\LI32.jpg" style="width: 90%; max-width: 600px; height: auto; margin: 0.5rem;" />
         </div>
         <br /><br />
         <h2>里斯本美食</h2>
@@ -557,8 +714,8 @@
           由於巴西曾是葡萄牙的殖民地，因此里斯本也有非常多的巴西式咖啡館，這家巴西咖啡廳內部裝潢豪華，彷彿在宮殿中吃飯，早餐叫上一份鹹酥餅配葡式蛋塔，再搭上一杯巴西濃咖啡是最好不過的組合了。
         </h4>
         <div style="text-align: center">
-          <img src="葡萄牙照片\里斯本\LI33.jpg" width="600px" />
-          <img src="葡萄牙照片\里斯本\LI34.jpg" width="600px" />
+          <img src="葡萄牙照片\里斯本\LI33.jpg" style="width: 90%; max-width: 600px; height: auto; margin: 0.5rem;" />
+          <img src="葡萄牙照片\里斯本\LI34.jpg" style="width: 90%; max-width: 600px; height: auto; margin: 0.5rem;" />
         </div>
         <br /><br /><br />
         <h3>Casa Pastéis de Belém</h3>
@@ -566,7 +723,7 @@
           來葡萄牙不可能不吃葡式蛋塔，這家在貝倫區的蛋塔店號稱是全世界最好吃的蛋塔，連外帶都需要等上 15 ~ 20 分鐘，新鮮烤出來的蛋塔香味四溢，鬆軟的酥皮配上一口咬下去會爆漿的內餡，真的是贏過其他蛋塔非常多，推薦大家來里斯本一定要來試試這家。
         </h4>
         <div style="text-align: center">
-          <img src="葡萄牙照片\里斯本\LI35.jpg" width="600px" />
+          <img src="葡萄牙照片\里斯本\LI35.jpg" style="width: 90%; max-width: 600px; height: auto; margin: 0.5rem;" />
         </div>
         <br /><br /><br />
         <h3>The Bifanas of Afonso</h3>
@@ -574,7 +731,7 @@
           葡萄牙由於緊鄰大西洋，因此漁業資源相當豐富，傳統葡萄牙料理中也有需多海鮮料理，其中經典的一道便是烤鱈魚，烤的火侯剛剛好，把魚的鮮味都鎖在湯汁中，搭上醃洋蔥及馬鈴薯便是最好的晚餐，附餐送的鮪魚沙也十分好吃，推薦給大家。
         </h4>
         <div style="text-align: center">
-          <img src="葡萄牙照片\里斯本\LI36.jpg" width="800px" />
+          <img src="葡萄牙照片\里斯本\LI36.jpg" style="width: 100%; max-width: 90vw; height: auto; margin: 0.5rem;" />
         </div>
         <br /><br /><br />
         <h3>Cervejaria Ramiro</h3>
@@ -582,8 +739,8 @@
           除了魚類之外，螃蟹及虎蝦也經常出現在葡萄牙人的餐桌上，這家最有名的便是全蟹料理，店家已經幫你做了處理，分離蟹膏及蟹腳，吃的時候用附贈的大槌子敲開硬殼便可大啖鮮美的蟹肉，蟹膏香濃而不膩，巨鰲和長腳裡面的蟹肉香甜彈牙。虎蝦用烤的方式料理，火候非常完美，肉質鮮美蝦膏非常的美味濃郁飽滿，愛吃海鮮的人必訪。由於是名店，因此候位時間相當驚人，我自己等了 100 分鐘才入座，建議大家可以在離峰時間光顧可以節省時間。
         </h4>
         <div style="text-align: center">
-          <img src="葡萄牙照片\里斯本\LI37.jpg" width="600px" />
-          <img src="葡萄牙照片\里斯本\LI38.jpg" width="600px" />
+          <img src="葡萄牙照片\里斯本\LI37.jpg" style="width: 90%; max-width: 600px; height: auto; margin: 0.5rem;" />
+          <img src="葡萄牙照片\里斯本\LI38.jpg" style="width: 90%; max-width: 600px; height: auto; margin: 0.5rem;" />
         </div>
         <br />
       </div>
@@ -633,9 +790,8 @@
     <footer>
       <h6>COPYRIGHT © 2025 Tommy 看世界 All rights reserved.</h6>
     </footer>
+    <div id="menu-toggle"></div>
     <div id="expandable-menu">
-      <div id="menu-toggle"></div>
-      <!-- 收闔按鈕 -->
       <div id="menu-content">
         <h4>目錄</h4>
         <ul id="menu-list"></ul>
@@ -652,6 +808,23 @@
         // 點擊按鈕切換目錄狀態
         toggle.addEventListener("click", () => {
           menu.classList.toggle("open");
+
+          const menuWidth = menu.offsetWidth; // 獲取目前展開的目錄寬度
+
+          if (menu.classList.contains("open")) {
+            // 讓按鈕向左平移與 menu 一樣的寬度
+            toggle.style.transform = `translateY(-50%) translateX(-${menuWidth}px)`;
+          } else {
+            // 收回原位
+            toggle.style.transform = `translateY(-50%) translateX(0)`;
+          }
+        });
+
+        window.addEventListener("load", () => {
+          if (menu.classList.contains("open")) {
+            const menuWidth = menu.offsetWidth;
+            toggle.style.transform = `translateY(-50%) translateX(-${menuWidth}px)`;
+          }
         });
 
         // 從 destination-main 區域提取 h2 和 h3，動態生成目錄
@@ -676,6 +849,23 @@
           menuList.appendChild(listItem);
         });
 
+        function adjustMenuPosition() {
+          const nav = document.querySelector("nav");
+          const menu = document.getElementById("expandable-menu");
+      
+          if (nav && menu) {
+            const navHeight = nav.offsetHeight;
+      
+            // 設定 menu 的 top 與高度
+            menu.style.top = `${navHeight}px`;
+            menu.style.height = `calc(100vh - ${navHeight}px)`;
+          }
+        }
+      
+        // 載入與尺寸變化時調整
+        window.addEventListener("DOMContentLoaded", adjustMenuPosition);
+        window.addEventListener("resize", adjustMenuPosition);
+        
         // 滾動至目標位置並加上 75px 偏移
         menuList.addEventListener("click", (event) => {
           if (event.target.tagName === "A") {
@@ -695,6 +885,31 @@
               });
             }
           }
+        });
+        // 手機 Safari 相容：點擊展開 dropdown
+        const dropdownToggles = document.querySelectorAll(".dropdown-toggle");
+
+        dropdownToggles.forEach((toggle) => {
+          toggle.addEventListener("click", function (e) {
+            e.stopPropagation(); // 防止冒泡，避免點擊外層時也觸發關閉
+            const dropdown = this.nextElementSibling;
+            const isVisible = dropdown.style.display === "block";
+            
+            // 關閉所有其他 dropdown（可選）
+            document.querySelectorAll(".dropdown-content").forEach((menu) => {
+              menu.style.display = "none";
+            });
+
+            // 切換目前這一個 dropdown
+            dropdown.style.display = isVisible ? "none" : "block";
+          });
+        });
+
+        // 點擊其他地方時關閉 dropdown
+        window.addEventListener("click", function () {
+          document.querySelectorAll(".dropdown-content").forEach((menu) => {
+            menu.style.display = "none";
+          });
         });
       });
     </script>
