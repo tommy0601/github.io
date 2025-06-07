@@ -12,7 +12,6 @@
       body {
         font-family: Calibri, Arial, sans-serif; /* 首選 Calibri，次選 Arial */
         margin: 0;
-        padding: 0;
         overflow-x: hidden; /* 禁止水平滾動 */
         background-color: #f4f4f9;
         color: #333;
@@ -28,7 +27,6 @@
         font-weight: bold;
         color: #2a90a7;
         display: inline-block;
-        margin-bottom: 1rem; /* 縮小 h2 的底部邊距 */
         background-color: #cee5e8;
       }
 
@@ -36,7 +34,7 @@
         font-size: 26px;
         margin: 0 0 1rem;
         font-weight: bold;
-        text-decoration: underline; /* 加上底線 */
+        text-decoration: underline;
       }
 
       h4 {
@@ -62,56 +60,68 @@
       nav {
         background-color: #78bcc4;
         display: flex;
-        justify-content: space-between; /* 保持分佈在兩側 */
-        width: calc(100% - 10rem); /* 與其他內容的邊界一致 */
-        padding: 0.5rem 5rem; /* 主導覽列的 padding 設置 */
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;                     /* 讓 nav 寬度隨螢幕自適應 */
+        padding: 0.8rem 5vw;               /* 左右 padding 用 5% 寬度 */
+        box-sizing: border-box;         /* 確保 padding 不會影響寬度總長 */
         position: fixed;
         top: 0;
         z-index: 1000;
       }
 
       .nav-left .logo img {
-        height: 50px; /* 控制 Logo 圖片的高度 */
-        transform: translateX(-1.5rem); /* 向右移動 2rem */
+        height: 5vw; /* 高度為螢幕寬度的 5% */
+        transform: translateX(-2vw); /* 向左移動 2% 寬度 */
+        max-width: 100%; /* 確保不會超過容器 */
+        height: auto; /* 保持圖片比例（建議與 max-height 搭配） */
+        max-height: 3rem;
       }
 
       .nav-right {
         display: flex;
         align-items: center;
-        transform: translateX(2rem); /* 向右移動 2rem */
+        margin-left: auto; /* 推到右側 */
+        padding-left: 5%;   /* 內部元素間距，彈性設計 */
       }
 
       nav a {
         color: #eff5f5;
         text-decoration: none;
-        padding: 0.5rem 1rem;
-        margin: 0 0.5rem;
+        padding: 1vh 1vw;
+        margin: 0 1vw;
         transition: transform 0.3s;
       }
 
       nav a:hover {
-        transform: translateY(-3px);
+        transform: translateY(-0.5vh); /* 根據視窗高度調整 */
       }
 
       .dropdown {
         position: relative;
+        display: inline-block;
       }
 
       .dropdown-content {
+        width: 100%; /* 佔滿父層寬度 */
+        max-width: 20vw; /* 限制最大寬度 */
         display: none;
         position: absolute;
         background-color: #78bcc4;
-        min-width: 160px;
-        border-radius: 4px;
-        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        min-width: 10em; /* 取代 160px，以字體大小作為比例單位 */
+        border-radius: 0.25em;
+        box-shadow: 0 0.5em 1em rgba(0, 0, 0, 0.2); /* 改為相對單位 */
         padding: 0.2rem 0;
+        z-index: 999;
       }
 
       .dropdown-content a {
         color: #eff5f5;
         display: block;
         transition: transform 0.3s;
-        border-bottom: 1px solid #ddd;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.3); /* 更淡配色、柔和過渡 */
+        padding: 0.6em 1em;
+        font-size: 1em;
       }
 
       .dropdown-content a:last-child {
@@ -119,107 +129,109 @@
       }
 
       .dropdown-content a:hover {
-        transform: translateY(-3px);
-      }
-
-      .dropdown:hover .dropdown-content {
-        display: block;
+        transform: translateY(-0.25em); /* 改為相對單位 */
       }
 
       .intro-section {
         background-color: #eff5f5;
         display: flex;
-        padding: 2rem;
-        margin-top: 60px; /* 根據導航列高度調整 */
-        justify-content: space-between;
-        align-items: flex-start;
-        width: 100%;
-        box-sizing: border-box; /* 包含 padding 在內 */
-        padding-left: 5rem;
-        padding-right: 5rem;
+        flex-wrap: wrap; /* 確保在小螢幕可換行 */
+        padding: 2rem 5%;
+        margin-top: 4em; /* 根據導航列高度調整 */
       }
 
       .intro-section h4 {
-        max-width: 700px;
+        max-width: 85%; /* 改為相對單位，避免固定寬度限制 */
+        line-height: 1.8;
       }
 
       .intro-section .left {
         width: 60%;
+        padding-right: 1%;
       }
 
       .intro-section .right {
-        width: 40%;
+        width: 39%;
       }
 
       .destination-section {
         display: flex;
+        flex-wrap: wrap;               /* 小螢幕時允許換行 */
         padding: 1rem 5%; /* 左右內間距為螢幕的10% */
         background-color: white;
       }
 
       .destination-main {
-        width: 75%;
-        margin-right: 1.5rem; /* 增加右邊外邊距 */
+        width: 72%;                    /* 主要內容佔 72%，略縮以保留間距 */
+        margin-right: 3%;              /* 與 sidebar 間保留間距（約為 3%） */
+        box-sizing: border-box;
       }
 
       .destination-sidebar {
-        width: 25%;
-        padding-left: 1.5rem; /* 增加左側內邊距 */
-        margin-top: 2rem; /* 向上或向下調整，負值表示向上 */
+        width: 25%;                    /* 側邊欄佔 25% */
+        padding-left: 2%;             /* 相對內邊距 */
+        margin-top: 2rem;
+        box-sizing: border-box;
       }
 
       .sidebar-image-container {
         margin-bottom: 1rem;
-        text-align: center; /* 確保圖片置中 */
+        text-align: center; /* 置中圖片 */
       }
 
       .sidebar-image-container img {
-        height: 300px; /* 設置直式圖片的高度 */
+        width: 90%;         /* 圖片寬度為容器寬度的 90% */
+        height: auto;       /* 高度自動，保持比例 */
+        max-height: 60vh;   /* 避免圖片過高，佔螢幕最大 60% 高 */
+        object-fit: cover;  /* 裁切處理長圖 */
       }
 
       .two-vertical-images {
-        display: flex; /* 彈性佈局，讓圖片並排 */
-        justify-content: space-between; /* 兩張圖片均勻分佈 */
-        gap: 2rem; /* 圖片之間的間距 */
+        display: flex;
+        justify-content: space-between;
+        gap: 4%; /* 使用百分比間距更彈性 */
         margin-top: 2rem;
-        margin-bottom: 2rem; /* 與下方內容的距離 */
+        margin-bottom: 2rem;
+        flex-wrap: wrap; /* 若畫面太小，允許換行 */
       }
 
       .two-vertical-images img {
-        width: calc(50% - 0.5rem); /* 每張圖片佔用容器的一半減去間距 */
-        text-align: center; /* 確保圖片置中 */
-        height: auto; /* 保持圖片的直式比例 */
-        object-fit: cover; /* 確保圖片內容適應容器 */
+        width: 48%; /* 每張圖片約佔一半（加上 gap 剛好 100%） */
+        height: auto; /* 保持原比例 */
+        object-fit: cover;
+        display: block;
+        margin: 0 auto;
       }
 
       .recommendation-section {
-        margin-top: 1.5rem; /* 與上方文字的間距 */
+        margin-top: 3vh; /* 與上方文字的間距 */
         text-align: center;
         position: sticky;
         top: 80px; /* 空出導覽列的高度，確保推薦區不被覆蓋 */
         z-index: 10; /* 提高層級，避免被其他內容遮蓋 */
+        padding: 0 5%;
       }
 
       .recommendation-section h3 {
-        font-size: 18px;
+        font-size: 1.125rem;
         font-weight: bold;
-        margin-bottom: 0.5rem; /* 與按鈕區的距離 */
+        margin-bottom: 1vh; /* 與按鈕區的距離 */
       }
 
       .recommendation-buttons {
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
-        gap: 0.5rem; /* 按鈕之間的間距 */
+        gap: 0.5em; /* 按鈕之間的間距 */
       }
 
       .recommendation-buttons button {
-        padding: 0.5rem 1rem;
-        font-size: 14px;
+        padding: 0.5em 1em;
+        font-size: 0.875rem;
         color: white;
         background-color: #78bcc4;
         border: none;
-        border-radius: 4px;
+        border-radius: 0.25rem;
         transition: transform 0.3s;
         font-family: Arial, sans-serif;
       }
@@ -229,13 +241,13 @@
       }
 
       .contact-section {
-        padding: 2rem 5rem; /* 上下與左右間距 */
+        padding: 4vh 8vw; /* 上下與左右間距 */
         background-color: #eff5f5; /* 淺灰背景 */
         text-align: center; /* 確保內容置中對齊 */
       }
 
       .contact-item h3 {
-        font-size: 18px; /* 調整標題字體大小 */
+        font-size: 1.125rem; /* 調整標題字體大小 */
         margin: 0; /* 移除多餘的間距 */
         text-decoration: none; /* 移除底線 */
       }
@@ -243,43 +255,49 @@
       footer {
         background-color: #000;
         color: white;
-        height: 30px;
+        height: 3vh; /* 使用相對單位，高度占螢幕高度的 3% */
         display: flex;
         justify-content: center;
         align-items: center;
+        font-size: 1.5rem; /* 使用相對字體大小 */
+        padding: 0.5rem 0; /* 確保小螢幕時內容不擠壓 */
       }
 
       #expandable-menu {
-        position: fixed;
-        top: 70px; /* 與螢幕頂部的距離設為 60px */
+        position: fixed; 
         right: 0;
-        height: calc(100% - 70px); /* 高度減去 60px，避免超出視窗 */
-        width: 395px; /* 目錄寬度與 sidebar 齊寬 */
+        width: 26vw; /* 目錄寬度與 sidebar 齊寬 */
+        max-width: 90%; /* 避免在小螢幕太寬 */
         transform: translateX(100%); /* 初始狀態：隱藏在右側 */
         transition: transform 0.3s ease;
         background-color: #f4f4f9; /* 與網站背景一致 */
         z-index: 1000;
+        box-sizing: border-box;
       }
 
       /* 收闔按鈕 */
       #menu-toggle {
-        position: absolute;
+        position: fixed;
         top: 45%;
-        left: -40px; /* 調整按鈕的位置，適應按鈕變大後的寬度 */
-        transform: translateY(-50%);
-        width: 40px; /* 增大按鈕寬度 */
-        height: 80px; /* 增大按鈕高度 */
+        right: 0; /* 永遠貼在右側 */
+        transform: translateY(-50%) translateX(0);
+        width: 2.5em; /* 增大按鈕寬度 */
+        height: 5em; /* 增大按鈕高度 */
         background-color: #78bcc4;
         color: white;
-        border-radius: 4px;
+        border-radius: 0.4em 0 0 0.4em;
         display: flex;
         justify-content: center; /* 水平居中 */
         align-items: center; /* 垂直居中 */
+        z-index: 2000; /* 要比 expandable-menu 更高，避免被蓋住 */
+        cursor: pointer;
+        box-shadow: -0.1em 0 0.3em rgba(0,0,0,0.1);
+        transition: transform 0.3s ease; /* 平滑移動 */
       }
 
       #menu-toggle::after {
         content: "目錄"; /* 在按鈕內顯示 "目錄" */
-        font-size: 17px;
+        font-size: 1rem;
         color: white; /* 設定字體顏色為白色 */
         writing-mode: vertical-rl; /* 使文字垂直排列 */
       }
@@ -290,14 +308,16 @@
 
       /* 目錄內容 */
       #menu-content {
-        padding: 0.5rem 1rem;
+        padding: 0.5rem 5%;
         overflow-y: auto;
         height: 100%;
+        box-sizing: border-box;
       }
 
       #menu-content h4 {
         font-weight: bold;
         margin-top: 0;
+        font-size: 1.2rem;
       }
 
       #menu-list {
@@ -306,13 +326,14 @@
       }
 
       #menu-list li {
-        margin-bottom: 0.5rem;
+        margin-bottom: 1vh;
       }
 
       #menu-list a {
         color: #2a90a7;
         text-decoration: none;
         transition: color 0.3s;
+        font-size: 1rem; /* 使用相對字體大小 */
       }
 
       #menu-list a:hover {
@@ -320,13 +341,149 @@
       }
 
       #menu-list .sub-item {
-        margin-left: 1.5rem; /* 調整縮排距離 */
+        margin-left: 8%; /* 調整縮排距離 */
         font-size: 0.9rem; /* 可選：調整子項目字體大小 */
       }
 
       /* 目錄展開狀態 */
       #expandable-menu.open {
         transform: translateX(0);
+      }
+
+      /* === 響應式調整：針對手機與小螢幕設備 === */
+      @media (max-width: 768px) {
+        nav {
+          flex-direction: row;
+          flex-wrap: wrap;
+          align-items: center;
+          justify-content: space-between;
+          padding: 1rem 5vw;  /* 窄螢幕時減少左右留白 */
+          width: 100%;
+          box-sizing: border-box;
+        }
+
+        .nav-right {
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          gap: 0.5rem;
+          transform: none;
+          width: auto;
+          white-space: nowrap;               /* 禁止內容自動換行 */
+        }
+
+        nav a {
+          padding: 0.5rem 0.5rem;           /* 減少垂直padding */
+          margin: 0 0.3rem;
+          font-size: 0.85rem;
+          white-space: nowrap;               /* 確保文字不換行 */
+          overflow: hidden;
+          text-overflow: ellipsis;           /* 若內容超出，顯示省略號 */
+        }
+
+        .nav-dropdown {
+          width: 60%; /* 或者用 max-content, fit-content 看需求 */
+          font-size: 0.85rem; /* 調整字體大小和導覽列一致 */
+          padding: 0.5rem;
+        }
+      
+        .nav-dropdown a {
+          font-size: inherit; /* 確保跟 .nav-dropdown 一樣大 */
+          padding: 0.5rem 1rem;
+          white-space: normal; /* 可選：讓字在必要時換行 */
+        }
+
+        .dropdown-content {
+          width: 12vw;
+          min-width: 8em; /* 保證至少能顯示幾個字 */
+          max-width: none;
+        }
+
+        .dropdown-content a {
+          font-size: 0.85rem;
+        }
+        
+        .intro-section {
+          flex-direction: column;
+          padding: 8%;
+        }
+
+        .intro-section .left,
+        .intro-section .right {
+          width: 100%;
+          padding: 0;
+          flex: 1 1 100%;
+        }
+
+        .intro-section .right {
+          margin-top: 1.5rem;
+          display: flex;
+          justify-content: center;
+        }
+
+        .intro-section h4 {
+          max-width: 100%;
+          font-size: 1rem;
+        }
+
+        .destination-grid {
+          flex-direction: column;
+          gap: 1rem;
+        }
+
+        .destination-section h4 {
+          font-size: 1rem;
+        }
+
+        .destination-item {
+          max-width: 100%;
+          width: 100%;
+        }
+
+        .destination-item.a_role_with_2 {
+          position: static;
+          left: auto;
+        }
+
+        .destination-main,
+        .destination-sidebar {
+          width: 100%;
+          margin: 0;
+          padding: 0;
+        }
+
+        .destination-sidebar {
+          margin-top: 2rem;
+        }
+
+        .recommendation-buttons button {
+          width: 100%; /* 小螢幕按鈕全寬排列 */
+        }
+
+        .contact-section {
+          padding: 3vh 5vw;
+        }
+
+        .contact-item h3 {
+          font-size: 1rem;
+        }
+
+        /* 目錄區寬度改為螢幕寬度的40% */
+        #expandable-menu {
+          width: 40vw !important; /* 用vw方便響應螢幕寬度 */
+          max-width: 90%; /* 保留原本max-width避免太寬 */
+        }
+      
+        #expandable-menu,
+        #expandable-menu * {
+          font-size: 85% !important;
+        }
+              
+        #menu-toggle {
+          width: 75%;
+          max-width: 1.875em;
+          min-width: 1.875em;
+        }
       }
     </style>
   </head>
@@ -342,7 +499,7 @@
       <div class="nav-right">
         <a href="首頁.html">關於我</a>
         <div class="dropdown">
-          <a>亞洲旅遊</a>
+          <a class="dropdown-toggle">亞洲旅遊</a>
           <div class="dropdown-content">
             <a href="中國.html">中國</a>
             <a href="新加坡.html">新加坡</a>
@@ -353,7 +510,7 @@
           </div>
         </div>
         <div class="dropdown">
-          <a>歐洲旅遊</a>
+          <a class="dropdown-toggle">歐洲旅遊</a>
           <div class="dropdown-content">
             <a href="英國.html">英國</a>
             <a href="法國.html">法國</a>
@@ -371,7 +528,7 @@
           </div>
         </div>
         <div class="dropdown">
-          <a>美洲旅遊</a>
+          <a class="dropdown-toggle">美洲旅遊</a>
           <div class="dropdown-content">
             <a href="美國.html">美國</a>
             <a href="加拿大.html">加拿大</a>
@@ -389,7 +546,7 @@
         </h4>
       </div>
       <div class="right">
-        <img src="美國照片\舊金山\舊金山_介紹.jpg" width="90%" height="350px" />
+        <img src="美國照片\舊金山\舊金山_介紹.jpg" style="width: 100%; height: auto; max-width: 100%;" />
       </div>
     </div>
 
@@ -405,8 +562,8 @@
           舊金山整個市區都有高低起伏，有的街道還蠻陡的，如果有大包小包建議都要搭車，在美國很多人會租車旅遊，但如果是要進舊金山市區則不推薦，因為停車位十分難找。最推薦是能在地鐵站購買 Clipper Card (類似於悠遊卡) 並儲值後，就能搭乘地鐵 (Bart)、公車、纜車及路面電車，基本上整個市區的景點都有覆蓋。
         </h4>
         <div style="text-align: center">
-          <img src="美國照片\舊金山\舊金山_交通1.png" width="800px" />
-          <img src="美國照片\舊金山\舊金山_交通2.png" width="800px" />
+          <img src="美國照片\舊金山\舊金山_交通1.png" style="width: 100%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+          <img src="美國照片\舊金山\舊金山_交通2.png" style="width: 100%; max-width: 90vw; height: auto; margin: 0.5rem;" />
         </div>
         <br /><br />
         <h2>舊金山住宿</h2>
@@ -414,8 +571,8 @@
           舊金山近幾年的治安狀況並不好，因此在選擇住宿地點時要特別避開特定區域，特別是上圖的 Mission District 還有下圖圈出的藍色範圍，都有很高機率會碰上吸毒者與精神部正常的人，因此不論是白天或晚上都要遠離這兩個區域，晚上在市區也盡量不要單獨行動。如果說到推薦住宿區域，若想住在市區中可以選擇較北邊的義大利區 (華盛頓廣場附近)，但如果有預算上的考量則可以選擇住在隔壁的 Daly City 並以 Bart 作為通勤進城。
         </h4>
         <div style="text-align: center">
-          <img src="美國照片\舊金山\舊金山_住宿1.png" width="1000px" />
-          <img src="美國照片\舊金山\舊金山_住宿2.png" width="1000px" />
+          <img src="美國照片\舊金山\舊金山_住宿1.png" style="width: 100%; max-width: 90vw; height: auto;" />
+          <img src="美國照片\舊金山\舊金山_住宿2.png" style="width: 100%; max-width: 90vw; height: auto;" />
         </div>
         <br /><br />
         <h2>舊金山景點</h2>
@@ -425,7 +582,7 @@
         </h4>
         <h4>聯合廣場中央矗立著一座勝利女神紀念碑，為紀念杜威將軍在 1898 年美西戰爭中的勝利，廣場四周綠樹成蔭，擁有寬敞的步行區，經常舉辦街頭表演、公共藝術展覽與節日慶典，特別是在冬季，廣場會設置溜冰場與巨型聖誕樹增添節日氛圍。</h4>
         <div style="text-align: center">
-          <img src="美國照片\舊金山\SF1.jpg" width="600px" />
+          <img src="美國照片\舊金山\SF1.jpg" style="width: 90%; max-width: 600px; height: auto; margin: 0.5rem;" />
         </div>
         <br /><br /><br />
         <h3>卡斯楚街 (Castro Street)</h3>
@@ -433,8 +590,8 @@
           卡斯楚街是全球最著名的 LGBTQ+ 社區之一，也是多元文化與平權運動的象徵，該區在 20 世紀 60 至 70 年代開始發展為同志社區，並因哈維·米爾克（Harvey Milk）: 美國首位公開出櫃的民選官員的影響力而聲名大噪。沿著卡斯楚街可以看到彩虹旗飄揚，以及許多 LGBTQ+ 友善的商店、酒吧、咖啡館和劇院，如歷史悠久的卡斯楚劇院（Castro Theatre），這裡經常舉辦電影放映、戲劇表演和特別活動，街道上還有許多紀念 LGBTQ+ 歷史的公共藝術與壁畫，例如粉紅色三角公園（Pink Triangle Park）。每年卡斯楚街都會舉辦盛大的同志驕傲遊行（Pride Parade）和萬聖節派對，吸引來自世界各地的遊客與支持者。
         </h4>
         <div style="text-align: center">
-          <img src="美國照片\舊金山\SF2.jpg" width="600px" />
-          <img src="美國照片\舊金山\SF3.jpg" width="600px" />
+          <img src="美國照片\舊金山\SF2.jpg" style="width: 90%; max-width: 600px; height: auto; margin: 0.5rem;" />
+          <img src="美國照片\舊金山\SF3.jpg" style="width: 90%; max-width: 600px; height: auto; margin: 0.5rem;" />
         </div>
         <br /><br /><br />
         <h3>彩繪女士 (The Painted Ladies)</h3>
@@ -443,8 +600,8 @@
         </h4>
         <h4>艾拉莫廣場公園是欣賞彩繪仕女的最佳地點，從這裡可以遠眺舊金山市中心天際線，形成一幅極具層次感的畫面，彩繪女士也經常出現在電影與電視作品中，如經典美劇《歡樂滿屋》（Full House）。</h4>
         <div style="text-align: center">
-          <img src="美國照片\舊金山\SF4.jpg" width="800px" />
-          <img src="美國照片\舊金山\SF5.jpg" width="800px" />
+          <img src="美國照片\舊金山\SF4.jpg" style="width: 100%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+          <img src="美國照片\舊金山\SF5.jpg" style="width: 100%; max-width: 90vw; height: auto; margin: 0.5rem;" />
         </div>
         <br /><br /><br />
         <h3>泛美金字塔 (Transamerica Pyramid)</h3>
@@ -452,7 +609,7 @@
           泛美金字塔位於金融區（Financial District），以獨特的金字塔形設計聞名，大樓於 1972 年 完工，高 260 公尺共有 48 層，曾是舊金山最高的建築，直到 2018 年被 Salesforce Tower 超越。這座建築由建築師 威廉·佩雷拉（William Pereira） 設計，最初作為泛美保險公司（Transamerica Corporation）的總部，其金字塔造型不僅獨特還具有實用性，能減少遮擋陽光的面積，使周圍街區保持良好採光。大樓的外觀由白色石英塗層混凝土覆蓋，兩側有垂直通風窗，使其在地震多發的舊金山保持良好穩定性。
         </h4>
         <div style="text-align: center">
-          <img src="美國照片\舊金山\SF6.jpg" width="600px" />
+          <img src="美國照片\舊金山\SF6.jpg" style="width: 90%; max-width: 600px; height: auto; margin: 0.5rem;" />
         </div>
         <br /><br /><br />
         <h3>舊金山中國城 (Chinatown San Francisco)</h3>
@@ -461,9 +618,9 @@
         </h4>
         <h4>每年舉辦盛大的農曆新年大遊行（Chinese New Year Parade），包括舞龍舞獅、煙火與傳統表演，還可參觀中華文化中心（Chinese Culture Center）、天后廟（Tin How Temple）及舊金山最古老的餅乾店（Golden Gate Fortune Cookie Factory），深入了解移民華人歷史與文化。</h4>
         <div style="text-align: center">
-          <img src="美國照片\舊金山\SF7.jpg" width="600px" />
-          <img src="美國照片\舊金山\SF8.jpg" width="600px" />
-          <img src="美國照片\舊金山\SF9.jpg" width="600px" />
+          <img src="美國照片\舊金山\SF7.jpg" style="width: 90%; max-width: 600px; height: auto; margin: 0.5rem;" />
+          <img src="美國照片\舊金山\SF8.jpg" style="width: 90%; max-width: 600px; height: auto; margin: 0.5rem;" />
+          <img src="美國照片\舊金山\SF9.jpg" style="width: 90%; max-width: 600px; height: auto; margin: 0.5rem;" />
         </div>
         <br /><br /><br />
         <h3>舊金山纜車 (San Francisco Cable Car)</h3>
@@ -472,11 +629,11 @@
         </h4>
         <h4>多人搭乘纜車推薦在起站排隊等車，但如果少於 2 人則推薦在離起站一站的地方等車，可以省去排隊時間又有很大機率能站到車前方踏板的絕佳位置。</h4>
         <div style="text-align: center">
-          <img src="美國照片\舊金山\SF10.jpg" width="600px" />
-          <img src="美國照片\舊金山\SF11.jpg" width="600px" />
-          <img src="美國照片\舊金山\SF12.jpg" width="600px" />
-          <img src="美國照片\舊金山\SF13.jpg" width="800px" />
-          <img src="美國照片\舊金山\SF14.jpg" width="600px" />
+          <img src="美國照片\舊金山\SF10.jpg" style="width: 90%; max-width: 600px; height: auto; margin: 0.5rem;" />
+          <img src="美國照片\舊金山\SF11.jpg" style="width: 90%; max-width: 600px; height: auto; margin: 0.5rem;" />
+          <img src="美國照片\舊金山\SF12.jpg" style="width: 90%; max-width: 600px; height: auto; margin: 0.5rem;" />
+          <img src="美國照片\舊金山\SF13.jpg" style="width: 100%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+          <img src="美國照片\舊金山\SF14.jpg" style="width: 90%; max-width: 600px; height: auto; margin: 0.5rem;" />
         </div>
         <br /><br /><br />
         <h3>纜車博物館 (Cable Car Museum)</h3>
@@ -485,9 +642,9 @@
         </h4>
         <h4>最特別的是博物館位於舊金山纜車的動力中心，遊客可透過觀景台俯瞰纜車的運作機制，觀看巨大輪軸如何帶動地下鋼纜，使纜車在陡峭的街道上運行。</h4>
         <div style="text-align: center">
-          <img src="美國照片\舊金山\SF15.jpg" width="600px" />
-          <img src="美國照片\舊金山\SF16.jpg" width="600px" />
-          <img src="美國照片\舊金山\SF17.jpg" width="800px" />
+          <img src="美國照片\舊金山\SF15.jpg" style="width: 90%; max-width: 600px; height: auto; margin: 0.5rem;" />
+          <img src="美國照片\舊金山\SF16.jpg" style="width: 90%; max-width: 600px; height: auto; margin: 0.5rem;" />
+          <img src="美國照片\舊金山\SF17.jpg" style="width: 100%; max-width: 90vw; height: auto; margin: 0.5rem;" />
         </div>
         <br /><br /><br />
         <h3>倫巴底街 (Lombard Street)</h3>
@@ -495,8 +652,8 @@
           倫巴底街以其蜿蜒曲折的設計和美麗的景觀聞名，位於俄羅斯山（Russian Hill）區，最著名的路段位於海德街（Hyde St.）與利文沃斯街（Leavenworth St.）之間，共有八個急彎，被稱為“世界上最曲折的街道”。倫巴底街原本是一條陡峭的坡道，但為了讓車輛更安全地行駛，1922 年設計了如今的之字形彎道並鋪上紅磚，沿街兩旁種滿五顏六色的花卉，特別是在春夏季節繡球花盛開，使這裡成為熱門的拍照景點。
         </h4>
         <div style="text-align: center">
-          <img src="美國照片\舊金山\SF18.jpg" width="800px" />
-          <img src="美國照片\舊金山\SF19.jpg" width="600px" />
+          <img src="美國照片\舊金山\SF18.jpg" style="width: 100%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+          <img src="美國照片\舊金山\SF19.jpg" style="width: 90%; max-width: 600px; height: auto; margin: 0.5rem;" />
         </div>
         <br /><br /><br />
         <h3>海德街 (Hyde Street)</h3>
@@ -504,7 +661,7 @@
           海德街從漁人碼頭延伸至市場街（Market Street），沿途經過多個著名景點，包括倫巴底街和俄羅斯山（Russian Hill），最大亮點是它的纜車路線，一路向下延伸到漁人碼頭，並可以遠眺正前方的惡魔島，是非常著名的打卡景點，千萬不能錯過。
         </h4>
         <div style="text-align: center">
-          <img src="美國照片\舊金山\SF20.jpg" width="800px" />
+          <img src="美國照片\舊金山\SF20.jpg" style="width: 100%; max-width: 90vw; height: auto; margin: 0.5rem;" />
         </div>
         <br /><br /><br />
         <h3>漁人碼頭 (Fisherman’s Wharf)</h3>
@@ -512,8 +669,8 @@
           漁人碼頭曾是舊金山主要的漁業中心，如今則成為熱門的娛樂區，融合了海港風情與現代旅遊設施，有各式商店、餐廳和娛樂設施，也是前往惡魔島的主要登船點，許多遊船和觀光行程從此出發，還有多間知名海鮮餐廳，如酸麵包蛤蜊濃湯（clam chowder）和螃蟹料理，都是不容錯過的美食。
         </h4>
         <div style="text-align: center">
-          <img src="美國照片\舊金山\SF21.jpg" width="600px" />
-          <img src="美國照片\舊金山\SF22.jpg" width="800px" />
+          <img src="美國照片\舊金山\SF21.jpg" style="width: 90%; max-width: 600px; height: auto; margin: 0.5rem;" />
+          <img src="美國照片\舊金山\SF22.jpg" style="width: 100%; max-width: 90vw; height: auto; margin: 0.5rem;" />
         </div>
         <br /><br /><br />
         <h3>39 號碼頭 (Pier 39)</h3>
@@ -521,11 +678,11 @@
           39 號碼頭位於漁人碼頭，擁有超過 40 家商店、餐廳和娛樂設施，可以在這裡購買紀念品、藝術品或時尚商品，並在各種餐廳中品嚐到新鮮的海鮮，特別是螃蟹、蛤蜊濃湯和酸麵包等當地特色美食。最著名的景點是碼頭上的海獅聚集地，這裡的海獺、海獅會在碼頭木筏上聚集，成為遊客拍照的熱點，也常有魔術表演和街頭表演等多種娛樂活動。
         </h4>
         <div style="text-align: center">
-          <img src="美國照片\舊金山\SF23.jpg" width="600px" />
-          <img src="美國照片\舊金山\SF24.jpg" width="600px" />
-          <img src="美國照片\舊金山\SF25.jpg" width="800px" />
-          <img src="美國照片\舊金山\SF26.jpg" width="800px" />
-          <img src="美國照片\舊金山\SF27.jpg" width="800px" />
+          <img src="美國照片\舊金山\SF23.jpg" style="width: 90%; max-width: 600px; height: auto; margin: 0.5rem;" />
+          <img src="美國照片\舊金山\SF24.jpg" style="width: 90%; max-width: 600px; height: auto; margin: 0.5rem;" />
+          <img src="美國照片\舊金山\SF25.jpg" style="width: 100%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+          <img src="美國照片\舊金山\SF26.jpg" style="width: 100%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+          <img src="美國照片\舊金山\SF27.jpg" style="width: 100%; max-width: 90vw; height: auto; margin: 0.5rem;" />
         </div>
         <br /><br /><br />
         <h3>惡魔島聯邦監獄 (Alcatraz Island)</h3>
@@ -534,7 +691,7 @@
         </h4>
         <h4>如今可以參加導覽參觀原本的監獄建築，並了解其悠久的歷史，包括監獄的運作、囚犯的生活以及著名的逃脫事件，還可以走訪監獄餐廳、單人牢房和電視監控室等地點，透過耳機導覽了解島嶼的故事。</h4>
         <div style="text-align: center">
-          <img src="美國照片\舊金山\SF28.jpg" width="800px" />
+          <img src="美國照片\舊金山\SF28.jpg" style="width: 100%; max-width: 90vw; height: auto; margin: 0.5rem;" />
         </div>
         <br /><br /><br />
         <h3>金門大橋 (Golden Gate Bridge)</h3>
@@ -543,10 +700,10 @@
         </h4>
         <h4>可以從橋的兩端欣賞壯麗的景色，比較方便是在舊金山一側的金門大橋觀景台（Golden Gate Bridge Vista Point），也有步行道和自行車道可供遊客近距離欣賞橋樑的結構美和周圍的自然景觀。</h4>
         <div style="text-align: center">
-          <img src="美國照片\舊金山\SF29.jpg" width="800px" />
-          <img src="美國照片\舊金山\SF30.jpg" width="800px" />
-          <img src="美國照片\舊金山\SF31.jpg" width="600px" />
-          <img src="美國照片\舊金山\SF32.jpg" width="800px" />
+          <img src="美國照片\舊金山\SF29.jpg" style="width: 100%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+          <img src="美國照片\舊金山\SF30.jpg" style="width: 100%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+          <img src="美國照片\舊金山\SF31.jpg" style="width: 90%; max-width: 600px; height: auto; margin: 0.5rem;" />
+          <img src="美國照片\舊金山\SF32.jpg" style="width: 100%; max-width: 90vw; height: auto; margin: 0.5rem;" />
         </div>
         <br /><br /><br />
         <h3>藝術宮 (Palace of Fine Arts)</h3>
@@ -554,9 +711,9 @@
           藝術宮建於 1915 年，為了舊金山舉辦的巴拿馬太平洋國際博覽會（Panama-Pacific International Exposition）而設計，藝術宮的建築風格融合了古典的羅馬和希臘元素，尤其以其宏偉的圓頂和柱廊聞名，由建築師伯納德·梅耶（Bernard Maybeck）設計，其外觀仿效古羅馬的神廟，配有精緻的雕刻和細緻的柱子，給人一種莊嚴、永恆的感覺，四周被一個美麗的湖泊環繞，湖面上的倒影與古老建築交相輝映。
         </h4>
         <div style="text-align: center">
-          <img src="美國照片\舊金山\SF33.jpg" width="600px" />
-          <img src="美國照片\舊金山\SF34.jpg" width="600px" />
-          <img src="美國照片\舊金山\SF35.jpg" width="800px" />
+          <img src="美國照片\舊金山\SF33.jpg" style="width: 90%; max-width: 600px; height: auto; margin: 0.5rem;" />
+          <img src="美國照片\舊金山\SF34.jpg" style="width: 90%; max-width: 600px; height: auto; margin: 0.5rem;" />
+          <img src="美國照片\舊金山\SF35.jpg" style="width: 100%; max-width: 90vw; height: auto; margin: 0.5rem;" />
         </div>
         <br /><br /><br />
         <h3>科伊特塔 (Coit Tower)</h3>
@@ -565,12 +722,12 @@
         </h4>
         <h4>塔內的牆面上，遊客可以欣賞到由迪耶哥·里維拉（Diego Rivera）等著名畫家創作的壁畫，這些壁畫描繪了舊金山在大蕭條期間的社會狀況，並展示了當時工人和市民的生活。塔的建設是由舊金山的富商路易莎·科伊特（Lillie Hitchcock Coit）捐款支持，她是當地的消防愛好者。</h4>
         <div style="text-align: center">
-          <img src="美國照片\舊金山\SF36.jpg" width="600px" />
-          <img src="美國照片\舊金山\SF37.jpg" width="600px" />
-          <img src="美國照片\舊金山\SF38.jpg" width="800px" />
-          <img src="美國照片\舊金山\SF39.jpg" width="800px" />
-          <img src="美國照片\舊金山\SF40.jpg" width="800px" />
-          <img src="美國照片\舊金山\SF41.jpg" width="800px" />
+          <img src="美國照片\舊金山\SF36.jpg" style="width: 90%; max-width: 600px; height: auto; margin: 0.5rem;" />
+          <img src="美國照片\舊金山\SF37.jpg" style="width: 90%; max-width: 600px; height: auto; margin: 0.5rem;" />
+          <img src="美國照片\舊金山\SF38.jpg" style="width: 100%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+          <img src="美國照片\舊金山\SF39.jpg" style="width: 100%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+          <img src="美國照片\舊金山\SF40.jpg" style="width: 100%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+          <img src="美國照片\舊金山\SF41.jpg" style="width: 100%; max-width: 90vw; height: auto; margin: 0.5rem;" />
         </div>
         <br /><br /><br />
         <h3>雙峰 (Twin Peaks)</h3>
@@ -578,11 +735,11 @@
           雙峰位於市中心，海拔 277 米，是舊金山的最高點之一，也是觀賞城市全景的理想場所，可以從山頂欣賞到舊金山灣、金門大橋及城市天際線等壯觀景色，特別是在日出或日落時分更為迷人，雙峰上有一條設計良好的步道，可以選擇步行或開車到達山頂，步道穿越開放的草地和小型森林區域，還有雙峰觀景台（Twin Peaks Viewpoint），能夠駐足停留並遠眺整個灣區美景。
         </h4>
         <div style="text-align: center">
-          <img src="美國照片\舊金山\SF42.jpg" width="800px" />
-          <img src="美國照片\舊金山\SF43.jpg" width="800px" />
-          <img src="美國照片\舊金山\SF44.jpg" width="800px" />
-          <img src="美國照片\舊金山\SF45.jpg" width="800px" />
-          <img src="美國照片\舊金山\SF46.jpg" width="800px" />
+          <img src="美國照片\舊金山\SF42.jpg" style="width: 100%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+          <img src="美國照片\舊金山\SF43.jpg" style="width: 100%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+          <img src="美國照片\舊金山\SF44.jpg" style="width: 100%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+          <img src="美國照片\舊金山\SF45.jpg" style="width: 100%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+          <img src="美國照片\舊金山\SF46.jpg" style="width: 100%; max-width: 90vw; height: auto; margin: 0.5rem;" />
         </div>
         <br /><br /><br />
         <h3>舊金山—奧克蘭灣大橋 (San Francisco-Oakland Bay Bridge)</h3>
@@ -590,7 +747,7 @@
           舊金山—奧克蘭灣大橋連接舊金山和奧克蘭兩座城市，於 1936 年完工，比金門大橋早一年，原本是為了應對大蕭條期間需求日益增加的交通而建造的。這座大橋由兩部分組成：一段是連接舊金山市區與島嶼段，另一段則連接奧克蘭的東灣，構成了重要的交通樞紐，為灣區的通勤和貨運提供了至關重要的連接，在夜晚大橋燈光閃爍景色迷人，為舊金山灣區的重要象徵。
         </h4>
         <div style="text-align: center">
-          <img src="美國照片\舊金山\SF47.jpg" width="800px" />
+          <img src="美國照片\舊金山\SF47.jpg" style="width: 100%; max-width: 90vw; height: auto; margin: 0.5rem;" />
         </div>
         <br /><br /><br />
         <h3>渡輪大樓 (Ferry Building)</h3>
@@ -598,8 +755,8 @@
           渡輪大樓位於舊金山灣沿岸，建於 1898 年，當時是舊金山主要的渡輪交通中心，渡輪大樓的外觀融合了文藝復興復興風格，並擁有一座高達 75 米的鐘塔，鐘塔原本用作指示渡輪出發時間。現在的渡輪大樓內設有市場（Ferry Building Marketplace），提供新鮮的當地農產品、美食和手工藝品，這裡的農夫市場（每週開放）內不僅有新鮮的蔬果、海鮮，還有各式手作食品，可以品嚐到舊金山的地道風味。此外渡輪大樓依然是舊金山灣區渡輪服務的核心地點，從此出發的渡輪連接舊金山與馬林縣、奧克蘭等城市。
         </h4>
         <div style="text-align: center">
-          <img src="美國照片\舊金山\SF48.jpg" width="600px" />
-          <img src="美國照片\舊金山\SF49.jpg" width="600px" />
+          <img src="美國照片\舊金山\SF48.jpg" style="width: 90%; max-width: 600px; height: auto; margin: 0.5rem;" />
+          <img src="美國照片\舊金山\SF49.jpg" style="width: 90%; max-width: 600px; height: auto; margin: 0.5rem;" />
         </div>
         <br /><br /><br />
         <h3>Salesforce Park</h3>
@@ -607,9 +764,9 @@
           Salesforce Park 是舊金山市中心的一座現代化空中公園，位於 Salesforce Transit Center 頂部，長達 427 米，宛如都市中的綠色天堂，公園於 2019 年 正式開放，佔地約 2.2 公頃，種植了來自世界各地的 600 多棵樹木和 16000 多株植物，打造出多樣化的生態環境，包括加州本土植物區、熱帶植物區和花園步道，Salesforce Park 也設有戶外長廊、露天劇場、噴泉和健身步道，經常舉辦瑜伽課程、音樂表演和文化活動。可以透過電梯、手扶梯或獨特的玻璃纜車抵達公園，從高處俯瞰舊金山的壯麗城市景觀。
         </h4>
         <div style="text-align: center">
-          <img src="美國照片\舊金山\SF50.jpg" width="600px" />
-          <img src="美國照片\舊金山\SF51.jpg" width="600px" />
-          <img src="美國照片\舊金山\SF52.jpg" width="800px" />
+          <img src="美國照片\舊金山\SF50.jpg" style="width: 90%; max-width: 600px; height: auto; margin: 0.5rem;" />
+          <img src="美國照片\舊金山\SF51.jpg" style="width: 90%; max-width: 600px; height: auto; margin: 0.5rem;" />
+          <img src="美國照片\舊金山\SF52.jpg" style="width: 100%; max-width: 90vw; height: auto; margin: 0.5rem;" />
         </div>
         <br /><br />
         <h2>舊金山近郊景點</h2>
@@ -619,14 +776,14 @@
         </h4>
         <h4>大學的校園佔地約 1200 英畝，擁有許多歷史悠久的建築，如 Sather Tower（也被稱為 Campanile 鐘塔），這座塔高 94 公尺，是校園的標誌之一，UC Berkeley 的 Sproul Plaza 也是學生社會運動的重要發源地，曾經是美國自由言論運動（Free Speech Movement）的核心。</h4>
         <div style="text-align: center">
-          <img src="美國照片\舊金山\SF53.jpg" width="600px" />
+          <img src="美國照片\舊金山\SF53.jpg" style="width: 90%; max-width: 600px; height: auto; margin: 0.5rem;" />
         </div>
         <h4>校內有一條路是用核彈之父"奧本海默"命名的!</h4>
         <div style="text-align: center">
-          <img src="美國照片\舊金山\SF54.jpg" width="600px" />
-          <img src="美國照片\舊金山\SF55.jpg" width="600px" />
-          <img src="美國照片\舊金山\SF56.jpg" width="800px" />
-          <img src="美國照片\舊金山\SF57.jpg" width="800px" />
+          <img src="美國照片\舊金山\SF54.jpg" style="width: 90%; max-width: 600px; height: auto; margin: 0.5rem;" />
+          <img src="美國照片\舊金山\SF55.jpg" style="width: 90%; max-width: 600px; height: auto; margin: 0.5rem;" />
+          <img src="美國照片\舊金山\SF56.jpg" style="width: 100%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+          <img src="美國照片\舊金山\SF57.jpg" style="width: 100%; max-width: 90vw; height: auto; margin: 0.5rem;" />
         </div>
         <br /><br /><br />
         <h3>Muir Beach Overlook</h3>
@@ -634,9 +791,9 @@
           Muir Beach Overlook 位於著名的穆爾森林和金門國家公園附近，能夠欣賞到波濤洶湧的海岸線、隱蔽的沙灘和遠處的金門大橋，景色隨著季節的變換而變化，夏天時海灘和海面通常是湛藍的，而冬天則可見到壯觀的暴風雨景象，也有一條短程的徒步步道，沿途會經過一些壯麗的景點，並讓人有機會觀察當地的野生動植物。
         </h4>
         <div style="text-align: center">
-          <img src="美國照片\舊金山\SF58.jpg" width="800px" />
-          <img src="美國照片\舊金山\SF59.jpg" width="800px" />
-          <img src="美國照片\舊金山\SF60.jpg" width="600px" />
+          <img src="美國照片\舊金山\SF58.jpg" style="width: 100%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+          <img src="美國照片\舊金山\SF59.jpg" style="width: 100%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+          <img src="美國照片\舊金山\SF60.jpg" style="width: 90%; max-width: 600px; height: auto; margin: 0.5rem;" />
         </div>
         <br /><br /><br />
         <h3>穆爾森林國家紀念碑 (Muir Woods National Monument)</h3>
@@ -647,7 +804,7 @@
           <b>切記再前往森林前要先在<a href="https://www.nps.gov/muwo/index.htm" target="_blank">網上預約</a>買票，因為公園有每日訪客的限制，務必要先看好是否有餘額以免撲空</b>。
         </h4>
         <div style="text-align: center">
-          <img src="美國照片\舊金山\SF61.jpg" width="800px" />
+          <img src="美國照片\舊金山\SF61.jpg" style="width: 100%; max-width: 90vw; height: auto; margin: 0.5rem;" />
         </div>
         <br /><br /><br />
         <h3>索薩利托 (Sausalito)</h3>
@@ -655,8 +812,8 @@
           索薩利托位於舊金山灣區北部，與舊金山隔著金門海峽相望，距離市區約 10 公里，以其悠閒的氛圍聞名，有風景如畫的海濱步道、色彩繽紛的藝廊、精品店和高級餐廳，可以沿著 Bridgeway 大道漫步，欣賞海灣美景，或在當地咖啡廳和餐廳品嚐新鮮的海鮮，特別是以螃蟹三明治和蛤蜊巧達湯最受歡迎。索薩利托的水上社區是其獨特之處，這裡有超過 400 座浮動房屋，許多擁有鮮豔的色彩和獨特的設計，成為拍照的熱門景點。
         </h4>
         <div style="text-align: center">
-          <img src="美國照片\舊金山\SF62.jpg" width="800px" />
-          <img src="美國照片\舊金山\SF63.jpg" width="800px" />
+          <img src="美國照片\舊金山\SF62.jpg" style="width: 100%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+          <img src="美國照片\舊金山\SF63.jpg" style="width: 100%; max-width: 90vw; height: auto; margin: 0.5rem;" />
         </div>
         <br /><br /><br />
         <h3>金門大橋觀景點 (Golden Gate View Point)</h3>
@@ -664,7 +821,7 @@
           金門大橋觀景點是欣賞金門大橋壯麗景色的最佳地點，位於舊金山和馬林縣之間的高地，能夠俯瞰整座大橋、舊金山灣、太平洋以及遠處的城市天際線，這個觀景點特別適合攝影愛好者，無論是清晨的晨霧、黃昏的夕陽，或是夜晚燈火通明的金門大橋，都能捕捉到令人驚豔的畫面，可以清楚地看到大橋橘紅色的壯觀結構，與蔚藍的海灣形成鮮明對比。
         </h4>
         <div style="text-align: center">
-          <img src="美國照片\舊金山\SF64.jpg" width="800px" />
+          <img src="美國照片\舊金山\SF64.jpg" style="width: 100%; max-width: 90vw; height: auto; margin: 0.5rem;" />
         </div>
         <br /><br /><br />
         <h3>Battery Spencer</h3>
@@ -672,9 +829,9 @@
           Battery Spencer 位於馬林縣的高地上，提供壯觀的橋梁全景視角，堡壘建於 1897 年，曾是美國軍隊的重要防禦設施，用於保護舊金山灣免受敵軍攻擊，從 Battery Spencer 觀景點可以俯瞰整座金門大橋，遠眺舊金山城市天際線、惡魔島及太平洋，無論是晨曦、日落還是夜晚的燈火，特別是在黃昏時分，夕陽映照著金門大橋的橘紅色結構，與蔚藍的海灣形成強烈對比。
         </h4>
         <div style="text-align: center">
-          <img src="美國照片\舊金山\SF65.jpg" width="600px" />
-          <img src="美國照片\舊金山\SF66.jpg" width="600px" />
-          <img src="美國照片\舊金山\SF67.jpg" width="800px" />
+          <img src="美國照片\舊金山\SF65.jpg" style="width: 90%; max-width: 600px; height: auto; margin: 0.5rem;" />
+          <img src="美國照片\舊金山\SF66.jpg" style="width: 90%; max-width: 600px; height: auto; margin: 0.5rem;" />
+          <img src="美國照片\舊金山\SF67.jpg" style="width: 100%; max-width: 90vw; height: auto; margin: 0.5rem;" />
         </div>
         <br /><br />
         <h2>舊金山美食</h2>
@@ -683,8 +840,8 @@
           Super Duper Burgers 是舊金山的本地漢堡連鎖店，以其高品質食材、新鮮手工製作和經典美式風味而聞名，強調使用當地採購的有機食材，如 100% 牧場飼養的天然牛肉、新鮮出爐的麵包、自製醬料和有機奶昔，其中大蒜薯條（Garlic Fries）是明星商品，和漢堡的完美搭配，是當地人推薦的必吃漢堡之一！
         </h4>
         <div style="text-align: center">
-          <img src="美國照片\舊金山\SF68.jpg" width="600px" />
-          <img src="美國照片\舊金山\SF69.jpg" width="600px" />
+          <img src="美國照片\舊金山\SF68.jpg" style="width: 90%; max-width: 600px; height: auto; margin: 0.5rem;" />
+          <img src="美國照片\舊金山\SF69.jpg" style="width: 90%; max-width: 600px; height: auto; margin: 0.5rem;" />
         </div>
         <br /><br /><br />
         <h3>The Grove - Yerba Buena</h3>
@@ -692,8 +849,8 @@
           The Grove - Yerba Buena 是一家深受當地人喜愛的美式休閒餐廳，以其溫馨的氛圍、美味的舒適食物和放鬆的社交環境聞名，餐廳靠近 SFMOMA（舊金山現代藝術博物館） 和 Moscone Center，提供豐富的美式經典菜單，如酪梨吐司、手工湯品、招牌三明治、漢堡、早午餐和自家製甜點，搭配各式咖啡、啤酒與雞尾酒，適合任何時段享用，餐廳內部裝潢溫暖而富有鄉村風格，帶有木質裝飾和舒適的座位，營造出像家一樣的用餐環境。
         </h4>
         <div style="text-align: center">
-          <img src="美國照片\舊金山\SF70.jpg" width="600px" />
-          <img src="美國照片\舊金山\SF71.jpg" width="600px" />
+          <img src="美國照片\舊金山\SF70.jpg" style="width: 90%; max-width: 600px; height: auto; margin: 0.5rem;" />
+          <img src="美國照片\舊金山\SF71.jpg" style="width: 90%; max-width: 600px; height: auto; margin: 0.5rem;" />
         </div>
         <br /><br /><br />
         <h3>Tony’s Pizza Napoletana</h3>
@@ -701,8 +858,8 @@
           Tony’s Pizza Napoletana 是舊金山最著名的披薩店之一，由世界冠軍披薩師傅 Tony Gemignani 創立，以道地的拿坡里風味披薩聞名，使用義大利進口的 Caputo 00 麵粉、聖馬扎諾番茄（San Marzano Tomatoes） 以及木柴窯烤技術，完美呈現正宗的那不勒斯風味。除了經典的 Margherita，Tony’s 也提供各式風格的披薩，如紐約風、芝加哥風、西西里風和羅馬風，滿足不同口味的饕客。
         </h4>
         <div style="text-align: center">
-          <img src="美國照片\舊金山\SF72.jpg" width="600px" />
-          <img src="美國照片\舊金山\SF73.jpg" width="600px" />
+          <img src="美國照片\舊金山\SF72.jpg" style="width: 90%; max-width: 600px; height: auto; margin: 0.5rem;" />
+          <img src="美國照片\舊金山\SF73.jpg" style="width: 90%; max-width: 600px; height: auto; margin: 0.5rem;" />
         </div>
         <br /><br /><br />
         <h3>Golden Boy Pizza</h3>
@@ -710,8 +867,8 @@
           如果 Tony’s 排隊排太長也可以來隔壁的 Golden Boy Pizza ，其自 1978 年營業以來深受當地人喜愛，以其方形西西里風格披薩（Sicilian-style pizza） 聞名。這種披薩擁有厚實、外酥內軟的麵皮，搭配豐富的餡料和濃郁的起司，每一口都充滿濃厚的義式風味，招牌口味包括蛤蜊披薩（Clam & Garlic）、經典起司（Cheese） 和至尊特製（Combo），每片披薩都是現點現切，只有提供外帶享用，小店廚房裝潢懷舊，營造出獨特的嬉皮風格，推薦大家可以買完去附近的 Washington Square 坐在草地上享用。
         </h4>
         <div style="text-align: center">
-          <img src="美國照片\舊金山\SF74.jpg" width="800px" />
-          <img src="美國照片\舊金山\SF75.jpg" width="600px" />
+          <img src="美國照片\舊金山\SF74.jpg" style="width: 100%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+          <img src="美國照片\舊金山\SF75.jpg" style="width: 90%; max-width: 600px; height: auto; margin: 0.5rem;" />
         </div>
         <br /><br /><br />
         <h3>Franciscan Crab Restaurant</h3>
@@ -719,9 +876,9 @@
           Franciscan Crab Restaurant 是舊金山著名的海鮮餐廳，位於漁人碼頭，擁有壯麗的海灣景色。自 1957 年以來，這家餐廳以其招牌巨型蟹料理和新鮮海鮮聞名，最受歡迎的菜餚是 “World-Famous Roasted Dungeness Crab”，這道經典的炭烤敦格尼斯蟹搭配特製香草與大蒜奶油醬，味道濃郁鮮美，他們的蛤蜊巧達湯、海鮮拼盤和黃油焗龍蝦也是必點菜色。餐廳擁有全景落地窗，可俯瞰舊金山灣、惡魔島和金門大橋，提供極佳的用餐體驗。
         </h4>
         <div style="text-align: center">
-          <img src="美國照片\舊金山\SF76.jpg" width="800px" />
-          <img src="美國照片\舊金山\SF77.jpg" width="800px" />
-          <img src="美國照片\舊金山\SF78.jpg" width="600px" />
+          <img src="美國照片\舊金山\SF76.jpg" style="width: 100%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+          <img src="美國照片\舊金山\SF77.jpg" style="width: 100%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+          <img src="美國照片\舊金山\SF78.jpg" style="width: 90%; max-width: 600px; height: auto; margin: 0.5rem;" />
         </div>
         <br />
         <br />
@@ -787,9 +944,8 @@
     <footer>
       <h6>COPYRIGHT © 2025 Tommy 看世界 All rights reserved.</h6>
     </footer>
+    <div id="menu-toggle"></div>
     <div id="expandable-menu">
-      <div id="menu-toggle"></div>
-      <!-- 收闔按鈕 -->
       <div id="menu-content">
         <h4>目錄</h4>
         <ul id="menu-list"></ul>
@@ -806,6 +962,23 @@
         // 點擊按鈕切換目錄狀態
         toggle.addEventListener("click", () => {
           menu.classList.toggle("open");
+
+          const menuWidth = menu.offsetWidth; // 獲取目前展開的目錄寬度
+
+          if (menu.classList.contains("open")) {
+            // 讓按鈕向左平移與 menu 一樣的寬度
+            toggle.style.transform = `translateY(-50%) translateX(-${menuWidth}px)`;
+          } else {
+            // 收回原位
+            toggle.style.transform = `translateY(-50%) translateX(0)`;
+          }
+        });
+
+        window.addEventListener("load", () => {
+          if (menu.classList.contains("open")) {
+            const menuWidth = menu.offsetWidth;
+            toggle.style.transform = `translateY(-50%) translateX(-${menuWidth}px)`;
+          }
         });
 
         // 從 destination-main 區域提取 h2 和 h3，動態生成目錄
@@ -830,6 +1003,23 @@
           menuList.appendChild(listItem);
         });
 
+        function adjustMenuPosition() {
+          const nav = document.querySelector("nav");
+          const menu = document.getElementById("expandable-menu");
+      
+          if (nav && menu) {
+            const navHeight = nav.offsetHeight;
+      
+            // 設定 menu 的 top 與高度
+            menu.style.top = `${navHeight}px`;
+            menu.style.height = `calc(100vh - ${navHeight}px)`;
+          }
+        }
+      
+        // 載入與尺寸變化時調整
+        window.addEventListener("DOMContentLoaded", adjustMenuPosition);
+        window.addEventListener("resize", adjustMenuPosition);
+        
         // 滾動至目標位置並加上 75px 偏移
         menuList.addEventListener("click", (event) => {
           if (event.target.tagName === "A") {
@@ -849,6 +1039,31 @@
               });
             }
           }
+        });
+        // 手機 Safari 相容：點擊展開 dropdown
+        const dropdownToggles = document.querySelectorAll(".dropdown-toggle");
+
+        dropdownToggles.forEach((toggle) => {
+          toggle.addEventListener("click", function (e) {
+            e.stopPropagation(); // 防止冒泡，避免點擊外層時也觸發關閉
+            const dropdown = this.nextElementSibling;
+            const isVisible = dropdown.style.display === "block";
+            
+            // 關閉所有其他 dropdown（可選）
+            document.querySelectorAll(".dropdown-content").forEach((menu) => {
+              menu.style.display = "none";
+            });
+
+            // 切換目前這一個 dropdown
+            dropdown.style.display = isVisible ? "none" : "block";
+          });
+        });
+
+        // 點擊其他地方時關閉 dropdown
+        window.addEventListener("click", function () {
+          document.querySelectorAll(".dropdown-content").forEach((menu) => {
+            menu.style.display = "none";
+          });
         });
       });
     </script>
