@@ -12,7 +12,6 @@
       body {
         font-family: Calibri, Arial, sans-serif; /* 首選 Calibri，次選 Arial */
         margin: 0;
-        padding: 0;
         overflow-x: hidden; /* 禁止水平滾動 */
         background-color: #f4f4f9;
         color: #333;
@@ -28,7 +27,6 @@
         font-weight: bold;
         color: #2a90a7;
         display: inline-block;
-        margin-bottom: 1rem; /* 縮小 h2 的底部邊距 */
         background-color: #cee5e8;
       }
 
@@ -36,7 +34,7 @@
         font-size: 26px;
         margin: 0 0 1rem;
         font-weight: bold;
-        text-decoration: underline; /* 加上底線 */
+        text-decoration: underline;
       }
 
       h4 {
@@ -62,56 +60,68 @@
       nav {
         background-color: #78bcc4;
         display: flex;
-        justify-content: space-between; /* 保持分佈在兩側 */
-        width: calc(100% - 10rem); /* 與其他內容的邊界一致 */
-        padding: 0.5rem 5rem; /* 主導覽列的 padding 設置 */
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;                     /* 讓 nav 寬度隨螢幕自適應 */
+        padding: 0.8rem 5vw;               /* 左右 padding 用 5% 寬度 */
+        box-sizing: border-box;         /* 確保 padding 不會影響寬度總長 */
         position: fixed;
         top: 0;
         z-index: 1000;
       }
 
       .nav-left .logo img {
-        height: 50px; /* 控制 Logo 圖片的高度 */
-        transform: translateX(-1.5rem); /* 向右移動 2rem */
+        height: 5vw; /* 高度為螢幕寬度的 5% */
+        transform: translateX(-2vw); /* 向左移動 2% 寬度 */
+        max-width: 100%; /* 確保不會超過容器 */
+        height: auto; /* 保持圖片比例（建議與 max-height 搭配） */
+        max-height: 3rem;
       }
 
       .nav-right {
         display: flex;
         align-items: center;
-        transform: translateX(2rem); /* 向右移動 2rem */
+        margin-left: auto; /* 推到右側 */
+        padding-left: 5%;   /* 內部元素間距，彈性設計 */
       }
 
       nav a {
         color: #eff5f5;
         text-decoration: none;
-        padding: 0.5rem 1rem;
-        margin: 0 0.5rem;
+        padding: 1vh 1vw;
+        margin: 0 1vw;
         transition: transform 0.3s;
       }
 
       nav a:hover {
-        transform: translateY(-3px);
+        transform: translateY(-0.5vh); /* 根據視窗高度調整 */
       }
 
       .dropdown {
         position: relative;
+        display: inline-block;
       }
 
       .dropdown-content {
+        width: 100%; /* 佔滿父層寬度 */
+        max-width: 20vw; /* 限制最大寬度 */
         display: none;
         position: absolute;
         background-color: #78bcc4;
-        min-width: 160px;
-        border-radius: 4px;
-        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        min-width: 10em; /* 取代 160px，以字體大小作為比例單位 */
+        border-radius: 0.25em;
+        box-shadow: 0 0.5em 1em rgba(0, 0, 0, 0.2); /* 改為相對單位 */
         padding: 0.2rem 0;
+        z-index: 999;
       }
 
       .dropdown-content a {
         color: #eff5f5;
         display: block;
         transition: transform 0.3s;
-        border-bottom: 1px solid #ddd;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.3); /* 更淡配色、柔和過渡 */
+        padding: 0.6em 1em;
+        font-size: 1em;
       }
 
       .dropdown-content a:last-child {
@@ -119,107 +129,109 @@
       }
 
       .dropdown-content a:hover {
-        transform: translateY(-3px);
-      }
-
-      .dropdown:hover .dropdown-content {
-        display: block;
+        transform: translateY(-0.25em); /* 改為相對單位 */
       }
 
       .intro-section {
         background-color: #eff5f5;
         display: flex;
-        padding: 2rem;
-        margin-top: 60px; /* 根據導航列高度調整 */
-        justify-content: space-between;
-        align-items: flex-start;
-        width: 100%;
-        box-sizing: border-box; /* 包含 padding 在內 */
-        padding-left: 5rem;
-        padding-right: 5rem;
+        flex-wrap: wrap; /* 確保在小螢幕可換行 */
+        padding: 2rem 5%;
+        margin-top: 4em; /* 根據導航列高度調整 */
       }
 
       .intro-section h4 {
-        max-width: 700px;
+        max-width: 85%; /* 改為相對單位，避免固定寬度限制 */
+        line-height: 1.8;
       }
 
       .intro-section .left {
         width: 60%;
+        padding-right: 1%;
       }
 
       .intro-section .right {
-        width: 40%;
+        width: 39%;
       }
 
       .destination-section {
         display: flex;
+        flex-wrap: wrap;               /* 小螢幕時允許換行 */
         padding: 1rem 5%; /* 左右內間距為螢幕的10% */
         background-color: white;
       }
 
       .destination-main {
-        width: 75%;
-        margin-right: 1.5rem; /* 增加右邊外邊距 */
+        width: 72%;                    /* 主要內容佔 72%，略縮以保留間距 */
+        margin-right: 3%;              /* 與 sidebar 間保留間距（約為 3%） */
+        box-sizing: border-box;
       }
 
       .destination-sidebar {
-        width: 25%;
-        padding-left: 1.5rem; /* 增加左側內邊距 */
-        margin-top: 2rem; /* 向上或向下調整，負值表示向上 */
+        width: 25%;                    /* 側邊欄佔 25% */
+        padding-left: 2%;             /* 相對內邊距 */
+        margin-top: 2rem;
+        box-sizing: border-box;
       }
 
       .sidebar-image-container {
         margin-bottom: 1rem;
-        text-align: center; /* 確保圖片置中 */
+        text-align: center; /* 置中圖片 */
       }
 
       .sidebar-image-container img {
-        height: 300px; /* 設置直式圖片的高度 */
+        width: 90%;         /* 圖片寬度為容器寬度的 90% */
+        height: auto;       /* 高度自動，保持比例 */
+        max-height: 60vh;   /* 避免圖片過高，佔螢幕最大 60% 高 */
+        object-fit: cover;  /* 裁切處理長圖 */
       }
 
       .two-vertical-images {
-        display: flex; /* 彈性佈局，讓圖片並排 */
-        justify-content: space-between; /* 兩張圖片均勻分佈 */
-        gap: 2rem; /* 圖片之間的間距 */
+        display: flex;
+        justify-content: space-between;
+        gap: 4%; /* 使用百分比間距更彈性 */
         margin-top: 2rem;
-        margin-bottom: 2rem; /* 與下方內容的距離 */
+        margin-bottom: 2rem;
+        flex-wrap: wrap; /* 若畫面太小，允許換行 */
       }
 
       .two-vertical-images img {
-        width: calc(50% - 0.5rem); /* 每張圖片佔用容器的一半減去間距 */
-        text-align: center; /* 確保圖片置中 */
-        height: auto; /* 保持圖片的直式比例 */
-        object-fit: cover; /* 確保圖片內容適應容器 */
+        width: 48%; /* 每張圖片約佔一半（加上 gap 剛好 100%） */
+        height: auto; /* 保持原比例 */
+        object-fit: cover;
+        display: block;
+        margin: 0 auto;
       }
 
       .recommendation-section {
-        margin-top: 1.5rem; /* 與上方文字的間距 */
+        margin-top: 3vh; /* 與上方文字的間距 */
         text-align: center;
         position: sticky;
         top: 80px; /* 空出導覽列的高度，確保推薦區不被覆蓋 */
         z-index: 10; /* 提高層級，避免被其他內容遮蓋 */
+        padding: 0 5%;
       }
 
       .recommendation-section h3 {
-        font-size: 18px;
+        font-size: 1.125rem;
         font-weight: bold;
-        margin-bottom: 0.5rem; /* 與按鈕區的距離 */
+        margin-bottom: 1vh; /* 與按鈕區的距離 */
       }
 
       .recommendation-buttons {
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
-        gap: 0.5rem; /* 按鈕之間的間距 */
+        gap: 0.5em; /* 按鈕之間的間距 */
       }
 
       .recommendation-buttons button {
-        padding: 0.5rem 1rem;
-        font-size: 14px;
+        padding: 0.5em 1em;
+        font-size: 0.875rem;
         color: white;
         background-color: #78bcc4;
         border: none;
-        border-radius: 4px;
+        border-radius: 0.25rem;
         transition: transform 0.3s;
         font-family: Arial, sans-serif;
       }
@@ -229,13 +241,13 @@
       }
 
       .contact-section {
-        padding: 2rem 5rem; /* 上下與左右間距 */
+        padding: 4vh 8vw; /* 上下與左右間距 */
         background-color: #eff5f5; /* 淺灰背景 */
         text-align: center; /* 確保內容置中對齊 */
       }
 
       .contact-item h3 {
-        font-size: 18px; /* 調整標題字體大小 */
+        font-size: 1.125rem; /* 調整標題字體大小 */
         margin: 0; /* 移除多餘的間距 */
         text-decoration: none; /* 移除底線 */
       }
@@ -243,43 +255,49 @@
       footer {
         background-color: #000;
         color: white;
-        height: 30px;
+        height: 3vh; /* 使用相對單位，高度占螢幕高度的 3% */
         display: flex;
         justify-content: center;
         align-items: center;
+        font-size: 1.5rem; /* 使用相對字體大小 */
+        padding: 0.5rem 0; /* 確保小螢幕時內容不擠壓 */
       }
 
       #expandable-menu {
-        position: fixed;
-        top: 70px; /* 與螢幕頂部的距離設為 60px */
+        position: fixed; 
         right: 0;
-        height: calc(100% - 70px); /* 高度減去 60px，避免超出視窗 */
-        width: 395px; /* 目錄寬度與 sidebar 齊寬 */
+        width: 26vw; /* 目錄寬度與 sidebar 齊寬 */
+        max-width: 90%; /* 避免在小螢幕太寬 */
         transform: translateX(100%); /* 初始狀態：隱藏在右側 */
         transition: transform 0.3s ease;
         background-color: #f4f4f9; /* 與網站背景一致 */
         z-index: 1000;
+        box-sizing: border-box;
       }
 
       /* 收闔按鈕 */
       #menu-toggle {
-        position: absolute;
+        position: fixed;
         top: 45%;
-        left: -40px; /* 調整按鈕的位置，適應按鈕變大後的寬度 */
-        transform: translateY(-50%);
-        width: 40px; /* 增大按鈕寬度 */
-        height: 80px; /* 增大按鈕高度 */
+        right: 0; /* 永遠貼在右側 */
+        transform: translateY(-50%) translateX(0);
+        width: 2.5em; /* 增大按鈕寬度 */
+        height: 5em; /* 增大按鈕高度 */
         background-color: #78bcc4;
         color: white;
-        border-radius: 4px;
+        border-radius: 0.4em 0 0 0.4em;
         display: flex;
         justify-content: center; /* 水平居中 */
         align-items: center; /* 垂直居中 */
+        z-index: 2000; /* 要比 expandable-menu 更高，避免被蓋住 */
+        cursor: pointer;
+        box-shadow: -0.1em 0 0.3em rgba(0,0,0,0.1);
+        transition: transform 0.3s ease; /* 平滑移動 */
       }
 
       #menu-toggle::after {
         content: "目錄"; /* 在按鈕內顯示 "目錄" */
-        font-size: 17px;
+        font-size: 1rem;
         color: white; /* 設定字體顏色為白色 */
         writing-mode: vertical-rl; /* 使文字垂直排列 */
       }
@@ -290,14 +308,16 @@
 
       /* 目錄內容 */
       #menu-content {
-        padding: 0.5rem 1rem;
+        padding: 0.5rem 5%;
         overflow-y: auto;
         height: 100%;
+        box-sizing: border-box;
       }
 
       #menu-content h4 {
         font-weight: bold;
         margin-top: 0;
+        font-size: 1.2rem;
       }
 
       #menu-list {
@@ -306,13 +326,14 @@
       }
 
       #menu-list li {
-        margin-bottom: 0.5rem;
+        margin-bottom: 1vh;
       }
 
       #menu-list a {
         color: #2a90a7;
         text-decoration: none;
         transition: color 0.3s;
+        font-size: 1rem; /* 使用相對字體大小 */
       }
 
       #menu-list a:hover {
@@ -320,13 +341,149 @@
       }
 
       #menu-list .sub-item {
-        margin-left: 1.5rem; /* 調整縮排距離 */
+        margin-left: 8%; /* 調整縮排距離 */
         font-size: 0.9rem; /* 可選：調整子項目字體大小 */
       }
 
       /* 目錄展開狀態 */
       #expandable-menu.open {
         transform: translateX(0);
+      }
+
+      /* === 響應式調整：針對手機與小螢幕設備 === */
+      @media (max-width: 768px) {
+        nav {
+          flex-direction: row;
+          flex-wrap: wrap;
+          align-items: center;
+          justify-content: space-between;
+          padding: 1rem 5vw;  /* 窄螢幕時減少左右留白 */
+          width: 100%;
+          box-sizing: border-box;
+        }
+
+        .nav-right {
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          gap: 0.5rem;
+          transform: none;
+          width: auto;
+          white-space: nowrap;               /* 禁止內容自動換行 */
+        }
+
+        nav a {
+          padding: 0.5rem 0.5rem;           /* 減少垂直padding */
+          margin: 0 0.3rem;
+          font-size: 0.85rem;
+          white-space: nowrap;               /* 確保文字不換行 */
+          overflow: hidden;
+          text-overflow: ellipsis;           /* 若內容超出，顯示省略號 */
+        }
+
+        .nav-dropdown {
+          width: 60%; /* 或者用 max-content, fit-content 看需求 */
+          font-size: 0.85rem; /* 調整字體大小和導覽列一致 */
+          padding: 0.5rem;
+        }
+      
+        .nav-dropdown a {
+          font-size: inherit; /* 確保跟 .nav-dropdown 一樣大 */
+          padding: 0.5rem 1rem;
+          white-space: normal; /* 可選：讓字在必要時換行 */
+        }
+
+        .dropdown-content {
+          width: 12vw;
+          min-width: 8em; /* 保證至少能顯示幾個字 */
+          max-width: none;
+        }
+
+        .dropdown-content a {
+          font-size: 0.85rem;
+        }
+        
+        .intro-section {
+          flex-direction: column;
+          padding: 8%;
+        }
+
+        .intro-section .left,
+        .intro-section .right {
+          width: 100%;
+          padding: 0;
+          flex: 1 1 100%;
+        }
+
+        .intro-section .right {
+          margin-top: 1.5rem;
+          display: flex;
+          justify-content: center;
+        }
+
+        .intro-section h4 {
+          max-width: 100%;
+          font-size: 1rem;
+        }
+
+        .destination-grid {
+          flex-direction: column;
+          gap: 1rem;
+        }
+
+        .destination-section h4 {
+          font-size: 1rem;
+        }
+
+        .destination-item {
+          max-width: 100%;
+          width: 100%;
+        }
+
+        .destination-item.a_role_with_2 {
+          position: static;
+          left: auto;
+        }
+
+        .destination-main,
+        .destination-sidebar {
+          width: 100%;
+          margin: 0;
+          padding: 0;
+        }
+
+        .destination-sidebar {
+          margin-top: 2rem;
+        }
+
+        .recommendation-buttons button {
+          width: 100%; /* 小螢幕按鈕全寬排列 */
+        }
+
+        .contact-section {
+          padding: 3vh 5vw;
+        }
+
+        .contact-item h3 {
+          font-size: 1rem;
+        }
+
+        /* 目錄區寬度改為螢幕寬度的40% */
+        #expandable-menu {
+          width: 40vw !important; /* 用vw方便響應螢幕寬度 */
+          max-width: 90%; /* 保留原本max-width避免太寬 */
+        }
+      
+        #expandable-menu,
+        #expandable-menu * {
+          font-size: 85% !important;
+        }
+              
+        #menu-toggle {
+          width: 75%;
+          max-width: 1.875em;
+          min-width: 1.875em;
+        }
       }
     </style>
   </head>
@@ -342,7 +499,7 @@
       <div class="nav-right">
         <a href="首頁.html">關於我</a>
         <div class="dropdown">
-          <a>亞洲旅遊</a>
+          <a class="dropdown-toggle">亞洲旅遊</a>
           <div class="dropdown-content">
             <a href="中國.html">中國</a>
             <a href="新加坡.html">新加坡</a>
@@ -353,7 +510,7 @@
           </div>
         </div>
         <div class="dropdown">
-          <a>歐洲旅遊</a>
+          <a class="dropdown-toggle">歐洲旅遊</a>
           <div class="dropdown-content">
             <a href="英國.html">英國</a>
             <a href="法國.html">法國</a>
@@ -371,7 +528,7 @@
           </div>
         </div>
         <div class="dropdown">
-          <a>美洲旅遊</a>
+          <a class="dropdown-toggle">美洲旅遊</a>
           <div class="dropdown-content">
             <a href="美國.html">美國</a>
             <a href="加拿大.html">加拿大</a>
@@ -388,7 +545,7 @@
         </h4>
       </div>
       <div class="right">
-        <img src="馬來西亞照片\馬六甲\馬六甲_介紹.jpg" width="90%" height="350px" />
+        <img src="馬來西亞照片\馬六甲\馬六甲_介紹.jpg" style="width: 100%; height: auto; max-width: 100%;" />
       </div>
     </div>
 
@@ -410,7 +567,7 @@
           但<b>特別注意不要選擇雞場街上或馬六甲河旁的住宿</b>，因為晚上酒吧的音樂會開到很晚，對睡眠較淺的人就很辛苦了。
         </h4>
         <div style="text-align: center">
-          <img src="馬來西亞照片\馬六甲\ML_住宿.png" width="800px" />
+          <img src="馬來西亞照片\馬六甲\ML_住宿.png" style="width: 100%; max-width: 90vw; height: auto; margin: 0.5rem;" />
         </div>
         <br /><br />
         <h2>馬六甲景點</h2>
@@ -419,12 +576,12 @@
           雞場街是馬六甲著名的古老街道，位於馬六甲歷史中心地帶，被列為世界文化遺產，始建於 16 世紀，在過去幾個世紀裡一直是馬六甲最繁華的商業街，保留了濃厚的古老市集氛圍，有許多保存完好的古老店舖，包括中國藥材店、金匠鋪、木雕藝術品展示間等，可以欣賞到馬六甲傳統建築的獨特風情，感受古老時光的韻味。
         </h4>
         <div style="text-align: center">
-          <img src="馬來西亞照片\馬六甲\ML1.jpg" width="800px" />
-          <img src="馬來西亞照片\馬六甲\ML2.jpg" width="600px" />
+          <img src="馬來西亞照片\馬六甲\ML1.jpg" style="width: 100%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+          <img src="馬來西亞照片\馬六甲\ML2.jpg" style="width: 90%; max-width: 600px; height: auto; margin: 0.5rem;" />
         </div>
         <h4>雞場街每逢週末還會化身為熱鬧的夜市和跳蚤市場，各種本地特色小吃、手工藝品、復古收藏品等琳琅滿目，在夜幕降臨時分，街道兩旁的燈飾和霓虹燈更增添了市集的魅力，不僅可以細細欣賞馬六甲的淵遠流長的歷史文化，還能品味到濃郁的華裔文化底蘊雞場街保留了許多早期馬來西亞的建築風格。</h4>
         <div style="text-align: center">
-          <img src="馬來西亞照片\馬六甲\ML3.jpg" width="600px" />
+          <img src="馬來西亞照片\馬六甲\ML3.jpg" style="width: 90%; max-width: 600px; height: auto; margin: 0.5rem;" />
         </div>
         <br /><br /><br />
         <h3>青雲亭 (Cheng Hoon Teng)</h3>
@@ -432,7 +589,7 @@
           青雲亭是馬來西亞最古老的華人寺廟之一，建於 1646 年，採用傳統中國建築風格，融合了福建、廣東和潮州的特色，宏偉的進殿、精美的木雕裝飾、繁複的屋頂設計等都體現了中國古典建築的精髓，寺內的觀音菩薩、關帝、黑虎神等神像更展現了華人傳統宗教文化。寺廟的各個角落都藏有豐富的歷史典故和文化內涵，例如大門上的浮雕、香爐和佈置等都有其深層的寓意由於是第一座廟宇在當地沒有技術人士，因此寺廟主體的木材及雕刻都是在中國完成在運輸過來的，屋簷跟屋頂上的雕刻十分精細可以慢慢欣賞。青雲亭每逢農曆新年或重要節日，還會舉行隆重的祭祀活動和傳統儀式。
         </h4>
         <div style="text-align: center">
-          <img src="馬來西亞照片\馬六甲\ML4.jpg" width="800px" />
+          <img src="馬來西亞照片\馬六甲\ML4.jpg" style="width: 100%; max-width: 90vw; height: auto; margin: 0.5rem;" />
         </div>
         <br /><br /><br />
         <h3>城市廣場 (Dutch Square)</h3>
@@ -440,7 +597,7 @@
           城市廣場是一處充滿荷蘭殖民風情的廣場，始建於 17 世紀，當時是馬六甲的政治、經濟和文化中心，由一系列鮮紅色的荷蘭式建築物所圍繞，極具視覺衝擊力，其中最著名的要數紅色的 Christ Church，典型的荷蘭式尖頂建築讓人耳目一新，周圍還有荷蘭總督府和馬六甲博物館等歷史建築物，無一不展現著濃濃的荷蘭殖民時期特色，猶如穿越時空來到了殖民地時代的馬六甲，讓人不禁感嘆百年滄桑。有趣的是，廣場附近有許多裝飾浮誇的人力三輪車，可以帶你慢慢在城中心兜圈，一到晚上還會閃燈放音樂像電子花車一樣十分有趣。
         </h4>
         <div style="text-align: center">
-          <img src="馬來西亞照片\馬六甲\ML5.jpg" width="600px" />
+          <img src="馬來西亞照片\馬六甲\ML5.jpg" style="width: 90%; max-width: 600px; height: auto; margin: 0.5rem;" />
         </div>
         <br /><br /><br />
         <h3>聖保羅堂 (Gereja St. Paul)</h3>
@@ -448,8 +605,8 @@
           聖保羅堂是馬六甲最古老的基督教堂，座落在一座小山上，要從博物館旁邊的階梯爬上來，最初建於 1521 年，當時是由葡萄牙人修建的小教堂兼學校，後來在 1556 年改建為天主教教堂，沿用了典型的葡萄牙建築風格，紅磚牆面搭配尖頂山牆，充滿了中世紀歐洲的古老韻味，後來荷蘭人統治後便成了軍事用途，而後英國殖民時期也將之作為軍火庫，是馬六甲最富盛名的文化遺產之一，見證了馬六甲悠久的歷史，但現在看起來已經十分殘破了。
         </h4>
         <div style="text-align: center">
-          <img src="馬來西亞照片\馬六甲\ML6.jpg" width="600px" />
-          <img src="馬來西亞照片\馬六甲\ML7.jpg" width="800px" />
+          <img src="馬來西亞照片\馬六甲\ML6.jpg" style="width: 90%; max-width: 600px; height: auto; margin: 0.5rem;" />
+          <img src="馬來西亞照片\馬六甲\ML7.jpg" style="width: 100%; max-width: 90vw; height: auto; margin: 0.5rem;" />
         </div>
         <br /><br /><br />
         <h3>法摩莎堡 (A Famosa)</h3>
@@ -458,7 +615,7 @@
           要特別注意<b>教堂跟城堡區的遮蔭不多</b>，建議避開中午時段前來不然真的很熱。
         </h4>
         <div style="text-align: center">
-          <img src="馬來西亞照片\馬六甲\ML8.jpg" width="800px" />
+          <img src="馬來西亞照片\馬六甲\ML8.jpg" style="width: 100%; max-width: 90vw; height: auto; margin: 0.5rem;" />
         </div>
         <br /><br />
         <h2>馬六甲美食</h2>
@@ -467,11 +624,11 @@
           裝潢華麗的娘惹菜餐廳，每個角落都美到不行，感覺自己很像在電影場景裡吃飯，穿越到多年之前的士紳階級人家。餐點十分精緻，點的幾道菜雖然分量不大但味道都非常好，帶爸媽來吃他們也都讚不絕口，價錢稍高但看在餐廳氛圍跟服務之後就覺得十分值得，基本上用餐時間都一定要等待，<b>建議可以先打電話來預約</b>。
         </h4>
         <div style="text-align: center">
-          <img src="馬來西亞照片\馬六甲\ML21.jpg" width="600px" />
-          <img src="馬來西亞照片\馬六甲\ML9.jpg" width="600px" />
-          <img src="馬來西亞照片\馬六甲\ML10.jpg" width="800px" />
-          <img src="馬來西亞照片\馬六甲\ML11.jpg" width="800px" />
-          <img src="馬來西亞照片\馬六甲\ML12.jpg" width="800px" />
+          <img src="馬來西亞照片\馬六甲\ML21.jpg" style="width: 90%; max-width: 600px; height: auto; margin: 0.5rem;" />
+          <img src="馬來西亞照片\馬六甲\ML9.jpg" style="width: 90%; max-width: 600px; height: auto; margin: 0.5rem;" />
+          <img src="馬來西亞照片\馬六甲\ML10.jpg" style="width: 100%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+          <img src="馬來西亞照片\馬六甲\ML11.jpg" style="width: 100%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+          <img src="馬來西亞照片\馬六甲\ML12.jpg" style="width: 100%; max-width: 90vw; height: auto; margin: 0.5rem;" />
         </div>
         <br /><br /><br />
         <h3>秀珍娘惹小廚 (Nyonya Kitchen Restaurant)</h3>
@@ -479,9 +636,9 @@
           相比於僑生府豪華的裝潢，這家的感覺像是在吃娘惹的家常菜，口味相對沒有那麼鹹，非常推薦大家一地要試試蝶豆花飯跟娘惹冰，老闆娘人很好還送了我們甜點。
         </h4>
         <div style="text-align: center">
-          <img src="馬來西亞照片\馬六甲\ML13.jpg" width="800px" />
-          <img src="馬來西亞照片\馬六甲\ML14.jpg" width="800px" />
-          <img src="馬來西亞照片\馬六甲\ML15.jpg" width="800px" />
+          <img src="馬來西亞照片\馬六甲\ML13.jpg" style="width: 100%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+          <img src="馬來西亞照片\馬六甲\ML14.jpg" style="width: 100%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+          <img src="馬來西亞照片\馬六甲\ML15.jpg" style="width: 100%; max-width: 90vw; height: auto; margin: 0.5rem;" />
         </div>
         <br /><br /><br />
         <h3>Calanthe Art Cafe</h3>
@@ -489,8 +646,8 @@
           Calanthe Art Café 位於雞場街附近的 Jalan Hang Kasturi，以供應來自馬來西亞 13 個州屬的特色咖啡而聞名，是全國唯一一家提供全國各州咖啡的咖啡館。店內裝潢融合復古與創意元素，牆上掛滿老照片、彩繪牆面和各式懷舊物品，營造出獨特的藝術氛圍。除了咖啡餐廳還提供多樣化的本地與西式料理，如招牌娘惹叻沙、咖啡奶油雞飯、粿條湯等，適合朋友聚會或悠閒下午茶。
         </h4>
         <div style="text-align: center">
-          <img src="馬來西亞照片\馬六甲\ML16.jpg" width="800px" />
-          <img src="馬來西亞照片\馬六甲\ML17.jpg" width="800px" />
+          <img src="馬來西亞照片\馬六甲\ML16.jpg" style="width: 100%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+          <img src="馬來西亞照片\馬六甲\ML17.jpg" style="width: 100%; max-width: 90vw; height: auto; margin: 0.5rem;" />
         </div>
         <br /><br /><br />
         <h3>和記雞粒飯 (Nasi Ayam Hoe Kee)</h3>
@@ -499,7 +656,7 @@
         </h4>
         <h4>和記的雞肉選用傳統白斬雞肉質滑嫩，搭配特製的黑醬油與微辣的辣椒醬風味十足。餐廳內部保留老屋的建築風格，紅磚地板與木製板凳營造出懷舊氛圍，座位區設有空調與電風扇，讓顧客在炎熱的天氣中也能舒適用餐，，除了雞飯粒，店內還提供娘惹燒魚等特色小菜，但數量有限建議早點前往。</h4>
         <div style="text-align: center">
-          <img src="馬來西亞照片\馬六甲\ML18.jpg" width="600px" />
+          <img src="馬來西亞照片\馬六甲\ML18.jpg" style="width: 90%; max-width: 600px; height: auto; margin: 0.5rem;" />
         </div>
         <br /><br /><br />
         <h3>LōuKót</h3>
@@ -507,8 +664,8 @@
           位於後巷的印度風咖啡館，整體基調跟餐點都是印度風格，外面有許多植栽，內部裝潢也十分用心，看得出老闆娘很用心經營。在店內坐了兩個多小時，發現來客幾乎都是數位遊牧的人，在這邊享受邊生活，店內還有一隻鸚鵡會飛來飛去跟你互動，但如果怕鳥的人可能要三思。
         </h4>
         <div style="text-align: center">
-          <img src="馬來西亞照片\馬六甲\ML19.jpg" width="800px" />
-          <img src="馬來西亞照片\馬六甲\ML20.jpg" width="800px" />
+          <img src="馬來西亞照片\馬六甲\ML19.jpg" style="width: 100%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+          <img src="馬來西亞照片\馬六甲\ML20.jpg" style="width: 100%; max-width: 90vw; height: auto; margin: 0.5rem;" />
         </div>
         <br />
       </div>
@@ -558,9 +715,8 @@
     <footer>
       <h6>COPYRIGHT © 2025 Tommy 看世界 All rights reserved.</h6>
     </footer>
+    <div id="menu-toggle"></div>
     <div id="expandable-menu">
-      <div id="menu-toggle"></div>
-      <!-- 收闔按鈕 -->
       <div id="menu-content">
         <h4>目錄</h4>
         <ul id="menu-list"></ul>
@@ -577,6 +733,23 @@
         // 點擊按鈕切換目錄狀態
         toggle.addEventListener("click", () => {
           menu.classList.toggle("open");
+
+          const menuWidth = menu.offsetWidth; // 獲取目前展開的目錄寬度
+
+          if (menu.classList.contains("open")) {
+            // 讓按鈕向左平移與 menu 一樣的寬度
+            toggle.style.transform = `translateY(-50%) translateX(-${menuWidth}px)`;
+          } else {
+            // 收回原位
+            toggle.style.transform = `translateY(-50%) translateX(0)`;
+          }
+        });
+
+        window.addEventListener("load", () => {
+          if (menu.classList.contains("open")) {
+            const menuWidth = menu.offsetWidth;
+            toggle.style.transform = `translateY(-50%) translateX(-${menuWidth}px)`;
+          }
         });
 
         // 從 destination-main 區域提取 h2 和 h3，動態生成目錄
@@ -601,6 +774,23 @@
           menuList.appendChild(listItem);
         });
 
+        function adjustMenuPosition() {
+          const nav = document.querySelector("nav");
+          const menu = document.getElementById("expandable-menu");
+      
+          if (nav && menu) {
+            const navHeight = nav.offsetHeight;
+      
+            // 設定 menu 的 top 與高度
+            menu.style.top = `${navHeight}px`;
+            menu.style.height = `calc(100vh - ${navHeight}px)`;
+          }
+        }
+      
+        // 載入與尺寸變化時調整
+        window.addEventListener("DOMContentLoaded", adjustMenuPosition);
+        window.addEventListener("resize", adjustMenuPosition);
+        
         // 滾動至目標位置並加上 75px 偏移
         menuList.addEventListener("click", (event) => {
           if (event.target.tagName === "A") {
@@ -620,6 +810,31 @@
               });
             }
           }
+        });
+        // 手機 Safari 相容：點擊展開 dropdown
+        const dropdownToggles = document.querySelectorAll(".dropdown-toggle");
+
+        dropdownToggles.forEach((toggle) => {
+          toggle.addEventListener("click", function (e) {
+            e.stopPropagation(); // 防止冒泡，避免點擊外層時也觸發關閉
+            const dropdown = this.nextElementSibling;
+            const isVisible = dropdown.style.display === "block";
+            
+            // 關閉所有其他 dropdown（可選）
+            document.querySelectorAll(".dropdown-content").forEach((menu) => {
+              menu.style.display = "none";
+            });
+
+            // 切換目前這一個 dropdown
+            dropdown.style.display = isVisible ? "none" : "block";
+          });
+        });
+
+        // 點擊其他地方時關閉 dropdown
+        window.addEventListener("click", function () {
+          document.querySelectorAll(".dropdown-content").forEach((menu) => {
+            menu.style.display = "none";
+          });
         });
       });
     </script>
