@@ -12,7 +12,6 @@
       body {
         font-family: Calibri, Arial, sans-serif; /* 首選 Calibri，次選 Arial */
         margin: 0;
-        padding: 0;
         overflow-x: hidden; /* 禁止水平滾動 */
         background-color: #f4f4f9;
         color: #333;
@@ -28,7 +27,6 @@
         font-weight: bold;
         color: #2a90a7;
         display: inline-block;
-        margin-bottom: 1rem; /* 縮小 h2 的底部邊距 */
         background-color: #cee5e8;
       }
 
@@ -36,7 +34,7 @@
         font-size: 26px;
         margin: 0 0 1rem;
         font-weight: bold;
-        text-decoration: underline; /* 加上底線 */
+        text-decoration: underline;
       }
 
       h4 {
@@ -62,56 +60,68 @@
       nav {
         background-color: #78bcc4;
         display: flex;
-        justify-content: space-between; /* 保持分佈在兩側 */
-        width: calc(100% - 10rem); /* 與其他內容的邊界一致 */
-        padding: 0.5rem 5rem; /* 主導覽列的 padding 設置 */
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;                     /* 讓 nav 寬度隨螢幕自適應 */
+        padding: 0.8rem 5vw;               /* 左右 padding 用 5% 寬度 */
+        box-sizing: border-box;         /* 確保 padding 不會影響寬度總長 */
         position: fixed;
         top: 0;
         z-index: 1000;
       }
 
       .nav-left .logo img {
-        height: 50px; /* 控制 Logo 圖片的高度 */
-        transform: translateX(-1.5rem); /* 向右移動 2rem */
+        height: 5vw; /* 高度為螢幕寬度的 5% */
+        transform: translateX(-2vw); /* 向左移動 2% 寬度 */
+        max-width: 100%; /* 確保不會超過容器 */
+        height: auto; /* 保持圖片比例（建議與 max-height 搭配） */
+        max-height: 3rem;
       }
 
       .nav-right {
         display: flex;
         align-items: center;
-        transform: translateX(2rem); /* 向右移動 2rem */
+        margin-left: auto; /* 推到右側 */
+        padding-left: 5%;   /* 內部元素間距，彈性設計 */
       }
 
       nav a {
         color: #eff5f5;
         text-decoration: none;
-        padding: 0.5rem 1rem;
-        margin: 0 0.5rem;
+        padding: 1vh 1vw;
+        margin: 0 1vw;
         transition: transform 0.3s;
       }
 
       nav a:hover {
-        transform: translateY(-3px);
+        transform: translateY(-0.5vh); /* 根據視窗高度調整 */
       }
 
       .dropdown {
         position: relative;
+        display: inline-block;
       }
 
       .dropdown-content {
+        width: 100%; /* 佔滿父層寬度 */
+        max-width: 20vw; /* 限制最大寬度 */
         display: none;
         position: absolute;
         background-color: #78bcc4;
-        min-width: 160px;
-        border-radius: 4px;
-        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        min-width: 10em; /* 取代 160px，以字體大小作為比例單位 */
+        border-radius: 0.25em;
+        box-shadow: 0 0.5em 1em rgba(0, 0, 0, 0.2); /* 改為相對單位 */
         padding: 0.2rem 0;
+        z-index: 999;
       }
 
       .dropdown-content a {
         color: #eff5f5;
         display: block;
         transition: transform 0.3s;
-        border-bottom: 1px solid #ddd;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.3); /* 更淡配色、柔和過渡 */
+        padding: 0.6em 1em;
+        font-size: 1em;
       }
 
       .dropdown-content a:last-child {
@@ -119,107 +129,109 @@
       }
 
       .dropdown-content a:hover {
-        transform: translateY(-3px);
-      }
-
-      .dropdown:hover .dropdown-content {
-        display: block;
+        transform: translateY(-0.25em); /* 改為相對單位 */
       }
 
       .intro-section {
         background-color: #eff5f5;
         display: flex;
-        padding: 2rem;
-        margin-top: 60px; /* 根據導航列高度調整 */
-        justify-content: space-between;
-        align-items: flex-start;
-        width: 100%;
-        box-sizing: border-box; /* 包含 padding 在內 */
-        padding-left: 5rem;
-        padding-right: 5rem;
+        flex-wrap: wrap; /* 確保在小螢幕可換行 */
+        padding: 2rem 5%;
+        margin-top: 4em; /* 根據導航列高度調整 */
       }
 
       .intro-section h4 {
-        max-width: 700px;
+        max-width: 85%; /* 改為相對單位，避免固定寬度限制 */
+        line-height: 1.8;
       }
 
       .intro-section .left {
         width: 60%;
+        padding-right: 1%;
       }
 
       .intro-section .right {
-        width: 40%;
+        width: 39%;
       }
 
       .destination-section {
         display: flex;
+        flex-wrap: wrap;               /* 小螢幕時允許換行 */
         padding: 1rem 5%; /* 左右內間距為螢幕的10% */
         background-color: white;
       }
 
       .destination-main {
-        width: 75%;
-        margin-right: 1.5rem; /* 增加右邊外邊距 */
+        width: 72%;                    /* 主要內容佔 72%，略縮以保留間距 */
+        margin-right: 3%;              /* 與 sidebar 間保留間距（約為 3%） */
+        box-sizing: border-box;
       }
 
       .destination-sidebar {
-        width: 25%;
-        padding-left: 1.5rem; /* 增加左側內邊距 */
-        margin-top: 2rem; /* 向上或向下調整，負值表示向上 */
+        width: 25%;                    /* 側邊欄佔 25% */
+        padding-left: 2%;             /* 相對內邊距 */
+        margin-top: 2rem;
+        box-sizing: border-box;
       }
 
       .sidebar-image-container {
         margin-bottom: 1rem;
-        text-align: center; /* 確保圖片置中 */
+        text-align: center; /* 置中圖片 */
       }
 
       .sidebar-image-container img {
-        height: 300px; /* 設置直式圖片的高度 */
+        width: 90%;         /* 圖片寬度為容器寬度的 90% */
+        height: auto;       /* 高度自動，保持比例 */
+        max-height: 60vh;   /* 避免圖片過高，佔螢幕最大 60% 高 */
+        object-fit: cover;  /* 裁切處理長圖 */
       }
 
       .two-vertical-images {
-        display: flex; /* 彈性佈局，讓圖片並排 */
-        justify-content: space-between; /* 兩張圖片均勻分佈 */
-        gap: 2rem; /* 圖片之間的間距 */
+        display: flex;
+        justify-content: space-between;
+        gap: 4%; /* 使用百分比間距更彈性 */
         margin-top: 2rem;
-        margin-bottom: 2rem; /* 與下方內容的距離 */
+        margin-bottom: 2rem;
+        flex-wrap: wrap; /* 若畫面太小，允許換行 */
       }
 
       .two-vertical-images img {
-        width: calc(50% - 0.5rem); /* 每張圖片佔用容器的一半減去間距 */
-        text-align: center; /* 確保圖片置中 */
-        height: auto; /* 保持圖片的直式比例 */
-        object-fit: cover; /* 確保圖片內容適應容器 */
+        width: 48%; /* 每張圖片約佔一半（加上 gap 剛好 100%） */
+        height: auto; /* 保持原比例 */
+        object-fit: cover;
+        display: block;
+        margin: 0 auto;
       }
 
       .recommendation-section {
-        margin-top: 1.5rem; /* 與上方文字的間距 */
+        margin-top: 3vh; /* 與上方文字的間距 */
         text-align: center;
         position: sticky;
         top: 80px; /* 空出導覽列的高度，確保推薦區不被覆蓋 */
         z-index: 10; /* 提高層級，避免被其他內容遮蓋 */
+        padding: 0 5%;
       }
 
       .recommendation-section h3 {
-        font-size: 18px;
+        font-size: 1.125rem;
         font-weight: bold;
-        margin-bottom: 0.5rem; /* 與按鈕區的距離 */
+        margin-bottom: 1vh; /* 與按鈕區的距離 */
       }
 
       .recommendation-buttons {
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
-        gap: 0.5rem; /* 按鈕之間的間距 */
+        gap: 0.5em; /* 按鈕之間的間距 */
       }
 
       .recommendation-buttons button {
-        padding: 0.5rem 1rem;
-        font-size: 14px;
+        padding: 0.5em 1em;
+        font-size: 0.875rem;
         color: white;
         background-color: #78bcc4;
         border: none;
-        border-radius: 4px;
+        border-radius: 0.25rem;
         transition: transform 0.3s;
         font-family: Arial, sans-serif;
       }
@@ -229,13 +241,13 @@
       }
 
       .contact-section {
-        padding: 2rem 5rem; /* 上下與左右間距 */
+        padding: 4vh 8vw; /* 上下與左右間距 */
         background-color: #eff5f5; /* 淺灰背景 */
         text-align: center; /* 確保內容置中對齊 */
       }
 
       .contact-item h3 {
-        font-size: 18px; /* 調整標題字體大小 */
+        font-size: 1.125rem; /* 調整標題字體大小 */
         margin: 0; /* 移除多餘的間距 */
         text-decoration: none; /* 移除底線 */
       }
@@ -243,43 +255,49 @@
       footer {
         background-color: #000;
         color: white;
-        height: 30px;
+        height: 3vh; /* 使用相對單位，高度占螢幕高度的 3% */
         display: flex;
         justify-content: center;
         align-items: center;
+        font-size: 1.5rem; /* 使用相對字體大小 */
+        padding: 0.5rem 0; /* 確保小螢幕時內容不擠壓 */
       }
 
       #expandable-menu {
-        position: fixed;
-        top: 70px; /* 與螢幕頂部的距離設為 60px */
+        position: fixed; 
         right: 0;
-        height: calc(100% - 70px); /* 高度減去 60px，避免超出視窗 */
-        width: 395px; /* 目錄寬度與 sidebar 齊寬 */
+        width: 26vw; /* 目錄寬度與 sidebar 齊寬 */
+        max-width: 90%; /* 避免在小螢幕太寬 */
         transform: translateX(100%); /* 初始狀態：隱藏在右側 */
         transition: transform 0.3s ease;
         background-color: #f4f4f9; /* 與網站背景一致 */
         z-index: 1000;
+        box-sizing: border-box;
       }
 
       /* 收闔按鈕 */
       #menu-toggle {
-        position: absolute;
+        position: fixed;
         top: 45%;
-        left: -40px; /* 調整按鈕的位置，適應按鈕變大後的寬度 */
-        transform: translateY(-50%);
-        width: 40px; /* 增大按鈕寬度 */
-        height: 80px; /* 增大按鈕高度 */
+        right: 0; /* 永遠貼在右側 */
+        transform: translateY(-50%) translateX(0);
+        width: 2.5em; /* 增大按鈕寬度 */
+        height: 5em; /* 增大按鈕高度 */
         background-color: #78bcc4;
         color: white;
-        border-radius: 4px;
+        border-radius: 0.4em 0 0 0.4em;
         display: flex;
         justify-content: center; /* 水平居中 */
         align-items: center; /* 垂直居中 */
+        z-index: 2000; /* 要比 expandable-menu 更高，避免被蓋住 */
+        cursor: pointer;
+        box-shadow: -0.1em 0 0.3em rgba(0,0,0,0.1);
+        transition: transform 0.3s ease; /* 平滑移動 */
       }
 
       #menu-toggle::after {
         content: "目錄"; /* 在按鈕內顯示 "目錄" */
-        font-size: 17px;
+        font-size: 1rem;
         color: white; /* 設定字體顏色為白色 */
         writing-mode: vertical-rl; /* 使文字垂直排列 */
       }
@@ -290,14 +308,16 @@
 
       /* 目錄內容 */
       #menu-content {
-        padding: 0.5rem 1rem;
+        padding: 0.5rem 5%;
         overflow-y: auto;
         height: 100%;
+        box-sizing: border-box;
       }
 
       #menu-content h4 {
         font-weight: bold;
         margin-top: 0;
+        font-size: 1.2rem;
       }
 
       #menu-list {
@@ -306,13 +326,14 @@
       }
 
       #menu-list li {
-        margin-bottom: 0.5rem;
+        margin-bottom: 1vh;
       }
 
       #menu-list a {
         color: #2a90a7;
         text-decoration: none;
         transition: color 0.3s;
+        font-size: 1rem; /* 使用相對字體大小 */
       }
 
       #menu-list a:hover {
@@ -320,13 +341,149 @@
       }
 
       #menu-list .sub-item {
-        margin-left: 1.5rem; /* 調整縮排距離 */
+        margin-left: 8%; /* 調整縮排距離 */
         font-size: 0.9rem; /* 可選：調整子項目字體大小 */
       }
 
       /* 目錄展開狀態 */
       #expandable-menu.open {
         transform: translateX(0);
+      }
+
+      /* === 響應式調整：針對手機與小螢幕設備 === */
+      @media (max-width: 768px) {
+        nav {
+          flex-direction: row;
+          flex-wrap: wrap;
+          align-items: center;
+          justify-content: space-between;
+          padding: 1rem 5vw;  /* 窄螢幕時減少左右留白 */
+          width: 100%;
+          box-sizing: border-box;
+        }
+
+        .nav-right {
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          gap: 0.5rem;
+          transform: none;
+          width: auto;
+          white-space: nowrap;               /* 禁止內容自動換行 */
+        }
+
+        nav a {
+          padding: 0.5rem 0.5rem;           /* 減少垂直padding */
+          margin: 0 0.3rem;
+          font-size: 0.85rem;
+          white-space: nowrap;               /* 確保文字不換行 */
+          overflow: hidden;
+          text-overflow: ellipsis;           /* 若內容超出，顯示省略號 */
+        }
+
+        .nav-dropdown {
+          width: 60%; /* 或者用 max-content, fit-content 看需求 */
+          font-size: 0.85rem; /* 調整字體大小和導覽列一致 */
+          padding: 0.5rem;
+        }
+      
+        .nav-dropdown a {
+          font-size: inherit; /* 確保跟 .nav-dropdown 一樣大 */
+          padding: 0.5rem 1rem;
+          white-space: normal; /* 可選：讓字在必要時換行 */
+        }
+
+        .dropdown-content {
+          width: 12vw;
+          min-width: 8em; /* 保證至少能顯示幾個字 */
+          max-width: none;
+        }
+
+        .dropdown-content a {
+          font-size: 0.85rem;
+        }
+        
+        .intro-section {
+          flex-direction: column;
+          padding: 8%;
+        }
+
+        .intro-section .left,
+        .intro-section .right {
+          width: 100%;
+          padding: 0;
+          flex: 1 1 100%;
+        }
+
+        .intro-section .right {
+          margin-top: 1.5rem;
+          display: flex;
+          justify-content: center;
+        }
+
+        .intro-section h4 {
+          max-width: 100%;
+          font-size: 1rem;
+        }
+
+        .destination-grid {
+          flex-direction: column;
+          gap: 1rem;
+        }
+
+        .destination-section h4 {
+          font-size: 1rem;
+        }
+
+        .destination-item {
+          max-width: 100%;
+          width: 100%;
+        }
+
+        .destination-item.a_role_with_2 {
+          position: static;
+          left: auto;
+        }
+
+        .destination-main,
+        .destination-sidebar {
+          width: 100%;
+          margin: 0;
+          padding: 0;
+        }
+
+        .destination-sidebar {
+          margin-top: 2rem;
+        }
+
+        .recommendation-buttons button {
+          width: 100%; /* 小螢幕按鈕全寬排列 */
+        }
+
+        .contact-section {
+          padding: 3vh 5vw;
+        }
+
+        .contact-item h3 {
+          font-size: 1rem;
+        }
+
+        /* 目錄區寬度改為螢幕寬度的40% */
+        #expandable-menu {
+          width: 40vw !important; /* 用vw方便響應螢幕寬度 */
+          max-width: 90%; /* 保留原本max-width避免太寬 */
+        }
+      
+        #expandable-menu,
+        #expandable-menu * {
+          font-size: 85% !important;
+        }
+              
+        #menu-toggle {
+          width: 75%;
+          max-width: 1.875em;
+          min-width: 1.875em;
+        }
       }
     </style>
   </head>
@@ -342,7 +499,7 @@
       <div class="nav-right">
         <a href="首頁.html">關於我</a>
         <div class="dropdown">
-          <a>亞洲旅遊</a>
+          <a class="dropdown-toggle">亞洲旅遊</a>
           <div class="dropdown-content">
             <a href="中國.html">中國</a>
             <a href="新加坡.html">新加坡</a>
@@ -353,7 +510,7 @@
           </div>
         </div>
         <div class="dropdown">
-          <a>歐洲旅遊</a>
+          <a class="dropdown-toggle">歐洲旅遊</a>
           <div class="dropdown-content">
             <a href="英國.html">英國</a>
             <a href="法國.html">法國</a>
@@ -371,7 +528,7 @@
           </div>
         </div>
         <div class="dropdown">
-          <a>美洲旅遊</a>
+          <a class="dropdown-toggle">美洲旅遊</a>
           <div class="dropdown-content">
             <a href="美國.html">美國</a>
             <a href="加拿大.html">加拿大</a>
@@ -389,7 +546,7 @@
         </h4>
       </div>
       <div class="right">
-        <img src="西班牙照片\馬德里\馬德里_介紹.jpg" width="90%" height="350px" />
+        <img src="西班牙照片\馬德里\馬德里_介紹.jpg" style="width: 100%; height: auto; max-width: 100%;" />
       </div>
     </div>
 
@@ -406,7 +563,7 @@
           最推薦大家買 <a href="https://www.metromadrid.es/en/viaja-en-metro/titulos-y-tarifas/Card%20types" target="_blank">10 趟票</a>，可以任意搭乘 10 趟地鐵，算是最划算的方式，坐完後的地鐵卡還能留下來做紀念，或留待你下一次回馬德里用。
         </h4>
         <div style="text-align: center">
-          <img src="西班牙照片\馬德里\馬德里_交通.png" width="00px" />
+          <img src="西班牙照片\馬德里\馬德里_交通.png" style="width: 100%; max-width: 90vw; height: auto;" />
         </div>
         <br /><br />
         <h2>馬德里住宿</h2>
@@ -414,7 +571,7 @@
           馬德里的景點相當集中，大部分都在主廣場附近，如果以方便程度推薦選擇主廣場周邊的住宿，主廣場以北治安稍差，因此最好選擇主廣場以南的區域，是治安比較良好的區域。
         </h4>
         <div style="text-align: center">
-          <img src="西班牙照片\馬德里\馬德里_住宿.png" width="1000px" />
+          <img src="西班牙照片\馬德里\馬德里_住宿.png" style="width: 100%; max-width: 90vw; height: auto;" />
         </div>
         <br /><br />
         <h2>馬德里景點</h2>
@@ -423,7 +580,7 @@
           Temple of Debod 是個古埃及神廟，這座神廟原本位於埃及的阿斯旺，但由於尼羅河的水淹沒，對其保存造成了威脅。因此埃及政府在 1960 年代將這座古老的神廟作為禮物贈送給西班牙，以感謝西班牙對埃及保存文化遺產的貢獻。Temple of Debod 建於西元前 2 世紀的埃及神廟，主要供奉阿蒙神 (Amun) 和伊西斯女神 (Isis)，由多個建築元素組成，包括一個主建築物、一個內部祭壇和一個廣場，被認為是埃及在海外的最重要的古代建築，其建築風格和裝飾細節展現了當時的埃及文化和宗教信仰。
         </h4>
         <div style="text-align: center">
-          <img src="西班牙照片\馬德里\MA1.jpg" width="600px" />
+          <img src="西班牙照片\馬德里\MA1.jpg" style="width: 90%; max-width: 600px; height: auto; margin: 0.5rem;" />
         </div>
         <br /><br /><br />
         <h3>Cerralbo Museum</h3>
@@ -431,9 +588,9 @@
           Cerralbo Museum 是由西班牙貴族 Enrique de Aguilera y Gamboa，第 17 代 Cerralbo 侯爵創建的，他是一位熱愛藝術和歷史的收藏家，將他的收藏品捐贈給國家，並在他的宮殿中建立了這座博物館。博物館於 1944 年對外開放，展示了 17 至 19 世紀的藝術品和文物。Cerralbo Museum 內部裝飾華麗，保留了宮廷式的氛圍，展示了豪華的家具、壁畫、雕塑、繪畫和裝飾藝術品。這些收藏品代表了不同的時期和風格，包括文藝復興、巴洛克和洛可可藝術。博物館的每一個房間都展示著獨特的藝術品，並展示了 Cerralbo 侯爵對美學和藝術的追求。
         </h4>
         <div style="text-align: center">
-          <img src="西班牙照片\馬德里\MA2.jpg" width="600px" />
-          <img src="西班牙照片\馬德里\MA3.jpg" width="600px" />
-          <img src="西班牙照片\馬德里\MA4.jpg" width="600px" />
+          <img src="西班牙照片\馬德里\MA2.jpg" style="width: 90%; max-width: 600px; height: auto; margin: 0.5rem;" />
+          <img src="西班牙照片\馬德里\MA3.jpg" style="width: 90%; max-width: 600px; height: auto; margin: 0.5rem;" />
+          <img src="西班牙照片\馬德里\MA4.jpg" style="width: 90%; max-width: 600px; height: auto; margin: 0.5rem;" />
         </div>
         <br /><br /><br />
         <h3>馬德里王宮 (Palacio Real de Madrid)</h3>
@@ -443,9 +600,9 @@
         <h4>雖然馬德里皇宮是西班牙王室的官方居所，但實際上他們並不在這裡居住，宮殿主要用於國家儀式、官方接待和特殊場合
           ，由於參觀人數眾多且有入場人數限制，建議大家能先在<a href="https://www.patrimonionacional.es/en/visita/royal-palace-madrid" target="_blank">官網</a>訂票以免無法入場。</h4>
         <div style="text-align: center">
-          <img src="西班牙照片\馬德里\MA5.jpg" width="800px" />
-          <img src="西班牙照片\馬德里\MA6.jpg" width="800px" />
-          <img src="西班牙照片\馬德里\MA7.jpg" width="600px" />
+          <img src="西班牙照片\馬德里\MA5.jpg" style="width: 100%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+          <img src="西班牙照片\馬德里\MA6.jpg" style="width: 100%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+          <img src="西班牙照片\馬德里\MA7.jpg" style="width: 90%; max-width: 600px; height: auto; margin: 0.5rem;" />
         </div>
         <br /><br /><br />
         <h3>Plaza de España</h3>
@@ -454,7 +611,7 @@
         </h4>
         <h4>如今的聖若梅廣場依舊保持著它作為巴塞隆納政治中心的地位，每年的國慶日和其他重大節日，居民都會在這裡聚集共同慶祝加泰隆尼亞的歷史和身份。</h4>
         <div style="text-align: center">
-          <img src="西班牙照片\馬德里\MA8.jpg" width="600px" />
+          <img src="西班牙照片\馬德里\MA8.jpg" style="width: 90%; max-width: 600px; height: auto; margin: 0.5rem;" />
         </div>
         <br /><br /><br />
         <h3>主廣場 (Plaza Mayor)</h3>
@@ -462,8 +619,8 @@
           主廣場的歷史可以追溯到 17 世紀，當時它是一個市集和公共活動的場所，許多重要的事件和慶典都在這裡舉行。廣場也是馬德里的市集和貿易中心，吸引了商人和遊客。廣場的中心有一個巨大的銅像，描繪著西班牙國王菲利普三世 (Felipe III) 騎馬的雕像，主廣場的建築物有著獨特的特色，外牆是由石頭建造的，上面有華麗的窗戶和拱門，還有精緻的雕塑和裝飾。
         </h4>
         <div style="text-align: center">
-          <img src="西班牙照片\馬德里\MA9.jpg" width="600px" />
-          <img src="西班牙照片\馬德里\MA10.jpg" width="600px" />
+          <img src="西班牙照片\馬德里\MA9.jpg" style="width: 90%; max-width: 600px; height: auto; margin: 0.5rem;" />
+          <img src="西班牙照片\馬德里\MA10.jpg" style="width: 90%; max-width: 600px; height: auto; margin: 0.5rem;" />
         </div>
         <br /><br /><br />
         <h3>阿穆德納聖母主教座堂 (Cathedral de Santa María la Real de la Almudena)</h3>
@@ -471,8 +628,8 @@
           阿穆德納聖母主教座堂的建設始於 19 世紀，但直到 1993 年才正式完工，是一座新哥德式建築，融合了多種建築風格，包括哥德式、新古典主義和新文藝復興風格。教堂的外觀華麗壯觀，立面上有許多尖塔、飾帶和雕刻，彰顯了西班牙宗教建築的傳統風格。進入教堂內部，遊客可以欣賞到精美的宗教藝術品和裝飾。教堂內部設有多個小堂和祭壇，每個小堂都擁有獨特的裝飾和藝術品。最引人注目的是主祭壇，其中有一幅巨大的聖母像，以及金色的裝飾和壁畫，展現了豪華和宗教莊嚴的氛圍。
         </h4>
         <div style="text-align: center">
-          <img src="西班牙照片\馬德里\MA11.jpg" width="600px" />
-          <img src="西班牙照片\馬德里\MA12.jpg" width="600px" />
+          <img src="西班牙照片\馬德里\MA11.jpg" style="width: 90%; max-width: 600px; height: auto; margin: 0.5rem;" />
+          <img src="西班牙照片\馬德里\MA12.jpg" style="width: 90%; max-width: 600px; height: auto; margin: 0.5rem;" />
         </div>
         <br /><br /><br />
         <h3>聖米格爾市場 (Mercado de San Miguel)</h3>
@@ -480,10 +637,10 @@
           聖米格爾市場是一個鐵結構的玻璃建築，具有現代而精緻的外觀，保留了原有的歷史特色，建於 1916 年，經過修復後在 2009 年重新開放。市場內部有一個開放式的佈局，設有各種小攤位和攤檔，提供各種美食和特色商品，可以品嚐到各種美食和特色小吃。市場內有許多攤位專門提供西班牙美食，如生牡蠣、伊比利亞火腿、海鮮、奶酪和西班牙小吃。可以在這裡品嚐到地道的西班牙風味，市場還提供各種葡萄酒、啤酒和其他飲品可以與美食搭配享用。
         </h4>
         <div style="text-align: center">
-          <img src="西班牙照片\馬德里\MA13.jpg" width="600px" />
-          <img src="西班牙照片\馬德里\MA14.jpg" width="600px" />
-          <img src="西班牙照片\馬德里\MA15.jpg" width="800px" />
-          <img src="西班牙照片\馬德里\MA16.jpg" width="600px" />
+          <img src="西班牙照片\馬德里\MA13.jpg" style="width: 90%; max-width: 600px; height: auto; margin: 0.5rem;" />
+          <img src="西班牙照片\馬德里\MA14.jpg" style="width: 90%; max-width: 600px; height: auto; margin: 0.5rem;" />
+          <img src="西班牙照片\馬德里\MA15.jpg" style="width: 100%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+          <img src="西班牙照片\馬德里\MA16.jpg" style="width: 90%; max-width: 600px; height: auto; margin: 0.5rem;" />
         </div>
         <br /><br /><br />
         <h3>太陽門 (Puerta del Sol)</h3>
@@ -491,8 +648,8 @@
           太陽門的名字源於它在馬德里的東部城牆上的太陽圖案，這個圖案代表著皇家徽章，在西班牙歷史上具有重要的象徵意義，是許多歷史事件和示威抗議的舞台。廣場的中心有一個大型的太陽時鐘，這是一個經典的會面地點和拍照的景點。時鐘的背後是一個雕像，代表著對西班牙人民的自由和民主的象徵。太陽門是馬德里的文化和社交中心，可以參加各種文化活動、音樂會和節慶慶典，廣場上還經常舉辦政治集會和示威活動。
         </h4>
         <div style="text-align: center">
-          <img src="西班牙照片\馬德里\MA17.jpg" width="600px" />
-          <img src="西班牙照片\馬德里\MA18.jpg" width="600px" />
+          <img src="西班牙照片\馬德里\MA17.jpg" style="width: 90%; max-width: 600px; height: auto; margin: 0.5rem;" />
+          <img src="西班牙照片\馬德里\MA18.jpg" style="width: 90%; max-width: 600px; height: auto; margin: 0.5rem;" />
         </div>
         <br /><br /><br />
         <h3>麗池公園 (Parque de El Retiro)</h3>
@@ -500,9 +657,9 @@
           麗池公園是馬德里最大的公園，佔地約 125 公頃，歷史可以追溯到 17 世紀，當時它是西班牙國王的私人花園，到了 19 世紀開放給公眾成為一個公共公園。麗池公園以其美麗的景觀、寧靜的氛圍和豐富的活動而聞名，公園內種植著各種樹木和花卉，其中最引人注目的是數百年的老樹，包括壯麗的松樹和雪松。公園內最著名的景點是 Estanque 大湖，是一個人工湖泊，供遊客划船和觀賞。湖中心有一個噴泉，周圍環繞著美麗的建築物和雕塑，還可以參觀 Palacio de Cristal，這是一座玻璃建築，用於舉辦藝術展覽和文化活動。
         </h4>
         <div style="text-align: center">
-          <img src="西班牙照片\馬德里\MA19.jpg" width="600px" />
-          <img src="西班牙照片\馬德里\MA20.jpg" width="600px" />
-          <img src="西班牙照片\馬德里\MA21.jpg" width="600px" />
+          <img src="西班牙照片\馬德里\MA19.jpg" style="width: 90%; max-width: 600px; height: auto; margin: 0.5rem;" />
+          <img src="西班牙照片\馬德里\MA20.jpg" style="width: 90%; max-width: 600px; height: auto; margin: 0.5rem;" />
+          <img src="西班牙照片\馬德里\MA21.jpg" style="width: 90%; max-width: 600px; height: auto; margin: 0.5rem;" />
         </div>
         <br /><br /><br />
         <h3>阿爾卡拉門 (Puerta de Alcalá)</h3>
@@ -510,7 +667,7 @@
           阿爾卡拉門位於 Alcalá 大道和 Independencia 廣場交匯處，建於 18 世紀，是由建築師Francisco Sabatini 設計的，目的是慶祝卡洛斯三世 (Carlos III) 的入城。這座巴洛克風格的門戶具有壯觀的外觀和精美的細節，展示了當時的建築技術和風格，門戶由花崗岩和白色石灰石建造而成，呈現出豐富的雕刻和裝飾，由五個拱門組成，中央的主門道更高大且更寬闊，兩側則是兩個較小的門道。門戶頂部有一個三角形的銳角尖頂，上面裝飾著雕刻的紋飾和圖案，整個結構展現了巴洛克風格的華麗和宏偉，見證了馬德里的發展和變遷，成為城市的象徵和記憶的一部分。
         </h4>
         <div style="text-align: center">
-          <img src="西班牙照片\馬德里\MA22.jpg" width="800px" />
+          <img src="西班牙照片\馬德里\MA22.jpg" style="width: 100%; max-width: 90vw; height: auto; margin: 0.5rem;" />
         </div>
         <br /><br /><br />
         <h3>Toledo Gate</h3>
@@ -518,7 +675,7 @@
           Toledo Gate 建於 19 世紀早期，是由建築師 Antonio López Aguado 設計的，以紀念西班牙獨立戰爭期間的勝利，是新古典主義風格的建築，展示了當時流行的建築風格和設計理念。這座城門由花崗岩建造而成，呈現出優雅和堅固的外觀，門戶由三個拱門組成，中央的主門道高大而寬闊，兩側則是兩個較小的門道。門戶頂部有一個三角形的銳角尖頂，上面裝飾著浮雕和雕塑，整個建築充滿了對細節和比例的關注，展現了新古典主義風格的簡潔和優雅。Toledo Gate 是一個重要的交通樞紐，通往托萊多和其他南部城市的道路從這裡開始。
         </h4>
         <div style="text-align: center">
-          <img src="西班牙照片\馬德里\MA23.jpg" width="600px" />
+          <img src="西班牙照片\馬德里\MA23.jpg" style="width: 90%; max-width: 600px; height: auto; margin: 0.5rem;" />
         </div>
         <br /><br /><br />
         <h3>西貝萊斯廣場 (Fuente de Cibeles)</h3>
@@ -526,7 +683,7 @@
           西貝萊斯廣場建於 1782 年，由建築師弗朗西斯科·古鐵雷斯 (Francisco Gutiérrez) 設計，這座噴泉採用巴洛克風格，以希臘神話中的女神西貝萊斯 (Cibeles) 為名。西貝萊斯是大地和生育之母的象徵，經常被描繪為坐在由獅子拉著的戰車上，噴泉的中心是一座大理石雕塑，描繪了西貝萊斯坐在戰車上。她抓住了四匹獅子的韁繩，象徵著力量和控制。雕塑周圍是一個圓形的水池，水池的四個角落各有一個小噴泉，代表西班牙的四條主要河流。
         </h4>
         <div style="text-align: center">
-          <img src="西班牙照片\馬德里\MA24.jpg" width="800px" />
+          <img src="西班牙照片\馬德里\MA24.jpg" style="width: 100%; max-width: 90vw; height: auto; margin: 0.5rem;" />
         </div>
         <br /><br /><br />
         <h3>普拉多博物館 (Museo Nacional del Prado)</h3>
@@ -537,7 +694,7 @@
         </h4>
         <h4>由於每個時段會有參觀人數的限制，若不想要在外面等待的話可以預先上<a href="https://www.museodelprado.es/en/visit/opening-times-and-prices" target="_blank">官網</a>購買門票，如果想省錢的則可以在閉館前兩個小時內入場，這段時間是不用門票免費入場，非常適合只想要欣賞最經典作品的人。</h4>
         <div style="text-align: center">
-          <img src="西班牙照片\馬德里\MA25.jpg" width="600px" />
+          <img src="西班牙照片\馬德里\MA25.jpg" style="width: 90%; max-width: 600px; height: auto; margin: 0.5rem;" />
         </div>
         <br /><br />
         <h2>馬德里近郊景點</h2>
@@ -547,10 +704,10 @@
         </h4>
         <h4>在網上可以購買馬德里去塞哥維亞的大巴車票，車程大約40 分鐘，建議是一次購買來回比較不會有沒位子的情況喔!</h4>
         <div style="text-align: center">
-          <img src="西班牙照片\馬德里\MA26.jpg" width="800px" />
-          <img src="西班牙照片\馬德里\MA27.jpg" width="800px" />
-          <img src="西班牙照片\馬德里\MA28.jpg" width="600px" />
-          <img src="西班牙照片\馬德里\MA29.jpg" width="600px" />
+          <img src="西班牙照片\馬德里\MA26.jpg" style="width: 100%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+          <img src="西班牙照片\馬德里\MA27.jpg" style="width: 100%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+          <img src="西班牙照片\馬德里\MA28.jpg" style="width: 90%; max-width: 600px; height: auto; margin: 0.5rem;" />
+          <img src="西班牙照片\馬德里\MA29.jpg" style="width: 90%; max-width: 600px; height: auto; margin: 0.5rem;" />
         </div>
         <br /><br /><br />
         <h3>塞哥維亞主教座堂 (Catedral de Segovia)</h3>
@@ -558,8 +715,8 @@
           塞哥維亞主教座堂融合了羅馬式、哥特式和文藝復興風格，建造始於 16 世紀，並在幾個世紀內進行了擴建和改建，最引人注目的特點是其巨大的尖塔和華麗的飾物，擁有壯觀的拱頂、華麗的彩色玻璃窗和精心雕刻的石頭細節，展示了西班牙宗教建築的藝術和工藝水平。
         </h4>
         <div style="text-align: center">
-          <img src="西班牙照片\馬德里\MA30.jpg" width="800px" />
-          <img src="西班牙照片\馬德里\MA31.jpg" width="600px" />
+          <img src="西班牙照片\馬德里\MA30.jpg" style="width: 100%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+          <img src="西班牙照片\馬德里\MA31.jpg" style="width: 90%; max-width: 600px; height: auto; margin: 0.5rem;" />
         </div>
         <br /><br /><br />
         <h3>Paseo Don Juan II Defensive Wall</h3>
@@ -567,8 +724,8 @@
           Paseo Don Juan II Defensive Wall 建於公元 1 世紀，是羅馬時代的遺跡，後來在中世紀進行了擴建和改建。城牆的總長度約為 3 公里，高約 10 米，由堅固的石塊和磚石構成。城牆由數座塔樓和城門組成，其中最著名的是聖安德烈塔 (San Andrés) 和聖胡安塔 (San Juan)，這些塔樓提供了在城牆上欣賞城市全景的絕佳位置。
         </h4>
         <div style="text-align: center">
-          <img src="西班牙照片\馬德里\MA32.jpg" width="800px" />
-          <img src="西班牙照片\馬德里\MA33.jpg" width="600px" />
+          <img src="西班牙照片\馬德里\MA32.jpg" style="width: 100%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+          <img src="西班牙照片\馬德里\MA33.jpg" style="width: 90%; max-width: 600px; height: auto; margin: 0.5rem;" />
         </div>
         <br /><br /><br />
         <h3>塞哥維亞城堡 (Alcázar de Segovia)</h3>
@@ -576,8 +733,8 @@
           塞哥維亞城堡的歷史可以追溯到羅馬時代，但現存的建築主要建於 12 世紀至 16 世紀之間，融合了多種建築風格，包括羅馬式、哥特式和文藝復興風格。城堡的外觀獨特，由於它的形狀和結構，常被比喻為一個巨大的船或一座童話城堡，城堡的內部裝飾極為華麗，展示了豐富的藝術和手工藝品，可以參觀宮殿、禮堂、宴會廳和宗教場所等不同的區域。其中最著名的是卡洛斯五世廳 (Hall of Carlos V)，以其壯觀的天花板和裝飾性的壁爐而聞名。
         </h4>
         <div style="text-align: center">
-          <img src="西班牙照片\馬德里\MA34.jpg" width="600px" />
-          <img src="西班牙照片\馬德里\MA35.jpg" width="600px" />
+          <img src="西班牙照片\馬德里\MA34.jpg" style="width: 90%; max-width: 600px; height: auto; margin: 0.5rem;" />
+          <img src="西班牙照片\馬德里\MA35.jpg" style="width: 90%; max-width: 600px; height: auto; margin: 0.5rem;" />
         </div>
         <br /><br /><br />
         <h3>Puerta de San Andrés</h3>
@@ -585,7 +742,7 @@
           Puerta de San Andrés 位於塞哥維亞的城牆上，靠近聖安德烈塔 (San Andrés Tower) 因而得名。Puerta de San Andrés 建於 12 世紀，採用典型的羅馬式建築風格，由堅固的石塊和磚石構成，呈現出古老而堅固的外觀。門上有一個拱形門廊，由多個拱形石塊組成，上方是一個小型的防禦塔樓，門廊上方還有一個浮雕雕塑，描繪了宗教和戰爭的場景。
         </h4>
         <div style="text-align: center">
-          <img src="西班牙照片\馬德里\MA36.jpg" width="600px" />
+          <img src="西班牙照片\馬德里\MA36.jpg" style="width: 90%; max-width: 600px; height: auto; margin: 0.5rem;" />
         </div>
         <br /><br /><br />
         <h3>托萊多 (Toledo)</h3>
@@ -594,10 +751,10 @@
         </h4>
         <h4>在網上可以購買馬德里去托萊多的大巴車票，車程大約 50 分鐘，建議是一次購買來回比較不會有沒位子的情況喔!</h4>
         <div style="text-align: center">
-          <img src="西班牙照片\馬德里\MA37.jpg" width="800px" />
-          <img src="西班牙照片\馬德里\MA38.jpg" width="800px" />
-          <img src="西班牙照片\馬德里\MA39.jpg" width="800px" />
-          <img src="西班牙照片\馬德里\MA40.jpg" width="600px" />
+          <img src="西班牙照片\馬德里\MA37.jpg" style="width: 100%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+          <img src="西班牙照片\馬德里\MA38.jpg" style="width: 100%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+          <img src="西班牙照片\馬德里\MA39.jpg" style="width: 100%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+          <img src="西班牙照片\馬德里\MA40.jpg" style="width: 90%; max-width: 600px; height: auto; margin: 0.5rem;" />
         </div>
         <br /><br /><br />
         <h3>聖若望皇家修道院 (Monasterio de San Juan de los Reyes)</h3>
@@ -605,7 +762,7 @@
           聖若望皇家修道院建於 15 世紀，由卡斯蒂利亞國王費爾南多二世和他的妻子伊莎貝爾一世下令建造，以慶祝他們在托萊多戰役中的勝利。修道院的建築風格是哥德式，展示了當時典型的西班牙哥德建築特色，主立面有一個大型的門廊，上面飾有歷史場景的浮雕，包括費爾南多二世和伊莎貝爾一世的塑像，在門廊上方有一個雕刻精美的石窗和華麗的尖塔。
         </h4>
         <div style="text-align: center">
-          <img src="西班牙照片\馬德里\MA41.jpg" width="600px" />
+          <img src="西班牙照片\馬德里\MA41.jpg" style="width: 90%; max-width: 600px; height: auto; margin: 0.5rem;" />
         </div>
         <br /><br /><br />
         <h3>托萊多主教座堂 (Santa Iglesia Catedral Primada de Toledo)</h3>
@@ -613,9 +770,9 @@
           托萊多主教座堂是西班牙天主教的首座聖堂，建於 13 世紀至 15 世紀，結合了哥德式、文藝復興式和歌德式的建築風格，有著高大的尖塔和華麗的立面。教堂的兩個主要塔樓，分別稱為"El Campanario"和"La Torre del Reloj"。教堂內部有許多藝術珍品和精美的裝飾，最著名的是托萊多的主祭壇，由許多著名的藝術家參與設計和製作。主祭壇展示了大量的雕刻和壁畫，描繪了聖經故事和宗教場景。教堂還擁有許多價值連城的藝術品，包括著名畫家埃爾·格雷科 (El Greco) 的作品。
         </h4>
         <div style="text-align: center">
-          <img src="西班牙照片\馬德里\MA42.jpg" width="600px" />
-          <img src="西班牙照片\馬德里\MA43.jpg" width="600px" />
-          <img src="西班牙照片\馬德里\MA44.jpg" width="600px" />
+          <img src="西班牙照片\馬德里\MA42.jpg" style="width: 90%; max-width: 600px; height: auto; margin: 0.5rem;" />
+          <img src="西班牙照片\馬德里\MA43.jpg" style="width: 90%; max-width: 600px; height: auto; margin: 0.5rem;" />
+          <img src="西班牙照片\馬德里\MA44.jpg" style="width: 90%; max-width: 600px; height: auto; margin: 0.5rem;" />
         </div>
         <br /><br /><br />
         <h3>托萊多城堡 (Alcázar de Toledo)</h3>
@@ -623,7 +780,7 @@
           托萊多城堡坐落在托萊多的最高點，俯瞰著整個城市和附近的塔吉托河，最早建於 3 世紀，當時是羅馬城堡。隨著歷史的發展經歷了多次重建和擴建，成為一座宏偉的堡壘，曾經是西哥特王國的皇宮，後來是穆斯林統治者的居所，並在 15 世紀成為卡斯蒂利亞王室的宮殿。阿爾卡薩爾的建築風格結合了多種元素，包括羅馬、維西哥、穆斯林和哥德式，由巨大的石塊和厚重的城牆組成，外觀堅固而壯麗，宮殿內部有多個庭院、大廳和宴會廳，展示了豪華的宮廷生活和精美的藝術裝飾。
         </h4>
         <div style="text-align: center">
-          <img src="西班牙照片\馬德里\MA45.jpg" width="600px" />
+          <img src="西班牙照片\馬德里\MA45.jpg" style="width: 90%; max-width: 600px; height: auto; margin: 0.5rem;" />
         </div>
         <br /><br />
         <h2>馬德里美食</h2>
@@ -632,7 +789,7 @@
           西班牙最經典的甜點就是巧克力吉拿 (churros)，外形長而瘦通常呈直筒狀或可以彎曲成螺旋狀，質地酥脆外皮炸得金黃酥脆，內部則柔軟緊實，剛炸起來沾著砂糖的吉拿，沾上熱騰騰煮出來的巧克力醬，是最受歡迎的社交食品，通常與熱飲一起享用，是西班牙獨特的甜點文化。
         </h4>
         <div style="text-align: center">
-          <img src="西班牙照片\馬德里\MA46.jpg" width="600px" />
+          <img src="西班牙照片\馬德里\MA46.jpg" style="width: 90%; max-width: 600px; height: auto; margin: 0.5rem;" />
         </div>
         <br /><br /><br />
         <h3>La Mallorquina</h3>
@@ -640,7 +797,7 @@
           La Mallorquina 是在太陽門廣場旁的百年甜點店，有數十種麵包糕餅類供你選擇，最有名的便是巧克力可頌跟奶油麵包，排隊的人潮眾多，需要等一下才能進入選擇，內部沒有位子所以大家都是買完在店內或店外站著吃，適合一早起來過來買早餐，用西班牙糕點開啟美好的一天。
         </h4>
         <div style="text-align: center">
-          <img src="西班牙照片\馬德里\MA47.jpg" width="600px" />
+          <img src="西班牙照片\馬德里\MA47.jpg" style="width: 90%; max-width: 600px; height: auto; margin: 0.5rem;" />
         </div>
         <br /><br /><br />
         <h3>Restaurante El Bernardino</h3>
@@ -648,7 +805,7 @@
           烤乳豬是塞哥維亞的特色美食，乳豬的皮很脆，味道偏鹹一些，通常會搭配著紅酒，這家是以套餐形式，一整套有卡斯蒂利亞湯 (豬肉和豬皮燉湯)、烤乳豬、弗羅隆蛋奶凍、麵包和葡萄酒，可以完整體驗塞哥維亞美食。
         </h4>
         <div style="text-align: center">
-          <img src="西班牙照片\馬德里\MA48.jpg" width="600px" />
+          <img src="西班牙照片\馬德里\MA48.jpg" style="width: 90%; max-width: 600px; height: auto; margin: 0.5rem;" />
         </div>
         <br /><br /><br />
         <h3>Bar La Campana</h3>
@@ -656,7 +813,7 @@
           相對於言地中海地區，馬德里等內陸地區的食物比較粗一些，Bar La Campana 以傳統伊比利半島內陸的炸物聞名，幾歐元就能點到法棍配上超級多的炸魷魚跟醃肉，可以跟店員要多一些蒜泥蛋黃醬配著炸魷魚才不會很膩，魷魚直接夾入堡中，沒有過多的調味，完全是陌生人沒有任何交集 XD，但炸皮也不會軟爛薄度剛好。
         </h4>
         <div style="text-align: center">
-          <img src="西班牙照片\馬德里\MA49.jpg" width="600px" />
+          <img src="西班牙照片\馬德里\MA49.jpg" style="width: 90%; max-width: 600px; height: auto; margin: 0.5rem;" />
         </div>
         <br /><br /><br />
         <h3>Sukaldea Atotxa</h3>
@@ -664,8 +821,8 @@
           西班牙傳統料理除了遠近聞名的燉飯之外，還有馬鈴薯烘蛋與牛肚餃，馬鈴薯絲包在蛋中放入烤箱烘烤，一上菜香味撲鼻，牛肚餃則是用香料蓋住了牛肚原有的腥味，在口感上也做得比較軟，與中式的做法差蠻多的，是個新奇的味覺體驗。
         </h4>
         <div style="text-align: center">
-          <img src="西班牙照片\馬德里\MA50.jpg" width="600px" />
-          <img src="西班牙照片\馬德里\MA51.jpg" width="600px" />
+          <img src="西班牙照片\馬德里\MA50.jpg" style="width: 90%; max-width: 600px; height: auto; margin: 0.5rem;" />
+          <img src="西班牙照片\馬德里\MA51.jpg" style="width: 90%; max-width: 600px; height: auto; margin: 0.5rem;" />
         </div>
         <br /><br />
       </div>
@@ -736,9 +893,8 @@
     <footer>
       <h6>COPYRIGHT © 2025 Tommy 看世界 All rights reserved.</h6>
     </footer>
+    <div id="menu-toggle"></div>
     <div id="expandable-menu">
-      <div id="menu-toggle"></div>
-      <!-- 收闔按鈕 -->
       <div id="menu-content">
         <h4>目錄</h4>
         <ul id="menu-list"></ul>
@@ -755,6 +911,23 @@
         // 點擊按鈕切換目錄狀態
         toggle.addEventListener("click", () => {
           menu.classList.toggle("open");
+
+          const menuWidth = menu.offsetWidth; // 獲取目前展開的目錄寬度
+
+          if (menu.classList.contains("open")) {
+            // 讓按鈕向左平移與 menu 一樣的寬度
+            toggle.style.transform = `translateY(-50%) translateX(-${menuWidth}px)`;
+          } else {
+            // 收回原位
+            toggle.style.transform = `translateY(-50%) translateX(0)`;
+          }
+        });
+
+        window.addEventListener("load", () => {
+          if (menu.classList.contains("open")) {
+            const menuWidth = menu.offsetWidth;
+            toggle.style.transform = `translateY(-50%) translateX(-${menuWidth}px)`;
+          }
         });
 
         // 從 destination-main 區域提取 h2 和 h3，動態生成目錄
@@ -779,6 +952,23 @@
           menuList.appendChild(listItem);
         });
 
+        function adjustMenuPosition() {
+          const nav = document.querySelector("nav");
+          const menu = document.getElementById("expandable-menu");
+      
+          if (nav && menu) {
+            const navHeight = nav.offsetHeight;
+      
+            // 設定 menu 的 top 與高度
+            menu.style.top = `${navHeight}px`;
+            menu.style.height = `calc(100vh - ${navHeight}px)`;
+          }
+        }
+      
+        // 載入與尺寸變化時調整
+        window.addEventListener("DOMContentLoaded", adjustMenuPosition);
+        window.addEventListener("resize", adjustMenuPosition);
+        
         // 滾動至目標位置並加上 75px 偏移
         menuList.addEventListener("click", (event) => {
           if (event.target.tagName === "A") {
@@ -798,6 +988,31 @@
               });
             }
           }
+        });
+        // 手機 Safari 相容：點擊展開 dropdown
+        const dropdownToggles = document.querySelectorAll(".dropdown-toggle");
+
+        dropdownToggles.forEach((toggle) => {
+          toggle.addEventListener("click", function (e) {
+            e.stopPropagation(); // 防止冒泡，避免點擊外層時也觸發關閉
+            const dropdown = this.nextElementSibling;
+            const isVisible = dropdown.style.display === "block";
+            
+            // 關閉所有其他 dropdown（可選）
+            document.querySelectorAll(".dropdown-content").forEach((menu) => {
+              menu.style.display = "none";
+            });
+
+            // 切換目前這一個 dropdown
+            dropdown.style.display = isVisible ? "none" : "block";
+          });
+        });
+
+        // 點擊其他地方時關閉 dropdown
+        window.addEventListener("click", function () {
+          document.querySelectorAll(".dropdown-content").forEach((menu) => {
+            menu.style.display = "none";
+          });
         });
       });
     </script>
