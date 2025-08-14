@@ -1,0 +1,932 @@
+<!DOCTYPE html>
+<html lang="zh-hant-TW">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="曹旅瀚 Tommy" />
+    <meta name="description" content="探索沖繩的碧海藍天與島嶼魅力，從古宇利大橋、國際通、美麗海水族館，到在地美食與琉球文化，帶你體驗南國風情的獨特旅程。">
+    <meta name="keywords" content="沖繩旅遊,沖繩景點,沖繩自由行,沖繩美食,國際通,古宇利島,美麗海水族館,琉球文化,沖繩海灘,沖繩租車,沖繩推薦,南國度假,日本沖繩">
+    <title>Tommy 看世界 - 沖繩</title>
+    <link rel="icon" href="網頁縮圖.ico" />
+    <style>
+      body {
+        font-family: Calibri, Arial, sans-serif; /* 首選 Calibri，次選 Arial */
+        margin: 0;
+        overflow-x: hidden; /* 禁止水平滾動 */
+        background-color: #f4f4f9;
+        color: #333;
+      }
+
+      h1 {
+        font-size: 40px;
+        font-weight: bold;
+      }
+
+      h2 {
+        font-size: 32px;
+        font-weight: bold;
+        color: #2a90a7;
+        display: inline-block;
+        background-color: #cee5e8;
+      }
+
+      h3 {
+        font-size: 26px;
+        margin: 0 0 1rem;
+        font-weight: bold;
+        text-decoration: underline;
+      }
+
+      h4 {
+        font-size: 18px;
+        font-weight: normal;
+        line-height: 1.8;
+      }
+
+      h5 {
+        font-size: 16px;
+        font-weight: normal;
+        margin: 0;
+      }
+
+      h6 {
+        font-size: 10px;
+        color: #fff;
+        margin: 0;
+        text-align: center;
+        line-height: 50px; /* 高度對齊 */
+      }
+
+      nav {
+        background-color: #78bcc4;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;                     /* 讓 nav 寬度隨螢幕自適應 */
+        padding: 0.8rem 5vw;               /* 左右 padding 用 5% 寬度 */
+        box-sizing: border-box;         /* 確保 padding 不會影響寬度總長 */
+        position: fixed;
+        top: 0;
+        z-index: 1000;
+      }
+
+      .nav-left .logo img {
+        height: 5vw; /* 高度為螢幕寬度的 5% */
+        transform: translateX(-2vw); /* 向左移動 2% 寬度 */
+        max-width: 100%; /* 確保不會超過容器 */
+        height: auto; /* 保持圖片比例（建議與 max-height 搭配） */
+        max-height: 3rem;
+      }
+
+      .nav-right {
+        display: flex;
+        align-items: center;
+        margin-left: auto; /* 推到右側 */
+        padding-left: 5%;   /* 內部元素間距，彈性設計 */
+      }
+
+      nav a {
+        color: #eff5f5;
+        text-decoration: none;
+        padding: 1vh 1vw;
+        margin: 0 1vw;
+        transition: transform 0.3s;
+      }
+
+      nav a:hover {
+        transform: translateY(-0.5vh); /* 根據視窗高度調整 */
+      }
+
+      .dropdown {
+        position: relative;
+        display: inline-block;
+      }
+
+      .dropdown-content {
+        width: 100%; /* 佔滿父層寬度 */
+        max-width: 20vw; /* 限制最大寬度 */
+        display: none;
+        position: absolute;
+        background-color: #78bcc4;
+        min-width: 10em; /* 取代 160px，以字體大小作為比例單位 */
+        border-radius: 0.25em;
+        box-shadow: 0 0.5em 1em rgba(0, 0, 0, 0.2); /* 改為相對單位 */
+        padding: 0.2rem 0;
+        z-index: 999;
+      }
+
+      .dropdown-content a {
+        color: #eff5f5;
+        display: block;
+        transition: transform 0.3s;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.3); /* 更淡配色、柔和過渡 */
+        padding: 0.6em 1em;
+        font-size: 1em;
+      }
+
+      .dropdown-content a:last-child {
+        border-bottom: none;
+      }
+
+      .dropdown-content a:hover {
+        transform: translateY(-0.25em); /* 改為相對單位 */
+      }
+
+      .intro-section {
+        background-color: #eff5f5;
+        display: flex;
+        flex-wrap: wrap; /* 確保在小螢幕可換行 */
+        padding: 2rem 5%;
+        margin-top: 4em; /* 根據導航列高度調整 */
+      }
+
+      .intro-section h4 {
+        max-width: 85%; /* 改為相對單位，避免固定寬度限制 */
+        line-height: 1.8;
+      }
+
+      .intro-section .left {
+        width: 60%;
+        padding-right: 1%;
+      }
+
+      .intro-section .right {
+        width: 39%;
+      }
+
+      .destination-section {
+        display: flex;
+        flex-wrap: wrap;               /* 小螢幕時允許換行 */
+        padding: 1rem 5%; /* 左右內間距為螢幕的10% */
+        background-color: white;
+      }
+
+      .destination-main {
+        width: 72%;                    /* 主要內容佔 72%，略縮以保留間距 */
+        margin-right: 3%;              /* 與 sidebar 間保留間距（約為 3%） */
+        box-sizing: border-box;
+      }
+
+      .destination-sidebar {
+        width: 25%;                    /* 側邊欄佔 25% */
+        padding-left: 2%;             /* 相對內邊距 */
+        margin-top: 2rem;
+        box-sizing: border-box;
+      }
+
+      .sidebar-image-container {
+        margin-bottom: 1rem;
+        text-align: center; /* 置中圖片 */
+      }
+
+      .sidebar-image-container img {
+        width: 90%;         /* 圖片寬度為容器寬度的 90% */
+        height: auto;       /* 高度自動，保持比例 */
+        max-height: 60vh;   /* 避免圖片過高，佔螢幕最大 60% 高 */
+        object-fit: cover;  /* 裁切處理長圖 */
+      }
+
+      .two-vertical-images {
+        display: flex;
+        justify-content: space-between;
+        gap: 4%; /* 使用百分比間距更彈性 */
+        margin-top: 2rem;
+        margin-bottom: 2rem;
+        flex-wrap: wrap; /* 若畫面太小，允許換行 */
+      }
+
+      .two-vertical-images img {
+        width: 48%; /* 每張圖片約佔一半（加上 gap 剛好 100%） */
+        height: auto; /* 保持原比例 */
+        object-fit: cover;
+        display: block;
+        margin: 0 auto;
+      }
+
+      .recommendation-section {
+        margin-top: 3vh; /* 與上方文字的間距 */
+        text-align: center;
+        position: sticky;
+        top: 80px; /* 空出導覽列的高度，確保推薦區不被覆蓋 */
+        z-index: 10; /* 提高層級，避免被其他內容遮蓋 */
+        padding: 0 5%;
+      }
+
+      .recommendation-section h3 {
+        font-size: 1.125rem;
+        font-weight: bold;
+        margin-bottom: 1vh; /* 與按鈕區的距離 */
+      }
+
+      .recommendation-buttons {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 0.5em; /* 按鈕之間的間距 */
+      }
+
+      .recommendation-buttons button {
+        padding: 0.5em 1em;
+        font-size: 0.875rem;
+        color: white;
+        background-color: #78bcc4;
+        border: none;
+        border-radius: 0.25rem;
+        transition: transform 0.3s;
+        font-family: Arial, sans-serif;
+      }
+
+      .recommendation-buttons button:hover {
+        transform: translateY(-3px);
+      }
+
+      .contact-section {
+        padding: 4vh 8vw; /* 上下與左右間距 */
+        background-color: #eff5f5; /* 淺灰背景 */
+        text-align: center; /* 確保內容置中對齊 */
+      }
+
+      .contact-item h3 {
+        font-size: 1.125rem; /* 調整標題字體大小 */
+        margin: 0; /* 移除多餘的間距 */
+        text-decoration: none; /* 移除底線 */
+      }
+
+      footer {
+        background-color: #000;
+        color: white;
+        height: 3vh; /* 使用相對單位，高度占螢幕高度的 3% */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 1.5rem; /* 使用相對字體大小 */
+        padding: 0.5rem 0; /* 確保小螢幕時內容不擠壓 */
+      }
+
+      #expandable-menu {
+        position: fixed; 
+        right: 0;
+        width: 26vw; /* 目錄寬度與 sidebar 齊寬 */
+        max-width: 90%; /* 避免在小螢幕太寬 */
+        transform: translateX(100%); /* 初始狀態：隱藏在右側 */
+        transition: transform 0.3s ease;
+        background-color: #f4f4f9; /* 與網站背景一致 */
+        z-index: 1000;
+        box-sizing: border-box;
+      }
+
+      /* 收闔按鈕 */
+      #menu-toggle {
+        position: fixed;
+        top: 45%;
+        right: 0; /* 永遠貼在右側 */
+        transform: translateY(-50%) translateX(0);
+        width: 2.5em; /* 增大按鈕寬度 */
+        height: 5em; /* 增大按鈕高度 */
+        background-color: #78bcc4;
+        color: white;
+        border-radius: 0.4em 0 0 0.4em;
+        display: flex;
+        justify-content: center; /* 水平居中 */
+        align-items: center; /* 垂直居中 */
+        z-index: 2000; /* 要比 expandable-menu 更高，避免被蓋住 */
+        cursor: pointer;
+        box-shadow: -0.1em 0 0.3em rgba(0,0,0,0.1);
+        transition: transform 0.3s ease; /* 平滑移動 */
+      }
+
+      #menu-toggle::after {
+        content: "目錄"; /* 在按鈕內顯示 "目錄" */
+        font-size: 1rem;
+        color: white; /* 設定字體顏色為白色 */
+        writing-mode: vertical-rl; /* 使文字垂直排列 */
+      }
+
+      #menu-toggle:hover {
+        background-color: #78bcc4;
+      }
+
+      /* 目錄內容 */
+      #menu-content {
+        padding: 0.5rem 5%;
+        overflow-y: auto;
+        height: 100%;
+        box-sizing: border-box;
+      }
+
+      #menu-content h4 {
+        font-weight: bold;
+        margin-top: 0;
+        font-size: 1.2rem;
+      }
+
+      #menu-list {
+        list-style: none;
+        padding: 0;
+      }
+
+      #menu-list li {
+        margin-bottom: 1vh;
+      }
+
+      #menu-list a {
+        color: #2a90a7;
+        text-decoration: none;
+        transition: color 0.3s;
+        font-size: 1rem; /* 使用相對字體大小 */
+      }
+
+      #menu-list a:hover {
+        color: #78bcc4;
+      }
+
+      #menu-list .sub-item {
+        margin-left: 8%; /* 調整縮排距離 */
+        font-size: 0.9rem; /* 可選：調整子項目字體大小 */
+      }
+
+      /* 目錄展開狀態 */
+      #expandable-menu.open {
+        transform: translateX(0);
+      }
+
+      /* === 響應式調整：針對手機與小螢幕設備 === */
+      @media (max-width: 768px) {
+        nav {
+          flex-direction: row;
+          flex-wrap: wrap;
+          align-items: center;
+          justify-content: space-between;
+          padding: 1rem 5vw;  /* 窄螢幕時減少左右留白 */
+          width: 100%;
+          box-sizing: border-box;
+        }
+
+        .nav-right {
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          gap: 0.5rem;
+          transform: none;
+          width: auto;
+          white-space: nowrap;               /* 禁止內容自動換行 */
+        }
+
+        nav a {
+          padding: 0.5rem 0.5rem;           /* 減少垂直padding */
+          margin: 0 0.3rem;
+          font-size: 0.85rem;
+          white-space: nowrap;               /* 確保文字不換行 */
+          overflow: hidden;
+          text-overflow: ellipsis;           /* 若內容超出，顯示省略號 */
+        }
+
+        .nav-dropdown {
+          width: 60%; /* 或者用 max-content, fit-content 看需求 */
+          font-size: 0.85rem; /* 調整字體大小和導覽列一致 */
+          padding: 0.5rem;
+        }
+      
+        .nav-dropdown a {
+          font-size: inherit; /* 確保跟 .nav-dropdown 一樣大 */
+          padding: 0.5rem 1rem;
+          white-space: normal; /* 可選：讓字在必要時換行 */
+        }
+
+        .dropdown-content {
+          width: 12vw;
+          min-width: 8em; /* 保證至少能顯示幾個字 */
+          max-width: none;
+        }
+
+        .dropdown-content a {
+          font-size: 0.85rem;
+        }
+        
+        .intro-section {
+          flex-direction: column;
+          padding: 8%;
+        }
+
+        .intro-section .left,
+        .intro-section .right {
+          width: 100%;
+          padding: 0;
+          flex: 1 1 100%;
+        }
+
+        .intro-section .right {
+          margin-top: 1.5rem;
+          display: flex;
+          justify-content: center;
+        }
+
+        .intro-section h4 {
+          max-width: 100%;
+          font-size: 1rem;
+        }
+
+        .destination-grid {
+          flex-direction: column;
+          gap: 1rem;
+        }
+
+        .destination-section h4 {
+          font-size: 1rem;
+        }
+
+        .destination-item {
+          max-width: 100%;
+          width: 100%;
+        }
+
+        .destination-item.a_role_with_2 {
+          position: static;
+          left: auto;
+        }
+
+        .destination-main,
+        .destination-sidebar {
+          width: 100%;
+          margin: 0;
+          padding: 0;
+        }
+
+        .destination-sidebar {
+          margin-top: 2rem;
+        }
+
+        .recommendation-buttons button {
+          width: 100%; /* 小螢幕按鈕全寬排列 */
+        }
+
+        .contact-section {
+          padding: 3vh 5vw;
+        }
+
+        .contact-item h3 {
+          font-size: 1rem;
+        }
+
+        /* 目錄區寬度改為螢幕寬度的40% */
+        #expandable-menu {
+          width: 40vw !important; /* 用vw方便響應螢幕寬度 */
+          max-width: 90%; /* 保留原本max-width避免太寬 */
+        }
+      
+        #expandable-menu,
+        #expandable-menu * {
+          font-size: 85% !important;
+        }
+              
+        #menu-toggle {
+          width: 75%;
+          max-width: 1.875em;
+          min-width: 1.875em;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <div class="nav-left">
+        <div class="logo">
+          <a href="首頁.html">
+            <img src="網站Logo.png" alt="網站 Logo" />
+          </a>
+        </div>
+      </div>
+      <div class="nav-right">
+        <a href="首頁.html">關於我</a>
+        <div class="dropdown">
+          <a class="dropdown-toggle">亞洲旅遊</a>
+          <div class="dropdown-content">
+            <a href="中國.html">中國</a>
+            <a href="日本.html">日本</a>
+            <a href="新加坡.html">新加坡</a>
+            <a href="馬來西亞.html">馬來西亞</a>
+            <a href="泰國.html">泰國</a>
+            <a href="印尼.html">印尼</a>
+            <a href="越南.html">越南</a>
+          </div>
+        </div>
+        <div class="dropdown">
+          <a class="dropdown-toggle">歐洲旅遊</a>
+          <div class="dropdown-content">
+            <a href="英國.html">英國</a>
+            <a href="法國.html">法國</a>
+            <a href="荷蘭.html">荷蘭</a>
+            <a href="比利時.html">比利時</a>
+            <a href="盧森堡.html">盧森堡</a>
+            <a href="瑞士.html">瑞士</a>
+            <a href="摩納哥.html">摩納哥</a>
+            <a href="西班牙.html">西班牙</a>
+            <a href="葡萄牙.html">葡萄牙</a>
+            <a href="安道爾.html">安道爾</a>
+            <a href="丹麥.html">丹麥</a>
+            <a href="瑞典.html">瑞典</a>
+            <a href="波蘭.html">波蘭</a>
+          </div>
+        </div>
+        <div class="dropdown">
+          <a class="dropdown-toggle">美洲旅遊</a>
+          <div class="dropdown-content">
+            <a href="美國.html">美國</a>
+            <a href="加拿大.html">加拿大</a>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <div class="intro-section">
+      <div class="left">
+        <h1>Tommy 在沖繩</h1>
+        <h4>
+          <b>沖繩 (Okinawa)</b>
+          位於日本最南端，原為獨立王國琉球，自古就是東亞海上貿易的重要樞紐，與中國、朝鮮、東南亞及日本等地進行廣泛貿易。1609 年薩摩藩入侵琉球，雖保留自主地位但實際成為日本幕府的附庸，1879 年日本明治政府正式廢除琉球王國，將其併入版圖改為「沖繩縣」。
+        </h4>
+        <h4>二戰末期沖繩成為太平洋戰爭最慘烈的戰場之一，戰後長期由美軍託管，直到 1972 年才歸還日本，但至今仍駐有大量美軍基地，現今沖繩融合了琉球傳統文化與日本現代風貌，擁有獨特的音樂、舞蹈、語言與飲食文化，是熱門的度假勝地，努力平衡經濟發展與歷史文化保育。</h4>
+      </div>
+      <div class="right">
+        <img src="日本照片\沖繩\沖繩_介紹.jpg" style="width: 100%; height: auto; max-width: 100%;" />
+      </div>
+    </div>
+
+    <div class="destination-section">
+      <div class="destination-main">
+        <h2>沖繩交通</h2>
+        <h3>機場交通</h3>
+        <h4>
+          那霸空港距離那霸市區不遠，下機後可以直接搭乘單軌電車進入那霸市區，可以直接刷信用卡進站，機場附近也有租車的地方，是在沖繩旅遊的方便選擇。
+        </h4>
+        <h3>島上交通</h3>
+        <h4>
+          沖繩的大眾交通運輸較不發達，基本上離開那霸市區就是接近沒車沒腳的狀態，因此在沖繩旅遊如果要去到那霸市區以外的地方就推薦租車，推薦可以在 klook 上找尋租車選項，價格透明也能用中文進行溝通。如果是在市區遊玩則可以搭乘單軌電車或公車，要特別注意沖繩的公車只能用當地交通卡或現金付車資，要搭乘記得要備妥零錢。
+        </h4>
+        <div style="text-align: center">
+          <img src="日本照片\沖繩\沖繩_交通.jpg" style="width: 90%; max-width: 600px; height: auto; margin: 0.5rem;" />
+        </div>
+        <br /><br />
+        <h2>沖繩住宿</h2>
+        <h4>
+          沖繩旅遊主要分為三個地區，分別是南部的那霸、中部的嘉手納和恩納，以及北部的本部，分別都有不同的風情。在那霸市區推薦住在國際通附近，逛街與餐廳的選項最多，而其他地區則可以依照行程選擇恩納村或本部町附近，旅宿的選擇也比較多。
+        </h4>
+        <div style="text-align: center">
+          <img src="日本照片\沖繩\沖繩_住宿.png" style="width: 90%; max-width: 600px; height: auto; margin: 0.5rem;" />
+        </div>
+        <br /><br />
+        <h2>沖繩景點</h2>
+        <h3>國際通</h3>
+        <h4>
+          國際通是那霸最熱鬧的商業街，長約 1.6 公里，從縣廳前延伸至安里十字路口。這條街道原為二戰後重建的象徵，逐漸發展為集購物、美食與娛樂於一體的觀光熱點，街道兩側林立各式商店、餐廳、紀念品店與百貨公司，販售沖繩傳統工藝品、琉球玻璃、泡盛酒與各種伴手禮。每逢節日或週末，街頭常有表演活動與祭典，充滿在地活力與文化氛圍。
+        </h4>
+        <div style="text-align: center">
+          <img src="日本照片\沖繩\OK1.jpg" style="width: 90%; max-width: 600px; height: auto; margin: 0.5rem;" />
+          <img src="日本照片\沖繩\OK2.jpg" style="width: 90%; max-width: 600px; height: auto; margin: 0.5rem;" />
+          <img src="日本照片\沖繩\OK3.jpg" style="width: 90%; max-width: 600px; height: auto; margin: 0.5rem;" />
+        </div>
+        <br /><br /><br />
+        <h3>波上宮 (なみのうえぐう)</h3>
+        <h4>
+          波上宮是那霸最具代表性的神社，建於琉球王國時代，是沖繩八大神社之一，坐落在波之上海濱的懸崖上，俯瞰著碧藍的大海，被視為守護海上安全與國土平安的重要信仰中心。波上宮主祭神為伊弉冊尊與速玉男尊，傳說有保佑航海、平安、生意興隆的神力，因此深受當地民眾與漁民信仰。神社現存建築為戰後重建，融合了日本神道建築風格與沖繩傳統元素，每年新年與祭典期間，波上宮吸引大量信徒與觀光客前來參拜祈福。
+        </h4>
+        <div style="text-align: center">
+          <img src="日本照片\沖繩\OK4.jpg" style="width: 90%; max-width: 600px; height: auto; margin: 0.5rem;" />
+          <img src="日本照片\沖繩\OK5.jpg" style="width: 100%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+        </div>
+        <br /><br /><br />
+        <h3>首里城</h3>
+        <h4>
+          首里城是琉球王國時代的王宮與政治中心，也是沖繩最具代表性的歷史建築，建於 14 世紀，融合中國與日本建築風格，展現琉球獨特的文化特色，城內設有正殿、奉神門、守禮門等多個重要建築，其中正殿以其鮮紅外觀與華麗裝飾最為著名。首里城曾多次毀於火災與戰爭，特別在二戰沖繩戰役中幾乎全毀，後於 1992 年重建，並於 2000 年被列為世界文化遺產。然而 2019 年再度發生火災，正殿與部分建築燒毀，目前正積極進行修復工程。
+        </h4>
+        <div style="text-align: center">
+          <img src="日本照片\沖繩\OK6.jpg" style="width: 100%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+          <img src="日本照片\沖繩\OK7.jpg" style="width: 100%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+          <img src="日本照片\沖繩\OK8.jpg" style="width: 100%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+        </div>
+        <br /><br /><br />
+        <h3>永旺夢樂城 (AEON Mall)</h3>
+        <h4>
+          永旺夢樂城是日本知名的連鎖大型購物中心，在日本各地及亞洲多國均有分店，結合購物、餐飲、娛樂與休閒設施於一體，是當地民眾與觀光客的熱門去處。商場內進駐眾多品牌專賣店、超市、服飾、電器、美妝與生活用品店，並設有美食街、咖啡廳與多國餐廳，還附設電影院、兒童遊樂區與大型停車場，適合家庭一同出遊。
+        </h4>
+        <div style="text-align: center">
+          <img src="日本照片\沖繩\OK9.jpg" style="width: 90%; max-width: 600px; height: auto; margin: 0.5rem;" />
+        </div>
+        <br /><br /><br />
+        <h3>青之洞窟</h3>
+        <h4>
+          青之洞窟位於日本沖繩本島恩納村的真榮田岬，是著名的海蝕洞穴潛水與浮潛景點，以洞內呈現夢幻藍光而聞名。當陽光從洞口照射進海水中，海面因光線折射而閃耀出透明藍光，形成如寶石般的絢麗景象，因此被稱為「青之洞窟」，是觀賞熱帶魚與珊瑚的絕佳地點。
+        </h4>
+        <div style="text-align: center">
+          <img src="日本照片\沖繩\OK10.jpg" style="width: 100%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+        </div>
+        <br /><br /><br />
+        <h3>嘉手納基地 (Kadena Air Base)</h3>
+        <h4>
+          嘉手納基地位於嘉手納町，是美國在亞洲規模最大的空軍基地，也是美日安保體系的重要據點。基地由美軍與日本自衛隊共同使用，佔地超過 20 平方公里，設有兩條長距離跑道可供各型軍機起降，包括偵察機、戰鬥機與空中加油機，嘉手納基地自二戰結束後即由美軍接管，對地區安全與軍事戰略具有關鍵作用。然而基地的存在也引發當地居民對噪音、事故與土地使用等問題的長期關注與抗議，儘管爭議不斷，嘉手納基地仍是沖繩重要的軍事與國際政治地標。
+        </h4>
+        <h4>想要一覽嘉手納基地可以在 Google Map 搜尋 Sky Lounge Kadena，此處開闊的視野吸引軍事迷與旅客前來觀看飛機起降，是觀賞基地的最佳地點。</h4>
+        <div style="text-align: center">
+          <img src="日本照片\沖繩\OK11.jpg" style="width: 100%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+          <img src="日本照片\沖繩\OK12.jpg" style="width: 100%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+        </div>
+        <br /><br /><br />
+        <h3>美國村 (American Village)</h3>
+        <h4>
+          美國村位於北谷町，是一個融合美式風情與購物娛樂的熱門旅遊區，此地原為美軍基地，後經改建發展成多元化的休閒區，擁有色彩繽紛的建築與寬闊的步行街，充滿濃厚的美國西岸風格。美國村內設有大型購物中心、電影院、餐廳、咖啡館及酒吧，夜晚點亮時分外迷人，可在此享受購物、美食與夜生活，還可參加音樂節與各種活動。
+        </h4>
+        <div style="text-align: center">
+          <img src="日本照片\沖繩\OK13.jpg" style="width: 90%; max-width: 600px; height: auto; margin: 0.5rem;" />
+          <img src="日本照片\沖繩\OK14.jpg" style="width: 90%; max-width: 600px; height: auto; margin: 0.5rem;" />
+          <img src="日本照片\沖繩\OK15.jpg" style="width: 90%; max-width: 600px; height: auto; margin: 0.5rem;" />
+          <img src="日本照片\沖繩\OK16.jpg" style="width: 90%; max-width: 600px; height: auto; margin: 0.5rem;" />
+        </div>
+        <h4>美國村在每周六的晚上 8 點都有煙火秀，如果到訪的日期剛好也可以留到晚上欣賞煙火秀。</h4>
+        <div style="text-align: center">
+          <img src="日本照片\沖繩\OK17.jpg" style="width: 90%; max-width: 600px; height: auto; margin: 0.5rem;" />
+          <img src="日本照片\沖繩\OK18.jpg" style="width: 90%; max-width: 600px; height: auto; margin: 0.5rem;" />
+        </div>
+        <br /><br /><br />
+        <h3>萬座毛</h3>
+        <h4>
+          萬座毛位於西海岸的恩納村，以壯麗的海蝕岩崖聞名，懸崖高聳入海形成獨特的象鼻岩形狀，猶如大象伸出長鼻一般，故名「萬座毛」（意為“一萬人坐的草地”）。萬座毛的草原寬廣平坦，可以欣賞蔚藍海洋與波濤洶湧的太平洋，晴朗天氣下遠望可見附近的小島與廣闊海景，也是觀看夕陽的熱門地點。
+        </h4>
+        <div style="text-align: center">
+          <img src="日本照片\沖繩\OK19.jpg" style="width: 90%; max-width: 600px; height: auto; margin: 0.5rem;" />
+          <img src="日本照片\沖繩\OK20.jpg" style="width: 100%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+        </div>
+        <br /><br /><br />
+        <h3>沖繩美麗海水族館 (沖縄美ら海水族館)</h3>
+        <h4>
+          沖繩美麗海水族館隸屬於沖繩海洋博公園，於 2002 年開館，致力於展示沖繩及世界各地的海洋生物，以其龐大的海洋展示池和豐富的海洋生態展示而聞名。水族館的核心展區是「黑潮之海」，擁有世界上最大的水族箱之一，展示著鯨鯊、魔鬼魚等大型海洋生物，能近距離觀賞這些壯麗的海洋生物，還設有珊瑚礁展示區、熱帶魚展示區等多樣化的展覽，能深入了解海洋生物的多樣性和生態系統。
+        </h4>
+        <div style="text-align: center">
+          <img src="日本照片\沖繩\OK21.jpg" style="width: 90%; max-width: 600px; height: auto; margin: 0.5rem;" />
+          <img src="日本照片\沖繩\OK22.jpg" style="width: 90%; max-width: 600px; height: auto; margin: 0.5rem;" />
+          <img src="日本照片\沖繩\OK23.jpg" style="width: 90%; max-width: 600px; height: auto; margin: 0.5rem;" />
+          <img src="日本照片\沖繩\OK24.jpg" style="width: 90%; max-width: 600px; height: auto; margin: 0.5rem;" />
+          <img src="日本照片\沖繩\OK25.jpg" style="width: 100%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+          <img src="日本照片\沖繩\OK26.jpg" style="width: 100%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+        </div>
+        <br /><br /><br />
+        <h3>備瀨崎海灘</h3>
+        <h4>
+          備瀨崎海灘位於本部町，是一處風景優美且寧靜的海灘，海灘以潔白細緻的沙灘和清澈見底的碧藍海水聞名，還有豐富的珊瑚礁生態，是浮潛和潛水的熱門地點，附近的珊瑚礁為多種熱帶魚類提供棲息地，在水中能觀察到五彩繽紛的海洋生物，與繁忙的沖繩南部海灘相比，備瀨崎更顯安靜。
+        </h4>
+        <div style="text-align: center">
+          <img src="日本照片\沖繩\OK27.jpg" style="width: 90%; max-width: 600px; height: auto; margin: 0.5rem;" />
+          <img src="日本照片\沖繩\OK28.jpg" style="width: 100%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+          <img src="日本照片\沖繩\OK29.jpg" style="width: 90%; max-width: 600px; height: auto; margin: 0.5rem;" />
+        </div>
+        <br /><br /><br />
+        <h3>古宇利大橋</h3>
+        <h4>
+          古宇利大橋連接今歸仁村與古宇利島，全長約 2 公里，於 2005 年完工，促進了古宇利島的觀光發展，駕車或步行穿越古宇利大橋可飽覽蔚藍海水與白色沙灘交織的壯麗景致。古宇利島本身以其清澈海水、珊瑚礁和浪漫的“心形岩”聞名，被譽為“沖繩的愛之島”。
+        </h4>
+        <div style="text-align: center">
+          <img src="日本照片\沖繩\OK30.jpg" style="width: 100%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+          <img src="日本照片\沖繩\OK31.jpg" style="width: 100%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+        </div>
+        <br /><br /><br />
+        <h3>ター滝 (Ta Waterfall)</h3>
+        <h4>
+          ター滝位於本部町，被濃密的熱帶森林環繞，水流從岩石間傾瀉而下，形成壯觀的瀑布景致，此地水質清澈，適合喜歡登山健行與親近大自然的旅人，可感受山林的寧靜與清新，享受遠離都市喧囂的靜謐時光。前往瀑布需要溯溪而上大約 15 分鐘，建議穿著適合的水鞋並注意安全。
+        </h4>
+        <div style="text-align: center">
+          <img src="日本照片\沖繩\OK32.jpg" style="width: 90%; max-width: 600px; height: auto; margin: 0.5rem;" />
+          <img src="日本照片\沖繩\OK33.jpg" style="width: 90%; max-width: 600px; height: auto; margin: 0.5rem;" />
+        </div>
+        <br />
+        <h2>沖繩美食</h2>
+        <h3>傑克牛排館 (Jack’s Steak House) </h3>
+        <h4>
+          傑克牛排館是一家擁有近 70 年歷史的老字號牛排館，融合美式與日式的牛排做法，主打嫩肩里脊和紐約客牛排，肉質鮮嫩多汁搭配特製醬汁風味獨特。除了牛排，店內還供應多種餐點，如三明治、塔可飯等，也提供冷凍牛排和醬料的線上販售。由於人潮眾多，在飯點高峰時間段常常需要等到 30 分鐘甚至 1 個小時，因此推薦在離峰或是剛開門營業時到訪比較不需要等候太久。
+        </h4>
+        <div style="text-align: center">
+          <img src="日本照片\沖繩\OK34.jpg" style="width: 100%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+        </div>
+        <br /><br /><br />
+        <h3>琉球之牛</h3>
+        <h4>
+          琉球之牛以提供優質琉球和牛聞名，強調選用本地飼養的和牛，肉質鮮嫩多汁口感細膩且風味濃郁，琉球之牛的燒肉料理結合傳統和現代烹調手法，也提供多種沖繩特色小菜，讓用餐體驗更豐富。琉球之牛注重食材品質與服務，是想深入體驗沖繩美食文化的必訪之地。<b>強烈建議要先在線上訂位</b>，不然蠻容易吃不到的。
+        </h4>
+        <div style="text-align: center">
+          <img src="日本照片\沖繩\OK35.jpg" style="width: 90%; max-width: 600px; height: auto; margin: 0.5rem;" />
+        </div>
+        <div class="two-vertical-images">
+          <img src="日本照片\沖繩\OK36-1.jpg" />
+          <img src="日本照片\沖繩\OK36-2.jpg" />
+        </div>
+        <div class="two-vertical-images">
+          <img src="日本照片\沖繩\OK37-1.jpg" />
+          <img src="日本照片\沖繩\OK37-2.jpg" />
+        </div>
+        <br /><br /><br />
+        <h3>Hale Noa Café</h3>
+        <h4>
+          Hale Noa Café 位置臨近阿拉哈海灘，氛圍輕鬆溫馨，餐點選擇豐富，包括招牌「Hale Noa 法式吐司」、各式 Eggs Benedict (如 Kalua Pork、煙鮭口味）、香蒜蝦、牛油煎餅、Smoothie 與花茶等健康飲品，完整的還原美式早午餐的風格。店內裝潢以「Country Shabby」為主題，裝點有貓腳印圖案與海洋元素牆飾，坐在店中彷彿穿越到在加州或夏威夷，也附設戶外座位。由於附近就是嘉手納的美軍基地，因此來客幾乎都是美軍軍人及其眷屬，我們是整家店裡唯一的亞洲面孔，在沖繩算蠻神奇的體驗。
+        </h4>
+        <div style="text-align: center">
+          <img src="日本照片\沖繩\OK38.jpg" style="width: 90%; max-width: 600px; height: auto; margin: 0.5rem;" />
+          <img src="日本照片\沖繩\OK39.jpg" style="width: 90%; max-width: 600px; height: auto; margin: 0.5rem;" />
+        </div>
+        <br /><br /><br />
+        <h3>Taco Rice Cafe Kijimunaa (タコライスカフェ きじむなぁ)</h3>
+        <h4>
+          Taco Rice Cafe Kijimunaa 位於美國村，最受歡迎的是創意菜品「Omu Taco」，將滑嫩半熟蛋覆蓋在塔可肉、起司、番茄與萵苣鋪在飯上的經典塔可飯上，再淋上辣醬與美乃滋，既視覺誘人又味道豐富 。除了招牌蛋包塔可飯，也提供基本塔可飯、兒童餐，以及牛肉醬味型、咖哩口味、豆醬口味等多種塔可飯選擇和豐富配料 (如酪梨與照燒雞)。作為沖繩塔可飯文化的代表，Kijimunaa 是品嘗在地 Fusion 的好選擇。
+        </h4>
+        <div style="text-align: center">
+          <img src="日本照片\沖繩\OK40.jpg" style="width: 90%; max-width: 600px; height: auto; margin: 0.5rem;" />
+        </div>
+        <br /><br /><br />
+        <h3>Cafe CAHAYA BULAN (チャハヤブラン)</h3>
+        <h4>
+          Cafe CAHAYA BULAN 座落於本部町備瀬，靠近美麗海水族館與福木林道，是一間極具海景魅力的夏威夷風格咖啡館，主打清新健康的早午餐，如芒果煎餅、巧克力香蕉冰沙、火龍果冰沙及 acai 碗等 ，店內設計融合印尼與海洋元素，分為室內與露台，可俯瞰蔚藍海景與伊江島遙望，是午後品嘗下午茶欣賞海景的好去處。
+        </h4>
+        <div style="text-align: center">
+          <img src="日本照片\沖繩\OK41.jpg" style="width: 90%; max-width: 600px; height: auto; margin: 0.5rem;" />
+          <img src="日本照片\沖繩\OK42.jpg" style="width: 100%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+          <img src="日本照片\沖繩\OK43.jpg" style="width: 100%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+        </div>
+        <br /><br /><br />
+        <h3>古宇利蝦蝦飯 (KOURI SHRIMP)</h3>
+        <h4>
+          古宇利蝦蝦飯位於古宇利島，坐落於古宇利大橋附近，是從餐車起家的夏威夷風蒜香蝦飯，主打菜為蒜香蝦飯，有原味、辣味、奶油口味與綜合可選，蝦子巨大鮮甜，開背處理易食用，蒜味與奶油完美融合，搭配白飯超下飯。用餐空間分室內外，三樓露台可眺望古宇利大橋與碧海視野絕佳，人潮蠻多的最好在開店時間前抵達才不會在烈日下等待太久。
+        </h4>
+        <div style="text-align: center">
+          <img src="日本照片\沖繩\OK44.jpg" style="width: 90%; max-width: 600px; height: auto; margin: 0.5rem;" />
+          <img src="日本照片\沖繩\OK45.jpg" style="width: 100%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+        </div>
+        <br /><br /><br />
+        <h3>宮里そば (みやざとそば)</h3>
+        <h4>
+          宮里そば 是名護市的在地人氣沖繩蕎麥麵店，開業於昭和年代，主打經濟實惠、快速上桌的沖繩そば，麵條扁平中粗，湯底以鰹魚與昆布熬製味道清甜，招牌的「ソーキそば」配有軟嫩的豬肋骨與結び昆布，「三枚肉そば」使用帶皮三層肉，口感油潤香濃，是品嘗沖繩麵的好選項。
+        </h4>
+        <div style="text-align: center">
+          <img src="日本照片\沖繩\OK46.jpg" style="width: 90%; max-width: 600px; height: auto; margin: 0.5rem;" />
+        </div>
+        <br />
+      </div>
+      <div class="destination-sidebar">
+        <div class="sidebar-image-container">
+          <img src="側邊欄自我介紹.jpg" />
+        </div>
+        <h5>
+          Hi!
+          我是Tommy，我熱愛旅遊也喜歡藉由影像紀錄旅程中的點點滴滴，透過文字將我在旅途中的所見所聞分享給大家。旅行對我而言不只是吃吃喝喝，而是能在行萬里路間感受世界的脈動，體驗不同的文化，希望藉由我的分享能讓大家看到更多世界的美好。
+        </h5>
+        <br />
+        <h5>
+          想更了解我或與我聯絡:
+          <a
+            href="https://www.instagram.com/tommy_techvoyage/"
+            target="_blank"
+            style="color: inherit; text-decoration: underline"
+          >
+            <b>Instagram</b>
+          </a>
+        </h5>
+      </div>
+    </div>
+    <div class="contact-section">
+      <div class="contact-item">
+        <h3>
+          想更了解我或與我聯絡:
+          <a
+            href="https://www.instagram.com/tommy_techvoyage/"
+            target="_blank"
+            style="color: inherit; text-decoration: underline"
+          >
+            Instagram
+          </a>
+        </h3>
+      </div>
+    </div>
+    <footer>
+      <h6>COPYRIGHT © 2025 Tommy 看世界 All rights reserved.</h6>
+    </footer>
+    <div id="menu-toggle"></div>
+    <div id="expandable-menu">
+      <div id="menu-content">
+        <h4>目錄</h4>
+        <ul id="menu-list"></ul>
+      </div>
+    </div>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const menu = document.getElementById("expandable-menu");
+        const toggle = document.getElementById("menu-toggle");
+        const menuList = document.getElementById("menu-list");
+        const destinationMain = document.querySelector(".destination-main");
+
+        // 點擊按鈕切換目錄狀態
+        toggle.addEventListener("click", () => {
+          menu.classList.toggle("open");
+
+          const menuWidth = menu.offsetWidth; // 獲取目前展開的目錄寬度
+
+          if (menu.classList.contains("open")) {
+            // 讓按鈕向左平移與 menu 一樣的寬度
+            toggle.style.transform = `translateY(-50%) translateX(-${menuWidth}px)`;
+          } else {
+            // 收回原位
+            toggle.style.transform = `translateY(-50%) translateX(0)`;
+          }
+        });
+
+        window.addEventListener("load", () => {
+          if (menu.classList.contains("open")) {
+            const menuWidth = menu.offsetWidth;
+            toggle.style.transform = `translateY(-50%) translateX(-${menuWidth}px)`;
+          }
+        });
+
+        // 從 destination-main 區域提取 h2 和 h3，動態生成目錄
+        const headings = destinationMain.querySelectorAll("h2, h3");
+        headings.forEach((heading, index) => {
+          // 確保每個 h2 和 h3 都有唯一的 id
+          if (!heading.id) {
+            heading.id = `heading-${index}`;
+          }
+
+          const listItem = document.createElement("li");
+          const link = document.createElement("a");
+          link.textContent = heading.textContent;
+          link.href = `#${heading.id}`;
+          listItem.appendChild(link);
+
+          // 為 h3 添加縮排樣式
+          if (heading.tagName.toLowerCase() === "h3") {
+            listItem.classList.add("sub-item");
+          }
+
+          menuList.appendChild(listItem);
+        });
+
+        function adjustMenuPosition() {
+          const nav = document.querySelector("nav");
+          const menu = document.getElementById("expandable-menu");
+      
+          if (nav && menu) {
+            const navHeight = nav.offsetHeight;
+      
+            // 設定 menu 的 top 與高度
+            menu.style.top = `${navHeight}px`;
+            menu.style.height = `calc(100vh - ${navHeight}px)`;
+          }
+        }
+      
+        // 載入與尺寸變化時調整
+        window.addEventListener("DOMContentLoaded", adjustMenuPosition);
+        window.addEventListener("resize", adjustMenuPosition);
+        
+        // 滾動至目標位置並加上 75px 偏移
+        menuList.addEventListener("click", (event) => {
+          if (event.target.tagName === "A") {
+            event.preventDefault(); // 阻止預設行為
+
+            const targetId = event.target.getAttribute("href").substring(1); // 取得目標 ID
+            const targetElement = document.getElementById(targetId);
+
+            if (targetElement) {
+              // 計算目標元素的位置並加上 75px 偏移
+              const targetPosition =
+                targetElement.getBoundingClientRect().top + window.scrollY;
+              const offset = 75; // 偏移的距離
+              window.scrollTo({
+                top: targetPosition - offset,
+                behavior: "smooth", // 平滑滾動
+              });
+            }
+          }
+        });
+        // 手機 Safari 相容：點擊展開 dropdown
+        const dropdownToggles = document.querySelectorAll(".dropdown-toggle");
+
+        dropdownToggles.forEach((toggle) => {
+          toggle.addEventListener("click", function (e) {
+            e.stopPropagation(); // 防止冒泡，避免點擊外層時也觸發關閉
+            const dropdown = this.nextElementSibling;
+            const isVisible = dropdown.style.display === "block";
+            
+            // 關閉所有其他 dropdown（可選）
+            document.querySelectorAll(".dropdown-content").forEach((menu) => {
+              menu.style.display = "none";
+            });
+
+            // 切換目前這一個 dropdown
+            dropdown.style.display = isVisible ? "none" : "block";
+          });
+        });
+
+        // 點擊其他地方時關閉 dropdown
+        window.addEventListener("click", function () {
+          document.querySelectorAll(".dropdown-content").forEach((menu) => {
+            menu.style.display = "none";
+          });
+        });
+      });
+    </script>
+  </body>
+</html>

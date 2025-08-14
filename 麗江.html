@@ -1,0 +1,989 @@
+<!DOCTYPE html>
+<html lang="zh-hant-TW">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="曹旅瀚 Tommy" />
+    <meta name="description" content="漫步麗江古城，感受納西族文化、玉龍雪山的壯麗景色與四方街的悠閒時光。探索這座融合自然與歷史的高原名城，開啟你的麗江旅程。">
+    <meta name="keywords" content="麗江旅遊,麗江古城,玉龍雪山,麗江自由行,納西族文化,束河古鎮,黑龍潭,四方街,雲南旅遊,麗江景點,麗江拍照,高原城市,麗江美食,麗江推薦">
+    <title>Tommy 看世界 - 麗江</title>
+    <link rel="icon" href="網頁縮圖.ico" />
+    <style>
+      body {
+        font-family: Calibri, Arial, sans-serif; /* 首選 Calibri，次選 Arial */
+        margin: 0;
+        overflow-x: hidden; /* 禁止水平滾動 */
+        background-color: #f4f4f9;
+        color: #333;
+      }
+
+      h1 {
+        font-size: 40px;
+        font-weight: bold;
+      }
+
+      h2 {
+        font-size: 32px;
+        font-weight: bold;
+        color: #2a90a7;
+        display: inline-block;
+        background-color: #cee5e8;
+      }
+
+      h3 {
+        font-size: 26px;
+        margin: 0 0 1rem;
+        font-weight: bold;
+        text-decoration: underline;
+      }
+
+      h4 {
+        font-size: 18px;
+        font-weight: normal;
+        line-height: 1.8;
+      }
+
+      h5 {
+        font-size: 16px;
+        font-weight: normal;
+        margin: 0;
+      }
+
+      h6 {
+        font-size: 10px;
+        color: #fff;
+        margin: 0;
+        text-align: center;
+        line-height: 50px; /* 高度對齊 */
+      }
+
+      nav {
+        background-color: #78bcc4;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;                     /* 讓 nav 寬度隨螢幕自適應 */
+        padding: 0.8rem 5vw;               /* 左右 padding 用 5% 寬度 */
+        box-sizing: border-box;         /* 確保 padding 不會影響寬度總長 */
+        position: fixed;
+        top: 0;
+        z-index: 1000;
+      }
+
+      .nav-left .logo img {
+        height: 5vw; /* 高度為螢幕寬度的 5% */
+        transform: translateX(-2vw); /* 向左移動 2% 寬度 */
+        max-width: 100%; /* 確保不會超過容器 */
+        height: auto; /* 保持圖片比例（建議與 max-height 搭配） */
+        max-height: 3rem;
+      }
+
+      .nav-right {
+        display: flex;
+        align-items: center;
+        margin-left: auto; /* 推到右側 */
+        padding-left: 5%;   /* 內部元素間距，彈性設計 */
+      }
+
+      nav a {
+        color: #eff5f5;
+        text-decoration: none;
+        padding: 1vh 1vw;
+        margin: 0 1vw;
+        transition: transform 0.3s;
+      }
+
+      nav a:hover {
+        transform: translateY(-0.5vh); /* 根據視窗高度調整 */
+      }
+
+      .dropdown {
+        position: relative;
+        display: inline-block;
+      }
+
+      .dropdown-content {
+        width: 100%; /* 佔滿父層寬度 */
+        max-width: 20vw; /* 限制最大寬度 */
+        display: none;
+        position: absolute;
+        background-color: #78bcc4;
+        min-width: 10em; /* 取代 160px，以字體大小作為比例單位 */
+        border-radius: 0.25em;
+        box-shadow: 0 0.5em 1em rgba(0, 0, 0, 0.2); /* 改為相對單位 */
+        padding: 0.2rem 0;
+        z-index: 999;
+      }
+
+      .dropdown-content a {
+        color: #eff5f5;
+        display: block;
+        transition: transform 0.3s;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.3); /* 更淡配色、柔和過渡 */
+        padding: 0.6em 1em;
+        font-size: 1em;
+      }
+
+      .dropdown-content a:last-child {
+        border-bottom: none;
+      }
+
+      .dropdown-content a:hover {
+        transform: translateY(-0.25em); /* 改為相對單位 */
+      }
+
+      .intro-section {
+        background-color: #eff5f5;
+        display: flex;
+        flex-wrap: wrap; /* 確保在小螢幕可換行 */
+        padding: 2rem 5%;
+        margin-top: 4em; /* 根據導航列高度調整 */
+      }
+
+      .intro-section h4 {
+        max-width: 85%; /* 改為相對單位，避免固定寬度限制 */
+        line-height: 1.8;
+      }
+
+      .intro-section .left {
+        width: 60%;
+        padding-right: 1%;
+      }
+
+      .intro-section .right {
+        width: 39%;
+      }
+
+      .destination-section {
+        display: flex;
+        flex-wrap: wrap;               /* 小螢幕時允許換行 */
+        padding: 1rem 5%; /* 左右內間距為螢幕的10% */
+        background-color: white;
+      }
+
+      .destination-main {
+        width: 72%;                    /* 主要內容佔 72%，略縮以保留間距 */
+        margin-right: 3%;              /* 與 sidebar 間保留間距（約為 3%） */
+        box-sizing: border-box;
+      }
+
+      .destination-sidebar {
+        width: 25%;                    /* 側邊欄佔 25% */
+        padding-left: 2%;             /* 相對內邊距 */
+        margin-top: 2rem;
+        box-sizing: border-box;
+      }
+
+      .sidebar-image-container {
+        margin-bottom: 1rem;
+        text-align: center; /* 置中圖片 */
+      }
+
+      .sidebar-image-container img {
+        width: 90%;         /* 圖片寬度為容器寬度的 90% */
+        height: auto;       /* 高度自動，保持比例 */
+        max-height: 60vh;   /* 避免圖片過高，佔螢幕最大 60% 高 */
+        object-fit: cover;  /* 裁切處理長圖 */
+      }
+
+      .two-vertical-images {
+        display: flex;
+        justify-content: space-between;
+        gap: 4%; /* 使用百分比間距更彈性 */
+        margin-top: 2rem;
+        margin-bottom: 2rem;
+        flex-wrap: wrap; /* 若畫面太小，允許換行 */
+      }
+
+      .two-vertical-images img {
+        width: 48%; /* 每張圖片約佔一半（加上 gap 剛好 100%） */
+        height: auto; /* 保持原比例 */
+        object-fit: cover;
+        display: block;
+        margin: 0 auto;
+      }
+
+      .recommendation-section {
+        margin-top: 3vh; /* 與上方文字的間距 */
+        text-align: center;
+        position: sticky;
+        top: 80px; /* 空出導覽列的高度，確保推薦區不被覆蓋 */
+        z-index: 10; /* 提高層級，避免被其他內容遮蓋 */
+        padding: 0 5%;
+      }
+
+      .recommendation-section h3 {
+        font-size: 1.125rem;
+        font-weight: bold;
+        margin-bottom: 1vh; /* 與按鈕區的距離 */
+      }
+
+      .recommendation-buttons {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 0.5em; /* 按鈕之間的間距 */
+      }
+
+      .recommendation-buttons button {
+        padding: 0.5em 1em;
+        font-size: 0.875rem;
+        color: white;
+        background-color: #78bcc4;
+        border: none;
+        border-radius: 0.25rem;
+        transition: transform 0.3s;
+        font-family: Arial, sans-serif;
+      }
+
+      .recommendation-buttons button:hover {
+        transform: translateY(-3px);
+      }
+
+      .contact-section {
+        padding: 4vh 8vw; /* 上下與左右間距 */
+        background-color: #eff5f5; /* 淺灰背景 */
+        text-align: center; /* 確保內容置中對齊 */
+      }
+
+      .contact-item h3 {
+        font-size: 1.125rem; /* 調整標題字體大小 */
+        margin: 0; /* 移除多餘的間距 */
+        text-decoration: none; /* 移除底線 */
+      }
+
+      footer {
+        background-color: #000;
+        color: white;
+        height: 3vh; /* 使用相對單位，高度占螢幕高度的 3% */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 1.5rem; /* 使用相對字體大小 */
+        padding: 0.5rem 0; /* 確保小螢幕時內容不擠壓 */
+      }
+
+      #expandable-menu {
+        position: fixed; 
+        right: 0;
+        width: 26vw; /* 目錄寬度與 sidebar 齊寬 */
+        max-width: 90%; /* 避免在小螢幕太寬 */
+        transform: translateX(100%); /* 初始狀態：隱藏在右側 */
+        transition: transform 0.3s ease;
+        background-color: #f4f4f9; /* 與網站背景一致 */
+        z-index: 1000;
+        box-sizing: border-box;
+      }
+
+      /* 收闔按鈕 */
+      #menu-toggle {
+        position: fixed;
+        top: 45%;
+        right: 0; /* 永遠貼在右側 */
+        transform: translateY(-50%) translateX(0);
+        width: 2.5em; /* 增大按鈕寬度 */
+        height: 5em; /* 增大按鈕高度 */
+        background-color: #78bcc4;
+        color: white;
+        border-radius: 0.4em 0 0 0.4em;
+        display: flex;
+        justify-content: center; /* 水平居中 */
+        align-items: center; /* 垂直居中 */
+        z-index: 2000; /* 要比 expandable-menu 更高，避免被蓋住 */
+        cursor: pointer;
+        box-shadow: -0.1em 0 0.3em rgba(0,0,0,0.1);
+        transition: transform 0.3s ease; /* 平滑移動 */
+      }
+
+      #menu-toggle::after {
+        content: "目錄"; /* 在按鈕內顯示 "目錄" */
+        font-size: 1rem;
+        color: white; /* 設定字體顏色為白色 */
+        writing-mode: vertical-rl; /* 使文字垂直排列 */
+      }
+
+      #menu-toggle:hover {
+        background-color: #78bcc4;
+      }
+
+      /* 目錄內容 */
+      #menu-content {
+        padding: 0.5rem 5%;
+        overflow-y: auto;
+        height: 100%;
+        box-sizing: border-box;
+      }
+
+      #menu-content h4 {
+        font-weight: bold;
+        margin-top: 0;
+        font-size: 1.2rem;
+      }
+
+      #menu-list {
+        list-style: none;
+        padding: 0;
+      }
+
+      #menu-list li {
+        margin-bottom: 1vh;
+      }
+
+      #menu-list a {
+        color: #2a90a7;
+        text-decoration: none;
+        transition: color 0.3s;
+        font-size: 1rem; /* 使用相對字體大小 */
+      }
+
+      #menu-list a:hover {
+        color: #78bcc4;
+      }
+
+      #menu-list .sub-item {
+        margin-left: 8%; /* 調整縮排距離 */
+        font-size: 0.9rem; /* 可選：調整子項目字體大小 */
+      }
+
+      /* 目錄展開狀態 */
+      #expandable-menu.open {
+        transform: translateX(0);
+      }
+
+      /* === 響應式調整：針對手機與小螢幕設備 === */
+      @media (max-width: 768px) {
+        nav {
+          flex-direction: row;
+          flex-wrap: wrap;
+          align-items: center;
+          justify-content: space-between;
+          padding: 1rem 5vw;  /* 窄螢幕時減少左右留白 */
+          width: 100%;
+          box-sizing: border-box;
+        }
+
+        .nav-right {
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          gap: 0.5rem;
+          transform: none;
+          width: auto;
+          white-space: nowrap;               /* 禁止內容自動換行 */
+        }
+
+        nav a {
+          padding: 0.5rem 0.5rem;           /* 減少垂直padding */
+          margin: 0 0.3rem;
+          font-size: 0.85rem;
+          white-space: nowrap;               /* 確保文字不換行 */
+          overflow: hidden;
+          text-overflow: ellipsis;           /* 若內容超出，顯示省略號 */
+        }
+
+        .nav-dropdown {
+          width: 60%; /* 或者用 max-content, fit-content 看需求 */
+          font-size: 0.85rem; /* 調整字體大小和導覽列一致 */
+          padding: 0.5rem;
+        }
+      
+        .nav-dropdown a {
+          font-size: inherit; /* 確保跟 .nav-dropdown 一樣大 */
+          padding: 0.5rem 1rem;
+          white-space: normal; /* 可選：讓字在必要時換行 */
+        }
+
+        .dropdown-content {
+          width: 12vw;
+          min-width: 8em; /* 保證至少能顯示幾個字 */
+          max-width: none;
+        }
+
+        .dropdown-content a {
+          font-size: 0.85rem;
+        }
+        
+        .intro-section {
+          flex-direction: column;
+          padding: 8%;
+        }
+
+        .intro-section .left,
+        .intro-section .right {
+          width: 100%;
+          padding: 0;
+          flex: 1 1 100%;
+        }
+
+        .intro-section .right {
+          margin-top: 1.5rem;
+          display: flex;
+          justify-content: center;
+        }
+
+        .intro-section h4 {
+          max-width: 100%;
+          font-size: 1rem;
+        }
+
+        .destination-grid {
+          flex-direction: column;
+          gap: 1rem;
+        }
+
+        .destination-section h4 {
+          font-size: 1rem;
+        }
+
+        .destination-item {
+          max-width: 100%;
+          width: 100%;
+        }
+
+        .destination-item.a_role_with_2 {
+          position: static;
+          left: auto;
+        }
+
+        .destination-main,
+        .destination-sidebar {
+          width: 100%;
+          margin: 0;
+          padding: 0;
+        }
+
+        .destination-sidebar {
+          margin-top: 2rem;
+        }
+
+        .recommendation-buttons button {
+          width: 100%; /* 小螢幕按鈕全寬排列 */
+        }
+
+        .contact-section {
+          padding: 3vh 5vw;
+        }
+
+        .contact-item h3 {
+          font-size: 1rem;
+        }
+
+        /* 目錄區寬度改為螢幕寬度的40% */
+        #expandable-menu {
+          width: 40vw !important; /* 用vw方便響應螢幕寬度 */
+          max-width: 90%; /* 保留原本max-width避免太寬 */
+        }
+      
+        #expandable-menu,
+        #expandable-menu * {
+          font-size: 85% !important;
+        }
+              
+        #menu-toggle {
+          width: 75%;
+          max-width: 1.875em;
+          min-width: 1.875em;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <div class="nav-left">
+        <div class="logo">
+          <a href="首頁.html">
+            <img src="網站Logo.png" alt="網站 Logo" />
+          </a>
+        </div>
+      </div>
+      <div class="nav-right">
+        <a href="首頁.html">關於我</a>
+        <div class="dropdown">
+          <a class="dropdown-toggle">亞洲旅遊</a>
+          <div class="dropdown-content">
+            <a href="中國.html">中國</a>
+            <a href="日本.html">日本</a>
+            <a href="新加坡.html">新加坡</a>
+            <a href="馬來西亞.html">馬來西亞</a>
+            <a href="泰國.html">泰國</a>
+            <a href="印尼.html">印尼</a>
+            <a href="越南.html">越南</a>
+          </div>
+        </div>
+        <div class="dropdown">
+          <a class="dropdown-toggle">歐洲旅遊</a>
+          <div class="dropdown-content">
+            <a href="英國.html">英國</a>
+            <a href="法國.html">法國</a>
+            <a href="荷蘭.html">荷蘭</a>
+            <a href="比利時.html">比利時</a>
+            <a href="盧森堡.html">盧森堡</a>
+            <a href="瑞士.html">瑞士</a>
+            <a href="摩納哥.html">摩納哥</a>
+            <a href="西班牙.html">西班牙</a>
+            <a href="葡萄牙.html">葡萄牙</a>
+            <a href="安道爾.html">安道爾</a>
+            <a href="丹麥.html">丹麥</a>
+            <a href="瑞典.html">瑞典</a>
+            <a href="波蘭.html">波蘭</a>
+          </div>
+        </div>
+        <div class="dropdown">
+          <a class="dropdown-toggle">美洲旅遊</a>
+          <div class="dropdown-content">
+            <a href="美國.html">美國</a>
+            <a href="加拿大.html">加拿大</a>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <div class="intro-section">
+      <div class="left">
+        <h1>Tommy 在麗江</h1>
+        <h4>
+          <b>麗江</b>位於雲南省西北部，是納西族的聚居地，早在宋元時期，麗江由納西族的土司家族木氏世襲統治，並於明清兩代受到中央政權冊封，成為西南地區重要的少數民族自治政權。木氏土司通曉漢文化，又保留納西傳統，使麗江成為中原文化與藏彝文化交匯之地，納西古樂、東巴文字與宗教體系皆為珍貴的文化遺產。
+        </h4>
+        <h4>今日的麗江以古城聞名於世，1997 年被列入世界文化遺產，納西建築風格保存完好，玉龍雪山、束河古鎮、拉市海等景點也使麗江成為旅遊勝地，吸引許多青年創業者進駐，推動當地經濟與文化創新發展。</h4>
+      </div>
+      <div class="right">
+        <img src="中國照片\麗江\麗江_介紹.jpg" style="width: 100%; height: auto; max-width: 100%;" />
+      </div>
+    </div>
+
+    <div class="destination-section">
+      <div class="destination-main">
+        <h2>麗江交通</h2>
+        <h3>機場交通</h3>
+        <h4>
+          麗江三義機場距離麗江市區還有約 50 公里，搭車也需要至少 40 分鐘時間，由於雲南打車十分便宜，建議直接打車前往飯店或景點即可。
+        </h4>
+        <h3>市區交通</h3>
+        <h4>
+          麗江基本上沒有大眾交通運輸可言，<b>到所有地方一律建議打車</b>，唯一會搭乘的公車是從麗江市區前往玉龍雪山的專線 101 ，只要先在支付寶上開通麗江乘車碼即可刷卡上車。
+        </h4>
+        <br /><br />
+        <h2>麗江住宿</h2>
+        <h4>
+          在麗江選擇住宿基本上都是以古城為中心，<b>主要分為古城裡的民宿及普通旅館兩種</b>，前者能體會住在古城就是建築裡的氛圍，也能在屋頂上欣賞古城及遠方玉龍雪山的風景，,<b>由於古城範圍內車輛無法進入</b>，
+          因此住在古城裡的民宿的話，基本上都是打車到最近的入口後，<b>讓民宿的工作人員拉推車載送行李到民宿</b>，因為古城裡的道路都是石板路，
+          拖行李箱會拖到你崩潰，也<b>建議在古城中都要穿好走的鞋子</b>；而選擇普通旅館的話則推薦距離古城不要太遠，才不需要一直打車浪費時間。
+        </h4>
+        <img src="中國照片\麗江\麗江_住宿.png" style="width: 100%; max-width: 90vw; height: auto;" />
+        <br /><br />
+        <h2>麗江景點</h2>
+        <h3>麗江古城</h3>
+        <h4>
+          麗江古城是中國保存最完整的少數民族古城之一，也是世界文化遺產。古城始建於宋元時期，由納西族木氏土司興建，已有 800 多年歷史。城內街道依山傍水而建，石板小巷縱橫交錯，小橋流水與納西民居交相輝映，呈現獨特的山水城市格局，古城中保存著豐富的納西族文化，如東巴文字、納西古樂與民族服飾，具有極高的歷史與文化價值。麗江古城融合了歷史風貌與現代旅遊設施，街道兩旁林立著手工藝店、特色餐廳與客棧，是遊客體驗納西文化、感受古城魅力的熱門景點。
+        </h4>
+        <div style="text-align: center">
+          <img src="中國照片\麗江\LJ1.jpg" style="width: 90%; max-width: 600px; height: auto; margin: 0.5rem;" />
+          <img src="中國照片\麗江\LJ2.jpg" style="width: 100%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+          <img src="中國照片\麗江\LJ3.jpg" style="width: 90%; max-width: 600px; height: auto; margin: 0.5rem;" />
+          <img src="中國照片\麗江\LJ4.jpg" style="width: 90%; max-width: 600px; height: auto; margin: 0.5rem;" />
+          <img src="中國照片\麗江\LJ5.jpg" style="width: 90%; max-width: 600px; height: auto; margin: 0.5rem;" />
+          <img src="中國照片\麗江\LJ6.jpg" style="width: 100%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+        </div>
+        <h4>麗江古城的重要標誌之一 : 大水車。</h4>
+        <div style="text-align: center">
+          <img src="中國照片\麗江\LJ7.jpg" style="width: 100%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+        </div>
+        <h4>木府位於麗江古城中心，是納西族木氏土司的官邸與衙門，有「麗江紫禁城」之稱。木府始建於元朝，明清時期達到鼎盛，是麗江政治、經濟與文化的核心，整座建築群依山勢而建，融合中原宮廷與納西民族風格，氣勢宏偉。木府內設有議事廳、書院、花園等，展現出納西族對儒家文化的尊崇。</h4>
+        <div style="text-align: center">
+          <img src="中國照片\麗江\LJ8.jpg" style="width: 100%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+        </div>
+        <br /><br /><br />
+        <h3>束河古城</h3>
+        <h4>
+          束河古城位於麗江古城西北約 4 公里處，是納西族的重要聚居地，可追溯至宋元時期，作為古代茶馬古道上的重鎮，束河曾是馬幫經商與中轉的要地，保留了大量原始古建與石板巷道，具有濃厚的歷史韻味。與熱鬧的麗江古城相比，束河古城更顯靜謐悠然，適合喜愛慢生活與人文風情的旅人，城內多為納西傳統院落式民居，沿街有手工藝品店、咖啡館與特色客棧。束河古城以其樸實自然的風貌與深厚文化底蘊，成為探索麗江歷史與民族生活的絕佳去處。
+        </h4>
+        <div style="text-align: center">
+          <img src="中國照片\麗江\LJ9.jpg" style="width: 100%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+          <img src="中國照片\麗江\LJ10.jpg" style="width: 100%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+          <img src="中國照片\麗江\LJ11.jpg" style="width: 90%; max-width: 600px; height: auto; margin: 0.5rem;" />
+          <img src="中國照片\麗江\LJ12.jpg" style="width: 90%; max-width: 600px; height: auto; margin: 0.5rem;" />
+        </div>
+        <h4>古城裡的水溝都是從高山上融化的雪水十分乾淨，溝裡都是水草十分漂亮。</h4>
+        <div style="text-align: center">
+          <img src="中國照片\麗江\LJ13.jpg" style="width: 90%; max-width: 600px; height: auto; margin: 0.5rem;" />
+        </div>
+        <br /><br /><br />
+        <h3>白沙古鎮</h3>
+        <h4>
+          白沙古鎮位於麗江市區北部，是納西族最早的聚居地，可追溯至唐宋時期。這裡曾是納西木氏土司的發源地，也是古代茶馬古道的重要驛站，白沙古鎮少了喧囂與商業氣息，保留更多原始風貌與寧靜氛圍。鎮內街道由青石鋪成，民居多為傳統納西建築，白沙壁畫是當地最具代表性的文化遺產，融合漢、藏、納西等藝術風格，展現多元宗教與民族文化，連 CNN 都曾經報導過這座古鎮，可見其文化底蘊及魅力。
+        </h4>
+        <div style="text-align: center">
+          <img src="中國照片\麗江\LJ14.jpg" style="width: 90%; max-width: 600px; height: auto; margin: 0.5rem;" />
+          <img src="中國照片\麗江\LJ15.jpg" style="width: 90%; max-width: 600px; height: auto; margin: 0.5rem;" />
+          <img src="中國照片\麗江\LJ16.jpg" style="width: 90%; max-width: 600px; height: auto; margin: 0.5rem;" />
+          <img src="中國照片\麗江\LJ17.jpg" style="width: 100%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+          <img src="中國照片\麗江\LJ18.jpg" style="width: 100%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+        </div>
+        <br /><br /><br />
+        <h2>麗江近郊景點</h2>
+        <h3>玉龍雪山</h3>
+        <h4>
+          玉龍雪山是雲南境內最高的山脈，園區最高峰達 4690 公尺，因終年積雪遠望如銀龍飛舞，故得名「玉龍」。這座雪山不僅是納西族心中的神山，
+          也融合了壯麗自然景觀與豐富民族文化。園區由<b>藍月谷、雲杉坪索道、牦牛坪索道和冰川公園索道</b>所組成，擁有珍稀植物與野生動物資源，是一座天然的生態寶庫。由於時間原因我只有去了藍月谷與雲杉坪索道，但也會將資訊一並介紹:
+          <ul style="max-width: 90%; padding-left: 1.5rem;">
+            <li>
+              <b>冰川公園索道 (大索道)</b>: 通往玉龍雪山冰川公園的高山纜車，全長約 2914 公尺，可送遊客直達海拔 4506 公尺的觀景平台。高山氣候寒冷，建議保暖登山裝備齊全，由於海拔相當高，<b>有很大機率會有高原反應</b>，強烈建議攜帶氧氣瓶，也不要逞強以免發生危險。
+            </li>
+            <li>
+              <b>牦牛坪索道 (中索道)</b>: 前往牦牛坪的重要交通工具，全長約 1800 公尺，海拔升至約 3800 公尺，牦牛坪是納西族傳統放牧地，春夏可見綠草如茵、牦牛悠遊，是親近自然與體驗民族風情的理想地點。
+            </li>
+            <li>
+              <b>雲杉坪索道 (小索道)</b>: 通往雲杉坪景區的纜車，全長約 1000 公尺，可送至海拔約 3200 公尺的高山草地，雲杉坪又稱「戀愛田」，傳說是納西族戀人幽會之地，景色清幽浪漫，適合輕鬆健行與攝影，以下圖片是雲杉坪。
+            </li>
+            <li>
+              <b>藍月谷</b>: 藍月谷位於玉龍雪山腳下，以湖水清澈湛藍如藍寶石而得名，遠看如藍色月牙，因此稱為「藍月谷」，湖水來自雪山融水水質純淨，被譽為「東方的小九寨」。
+            </li>
+          </ul>
+          搶票是想遊玩玉龍雪山的一大阻礙，除了藍月谷只需支付 100 人民幣的玉龍雪山公園入場費之外，其餘三個索道都需要額外再進行購票，
+          可以在<b>微信搜尋 "麗江旅遊集團" 的小程序</b>進入頁面購票，要特別注意旺季時需要搶票，但由於釋票的時間會改變，建議要上山前一兩個禮拜就開始密切注意搶票程序，以免敗興而歸喔!
+        </h4>       
+        <div style="text-align: center">
+          <img src="中國照片\麗江\LJ19.jpg" style="width: 100%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+          <img src="中國照片\麗江\LJ20.jpg" style="width: 100%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+          <img src="中國照片\麗江\LJ21.jpg" style="width: 90%; max-width: 600px; height: auto; margin: 0.5rem;" />
+        </div>
+        <h4>藍月谷的湖水真的藍到不像話，天氣晴朗時在藍月谷可以一覽玉龍雪山的英姿，可惜我前往時天氣是陰天沒有看到雪山。</h4>
+        <div style="text-align: center">
+          <img src="中國照片\麗江\LJ22.jpg" style="width: 100%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+          <img src="中國照片\麗江\LJ23.jpg" style="width: 90%; max-width: 600px; height: auto; margin: 0.5rem;" />
+          <img src="中國照片\麗江\LJ24.jpg" style="width: 100%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+        </div>
+        <br /><br /><br />
+        <h3>納帕海</h3>
+        <h4>
+          納帕海位於香格里拉縣西北約 8 公里，海拔 3266 公尺，是典型的高原季節性濕地與湖泊，每年夏秋雨季時，雪山融水匯集形成湖面廣闊如海；而冬春枯水期則化為一望無際的依拉草原。納帕海濕地生態豐富，是國家級自然保護區，也是黑頸鶴、斑頭雁等珍稀候鳥的重要棲息地，湖區三面環山，雪峰倒映湖水風光如畫，特別是雨季時可見獨特的「水上公路」景象。可在此騎馬、環湖徒步或攝影，深入體驗高原自然風貌與藏族牧民文化。要特別注意如果要騎馬的話一定要議價，原價是高到離譜坑人的。
+        </h4>
+        <h4>從麗江到香格里拉可以選擇高鐵或大巴車，<b>強烈建議選擇高鐵</b>，省時間又不用在崎嶇的山路上顛簸 3 個小時喔!</h4>
+        <div style="text-align: center">
+          <img src="中國照片\麗江\LJ25.jpg" style="width: 100%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+          <img src="中國照片\麗江\LJ26.jpg" style="width: 100%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+          <img src="中國照片\麗江\LJ27.jpg" style="width: 100%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+          <img src="中國照片\麗江\LJ28.jpg" style="width: 90%; max-width: 600px; height: auto; margin: 0.5rem;" />
+          <img src="中國照片\麗江\LJ29.jpg" style="width: 90%; max-width: 600px; height: auto; margin: 0.5rem;" />
+        </div>
+        <br /><br /><br />
+        <h3>松贊林寺</h3>
+        <h4>
+          松贊林寺位於香格里拉市郊，又名歸化寺，建於清康熙年間，是雲南規模最大、最具影響力的藏傳佛教寺院，素有「小布達拉宮」之稱。寺院依山而建氣勢宏偉，融合藏式與漢式建築風格，屋頂金光閃耀牆體色彩鮮明。寺內供奉釋迦牟尼、觀音等諸佛，擁有大量珍貴經卷與唐卡，是藏族信徒重要的朝聖地，寺內僧侶修行氛圍濃厚，每年還會舉辦傳統宗教節日與辯經活動。
+        </h4>
+        <div style="text-align: center">
+          <img src="中國照片\麗江\LJ30.jpg" style="width: 100%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+          <img src="中國照片\麗江\LJ31.jpg" style="width: 100%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+          <img src="中國照片\麗江\LJ32.jpg" style="width: 90%; max-width: 600px; height: auto; margin: 0.5rem;" />
+          <img src="中國照片\麗江\LJ33.jpg" style="width: 90%; max-width: 600px; height: auto; margin: 0.5rem;" />
+        </div>
+        <br /><br /><br />
+        <h3>獨克宗古城</h3>
+        <h4>
+          獨克宗古城位於香格里拉，是中國保存最完整的藏族古城，已有 1300 多年歷史，其名稱意為“建立在石頭上的城堡”，是茶馬古道上的重要驛站與藏漢文化交流樞紐。古城依山而建，街道蜿蜒、石板鋪地，民居為典型藏式建築，屋頂多彩繽紛別具風情，古城中心的月光廣場與世界最大轉經筒，是當地信仰與文化的象徵。歷經2014年火災後重建，古城融合傳統與現代，仍保留濃厚的藏族文化氛圍。
+        </h4>
+        <div style="text-align: center">
+          <img src="中國照片\麗江\LJ34.jpg" style="width: 90%; max-width: 600px; height: auto; margin: 0.5rem;" />
+          <img src="中國照片\麗江\LJ35.jpg" style="width: 90%; max-width: 600px; height: auto; margin: 0.5rem;" />
+          <img src="中國照片\麗江\LJ36.jpg" style="width: 90%; max-width: 600px; height: auto; margin: 0.5rem;" />
+          <img src="中國照片\麗江\LJ37.jpg" style="width: 100%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+        </div>
+        <br /><br /><br />
+        <h3>沙溪古鎮</h3>
+        <h4>
+          沙溪古鎮位於劍川縣，是茶馬古道上唯一保存完整的古集市，被譽為“中國最後的馬幫古鎮”。自唐宋以來沙溪就是滇藏茶馬古道的重要驛站，見證了南方絲綢之路的繁榮，古鎮四周群山環繞，白族建築風格濃厚，保存有古戲台、寺登街、興教寺與石拱橋等歷史建築。沙溪最著名的四方街古集市至今仍保有傳統市集氛圍，是當地人生活的重要場景，也是電視劇 "去有風的地方" 的取景地，與其他旅遊古鎮相比，沙溪多了幾分靜謐與原始，少了商業化的喧囂，是體驗雲南古道文化與田園風光的理想之地。
+        </h4>
+        <div style="text-align: center">
+          <img src="中國照片\麗江\LJ38.jpg" style="width: 100%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+          <img src="中國照片\麗江\LJ39.jpg" style="width: 100%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+          <img src="中國照片\麗江\LJ40.jpg" style="width: 100%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+          <img src="中國照片\麗江\LJ41.jpg" style="width: 100%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+          <img src="中國照片\麗江\LJ42.jpg" style="width: 100%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+          <img src="中國照片\麗江\LJ43.jpg" style="width: 90%; max-width: 600px; height: auto; margin: 0.5rem;" />
+          <img src="中國照片\麗江\LJ44.jpg" style="width: 90%; max-width: 600px; height: auto; margin: 0.5rem;" />
+        </div>
+        <br /><br /><br />
+        <h2>麗江美食</h2>
+        <h3>浮嫻小鍋飯</h3>
+        <h4>
+          浮嫻小鍋飯是位於束河古鎮的特色餐廳，以提供傳統雲南民俗風味菜餚聞名，餐廳主打小鍋飯系列，結合普洱茶紅燒肉、東巴烤魚、銅鍋燜飯和當地特有的小黃牛乾鍋等地道滇菜，配有綠意庭院與露天座位，氣氛寧靜舒適，不僅呈現了雲南多元民族的飲食文化，也讓食客在享用美食的同時感受到濃厚的地方風情與人文氛圍。
+        </h4>
+        <div class="two-vertical-images">
+          <img src="中國照片\麗江\LJ45-1.jpg" />
+          <img src="中國照片\麗江\LJ45-2.jpg" />
+        </div>
+        <div class="two-vertical-images">
+          <img src="中國照片\麗江\LJ46-1.jpg" />
+          <img src="中國照片\麗江\LJ46-2.jpg" />
+        </div>
+        <br />
+        <h3>塔洛藏餐吧</h3>
+        <h4>
+          塔洛藏餐吧位於香格里拉，是一家充滿藏族風情的特色餐廳。店內裝潢以木質與民族元素為主，餐點主打地道藏餐，包括酥油茶、青稞餅、藏香豬、手抓羊肉等，部分時段還有藏族音樂或歌舞表演，增添用餐樂趣。
+        </h4>
+        <div class="two-vertical-images">
+          <img src="中國照片\麗江\LJ47-1.jpg" />
+          <img src="中國照片\麗江\LJ47-2.jpg" />
+        </div>
+        <div class="two-vertical-images">
+          <img src="中國照片\麗江\LJ48-1.jpg" />
+          <img src="中國照片\麗江\LJ48-2.jpg" />
+        </div>
+        <div style="text-align: center">
+          <img src="中國照片\麗江\LJ49.jpg" style="width: 90%; max-width: 600px; height: auto; margin: 0.5rem;" />
+        </div>
+        <br /><br /><br />
+        <h3>雲雪麗</h3>
+        <h4>
+          雲雪麗是納西風味餐廳，融合雲南地方食材與現代料理手法，展現獨特的民族美食風貌，店內裝潢溫馨雅致充滿納西族文化氣息，招牌菜如雲南火腿炒飯、菌菇拼盤、東巴烤魚等，是品味麗江風土人情與輕鬆用餐的理想場所。
+        </h4>
+        <div class="two-vertical-images">
+          <img src="中國照片\麗江\LJ50-1.jpg" />
+          <img src="中國照片\麗江\LJ50-2.jpg" />
+        </div>
+        <div class="two-vertical-images">
+          <img src="中國照片\麗江\LJ51-1.jpg" />
+          <img src="中國照片\麗江\LJ51-2.jpg" />
+        </div>
+        <br /><br /><br />
+        <h3>喜寶賞飯</h3>
+        <h4>
+          喜寶賞飯位於沙溪古鎮，是以白族料理 fusion 聞名，以綠意庭院與多肉植物裝飾營造夢幻氛圍，讓人仿佛「走進綠野仙蹤的愛麗絲世界」，推薦必嘗的菜色包括蘋果乳扇塔、雪花酥片牛肉、野魔芋刺身，以及香氣四溢的雲南火腿野菌悶飯等，每道菜都精緻且充滿地域特色，是遊古鎮必訪的餐廳，不僅味覺驚豔，還滿足視覺與氛圍體驗。
+        </h4>
+        <div class="two-vertical-images">
+          <img src="中國照片\麗江\LJ52-1.jpg" />
+          <img src="中國照片\麗江\LJ52-2.jpg" />
+        </div>
+        <div class="two-vertical-images">
+          <img src="中國照片\麗江\LJ53-1.jpg" />
+          <img src="中國照片\麗江\LJ53-2.jpg" />
+        </div>
+        <br /><br /><br />
+        <h3>虎牙咖啡館</h3>
+        <h4>
+          虎牙咖啡館位於束河古鎮，是一家融合雲南風情與文藝氣息的特色咖啡館，店內擺設富有設計感，中庭造景更是令人驚艷，常吸引文青與旅人駐足，咖啡選用本地精品豆，手沖與義式皆有，亦提供手工甜點與輕食。窗邊座位可眺望古鎮風景，氛圍寧靜舒適，是放鬆、閱讀與交流的理想場所。
+        </h4>
+        <div style="text-align: center">
+          <img src="中國照片\麗江\LJ54.jpg" style="width: 90%; max-width: 600px; height: auto; margin: 0.5rem;" />
+          <img src="中國照片\麗江\LJ55.jpg" style="width: 90%; max-width: 600px; height: auto; margin: 0.5rem;" />
+        </div>
+        <div class="two-vertical-images">
+          <img src="中國照片\麗江\LJ56-1.jpg" />
+          <img src="中國照片\麗江\LJ56-2.jpg" />
+        </div>
+        <div class="two-vertical-images">
+          <img src="中國照片\麗江\LJ57-1.jpg" />
+          <img src="中國照片\麗江\LJ57-2.jpg" />
+        </div>
+        <div class="two-vertical-images">
+          <img src="中國照片\麗江\LJ58-1.jpg" />
+          <img src="中國照片\麗江\LJ58-2.jpg" />
+        </div>
+        <br /><br /><br />
+        <h3>白族正宗火烤餅</h3>
+        <h4>
+          白族正宗火烤餅位於沙溪古鎮，是雲南白族的傳統特色小吃，常見於中秋節、婚慶等節慶場合。其製作過程獨特，需使用特製的鐵爐與木炭，將餅皮上下同時加熱，形成酥脆的外皮，內餡多樣，包括五仁、鮮花、豆沙等，口感香甜可口，這種火烤方式賦予餅品獨特的煙火香氣，成為白族文化中不可或缺的美食。
+        </h4>
+        <div style="text-align: center">
+          <img src="中國照片\麗江\LJ59.jpg" style="width: 90%; max-width: 600px; height: auto; margin: 0.5rem;" />
+          <img src="中國照片\麗江\LJ60.jpg" style="width: 90%; max-width: 600px; height: auto; margin: 0.5rem;" />
+        </div>
+      </div>
+      <div class="destination-sidebar">
+        <div class="sidebar-image-container">
+          <img src="側邊欄自我介紹.jpg" />
+        </div>
+        <h5>
+          Hi!
+          我是Tommy，我熱愛旅遊也喜歡藉由影像紀錄旅程中的點點滴滴，透過文字將我在旅途中的所見所聞分享給大家。旅行對我而言不只是吃吃喝喝，而是能在行萬里路間感受世界的脈動，體驗不同的文化，希望藉由我的分享能讓大家看到更多世界的美好。
+        </h5>
+        <br />
+        <h5>
+          想更了解我或與我聯絡:
+          <a
+            href="https://www.instagram.com/tommy_techvoyage/"
+            target="_blank"
+            style="color: inherit; text-decoration: underline"
+          >
+            <b>Instagram</b>
+          </a>
+        </h5>
+        <div class="recommendation-section">
+          <h3>其他中國旅遊目的地</h3>
+          <div class="recommendation-buttons">
+            <a href="上海.html">
+              <button><h5>上海</h5></button>
+            </a>
+            <a href="廣州.html">
+              <button><h5>廣州</h5></button>
+            </a>
+            <a href="長沙.html">
+              <button><h5>長沙</h5></button>
+            </a>
+            <a href="成都.html">
+              <button><h5>成都</h5></button>
+            </a>
+            <a href="重慶.html">
+              <button><h5>重慶</h5></button>
+            </a>
+            <a href="桂林.html">
+              <button><h5>桂林</h5></button>
+            </a>
+            <a href="陽朔.html">
+              <button><h5>陽朔</h5></button>
+            </a>
+            <a href="汕頭南澳島.html">
+              <button><h5>汕頭南澳島</h5></button>
+            </a>
+            <a href="昆明.html">
+              <button><h5>昆明</h5></button>
+            </a>
+            <a href="大理.html">
+              <button><h5>大理</h5></button>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="contact-section">
+      <div class="contact-item">
+        <h3>
+          想更了解我或與我聯絡:
+          <a
+            href="https://www.instagram.com/tommy_techvoyage/"
+            target="_blank"
+            style="color: inherit; text-decoration: underline"
+          >
+            Instagram
+          </a>
+        </h3>
+      </div>
+    </div>
+    <footer>
+      <h6>COPYRIGHT © 2025 Tommy 看世界 All rights reserved.</h6>
+    </footer>
+    <div id="menu-toggle"></div>
+    <div id="expandable-menu">
+      <div id="menu-content">
+        <h4>目錄</h4>
+        <ul id="menu-list"></ul>
+      </div>
+    </div>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const menu = document.getElementById("expandable-menu");
+        const toggle = document.getElementById("menu-toggle");
+        const menuList = document.getElementById("menu-list");
+        const destinationMain = document.querySelector(".destination-main");
+
+        // 點擊按鈕切換目錄狀態
+        toggle.addEventListener("click", () => {
+          menu.classList.toggle("open");
+
+          const menuWidth = menu.offsetWidth; // 獲取目前展開的目錄寬度
+
+          if (menu.classList.contains("open")) {
+            // 讓按鈕向左平移與 menu 一樣的寬度
+            toggle.style.transform = `translateY(-50%) translateX(-${menuWidth}px)`;
+          } else {
+            // 收回原位
+            toggle.style.transform = `translateY(-50%) translateX(0)`;
+          }
+        });
+
+        window.addEventListener("load", () => {
+          if (menu.classList.contains("open")) {
+            const menuWidth = menu.offsetWidth;
+            toggle.style.transform = `translateY(-50%) translateX(-${menuWidth}px)`;
+          }
+        });
+
+        // 從 destination-main 區域提取 h2 和 h3，動態生成目錄
+        const headings = destinationMain.querySelectorAll("h2, h3");
+        headings.forEach((heading, index) => {
+          // 確保每個 h2 和 h3 都有唯一的 id
+          if (!heading.id) {
+            heading.id = `heading-${index}`;
+          }
+
+          const listItem = document.createElement("li");
+          const link = document.createElement("a");
+          link.textContent = heading.textContent;
+          link.href = `#${heading.id}`;
+          listItem.appendChild(link);
+
+          // 為 h3 添加縮排樣式
+          if (heading.tagName.toLowerCase() === "h3") {
+            listItem.classList.add("sub-item");
+          }
+
+          menuList.appendChild(listItem);
+        });
+
+        function adjustMenuPosition() {
+          const nav = document.querySelector("nav");
+          const menu = document.getElementById("expandable-menu");
+      
+          if (nav && menu) {
+            const navHeight = nav.offsetHeight;
+      
+            // 設定 menu 的 top 與高度
+            menu.style.top = `${navHeight}px`;
+            menu.style.height = `calc(100vh - ${navHeight}px)`;
+          }
+        }
+      
+        // 載入與尺寸變化時調整
+        window.addEventListener("DOMContentLoaded", adjustMenuPosition);
+        window.addEventListener("resize", adjustMenuPosition);
+        
+        // 滾動至目標位置並加上 75px 偏移
+        menuList.addEventListener("click", (event) => {
+          if (event.target.tagName === "A") {
+            event.preventDefault(); // 阻止預設行為
+
+            const targetId = event.target.getAttribute("href").substring(1); // 取得目標 ID
+            const targetElement = document.getElementById(targetId);
+
+            if (targetElement) {
+              // 計算目標元素的位置並加上 75px 偏移
+              const targetPosition =
+                targetElement.getBoundingClientRect().top + window.scrollY;
+              const offset = 75; // 偏移的距離
+              window.scrollTo({
+                top: targetPosition - offset,
+                behavior: "smooth", // 平滑滾動
+              });
+            }
+          }
+        });
+        // 手機 Safari 相容：點擊展開 dropdown
+        const dropdownToggles = document.querySelectorAll(".dropdown-toggle");
+
+        dropdownToggles.forEach((toggle) => {
+          toggle.addEventListener("click", function (e) {
+            e.stopPropagation(); // 防止冒泡，避免點擊外層時也觸發關閉
+            const dropdown = this.nextElementSibling;
+            const isVisible = dropdown.style.display === "block";
+            
+            // 關閉所有其他 dropdown（可選）
+            document.querySelectorAll(".dropdown-content").forEach((menu) => {
+              menu.style.display = "none";
+            });
+
+            // 切換目前這一個 dropdown
+            dropdown.style.display = isVisible ? "none" : "block";
+          });
+        });
+
+        // 點擊其他地方時關閉 dropdown
+        window.addEventListener("click", function () {
+          document.querySelectorAll(".dropdown-content").forEach((menu) => {
+            menu.style.display = "none";
+          });
+        });
+      });
+    </script>
+  </body>
+</html>

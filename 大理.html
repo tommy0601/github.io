@@ -1,0 +1,861 @@
+<!DOCTYPE html>
+<html lang="zh-hant-TW">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="曹旅瀚 Tommy" />
+    <meta name="description" content="走進大理這座充滿詩意的古城，漫遊洱海、蒼山與大理古城，感受白族風情與慢活節奏，體驗自然與文化交織的雲南之美。">
+    <meta name="keywords" content="大理旅遊,大理景點,洱海,蒼山,大理古城,白族文化,大理自由行,雲南旅遊,大理美食,大理交通,大理住宿,大理推薦,大理拍照景點,大理慢活">
+    <title>Tommy 看世界 - 大理</title>
+    <link rel="icon" href="網頁縮圖.ico" />
+    <style>
+      body {
+        font-family: Calibri, Arial, sans-serif; /* 首選 Calibri，次選 Arial */
+        margin: 0;
+        overflow-x: hidden; /* 禁止水平滾動 */
+        background-color: #f4f4f9;
+        color: #333;
+      }
+
+      h1 {
+        font-size: 40px;
+        font-weight: bold;
+      }
+
+      h2 {
+        font-size: 32px;
+        font-weight: bold;
+        color: #2a90a7;
+        display: inline-block;
+        background-color: #cee5e8;
+      }
+
+      h3 {
+        font-size: 26px;
+        margin: 0 0 1rem;
+        font-weight: bold;
+        text-decoration: underline;
+      }
+
+      h4 {
+        font-size: 18px;
+        font-weight: normal;
+        line-height: 1.8;
+      }
+
+      h5 {
+        font-size: 16px;
+        font-weight: normal;
+        margin: 0;
+      }
+
+      h6 {
+        font-size: 10px;
+        color: #fff;
+        margin: 0;
+        text-align: center;
+        line-height: 50px; /* 高度對齊 */
+      }
+
+      nav {
+        background-color: #78bcc4;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;                     /* 讓 nav 寬度隨螢幕自適應 */
+        padding: 0.8rem 5vw;               /* 左右 padding 用 5% 寬度 */
+        box-sizing: border-box;         /* 確保 padding 不會影響寬度總長 */
+        position: fixed;
+        top: 0;
+        z-index: 1000;
+      }
+
+      .nav-left .logo img {
+        height: 5vw; /* 高度為螢幕寬度的 5% */
+        transform: translateX(-2vw); /* 向左移動 2% 寬度 */
+        max-width: 100%; /* 確保不會超過容器 */
+        height: auto; /* 保持圖片比例（建議與 max-height 搭配） */
+        max-height: 3rem;
+      }
+
+      .nav-right {
+        display: flex;
+        align-items: center;
+        margin-left: auto; /* 推到右側 */
+        padding-left: 5%;   /* 內部元素間距，彈性設計 */
+      }
+
+      nav a {
+        color: #eff5f5;
+        text-decoration: none;
+        padding: 1vh 1vw;
+        margin: 0 1vw;
+        transition: transform 0.3s;
+      }
+
+      nav a:hover {
+        transform: translateY(-0.5vh); /* 根據視窗高度調整 */
+      }
+
+      .dropdown {
+        position: relative;
+        display: inline-block;
+      }
+
+      .dropdown-content {
+        width: 100%; /* 佔滿父層寬度 */
+        max-width: 20vw; /* 限制最大寬度 */
+        display: none;
+        position: absolute;
+        background-color: #78bcc4;
+        min-width: 10em; /* 取代 160px，以字體大小作為比例單位 */
+        border-radius: 0.25em;
+        box-shadow: 0 0.5em 1em rgba(0, 0, 0, 0.2); /* 改為相對單位 */
+        padding: 0.2rem 0;
+        z-index: 999;
+      }
+
+      .dropdown-content a {
+        color: #eff5f5;
+        display: block;
+        transition: transform 0.3s;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.3); /* 更淡配色、柔和過渡 */
+        padding: 0.6em 1em;
+        font-size: 1em;
+      }
+
+      .dropdown-content a:last-child {
+        border-bottom: none;
+      }
+
+      .dropdown-content a:hover {
+        transform: translateY(-0.25em); /* 改為相對單位 */
+      }
+
+      .intro-section {
+        background-color: #eff5f5;
+        display: flex;
+        flex-wrap: wrap; /* 確保在小螢幕可換行 */
+        padding: 2rem 5%;
+        margin-top: 4em; /* 根據導航列高度調整 */
+      }
+
+      .intro-section h4 {
+        max-width: 85%; /* 改為相對單位，避免固定寬度限制 */
+        line-height: 1.8;
+      }
+
+      .intro-section .left {
+        width: 60%;
+        padding-right: 1%;
+      }
+
+      .intro-section .right {
+        width: 39%;
+      }
+
+      .destination-section {
+        display: flex;
+        flex-wrap: wrap;               /* 小螢幕時允許換行 */
+        padding: 1rem 5%; /* 左右內間距為螢幕的10% */
+        background-color: white;
+      }
+
+      .destination-main {
+        width: 72%;                    /* 主要內容佔 72%，略縮以保留間距 */
+        margin-right: 3%;              /* 與 sidebar 間保留間距（約為 3%） */
+        box-sizing: border-box;
+      }
+
+      .destination-sidebar {
+        width: 25%;                    /* 側邊欄佔 25% */
+        padding-left: 2%;             /* 相對內邊距 */
+        margin-top: 2rem;
+        box-sizing: border-box;
+      }
+
+      .sidebar-image-container {
+        margin-bottom: 1rem;
+        text-align: center; /* 置中圖片 */
+      }
+
+      .sidebar-image-container img {
+        width: 90%;         /* 圖片寬度為容器寬度的 90% */
+        height: auto;       /* 高度自動，保持比例 */
+        max-height: 60vh;   /* 避免圖片過高，佔螢幕最大 60% 高 */
+        object-fit: cover;  /* 裁切處理長圖 */
+      }
+
+      .two-vertical-images {
+        display: flex;
+        justify-content: space-between;
+        gap: 4%; /* 使用百分比間距更彈性 */
+        margin-top: 2rem;
+        margin-bottom: 2rem;
+        flex-wrap: wrap; /* 若畫面太小，允許換行 */
+      }
+
+      .two-vertical-images img {
+        width: 48%; /* 每張圖片約佔一半（加上 gap 剛好 100%） */
+        height: auto; /* 保持原比例 */
+        object-fit: cover;
+        display: block;
+        margin: 0 auto;
+      }
+
+      .recommendation-section {
+        margin-top: 3vh; /* 與上方文字的間距 */
+        text-align: center;
+        position: sticky;
+        top: 80px; /* 空出導覽列的高度，確保推薦區不被覆蓋 */
+        z-index: 10; /* 提高層級，避免被其他內容遮蓋 */
+        padding: 0 5%;
+      }
+
+      .recommendation-section h3 {
+        font-size: 1.125rem;
+        font-weight: bold;
+        margin-bottom: 1vh; /* 與按鈕區的距離 */
+      }
+
+      .recommendation-buttons {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 0.5em; /* 按鈕之間的間距 */
+      }
+
+      .recommendation-buttons button {
+        padding: 0.5em 1em;
+        font-size: 0.875rem;
+        color: white;
+        background-color: #78bcc4;
+        border: none;
+        border-radius: 0.25rem;
+        transition: transform 0.3s;
+        font-family: Arial, sans-serif;
+      }
+
+      .recommendation-buttons button:hover {
+        transform: translateY(-3px);
+      }
+
+      .contact-section {
+        padding: 4vh 8vw; /* 上下與左右間距 */
+        background-color: #eff5f5; /* 淺灰背景 */
+        text-align: center; /* 確保內容置中對齊 */
+      }
+
+      .contact-item h3 {
+        font-size: 1.125rem; /* 調整標題字體大小 */
+        margin: 0; /* 移除多餘的間距 */
+        text-decoration: none; /* 移除底線 */
+      }
+
+      footer {
+        background-color: #000;
+        color: white;
+        height: 3vh; /* 使用相對單位，高度占螢幕高度的 3% */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 1.5rem; /* 使用相對字體大小 */
+        padding: 0.5rem 0; /* 確保小螢幕時內容不擠壓 */
+      }
+
+      #expandable-menu {
+        position: fixed; 
+        right: 0;
+        width: 26vw; /* 目錄寬度與 sidebar 齊寬 */
+        max-width: 90%; /* 避免在小螢幕太寬 */
+        transform: translateX(100%); /* 初始狀態：隱藏在右側 */
+        transition: transform 0.3s ease;
+        background-color: #f4f4f9; /* 與網站背景一致 */
+        z-index: 1000;
+        box-sizing: border-box;
+      }
+
+      /* 收闔按鈕 */
+      #menu-toggle {
+        position: fixed;
+        top: 45%;
+        right: 0; /* 永遠貼在右側 */
+        transform: translateY(-50%) translateX(0);
+        width: 2.5em; /* 增大按鈕寬度 */
+        height: 5em; /* 增大按鈕高度 */
+        background-color: #78bcc4;
+        color: white;
+        border-radius: 0.4em 0 0 0.4em;
+        display: flex;
+        justify-content: center; /* 水平居中 */
+        align-items: center; /* 垂直居中 */
+        z-index: 2000; /* 要比 expandable-menu 更高，避免被蓋住 */
+        cursor: pointer;
+        box-shadow: -0.1em 0 0.3em rgba(0,0,0,0.1);
+        transition: transform 0.3s ease; /* 平滑移動 */
+      }
+
+      #menu-toggle::after {
+        content: "目錄"; /* 在按鈕內顯示 "目錄" */
+        font-size: 1rem;
+        color: white; /* 設定字體顏色為白色 */
+        writing-mode: vertical-rl; /* 使文字垂直排列 */
+      }
+
+      #menu-toggle:hover {
+        background-color: #78bcc4;
+      }
+
+      /* 目錄內容 */
+      #menu-content {
+        padding: 0.5rem 5%;
+        overflow-y: auto;
+        height: 100%;
+        box-sizing: border-box;
+      }
+
+      #menu-content h4 {
+        font-weight: bold;
+        margin-top: 0;
+        font-size: 1.2rem;
+      }
+
+      #menu-list {
+        list-style: none;
+        padding: 0;
+      }
+
+      #menu-list li {
+        margin-bottom: 1vh;
+      }
+
+      #menu-list a {
+        color: #2a90a7;
+        text-decoration: none;
+        transition: color 0.3s;
+        font-size: 1rem; /* 使用相對字體大小 */
+      }
+
+      #menu-list a:hover {
+        color: #78bcc4;
+      }
+
+      #menu-list .sub-item {
+        margin-left: 8%; /* 調整縮排距離 */
+        font-size: 0.9rem; /* 可選：調整子項目字體大小 */
+      }
+
+      /* 目錄展開狀態 */
+      #expandable-menu.open {
+        transform: translateX(0);
+      }
+
+      /* === 響應式調整：針對手機與小螢幕設備 === */
+      @media (max-width: 768px) {
+        nav {
+          flex-direction: row;
+          flex-wrap: wrap;
+          align-items: center;
+          justify-content: space-between;
+          padding: 1rem 5vw;  /* 窄螢幕時減少左右留白 */
+          width: 100%;
+          box-sizing: border-box;
+        }
+
+        .nav-right {
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          gap: 0.5rem;
+          transform: none;
+          width: auto;
+          white-space: nowrap;               /* 禁止內容自動換行 */
+        }
+
+        nav a {
+          padding: 0.5rem 0.5rem;           /* 減少垂直padding */
+          margin: 0 0.3rem;
+          font-size: 0.85rem;
+          white-space: nowrap;               /* 確保文字不換行 */
+          overflow: hidden;
+          text-overflow: ellipsis;           /* 若內容超出，顯示省略號 */
+        }
+
+        .nav-dropdown {
+          width: 60%; /* 或者用 max-content, fit-content 看需求 */
+          font-size: 0.85rem; /* 調整字體大小和導覽列一致 */
+          padding: 0.5rem;
+        }
+      
+        .nav-dropdown a {
+          font-size: inherit; /* 確保跟 .nav-dropdown 一樣大 */
+          padding: 0.5rem 1rem;
+          white-space: normal; /* 可選：讓字在必要時換行 */
+        }
+
+        .dropdown-content {
+          width: 12vw;
+          min-width: 8em; /* 保證至少能顯示幾個字 */
+          max-width: none;
+        }
+
+        .dropdown-content a {
+          font-size: 0.85rem;
+        }
+        
+        .intro-section {
+          flex-direction: column;
+          padding: 8%;
+        }
+
+        .intro-section .left,
+        .intro-section .right {
+          width: 100%;
+          padding: 0;
+          flex: 1 1 100%;
+        }
+
+        .intro-section .right {
+          margin-top: 1.5rem;
+          display: flex;
+          justify-content: center;
+        }
+
+        .intro-section h4 {
+          max-width: 100%;
+          font-size: 1rem;
+        }
+
+        .destination-grid {
+          flex-direction: column;
+          gap: 1rem;
+        }
+
+        .destination-section h4 {
+          font-size: 1rem;
+        }
+
+        .destination-item {
+          max-width: 100%;
+          width: 100%;
+        }
+
+        .destination-item.a_role_with_2 {
+          position: static;
+          left: auto;
+        }
+
+        .destination-main,
+        .destination-sidebar {
+          width: 100%;
+          margin: 0;
+          padding: 0;
+        }
+
+        .destination-sidebar {
+          margin-top: 2rem;
+        }
+
+        .recommendation-buttons button {
+          width: 100%; /* 小螢幕按鈕全寬排列 */
+        }
+
+        .contact-section {
+          padding: 3vh 5vw;
+        }
+
+        .contact-item h3 {
+          font-size: 1rem;
+        }
+
+        /* 目錄區寬度改為螢幕寬度的40% */
+        #expandable-menu {
+          width: 40vw !important; /* 用vw方便響應螢幕寬度 */
+          max-width: 90%; /* 保留原本max-width避免太寬 */
+        }
+      
+        #expandable-menu,
+        #expandable-menu * {
+          font-size: 85% !important;
+        }
+              
+        #menu-toggle {
+          width: 75%;
+          max-width: 1.875em;
+          min-width: 1.875em;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <div class="nav-left">
+        <div class="logo">
+          <a href="首頁.html">
+            <img src="網站Logo.png" alt="網站 Logo" />
+          </a>
+        </div>
+      </div>
+      <div class="nav-right">
+        <a href="首頁.html">關於我</a>
+        <div class="dropdown">
+          <a class="dropdown-toggle">亞洲旅遊</a>
+          <div class="dropdown-content">
+            <a href="中國.html">中國</a>
+            <a href="日本.html">日本</a>
+            <a href="新加坡.html">新加坡</a>
+            <a href="馬來西亞.html">馬來西亞</a>
+            <a href="泰國.html">泰國</a>
+            <a href="印尼.html">印尼</a>
+            <a href="越南.html">越南</a>
+          </div>
+        </div>
+        <div class="dropdown">
+          <a class="dropdown-toggle">歐洲旅遊</a>
+          <div class="dropdown-content">
+            <a href="英國.html">英國</a>
+            <a href="法國.html">法國</a>
+            <a href="荷蘭.html">荷蘭</a>
+            <a href="比利時.html">比利時</a>
+            <a href="盧森堡.html">盧森堡</a>
+            <a href="瑞士.html">瑞士</a>
+            <a href="摩納哥.html">摩納哥</a>
+            <a href="西班牙.html">西班牙</a>
+            <a href="葡萄牙.html">葡萄牙</a>
+            <a href="安道爾.html">安道爾</a>
+            <a href="丹麥.html">丹麥</a>
+            <a href="瑞典.html">瑞典</a>
+            <a href="波蘭.html">波蘭</a>
+          </div>
+        </div>
+        <div class="dropdown">
+          <a class="dropdown-toggle">美洲旅遊</a>
+          <div class="dropdown-content">
+            <a href="美國.html">美國</a>
+            <a href="加拿大.html">加拿大</a>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <div class="intro-section">
+      <div class="left">
+        <h1>Tommy 在大理</h1>
+        <h4>
+          <b>大理</b>位於雲南省西部，環抱洱海、背靠蒼山，自古以來便是滇西的重要交通與文化中心。早在唐代大理地區即為南詔國的都城，後來建立大理國，成為雲南地區最重要的政權之一，這裡融合了漢、白、藏等多民族文化，佛教、道教與本地信仰在此共存，形成獨特的歷史風貌與宗教建築。
+        </h4>
+        <h4>現今的大理保有濃厚的歷史文化氛圍與自然美景，石板街巷、白族民居與文藝小店林立，呈現出寧靜與活力並存的氛圍，不少年輕人選擇來此創業、生活，推動文創、咖啡文化與可持續旅遊的發展。</h4>
+      </div>
+      <div class="right">
+        <img src="中國照片\大理\DL12.jpg" style="width: 100%; height: auto; max-width: 100%;" />
+      </div>
+    </div>
+
+    <div class="destination-section">
+      <div class="destination-main">
+        <h2>大理交通</h2>
+        <h3>機場交通</h3>
+        <h4>
+          大理鳳儀機場距離大理市區不遠，由於雲南打車十分便宜，建議直接打車前往飯店或景點即可。
+        </h4>
+        <h3>市區交通</h3>
+        <h4>
+          大理基本上沒有大眾交通運輸可言，到所有地方一律建議打車，如果要搭乘公車的話可以在不同古城間穿梭，只要先在支付寶上開通大理乘車碼即可刷卡上車。
+        </h4>
+        <br /><br />
+        <h2>大理住宿</h2>
+        <h4>
+          在大理選住宿建議以景點做為考量，推薦可以找<b>大理古鎮</b>附近的住宿，去其他的景點也距離比較近，雖然價格會比住在大理市區高，但是能減省不少搭車的時間。
+        </h4>
+        <div style="text-align: center">
+          <img src="中國照片\大理\大理_住宿.png" style="width: 100%; max-width: 600px; height: auto; margin: 0.5rem;" />
+        </div>
+        <br /><br />
+        <h2>大理景點</h2>
+        <h3>喜州古鎮</h3>
+        <h4>
+          喜州古鎮是白族文化的重要發源地，作為古南詔國的政治與經濟中心，喜州擁有悠久的歷史與豐富的人文底蘊，鎮內保留了大量白族傳統建築，如四合五天井、照壁影牆，展現濃厚的民族特色。除了建築，喜州的飲食文化也頗具特色，著名小吃如破酥包、喜洲粑粑深受喜愛。
+        </h4>
+        <div style="text-align: center">
+          <img src="中國照片\大理\DL1.jpg" style="width: 90%; max-width: 600px; height: auto; margin: 0.5rem;" />
+          <img src="中國照片\大理\DL2.jpg" style="width: 90%; max-width: 600px; height: auto; margin: 0.5rem;" />
+          <img src="中國照片\大理\DL3.jpg" style="width: 100%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+        </div>
+        <br /><br /><br />
+        <h3>大理古鎮</h3>
+        <h4>
+          大理古鎮是中國著名的歷史文化名鎮之一，擁有上千年的歷史，古鎮依山傍水，背靠蒼山、面對洱海，保留大量白族建築與明清時期的街道格局，城牆、城樓、洋人街等景點展現獨特的歷史風貌。大理自古就是南方絲綢之路的重要節點，也是南詔與大理國的政治中心，文化底蘊深厚，如今大理古鎮融合傳統與現代，既能體驗白族風情與歷史遺跡，也可品味特色小吃與購物娛樂，是深度探索雲南民族文化與自然美景的熱門目的地。
+        </h4>
+        <div style="text-align: center">
+          <img src="中國照片\大理\DL4.jpg" style="width: 90%; max-width: 600px; height: auto; margin: 0.5rem;" />
+          <img src="中國照片\大理\DL5.jpg" style="width: 90%; max-width: 600px; height: auto; margin: 0.5rem;" />
+          <img src="中國照片\大理\DL6.jpg" style="width: 90%; max-width: 600px; height: auto; margin: 0.5rem;" />
+          <img src="中國照片\大理\DL7.jpg" style="width: 100%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+        </div>
+        <br /><br /><br />
+        <h3>鳳陽邑村</h3>
+        <h4>
+          鳳陽邑村是雲南大理下關鎮的一座傳統白族村落，坐落於蒼山佛頂峰腳下，距大理古城約 6 ~ 7 公里，擁有超過千年歷史，村名原為「磚窯」，因出產大量紅磚建材供奉大理三塔與古城牆而聞名，後改稱鳳陽邑，意含吉祥 。這裡保存約700米的青石茶馬古道，路旁為白族石牆老屋，村內有多處打卡熱點，劇集《去有風的地方》的「有風小院」、古老茶馬驛站「馬店」、以及千年石板棋盤等，為保留古村原貌，地方積極推動「有舊保舊、修舊如舊」的鄉村振興策略，改善環境、整修古道與建築，並打造文旅融合的新模式 。
+        </h4>
+        <div style="text-align: center">
+          <img src="中國照片\大理\DL8.jpg" style="width: 100%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+          <img src="中國照片\大理\DL9.jpg" style="width: 90%; max-width: 600px; height: auto; margin: 0.5rem;" />
+        </div>
+        <br /><br /><br />
+        <h3>崇聖寺三塔</h3>
+        <h4>
+          崇聖寺三塔是大理最具代表性的歷史古蹟，始建於南詔國時期，已有千年以上歷史。三塔呈品字形排列，主塔高 69 米，為方形密檐式磚塔，兩側小塔各高 42 米，三塔不僅是佛教文化的象徵，也展現出當地古代建築工藝的高超水準。整座建築群在蒼山與洱海間相映成趣，景色壯麗，是大理古城的重要地標，崇聖寺三塔不僅具有深厚的宗教意涵，更是大理歷史與文化的重要見證。
+        </h4>
+        <div style="text-align: center">
+          <img src="中國照片\大理\DL10.jpg" style="width: 90%; max-width: 600px; height: auto; margin: 0.5rem;" />
+        </div>
+        <br /><br /><br />
+        <h3>龍龕古渡</h3>
+        <h4>
+          龍龕古渡位於雲南大理洱海西岸，是古代南詔國重要的水陸交通樞紐，據說此地曾是皇族渡江及商旅往來的必經之地，因地勢險要、水勢湍急，得名「龍龕」，意為龍神棲息之地。現今的龍龕古渡仍保留石階碼頭、古碑與部分舊跡，訴說著昔日茶馬古道的繁榮，這裡風景秀麗，洱海碧波與蒼山倒影交織成畫，是攝影與賞景的絕佳地點，可在此乘船泛洱海，或漫步湖畔古道，感受歷史與自然的交融，享受一段寧靜又富有文化底蘊的旅程。
+        </h4>
+        <div style="text-align: center">
+          <img src="中國照片\大理\DL11.jpg" style="width: 100%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+          <img src="中國照片\大理\DL12.jpg" style="width: 100%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+          <img src="中國照片\大理\DL13.jpg" style="width: 100%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+          <img src="中國照片\大理\DL14.jpg" style="width: 100%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+        </div>
+        <br /><br /><br />
+        <h2>大理美食</h2>
+        <h3>翠麓野白族庭院私房菜</h3>
+        <h4>
+          翠麓野白族庭院私房菜是一家融合白族風情與自然山野風味的特色餐廳，餐廳隱身於靜謐庭院之中，建築保留傳統白族民居風格，主打在地食材與家常手藝，精緻呈現白族風味菜餚，如酸辣魚、涼拌花椒雞、野菜拼盤等，口味樸實卻層次豐富。
+        </h4>
+        <div class="two-vertical-images">
+          <img src="中國照片\大理\DL15-1.jpg" />
+          <img src="中國照片\大理\DL15-2.jpg" />
+        </div>
+        <div class="two-vertical-images">
+          <img src="中國照片\大理\DL16-1.jpg" />
+          <img src="中國照片\大理\DL16-2.jpg" />
+        </div>
+        <br />
+        <h3>樹下小館</h3>
+        <h4>
+          樹下小館是一家主打雲南經典過橋米線的特色小館，位於大理古城內，店內招牌過橋米線選用現熬高湯，搭配新鮮食材與手工米線，湯頭濃郁香醇入口滑順，可依個人口味選擇豬肉、雞絲、菌菇等多樣配料，體驗地道的雲南飲食文化。店名「樹下」象徵悠閒自在的用餐氛圍，讓人彷彿回到鄉間老家。
+        </h4>
+        <div style="text-align: center">
+          <img src="中國照片\大理\DL17.jpg" style="width: 90%; max-width: 600px; height: auto; margin: 0.5rem;" />
+        </div>
+        <br /><br /><br />
+        <h3>彼漫咖啡</h3>
+        <h4>
+          彼漫咖啡位於洱海濱的磻溪S灣，是一家結合海景民宿與精品咖啡館的人氣打卡點，餐廳臨窗而設，可一邊手沖雲南本土精品豆，一邊遠眺蒼山洱海，環境優雅舒適令人彷彿置身在水墨畫中 ，並提供各式咖啡與輕食甜點，如手工蛋糕與咖啡氣泡飲。除了咖啡館，二樓為民宿空間，能欣賞日出日落，吸引不少旅客長住或短暫休憩。咖啡館+海景民宿的設計結合，讓人一進店就放鬆，是體驗大理慢生活與洱海風光的絕佳選擇。
+        </h4>
+        <div style="text-align: center">
+          <img src="中國照片\大理\DL18.jpg" style="width: 100%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+          <img src="中國照片\大理\DL19.jpg" style="width: 90%; max-width: 600px; height: auto; margin: 0.5rem;" />
+        </div>
+        <br /><br /><br />
+        <h3>柿子樹咖啡館</h3>
+        <h4>
+          柿子樹咖啡館是一家隱身於大理古城巷弄間的文藝小店，以一棵老柿子樹為名，充滿溫馨與詩意，店內裝潢簡約自然，融合木質與手作元素，營造出靜謐放鬆的氛圍，提供各式精品咖啡、手工甜點與簡餐，是旅人歇腳、讀書或寫字的理想場所。每到秋冬，柿子樹結實纍纍，增添幾分溫暖與鄉愁，讓人流連忘返。
+        </h4>
+        <div style="text-align: center">
+          <img src="中國照片\大理\DL20.jpg" style="width: 90%; max-width: 600px; height: auto; margin: 0.5rem;" />
+          <img src="中國照片\大理\DL21.jpg" style="width: 90%; max-width: 600px; height: auto; margin: 0.5rem;" />
+        </div>
+      </div>
+      <div class="destination-sidebar">
+        <div class="sidebar-image-container">
+          <img src="側邊欄自我介紹.jpg" />
+        </div>
+        <h5>
+          Hi!
+          我是Tommy，我熱愛旅遊也喜歡藉由影像紀錄旅程中的點點滴滴，透過文字將我在旅途中的所見所聞分享給大家。旅行對我而言不只是吃吃喝喝，而是能在行萬里路間感受世界的脈動，體驗不同的文化，希望藉由我的分享能讓大家看到更多世界的美好。
+        </h5>
+        <br />
+        <h5>
+          想更了解我或與我聯絡:
+          <a
+            href="https://www.instagram.com/tommy_techvoyage/"
+            target="_blank"
+            style="color: inherit; text-decoration: underline"
+          >
+            <b>Instagram</b>
+          </a>
+        </h5>
+        <div class="recommendation-section">
+          <h3>其他中國旅遊目的地</h3>
+          <div class="recommendation-buttons">
+            <a href="上海.html">
+              <button><h5>上海</h5></button>
+            </a>
+            <a href="廣州.html">
+              <button><h5>廣州</h5></button>
+            </a>
+            <a href="長沙.html">
+              <button><h5>長沙</h5></button>
+            </a>
+            <a href="成都.html">
+              <button><h5>成都</h5></button>
+            </a>
+            <a href="重慶.html">
+              <button><h5>重慶</h5></button>
+            </a>
+            <a href="桂林.html">
+              <button><h5>桂林</h5></button>
+            </a>
+            <a href="陽朔.html">
+              <button><h5>陽朔</h5></button>
+            </a>
+            <a href="汕頭南澳島.html">
+              <button><h5>汕頭南澳島</h5></button>
+            </a>
+            <a href="昆明.html">
+              <button><h5>昆明</h5></button>
+            </a>
+            <a href="麗江.html">
+              <button><h5>麗江</h5></button>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="contact-section">
+      <div class="contact-item">
+        <h3>
+          想更了解我或與我聯絡:
+          <a
+            href="https://www.instagram.com/tommy_techvoyage/"
+            target="_blank"
+            style="color: inherit; text-decoration: underline"
+          >
+            Instagram
+          </a>
+        </h3>
+      </div>
+    </div>
+    <footer>
+      <h6>COPYRIGHT © 2025 Tommy 看世界 All rights reserved.</h6>
+    </footer>
+    <div id="menu-toggle"></div>
+    <div id="expandable-menu">
+      <div id="menu-content">
+        <h4>目錄</h4>
+        <ul id="menu-list"></ul>
+      </div>
+    </div>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const menu = document.getElementById("expandable-menu");
+        const toggle = document.getElementById("menu-toggle");
+        const menuList = document.getElementById("menu-list");
+        const destinationMain = document.querySelector(".destination-main");
+
+        // 點擊按鈕切換目錄狀態
+        toggle.addEventListener("click", () => {
+          menu.classList.toggle("open");
+
+          const menuWidth = menu.offsetWidth; // 獲取目前展開的目錄寬度
+
+          if (menu.classList.contains("open")) {
+            // 讓按鈕向左平移與 menu 一樣的寬度
+            toggle.style.transform = `translateY(-50%) translateX(-${menuWidth}px)`;
+          } else {
+            // 收回原位
+            toggle.style.transform = `translateY(-50%) translateX(0)`;
+          }
+        });
+
+        window.addEventListener("load", () => {
+          if (menu.classList.contains("open")) {
+            const menuWidth = menu.offsetWidth;
+            toggle.style.transform = `translateY(-50%) translateX(-${menuWidth}px)`;
+          }
+        });
+
+        // 從 destination-main 區域提取 h2 和 h3，動態生成目錄
+        const headings = destinationMain.querySelectorAll("h2, h3");
+        headings.forEach((heading, index) => {
+          // 確保每個 h2 和 h3 都有唯一的 id
+          if (!heading.id) {
+            heading.id = `heading-${index}`;
+          }
+
+          const listItem = document.createElement("li");
+          const link = document.createElement("a");
+          link.textContent = heading.textContent;
+          link.href = `#${heading.id}`;
+          listItem.appendChild(link);
+
+          // 為 h3 添加縮排樣式
+          if (heading.tagName.toLowerCase() === "h3") {
+            listItem.classList.add("sub-item");
+          }
+
+          menuList.appendChild(listItem);
+        });
+
+        function adjustMenuPosition() {
+          const nav = document.querySelector("nav");
+          const menu = document.getElementById("expandable-menu");
+      
+          if (nav && menu) {
+            const navHeight = nav.offsetHeight;
+      
+            // 設定 menu 的 top 與高度
+            menu.style.top = `${navHeight}px`;
+            menu.style.height = `calc(100vh - ${navHeight}px)`;
+          }
+        }
+      
+        // 載入與尺寸變化時調整
+        window.addEventListener("DOMContentLoaded", adjustMenuPosition);
+        window.addEventListener("resize", adjustMenuPosition);
+        
+        // 滾動至目標位置並加上 75px 偏移
+        menuList.addEventListener("click", (event) => {
+          if (event.target.tagName === "A") {
+            event.preventDefault(); // 阻止預設行為
+
+            const targetId = event.target.getAttribute("href").substring(1); // 取得目標 ID
+            const targetElement = document.getElementById(targetId);
+
+            if (targetElement) {
+              // 計算目標元素的位置並加上 75px 偏移
+              const targetPosition =
+                targetElement.getBoundingClientRect().top + window.scrollY;
+              const offset = 75; // 偏移的距離
+              window.scrollTo({
+                top: targetPosition - offset,
+                behavior: "smooth", // 平滑滾動
+              });
+            }
+          }
+        });
+        // 手機 Safari 相容：點擊展開 dropdown
+        const dropdownToggles = document.querySelectorAll(".dropdown-toggle");
+
+        dropdownToggles.forEach((toggle) => {
+          toggle.addEventListener("click", function (e) {
+            e.stopPropagation(); // 防止冒泡，避免點擊外層時也觸發關閉
+            const dropdown = this.nextElementSibling;
+            const isVisible = dropdown.style.display === "block";
+            
+            // 關閉所有其他 dropdown（可選）
+            document.querySelectorAll(".dropdown-content").forEach((menu) => {
+              menu.style.display = "none";
+            });
+
+            // 切換目前這一個 dropdown
+            dropdown.style.display = isVisible ? "none" : "block";
+          });
+        });
+
+        // 點擊其他地方時關閉 dropdown
+        window.addEventListener("click", function () {
+          document.querySelectorAll(".dropdown-content").forEach((menu) => {
+            menu.style.display = "none";
+          });
+        });
+      });
+    </script>
+  </body>
+</html>
