@@ -397,21 +397,22 @@
         .intro-section {
           flex-direction: column;
           padding: 8%;
+          padding-top: calc(8% + 6rem); /* ⭐ 關鍵：讓位給 nav */
         }
-
+      
         .intro-section .left,
         .intro-section .right {
           width: 100%;
           padding: 0;
           flex: 1 1 100%;
         }
-
+      
         .intro-section .right {
           margin-top: 1.5rem;
           display: flex;
           justify-content: center;
         }
-
+      
         .intro-section h4 {
           max-width: 100%;
           font-size: 1rem;
