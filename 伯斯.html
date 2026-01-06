@@ -1,0 +1,864 @@
+<!DOCTYPE html>
+<html lang="zh-hant-TW">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="曹旅瀚 Tommy" />
+    <meta name="description" content="探索西澳首府伯斯，享受陽光海岸、藍色海水與純淨自然景觀，走訪國王公園、天鵝河與羅特尼斯島，體驗悠閒慢活的澳洲西岸旅遊魅力。">
+    <meta name="keywords" content="伯斯旅遊,Perth,伯斯自由行,伯斯景點,伯斯海灘,西澳旅遊,國王公園,天鵝河,羅特尼斯島,微笑短尾矮袋鼠,伯斯行程,伯斯住宿,伯斯推薦,澳洲西岸,西澳自由行">
+    <title>Tommy 看世界 - 伯斯</title>
+    <link rel="icon" href="網頁縮圖.ico" />
+    <style>
+      body {
+        font-family: Calibri, Arial, sans-serif; /* 首選 Calibri，次選 Arial */
+        margin: 0;
+        overflow-x: hidden; /* 禁止水平滾動 */
+        background-color: #f4f4f9;
+        color: #333;
+      }
+
+      h1 {
+        font-size: 40px;
+        font-weight: bold;
+      }
+
+      h2 {
+        font-size: 32px;
+        font-weight: bold;
+        color: #2a90a7;
+        display: inline-block;
+        background-color: #cee5e8;
+      }
+
+      h3 {
+        font-size: 26px;
+        margin: 0 0 1rem;
+        font-weight: bold;
+        text-decoration: underline;
+      }
+
+      h4 {
+        font-size: 18px;
+        font-weight: normal;
+        line-height: 1.8;
+      }
+
+      h5 {
+        font-size: 16px;
+        font-weight: normal;
+        margin: 0;
+      }
+
+      h6 {
+        font-size: 10px;
+        color: #fff;
+        margin: 0;
+        text-align: center;
+        line-height: 50px; /* 高度對齊 */
+      }
+
+      nav {
+        background-color: #78bcc4;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;                     /* 讓 nav 寬度隨螢幕自適應 */
+        padding: 0.8rem 5vw;               /* 左右 padding 用 5% 寬度 */
+        box-sizing: border-box;         /* 確保 padding 不會影響寬度總長 */
+        position: fixed;
+        top: 0;
+        z-index: 1000;
+      }
+
+      .nav-left .logo img {
+        height: 5vw; /* 高度為螢幕寬度的 5% */
+        transform: translateX(-2vw); /* 向左移動 2% 寬度 */
+        max-width: 100%; /* 確保不會超過容器 */
+        height: auto; /* 保持圖片比例（建議與 max-height 搭配） */
+        max-height: 3rem;
+      }
+
+      .nav-right {
+        display: flex;
+        align-items: center;
+        margin-left: auto; /* 推到右側 */
+        padding-left: 5%;   /* 內部元素間距，彈性設計 */
+      }
+
+      nav a {
+        color: #eff5f5;
+        text-decoration: none;
+        padding: 1vh 1vw;
+        margin: 0 1vw;
+        transition: transform 0.3s;
+      }
+
+      nav a:hover {
+        transform: translateY(-0.5vh); /* 根據視窗高度調整 */
+      }
+
+      .dropdown {
+        position: relative;
+        display: inline-block;
+      }
+
+      .dropdown-content {
+        width: 100%; /* 佔滿父層寬度 */
+        max-width: 20vw; /* 限制最大寬度 */
+        display: none;
+        position: absolute;
+        background-color: #78bcc4;
+        min-width: 10em; /* 取代 160px，以字體大小作為比例單位 */
+        border-radius: 0.25em;
+        box-shadow: 0 0.5em 1em rgba(0, 0, 0, 0.2); /* 改為相對單位 */
+        padding: 0.2rem 0;
+        z-index: 999;
+      }
+
+      .dropdown-content a {
+        color: #eff5f5;
+        display: block;
+        transition: transform 0.3s;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.3); /* 更淡配色、柔和過渡 */
+        padding: 0.6em 1em;
+        font-size: 1em;
+      }
+
+      .dropdown-content a:last-child {
+        border-bottom: none;
+      }
+
+      .dropdown-content a:hover {
+        transform: translateY(-0.25em); /* 改為相對單位 */
+      }
+
+      .intro-section {
+        background-color: #eff5f5;
+        display: flex;
+        flex-wrap: wrap; /* 確保在小螢幕可換行 */
+        padding: 2rem 5%;
+        margin-top: 4em; /* 根據導航列高度調整 */
+      }
+
+      .intro-section h4 {
+        max-width: 85%; /* 改為相對單位，避免固定寬度限制 */
+        line-height: 1.8;
+      }
+
+      .intro-section .left {
+        width: 60%;
+        padding-right: 1%;
+      }
+
+      .intro-section .right {
+        width: 39%;
+      }
+
+      .destination-section {
+        display: flex;
+        flex-wrap: wrap;               /* 小螢幕時允許換行 */
+        padding: 1rem 5%; /* 左右內間距為螢幕的10% */
+        background-color: white;
+      }
+
+      .destination-main {
+        width: 72%;                    /* 主要內容佔 72%，略縮以保留間距 */
+        margin-right: 3%;              /* 與 sidebar 間保留間距（約為 3%） */
+        box-sizing: border-box;
+      }
+
+      .destination-sidebar {
+        width: 25%;                    /* 側邊欄佔 25% */
+        padding-left: 2%;             /* 相對內邊距 */
+        margin-top: 2rem;
+        box-sizing: border-box;
+      }
+
+      .sidebar-image-container {
+        margin-bottom: 1rem;
+        text-align: center; /* 置中圖片 */
+      }
+
+      .sidebar-image-container img {
+        width: 90%;         /* 圖片寬度為容器寬度的 90% */
+        height: auto;       /* 高度自動，保持比例 */
+        max-height: 60vh;   /* 避免圖片過高，佔螢幕最大 60% 高 */
+        object-fit: cover;  /* 裁切處理長圖 */
+      }
+
+      .two-vertical-images {
+        display: flex;
+        justify-content: space-between;
+        gap: 4%; /* 使用百分比間距更彈性 */
+        margin-top: 2rem;
+        margin-bottom: 2rem;
+        flex-wrap: wrap; /* 若畫面太小，允許換行 */
+      }
+
+      .two-vertical-images img {
+        width: 48%; /* 每張圖片約佔一半（加上 gap 剛好 100%） */
+        height: auto; /* 保持原比例 */
+        object-fit: cover;
+        display: block;
+        margin: 0 auto;
+      }
+
+      .recommendation-section {
+        margin-top: 3vh; /* 與上方文字的間距 */
+        text-align: center;
+        position: sticky;
+        top: 80px; /* 空出導覽列的高度，確保推薦區不被覆蓋 */
+        z-index: 10; /* 提高層級，避免被其他內容遮蓋 */
+        padding: 0 5%;
+      }
+
+      .recommendation-section h3 {
+        font-size: 1.125rem;
+        font-weight: bold;
+        margin-bottom: 1vh; /* 與按鈕區的距離 */
+      }
+
+      .recommendation-buttons {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 0.5em; /* 按鈕之間的間距 */
+      }
+
+      .recommendation-buttons button {
+        padding: 0.5em 1em;
+        font-size: 0.875rem;
+        color: white;
+        background-color: #78bcc4;
+        border: none;
+        border-radius: 0.25rem;
+        transition: transform 0.3s;
+        font-family: Arial, sans-serif;
+      }
+
+      .recommendation-buttons button:hover {
+        transform: translateY(-3px);
+      }
+
+      .contact-section {
+        padding: 4vh 8vw; /* 上下與左右間距 */
+        background-color: #eff5f5; /* 淺灰背景 */
+        text-align: center; /* 確保內容置中對齊 */
+      }
+
+      .contact-item h3 {
+        font-size: 1.125rem; /* 調整標題字體大小 */
+        margin: 0; /* 移除多餘的間距 */
+        text-decoration: none; /* 移除底線 */
+      }
+
+      footer {
+        background-color: #000;
+        color: white;
+        height: 3vh; /* 使用相對單位，高度占螢幕高度的 3% */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 1.5rem; /* 使用相對字體大小 */
+        padding: 0.5rem 0; /* 確保小螢幕時內容不擠壓 */
+      }
+
+      #expandable-menu {
+        position: fixed; 
+        right: 0;
+        width: 26vw; /* 目錄寬度與 sidebar 齊寬 */
+        max-width: 90%; /* 避免在小螢幕太寬 */
+        transform: translateX(100%); /* 初始狀態：隱藏在右側 */
+        transition: transform 0.3s ease;
+        background-color: #f4f4f9; /* 與網站背景一致 */
+        z-index: 1000;
+        box-sizing: border-box;
+      }
+
+      /* 收闔按鈕 */
+      #menu-toggle {
+        position: fixed;
+        top: 45%;
+        right: 0; /* 永遠貼在右側 */
+        transform: translateY(-50%) translateX(0);
+        width: 2.5em; /* 增大按鈕寬度 */
+        height: 5em; /* 增大按鈕高度 */
+        background-color: #78bcc4;
+        color: white;
+        border-radius: 0.4em 0 0 0.4em;
+        display: flex;
+        justify-content: center; /* 水平居中 */
+        align-items: center; /* 垂直居中 */
+        z-index: 2000; /* 要比 expandable-menu 更高，避免被蓋住 */
+        cursor: pointer;
+        box-shadow: -0.1em 0 0.3em rgba(0,0,0,0.1);
+        transition: transform 0.3s ease; /* 平滑移動 */
+      }
+
+      #menu-toggle::after {
+        content: "目錄"; /* 在按鈕內顯示 "目錄" */
+        font-size: 1rem;
+        color: white; /* 設定字體顏色為白色 */
+        writing-mode: vertical-rl; /* 使文字垂直排列 */
+      }
+
+      #menu-toggle:hover {
+        background-color: #78bcc4;
+      }
+
+      /* 目錄內容 */
+      #menu-content {
+        padding: 0.5rem 5%;
+        overflow-y: auto;
+        height: 100%;
+        box-sizing: border-box;
+      }
+
+      #menu-content h4 {
+        font-weight: bold;
+        margin-top: 0;
+        font-size: 1.2rem;
+      }
+
+      #menu-list {
+        list-style: none;
+        padding: 0;
+      }
+
+      #menu-list li {
+        margin-bottom: 1vh;
+      }
+
+      #menu-list a {
+        color: #2a90a7;
+        text-decoration: none;
+        transition: color 0.3s;
+        font-size: 1rem; /* 使用相對字體大小 */
+      }
+
+      #menu-list a:hover {
+        color: #78bcc4;
+      }
+
+      #menu-list .sub-item {
+        margin-left: 8%; /* 調整縮排距離 */
+        font-size: 0.9rem; /* 可選：調整子項目字體大小 */
+      }
+
+      /* 目錄展開狀態 */
+      #expandable-menu.open {
+        transform: translateX(0);
+      }
+
+      /* === 響應式調整：針對手機與小螢幕設備 === */
+      @media (max-width: 768px) {
+        nav {
+          flex-direction: row;
+          flex-wrap: wrap;
+          align-items: center;
+          justify-content: space-between;
+          padding: 1rem 5vw;  /* 窄螢幕時減少左右留白 */
+          width: 100%;
+          box-sizing: border-box;
+        }
+
+        .nav-right {
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          gap: 0.5rem;
+          transform: none;
+          width: auto;
+          white-space: nowrap;               /* 禁止內容自動換行 */
+        }
+
+        nav a {
+          padding: 0.5rem 0.5rem;           /* 減少垂直padding */
+          margin: 0 0.3rem;
+          font-size: 0.85rem;
+          white-space: nowrap;               /* 確保文字不換行 */
+          overflow: hidden;
+          text-overflow: ellipsis;           /* 若內容超出，顯示省略號 */
+        }
+
+        .nav-dropdown {
+          width: 60%; /* 或者用 max-content, fit-content 看需求 */
+          font-size: 0.85rem; /* 調整字體大小和導覽列一致 */
+          padding: 0.5rem;
+        }
+      
+        .nav-dropdown a {
+          font-size: inherit; /* 確保跟 .nav-dropdown 一樣大 */
+          padding: 0.5rem 1rem;
+          white-space: normal; /* 可選：讓字在必要時換行 */
+        }
+
+        .dropdown-content {
+          width: 12vw;
+          min-width: 8em; /* 保證至少能顯示幾個字 */
+          max-width: none;
+        }
+
+        .dropdown-content a {
+          font-size: 0.85rem;
+        }
+        
+        .intro-section {
+          flex-direction: column;
+          padding: 8%;
+        }
+
+        .intro-section .left,
+        .intro-section .right {
+          width: 100%;
+          padding: 0;
+          flex: 1 1 100%;
+        }
+
+        .intro-section .right {
+          margin-top: 1.5rem;
+          display: flex;
+          justify-content: center;
+        }
+
+        .intro-section h4 {
+          max-width: 100%;
+          font-size: 1rem;
+        }
+
+        .destination-grid {
+          flex-direction: column;
+          gap: 1rem;
+        }
+
+        .destination-section h4 {
+          font-size: 1rem;
+        }
+
+        .destination-item {
+          max-width: 100%;
+          width: 100%;
+        }
+
+        .destination-item.a_role_with_2 {
+          position: static;
+          left: auto;
+        }
+
+        .destination-main,
+        .destination-sidebar {
+          width: 100%;
+          margin: 0;
+          padding: 0;
+        }
+
+        .destination-sidebar {
+          margin-top: 2rem;
+        }
+
+        .recommendation-buttons button {
+          width: 100%; /* 小螢幕按鈕全寬排列 */
+        }
+
+        .contact-section {
+          padding: 3vh 5vw;
+        }
+
+        .contact-item h3 {
+          font-size: 1rem;
+        }
+
+        /* 目錄區寬度改為螢幕寬度的40% */
+        #expandable-menu {
+          width: 40vw !important; /* 用vw方便響應螢幕寬度 */
+          max-width: 90%; /* 保留原本max-width避免太寬 */
+        }
+      
+        #expandable-menu,
+        #expandable-menu * {
+          font-size: 85% !important;
+        }
+              
+        #menu-toggle {
+          width: 75%;
+          max-width: 1.875em;
+          min-width: 1.875em;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <div class="nav-left">
+        <div class="logo">
+          <a href="首頁.html">
+            <img src="網站Logo.png" alt="網站 Logo" />
+          </a>
+        </div>
+      </div>
+      <div class="nav-right">
+        <a href="首頁.html">關於我</a>
+        <div class="dropdown">
+          <a class="dropdown-toggle">亞洲旅遊</a>
+          <div class="dropdown-content">
+            <a href="中國.html">中國</a>
+            <a href="日本.html">日本</a>
+            <a href="新加坡.html">新加坡</a>
+            <a href="馬來西亞.html">馬來西亞</a>
+            <a href="泰國.html">泰國</a>
+            <a href="印尼.html">印尼</a>
+            <a href="越南.html">越南</a>
+          </div>
+        </div>
+        <div class="dropdown">
+          <a class="dropdown-toggle">歐洲旅遊</a>
+          <div class="dropdown-content">
+            <a href="英國.html">英國</a>
+            <a href="法國.html">法國</a>
+            <a href="荷蘭.html">荷蘭</a>
+            <a href="比利時.html">比利時</a>
+            <a href="盧森堡.html">盧森堡</a>
+            <a href="瑞士.html">瑞士</a>
+            <a href="摩納哥.html">摩納哥</a>
+            <a href="西班牙.html">西班牙</a>
+            <a href="葡萄牙.html">葡萄牙</a>
+            <a href="安道爾.html">安道爾</a>
+            <a href="丹麥.html">丹麥</a>
+            <a href="瑞典.html">瑞典</a>
+            <a href="波蘭.html">波蘭</a>
+          </div>
+        </div>
+        <div class="dropdown">
+          <a class="dropdown-toggle">美洲旅遊</a>
+          <div class="dropdown-content">
+            <a href="美國.html">美國</a>
+            <a href="加拿大.html">加拿大</a>
+          </div>
+        </div>
+        <div class="dropdown">
+          <a class="dropdown-toggle">大洋洲旅遊</a>
+          <div class="dropdown-content">
+            <a href="澳洲.html">澳洲</a>
+          </div>
+        </div>
+        <div class="dropdown">
+          <a class="dropdown-toggle">非洲旅遊</a>
+          <div class="dropdown-content">
+            <a href="南非.html">南非</a>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <div class="intro-section">
+      <div class="left">
+        <h1>Tommy 在伯斯</h1>
+        <h4>
+          <b>伯斯 (Perth) </b> 位於澳洲西岸，是西澳大利亞州的首府，在歐洲人到來之前，Noongar 原住民族已在此地生活數萬年。1829 年英國建立天鵝河殖民地，伯斯正式成為歐洲移民據點，但早期因環境艱困與資源不足，發展相對緩慢。19 世紀末的金礦熱潮帶動人口成長與城市建設，20 世紀隨著鐵礦、天然氣等資源出口興盛，伯斯成為澳洲重要的礦業與能源管理中心。
+        </h4>
+        <h4>今日的伯斯以高生活品質、充足日照與寬廣自然空間著稱，是世界上最孤立的大城市之一，城市經濟以礦業、能源、科技與教育為主，生活節奏較東岸城市悠緩，政府正積極推動創新產業與永續城市發展，持續提升國際競爭力。</h4>
+      </div>
+      <div class="right">
+        <img src="澳洲照片\伯斯\伯斯_介紹.jpg" style="width: 100%; height: auto; max-width: 100%;" />
+      </div>
+    </div>
+
+    <div class="destination-section">
+      <div class="destination-main">
+        <h2>伯斯交通</h2>
+        <h3>機場交通</h3>
+        <h4>
+          從伯斯國際機場可搭乘 Airport Line 地鐵直達伯斯市中心 Perth Station，車程約 20 分鐘，可再轉乘其他交通工具。
+        </h4>
+        <h3>市區交通</h3>
+        <h4>
+          伯斯市區不大，基本上多數景點都可以步行抵達，要前往湖上藍屋或羅特尼斯島可以搭乘地鐵或公車，可在市中心 Perth Station 購買交通卡並儲值，但如果是要到比較郊區就建議直接租車。
+        </h4>
+        <br /><br />
+        <h2>伯斯住宿</h2>
+        <h4>
+          伯斯市中心小巧可愛，基本上被鐵路與 Perth Station 分為南北兩側，南邊一路到伊麗莎白堤岸多為商業區，相對有比較多地方逛，而北側則為博物館及藝文區，因此推薦大家住在南側，整體機能比較方便。
+        </h4>
+        <div style="text-align: center">
+          <img src="澳洲照片\伯斯\伯斯_住宿.png" style="width: 90%; max-width: 100vw; height: auto;" />
+        </div>
+        <br /><br />
+        <h2>伯斯景點</h2>
+        <h3>Blue Boat House</h3>
+        <h4>
+          Blue Boat House 正式名稱為 Crawley Edge Boatshed，位於天鵝河畔，這座小船屋最早建於 1930 年代，原本作為河畔停船與儲物用途，外觀樸素低調。2001 年重新整修並漆成亮眼的藍色後，因其與河水、天空形成鮮明對比，逐漸成為伯斯最具代表性的景點。Blue Boat House 透過一條狹長的木棧道與岸邊相連，構圖簡潔且極具視覺美感，雖然船屋本身並不對外開放，但其象徵性的外觀與周圍寧靜的自然環境，使其成為散步、拍照與欣賞日落的熱門地點，也展現了伯斯悠閒而貼近自然的城市特色。
+        </h4>
+        <div style="text-align: center">
+          <img src="澳洲照片\伯斯\PE1.jpg" style="width: 70%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+          <img src="澳洲照片\伯斯\PE2.jpg" style="width: 90%; max-width: 100vw; height: auto; margin: 0.5rem;" />
+        </div>
+        <br /><br /><br />
+        <h3>倫敦閣 (London Court)</h3>
+        <h4>
+          倫敦閣是伯斯市中心的特色購物拱廊，建於 1937 年，其設計靈感來自 16 世紀英國都鐸王朝風格。拱廊內可見木骨結構、斜屋頂、彩色玻璃與精緻雕刻，營造出濃厚的歐洲古典氛圍。入口處設有仿倫敦大笨鐘的時鐘，每到整點會有機械人偶報時。London Court 連接主要商業街，是集咖啡館、精品店與紀念品店於一體的休閒空間，它不僅是購物場所，更是伯斯城市歷史與文化的象徵，讓人彷彿置身英國街道之中，展現伯斯多元且富有特色的城市風貌。
+        </h4>
+        <div style="text-align: center">
+          <img src="澳洲照片\伯斯\PE3.jpg" style="width: 70%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+          <img src="澳洲照片\伯斯\PE4.jpg" style="width: 70%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+          <img src="澳洲照片\伯斯\PE5.jpg" style="width: 70%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+        </div>
+        <br /><br /><br />
+        <h3>伊莉莎白堤岸 (Elizabeth Quay)</h3>
+        <h4>
+          伊莉莎白堤岸位於伯斯市中心天鵝河畔，是近年完成的重要濱水發展區，於 2016 年正式開放。此區結合城市與河岸景觀，設有碼頭、步道、公共藝術與綠地，區內最具代表性的地標為優雅的人行橋與噴泉雕塑，夜間燈光倒映河面景色迷人。Elizabeth Quay 周邊聚集餐廳、咖啡館與文化活動場地，並與市中心商業區及大眾運輸系統緊密相連，成功將自然水岸、公共生活與都市發展結合，展現城市開放、宜居且充滿活力的形象。
+        </h4>
+        <div style="text-align: center">
+          <img src="澳洲照片\伯斯\PE6.jpg" style="width: 90%; max-width: 100vw; height: auto; margin: 0.5rem;" />
+          <img src="澳洲照片\伯斯\PE7.jpg" style="width: 90%; max-width: 100vw; height: auto; margin: 0.5rem;" />
+        </div>
+        <br /><br /><br />
+        <h3>國王公園 (Kings Park and Botanic Garden)</h3>
+        <h4>
+          國王公園位於伯斯市中心旁，是世界上最大的市區公園之一，面積廣闊可俯瞰天鵝河與城市天際線，蠻推薦來看夜景。公園結合自然保育與公共休閒功能，擁有豐富的西澳原生植物，其中許多為當地特有種，園內步道、觀景台與草地適合散步、野餐與欣賞日落。Kings Park 同時具有深厚的歷史與文化意義，設有紀念設施與原住民文化介紹，展現對歷史與自然的尊重。
+        </h4>
+        <div style="text-align: center">
+          <img src="澳洲照片\伯斯\PE8.jpg" style="width: 90%; max-width: 100vw; height: auto; margin: 0.5rem;" />
+        </div>
+        <br /><br />
+        <h2>墨爾本近郊景點</h2>
+        <h3>羅特尼斯島 (Rottnest Island)</h3>
+        <h4>
+          羅特尼斯島位於伯斯外海，以清澈海水、白色沙灘與自然生態聞名，算是來伯斯最重要的一個景點，島上最具代表性的特色是短尾矮袋鼠 (Quokka)，因外表可愛、性格溫和，被稱為「世界上最快樂的動物」，島上無私人汽車行駛，主要以自行車代步，營造悠閒、環保的旅遊氛圍。島上同時保有歷史遺跡、燈塔與海岸步道，適合浮潛、健行與放鬆身心，結合自然美景、生態保育與歷史文化，是伯斯周邊最受歡迎的旅遊目的地。
+        </h4>
+        <h4>短尾袋鼠是澳洲特有的小型袋鼠，主要分布於西澳地區，牠們體型嬌小、尾巴短，性情溫和主要以植物為食，多在清晨與黃昏活動，是受保護的野生動物，在與他們互動時<b>記得不要主動去觸碰他們</b>以免觸法。</h4>
+        <h4>前往羅特尼斯島可以從弗里曼特爾或是博斯市區搭乘渡輪前往，<b>強烈建議要事先買票</b>，不然回程常常會選不到理想的時間，上島後可以選擇<b>搭乘公車或租借自行車</b>，公車票是一次買票後便可無限搭乘，並且有固定的停站點，自行車則沒有此限制，但由於島上幾乎沒有遮蔭，自行騎車是對體力的一大考驗，所以如果想舒服的在島上探索，還是比較推薦買公車票。</h4>
+        <div style="text-align: center">
+          <img src="澳洲照片\伯斯\PE9.jpg" style="width: 70%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+          <img src="澳洲照片\伯斯\PE10.jpg" style="width: 90%; max-width: 100vw; height: auto; margin: 0.5rem;" />
+          <img src="澳洲照片\伯斯\PE11.jpg" style="width: 90%; max-width: 100vw; height: auto; margin: 0.5rem;" />
+        </div>
+        <h4>這個笑容真的快要把我融化了，還會好奇地一直看鏡頭。</h4>
+        <div style="text-align: center">
+          <img src="澳洲照片\伯斯\PE12.jpg" style="width: 70%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+          <img src="澳洲照片\伯斯\PE13.jpg" style="width: 70%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+        </div>
+        <h4>運氣好還遇到一隻袋子裡裝著小寶寶的媽媽。</h4>
+        <div style="text-align: center">
+          <img src="澳洲照片\伯斯\PE14.jpg" style="width: 70%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+        </div>
+        <br /><br /><br />
+        <h3>Little Salmon Bay</h3>
+        <h4>
+          Little Salmon Bay 位於羅特尼斯島南側，是島上最受歡迎的海灘，以清澈海水與細白沙灘聞名。海灣呈半月形，水域平靜，適合游泳與浮潛，近岸即可看到豐富的熱帶魚與珊瑚景觀，沙灘周圍保留自然地貌，環境安靜純淨，同時設有步道與觀景點，可欣賞海岸線與湛藍海景。
+        </h4>
+        <div style="text-align: center">
+          <img src="澳洲照片\伯斯\PE15.jpg" style="width: 90%; max-width: 100vw; height: auto; margin: 0.5rem;" />
+          <img src="澳洲照片\伯斯\PE16.jpg" style="width: 90%; max-width: 100vw; height: auto; margin: 0.5rem;" />
+          <img src="澳洲照片\伯斯\PE17.jpg" style="width: 90%; max-width: 100vw; height: auto; margin: 0.5rem;" />
+          <img src="澳洲照片\伯斯\PE18.jpg" style="width: 70%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+        </div>
+        <br /><br /><br />
+        <h3>Wadjemup Lighthouse</h3>
+        <h4>
+          Wadjemup Lighthouse 是羅特尼斯島的最高點，也是島上最重要的歷史地標，建於 1896 年，主要用於引導船隻安全航行於西澳外海。燈塔名稱源自原住民語言「Wadjemup」，意為「水之彼岸」，反映島嶼深厚的原住民文化背景。白色塔身造型簡潔，周圍視野遼闊，可俯瞰整座島嶼與印度洋景色。如今燈塔仍持續運作，同時開放導覽參觀，讓遊客了解海事歷史與島嶼故事。
+        </h4>
+        <div style="text-align: center">
+          <img src="澳洲照片\伯斯\PE19.jpg" style="width: 70%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+          <img src="澳洲照片\伯斯\PE20.jpg" style="width: 90%; max-width: 100vw; height: auto; margin: 0.5rem;" />
+        </div>
+        <br /><br /><br />
+        <h3>Ricey Beach</h3>
+        <h4>
+          Ricey Beach 位於西澳羅特尼斯島北側，是一處相對安靜、自然氣息濃厚的海灘。這裡沙質潔白細緻，海水清澈透明，天氣晴朗時可見層次分明的藍色海面。由於遊客較少，Ricey Beach 十分適合想遠離人潮、放鬆身心的旅人，海灘周圍保留原始地貌，偶爾可見野生短尾矮袋鼠在附近活動，增添自然趣味。此處風浪通常較為平穩，適合散步、拍照或靜靜欣賞海景。
+        </h4>
+        <div style="text-align: center">
+          <img src="澳洲照片\伯斯\PE21.jpg" style="width: 90%; max-width: 100vw; height: auto; margin: 0.5rem;" />
+          <img src="澳洲照片\伯斯\PE22.jpg" style="width: 90%; max-width: 100vw; height: auto; margin: 0.5rem;" />
+        </div>
+        <br /><br /><br />
+        <h3>Cape Vlamingh</h3>
+        <h4>
+          Cape Vlamingh 位於西澳羅特尼斯島西端，是島上最具原始風貌的海岬。此地以遼闊的印度洋景色、崎嶇岩岸與強勁海風聞名，展現與島上沙灘截然不同的自然景觀。Cape Vlamingh 名稱源自早期荷蘭探險歷史，是觀賞海浪拍擊岩岸與欣賞日落的理想地點，也能感受羅特尼斯島粗獷而壯麗的一面。
+        </h4>
+        <div style="text-align: center">
+          <img src="澳洲照片\伯斯\PE23.jpg" style="width: 70%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+          <img src="澳洲照片\伯斯\PE24.jpg" style="width: 90%; max-width: 100vw; height: auto; margin: 0.5rem;" />
+        </div>
+        <br /><br /><br />
+        <h3>The Round House</h3>
+        <h4>
+          The Round House 位於弗里曼特爾，是西澳現存最古老的公共建築，建於 1831 年。這座圓形石造建築最初作為監獄使用，用以關押早期殖民時期的囚犯，並兼具看守港口與防禦功能，其厚重石牆與放射狀牢房設計，反映當時簡樸而嚴格的殖民管理制度。The Round House 坐落於高處，可俯瞰印度洋與港口景色，地理位置十分重要，如今建築已成為歷史景點，對外開放參觀，讓遊客了解弗里曼特爾早期發展與西澳殖民歷史。
+        </h4>
+        <div style="text-align: center">
+          <img src="澳洲照片\伯斯\PE25.jpg" style="width: 70%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+        </div>
+        <br />
+      </div>
+      <div class="destination-sidebar">
+        <div class="sidebar-image-container">
+          <img src="側邊欄自我介紹.jpg" />
+        </div>
+        <h5>
+          Hi!
+          我是Tommy，我熱愛旅遊也喜歡藉由影像紀錄旅程中的點點滴滴，透過文字將我在旅途中的所見所聞分享給大家。旅行對我而言不只是吃吃喝喝，而是能在行萬里路間感受世界的脈動，體驗不同的文化，希望藉由我的分享能讓大家看到更多世界的美好。
+        </h5>
+        <br />
+        <h5>
+          想更了解我或與我聯絡:
+          <a
+            href="https://www.instagram.com/tommy_techvoyage/"
+            target="_blank"
+            style="color: inherit; text-decoration: underline"
+          >
+            <b>Instagram</b>
+          </a>
+        </h5>
+        <div class="recommendation-section">
+          <h3>其他澳洲旅遊目的地</h3>          
+          <div class="recommendation-buttons">
+            <a href="雪梨.html">
+              <button><h5>雪梨</h5></button>
+            </a>
+            <a href="墨爾本.html">
+              <button><h5>墨爾本</h5></button>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="contact-section">
+      <div class="contact-item">
+        <h3>
+          想更了解我或與我聯絡:
+          <a
+            href="https://www.instagram.com/tommy_techvoyage/"
+            target="_blank"
+            style="color: inherit; text-decoration: underline"
+          >
+            Instagram
+          </a>
+        </h3>
+      </div>
+    </div>
+    <footer>
+      <h6>COPYRIGHT © 2025 Tommy 看世界 All rights reserved.</h6>
+    </footer>
+    <div id="menu-toggle"></div>
+    <div id="expandable-menu">
+      <div id="menu-content">
+        <h4>目錄</h4>
+        <ul id="menu-list"></ul>
+      </div>
+    </div>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const menu = document.getElementById("expandable-menu");
+        const toggle = document.getElementById("menu-toggle");
+        const menuList = document.getElementById("menu-list");
+        const destinationMain = document.querySelector(".destination-main");
+
+        // 點擊按鈕切換目錄狀態
+        toggle.addEventListener("click", () => {
+          menu.classList.toggle("open");
+
+          const menuWidth = menu.offsetWidth; // 獲取目前展開的目錄寬度
+
+          if (menu.classList.contains("open")) {
+            // 讓按鈕向左平移與 menu 一樣的寬度
+            toggle.style.transform = `translateY(-50%) translateX(-${menuWidth}px)`;
+          } else {
+            // 收回原位
+            toggle.style.transform = `translateY(-50%) translateX(0)`;
+          }
+        });
+
+        window.addEventListener("load", () => {
+          if (menu.classList.contains("open")) {
+            const menuWidth = menu.offsetWidth;
+            toggle.style.transform = `translateY(-50%) translateX(-${menuWidth}px)`;
+          }
+        });
+
+        // 從 destination-main 區域提取 h2 和 h3，動態生成目錄
+        const headings = destinationMain.querySelectorAll("h2, h3");
+        headings.forEach((heading, index) => {
+          // 確保每個 h2 和 h3 都有唯一的 id
+          if (!heading.id) {
+            heading.id = `heading-${index}`;
+          }
+
+          const listItem = document.createElement("li");
+          const link = document.createElement("a");
+          link.textContent = heading.textContent;
+          link.href = `#${heading.id}`;
+          listItem.appendChild(link);
+
+          // 為 h3 添加縮排樣式
+          if (heading.tagName.toLowerCase() === "h3") {
+            listItem.classList.add("sub-item");
+          }
+
+          menuList.appendChild(listItem);
+        });
+
+        function adjustMenuPosition() {
+          const nav = document.querySelector("nav");
+          const menu = document.getElementById("expandable-menu");
+      
+          if (nav && menu) {
+            const navHeight = nav.offsetHeight;
+      
+            // 設定 menu 的 top 與高度
+            menu.style.top = `${navHeight}px`;
+            menu.style.height = `calc(100vh - ${navHeight}px)`;
+          }
+        }
+      
+        // 載入與尺寸變化時調整
+        window.addEventListener("DOMContentLoaded", adjustMenuPosition);
+        window.addEventListener("resize", adjustMenuPosition);
+        
+        // 滾動至目標位置並加上 75px 偏移
+        menuList.addEventListener("click", (event) => {
+          if (event.target.tagName === "A") {
+            event.preventDefault(); // 阻止預設行為
+
+            const targetId = event.target.getAttribute("href").substring(1); // 取得目標 ID
+            const targetElement = document.getElementById(targetId);
+
+            if (targetElement) {
+              // 計算目標元素的位置並加上 75px 偏移
+              const targetPosition =
+                targetElement.getBoundingClientRect().top + window.scrollY;
+              const offset = 75; // 偏移的距離
+              window.scrollTo({
+                top: targetPosition - offset,
+                behavior: "smooth", // 平滑滾動
+              });
+            }
+          }
+        });
+        // 手機 Safari 相容：點擊展開 dropdown
+        const dropdownToggles = document.querySelectorAll(".dropdown-toggle");
+
+        dropdownToggles.forEach((toggle) => {
+          toggle.addEventListener("click", function (e) {
+            e.stopPropagation(); // 防止冒泡，避免點擊外層時也觸發關閉
+            const dropdown = this.nextElementSibling;
+            const isVisible = dropdown.style.display === "block";
+            
+            // 關閉所有其他 dropdown（可選）
+            document.querySelectorAll(".dropdown-content").forEach((menu) => {
+              menu.style.display = "none";
+            });
+
+            // 切換目前這一個 dropdown
+            dropdown.style.display = isVisible ? "none" : "block";
+          });
+        });
+
+        // 點擊其他地方時關閉 dropdown
+        window.addEventListener("click", function () {
+          document.querySelectorAll(".dropdown-content").forEach((menu) => {
+            menu.style.display = "none";
+          });
+        });
+      });
+    </script>
+  </body>
+</html>

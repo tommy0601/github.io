@@ -1,0 +1,981 @@
+<!DOCTYPE html>
+<html lang="zh-hant-TW">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="曹旅瀚 Tommy" />
+    <meta name="description" content="探索澳洲文化之都墨爾本，漫遊特色巷弄、體驗世界級咖啡文化，並走訪大洋路與周邊自然景觀，感受藝術、美食與城市魅力交織的旅遊風格。">
+    <meta name="keywords" content="墨爾本旅遊,Melbourne,墨爾本自由行,墨爾本景點,墨爾本咖啡,墨爾本美食,墨爾本巷弄,大洋路,墨爾本行程,墨爾本住宿,聯邦廣場,弗林德斯車站,墨爾本藝術,澳洲旅遊,墨爾本推薦">
+    <title>Tommy 看世界 - 墨爾本</title>
+    <link rel="icon" href="網頁縮圖.ico" />
+    <style>
+      body {
+        font-family: Calibri, Arial, sans-serif; /* 首選 Calibri，次選 Arial */
+        margin: 0;
+        overflow-x: hidden; /* 禁止水平滾動 */
+        background-color: #f4f4f9;
+        color: #333;
+      }
+
+      h1 {
+        font-size: 40px;
+        font-weight: bold;
+      }
+
+      h2 {
+        font-size: 32px;
+        font-weight: bold;
+        color: #2a90a7;
+        display: inline-block;
+        background-color: #cee5e8;
+      }
+
+      h3 {
+        font-size: 26px;
+        margin: 0 0 1rem;
+        font-weight: bold;
+        text-decoration: underline;
+      }
+
+      h4 {
+        font-size: 18px;
+        font-weight: normal;
+        line-height: 1.8;
+      }
+
+      h5 {
+        font-size: 16px;
+        font-weight: normal;
+        margin: 0;
+      }
+
+      h6 {
+        font-size: 10px;
+        color: #fff;
+        margin: 0;
+        text-align: center;
+        line-height: 50px; /* 高度對齊 */
+      }
+
+      nav {
+        background-color: #78bcc4;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;                     /* 讓 nav 寬度隨螢幕自適應 */
+        padding: 0.8rem 5vw;               /* 左右 padding 用 5% 寬度 */
+        box-sizing: border-box;         /* 確保 padding 不會影響寬度總長 */
+        position: fixed;
+        top: 0;
+        z-index: 1000;
+      }
+
+      .nav-left .logo img {
+        height: 5vw; /* 高度為螢幕寬度的 5% */
+        transform: translateX(-2vw); /* 向左移動 2% 寬度 */
+        max-width: 100%; /* 確保不會超過容器 */
+        height: auto; /* 保持圖片比例（建議與 max-height 搭配） */
+        max-height: 3rem;
+      }
+
+      .nav-right {
+        display: flex;
+        align-items: center;
+        margin-left: auto; /* 推到右側 */
+        padding-left: 5%;   /* 內部元素間距，彈性設計 */
+      }
+
+      nav a {
+        color: #eff5f5;
+        text-decoration: none;
+        padding: 1vh 1vw;
+        margin: 0 1vw;
+        transition: transform 0.3s;
+      }
+
+      nav a:hover {
+        transform: translateY(-0.5vh); /* 根據視窗高度調整 */
+      }
+
+      .dropdown {
+        position: relative;
+        display: inline-block;
+      }
+
+      .dropdown-content {
+        width: 100%; /* 佔滿父層寬度 */
+        max-width: 20vw; /* 限制最大寬度 */
+        display: none;
+        position: absolute;
+        background-color: #78bcc4;
+        min-width: 10em; /* 取代 160px，以字體大小作為比例單位 */
+        border-radius: 0.25em;
+        box-shadow: 0 0.5em 1em rgba(0, 0, 0, 0.2); /* 改為相對單位 */
+        padding: 0.2rem 0;
+        z-index: 999;
+      }
+
+      .dropdown-content a {
+        color: #eff5f5;
+        display: block;
+        transition: transform 0.3s;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.3); /* 更淡配色、柔和過渡 */
+        padding: 0.6em 1em;
+        font-size: 1em;
+      }
+
+      .dropdown-content a:last-child {
+        border-bottom: none;
+      }
+
+      .dropdown-content a:hover {
+        transform: translateY(-0.25em); /* 改為相對單位 */
+      }
+
+      .intro-section {
+        background-color: #eff5f5;
+        display: flex;
+        flex-wrap: wrap; /* 確保在小螢幕可換行 */
+        padding: 2rem 5%;
+        margin-top: 4em; /* 根據導航列高度調整 */
+      }
+
+      .intro-section h4 {
+        max-width: 85%; /* 改為相對單位，避免固定寬度限制 */
+        line-height: 1.8;
+      }
+
+      .intro-section .left {
+        width: 60%;
+        padding-right: 1%;
+      }
+
+      .intro-section .right {
+        width: 39%;
+      }
+
+      .destination-section {
+        display: flex;
+        flex-wrap: wrap;               /* 小螢幕時允許換行 */
+        padding: 1rem 5%; /* 左右內間距為螢幕的10% */
+        background-color: white;
+      }
+
+      .destination-main {
+        width: 72%;                    /* 主要內容佔 72%，略縮以保留間距 */
+        margin-right: 3%;              /* 與 sidebar 間保留間距（約為 3%） */
+        box-sizing: border-box;
+      }
+
+      .destination-sidebar {
+        width: 25%;                    /* 側邊欄佔 25% */
+        padding-left: 2%;             /* 相對內邊距 */
+        margin-top: 2rem;
+        box-sizing: border-box;
+      }
+
+      .sidebar-image-container {
+        margin-bottom: 1rem;
+        text-align: center; /* 置中圖片 */
+      }
+
+      .sidebar-image-container img {
+        width: 90%;         /* 圖片寬度為容器寬度的 90% */
+        height: auto;       /* 高度自動，保持比例 */
+        max-height: 60vh;   /* 避免圖片過高，佔螢幕最大 60% 高 */
+        object-fit: cover;  /* 裁切處理長圖 */
+      }
+
+      .two-vertical-images {
+        display: flex;
+        justify-content: space-between;
+        gap: 4%; /* 使用百分比間距更彈性 */
+        margin-top: 2rem;
+        margin-bottom: 2rem;
+        flex-wrap: wrap; /* 若畫面太小，允許換行 */
+      }
+
+      .two-vertical-images img {
+        width: 48%; /* 每張圖片約佔一半（加上 gap 剛好 100%） */
+        height: auto; /* 保持原比例 */
+        object-fit: cover;
+        display: block;
+        margin: 0 auto;
+      }
+
+      .recommendation-section {
+        margin-top: 3vh; /* 與上方文字的間距 */
+        text-align: center;
+        position: sticky;
+        top: 80px; /* 空出導覽列的高度，確保推薦區不被覆蓋 */
+        z-index: 10; /* 提高層級，避免被其他內容遮蓋 */
+        padding: 0 5%;
+      }
+
+      .recommendation-section h3 {
+        font-size: 1.125rem;
+        font-weight: bold;
+        margin-bottom: 1vh; /* 與按鈕區的距離 */
+      }
+
+      .recommendation-buttons {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 0.5em; /* 按鈕之間的間距 */
+      }
+
+      .recommendation-buttons button {
+        padding: 0.5em 1em;
+        font-size: 0.875rem;
+        color: white;
+        background-color: #78bcc4;
+        border: none;
+        border-radius: 0.25rem;
+        transition: transform 0.3s;
+        font-family: Arial, sans-serif;
+      }
+
+      .recommendation-buttons button:hover {
+        transform: translateY(-3px);
+      }
+
+      .contact-section {
+        padding: 4vh 8vw; /* 上下與左右間距 */
+        background-color: #eff5f5; /* 淺灰背景 */
+        text-align: center; /* 確保內容置中對齊 */
+      }
+
+      .contact-item h3 {
+        font-size: 1.125rem; /* 調整標題字體大小 */
+        margin: 0; /* 移除多餘的間距 */
+        text-decoration: none; /* 移除底線 */
+      }
+
+      footer {
+        background-color: #000;
+        color: white;
+        height: 3vh; /* 使用相對單位，高度占螢幕高度的 3% */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 1.5rem; /* 使用相對字體大小 */
+        padding: 0.5rem 0; /* 確保小螢幕時內容不擠壓 */
+      }
+
+      #expandable-menu {
+        position: fixed; 
+        right: 0;
+        width: 26vw; /* 目錄寬度與 sidebar 齊寬 */
+        max-width: 90%; /* 避免在小螢幕太寬 */
+        transform: translateX(100%); /* 初始狀態：隱藏在右側 */
+        transition: transform 0.3s ease;
+        background-color: #f4f4f9; /* 與網站背景一致 */
+        z-index: 1000;
+        box-sizing: border-box;
+      }
+
+      /* 收闔按鈕 */
+      #menu-toggle {
+        position: fixed;
+        top: 45%;
+        right: 0; /* 永遠貼在右側 */
+        transform: translateY(-50%) translateX(0);
+        width: 2.5em; /* 增大按鈕寬度 */
+        height: 5em; /* 增大按鈕高度 */
+        background-color: #78bcc4;
+        color: white;
+        border-radius: 0.4em 0 0 0.4em;
+        display: flex;
+        justify-content: center; /* 水平居中 */
+        align-items: center; /* 垂直居中 */
+        z-index: 2000; /* 要比 expandable-menu 更高，避免被蓋住 */
+        cursor: pointer;
+        box-shadow: -0.1em 0 0.3em rgba(0,0,0,0.1);
+        transition: transform 0.3s ease; /* 平滑移動 */
+      }
+
+      #menu-toggle::after {
+        content: "目錄"; /* 在按鈕內顯示 "目錄" */
+        font-size: 1rem;
+        color: white; /* 設定字體顏色為白色 */
+        writing-mode: vertical-rl; /* 使文字垂直排列 */
+      }
+
+      #menu-toggle:hover {
+        background-color: #78bcc4;
+      }
+
+      /* 目錄內容 */
+      #menu-content {
+        padding: 0.5rem 5%;
+        overflow-y: auto;
+        height: 100%;
+        box-sizing: border-box;
+      }
+
+      #menu-content h4 {
+        font-weight: bold;
+        margin-top: 0;
+        font-size: 1.2rem;
+      }
+
+      #menu-list {
+        list-style: none;
+        padding: 0;
+      }
+
+      #menu-list li {
+        margin-bottom: 1vh;
+      }
+
+      #menu-list a {
+        color: #2a90a7;
+        text-decoration: none;
+        transition: color 0.3s;
+        font-size: 1rem; /* 使用相對字體大小 */
+      }
+
+      #menu-list a:hover {
+        color: #78bcc4;
+      }
+
+      #menu-list .sub-item {
+        margin-left: 8%; /* 調整縮排距離 */
+        font-size: 0.9rem; /* 可選：調整子項目字體大小 */
+      }
+
+      /* 目錄展開狀態 */
+      #expandable-menu.open {
+        transform: translateX(0);
+      }
+
+      /* === 響應式調整：針對手機與小螢幕設備 === */
+      @media (max-width: 768px) {
+        nav {
+          flex-direction: row;
+          flex-wrap: wrap;
+          align-items: center;
+          justify-content: space-between;
+          padding: 1rem 5vw;  /* 窄螢幕時減少左右留白 */
+          width: 100%;
+          box-sizing: border-box;
+        }
+
+        .nav-right {
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          gap: 0.5rem;
+          transform: none;
+          width: auto;
+          white-space: nowrap;               /* 禁止內容自動換行 */
+        }
+
+        nav a {
+          padding: 0.5rem 0.5rem;           /* 減少垂直padding */
+          margin: 0 0.3rem;
+          font-size: 0.85rem;
+          white-space: nowrap;               /* 確保文字不換行 */
+          overflow: hidden;
+          text-overflow: ellipsis;           /* 若內容超出，顯示省略號 */
+        }
+
+        .nav-dropdown {
+          width: 60%; /* 或者用 max-content, fit-content 看需求 */
+          font-size: 0.85rem; /* 調整字體大小和導覽列一致 */
+          padding: 0.5rem;
+        }
+      
+        .nav-dropdown a {
+          font-size: inherit; /* 確保跟 .nav-dropdown 一樣大 */
+          padding: 0.5rem 1rem;
+          white-space: normal; /* 可選：讓字在必要時換行 */
+        }
+
+        .dropdown-content {
+          width: 12vw;
+          min-width: 8em; /* 保證至少能顯示幾個字 */
+          max-width: none;
+        }
+
+        .dropdown-content a {
+          font-size: 0.85rem;
+        }
+        
+        .intro-section {
+          flex-direction: column;
+          padding: 8%;
+        }
+
+        .intro-section .left,
+        .intro-section .right {
+          width: 100%;
+          padding: 0;
+          flex: 1 1 100%;
+        }
+
+        .intro-section .right {
+          margin-top: 1.5rem;
+          display: flex;
+          justify-content: center;
+        }
+
+        .intro-section h4 {
+          max-width: 100%;
+          font-size: 1rem;
+        }
+
+        .destination-grid {
+          flex-direction: column;
+          gap: 1rem;
+        }
+
+        .destination-section h4 {
+          font-size: 1rem;
+        }
+
+        .destination-item {
+          max-width: 100%;
+          width: 100%;
+        }
+
+        .destination-item.a_role_with_2 {
+          position: static;
+          left: auto;
+        }
+
+        .destination-main,
+        .destination-sidebar {
+          width: 100%;
+          margin: 0;
+          padding: 0;
+        }
+
+        .destination-sidebar {
+          margin-top: 2rem;
+        }
+
+        .recommendation-buttons button {
+          width: 100%; /* 小螢幕按鈕全寬排列 */
+        }
+
+        .contact-section {
+          padding: 3vh 5vw;
+        }
+
+        .contact-item h3 {
+          font-size: 1rem;
+        }
+
+        /* 目錄區寬度改為螢幕寬度的40% */
+        #expandable-menu {
+          width: 40vw !important; /* 用vw方便響應螢幕寬度 */
+          max-width: 90%; /* 保留原本max-width避免太寬 */
+        }
+      
+        #expandable-menu,
+        #expandable-menu * {
+          font-size: 85% !important;
+        }
+              
+        #menu-toggle {
+          width: 75%;
+          max-width: 1.875em;
+          min-width: 1.875em;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <div class="nav-left">
+        <div class="logo">
+          <a href="首頁.html">
+            <img src="網站Logo.png" alt="網站 Logo" />
+          </a>
+        </div>
+      </div>
+      <div class="nav-right">
+        <a href="首頁.html">關於我</a>
+        <div class="dropdown">
+          <a class="dropdown-toggle">亞洲旅遊</a>
+          <div class="dropdown-content">
+            <a href="中國.html">中國</a>
+            <a href="日本.html">日本</a>
+            <a href="新加坡.html">新加坡</a>
+            <a href="馬來西亞.html">馬來西亞</a>
+            <a href="泰國.html">泰國</a>
+            <a href="印尼.html">印尼</a>
+            <a href="越南.html">越南</a>
+          </div>
+        </div>
+        <div class="dropdown">
+          <a class="dropdown-toggle">歐洲旅遊</a>
+          <div class="dropdown-content">
+            <a href="英國.html">英國</a>
+            <a href="法國.html">法國</a>
+            <a href="荷蘭.html">荷蘭</a>
+            <a href="比利時.html">比利時</a>
+            <a href="盧森堡.html">盧森堡</a>
+            <a href="瑞士.html">瑞士</a>
+            <a href="摩納哥.html">摩納哥</a>
+            <a href="西班牙.html">西班牙</a>
+            <a href="葡萄牙.html">葡萄牙</a>
+            <a href="安道爾.html">安道爾</a>
+            <a href="丹麥.html">丹麥</a>
+            <a href="瑞典.html">瑞典</a>
+            <a href="波蘭.html">波蘭</a>
+          </div>
+        </div>
+        <div class="dropdown">
+          <a class="dropdown-toggle">美洲旅遊</a>
+          <div class="dropdown-content">
+            <a href="美國.html">美國</a>
+            <a href="加拿大.html">加拿大</a>
+          </div>
+        </div>
+        <div class="dropdown">
+          <a class="dropdown-toggle">大洋洲旅遊</a>
+          <div class="dropdown-content">
+            <a href="澳洲.html">澳洲</a>
+          </div>
+        </div>
+        <div class="dropdown">
+          <a class="dropdown-toggle">非洲旅遊</a>
+          <div class="dropdown-content">
+            <a href="南非.html">南非</a>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <div class="intro-section">
+      <div class="left">
+        <h1>Tommy 在墨爾本</h1>
+        <h4>
+          <b>墨爾本 (Melbourne)</b> 位於澳洲東南部，是維多利亞州的首府。1835 年歐洲移民開始定居，19 世紀中期的維多利亞淘金熱帶來大量人口與財富，使城市在短時間內成為澳洲最繁華的都市。1901 年澳洲聯邦成立後，墨爾本曾暫時作為首都，直到坎培拉建成，奠定了其政治、金融與文化基礎。
+        </h4>
+        <h4>今日的墨爾本以文化之都聞名，擁有豐富的藝術活動、體育賽事與咖啡文化。城市經濟多元，涵蓋金融、教育、醫療、科技與創意產業，是全球重要的留學城市之一。墨爾本以高度宜居、多元族群與完善公共交通著稱，但同時也面臨人口快速成長、住房壓力與氣候調適等挑戰。</h4>
+      </div>
+      <div class="right">
+        <img src="澳洲照片\墨爾本\墨爾本_介紹.jpg" style="width: 100%; height: auto; max-width: 100%;" />
+      </div>
+    </div>
+
+    <div class="destination-section">
+      <div class="destination-main">
+        <h2>墨爾本交通</h2>
+        <h3>機場交通</h3>
+        <h4>
+          墨爾本總共有兩個機場，分別是墨爾本機場及愛華隆機場，墨爾本機場主要負責國際航線，愛華隆機場則是國內航線，兩個機場都離市區有一段距離，叫計程車的話非常貴，而到市區的大眾交通方式如下:
+          <ul style="max-width: 90%; padding-left: 1.5rem;">
+            <li><b>墨爾本機場</b>: 可搭乘 Skybus 直接進入市中心，車程大約 35 分鐘。</li>
+            <li><b>愛華隆機場</b>: 可搭乘 Skybus 直接進入市中心，車程大約 50 分鐘。</li>
+          </ul>
+        </h4>
+        <h3>市區交通</h3>
+        <h4>
+          墨爾本市區最主要的大眾交通運輸工具是路面電車，在市中心的區域又稱為 Free Tram Zone，在這個區域內搭乘都不需要付費，算是觀光客的一大福音，基本上所有景點都可以搭乘路面電車抵達。若要搭乘火車或公車，則需要購買 myki 卡並且儲值，基本上在大的火車站都有售賣。
+        </h4>
+        <div style="text-align: center">
+          <img src="澳洲照片\墨爾本\墨爾本_交通1.jpg" style="width: 70%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+          <img src="澳洲照片\墨爾本\墨爾本_交通2.jpg" style="width: 70%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+        </div>
+        <br /><br />
+        <h2>墨爾本住宿</h2>
+        <h4>
+          由於墨爾本有 Free Tram Zone ，因此只要在範圍內的住宿都是可行的，住在市中心機能比較好，推薦 Elizabeth Street 沿線算是比較精華的地區。
+        </h4>
+        <div style="text-align: center">
+          <img src="澳洲照片\墨爾本\墨爾本_住宿1.png" style="width: 90%; max-width: 100vw; height: auto;" />
+          <img src="澳洲照片\墨爾本\墨爾本_住宿2.jpg" style="width: 70%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+        </div>
+        <br /><br />
+        <h2>墨爾本景點</h2>
+        <h3>維多利亞市場 (Queen Victoria Market)</h3>
+        <h4>
+          維多利亞市場位於墨爾本市中心，是南半球規模最大、歷史最悠久的露天市場，創立於 19 世紀，最初服務當地居民的日常生活，隨著城市發展逐漸成為重要的文化地標。如今市場內聚集新鮮蔬果、肉類、海鮮、熟食與各國特色小吃，充分展現墨爾本多元文化風貌，市場同時販售手工藝品與紀念品，不僅是購物場所，更是體驗在地生活、感受城市活力的重要空間。
+        </h4>
+        <div style="text-align: center">
+          <img src="澳洲照片\墨爾本\ML1.jpg" style="width: 70%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+          <img src="澳洲照片\墨爾本\ML2.jpg" style="width: 90%; max-width: 100vw; height: auto; margin: 0.5rem;" />
+        </div>
+        <br /><br /><br />
+        <h3>Melbourne Central</h3>
+        <h4>
+          Melbourne Central 是結合購物、交通與地標建築的大型綜合空間，此處最具代表性的特色是室內圓錐形玻璃屋頂與歷史建築「Coop’s Shot Tower」，將 19 世紀遺跡完整保留於現代商場之中，展現新舊融合的城市風貌。商場內匯集國際品牌、餐廳、咖啡館與娛樂設施，是市民與遊客的重要消費與休閒據點。同時 Melbourne Central 地下設有火車站與電車轉乘系統交通便利，象徵墨爾本高度整合且充滿活力的都市生活。
+        </h4>
+        <div style="text-align: center">
+          <img src="澳洲照片\墨爾本\ML3.jpg" style="width: 70%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+          <img src="澳洲照片\墨爾本\ML4.jpg" style="width: 70%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+        </div>
+        <br /><br /><br />
+        <h3>State Library Victoria</h3>
+        <h4>
+          State Library Victoria 是澳洲最古老的公共圖書館，成立於 1854 年，以宏偉的新古典建築與壯觀的圓頂閱覽室聞名，室內空間寬敞明亮，成為城市重要的文化象徵。館藏內容豐富，涵蓋書籍、手稿、地圖與歷史文獻，對研究維多利亞州歷史具有重要價值，也經常舉辦展覽與文化活動，展現墨爾本深厚的人文底蘊與知識精神。
+        </h4>
+        <div style="text-align: center">
+          <img src="澳洲照片\墨爾本\ML5.jpg" style="width: 90%; max-width: 100vw; height: auto; margin: 0.5rem;" />
+          <img src="澳洲照片\墨爾本\ML6.jpg" style="width: 70%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+          <img src="澳洲照片\墨爾本\ML7.jpg" style="width: 70%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+        </div>
+        <br /><br /><br />
+        <h3>Flinders Street Station</h3>
+        <h4>
+          Flinders Street Station 位於墨爾本市中心，是全市最重要、也最具代表性的火車站，於 1910 年正式啟用。車站以黃色外牆、綠色圓頂與古典拱門聞名，建築風格融合文藝復興與愛德華時期特色，反映 20 世紀初城市的發展雄心。Flinders Street Station 長期作為城市交通樞紐，連結市區與郊區鐵路網絡。
+        </h4>
+        <h4>車站前的廣場與著名的「Under the Clocks」集合點，已成為市民日常生活與城市文化的重要象徵，因車站外牆上一排時鐘而得名。這些時鐘最初用來顯示各列火車的出發時間，在電子看板普及前具有重要功能。隨著時代演變，時鐘逐漸成為城市象徵，而「Under the Clocks」也成為墨爾本人耳熟能詳的說法，承載著城市記憶與日常生活情感，是朋友相約、旅客會合的經典地標，展現墨爾本獨特的人文風景。</h4>
+        <div style="text-align: center">
+          <img src="澳洲照片\墨爾本\ML8.jpg" style="width: 90%; max-width: 100vw; height: auto; margin: 0.5rem;" />
+          <img src="澳洲照片\墨爾本\ML9.jpg" style="width: 90%; max-width: 100vw; height: auto; margin: 0.5rem;" />
+        </div>
+        <h3>維多利亞國家美術館 (National Gallery of Victoria)</h3>
+        <h4>
+          維多利亞國家美術館是澳洲歷史最悠久、規模最大的美術館，成立於 1861 年。美術館分為兩個主要館區，收藏涵蓋國際與澳洲藝術，包括繪畫、雕塑、攝影、設計與當代藝術作品，入口處著名的水牆與寬敞展廳，成為城市重要的文化地標。美術館長期舉辦大型國際特展與教育活動，展現墨爾本深厚的人文底蘊與對藝術創新的重視。
+        </h4>
+        <div style="text-align: center">
+          <img src="澳洲照片\墨爾本\ML10.jpg" style="width: 70%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+          <img src="澳洲照片\墨爾本\ML11.jpg" style="width: 90%; max-width: 100vw; height: auto; margin: 0.5rem;" />
+        </div>
+        <br /><br /><br />
+        <h3>Princes Bridge</h3>
+        <h4>
+          Princes Bridge 橫跨雅拉河，連接市中心與南岸地區，建於 1888 年，採用維多利亞時期的石造拱橋設計，外觀典雅穩重，具有高度歷史價值。橋上可遠眺弗林德斯街車站、聯邦廣場與河岸景色，是欣賞城市風貌的絕佳位置，在夜晚欣賞夜景更是推薦。Princes Bridge 不僅承載日常通行功能，也象徵墨爾本從殖民時期走向現代城市的發展歷程，成為結合歷史、交通與景觀的重要地標。
+        </h4>
+        <div style="text-align: center">
+          <img src="澳洲照片\墨爾本\ML12.jpg" style="width: 90%; max-width: 100vw; height: auto; margin: 0.5rem;" />
+        </div>
+        <br /><br /><br />
+        <h3>皇家展覽館 (Royal Exhibition Building)</h3>
+        <h4>
+          皇家展覽館位於澳洲墨爾本卡爾頓花園內，是世界文化遺產之一，建於 1880 年，原為墨爾本國際博覽會而設。建築融合文藝復興與拜占庭風格，中央圓頂宏偉壯觀，象徵 19 世紀墨爾本在淘金熱後的繁榮與自信。1901 年澳洲聯邦成立時，首屆國會即在此舉行，使其具有重要的國家歷史地位。如今建築用於展覽、文化活動與學術場合，與周圍花園共同展現墨爾本深厚的歷史、文化與建築價值。
+        </h4>
+        <div style="text-align: center">
+          <img src="澳洲照片\墨爾本\ML13.jpg" style="width: 90%; max-width: 100vw; height: auto; margin: 0.5rem;" />
+          <img src="澳洲照片\墨爾本\ML14.jpg" style="width: 90%; max-width: 100vw; height: auto; margin: 0.5rem;" />
+        </div>
+        <br /><br /><br />
+        <h3>Degraves Street</h3>
+        <h4>
+          Degraves Street 又名咖啡巷，以濃厚的咖啡文化與藝術氣息聞名，連接弗林德斯街與市區核心，兩側林立咖啡館、餐廳、特色小店與街頭塗鴉，展現墨爾本獨有的巷弄生活風格，象徵墨爾本重視生活品味與創意文化的城市精神，是體驗在地日常與城市魅力的重要地點。
+        </h4>
+        <div style="text-align: center">
+          <img src="澳洲照片\墨爾本\ML15.jpg" style="width: 70%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+        </div>
+        <br /><br /><br />
+        <h3>Hosier Lane</h3>
+        <h4>
+          Hosier Lane 是全球知名的街頭藝術巷弄之一，以色彩鮮明的塗鴉、壁畫與創作標語聞名，牆面經常更新，呈現即時而多變的藝術風貌。Hosier Lane 被視為合法街頭藝術的重要場域，吸引本地與國際藝術家創作，展現墨爾本對創意表達的包容態度，象徵城市自由、多元且充滿活力的文化精神。
+        </h4>
+        <div style="text-align: center">
+          <img src="澳洲照片\墨爾本\ML16.jpg" style="width: 70%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+          <img src="澳洲照片\墨爾本\ML17.jpg" style="width: 70%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+          <img src="澳洲照片\墨爾本\ML18.jpg" style="width: 70%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+          <img src="澳洲照片\墨爾本\ML19.jpg" style="width: 70%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+        </div>
+        <br /><br />
+        <h2>墨爾本近郊景點</h2>
+        <h3>十二門徒石 (Twelve Apostles)</h3>
+        <h4>
+          十二門徒石位於澳洲維多利亞州南岸的大洋路沿線，是澳洲最著名的自然景觀。這些石灰岩柱由數百萬年的海浪侵蝕與風化作用形成，原本與陸地相連，後因海蝕而逐漸分離，矗立於南大洋之中。雖名為「十二門徒」，實際數量隨時間變化，部分岩柱已崩塌只剩下 7 塊石頭，但其壯麗景色依然震撼人心。此地在日出與日落時分尤為迷人，金色陽光映照海面與岩石，形成壯觀畫面。Twelve Apostles 不僅是攝影與觀光勝地，也提醒人們自然力量的偉大與變遷，成為大洋路旅程中不可錯過的經典地標。
+        </h4>
+        <h4>大洋路距離墨爾本大約二個半小時路程，自駕當日來回的話算是非常遠，因此如果自駕建議可以安排兩天一夜，我自己更推薦的是參加Klook 一日團，可以從墨爾本市中心出發並且一日來回，算是相對方便的方式。</h4>
+        <div style="text-align: center">
+          <img src="澳洲照片\墨爾本\ML20.jpg" style="width: 90%; max-width: 100vw; height: auto; margin: 0.5rem;" />
+          <img src="澳洲照片\墨爾本\ML21.jpg" style="width: 70%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+          <img src="澳洲照片\墨爾本\ML22.jpg" style="width: 90%; max-width: 100vw; height: auto; margin: 0.5rem;" />
+        </div>
+        <br /><br /><br />
+        <h3>阿德湖峽 (Loch Ard Gorge)</h3>
+        <h4>
+          阿德湖峽位於大洋路沿線，是結合自然景觀與歷史故事的著名海蝕峽谷。峽谷名稱來自 1878 年在此附近失事的「Loch Ard」號船難，僅有兩名年輕倖存者，事件成為當地重要的海事歷史。此地被高聳石灰岩峭壁環繞，海水碧藍沙灘潔白，景色壯麗而寧靜。Loch Ard Gorge 同時設有步道與解說設施，能了解大洋路沿岸的歷史與自然力量，具有深厚的文化與觀光價值。
+        </h4>
+        <h4>大洋路距離墨爾本大約二個半小時路程，自駕當日來回的話算是非常遠，因此如果自駕建議可以安排兩天一夜，我自己更推薦的是參加Klook 一日團，可以從墨爾本市中心出發並且一日來回，算是相對方便的方式。</h4>
+        <div style="text-align: center">
+          <img src="澳洲照片\墨爾本\ML23.jpg" style="width: 90%; max-width: 100vw; height: auto; margin: 0.5rem;" />
+          <img src="澳洲照片\墨爾本\ML24.jpg" style="width: 90%; max-width: 100vw; height: auto; margin: 0.5rem;" />
+          <img src="澳洲照片\墨爾本\ML25.jpg" style="width: 90%; max-width: 100vw; height: auto; margin: 0.5rem;" />
+          <img src="澳洲照片\墨爾本\ML26.jpg" style="width: 70%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+        </div>
+        <br /><br /><br />
+        <h3>大洋路 (The Great Ocean Road)</h3>
+        <h4>
+          大洋路位於維多利亞州南岸，是世界最著名的濱海公路，全長約 240 公里。這條公路於第一次世界大戰後由退伍軍人修建，以紀念在戰爭中犧牲的士兵，具有深厚的歷史意義。沿途可欣賞壯闊的南大洋景色、崎嶇海岸線與多樣自然地形，包含石灰岩峭壁、原始海灘與雨林景觀。大洋路串聯多個知名景點，如十二使徒岩與洛克阿德峽谷，是自駕與旅遊的經典路線，也展現澳洲自然之美與人文精神的結合。
+        </h4>
+        <h4>大洋路距離墨爾本大約二個半小時路程，自駕當日來回的話算是非常遠，因此如果自駕建議可以安排兩天一夜，我自己更推薦的是參加Klook 一日團，可以從墨爾本市中心出發並且一日來回，算是相對方便的方式。</h4>
+        <div style="text-align: center">
+          <img src="澳洲照片\墨爾本\ML27.jpg" style="width: 90%; max-width: 100vw; height: auto; margin: 0.5rem;" />
+        </div>
+        <h3>Split Point Lighthouse</h3>
+        <h4>
+          Split Point Lighthouse 位於維多利亞州艾爾利灣 (Aireys Inlet) 附近，是大洋路沿線的重要地標之一，建於 1891 年。燈塔以醒目的紅白相間外觀聞名，主要功能是引導船隻安全航行於崎嶇多變的南大洋海域，其地理位置突出，周圍為遼闊海岸與草原景觀，可遠眺壯麗海景。Split Point Lighthouse 不僅具有海事導航價值，也因曾出現在影視作品中而廣為人知，如今燈塔對外開放參觀，成為結合歷史、自然與觀光的熱門景點。
+        </h4>
+        <h4>大洋路距離墨爾本大約二個半小時路程，自駕當日來回的話算是非常遠，因此如果自駕建議可以安排兩天一夜，我自己更推薦的是參加Klook 一日團，可以從墨爾本市中心出發並且一日來回，算是相對方便的方式。</h4>
+        <div style="text-align: center">
+          <img src="澳洲照片\墨爾本\ML28.jpg" style="width: 70%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+          <img src="澳洲照片\墨爾本\ML29.jpg" style="width: 90%; max-width: 100vw; height: auto; margin: 0.5rem;" />
+          <img src="澳洲照片\墨爾本\ML30.jpg" style="width: 90%; max-width: 100vw; height: auto; margin: 0.5rem;" />
+        </div>
+        <br /><br /><br />
+        <h3>Brighton Bathing Boxes</h3>
+        <h4>
+          Brighton Bathing Boxes 位於墨爾本布萊頓海灘，是當地極具代表性的海岸景觀。這些色彩鮮豔的小木屋最早出現於 19 世紀末，原本供民眾更衣與存放海灘用品使用。木屋外觀各具特色，彩繪圖案與明亮配色在藍色海景襯托下格外醒目，成為攝影與觀光的熱門地點。
+        </h4>
+        <h4>從墨爾本前往 Brighton Bathing Boxes 可以從 Fliders Street Station 搭乘 Sandringham 線地鐵到 Middle Brighton 站下車，再步行約 15 分鐘即可抵達海灘。</h4>
+        <div style="text-align: center">
+          <img src="澳洲照片\墨爾本\ML31.jpg" style="width: 90%; max-width: 100vw; height: auto; margin: 0.5rem;" />
+          <img src="澳洲照片\墨爾本\ML32.jpg" style="width: 90%; max-width: 100vw; height: auto; margin: 0.5rem;" />
+          <img src="澳洲照片\墨爾本\ML33.jpg" style="width: 90%; max-width: 100vw; height: auto; margin: 0.5rem;" />
+        </div>
+        <br /><br />
+        <h2>墨爾本美食</h2>
+        <h3>Seven Seeds Coffee Roasters</h3>
+        <h4>
+          Seven Seeds Coffee Roasters 被視為第三波咖啡文化的重要推動者之一。品牌成立於 2008 年，強調咖啡品質、產地透明與永續經營，長期與咖啡農建立直接貿易關係，確保原豆風味與公平回饋，也重視咖啡教育與專業沖煮，對咖啡風味與技術有高度要求。
+        </h4>
+        <h4>Seven Seeds Coffee Roasters 的早午餐同樣以「品質與平衡」為核心理念，強調新鮮食材與咖啡風味的搭配。常見餐點包括水波蛋、酪梨吐司、慢煮雞蛋、酸種麵包與季節性蔬菜，口味清爽不油膩，突顯食材本身的風味。早午餐不追求浮誇擺盤，而是注重實用性與口感一致性，整體用餐體驗低調、專注且富有專業感。</h4>
+        <div style="text-align: center">
+          <img src="澳洲照片\墨爾本\ML34.jpg" style="width: 70%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+          <img src="澳洲照片\墨爾本\ML35.jpg" style="width: 70%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+        </div>
+        <br /><br /><br />
+        <h3>Claypots Evening Star</h3>
+        <h4>
+          Claypots Evening Star 位於南墨爾本市場，以新鮮海鮮與西班牙風味小食聞名。餐廳主打簡單而高品質的料理方式，強調當日捕撈的魚類、貝類與蝦，搭配橄欖油、蒜與香料，特別推薦一定要點塔斯馬尼亞生蠔，還有特別處理的龍蝦，非常新鮮保留食材原始風味，用餐形式偏向共享餐盤，是體驗墨爾本海鮮的好選擇。
+        </h4>
+        <div style="text-align: center">
+          <img src="澳洲照片\墨爾本\ML36.jpg" style="width: 70%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+          <img src="澳洲照片\墨爾本\ML37.jpg" style="width: 90%; max-width: 100vw; height: auto; margin: 0.5rem;" />
+          <img src="澳洲照片\墨爾本\ML38.jpg" style="width: 90%; max-width: 100vw; height: auto; margin: 0.5rem;" />
+          <img src="澳洲照片\墨爾本\ML39.jpg" style="width: 90%; max-width: 100vw; height: auto; margin: 0.5rem;" />
+          <img src="澳洲照片\墨爾本\ML40.jpg" style="width: 90%; max-width: 100vw; height: auto; margin: 0.5rem;" />
+        </div>
+        <br /><br /><br />
+        <h3>Pho A Gogo</h3>
+        <h4>
+          Pho A Gogo 是位於墨爾本南岸，以道地且價格親民的河粉聞名。餐廳主打牛肉與雞肉河粉，湯頭清甜濃郁，長時間熬煮，展現越南料理重視層次與平衡的特色。米粉口感滑順，搭配新鮮香草、豆芽與檸檬風味清爽。比較特別的是，可能是因為治安問題，在入店前必須先在門口按門鈴，等待服務人員開門方可進入。
+        </h4>
+        <div style="text-align: center">
+          <img src="澳洲照片\墨爾本\ML41.jpg" style="width: 70%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+        </div>
+        <br /><br /><br />
+        <h3>American Doughnut Kitchen</h3>
+        <h4>
+          American Doughnut Kitchen 是墨爾本極具代表性的老字號甜甜圈攤位，長期設於維多利亞女王市場內，攤位自 1950 年代營業至今，堅持現場手工製作傳統美式甜甜圈。其招牌為熱騰騰的肉桂糖外皮，內餡填入香濃覆盆子果醬，外酥內軟，風味簡單卻經典。只要在維多利亞女王市場內，看到排最長的攤位，那大概就是他了，雖然需要排隊，但是隊伍消化得蠻快，大約等待 10 到 15 分鐘就可以了。
+        </h4>
+        <div style="text-align: center">
+          <img src="澳洲照片\墨爾本\ML42.jpg" style="width: 70%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+          <img src="澳洲照片\墨爾本\ML43.jpg" style="width: 70%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+        </div>
+        <br /><br /><br />
+        <h3>Apollo Bay Bakery</h3>
+        <h4>
+          Apollo Bay Bakery 位於大洋路沿線的阿波羅灣小鎮，是當地深受歡迎的烘焙名店，最受歡迎的招牌之一便是扇貝派，被許多旅人視為大洋路必吃美食。扇貝派選用新鮮扇貝，搭配濃郁白醬、洋蔥與簡單香料，內餡滑順卻不膩口，能完整呈現海鮮的自然甜味。外層酥皮烘烤至金黃酥脆，層次分明，與柔軟內餡形成良好對比。扇貝派份量十足，風味溫潤，非常適合在海風徐徐的小鎮中享用。這道料理不僅展現當地海港城鎮的食材特色，也成為許多遊客專程到訪 Apollo Bay Bakery 的理由。
+        </h4>
+        <div style="text-align: center">
+          <img src="澳洲照片\墨爾本\ML44.jpg" style="width: 70%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+          <img src="澳洲照片\墨爾本\ML45.jpg" style="width: 70%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+        </div>
+        <br /><br /><br />
+        <h3>Lune Croissanterie</h3>
+        <h4>
+          Lune Croissanterie 是來自墨爾本的知名可頌專門店，曾獲《紐約時代雜誌》高度評價，被形容為「世界上最好的可頌之一」，這項報導使 Lune 一舉躍上國際舞台，吸引全球饕客專程造訪。品牌由前航太工程師創立，將科學與工程思維導入烘焙，對溫度、發酵與層次控制極為嚴謹，其可頌外酥內柔、奶油香氣純淨細緻，展現高度職人精神，最有名的是杏仁口味的可頌，從遠遠的就能看到長長的人龍，我自己大約排了快半個小時，所以記得預留時間。
+        </h4>
+        <div style="text-align: center">
+          <img src="澳洲照片\墨爾本\ML46.jpg" style="width: 70%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+          <img src="澳洲照片\墨爾本\ML47.jpg" style="width: 70%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+          <img src="澳洲照片\墨爾本\ML48.jpg" style="width: 70%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+        </div>
+        <br /><br /><br />
+        <h3>Caretaker’s Cottage</h3>
+        <h4>
+          Caretaker’s Cottage 是一間極具特色的雞尾酒吧，坐落於市區公園旁的一棟小型歷史建築內。這棟建築原為 19 世紀的看守人小屋，經修復後轉型為酒吧，完整保留原有的樸實外觀與溫馨氛圍。Caretaker’s Cottage 以精緻且富創意的雞尾酒聞名，酒單常融入季節元素與在地風味，展現調酒師的巧思與專業，以高水準調酒實力享譽國際，曾入選 Asia’s 50 Best Bars 榜單，被視為亞洲頂尖酒吧之一，空間不大卻充滿個性，氣氛親密而放鬆。
+        </h4>
+        <div style="text-align: center">
+          <img src="澳洲照片\墨爾本\ML49.jpg" style="width: 70%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+          <img src="澳洲照片\墨爾本\ML50.jpg" style="width: 70%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+        </div>
+        <br /><br /><br />
+        <h3>Ponyfish Island</h3>
+        <h4>
+          Ponyfish Island 位於雅拉河上，坐落在伊凡霍橋下方的小型人工島上，是城市中極具創意的隱藏景點。酒吧空間不大，卻擁有獨特的河畔景觀，讓顧客能近距離感受河水流動與城市橋樑結構之美。Ponyfish Island 以輕鬆隨性的氛圍聞名，供應雞尾酒、啤酒與簡單餐點，其地理位置獨特，結合都市、河流與夜生活元素，展現墨爾本善於將公共空間轉化為生活場景的城市創意與活力。
+        </h4>
+        <div style="text-align: center">
+          <img src="澳洲照片\墨爾本\ML51.jpg" style="width: 70%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+        </div>
+        <br />
+      </div>
+      <div class="destination-sidebar">
+        <div class="sidebar-image-container">
+          <img src="側邊欄自我介紹.jpg" />
+        </div>
+        <h5>
+          Hi!
+          我是Tommy，我熱愛旅遊也喜歡藉由影像紀錄旅程中的點點滴滴，透過文字將我在旅途中的所見所聞分享給大家。旅行對我而言不只是吃吃喝喝，而是能在行萬里路間感受世界的脈動，體驗不同的文化，希望藉由我的分享能讓大家看到更多世界的美好。
+        </h5>
+        <br />
+        <h5>
+          想更了解我或與我聯絡:
+          <a
+            href="https://www.instagram.com/tommy_techvoyage/"
+            target="_blank"
+            style="color: inherit; text-decoration: underline"
+          >
+            <b>Instagram</b>
+          </a>
+        </h5>
+        <div class="recommendation-section">
+          <h3>其他澳洲旅遊目的地</h3>          
+          <div class="recommendation-buttons">
+            <a href="雪梨.html">
+              <button><h5>雪梨</h5></button>
+            </a>
+            <a href="伯斯.html">
+              <button><h5>伯斯</h5></button>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="contact-section">
+      <div class="contact-item">
+        <h3>
+          想更了解我或與我聯絡:
+          <a
+            href="https://www.instagram.com/tommy_techvoyage/"
+            target="_blank"
+            style="color: inherit; text-decoration: underline"
+          >
+            Instagram
+          </a>
+        </h3>
+      </div>
+    </div>
+    <footer>
+      <h6>COPYRIGHT © 2025 Tommy 看世界 All rights reserved.</h6>
+    </footer>
+    <div id="menu-toggle"></div>
+    <div id="expandable-menu">
+      <div id="menu-content">
+        <h4>目錄</h4>
+        <ul id="menu-list"></ul>
+      </div>
+    </div>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const menu = document.getElementById("expandable-menu");
+        const toggle = document.getElementById("menu-toggle");
+        const menuList = document.getElementById("menu-list");
+        const destinationMain = document.querySelector(".destination-main");
+
+        // 點擊按鈕切換目錄狀態
+        toggle.addEventListener("click", () => {
+          menu.classList.toggle("open");
+
+          const menuWidth = menu.offsetWidth; // 獲取目前展開的目錄寬度
+
+          if (menu.classList.contains("open")) {
+            // 讓按鈕向左平移與 menu 一樣的寬度
+            toggle.style.transform = `translateY(-50%) translateX(-${menuWidth}px)`;
+          } else {
+            // 收回原位
+            toggle.style.transform = `translateY(-50%) translateX(0)`;
+          }
+        });
+
+        window.addEventListener("load", () => {
+          if (menu.classList.contains("open")) {
+            const menuWidth = menu.offsetWidth;
+            toggle.style.transform = `translateY(-50%) translateX(-${menuWidth}px)`;
+          }
+        });
+
+        // 從 destination-main 區域提取 h2 和 h3，動態生成目錄
+        const headings = destinationMain.querySelectorAll("h2, h3");
+        headings.forEach((heading, index) => {
+          // 確保每個 h2 和 h3 都有唯一的 id
+          if (!heading.id) {
+            heading.id = `heading-${index}`;
+          }
+
+          const listItem = document.createElement("li");
+          const link = document.createElement("a");
+          link.textContent = heading.textContent;
+          link.href = `#${heading.id}`;
+          listItem.appendChild(link);
+
+          // 為 h3 添加縮排樣式
+          if (heading.tagName.toLowerCase() === "h3") {
+            listItem.classList.add("sub-item");
+          }
+
+          menuList.appendChild(listItem);
+        });
+
+        function adjustMenuPosition() {
+          const nav = document.querySelector("nav");
+          const menu = document.getElementById("expandable-menu");
+      
+          if (nav && menu) {
+            const navHeight = nav.offsetHeight;
+      
+            // 設定 menu 的 top 與高度
+            menu.style.top = `${navHeight}px`;
+            menu.style.height = `calc(100vh - ${navHeight}px)`;
+          }
+        }
+      
+        // 載入與尺寸變化時調整
+        window.addEventListener("DOMContentLoaded", adjustMenuPosition);
+        window.addEventListener("resize", adjustMenuPosition);
+        
+        // 滾動至目標位置並加上 75px 偏移
+        menuList.addEventListener("click", (event) => {
+          if (event.target.tagName === "A") {
+            event.preventDefault(); // 阻止預設行為
+
+            const targetId = event.target.getAttribute("href").substring(1); // 取得目標 ID
+            const targetElement = document.getElementById(targetId);
+
+            if (targetElement) {
+              // 計算目標元素的位置並加上 75px 偏移
+              const targetPosition =
+                targetElement.getBoundingClientRect().top + window.scrollY;
+              const offset = 75; // 偏移的距離
+              window.scrollTo({
+                top: targetPosition - offset,
+                behavior: "smooth", // 平滑滾動
+              });
+            }
+          }
+        });
+        // 手機 Safari 相容：點擊展開 dropdown
+        const dropdownToggles = document.querySelectorAll(".dropdown-toggle");
+
+        dropdownToggles.forEach((toggle) => {
+          toggle.addEventListener("click", function (e) {
+            e.stopPropagation(); // 防止冒泡，避免點擊外層時也觸發關閉
+            const dropdown = this.nextElementSibling;
+            const isVisible = dropdown.style.display === "block";
+            
+            // 關閉所有其他 dropdown（可選）
+            document.querySelectorAll(".dropdown-content").forEach((menu) => {
+              menu.style.display = "none";
+            });
+
+            // 切換目前這一個 dropdown
+            dropdown.style.display = isVisible ? "none" : "block";
+          });
+        });
+
+        // 點擊其他地方時關閉 dropdown
+        window.addEventListener("click", function () {
+          document.querySelectorAll(".dropdown-content").forEach((menu) => {
+            menu.style.display = "none";
+          });
+        });
+      });
+    </script>
+  </body>
+</html>

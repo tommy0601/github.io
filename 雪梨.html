@@ -1,0 +1,993 @@
+<!DOCTYPE html>
+<html lang="zh-hant-TW">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="曹旅瀚 Tommy" />
+    <meta name="description" content="探索澳洲最大城市雪梨，走訪雪梨歌劇院、港灣大橋與邦迪海灘，感受海港城市的自然美景、多元文化與悠閒自在的旅遊魅力。">
+    <meta name="keywords" content="雪梨旅遊,Sydney,雪梨自由行,雪梨歌劇院,雪梨港灣大橋,邦迪海灘,雪梨景點,雪梨行程,雪梨美食,雪梨住宿,達令港,岩石區,雪梨海灘,澳洲旅遊,雪梨推薦">
+    <title>Tommy 看世界 - 雪梨</title>
+    <link rel="icon" href="網頁縮圖.ico" />
+    <style>
+      body {
+        font-family: Calibri, Arial, sans-serif; /* 首選 Calibri，次選 Arial */
+        margin: 0;
+        overflow-x: hidden; /* 禁止水平滾動 */
+        background-color: #f4f4f9;
+        color: #333;
+      }
+
+      h1 {
+        font-size: 40px;
+        font-weight: bold;
+      }
+
+      h2 {
+        font-size: 32px;
+        font-weight: bold;
+        color: #2a90a7;
+        display: inline-block;
+        background-color: #cee5e8;
+      }
+
+      h3 {
+        font-size: 26px;
+        margin: 0 0 1rem;
+        font-weight: bold;
+        text-decoration: underline;
+      }
+
+      h4 {
+        font-size: 18px;
+        font-weight: normal;
+        line-height: 1.8;
+      }
+
+      h5 {
+        font-size: 16px;
+        font-weight: normal;
+        margin: 0;
+      }
+
+      h6 {
+        font-size: 10px;
+        color: #fff;
+        margin: 0;
+        text-align: center;
+        line-height: 50px; /* 高度對齊 */
+      }
+
+      nav {
+        background-color: #78bcc4;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;                     /* 讓 nav 寬度隨螢幕自適應 */
+        padding: 0.8rem 5vw;               /* 左右 padding 用 5% 寬度 */
+        box-sizing: border-box;         /* 確保 padding 不會影響寬度總長 */
+        position: fixed;
+        top: 0;
+        z-index: 1000;
+      }
+
+      .nav-left .logo img {
+        height: 5vw; /* 高度為螢幕寬度的 5% */
+        transform: translateX(-2vw); /* 向左移動 2% 寬度 */
+        max-width: 100%; /* 確保不會超過容器 */
+        height: auto; /* 保持圖片比例（建議與 max-height 搭配） */
+        max-height: 3rem;
+      }
+
+      .nav-right {
+        display: flex;
+        align-items: center;
+        margin-left: auto; /* 推到右側 */
+        padding-left: 5%;   /* 內部元素間距，彈性設計 */
+      }
+
+      nav a {
+        color: #eff5f5;
+        text-decoration: none;
+        padding: 1vh 1vw;
+        margin: 0 1vw;
+        transition: transform 0.3s;
+      }
+
+      nav a:hover {
+        transform: translateY(-0.5vh); /* 根據視窗高度調整 */
+      }
+
+      .dropdown {
+        position: relative;
+        display: inline-block;
+      }
+
+      .dropdown-content {
+        width: 100%; /* 佔滿父層寬度 */
+        max-width: 20vw; /* 限制最大寬度 */
+        display: none;
+        position: absolute;
+        background-color: #78bcc4;
+        min-width: 10em; /* 取代 160px，以字體大小作為比例單位 */
+        border-radius: 0.25em;
+        box-shadow: 0 0.5em 1em rgba(0, 0, 0, 0.2); /* 改為相對單位 */
+        padding: 0.2rem 0;
+        z-index: 999;
+      }
+
+      .dropdown-content a {
+        color: #eff5f5;
+        display: block;
+        transition: transform 0.3s;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.3); /* 更淡配色、柔和過渡 */
+        padding: 0.6em 1em;
+        font-size: 1em;
+      }
+
+      .dropdown-content a:last-child {
+        border-bottom: none;
+      }
+
+      .dropdown-content a:hover {
+        transform: translateY(-0.25em); /* 改為相對單位 */
+      }
+
+      .intro-section {
+        background-color: #eff5f5;
+        display: flex;
+        flex-wrap: wrap; /* 確保在小螢幕可換行 */
+        padding: 2rem 5%;
+        margin-top: 4em; /* 根據導航列高度調整 */
+      }
+
+      .intro-section h4 {
+        max-width: 85%; /* 改為相對單位，避免固定寬度限制 */
+        line-height: 1.8;
+      }
+
+      .intro-section .left {
+        width: 60%;
+        padding-right: 1%;
+      }
+
+      .intro-section .right {
+        width: 39%;
+      }
+
+      .destination-section {
+        display: flex;
+        flex-wrap: wrap;               /* 小螢幕時允許換行 */
+        padding: 1rem 5%; /* 左右內間距為螢幕的10% */
+        background-color: white;
+      }
+
+      .destination-main {
+        width: 72%;                    /* 主要內容佔 72%，略縮以保留間距 */
+        margin-right: 3%;              /* 與 sidebar 間保留間距（約為 3%） */
+        box-sizing: border-box;
+      }
+
+      .destination-sidebar {
+        width: 25%;                    /* 側邊欄佔 25% */
+        padding-left: 2%;             /* 相對內邊距 */
+        margin-top: 2rem;
+        box-sizing: border-box;
+      }
+
+      .sidebar-image-container {
+        margin-bottom: 1rem;
+        text-align: center; /* 置中圖片 */
+      }
+
+      .sidebar-image-container img {
+        width: 90%;         /* 圖片寬度為容器寬度的 90% */
+        height: auto;       /* 高度自動，保持比例 */
+        max-height: 60vh;   /* 避免圖片過高，佔螢幕最大 60% 高 */
+        object-fit: cover;  /* 裁切處理長圖 */
+      }
+
+      .two-vertical-images {
+        display: flex;
+        justify-content: space-between;
+        gap: 4%; /* 使用百分比間距更彈性 */
+        margin-top: 2rem;
+        margin-bottom: 2rem;
+        flex-wrap: wrap; /* 若畫面太小，允許換行 */
+      }
+
+      .two-vertical-images img {
+        width: 48%; /* 每張圖片約佔一半（加上 gap 剛好 100%） */
+        height: auto; /* 保持原比例 */
+        object-fit: cover;
+        display: block;
+        margin: 0 auto;
+      }
+
+      .recommendation-section {
+        margin-top: 3vh; /* 與上方文字的間距 */
+        text-align: center;
+        position: sticky;
+        top: 80px; /* 空出導覽列的高度，確保推薦區不被覆蓋 */
+        z-index: 10; /* 提高層級，避免被其他內容遮蓋 */
+        padding: 0 5%;
+      }
+
+      .recommendation-section h3 {
+        font-size: 1.125rem;
+        font-weight: bold;
+        margin-bottom: 1vh; /* 與按鈕區的距離 */
+      }
+
+      .recommendation-buttons {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 0.5em; /* 按鈕之間的間距 */
+      }
+
+      .recommendation-buttons button {
+        padding: 0.5em 1em;
+        font-size: 0.875rem;
+        color: white;
+        background-color: #78bcc4;
+        border: none;
+        border-radius: 0.25rem;
+        transition: transform 0.3s;
+        font-family: Arial, sans-serif;
+      }
+
+      .recommendation-buttons button:hover {
+        transform: translateY(-3px);
+      }
+
+      .contact-section {
+        padding: 4vh 8vw; /* 上下與左右間距 */
+        background-color: #eff5f5; /* 淺灰背景 */
+        text-align: center; /* 確保內容置中對齊 */
+      }
+
+      .contact-item h3 {
+        font-size: 1.125rem; /* 調整標題字體大小 */
+        margin: 0; /* 移除多餘的間距 */
+        text-decoration: none; /* 移除底線 */
+      }
+
+      footer {
+        background-color: #000;
+        color: white;
+        height: 3vh; /* 使用相對單位，高度占螢幕高度的 3% */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 1.5rem; /* 使用相對字體大小 */
+        padding: 0.5rem 0; /* 確保小螢幕時內容不擠壓 */
+      }
+
+      #expandable-menu {
+        position: fixed; 
+        right: 0;
+        width: 26vw; /* 目錄寬度與 sidebar 齊寬 */
+        max-width: 90%; /* 避免在小螢幕太寬 */
+        transform: translateX(100%); /* 初始狀態：隱藏在右側 */
+        transition: transform 0.3s ease;
+        background-color: #f4f4f9; /* 與網站背景一致 */
+        z-index: 1000;
+        box-sizing: border-box;
+      }
+
+      /* 收闔按鈕 */
+      #menu-toggle {
+        position: fixed;
+        top: 45%;
+        right: 0; /* 永遠貼在右側 */
+        transform: translateY(-50%) translateX(0);
+        width: 2.5em; /* 增大按鈕寬度 */
+        height: 5em; /* 增大按鈕高度 */
+        background-color: #78bcc4;
+        color: white;
+        border-radius: 0.4em 0 0 0.4em;
+        display: flex;
+        justify-content: center; /* 水平居中 */
+        align-items: center; /* 垂直居中 */
+        z-index: 2000; /* 要比 expandable-menu 更高，避免被蓋住 */
+        cursor: pointer;
+        box-shadow: -0.1em 0 0.3em rgba(0,0,0,0.1);
+        transition: transform 0.3s ease; /* 平滑移動 */
+      }
+
+      #menu-toggle::after {
+        content: "目錄"; /* 在按鈕內顯示 "目錄" */
+        font-size: 1rem;
+        color: white; /* 設定字體顏色為白色 */
+        writing-mode: vertical-rl; /* 使文字垂直排列 */
+      }
+
+      #menu-toggle:hover {
+        background-color: #78bcc4;
+      }
+
+      /* 目錄內容 */
+      #menu-content {
+        padding: 0.5rem 5%;
+        overflow-y: auto;
+        height: 100%;
+        box-sizing: border-box;
+      }
+
+      #menu-content h4 {
+        font-weight: bold;
+        margin-top: 0;
+        font-size: 1.2rem;
+      }
+
+      #menu-list {
+        list-style: none;
+        padding: 0;
+      }
+
+      #menu-list li {
+        margin-bottom: 1vh;
+      }
+
+      #menu-list a {
+        color: #2a90a7;
+        text-decoration: none;
+        transition: color 0.3s;
+        font-size: 1rem; /* 使用相對字體大小 */
+      }
+
+      #menu-list a:hover {
+        color: #78bcc4;
+      }
+
+      #menu-list .sub-item {
+        margin-left: 8%; /* 調整縮排距離 */
+        font-size: 0.9rem; /* 可選：調整子項目字體大小 */
+      }
+
+      /* 目錄展開狀態 */
+      #expandable-menu.open {
+        transform: translateX(0);
+      }
+
+      /* === 響應式調整：針對手機與小螢幕設備 === */
+      @media (max-width: 768px) {
+        nav {
+          flex-direction: row;
+          flex-wrap: wrap;
+          align-items: center;
+          justify-content: space-between;
+          padding: 1rem 5vw;  /* 窄螢幕時減少左右留白 */
+          width: 100%;
+          box-sizing: border-box;
+        }
+
+        .nav-right {
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          gap: 0.5rem;
+          transform: none;
+          width: auto;
+          white-space: nowrap;               /* 禁止內容自動換行 */
+        }
+
+        nav a {
+          padding: 0.5rem 0.5rem;           /* 減少垂直padding */
+          margin: 0 0.3rem;
+          font-size: 0.85rem;
+          white-space: nowrap;               /* 確保文字不換行 */
+          overflow: hidden;
+          text-overflow: ellipsis;           /* 若內容超出，顯示省略號 */
+        }
+
+        .nav-dropdown {
+          width: 60%; /* 或者用 max-content, fit-content 看需求 */
+          font-size: 0.85rem; /* 調整字體大小和導覽列一致 */
+          padding: 0.5rem;
+        }
+      
+        .nav-dropdown a {
+          font-size: inherit; /* 確保跟 .nav-dropdown 一樣大 */
+          padding: 0.5rem 1rem;
+          white-space: normal; /* 可選：讓字在必要時換行 */
+        }
+
+        .dropdown-content {
+          width: 12vw;
+          min-width: 8em; /* 保證至少能顯示幾個字 */
+          max-width: none;
+        }
+
+        .dropdown-content a {
+          font-size: 0.85rem;
+        }
+        
+        .intro-section {
+          flex-direction: column;
+          padding: 8%;
+        }
+
+        .intro-section .left,
+        .intro-section .right {
+          width: 100%;
+          padding: 0;
+          flex: 1 1 100%;
+        }
+
+        .intro-section .right {
+          margin-top: 1.5rem;
+          display: flex;
+          justify-content: center;
+        }
+
+        .intro-section h4 {
+          max-width: 100%;
+          font-size: 1rem;
+        }
+
+        .destination-grid {
+          flex-direction: column;
+          gap: 1rem;
+        }
+
+        .destination-section h4 {
+          font-size: 1rem;
+        }
+
+        .destination-item {
+          max-width: 100%;
+          width: 100%;
+        }
+
+        .destination-item.a_role_with_2 {
+          position: static;
+          left: auto;
+        }
+
+        .destination-main,
+        .destination-sidebar {
+          width: 100%;
+          margin: 0;
+          padding: 0;
+        }
+
+        .destination-sidebar {
+          margin-top: 2rem;
+        }
+
+        .recommendation-buttons button {
+          width: 100%; /* 小螢幕按鈕全寬排列 */
+        }
+
+        .contact-section {
+          padding: 3vh 5vw;
+        }
+
+        .contact-item h3 {
+          font-size: 1rem;
+        }
+
+        /* 目錄區寬度改為螢幕寬度的40% */
+        #expandable-menu {
+          width: 40vw !important; /* 用vw方便響應螢幕寬度 */
+          max-width: 90%; /* 保留原本max-width避免太寬 */
+        }
+      
+        #expandable-menu,
+        #expandable-menu * {
+          font-size: 85% !important;
+        }
+              
+        #menu-toggle {
+          width: 75%;
+          max-width: 1.875em;
+          min-width: 1.875em;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <div class="nav-left">
+        <div class="logo">
+          <a href="首頁.html">
+            <img src="網站Logo.png" alt="網站 Logo" />
+          </a>
+        </div>
+      </div>
+      <div class="nav-right">
+        <a href="首頁.html">關於我</a>
+        <div class="dropdown">
+          <a class="dropdown-toggle">亞洲旅遊</a>
+          <div class="dropdown-content">
+            <a href="中國.html">中國</a>
+            <a href="日本.html">日本</a>
+            <a href="新加坡.html">新加坡</a>
+            <a href="馬來西亞.html">馬來西亞</a>
+            <a href="泰國.html">泰國</a>
+            <a href="印尼.html">印尼</a>
+            <a href="越南.html">越南</a>
+          </div>
+        </div>
+        <div class="dropdown">
+          <a class="dropdown-toggle">歐洲旅遊</a>
+          <div class="dropdown-content">
+            <a href="英國.html">英國</a>
+            <a href="法國.html">法國</a>
+            <a href="荷蘭.html">荷蘭</a>
+            <a href="比利時.html">比利時</a>
+            <a href="盧森堡.html">盧森堡</a>
+            <a href="瑞士.html">瑞士</a>
+            <a href="摩納哥.html">摩納哥</a>
+            <a href="西班牙.html">西班牙</a>
+            <a href="葡萄牙.html">葡萄牙</a>
+            <a href="安道爾.html">安道爾</a>
+            <a href="丹麥.html">丹麥</a>
+            <a href="瑞典.html">瑞典</a>
+            <a href="波蘭.html">波蘭</a>
+          </div>
+        </div>
+        <div class="dropdown">
+          <a class="dropdown-toggle">美洲旅遊</a>
+          <div class="dropdown-content">
+            <a href="美國.html">美國</a>
+            <a href="加拿大.html">加拿大</a>
+          </div>
+        </div>
+        <div class="dropdown">
+          <a class="dropdown-toggle">大洋洲旅遊</a>
+          <div class="dropdown-content">
+            <a href="澳洲.html">澳洲</a>
+          </div>
+        </div>
+        <div class="dropdown">
+          <a class="dropdown-toggle">非洲旅遊</a>
+          <div class="dropdown-content">
+            <a href="南非.html">南非</a>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <div class="intro-section">
+      <div class="left">
+        <h1>Tommy 在雪梨</h1>
+        <h4>
+          <b>雪梨 (Sydney)</b> 位於澳洲東岸，是全國最早被歐洲殖民的城市。1788 年英國第一艦隊抵達傑克森港，在此建立澳洲第一個流放殖民地，雪梨因而成為殖民時期的核心。19 世紀隨著港口發展、商業興起與移民增加，城市逐漸從囚犯城轉型為繁榮的經濟中心。20 世紀中雪梨歌劇院與海港大橋成為國際地標，奠定城市的文化與觀光地位。
+        </h4>
+        <h4>今日的雪梨是澳洲人口最多、最國際化的城市，以金融、科技、教育和創意產業聞名，具高度多元文化，吸引來自全球的學生與專業人才。然而雪梨也面臨房價高、交通壅塞與城市擴張等挑戰。</h4>
+      </div>
+      <div class="right">
+        <img src="澳洲照片\雪梨\雪梨_介紹.jpg" style="width: 100%; height: auto; max-width: 100%;" />
+      </div>
+    </div>
+
+    <div class="destination-section">
+      <div class="destination-main">
+        <h2>雪梨交通</h2>
+        <h3>機場交通</h3>
+        <h4>
+          從雪梨國際機場可搭乘 T8 路線地鐵直達雪梨市中心 Central Station，車程約 20 分鐘，可再轉乘其他交通工具。
+        </h4>
+        <h3>市區交通</h3>
+        <h4>
+          雪梨大眾運輸十分發達，可以分成地鐵、城際火車、輕軌和公車四類，都可以刷信用卡付車資: 
+          <ul style="max-width: 90%; padding-left: 1.5rem;">
+            <li><b>地鐵 (縮寫 T)</b>: 負責市中心與郊區的運輸，基本上能抵達大多數的景點，是進入市區的交通首選。</li>
+            <li><b>城際火車 (縮寫 M)</b>: 負責與較遠的衛星城市的連接，去比較遠的藍山或動物園需要搭乘。</li>
+            <li><b>輕軌 (縮寫 L)</b>: 在市中心的短途運輸，走累的跳上去休息看風景是不錯的選擇。</li>
+            <li><b>公車</b>要去邦迪海灘會需要搭乘公車，上下車都需要刷卡喔！</li>
+          </ul>
+        </h4>
+        <div style="text-align: center">
+          <img src="澳洲照片\雪梨\雪梨_交通.jpg" style="width: 70%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+        </div>
+        <br /><br />
+        <h2>雪梨住宿</h2>
+        <h4>
+          雪梨市中心城南北長條型，基本上從歌劇院一路向南延伸到 Central Station，北區比較偏向商辦區，而中心區及南邊則是商場比較多的鬧區，比較推薦選擇住宿可以在市中心的商場或 Central Station 附近，交通跟吃的選擇較多，如果是想省住宿費的朋友也可以住在地鐵沿線，搭地鐵進城也是非常方便的，推薦東側的 Kings Cross，是較為寧靜的選擇。
+        </h4>
+        <div style="text-align: center">
+          <img src="澳洲照片\雪梨\雪梨_住宿.png" style="width: 90%; max-width: 100vw; height: auto;" />
+        </div>
+        <br /><br />
+        <h2>雪梨景點</h2>
+        <h3>雪梨歌劇院 (Sydney Opera House)</h3>
+        <h4>
+          雪梨歌劇院位於雪梨港畔，是全球最具代表性的建築地標之一，也是澳洲文化與藝術的象徵。建築由丹麥建築師約恩．烏松設計，其靈感來自風帆與貝殼，白色屋頂在藍色海港映襯下極具視覺震撼力。歌劇院於 1959 年動工，1973 年正式啟用，雖歷經設計與工程上的挑戰，最終仍成為 20 世紀最重要的建築成就之一。內部設有多座表演廳，可舉辦歌劇、交響樂、戲劇、舞蹈與現代音樂演出，是澳洲表演藝術的核心。
+        </h4>
+        <h4>2007 年，Sydney Opera House 被列入世界文化遺產名錄，今日的歌劇院不僅是藝術殿堂，也對外開放導覽、展覽與公共空間，成為市民與遊客共享的文化場所，結合自然景觀、藝術創作與城市生活，展現雪梨作為國際城市的創意精神與文化自信。</h4>
+        <div style="text-align: center">
+          <img src="澳洲照片\雪梨\SY1.jpg" style="width: 70%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+          <img src="澳洲照片\雪梨\SY2.jpg" style="width: 70%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+          <img src="澳洲照片\雪梨\SY3.jpg" style="width: 90%; max-width: 100vw; height: auto; margin: 0.5rem;" />
+          <img src="澳洲照片\雪梨\SY4.jpg" style="width: 90%; max-width: 100vw; height: auto; margin: 0.5rem;" />
+          <img src="澳洲照片\雪梨\SY5.jpg" style="width: 90%; max-width: 100vw; height: auto; margin: 0.5rem;" />
+        </div>
+        <br /><br /><br />
+        <h3>雪梨港灣大橋 (Sydney Harbour Bridge)</h3>
+        <h4>
+          雪梨港灣大橋位於雪梨港，是連接市中心與北岸的重要橋樑，也是雪梨最具代表性的地標。大橋於 1932 年完工，採用大型鋼拱結構，在當時是世界上最寬、最長的鋼拱橋之一，象徵澳洲工業與工程技術的成就。橋上設有汽車道、火車軌道、自行車道與行人步道，兼具交通與公共空間功能。雪梨港灣大橋與雪梨歌劇院共同構成經典港灣景觀，也提供攀橋體驗，讓遊客從高處俯瞰雪梨市區與海港，展現城市壯麗與活力。
+        </h4>
+        <div style="text-align: center">
+          <img src="澳洲照片\雪梨\SY6.jpg" style="width: 90%; max-width: 100vw; height: auto; margin: 0.5rem;" />
+          <img src="澳洲照片\雪梨\SY7.jpg" style="width: 90%; max-width: 100vw; height: auto; margin: 0.5rem;" />
+          <img src="澳洲照片\雪梨\SY8.jpg" style="width: 70%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+          <img src="澳洲照片\雪梨\SY9.jpg" style="width: 90%; max-width: 100vw; height: auto; margin: 0.5rem;" />
+        </div>
+        <br /><br /><br />
+        <h3>麥奎里夫人石椅 (Mrs Macquarie’s Chair)</h3>
+        <h4>
+          麥奎里夫人石椅位於雪梨皇家植物園東側，是俯瞰雪梨港的著名觀景地點。此處原為 19 世紀初由囚犯在砂岩中鑿出的石椅，供當時新南威爾斯總督拉克倫．麥覺理的夫人伊麗莎白休憩並欣賞港灣景色因此得名。從這裡可同時眺望雪梨歌劇院、海港大橋與遼闊水景，是攝影與觀光的熱門地點，推薦可以早上來拍照，光的方向比較正確。
+        </h4>
+        <div style="text-align: center">
+          <img src="澳洲照片\雪梨\SY10.jpg" style="width: 90%; max-width: 100vw; height: auto; margin: 0.5rem;" />
+          <img src="澳洲照片\雪梨\SY11.jpg" style="width: 90%; max-width: 100vw; height: auto; margin: 0.5rem;" />
+        </div>
+        <br /><br /><br />
+        <h3>維多利亞女王大廈 (Queen Victoria Building)</h3>
+        <h4>
+          維多利亞女王大廈位於雪梨市中心，是一座結合歷史建築與現代商業機能的代表性地標，建於 19 世紀末，以紀念維多利亞女王即位 60 週年。建築採羅馬復興風格，擁有宏偉圓頂、彩色玻璃與精緻拱廊，展現當時工藝與建築美學。原本設計為市集與公共空間，後經修復轉型為高級購物中心，匯集精品店、咖啡館與餐廳。維多利亞女王大廈不僅是購物場所，更是雪梨重要的文化與歷史象徵，展現城市對歷史保存與現代生活融合的成功典範。
+        </h4>
+        <div style="text-align: center">
+          <img src="澳洲照片\雪梨\SY12.jpg" style="width: 90%; max-width: 100vw; height: auto; margin: 0.5rem;" />
+          <img src="澳洲照片\雪梨\SY13.jpg" style="width: 70%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+        </div>
+        <h3>Pitt Street</h3>
+        <h4>
+          Pitt Street 位於雪梨市中心，是城市最重要、最繁忙的商業街，也是購物與都市活動的核心地帶。街道貫穿中央商業區，周邊聚集大型百貨公司、國際品牌專賣店與辦公大樓，形成高度密集的商業環境。其中 Pitt Street Mall 為行人徒步區，經常可見街頭表演與人潮往來，展現現代都市生活的節奏與多元樣貌。
+        </h4>
+        <div style="text-align: center">
+          <img src="澳洲照片\雪梨\SY14.jpg" style="width: 70%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+          <img src="澳洲照片\雪梨\SY15.jpg" style="width: 70%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+        </div>
+        <br /><br /><br />
+        <h3>達令港 (Darling Harbor)</h3>
+        <h4>
+          達令港位於澳洲雪梨市中心西側，是著名的濱水休閒與觀光區。此地原為港口與工業用地，經過都市更新後轉型為集娛樂、文化與餐飲於一體的公共空間。港區周邊設有博物館、水族館、展覽中心與大量餐廳，適合家庭旅遊與休閒散步。特別推薦來看夜景，夜晚燈光倒映水面景色迷人，是體驗雪梨夜生活的好去處。
+        </h4>
+        <div style="text-align: center">
+          <img src="澳洲照片\雪梨\SY16.jpg" style="width: 90%; max-width: 100vw; height: auto; margin: 0.5rem;" />
+          <img src="澳洲照片\雪梨\SY17.jpg" style="width: 90%; max-width: 100vw; height: auto; margin: 0.5rem;" />
+          <img src="澳洲照片\雪梨\SY18.jpg" style="width: 70%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+          <img src="澳洲照片\雪梨\SY19.jpg" style="width: 70%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+        </div>
+        <br /><br /><br />
+        <h3>Spice Alley</h3>
+        <h4>
+          Spice Alley 市中心近中央車站一帶，是一處以亞洲街頭美食為主題的露天美食巷弄。空間設計靈感來自東南亞夜市，燈籠、木質攤位與狹窄巷道營造出熱鬧而親切的用餐氛圍。這裡匯集多國亞洲料理，包括新加坡、馬來西亞、泰國、日本與中式小吃，口味多元且價格親民，是朋友聚會與下班後放鬆的熱門地點，展現雪梨多元文化與亞洲飲食在城市生活中的重要角色。
+        </h4>
+        <div style="text-align: center">
+          <img src="澳洲照片\雪梨\SY20.jpg" style="width: 70%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+          <img src="澳洲照片\雪梨\SY21.jpg" style="width: 70%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+          <img src="澳洲照片\雪梨\SY22.jpg" style="width: 70%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+          <img src="澳洲照片\雪梨\SY23.jpg" style="width: 70%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+        </div>
+        <br /><br /><br />
+        <h3>Sydney Fish Market</h3>
+        <h4>
+          Sydney Fish Market 位於達令港附近，是南半球規模最大的海鮮市場之一，市場每日供應大量新鮮漁獲，包括生蠔、龍蝦、鮪魚與各式貝類，來源直接來自澳洲沿岸海域。遊客可在市場內選購海鮮，或於現場餐廳品嚐壽司、生魚片與熟食料理，體驗最道地的海港風味。
+        </h4>
+        <div style="text-align: center">
+          <img src="澳洲照片\雪梨\SY24.jpg" style="width: 70%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+          <img src="澳洲照片\雪梨\SY25.jpg" style="width: 70%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+          <img src="澳洲照片\雪梨\SY26.jpg" style="width: 70%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+          <img src="澳洲照片\雪梨\SY27.jpg" style="width: 70%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+        </div>
+        <br /><br /><br />
+        <h3>邦代海灘 (Bondi Beach)</h3>
+        <h4>
+          邦代海灘位於雪梨東岸，是世界最知名的海灘之一，以金色沙灘與強勁海浪聞名。這裡是衝浪運動的重要據點，也深受當地居民與遊客喜愛，海灘周邊設有步道、咖啡館與商店，形成充滿活力的濱海生活圈。邦代海灘同時以救生文化著稱，長期推廣海灘安全與衝浪教育。
+        </h4>
+        <h4>2025 年 12 月 14 日，邦代海灘發生一起震驚全澳的嚴重槍擊事件，一對父子槍手在猶太社區主辦的光明節慶祝活動附近，從高處橋上向參加者與周圍人群連續開火，造成至少 16 人死亡、40 多人受傷，包括兒童、老人及警方人員，事後調查顯示，槍手與極端思想有關，事件具有反猶太主義恐怖攻擊性質。</h4>
+        <div style="text-align: center">
+          <img src="澳洲照片\雪梨\SY28.jpg" style="width: 90%; max-width: 100vw; height: auto; margin: 0.5rem;" />
+          <img src="澳洲照片\雪梨\SY29.jpg" style="width: 70%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+        </div>
+        <br /><br />
+        <h2>雪梨近郊景點</h2>
+        <h3>藍山纜車 (Scenic World)</h3>
+        <h4>
+          藍山纜車位於新南威爾斯州藍山國家公園，是由三條纜車路線所組成，如下圖分別為<b> Scenic Skyway (黃線)、Scenic Railway (紅線) 與 Scenic Cableway (藍線)</b>。
+          <ul style="max-width: 90%; padding-left: 1.5rem;">
+            <li><b>紅線</b>: 世界上最陡峭的載客鐵路之一，最初於 19 世紀末建成，用於運送礦工與煤炭，後來改建為觀光設施。列車沿著陡峭軌道直達傑米遜谷谷底，可依喜好調整座椅傾斜角度，體驗刺激的下降過程。</li>
+            <li><b>藍線</b>: 纜車採大型全景車廂設計，四周皆為透明玻璃，讓遊客在移動過程中可俯瞰峽谷、瀑布與茂密的原始雨林景觀，連接山頂觀景區與谷底步道，適合各年齡層搭乘。</li>
+            <li><b>黃線</b>: 纜車橫跨傑米遜谷，距離谷底約 270 公尺，可俯瞰壯闊的峽谷地形、瀑布與大片桉樹森林。車廂底部設有透明玻璃地板，讓乘客能從空中直接欣賞腳下景色，帶來刺激且震撼的體驗。</li>
+          </ul>
+        </h4>
+        <h4>推薦路線是<b>紅線 -> 藍線 -> 黃線</b>，Top station 先搭乘紅線體驗陡降，沿著綠色路線逛完恐龍谷之後，搭乘藍線返回 Top station，再搭乘黃線到對面的 Eastern station，便可以從那邊走去三姊妹岩。</h4>
+        <h4>從雪梨市區前往藍山，可以從 Central Station 搭乘 BMT 路線城際火車到 Katoomba 站，再轉搭 686 路線前往 Top station。</h4>
+        <div style="text-align: center">
+          <img src="澳洲照片\雪梨\SY30.jpg" style="width: 90%; max-width: 100vw; height: auto; margin: 0.5rem;" />
+        </div>
+        <h4>坡度 64 度衝下去的瞬間真的很刺激。</h4>
+        <div style="text-align: center">
+          <img src="澳洲照片\雪梨\SY31.jpg" style="width: 70%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+          <img src="澳洲照片\雪梨\SY32.jpg" style="width: 70%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+        </div>
+        <h4>下去後的恐龍谷擺放許多恐龍模型，看著蠻有趣的。</h4>
+        <div style="text-align: center">
+          <img src="澳洲照片\雪梨\SY33.jpg" style="width: 90%; max-width: 100vw; height: auto; margin: 0.5rem;" />
+          <img src="澳洲照片\雪梨\SY34.jpg" style="width: 70%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+        </div>
+        <h4>恐龍谷大約能逛 30 分鐘左右，接著就搭藍線纜車回到山上。</h4>
+        <div style="text-align: center">
+          <img src="澳洲照片\雪梨\SY35.jpg" style="width: 70%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+          <img src="澳洲照片\雪梨\SY36.jpg" style="width: 90%; max-width: 100vw; height: auto; margin: 0.5rem;" />
+        </div>
+        <h4>最後再搭乘黃線纜車到對岸。</h4>
+        <div style="text-align: center">
+          <img src="澳洲照片\雪梨\SY37.jpg" style="width: 70%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+          <img src="澳洲照片\雪梨\SY38.jpg" style="width: 70%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+          <img src="澳洲照片\雪梨\SY39.jpg" style="width: 70%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+        </div>
+        <br /><br /><br />
+        <h3>三姊妹岩 (Three Sisters)</h3>
+        <h4>
+          三姊妹岩是藍山最著名、也最具象徵性的自然地標，三座並列的砂岩岩柱因長年風化與侵蝕而形成，外型醒目矗立於傑米遜谷邊緣，根據原住民傳說，三姊妹原為三位女子，後因部落衝突而化為岩石，故事為景觀增添文化意涵。三姊妹岩從回音角等觀景點即可清楚眺望，隨著日照與天氣變化呈現不同色彩。
+        </h4>
+        <h4>我自己非常推薦從 Eastern Station 走到三姊妹岩，步行大約 30 分鐘，但是是有一點山路的，所以不想爬山的可以搭公車，沿途有非常多的觀景點，可以欣賞藍山的美景。</h4>
+        <div style="text-align: center">
+          <img src="澳洲照片\雪梨\SY40.jpg" style="width: 70%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+          <img src="澳洲照片\雪梨\SY41.jpg" style="width: 70%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+          <img src="澳洲照片\雪梨\SY42.jpg" style="width: 90%; max-width: 100vw; height: auto; margin: 0.5rem;" />
+        </div>
+        <br /><br /><br />
+        <h3>Featherdale Sydney Wildlife Park</h3>
+        <h4>
+          Featherdale Sydney Wildlife Park 位於雪梨近郊，以近距離接觸原生動物聞名。園區致力於保育與教育，收藏超過數百種澳洲本土動物，包括無尾熊、袋鼠、袋熊、鴯鶓、塔斯馬尼亞惡魔與各類爬蟲與鳥類。Featherdale 最大特色在於互動體驗，遊客可親手餵食袋鼠、近距離觀察動物行為，並了解其生態與保育現況，園區規模適中，動線清楚，適合家庭與短時間旅遊安排。透過展示、解說與繁殖計畫，Featherdale 不僅提供觀光體驗，也肩負保護澳洲珍稀物種的重要角色。 
+        </h4>
+        <h4>從雪梨市區前往動物園，可以從 Central Station 搭乘 BMT 路線城際火車到 Blacktown 站，再轉搭 729 路線前往 。</h4>
+        <div class="two-vertical-images">
+          <img src="澳洲照片\雪梨\SY43-1.jpg" />
+          <img src="澳洲照片\雪梨\SY43-2.jpg" />
+        </div>
+        <div class="two-vertical-images">
+          <img src="澳洲照片\雪梨\SY44-1.jpg" />
+          <img src="澳洲照片\雪梨\SY44-2.jpg" />
+        </div>
+        <div class="two-vertical-images">
+          <img src="澳洲照片\雪梨\SY45-1.jpg" />
+          <img src="澳洲照片\雪梨\SY45-2.jpg" />
+        </div>
+        <div class="two-vertical-images">
+          <img src="澳洲照片\雪梨\SY46-1.jpg" />
+          <img src="澳洲照片\雪梨\SY46-2.jpg" />
+        </div>
+        <div class="two-vertical-images">
+          <img src="澳洲照片\雪梨\SY47-1.jpg" />
+          <img src="澳洲照片\雪梨\SY47-2.jpg" />
+        </div>
+        <div style="text-align: center">
+          <img src="澳洲照片\雪梨\SY48.jpg" style="width: 90%; max-width: 100vw; height: auto; margin: 0.5rem;" />
+          <img src="澳洲照片\雪梨\SY49.jpg" style="width: 90%; max-width: 100vw; height: auto; margin: 0.5rem;" />
+        </div>
+        <br /><br />
+        <h2>雪梨美食</h2>
+        <h3>Elements Smokehouse and Bar</h3>
+        <h4>
+          Elements Smokehouse and Bar 是位於雪梨內城達令赫斯特的美式煙燻牛排餐廳與酒吧，以高品質食材、精湛烹飪技術及熱鬧氛圍吸引本地人與旅客。餐廳主打各式牛排，採用上等肉塊烹製至完美火候，搭配創意配菜與醬汁，呈現出濃郁而平衡的風味，除牛排外，菜單還提供美味的慢燉牛胸肉、烤肋排、香辣雞翅、手工漢堡、海鮮料理以及義式與素食選項，滿足多元口味需求，氣氛適合情侶晚餐、朋友聚會或特別慶祝，定期有特色優惠與主題活動，如限時牛排盛宴或節慶特餐，是嘗試澳洲牛排料理的好選擇。
+        </h4>
+        <div style="text-align: center">
+          <img src="澳洲照片\雪梨\SY50.jpg" style="width: 90%; max-width: 100vw; height: auto; margin: 0.5rem;" />
+          <img src="澳洲照片\雪梨\SY51.jpg" style="width: 90%; max-width: 100vw; height: auto; margin: 0.5rem;" />
+          <img src="澳洲照片\雪梨\SY52.jpg" style="width: 90%; max-width: 100vw; height: auto; margin: 0.5rem;" />
+        </div>
+        <br /><br /><br />
+        <h3>Kingsleys Australian Steakhouse</h3>
+        <h4>
+          Kingsleys Australian Steakhouse 是雪梨市中心極具代表性的高級牛排館，以呈現正宗澳洲風味聞名。餐廳除主打高品質澳洲牛排與和牛外，也特別提供袋鼠肉料理，讓饕客體驗獨具特色的在地食材。袋鼠肉脂肪含量低、口感細緻，處理得當的話其實沒有什麼腥味，口感有點類似牛肉，經過精準火候烹調後風味濃郁，是只有在澳洲才吃的到的料理，推薦一定要嘗試看看。
+        </h4>
+        <div style="text-align: center">
+          <img src="澳洲照片\雪梨\SY53.jpg" style="width: 90%; max-width: 100vw; height: auto; margin: 0.5rem;" />
+          <img src="澳洲照片\雪梨\SY54.jpg" style="width: 90%; max-width: 100vw; height: auto; margin: 0.5rem;" />
+        </div>
+        <br /><br /><br />
+        <h3>Pancakes On The Rocks</h3>
+        <h4>
+          Pancakes On The Rocks 創立於1975年，最早位於歷史悠久的岩石區，以美式厚鬆餅聞名，提供多款甜味與鹹味口味，從巧克力、香蕉到培根與起司。除了鬆餅，菜單亦包含披薩、沙拉、豬肋排及義大利麵等餐點，適合任何時段用餐，整體氛圍輕鬆熱鬧，份量十足 (兩個人可以點一份的那種)，是家庭聚餐、朋友聚會或旅途中補充能量的熱門選擇。
+        </h4>
+        <div style="text-align: center">
+          <img src="澳洲照片\雪梨\SY55.jpg" style="width: 70%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+        </div>
+        <br /><br /><br />
+        <h3>Tuyo Potts Point</h3>
+        <h4>
+          Tuyo Potts Point 坐落在 Victoria Street 社區中心地帶，以高品質特色咖啡與豐富多樣的早餐、早午餐料理聞名，包括經典厚鬆餅、牛羊肉三明治、牛油果吐司、shakshuka 等創意菜色，可滿足不同口味與飲食偏好，也提供素食與純素選項，並有戶外座位可享受街景，適合早餐、早午餐或輕食時段造訪，是雪梨東區熱門的咖啡與早午餐目的地。
+        </h4>
+        <div style="text-align: center">
+          <img src="澳洲照片\雪梨\SY56.jpg" style="width: 70%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+          <img src="澳洲照片\雪梨\SY57.jpg" style="width: 70%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+        </div>
+        <br /><br /><br />
+        <h3>Rivareno Gelato Barangaroo</h3>
+        <h4>
+          Rivareno Gelato Barangaroo 是位於Barangaroo 海濱區的義大利風味手工冰淇淋店，每日新鮮製作傳統意式 gelato，採用天然原料與時令食材，保留濃醇口感及純正風味，口味從經典的香草、巧克力到開創性的堅果、季節性水果等多樣選擇。製作過程遵循傳統工藝，小批量出品確保質地細緻滑順，冰品香氣濃郁而不膩，亦有果味雪葩等乳製品以外的清爽選項，適合作為逛街或海邊散步後的甜點休憩站。
+        </h4>
+        <div style="text-align: center">
+          <img src="澳洲照片\雪梨\SY58.jpg" style="width: 70%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+        </div>
+        <br /><br /><br />
+        <h3>Social Brew Cafe</h3>
+        <h4>
+          Social Brew Cafe 靠近 Darling Harbour，餐廳空間融合現代工業風與溫馨氛圍，室內設計時尚且氣氛輕鬆，並設有戶外座位區，可欣賞周邊綠地與街景。營業時間以早餐與午餐為主，提供全天菜單，特色包括豐富的早午餐選擇如酪梨吐司、班尼迪蛋、熱蛋捲及草莓鬆餅等，也有融合創意與傳統的輕食、沙拉與主菜，咖啡品質優異，亦提供果汁、茶飲及酒精飲品，適合朋友聚餐、周末早午餐或輕食休憩。
+        </h4>
+        <div style="text-align: center">
+          <img src="澳洲照片\雪梨\SY59.jpg" style="width: 70%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+        </div>
+        <br />
+      </div>
+      <div class="destination-sidebar">
+        <div class="sidebar-image-container">
+          <img src="側邊欄自我介紹.jpg" />
+        </div>
+        <h5>
+          Hi!
+          我是Tommy，我熱愛旅遊也喜歡藉由影像紀錄旅程中的點點滴滴，透過文字將我在旅途中的所見所聞分享給大家。旅行對我而言不只是吃吃喝喝，而是能在行萬里路間感受世界的脈動，體驗不同的文化，希望藉由我的分享能讓大家看到更多世界的美好。
+        </h5>
+        <br />
+        <h5>
+          想更了解我或與我聯絡:
+          <a
+            href="https://www.instagram.com/tommy_techvoyage/"
+            target="_blank"
+            style="color: inherit; text-decoration: underline"
+          >
+            <b>Instagram</b>
+          </a>
+        </h5>
+        <div class="recommendation-section">
+          <h3>其他澳洲旅遊目的地</h3>          
+          <div class="recommendation-buttons">
+            <a href="墨爾本.html">
+              <button><h5>墨爾本</h5></button>
+            </a>
+            <a href="伯斯.html">
+              <button><h5>伯斯</h5></button>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="contact-section">
+      <div class="contact-item">
+        <h3>
+          想更了解我或與我聯絡:
+          <a
+            href="https://www.instagram.com/tommy_techvoyage/"
+            target="_blank"
+            style="color: inherit; text-decoration: underline"
+          >
+            Instagram
+          </a>
+        </h3>
+      </div>
+    </div>
+    <footer>
+      <h6>COPYRIGHT © 2025 Tommy 看世界 All rights reserved.</h6>
+    </footer>
+    <div id="menu-toggle"></div>
+    <div id="expandable-menu">
+      <div id="menu-content">
+        <h4>目錄</h4>
+        <ul id="menu-list"></ul>
+      </div>
+    </div>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const menu = document.getElementById("expandable-menu");
+        const toggle = document.getElementById("menu-toggle");
+        const menuList = document.getElementById("menu-list");
+        const destinationMain = document.querySelector(".destination-main");
+
+        // 點擊按鈕切換目錄狀態
+        toggle.addEventListener("click", () => {
+          menu.classList.toggle("open");
+
+          const menuWidth = menu.offsetWidth; // 獲取目前展開的目錄寬度
+
+          if (menu.classList.contains("open")) {
+            // 讓按鈕向左平移與 menu 一樣的寬度
+            toggle.style.transform = `translateY(-50%) translateX(-${menuWidth}px)`;
+          } else {
+            // 收回原位
+            toggle.style.transform = `translateY(-50%) translateX(0)`;
+          }
+        });
+
+        window.addEventListener("load", () => {
+          if (menu.classList.contains("open")) {
+            const menuWidth = menu.offsetWidth;
+            toggle.style.transform = `translateY(-50%) translateX(-${menuWidth}px)`;
+          }
+        });
+
+        // 從 destination-main 區域提取 h2 和 h3，動態生成目錄
+        const headings = destinationMain.querySelectorAll("h2, h3");
+        headings.forEach((heading, index) => {
+          // 確保每個 h2 和 h3 都有唯一的 id
+          if (!heading.id) {
+            heading.id = `heading-${index}`;
+          }
+
+          const listItem = document.createElement("li");
+          const link = document.createElement("a");
+          link.textContent = heading.textContent;
+          link.href = `#${heading.id}`;
+          listItem.appendChild(link);
+
+          // 為 h3 添加縮排樣式
+          if (heading.tagName.toLowerCase() === "h3") {
+            listItem.classList.add("sub-item");
+          }
+
+          menuList.appendChild(listItem);
+        });
+
+        function adjustMenuPosition() {
+          const nav = document.querySelector("nav");
+          const menu = document.getElementById("expandable-menu");
+      
+          if (nav && menu) {
+            const navHeight = nav.offsetHeight;
+      
+            // 設定 menu 的 top 與高度
+            menu.style.top = `${navHeight}px`;
+            menu.style.height = `calc(100vh - ${navHeight}px)`;
+          }
+        }
+      
+        // 載入與尺寸變化時調整
+        window.addEventListener("DOMContentLoaded", adjustMenuPosition);
+        window.addEventListener("resize", adjustMenuPosition);
+        
+        // 滾動至目標位置並加上 75px 偏移
+        menuList.addEventListener("click", (event) => {
+          if (event.target.tagName === "A") {
+            event.preventDefault(); // 阻止預設行為
+
+            const targetId = event.target.getAttribute("href").substring(1); // 取得目標 ID
+            const targetElement = document.getElementById(targetId);
+
+            if (targetElement) {
+              // 計算目標元素的位置並加上 75px 偏移
+              const targetPosition =
+                targetElement.getBoundingClientRect().top + window.scrollY;
+              const offset = 75; // 偏移的距離
+              window.scrollTo({
+                top: targetPosition - offset,
+                behavior: "smooth", // 平滑滾動
+              });
+            }
+          }
+        });
+        // 手機 Safari 相容：點擊展開 dropdown
+        const dropdownToggles = document.querySelectorAll(".dropdown-toggle");
+
+        dropdownToggles.forEach((toggle) => {
+          toggle.addEventListener("click", function (e) {
+            e.stopPropagation(); // 防止冒泡，避免點擊外層時也觸發關閉
+            const dropdown = this.nextElementSibling;
+            const isVisible = dropdown.style.display === "block";
+            
+            // 關閉所有其他 dropdown（可選）
+            document.querySelectorAll(".dropdown-content").forEach((menu) => {
+              menu.style.display = "none";
+            });
+
+            // 切換目前這一個 dropdown
+            dropdown.style.display = isVisible ? "none" : "block";
+          });
+        });
+
+        // 點擊其他地方時關閉 dropdown
+        window.addEventListener("click", function () {
+          document.querySelectorAll(".dropdown-content").forEach((menu) => {
+            menu.style.display = "none";
+          });
+        });
+      });
+    </script>
+  </body>
+</html>
