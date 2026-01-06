@@ -1,21 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset 
-    xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-    xmlns:news="http://www.google.com/schemas/sitemap-news/0.9"
-    xmlns:xhtml="http://www.w3.org/1999/xhtml">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
   <!-- 首頁 -->
   <url>
     <loc>https://tommygotravels.com/首頁.html</loc>
     <priority>1.0</priority>
     <changefreq>weekly</changefreq>
-    <news:news>
-      <news:publication>
-        <news:name>Tommy 看世界</news:name>
-        <news:language>zh-TW</news:language>
-      </news:publication>
-      <news:keywords>travel, world, Tommy, travel blog, Asia, Europe, America</news:keywords>
-    </news:news>
   </url>
 
   <!-- 亞洲 -->
@@ -23,63 +13,42 @@
     <loc>https://tommygotravels.com/中國.html</loc>
     <priority>0.8</priority>
     <changefreq>monthly</changefreq>
-    <news:news>
-      <news:keywords>China travel, China culture, Tommy travel, Asia destinations</news:keywords>
-    </news:news>
   </url>
 
   <url>
     <loc>https://tommygotravels.com/日本.html</loc>
     <priority>0.8</priority>
     <changefreq>monthly</changefreq>
-    <news:news>
-      <news:keywords>Japan travel, Tokyo, Kyoto, Japanese culture, Asia travel</news:keywords>
-    </news:news>
   </url>
 
   <url>
     <loc>https://tommygotravels.com/新加坡.html</loc>
     <priority>0.8</priority>
     <changefreq>monthly</changefreq>
-    <news:news>
-      <news:keywords>Singapore travel, Asia, city travel, food culture, Tommy travel</news:keywords>
-    </news:news>
   </url>
 
   <url>
     <loc>https://tommygotravels.com/馬來西亞.html</loc>
     <priority>0.8</priority>
     <changefreq>monthly</changefreq>
-    <news:news>
-      <news:keywords>Malaysia travel, Kuala Lumpur, Asia destinations, Tommy travel</news:keywords>
-    </news:news>
   </url>
 
   <url>
     <loc>https://tommygotravels.com/泰國.html</loc>
     <priority>0.8</priority>
     <changefreq>monthly</changefreq>
-    <news:news>
-      <news:keywords>Thailand travel, Bangkok, Thai culture, Asia travel, Tommy blog</news:keywords>
-    </news:news>
   </url>
 
   <url>
     <loc>https://tommygotravels.com/印尼.html</loc>
     <priority>0.8</priority>
     <changefreq>monthly</changefreq>
-    <news:news>
-      <news:keywords>Indonesia travel, Bali, Jakarta, Tommy travel, Asia destinations</news:keywords>
-    </news:news>
   </url>
 
   <url>
     <loc>https://tommygotravels.com/越南.html</loc>
     <priority>0.8</priority>
     <changefreq>monthly</changefreq>
-    <news:news>
-      <news:keywords>Vietnam travel, Hanoi, Ho Chi Minh, Asia travel, Tommy blog</news:keywords>
-    </news:news>
   </url>
 
   <!-- 歐洲 -->
@@ -87,117 +56,78 @@
     <loc>https://tommygotravels.com/英國.html</loc>
     <priority>0.8</priority>
     <changefreq>monthly</changefreq>
-    <news:news>
-      <news:keywords>UK travel, London, Europe destinations, Tommy travel, culture</news:keywords>
-    </news:news>
   </url>
 
   <url>
     <loc>https://tommygotravels.com/法國.html</loc>
     <priority>0.8</priority>
     <changefreq>monthly</changefreq>
-    <news:news>
-      <news:keywords>France travel, Paris, French culture, Europe travel, Tommy blog</news:keywords>
-    </news:news>
   </url>
 
   <url>
     <loc>https://tommygotravels.com/荷蘭.html</loc>
     <priority>0.8</priority>
     <changefreq>monthly</changefreq>
-    <news:news>
-      <news:keywords>Netherlands travel, Amsterdam, Europe destinations, Tommy travel</news:keywords>
-    </news:news>
   </url>
 
   <url>
     <loc>https://tommygotravels.com/比利時.html</loc>
     <priority>0.8</priority>
     <changefreq>monthly</changefreq>
-    <news:news>
-      <news:keywords>Belgium travel, Brussels, Europe, Tommy blog</news:keywords>
-    </news:news>
   </url>
 
   <url>
     <loc>https://tommygotravels.com/盧森堡.html</loc>
     <priority>0.8</priority>
     <changefreq>monthly</changefreq>
-    <news:news>
-      <news:keywords>Luxembourg travel, Europe, Tommy travel blog</news:keywords>
-    </news:news>
   </url>
 
   <url>
     <loc>https://tommygotravels.com/瑞士.html</loc>
     <priority>0.8</priority>
     <changefreq>monthly</changefreq>
-    <news:news>
-      <news:keywords>Switzerland travel, Zurich, Alps, Europe, Tommy blog</news:keywords>
-    </news:news>
   </url>
 
   <url>
     <loc>https://tommygotravels.com/摩納哥.html</loc>
     <priority>0.8</priority>
     <changefreq>monthly</changefreq>
-    <news:news>
-      <news:keywords>Monaco travel, Europe, luxury destinations, Tommy travel</news:keywords>
-    </news:news>
   </url>
 
   <url>
     <loc>https://tommygotravels.com/西班牙.html</loc>
     <priority>0.8</priority>
     <changefreq>monthly</changefreq>
-    <news:news>
-      <news:keywords>Spain travel, Barcelona, Madrid, Europe, Tommy blog</news:keywords>
-    </news:news>
   </url>
 
   <url>
     <loc>https://tommygotravels.com/葡萄牙.html</loc>
     <priority>0.8</priority>
     <changefreq>monthly</changefreq>
-    <news:news>
-      <news:keywords>Portugal travel, Lisbon, Europe destinations, Tommy travel</news:keywords>
-    </news:news>
   </url>
 
   <url>
     <loc>https://tommygotravels.com/安道爾.html</loc>
     <priority>0.8</priority>
     <changefreq>monthly</changefreq>
-    <news:news>
-      <news:keywords>Andorra travel, Europe, mountains, Tommy travel blog</news:keywords>
-    </news:news>
   </url>
 
   <url>
     <loc>https://tommygotravels.com/丹麥.html</loc>
     <priority>0.8</priority>
     <changefreq>monthly</changefreq>
-    <news:news>
-      <news:keywords>Denmark travel, Copenhagen, Europe, Tommy blog</news:keywords>
-    </news:news>
   </url>
 
   <url>
     <loc>https://tommygotravels.com/瑞典.html</loc>
     <priority>0.8</priority>
     <changefreq>monthly</changefreq>
-    <news:news>
-      <news:keywords>Sweden travel, Stockholm, Europe destinations, Tommy travel</news:keywords>
-    </news:news>
   </url>
 
   <url>
     <loc>https://tommygotravels.com/波蘭.html</loc>
     <priority>0.8</priority>
     <changefreq>monthly</changefreq>
-    <news:news>
-      <news:keywords>Poland travel, Warsaw, Krakow, Europe travel, Tommy blog</news:keywords>
-    </news:news>
   </url>
 
   <!-- 美洲 -->
@@ -205,18 +135,12 @@
     <loc>https://tommygotravels.com/美國.html</loc>
     <priority>0.8</priority>
     <changefreq>monthly</changefreq>
-    <news:news>
-      <news:keywords>USA travel, New York, Los Angeles, America destinations, Tommy blog</news:keywords>
-    </news:news>
   </url>
 
   <url>
     <loc>https://tommygotravels.com/加拿大.html</loc>
     <priority>0.8</priority>
     <changefreq>monthly</changefreq>
-    <news:news>
-      <news:keywords>Canada travel, Toronto, Vancouver, America travel, Tommy blog</news:keywords>
-    </news:news>
   </url>
 
   <!-- 大洋洲 -->
@@ -224,9 +148,6 @@
     <loc>https://tommygotravels.com/澳洲.html</loc>
     <priority>0.8</priority>
     <changefreq>monthly</changefreq>
-    <news:news>
-      <news:keywords>Australia travel, Sydney, Melbourne, Oceania destinations, Tommy blog</news:keywords>
-    </news:news>
   </url>
 
   <!-- 非洲 -->
@@ -234,9 +155,6 @@
     <loc>https://tommygotravels.com/南非.html</loc>
     <priority>0.8</priority>
     <changefreq>monthly</changefreq>
-    <news:news>
-      <news:keywords>South Africa travel, Cape Town, safari, Africa destinations, Tommy blog</news:keywords>
-    </news:news>
   </url>
 
 </urlset>
