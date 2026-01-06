@@ -241,32 +241,35 @@
       /* === 響應式調整：針對手機與小螢幕設備 === */
       @media (max-width: 768px) {
         nav {
-          flex-direction: row;
           flex-wrap: wrap;
-          align-items: center;
-          justify-content: space-between;
-          padding: 1rem 5vw;  /* 窄螢幕時減少左右留白 */
-          width: 100%;
-          box-sizing: border-box;
+          padding: 0.8rem 5vw;
         }
-
+      
         .nav-right {
           display: flex;
-          flex-direction: row;
-          align-items: center;
-          gap: 0.5rem;
-          transform: none;
-          width: auto;
-          white-space: nowrap;               /* 禁止內容自動換行 */
+          flex-wrap: wrap;        /* ⭐ 核心 */
+          justify-content: flex-end;
+          width: 100%;
+          gap: 0.4rem;
+          margin-top: 0.3rem;
+        }
+      
+        nav a {
+          white-space: normal;    /* ⭐ 允許換行 */
+          padding: 0.4rem 0.5rem;
+          font-size: 0.85rem;
         }
 
-        nav a {
-          padding: 0.5rem 0.5rem;           /* 減少垂直padding */
-          margin: 0 0.3rem;
-          font-size: 0.85rem;
-          white-space: nowrap;               /* 確保文字不換行 */
-          overflow: hidden;
-          text-overflow: ellipsis;           /* 若內容超出，顯示省略號 */
+        .nav-dropdown {
+          width: 60%; /* 或者用 max-content, fit-content 看需求 */
+          font-size: 0.85rem; /* 調整字體大小和導覽列一致 */
+          padding: 0.5rem;
+        }
+      
+        .nav-dropdown a {
+          font-size: inherit; /* 確保跟 .nav-dropdown 一樣大 */
+          padding: 0.5rem 1rem;
+          white-space: normal; /* 可選：讓字在必要時換行 */
         }
 
         .dropdown-content {
@@ -278,28 +281,29 @@
         .dropdown-content a {
           font-size: 0.85rem;
         }
-
+        
         .intro-section {
           flex-direction: column;
           padding: 8%;
+          padding-top: calc(8% + 6rem); /* ⭐ 關鍵：讓位給 nav */
         }
-
+      
         .intro-section .left,
         .intro-section .right {
           width: 100%;
           padding: 0;
           flex: 1 1 100%;
         }
-
+      
         .intro-section .right {
           margin-top: 1.5rem;
           display: flex;
           justify-content: center;
         }
-
+      
         .intro-section h4 {
           max-width: 100%;
-          font-size: 0.95rem;
+          font-size: 1rem;
         }
 
         .destination-grid {
