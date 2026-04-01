@@ -17,10 +17,12 @@
         color: #333;
       }
 
+
       h1 {
         font-size: 40px;
         font-weight: bold;
       }
+
 
       h2 {
         font-size: 32px;
@@ -30,6 +32,7 @@
         background-color: #cee5e8;
       }
 
+
       h3 {
         font-size: 26px;
         margin: 0 0 1rem;
@@ -37,17 +40,20 @@
         text-decoration: underline;
       }
 
+
       h4 {
         font-size: 18px;
         font-weight: normal;
         line-height: 1.8;
       }
 
+
       h5 {
         font-size: 16px;
         font-weight: normal;
         margin: 0;
       }
+
 
       h6 {
         font-size: 10px;
@@ -56,6 +62,7 @@
         text-align: center;
         line-height: 50px; /* 高度對齊 */
       }
+
 
       nav {
         background-color: #78bcc4;
@@ -70,6 +77,7 @@
         z-index: 1000;
       }
 
+
       .nav-left .logo img {
         height: 5vw; /* 高度為螢幕寬度的 5% */
         transform: translateX(-2vw); /* 向左移動 2% 寬度 */
@@ -78,12 +86,14 @@
         max-height: 3rem;
       }
 
+
       .nav-right {
         display: flex;
         align-items: center;
         margin-left: auto; /* 推到右側 */
         padding-left: 5%;   /* 內部元素間距，彈性設計 */
       }
+
 
       nav a {
         color: #eff5f5;
@@ -93,14 +103,17 @@
         transition: transform 0.3s;
       }
 
+
       nav a:hover {
         transform: translateY(-0.5vh); /* 根據視窗高度調整 */
       }
+
 
       .dropdown {
         position: relative;
         display: inline-block;
       }
+
 
       .dropdown-content {
         width: 100%; /* 佔滿父層寬度 */
@@ -115,6 +128,7 @@
         z-index: 999;
       }
 
+
       .dropdown-content a {
         color: #eff5f5;
         display: block;
@@ -124,13 +138,16 @@
         font-size: 1em;
       }
 
+
       .dropdown-content a:last-child {
         border-bottom: none;
       }
 
+
       .dropdown-content a:hover {
         transform: translateY(-0.25em); /* 改為相對單位 */
       }
+
 
       .intro-section {
         background-color: #eff5f5;
@@ -140,19 +157,23 @@
         margin-top: 4em; /* 根據導航列高度調整 */
       }
 
+
       .intro-section h4 {
         max-width: 85%; /* 改為相對單位，避免固定寬度限制 */
         line-height: 1.8;
       }
+
 
       .intro-section .left {
         width: 60%;
         padding-right: 1%;
       }
 
+
       .intro-section .right {
         width: 39%;
       }
+
 
       .destination-section {
         display: flex;
@@ -161,11 +182,13 @@
         background-color: white;
       }
 
+
       .destination-main {
         width: 72%;                    /* 主要內容佔 72%，略縮以保留間距 */
         margin-right: 3%;              /* 與 sidebar 間保留間距（約為 3%） */
         box-sizing: border-box;
       }
+
 
       .destination-sidebar {
         width: 25%;                    /* 側邊欄佔 25% */
@@ -174,10 +197,12 @@
         box-sizing: border-box;
       }
 
+
       .sidebar-image-container {
         margin-bottom: 1rem;
         text-align: center; /* 置中圖片 */
       }
+
 
       .sidebar-image-container img {
         width: 90%;         /* 圖片寬度為容器寬度的 90% */
@@ -185,6 +210,7 @@
         max-height: 60vh;   /* 避免圖片過高，佔螢幕最大 60% 高 */
         object-fit: cover;  /* 裁切處理長圖 */
       }
+
 
       .two-vertical-images {
         display: flex;
@@ -195,6 +221,7 @@
         flex-wrap: wrap; /* 若畫面太小，允許換行 */
       }
 
+
       .two-vertical-images img {
         width: 48%; /* 每張圖片約佔一半（加上 gap 剛好 100%） */
         height: auto; /* 保持原比例 */
@@ -202,6 +229,7 @@
         display: block;
         margin: 0 auto;
       }
+
 
       .recommendation-section {
         margin-top: 3vh; /* 與上方文字的間距 */
@@ -212,11 +240,13 @@
         padding: 0 5%;
       }
 
+
       .recommendation-section h3 {
         font-size: 1.125rem;
         font-weight: bold;
         margin-bottom: 1vh; /* 與按鈕區的距離 */
       }
+
 
       .recommendation-buttons {
         display: flex;
@@ -224,6 +254,7 @@
         justify-content: center;
         gap: 0.5em; /* 按鈕之間的間距 */
       }
+
 
       .recommendation-buttons button {
         padding: 0.5em 1em;
@@ -236,9 +267,11 @@
         font-family: Arial, sans-serif;
       }
 
+
       .recommendation-buttons button:hover {
         transform: translateY(-3px);
       }
+
 
       .contact-section {
         padding: 4vh 8vw; /* 上下與左右間距 */
@@ -246,11 +279,13 @@
         text-align: center; /* 確保內容置中對齊 */
       }
 
+
       .contact-item h3 {
         font-size: 1.125rem; /* 調整標題字體大小 */
         margin: 0; /* 移除多餘的間距 */
         text-decoration: none; /* 移除底線 */
       }
+
 
       footer {
         background-color: #000;
@@ -263,8 +298,9 @@
         padding: 0.5rem 0; /* 確保小螢幕時內容不擠壓 */
       }
 
+
       #expandable-menu {
-        position: fixed; 
+        position: fixed;
         right: 0;
         width: 26vw; /* 目錄寬度與 sidebar 齊寬 */
         max-width: 90%; /* 避免在小螢幕太寬 */
@@ -274,6 +310,7 @@
         z-index: 1000;
         box-sizing: border-box;
       }
+
 
       /* 收闔按鈕 */
       #menu-toggle {
@@ -295,6 +332,7 @@
         transition: transform 0.3s ease; /* 平滑移動 */
       }
 
+
       #menu-toggle::after {
         content: "目錄"; /* 在按鈕內顯示 "目錄" */
         font-size: 1rem;
@@ -302,9 +340,11 @@
         writing-mode: vertical-rl; /* 使文字垂直排列 */
       }
 
+
       #menu-toggle:hover {
         background-color: #78bcc4;
       }
+
 
       /* 目錄內容 */
       #menu-content {
@@ -314,20 +354,24 @@
         box-sizing: border-box;
       }
 
+
       #menu-content h4 {
         font-weight: bold;
         margin-top: 0;
         font-size: 1.2rem;
       }
 
+
       #menu-list {
         list-style: none;
         padding: 0;
       }
 
+
       #menu-list li {
         margin-bottom: 1vh;
       }
+
 
       #menu-list a {
         color: #2a90a7;
@@ -336,19 +380,23 @@
         font-size: 1rem; /* 使用相對字體大小 */
       }
 
+
       #menu-list a:hover {
         color: #78bcc4;
       }
+
 
       #menu-list .sub-item {
         margin-left: 8%; /* 調整縮排距離 */
         font-size: 0.9rem; /* 可選：調整子項目字體大小 */
       }
 
+
       /* 目錄展開狀態 */
       #expandable-menu.open {
         transform: translateX(0);
       }
+
 
        /* === 響應式調整：針對手機與小螢幕設備 === */
       @media (max-width: 768px) {
@@ -356,7 +404,7 @@
           flex-wrap: wrap;
           padding: 0.8rem 5vw;
         }
-      
+     
         .nav-right {
           display: flex;
           flex-wrap: wrap;        /* ⭐ 核心 */
@@ -365,24 +413,26 @@
           gap: 0.4rem;
           margin-top: 0.3rem;
         }
-      
+     
         nav a {
           white-space: normal;    /* ⭐ 允許換行 */
           padding: 0.4rem 0.5rem;
           font-size: 0.85rem;
         }
 
+
         .nav-dropdown {
           width: 60%; /* 或者用 max-content, fit-content 看需求 */
           font-size: 0.85rem; /* 調整字體大小和導覽列一致 */
           padding: 0.5rem;
         }
-      
+     
         .nav-dropdown a {
           font-size: inherit; /* 確保跟 .nav-dropdown 一樣大 */
           padding: 0.5rem 1rem;
           white-space: normal; /* 可選：讓字在必要時換行 */
         }
+
 
         .dropdown-content {
           width: 12vw;
@@ -390,52 +440,58 @@
           max-width: none;
         }
 
+
         .dropdown-content a {
           font-size: 0.85rem;
         }
-        
+       
         .intro-section {
           flex-direction: column;
           padding: 8%;
           padding-top: calc(8% + 6rem); /* ⭐ 關鍵：讓位給 nav */
         }
-      
+     
         .intro-section .left,
         .intro-section .right {
           width: 100%;
           padding: 0;
           flex: 1 1 100%;
         }
-      
+     
         .intro-section .right {
           margin-top: 1.5rem;
           display: flex;
           justify-content: center;
         }
-      
+     
         .intro-section h4 {
           max-width: 100%;
           font-size: 1rem;
         }
+
 
         .destination-grid {
           flex-direction: column;
           gap: 1rem;
         }
 
+
         .destination-section h4 {
           font-size: 1rem;
         }
+
 
         .destination-item {
           max-width: 100%;
           width: 100%;
         }
 
+
         .destination-item.a_role_with_2 {
           position: static;
           left: auto;
         }
+
 
         .destination-main,
         .destination-sidebar {
@@ -444,33 +500,38 @@
           padding: 0;
         }
 
+
         .destination-sidebar {
           margin-top: 2rem;
         }
+
 
         .recommendation-buttons button {
           width: 100%; /* 小螢幕按鈕全寬排列 */
         }
 
+
         .contact-section {
           padding: 3vh 5vw;
         }
 
+
         .contact-item h3 {
           font-size: 1rem;
         }
+
 
         /* 目錄區寬度改為螢幕寬度的40% */
         #expandable-menu {
           width: 40vw !important; /* 用vw方便響應螢幕寬度 */
           max-width: 90%; /* 保留原本max-width避免太寬 */
         }
-      
+     
         #expandable-menu,
         #expandable-menu * {
           font-size: 85% !important;
         }
-              
+             
         #menu-toggle {
           width: 75%;
           max-width: 1.875em;
@@ -542,6 +603,7 @@
       </div>
     </nav>
 
+
     <div class="intro-section">
       <div class="left">
         <h1>Tommy 在河內</h1>
@@ -558,7 +620,336 @@
 
     <div class="destination-section">
       <div class="destination-main">
-        <h3>施工中...敬請期待</h3>
+        <h2>河內交通</h2>
+        <h3>機場交通</h3>
+        <h4>
+          從河內機場到市區車程大約 50 分鐘，有公車可以抵達市區但是班次不多，所以往返機場推薦就直接叫車到飯店吧，大約 300 多台幣就能抵達市中心了，但尖峰時間車城可能會是平常的 2 倍以上，一定要預留足夠的時間。
+        </h4>
+        <h3>市區交通</h3>
+        <h4>
+          河內市區不大，景點也相當集中，多數步行就可以抵達，走累了可以選擇叫 Grab 車輛或摩托車，也可以選擇路邊的人力三輪車，算是比較有特色的選項，河內的交通非常亂，機車非常多，過馬路的時候因為沒有紅綠燈，大家都是舉手示意自己要穿越馬路，不然可能永遠都過不去喔！
+        </h4>
+        <div style="text-align: center">
+          <img src="越南照片\河內\河內_交通.jpg" style="width: 70%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+        </div>
+        <br /><br />
+        <h2>河內住宿</h2>
+        <h4>
+          河內市區不大，比較推薦住在離 <b>St. Joseph Cathedral</b> 近的地方，除了附近機能較好之外，大部分的觀光景點與美食都在那一區，<b>切記千萬不要住在啤酒街或火車市場附近</b>，晚上的嘈雜可能會讓你徹夜難眠。
+        </h4>
+        <div style="text-align: center">
+          <img src="越南照片\河內\河內_住宿.png" style="width: 90%; max-width: 100vw; height: auto; margin: 0.5rem;" />
+        </div>
+        <br /><br />
+        <h2>河內景點</h2>
+        <h3>聖若瑟主教座堂 (St. Joseph Cathedral)</h3>
+        <h4>
+          聖若瑟主教座堂位於河內市中心，是當地最具代表性的天主教建築。教堂建於 19 世紀末法國殖民時期，建築風格仿效巴黎聖母院的新哥德式設計，擁有高聳雙塔、彩色玻璃與莊嚴外觀，主教座堂不僅是宗教活動的重要場所，也是河內歷史與殖民文化的象徵。教堂前廣場經常聚集市民與遊客，周邊咖啡館林立，很多人會選擇在教堂旁邊的咖啡廳休憩，並在陽台上欣賞教堂，推薦大家可以體驗看看。
+        </h4>
+        <div style="text-align: center">
+          <img src="越南照片\河內\HA1.jpg" style="width: 90%; max-width: 100vw; height: auto; margin: 0.5rem;" />
+        </div>
+        <h4>覺得晚上打光後甚至比白天更好看。</h4>
+        <div style="text-align: center">
+          <img src="越南照片\河內\HA2.jpg" style="width: 90%; max-width: 100vw; height: auto; margin: 0.5rem;" />
+        </div>
+        <br /><br />
+        <h3>昇龍皇城 (Hoàng Thành Thăng Long)</h3>
+        <h4>
+          昇龍皇城是越南最重要的歷史遺址之一，曾是多個朝代的皇權核心，自 11 世紀李朝定都昇龍起，此地歷經李、陳、黎等王朝，長期作為政治與軍事中樞。遺址內保留城門、宮殿基址、考古層與文物，清楚呈現千年王城的發展脈絡。2010 年昇龍皇城被列入世界文化遺產，肯定其在東南亞歷史與文化上的重要地位，不僅見證越南國家形成，也展現河內深厚而連續的歷史底蘊。
+        </h4>
+        <div style="text-align: center">
+          <img src="越南照片\河內\HA3.jpg" style="width: 70%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+          <img src="越南照片\河內\HA4.jpg" style="width: 90%; max-width: 100vw; height: auto; margin: 0.5rem;" />
+        </div>
+        <h4>1972 年美軍轟炸河內時的臨時戰時指揮中心。</h4>
+        <div style="text-align: center">
+          <img src="越南照片\河內\HA5.jpg" style="width: 90%; max-width: 100vw; height: auto; margin: 0.5rem;" />
+          <img src="越南照片\河內\HA6.jpg" style="width: 70%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+        </div>
+        <br /><br />
+        <h3>還劍湖 (Hồ Hoàn Kiếm)</h3>
+        <h4>
+          還劍湖是河內最具代表性的地標與公共空間，湖名源自傳說中黎利皇帝將神劍歸還金龜的故事，象徵和平與正義。湖畔環境清幽，綠樹成蔭，中央的龜塔與湖上紅色的旭橋連接玉山祠，成為河內重要的文化象徵，也是市民日常散步、運動與休憩的場所，展現河內融合傳統文化與現代城市生活的獨特魅力。
+        </h4>
+        <div style="text-align: center">
+          <img src="越南照片\河內\HA7.jpg" style="width: 90%; max-width: 100vw; height: auto; margin: 0.5rem;" />
+          <img src="越南照片\河內\HA8.jpg" style="width: 90%; max-width: 100vw; height: auto; margin: 0.5rem;" />
+        </div>
+        <br /><br />
+        <h3>Hanoi Train Street</h3>
+        <h4>
+          Hanoi Train Street 是一條因火車近距離穿越民宅而聞名的特色街道。鐵道兩旁緊鄰住宅、咖啡館與小店，平日街道狹窄寧靜，居民在軌道旁生活、聊天與做生意，展現獨特的城市日常。當火車即將通過時人們迅速收起桌椅，火車幾乎貼著建築駛過，場面震撼又緊張，這種少見的都市景觀吸引大量遊客前來拍照與體驗。火車街的咖啡廳價格比市區其他的咖啡廳都高出一截，所以要不要消費及體驗可以自行判斷。
+        </h4>
+        <div style="text-align: center">
+          <img src="越南照片\河內\HA9.jpg" style="width: 70%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+          <img src="越南照片\河內\HA10.jpg" style="width: 70%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+        </div>
+        <h4>火車真的距離你超級近。</h4>
+        <div style="text-align: center">
+          <img src="越南照片\河內\HA11.jpg" style="width: 70%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+        </div>
+        <br /><br />
+        <h3>河內大劇院 (Nhà hát Lớn Hà Nội)</h3>
+        <h4>
+          河內大劇院是法國殖民時期留下的重要建築，建於 20 世紀初，建築風格仿效巴黎加尼葉歌劇院，融合新古典與巴洛克元素，外觀典雅莊重。大劇院曾見證多項重要歷史事件，是越南近代政治與文化發展的象徵。如今河內大劇院仍作為表演藝術場地，定期舉辦音樂會、歌劇與傳統演出，不僅是藝術殿堂，也展現河內深厚的歷史底蘊與東西文化交融的城市風貌。
+        </h4>
+        <div style="text-align: center">
+          <img src="越南照片\河內\HA12.jpg" style="width: 90%; max-width: 100vw; height: auto; margin: 0.5rem;" />
+        </div>
+        <br /><br />
+        <h3>Ta Hien Beer Street</h3>
+        <h4>
+          Ta Hien Beer Street 是河內最具代表性的夜生活街道，也被稱為「河內啤酒街」。這條短短的街道夜晚熱鬧非凡，路邊小店擺滿低矮塑膠椅，供應價格親民的生啤酒與越南小吃，吸引大量當地居民與國際旅客聚集，人們坐在街頭聊天、喝酒，氣氛隨性而熱鬧，充分展現河內庶民文化與社交風格，這裡不追求精緻裝潢，而以真實、活力與人情味取勝，是體驗河內夜晚節奏與在地生活不可錯過的地點，唯一的缺點就是會有非常多人拉客，有時候會令人煩躁。
+        </h4>
+        <div style="text-align: center">
+          <img src="越南照片\河內\HA13.jpg" style="width: 90%; max-width: 100vw; height: auto; margin: 0.5rem;" />
+        </div>
+        <br /><br />
+        <h3>文廟-國子監 (Văn Miếu – Quốc Tử Giám)</h3>
+        <h4>
+          文廟-國子監越南最重要的歷史與教育文化遺址，建於 1070 年李朝時期，文廟最初用來祭祀孔子，國子監則是越南第一所國立高等學府，培育皇室與官員子弟。園區內建築佈局嚴謹，庭院、殿堂與石碑相互呼應，展現濃厚的儒家精神，石龜碑上刻有進士姓名，象徵對學問與人才的尊重。文廟-國子監不僅見證越南千年的教育傳統，也成為學生祈求學業順利與遊客認識河內文化的重要地標。
+        </h4>
+        <div style="text-align: center">
+          <img src="越南照片\河內\HA15.jpg" style="width: 90%; max-width: 100vw; height: auto; margin: 0.5rem;" />
+          <img src="越南照片\河內\HA16.jpg" style="width: 90%; max-width: 100vw; height: auto; margin: 0.5rem;" />
+          <img src="越南照片\河內\HA17.jpg" style="width: 90%; max-width: 100vw; height: auto; margin: 0.5rem;" />
+          <img src="越南照片\河內\HA18.jpg" style="width: 90%; max-width: 100vw; height: auto; margin: 0.5rem;" />
+        </div>
+        <br /><br />
+        <h3>火爐監獄 (Hoa Lo Prison) </h3>
+        <h4>
+          火爐監獄是一座具有沉重歷史意義的博物館，監獄建於 19 世紀末法國殖民時期，原本用來關押越南反殖民人士，因環境嚴酷而被稱為「地獄之門」，越戰期間部分美國戰俘也曾被拘留於此，並被戲稱為「河內希爾頓」。現今監獄的一部分改為博物館，展示牢房、刑具、歷史照片與文獻，呈現殖民統治與戰爭時期的真實面貌。Hoa Lo Prison 不僅是觀光景點，更是了解越南近代歷史、民族抗爭與戰爭記憶的重要場所。
+        </h4>
+        <div style="text-align: center">
+          <img src="越南照片\河內\HA19.jpg" style="width: 70%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+          <img src="越南照片\河內\HA20.jpg" style="width: 70%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+          <img src="越南照片\河內\HA21.jpg" style="width: 70%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+          <img src="越南照片\河內\HA22.jpg" style="width: 70%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+          <img src="越南照片\河內\HA23.jpg" style="width: 90%; max-width: 100vw; height: auto; margin: 0.5rem;" />
+        </div>
+        <br /><br />
+        <h3>巴亭廣場 (Quảng trường Ba Đình) </h3>
+        <h4>
+          巴亭廣場是越南最具象徵意義的政治與歷史空間。1945 年胡志明主席正是在此宣讀《獨立宣言》，宣告越南民主共和國成立，使廣場成為國家誕生的重要地點，廣場周圍分布胡志明陵寢、主席府與國會大廈，環境莊嚴肅穆。如今巴亭廣場常用於國家典禮、閱兵與紀念活動，不僅是政治核心，也象徵越南人民的獨立精神與國家認同。
+        </h4>
+        <div style="text-align: center">
+          <img src="越南照片\河內\HA24.jpg" style="width: 90%; max-width: 100vw; height: auto; margin: 0.5rem;" />
+        </div>
+        <br /><br />
+        <h2>河內近郊景點</h2>
+        <h3>華閭古都 (Cố đô Hoa Lư)</h3>
+        <h4>
+          華閭古都位於寧平省，是越南第一個封建王朝的首都，建都於 10 世紀。此地曾為丁朝與前黎朝的政治中心，在越南國家形成初期具有關鍵地位，華閭古都依山傍水，四周被石灰岩群山環繞，天然地形兼具防禦與戰略優勢。遺址內保留古城牆、宮殿基址及祭祀丁先皇與黎大行的廟宇，展現早期越南王權與宗教文化。
+        </h4>
+        <div style="text-align: center">
+          <img src="越南照片\河內\HA25.jpg" style="width: 90%; max-width: 100vw; height: auto; margin: 0.5rem;" />
+          <img src="越南照片\河內\HA26.jpg" style="width: 90%; max-width: 100vw; height: auto; margin: 0.5rem;" />
+          <img src="越南照片\河內\HA27.jpg" style="width: 90%; max-width: 100vw; height: auto; margin: 0.5rem;" />
+        </div>
+        <br /><br />
+        <h3>Hang Múa</h3>
+        <h4>
+          Hang Múa 位於寧平省，有「陸上下龍灣最佳觀景點」之稱，本身為石灰岩洞穴，但真正吸引遊客的是通往山頂的觀景步道，沿著近五百階的石階一路向上，沿途可欣賞翠綠稻田、蜿蜒河道與喀斯特山峰交織而成的壯麗景色，登頂後視野豁然開朗，Tam Cốc 地區的河流與群山盡收眼底，尤其在稻田轉為金黃色的季節更顯詩意迷人，山頂設有龍形石雕，增添越南傳統文化特色。
+        </h4>
+        <div style="text-align: center">
+          <img src="越南照片\河內\HA28.jpg" style="width: 90%; max-width: 100vw; height: auto; margin: 0.5rem;" />
+          <img src="越南照片\河內\HA29.jpg" style="width: 90%; max-width: 100vw; height: auto; margin: 0.5rem;" />
+          <img src="越南照片\河內\HA30.jpg" style="width: 90%; max-width: 100vw; height: auto; margin: 0.5rem;" />
+        </div>
+        <h4>往山頂的路十分陡峭，請務必穿著舒服好走的鞋子，沿途幾乎沒有遮蔭，夏天要慎防中暑。</h4>
+        <div style="text-align: center">
+          <img src="越南照片\河內\HA31.jpg" style="width: 70%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+        </div>
+        <br /><br />
+        <h3>Tràng An</h3>
+        <h4>
+          Tràng An 位於寧平省，是結合自然景觀與歷史文化的世界級景點，並被列入 UNESCO 世界文化與自然雙重遺產，這裡以壯麗的喀斯特地形聞名，石灰岩山峰林立，清澈河道在群山間蜿蜒流動，景色宛如水墨畫，遊客可搭乘小船穿梭於河道與天然洞穴之間，整個旅程長達 2 小時非常值得，沿途經過多座鐘乳石洞、幽靜寺廟與古代遺址，感受自然與人文交織的魅力，Tràng An 同時也是多部電影取景地，展現原始純淨的風貌。
+        </h4>
+        <div style="text-align: center">
+          <img src="越南照片\河內\HA32.jpg" style="width: 70%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+          <img src="越南照片\河內\HA33.jpg" style="width: 90%; max-width: 100vw; height: auto; margin: 0.5rem;" />
+          <img src="越南照片\河內\HA34.jpg" style="width: 90%; max-width: 100vw; height: auto; margin: 0.5rem;" />
+          <img src="越南照片\河內\HA35.jpg" style="width: 90%; max-width: 100vw; height: auto; margin: 0.5rem;" />
+          <img src="越南照片\河內\HA36.jpg" style="width: 90%; max-width: 100vw; height: auto; margin: 0.5rem;" />
+        </div>
+        <br /><br />
+        <h3>驚奇洞 (Hang Sửng Sốt)</h3>
+        <h4>
+          驚奇洞位於下龍灣，是當地規模最大、最知名的鐘乳石洞穴。「Sửng Sốt」意為驚喜，正好形容遊客進洞後的震撼感受，洞穴分為多個寬闊空間，洞內高聳的穹頂與層層堆疊的鐘乳石，在燈光映照下呈現出奇幻壯麗的景象。沿著完善的步道前行，可見形狀各異的石柱與石筍，被想像成動物、人物或神話場景，增添探索樂趣，走至洞穴深處，還能登上觀景平台俯瞰下龍灣海景。
+        </h4>
+        <div style="text-align: center">
+          <img src="越南照片\河內\HA37.jpg" style="width: 90%; max-width: 100vw; height: auto; margin: 0.5rem;" />
+          <img src="越南照片\河內\HA38.jpg" style="width: 70%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+          <img src="越南照片\河內\HA39.jpg" style="width: 70%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+          <img src="越南照片\河內\HA40.jpg" style="width: 90%; max-width: 100vw; height: auto; margin: 0.5rem;" />
+          <img src="越南照片\河內\HA41.jpg" style="width: 90%; max-width: 100vw; height: auto; margin: 0.5rem;" />
+        </div>
+        <br /><br />
+        <h3>Ti Top Island</h3>
+        <h4>
+          Ti Top Island 位於下龍灣，以絕佳視野聞名，島嶼名稱源自蘇聯太空人季托夫，具有歷史紀念意義，島上最大特色是通往山頂的觀景步道，沿著石階登高後可俯瞰整個下龍灣，石灰岩島嶼與碧綠海水交織成壯麗全景，是拍照與賞景的熱門地點。島下方設有小巧卻乾淨的沙灘，海水清澈平靜適合游泳與短暫休憩，是遊船行程中不可錯過的一站。
+        </h4>
+        <div style="text-align: center">
+          <img src="越南照片\河內\HA42.jpg" style="width: 90%; max-width: 100vw; height: auto; margin: 0.5rem;" />
+          <img src="越南照片\河內\HA43.jpg" style="width: 90%; max-width: 100vw; height: auto; margin: 0.5rem;" />
+        </div>
+        <br /><br />
+        <h3>沙壩 (Sapa)</h3>
+        <h4>
+          沙壩位於越南北部老街省，是一座坐落於高山雲霧間的避暑山城，以壯麗梯田與多元少數民族文化聞名，這裡海拔約1,600公尺，氣候涼爽四季景色分明，春夏翠綠、秋季金黃、冬季偶有薄霧與寒意。沙壩周邊分布著赫蒙族、瑤族等民族村落，保留傳統服飾、手工藝與生活方式，充滿人文魅力。
+        </h4>
+        <div style="text-align: center">
+          <img src="越南照片\河內\HA44.jpg" style="width: 70%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+          <img src="越南照片\河內\HA45.jpg" style="width: 90%; max-width: 100vw; height: auto; margin: 0.5rem;" />
+          <img src="越南照片\河內\HA46.jpg" style="width: 90%; max-width: 100vw; height: auto; margin: 0.5rem;" />
+        </div>
+        <h4>從河內前往沙壩可以搭乘過夜巴士，跟一般的巴士不同的是，這個巴士是可以躺平的! 也有提供棉被跟水，雖然路途會顛簸，但是整體而言還是睡得著的，車程大約 5 個辦到 6 小時，建議到站後可以提早 check in 再補眠。</h4>
+        <div style="text-align: center">
+          <img src="越南照片\河內\HA47.jpg" style="width: 70%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+          <img src="越南照片\河內\HA48.jpg" style="width: 70%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+          <img src="越南照片\河內\HA49.jpg" style="width: 70%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+        </div>
+        <br /><br />
+        <h3>Hotel de la Coupole Sapa</h3>
+        <h4>
+          Hotel de la Coupole Sapa 是沙壩最具代表性的奢華飯店，由知名設計師比爾・本斯利操刀，將法式殖民風格與越南少數民族元素巧妙融合。飯店外觀典雅華麗，內部以高級訂製時尚為靈感，色彩濃烈細節精緻，營造出宛如藝術館般的住宿體驗。飯店位於市中心，鄰近 Sun World 纜車站與沙壩市集，交通與機能十分便利，館內設有室內溫水泳池、頂級 SPA、健身房與高評價餐廳，可在雲霧繚繞的高山中享受舒適奢華的度假時光。
+        </h4>
+        <div style="text-align: center">
+          <img src="越南照片\河內\HA50.jpg" style="width: 70%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+          <img src="越南照片\河內\HA51.jpg" style="width: 90%; max-width: 100vw; height: auto; margin: 0.5rem;" />
+        </div>
+        <br /><br />
+        <h3>Cat Cat Village</h3>
+        <h4>
+          Cat Cat Village 位於沙壩附近，是赫蒙族聚居的傳統山村，村落依山而建，四周環繞梯田與山谷景色自然純樸，當地居民保留傳統服飾、刺繡、紡織與手工藝技術，展現少數民族獨特的生活方式與文化特色，村內設有步道、瀑布與木橋，適合慢步探索，村落的缺點就是非常的商業化，所以如果是想要體驗非常少數民族風格的地方，這邊就比較不推薦。
+        </h4>
+        <div style="text-align: center">
+          <img src="越南照片\河內\HA52.jpg" style="width: 70%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+          <img src="越南照片\河內\HA53.jpg" style="width: 90%; max-width: 100vw; height: auto; margin: 0.5rem;" />
+          <img src="越南照片\河內\HA54.jpg" style="width: 90%; max-width: 100vw; height: auto; margin: 0.5rem;" />
+          <img src="越南照片\河內\HA55.jpg" style="width: 90%; max-width: 100vw; height: auto; margin: 0.5rem;" />
+        </div>
+        <br /><br />
+        <h3>Sun World Fansipan Legend</h3>
+        <h4>
+          Sun World Fansipan Legend 位於沙壩地區，是通往番西邦峰的重要觀光園區，園區設有現代化纜車系統，可大幅縮短登頂時間，讓旅客輕鬆抵達高山景觀區。從沙壩市區經由兩段電車以及一段纜車便可抵達山頂，可以在抵達沙壩後向飯店詢問套票價格，沿途可欣賞壯麗雲海、山谷與原始森林景色，山頂建有寺廟群與觀景平台，融合自然景觀與宗教文化，下圖是第一段電車。
+        </h4>
+        <div style="text-align: center">
+          <img src="越南照片\河內\HA56.jpg" style="width: 70%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+          <img src="越南照片\河內\HA57.jpg" style="width: 70%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+          <img src="越南照片\河內\HA58.jpg" style="width: 90%; max-width: 100vw; height: auto; margin: 0.5rem;" />
+        </div>
+        <h4>第二段纜車非常的長，總搭乘時長達到二十多分鐘，這條纜車也是世界紀錄頭尾高差最大的纜車，起點與終點海拔相差 1400 公尺。</h4>
+        <div style="text-align: center">
+          <img src="越南照片\河內\HA59.jpg" style="width: 70%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+          <img src="越南照片\河內\HA60.jpg" style="width: 70%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+          <img src="越南照片\河內\HA61.jpg" style="width: 90%; max-width: 100vw; height: auto; margin: 0.5rem;" />
+        </div>
+        <br /><br />
+        <h3>番西邦峰 (Phan Xi Păng)</h3>
+        <h4>
+          番西邦峰位於越南西北部老街省沙壩地區，海拔約 3143 公尺，是越南最高峰，也被稱為「中南半島屋脊」。山區地形險峻，氣候多變長年雲霧繚繞，孕育豐富的高山生態與原始森林景觀，過去登頂需數日健行，對體力與經驗要求極高；如今透過纜車系統，更多旅客得以親身感受高山壯麗景色，山頂可眺望雲海、群峰與山谷，並設有宗教建築與觀景平台，可將北越中越、廣西雲南、寮國盡收眼底，美景非常值得。
+        </h4>
+        <div style="text-align: center">
+          <img src="越南照片\河內\HA62.jpg" style="width: 70%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+          <img src="越南照片\河內\HA63.jpg" style="width: 70%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+          <img src="越南照片\河內\HA64.jpg" style="width: 90%; max-width: 100vw; height: auto; margin: 0.5rem;" />
+          <img src="越南照片\河內\HA65.jpg" style="width: 90%; max-width: 100vw; height: auto; margin: 0.5rem;" />
+          <img src="越南照片\河內\HA66.jpg" style="width: 90%; max-width: 100vw; height: auto; margin: 0.5rem;" />
+          <img src="越南照片\河內\HA67.jpg" style="width: 70%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+        </div>
+        <br /><br />
+        <h2>河內美食</h2>
+        <h3>Colette French Bistro & Wine Bar</h3>
+        <h4>
+          Colette French Bistro & Wine Bar 是一間結合法式料理與葡萄酒文化的精緻餐廳，主打法國經典小酒館風格。餐點強調傳統法式技法與高品質食材，如油封鴨、紅酒燉牛肉、洋蔥湯等，口味細膩而平衡，同時提供多款精選葡萄酒，適合搭配料理慢慢品嚐。整體氛圍優雅溫馨，適合朋友聚餐或輕鬆的晚間用餐，展現法國餐飲的從容與品味。
+        </h4>
+        <div style="text-align: center">
+          <img src="越南照片\河內\HA68.jpg" style="width: 90%; max-width: 100vw; height: auto; margin: 0.5rem;" />
+          <img src="越南照片\河內\HA69.jpg" style="width: 90%; max-width: 100vw; height: auto; margin: 0.5rem;" />
+          <img src="越南照片\河內\HA70.jpg" style="width: 90%; max-width: 100vw; height: auto; margin: 0.5rem;" />
+        </div>
+        <br /><br />
+        <h3>MẸT Vietnamese Restaurant</h3>
+        <h4>
+          MẸT Vietnamese Restaurant 是一間主打道地越南家常料理的餐廳，以分享式餐點與濃厚在地風味聞名，餐廳名稱「Mẹt」源自越南傳統竹盤，象徵將多樣菜色一次呈現、共同享用的飲食文化。料理多以中北越風味為主，包含香草、魚露、米製食品與慢燉肉類，口味層次豐富卻不油膩。
+        </h4>
+        <div style="text-align: center">
+          <img src="越南照片\河內\HA71.jpg" style="width: 70%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+        </div>
+        <br /><br />
+        <h3>Bún Bò Nam Bộ Bách Phương</h3>
+        <h4>
+          Bún Bò Nam Bộ Bách Phương 是河內相當知名的越南小吃店，以經典料理「Bún Bò Nam Bộ（南部拌牛肉米粉）」聞名，餐點以滑嫩牛肉、彈牙米粉、新鮮生菜、花生與炸蔥為主，淋上特製魚露醬汁後拌勻食用，口感清爽卻層次豐富。與湯河粉不同這道料理不含湯汁，更強調食材搭配與醬料平衡，用餐時間常需排隊，深受在地居民與旅客喜愛。
+        </h4>
+        <div style="text-align: center">
+          <img src="越南照片\河內\HA72.jpg" style="width: 70%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+        </div>
+        <br /><br />
+        <h3>Phở Gia Truyền Bát Đàn</h3>
+        <h4>
+          Phở Gia Truyền Bát Đàn 是河內最具代表性的老字號河粉名店之一，並獲得米其林指南推薦，被視為北越牛肉河粉的經典典範。店家數十年來專注於單一品項，湯頭以牛骨長時間熬煮，清澈純淨卻層次深厚，充分展現傳統北越風味，河粉口感柔滑，牛肉新鮮調味節制，讓湯底成為絕對主角，店內維持自助排隊點餐的方式，氣氛樸實而在地。
+        </h4>
+        <div style="text-align: center">
+          <img src="越南照片\河內\HA73.jpg" style="width: 70%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+          <img src="越南照片\河內\HA74.jpg" style="width: 70%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+        </div>
+        <br /><br />
+        <h3>Phở Sướng</h3>
+        <h4>
+          Phở Sướng 以正宗風味和親切服務聞名，店內湯頭熬製時間長，口感清甜而不油膩，米線軟滑搭配嫩牛肉或雞肉，並以新鮮香草、青檸與辣椒增添風味。店面氛圍簡潔舒適價格平實，是當地人和遊客常去的用餐選擇， 不僅保留傳統做法，也注重食材新鮮與品質。
+        </h4>
+        <div style="text-align: center">
+          <img src="越南照片\河內\HA75.jpg" style="width: 70%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+          <img src="越南照片\河內\HA76.jpg" style="width: 70%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+        </div>
+        <br /><br />
+        <h3>Pizza 4P’s</h3>
+        <h4>
+          Pizza 4P’s 是源自越南、深受歡迎的義式披薩餐廳品牌，以高品質食材與手工製作理念聞名。品牌名稱中的「4P」代表「Pizza for Peace」，象徵分享、美味與幸福，餐廳主打現做披薩，使用自製起司、進口麵粉與新鮮食材，口感薄脆且風味平衡，其中以起司系列披薩最具特色，Pizza 4P’s 結合義大利料理精神與亞洲飲食習慣，環境舒適、服務細緻，深受家庭、朋友聚餐與旅客喜愛。
+        </h4>
+        <div style="text-align: center">
+          <img src="越南照片\河內\HA77.jpg" style="width: 70%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+        </div>
+        <div class="two-vertical-images">
+          <img src="越南照片\河內\HA78-1.jpg" />
+          <img src="越南照片\河內\HA78-2.jpg" />
+        </div>
+        <br /><br />
+        <h3>The Hanoi Cafe</h3>
+        <h4>
+          The Hanoi Cafe 是位於老城區的人氣咖啡館，以濃厚的復古風格與越南在地咖啡文化聞名，店內裝潢融合舊式磁磚、木質家具與昏黃燈光，營造出懷舊而溫暖的氛圍，讓人彷彿回到早年的河內生活。The Hanoi Cafe 主打越南傳統咖啡，如煉乳冰咖啡與蛋咖啡，口感濃郁順口，咖啡館不僅是品飲飲品的場所，也是拍照、休息與感受城市節奏的好去處，展現河內將歷史記憶與現代生活融合的獨特魅力。
+        </h4>
+        <div style="text-align: center">
+          <img src="越南照片\河內\HA79.jpg" style="width: 70%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+          <img src="越南照片\河內\HA80.jpg" style="width: 70%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+        </div>
+        <br /><br />
+        <h3>Tranquil Books & Coffee</h3>
+        <h4>
+          Tranquil Books & Coffee 是河內知名的文青咖啡館，以安靜閱讀與思考空間為核心理念。咖啡館隱身於市區巷弄中，遠離喧囂，室內佈置簡約溫暖，書架上擺滿各類書籍，營造出沉靜舒適的氛圍。Tranquil 主打手沖咖啡、越南咖啡與簡單甜點，口味溫和不張揚，適合長時間停留，這裡常可見學生、作家與自由工作者專心閱讀或工作，是河內少數真正以「安靜」聞名的咖啡空間，更是一處讓人放慢步調、沉澱心靈的城市角落。
+        </h4>
+        <div style="text-align: center">
+          <img src="越南照片\河內\HA81.jpg" style="width: 70%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+        </div>
+        <br /><br />
+        <h3>Attic Cocktail & Wine Lab</h3>
+        <h4>
+          Attic Cocktail & Wine Lab 是河內備受推崇的精品酒吧，隱身於市中心小樓之上，以低調私密的空間與高水準調酒聞名。酒吧風格現代而沉穩，營造出適合細細品飲與交流的氛圍，Attic 強調實驗精神與風味平衡，調酒師擅長將經典雞尾酒結合創新技法與精選材料，呈現細膩而富層次的口感，同時也提供多款葡萄酒選擇，滿足不同喜好，不追求喧鬧熱鬧，而是以專業、質感與專注體驗，為河內夜生活中成熟而洗練的代表場所。
+        </h4>
+        <div style="text-align: center">
+          <img src="越南照片\河內\HA82.jpg" style="width: 70%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+        </div>
+        <div class="two-vertical-images">
+          <img src="越南照片\河內\HA83-1.jpg" />
+          <img src="越南照片\河內\HA83-2.jpg" />
+        </div>
+        <div class="two-vertical-images">
+          <img src="越南照片\河內\HA84-1.jpg" />
+          <img src="越南照片\河內\HA84-2.jpg" />
+        </div>
+        <br /><br /><br />
       </div>
       <div class="destination-sidebar">
         <div class="sidebar-image-container">
@@ -621,11 +1012,14 @@
         const menuList = document.getElementById("menu-list");
         const destinationMain = document.querySelector(".destination-main");
 
+
         // 點擊按鈕切換目錄狀態
         toggle.addEventListener("click", () => {
           menu.classList.toggle("open");
 
+
           const menuWidth = menu.offsetWidth; // 獲取目前展開的目錄寬度
+
 
           if (menu.classList.contains("open")) {
             // 讓按鈕向左平移與 menu 一樣的寬度
@@ -636,12 +1030,14 @@
           }
         });
 
+
         window.addEventListener("load", () => {
           if (menu.classList.contains("open")) {
             const menuWidth = menu.offsetWidth;
             toggle.style.transform = `translateY(-50%) translateX(-${menuWidth}px)`;
           }
         });
+
 
         // 從 destination-main 區域提取 h2 和 h3，動態生成目錄
         const headings = destinationMain.querySelectorAll("h2, h3");
@@ -651,44 +1047,50 @@
             heading.id = `heading-${index}`;
           }
 
+
           const listItem = document.createElement("li");
           const link = document.createElement("a");
           link.textContent = heading.textContent;
           link.href = `#${heading.id}`;
           listItem.appendChild(link);
 
+
           // 為 h3 添加縮排樣式
           if (heading.tagName.toLowerCase() === "h3") {
             listItem.classList.add("sub-item");
           }
 
+
           menuList.appendChild(listItem);
         });
+
 
         function adjustMenuPosition() {
           const nav = document.querySelector("nav");
           const menu = document.getElementById("expandable-menu");
-      
+     
           if (nav && menu) {
             const navHeight = nav.offsetHeight;
-      
+     
             // 設定 menu 的 top 與高度
             menu.style.top = `${navHeight}px`;
             menu.style.height = `calc(100vh - ${navHeight}px)`;
           }
         }
-      
+     
         // 載入與尺寸變化時調整
         window.addEventListener("DOMContentLoaded", adjustMenuPosition);
         window.addEventListener("resize", adjustMenuPosition);
-        
+       
         // 滾動至目標位置並加上 75px 偏移
         menuList.addEventListener("click", (event) => {
           if (event.target.tagName === "A") {
             event.preventDefault(); // 阻止預設行為
 
+
             const targetId = event.target.getAttribute("href").substring(1); // 取得目標 ID
             const targetElement = document.getElementById(targetId);
+
 
             if (targetElement) {
               // 計算目標元素的位置並加上 75px 偏移
@@ -705,21 +1107,24 @@
         // 手機 Safari 相容：點擊展開 dropdown
         const dropdownToggles = document.querySelectorAll(".dropdown-toggle");
 
+
         dropdownToggles.forEach((toggle) => {
           toggle.addEventListener("click", function (e) {
             e.stopPropagation(); // 防止冒泡，避免點擊外層時也觸發關閉
             const dropdown = this.nextElementSibling;
             const isVisible = dropdown.style.display === "block";
-            
+           
             // 關閉所有其他 dropdown（可選）
             document.querySelectorAll(".dropdown-content").forEach((menu) => {
               menu.style.display = "none";
             });
 
+
             // 切換目前這一個 dropdown
             dropdown.style.display = isVisible ? "none" : "block";
           });
         });
+
 
         // 點擊其他地方時關閉 dropdown
         window.addEventListener("click", function () {
