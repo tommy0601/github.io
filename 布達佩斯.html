@@ -1,0 +1,1022 @@
+<!DOCTYPE html>
+<html lang="zh-hant-TW">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="曹旅瀚 Tommy" />
+    <meta name="description" content="探索布達佩斯的藝術與陽光魅力！從聖斯蒂芬大教堂、布達佩斯城堡，到多瑙河畔與道地匈牙利美食，體驗最具魅力的匈牙利城市。" />
+    <meta name="keywords" content="布達佩斯旅遊, 聖斯蒂芬大教堂, 布達佩斯城堡, 多瑙河, 匈牙利自由行, 布達佩斯景點, 布達佩斯美食, 匈牙利城市介紹" />
+    <title>Tommy 看世界 - 布達佩斯</title>
+    <link rel="icon" href="網頁縮圖.ico" />
+    <style>
+      body {
+        font-family: Calibri, Arial, sans-serif; /* 首選 Calibri，次選 Arial */
+        margin: 0;
+        overflow-x: hidden; /* 禁止水平滾動 */
+        background-color: #f4f4f9;
+        color: #333;
+      }
+
+      h1 {
+        font-size: 40px;
+        font-weight: bold;
+      }
+
+      h2 {
+        font-size: 32px;
+        font-weight: bold;
+        color: #2a90a7;
+        display: inline-block;
+        background-color: #cee5e8;
+      }
+
+      h3 {
+        font-size: 26px;
+        margin: 0 0 1rem;
+        font-weight: bold;
+        text-decoration: underline;
+      }
+
+      h4 {
+        font-size: 18px;
+        font-weight: normal;
+        line-height: 1.8;
+      }
+
+      h5 {
+        font-size: 16px;
+        font-weight: normal;
+        margin: 0;
+      }
+
+      h6 {
+        font-size: 10px;
+        color: #fff;
+        margin: 0;
+        text-align: center;
+        line-height: 50px; /* 高度對齊 */
+      }
+
+      nav {
+        background-color: #78bcc4;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;                     /* 讓 nav 寬度隨螢幕自適應 */
+        padding: 0.8rem 5vw;               /* 左右 padding 用 5% 寬度 */
+        box-sizing: border-box;         /* 確保 padding 不會影響寬度總長 */
+        position: fixed;
+        top: 0;
+        z-index: 1000;
+      }
+
+      .nav-left .logo img {
+        height: 5vw; /* 高度為螢幕寬度的 5% */
+        transform: translateX(-2vw); /* 向左移動 2% 寬度 */
+        max-width: 100%; /* 確保不會超過容器 */
+        height: auto; /* 保持圖片比例（建議與 max-height 搭配） */
+        max-height: 3rem;
+      }
+
+      .nav-right {
+        display: flex;
+        align-items: center;
+        margin-left: auto; /* 推到右側 */
+        padding-left: 5%;   /* 內部元素間距，彈性設計 */
+      }
+
+      nav a {
+        color: #eff5f5;
+        text-decoration: none;
+        padding: 1vh 1vw;
+        margin: 0 1vw;
+        transition: transform 0.3s;
+      }
+
+      nav a:hover {
+        transform: translateY(-0.5vh); /* 根據視窗高度調整 */
+      }
+
+      .dropdown {
+        position: relative;
+        display: inline-block;
+      }
+
+      .dropdown-content {
+        width: 100%; /* 佔滿父層寬度 */
+        max-width: 20vw; /* 限制最大寬度 */
+        display: none;
+        position: absolute;
+        background-color: #78bcc4;
+        min-width: 10em; /* 取代 160px，以字體大小作為比例單位 */
+        border-radius: 0.25em;
+        box-shadow: 0 0.5em 1em rgba(0, 0, 0, 0.2); /* 改為相對單位 */
+        padding: 0.2rem 0;
+        z-index: 999;
+      }
+
+      .dropdown-content a {
+        color: #eff5f5;
+        display: block;
+        transition: transform 0.3s;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.3); /* 更淡配色、柔和過渡 */
+        padding: 0.6em 1em;
+        font-size: 1em;
+      }
+
+      .dropdown-content a:last-child {
+        border-bottom: none;
+      }
+
+      .dropdown-content a:hover {
+        transform: translateY(-0.25em); /* 改為相對單位 */
+      }
+
+      .intro-section {
+        background-color: #eff5f5;
+        display: flex;
+        flex-wrap: wrap; /* 確保在小螢幕可換行 */
+        padding: 2rem 5%;
+        margin-top: 4em; /* 根據導航列高度調整 */
+      }
+
+      .intro-section h4 {
+        max-width: 85%; /* 改為相對單位，避免固定寬度限制 */
+        line-height: 1.8;
+      }
+
+      .intro-section .left {
+        width: 60%;
+        padding-right: 1%;
+      }
+
+      .intro-section .right {
+        width: 39%;
+      }
+
+      .destination-section {
+        display: flex;
+        flex-wrap: wrap;               /* 小螢幕時允許換行 */
+        padding: 1rem 5%; /* 左右內間距為螢幕的10% */
+        background-color: white;
+      }
+
+      .destination-main {
+        width: 72%;                    /* 主要內容佔 72%，略縮以保留間距 */
+        margin-right: 3%;              /* 與 sidebar 間保留間距（約為 3%） */
+        box-sizing: border-box;
+      }
+
+      .destination-sidebar {
+        width: 25%;                    /* 側邊欄佔 25% */
+        padding-left: 2%;             /* 相對內邊距 */
+        margin-top: 2rem;
+        box-sizing: border-box;
+      }
+
+      .sidebar-image-container {
+        margin-bottom: 1rem;
+        text-align: center; /* 置中圖片 */
+      }
+
+      .sidebar-image-container img {
+        width: 90%;         /* 圖片寬度為容器寬度的 90% */
+        height: auto;       /* 高度自動，保持比例 */
+        max-height: 60vh;   /* 避免圖片過高，佔螢幕最大 60% 高 */
+        object-fit: cover;  /* 裁切處理長圖 */
+      }
+
+      .two-vertical-images {
+        display: flex;
+        justify-content: space-between;
+        gap: 4%; /* 使用百分比間距更彈性 */
+        margin-top: 2rem;
+        margin-bottom: 2rem;
+        flex-wrap: wrap; /* 若畫面太小，允許換行 */
+      }
+
+      .two-vertical-images img {
+        width: 48%; /* 每張圖片約佔一半（加上 gap 剛好 100%） */
+        height: auto; /* 保持原比例 */
+        object-fit: cover;
+        display: block;
+        margin: 0 auto;
+      }
+
+      .recommendation-section {
+        margin-top: 3vh; /* 與上方文字的間距 */
+        text-align: center;
+        position: sticky;
+        top: 80px; /* 空出導覽列的高度，確保推薦區不被覆蓋 */
+        z-index: 10; /* 提高層級，避免被其他內容遮蓋 */
+        padding: 0 5%;
+      }
+
+      .recommendation-section h3 {
+        font-size: 1.125rem;
+        font-weight: bold;
+        margin-bottom: 1vh; /* 與按鈕區的距離 */
+      }
+
+      .recommendation-buttons {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 0.5em; /* 按鈕之間的間距 */
+      }
+
+      .recommendation-buttons button {
+        padding: 0.5em 1em;
+        font-size: 0.875rem;
+        color: white;
+        background-color: #78bcc4;
+        border: none;
+        border-radius: 0.25rem;
+        transition: transform 0.3s;
+        font-family: Arial, sans-serif;
+      }
+
+      .recommendation-buttons button:hover {
+        transform: translateY(-3px);
+      }
+
+      .contact-section {
+        padding: 4vh 8vw; /* 上下與左右間距 */
+        background-color: #eff5f5; /* 淺灰背景 */
+        text-align: center; /* 確保內容置中對齊 */
+      }
+
+      .contact-item h3 {
+        font-size: 1.125rem; /* 調整標題字體大小 */
+        margin: 0; /* 移除多餘的間距 */
+        text-decoration: none; /* 移除底線 */
+      }
+
+      footer {
+        background-color: #000;
+        color: white;
+        height: 3vh; /* 使用相對單位，高度占螢幕高度的 3% */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 1.5rem; /* 使用相對字體大小 */
+        padding: 0.5rem 0; /* 確保小螢幕時內容不擠壓 */
+      }
+
+      #expandable-menu {
+        position: fixed; 
+        right: 0;
+        width: 26vw; /* 目錄寬度與 sidebar 齊寬 */
+        max-width: 90%; /* 避免在小螢幕太寬 */
+        transform: translateX(100%); /* 初始狀態：隱藏在右側 */
+        transition: transform 0.3s ease;
+        background-color: #f4f4f9; /* 與網站背景一致 */
+        z-index: 1000;
+        box-sizing: border-box;
+      }
+
+      /* 收闔按鈕 */
+      #menu-toggle {
+        position: fixed;
+        top: 45%;
+        right: 0; /* 永遠貼在右側 */
+        transform: translateY(-50%) translateX(0);
+        width: 2.5em; /* 增大按鈕寬度 */
+        height: 5em; /* 增大按鈕高度 */
+        background-color: #78bcc4;
+        color: white;
+        border-radius: 0.4em 0 0 0.4em;
+        display: flex;
+        justify-content: center; /* 水平居中 */
+        align-items: center; /* 垂直居中 */
+        z-index: 2000; /* 要比 expandable-menu 更高，避免被蓋住 */
+        cursor: pointer;
+        box-shadow: -0.1em 0 0.3em rgba(0,0,0,0.1);
+        transition: transform 0.3s ease; /* 平滑移動 */
+      }
+
+      #menu-toggle::after {
+        content: "目錄"; /* 在按鈕內顯示 "目錄" */
+        font-size: 1rem;
+        color: white; /* 設定字體顏色為白色 */
+        writing-mode: vertical-rl; /* 使文字垂直排列 */
+      }
+
+      #menu-toggle:hover {
+        background-color: #78bcc4;
+      }
+
+      /* 目錄內容 */
+      #menu-content {
+        padding: 0.5rem 5%;
+        overflow-y: auto;
+        height: 100%;
+        box-sizing: border-box;
+      }
+
+      #menu-content h4 {
+        font-weight: bold;
+        margin-top: 0;
+        font-size: 1.2rem;
+      }
+
+      #menu-list {
+        list-style: none;
+        padding: 0;
+      }
+
+      #menu-list li {
+        margin-bottom: 1vh;
+      }
+
+      #menu-list a {
+        color: #2a90a7;
+        text-decoration: none;
+        transition: color 0.3s;
+        font-size: 1rem; /* 使用相對字體大小 */
+      }
+
+      #menu-list a:hover {
+        color: #78bcc4;
+      }
+
+      #menu-list .sub-item {
+        margin-left: 8%; /* 調整縮排距離 */
+        font-size: 0.9rem; /* 可選：調整子項目字體大小 */
+      }
+
+      /* 目錄展開狀態 */
+      #expandable-menu.open {
+        transform: translateX(0);
+      }
+
+       /* === 響應式調整：針對手機與小螢幕設備 === */
+      @media (max-width: 768px) {
+        nav {
+          flex-wrap: wrap;
+          padding: 0.8rem 5vw;
+        }
+      
+        .nav-right {
+          display: flex;
+          flex-wrap: wrap;        /* ⭐ 核心 */
+          justify-content: flex-end;
+          width: 100%;
+          gap: 0.4rem;
+          margin-top: 0.3rem;
+        }
+      
+        nav a {
+          white-space: normal;    /* ⭐ 允許換行 */
+          padding: 0.4rem 0.5rem;
+          font-size: 0.85rem;
+        }
+
+        .nav-dropdown {
+          width: 60%; /* 或者用 max-content, fit-content 看需求 */
+          font-size: 0.85rem; /* 調整字體大小和導覽列一致 */
+          padding: 0.5rem;
+        }
+      
+        .nav-dropdown a {
+          font-size: inherit; /* 確保跟 .nav-dropdown 一樣大 */
+          padding: 0.5rem 1rem;
+          white-space: normal; /* 可選：讓字在必要時換行 */
+        }
+
+        .dropdown-content {
+          width: 12vw;
+          min-width: 8em; /* 保證至少能顯示幾個字 */
+          max-width: none;
+        }
+
+        .dropdown-content a {
+          font-size: 0.85rem;
+        }
+        
+        .intro-section {
+          flex-direction: column;
+          padding: 8%;
+          padding-top: calc(8% + 6rem); /* ⭐ 關鍵：讓位給 nav */
+        }
+      
+        .intro-section .left,
+        .intro-section .right {
+          width: 100%;
+          padding: 0;
+          flex: 1 1 100%;
+        }
+      
+        .intro-section .right {
+          margin-top: 1.5rem;
+          display: flex;
+          justify-content: center;
+        }
+      
+        .intro-section h4 {
+          max-width: 100%;
+          font-size: 1rem;
+        }
+
+        .destination-grid {
+          flex-direction: column;
+          gap: 1rem;
+        }
+
+        .destination-section h4 {
+          font-size: 1rem;
+        }
+
+        .destination-item {
+          max-width: 100%;
+          width: 100%;
+        }
+
+        .destination-item.a_role_with_2 {
+          position: static;
+          left: auto;
+        }
+
+        .destination-main,
+        .destination-sidebar {
+          width: 100%;
+          margin: 0;
+          padding: 0;
+        }
+
+        .destination-sidebar {
+          margin-top: 2rem;
+        }
+
+        .recommendation-buttons button {
+          width: 100%; /* 小螢幕按鈕全寬排列 */
+        }
+
+        .contact-section {
+          padding: 3vh 5vw;
+        }
+
+        .contact-item h3 {
+          font-size: 1rem;
+        }
+
+        /* 目錄區寬度改為螢幕寬度的40% */
+        #expandable-menu {
+          width: 40vw !important; /* 用vw方便響應螢幕寬度 */
+          max-width: 90%; /* 保留原本max-width避免太寬 */
+        }
+      
+        #expandable-menu,
+        #expandable-menu * {
+          font-size: 85% !important;
+        }
+              
+        #menu-toggle {
+          width: 75%;
+          max-width: 1.875em;
+          min-width: 1.875em;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <div class="nav-left">
+        <div class="logo">
+          <a href="首頁.html">
+            <img src="網站Logo.png" alt="網站 Logo" />
+          </a>
+        </div>
+      </div>
+      <div class="nav-right">
+        <a href="首頁.html">關於我</a>
+        <div class="dropdown">
+          <a class="dropdown-toggle">亞洲旅遊</a>
+          <div class="dropdown-content">
+            <a href="中國.html">中國</a>
+            <a href="日本.html">日本</a>
+            <a href="新加坡.html">新加坡</a>
+            <a href="馬來西亞.html">馬來西亞</a>
+            <a href="泰國.html">泰國</a>
+            <a href="印尼.html">印尼</a>
+            <a href="越南.html">越南</a>
+          </div>
+        </div>
+        <div class="dropdown">
+          <a class="dropdown-toggle">歐洲旅遊</a>
+          <div class="dropdown-content">
+            <a href="英國.html">英國</a>
+            <a href="法國.html">法國</a>
+            <a href="德國.html">德國</a>
+            <a href="荷蘭.html">荷蘭</a>
+            <a href="比利時.html">比利時</a>
+            <a href="盧森堡.html">盧森堡</a>
+            <a href="瑞士.html">瑞士</a>
+            <a href="摩納哥.html">摩納哥</a>
+            <a href="西班牙.html">西班牙</a>
+            <a href="葡萄牙.html">葡萄牙</a>
+            <a href="安道爾.html">安道爾</a>
+            <a href="丹麥.html">丹麥</a>
+            <a href="瑞典.html">瑞典</a>
+            <a href="波蘭.html">波蘭</a>
+            <a href="匈牙利.html">匈牙利</a>
+            <a href="捷克.html">捷克</a>
+            <a href="奧地利.html">奧地利</a>
+          </div>
+        </div>
+        <div class="dropdown">
+          <a class="dropdown-toggle">美洲旅遊</a>
+          <div class="dropdown-content">
+            <a href="美國.html">美國</a>
+            <a href="加拿大.html">加拿大</a>
+          </div>
+        </div>
+        <div class="dropdown">
+          <a class="dropdown-toggle">大洋洲旅遊</a>
+          <div class="dropdown-content">
+            <a href="澳洲.html">澳洲</a>
+          </div>
+        </div>
+        <div class="dropdown">
+          <a class="dropdown-toggle">非洲旅遊</a>
+          <div class="dropdown-content">
+            <a href="南非.html">南非</a>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <div class="intro-section">
+      <div class="left">
+        <h1>Tommy 在布達佩斯</h1>
+        <h4>
+          <b>布達佩斯 (Budapest) </b
+          >位於多瑙河畔，中世紀以來成為重要的王國與商貿據點。1541 年起奧斯曼帝國逐步控制該區，多瑙河沿岸的城市結構與文化受到深刻影響。20世紀布達佩斯在兩次世界大戰間受戰爭破壞，戰後又進入社會主義體系，1989年東歐劇變後，匈牙利完成民主轉型，城市重建與文化活化更明顯。
+        </h4>
+        <h4>如今的布達佩斯以優美的河岸景觀、溫泉浴場與壯麗建築聞名，既保留歷史層次，也展現活躍的現代生活與旅遊能量，同時也面臨交通壅塞、環境與觀光壓力等挑戰。</h4>
+      </div>
+      <div class="right">
+        <img src="匈牙利照片\布達佩斯_intro.jpg" style="width: 100%; height: auto; max-width: 100%;" />
+      </div>
+    </div>
+
+    <div class="destination-section">
+      <div class="destination-main">
+        <h2>布達佩斯交通</h2>
+        <h3>機場交通</h3>
+        <h4>
+          從布達佩斯李斯特·費倫茨國際機場可以搭乘公車 100E 線抵達市中心，車程約 20 分鐘。
+        </h4>
+        <h3>市區交通</h3>
+        <h4>
+          遊覽布達佩斯除了步行外，也可以乘坐地鐵及地面電車出行，布達佩斯沿著多瑙河兩岸的地面電車 19 和 41 路線非常適合欣賞城市的美景，布達佩斯大眾交通也有販售一日票及三日票，若旅行時間多過於四天，則推薦可以直接購買月票，反而更划算。
+        </h4>
+        <div style="text-align: center">
+          <img src="匈牙利照片\布達佩斯\布達佩斯_交通1.png" style="width: 90%; max-width: 100vw; height: auto;" />
+          <img src="匈牙利照片\布達佩斯\布達佩斯_交通2.jpg" style="width: 70%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+        </div>
+        <br /><br />
+        <h2>布達佩斯住宿</h2>
+        <h4>
+          布達佩斯的治安在歐洲國家中相對良好，選擇住宿可以交通、景點跟舒適程度來考量，市中心區域的公寓普遍老舊，但是距離景點較靠近，如果想要住在比較新的社區大廈中則可能需要選擇離地鐵站較近的位置通勤進城觀光，但基本上可以控制在下圖紅色方框中的區域。
+        </h4>
+        <div style="text-align: center">
+          <img src="匈牙利照片\布達佩斯\布達佩斯_住宿.png" style="width: 90%; max-width: 100vw; height: auto;" />
+        </div>
+        <br /><br />
+        <h2>布達佩斯景點</h2>
+        <h3>匈牙利國會大廈 (Hungarian Parliament Building) </h3>
+        <h4>
+          匈牙利國會大廈位於多瑙河東岸，是匈牙利最具代表性的地標，也是歐洲最大的國會建築。建築於 1885 年動工，1904年完工，採用新哥德式風格設計，外觀宏偉華麗擁有尖塔、拱窗與精緻雕刻，展現 19 世紀歐洲建築藝術的巔峰成就。國會大廈全長約 268 公尺，中央圓頂高達 96 公尺，象徵匈牙利建國年份 896 年。建築內部設有近 700 個房間、數十座樓梯及華麗大廳，收藏匈牙利重要國寶，包括象徵國家主權的聖史蒂芬王冠。
+        </h4>
+        <div style="text-align: center">
+          <img src="匈牙利照片/布達佩斯/BD1.jpg" style="width: 90%; max-width: 100vw; height: auto; margin: 0.5rem;" />
+          <img src="匈牙利照片/布達佩斯/BD2.jpg" style="width: 90%; max-width: 100vw; height: auto; margin: 0.5rem;" />
+        </div>
+        <h4>
+          夜晚時分，從多瑙河對岸看向國會大廈是匈牙利最著名的一景，金黃色燈光映照在多瑙河畔，與對岸布達城堡相互輝映，景色十分壯觀，
+        </h4>
+        <div style="text-align: center">
+          <img src="匈牙利照片/布達佩斯/BD3.jpg" style="width: 90%; max-width: 100vw; height: auto; margin: 0.5rem;" />
+        </div>
+        <br /><br /><br />
+        <h3>多瑙河岸的鞋子 (Shoes on the Danube Bank)</h3>
+        <h4>
+          多瑙河岸的鞋子是一座紀念二戰猶太人大屠殺受害者的重要紀念碑，於 2005 年落成，由電影導演卡諾蓋·托蓋 (Can Togay) 與雕塑家久拉·鮑爾 (Gyula Pauer) 共同設計。紀念碑由 60 雙鐵製鞋子組成，包括男鞋、女鞋和童鞋，真實還原當時的款式。其設計源於二戰末期的悲劇: 1944 至 1945 年間，匈牙利法西斯組織「箭十字黨」在多瑙河岸槍殺大批猶太人，受害者被迫先脫下珍貴的鞋子，隨後遭到射殺，遺體墜入河中，這些空置的鞋子象徵著逝去的生命與未竟的人生，遊客常在鞋中放置鮮花、蠟燭或石頭，以悼念受害者，並提醒世人珍惜和平、反對種族迫害與戰爭暴行。
+        </h4>
+        <div style="text-align: center">
+          <img src="匈牙利照片/布達佩斯/BD4.jpg" style="width: 70%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+          <img src="匈牙利照片/布達佩斯/BD5.jpg" style="width: 70%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+          <img src="匈牙利照片/布達佩斯/BD6.jpg" style="width: 90%; max-width: 100vw; height: auto; margin: 0.5rem;" />
+          <img src="匈牙利照片/布達佩斯/BD7.jpg" style="width: 90%; max-width: 100vw; height: auto; margin: 0.5rem;" />
+        </div>
+        <br /><br /><br />
+        <h3>聖伊什特萬聖殿 (St. Stephen’s Basilica)</h3>
+        <h4>
+          聖伊什特萬聖殿是匈牙利最重要的天主教教堂，教堂以匈牙利首位國王兼建國者聖伊什特萬一世命名，建造工程始於 1851 年，歷經半個多世紀於 1905 年正式完工。聖殿採新古典主義風格，擁有宏偉的圓頂和精美的雕刻裝飾，高度達 96 公尺，與匈牙利國會大廈同高，象徵宗教與國家地位的平衡。教堂內部金碧輝煌，壁畫、馬賽克和彩繪玻璃極具藝術價值，珍貴的聖物是保存於此的「聖右手」，據傳為聖伊什特萬國王的右手遺骸。
+        </h4>
+        <div style="text-align: center">
+          <img src="匈牙利照片/布達佩斯/BD8.jpg" style="width: 70%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+          <img src="匈牙利照片/布達佩斯/BD9.jpg" style="width: 70%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+          <img src="匈牙利照片/布達佩斯/BD10.jpg" style="width: 70%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+        </div>
+        <br /><br /><br />
+        <h3>布達佩斯中央市場 (Central Market Hall) </h3>
+        <h4>
+          布達佩斯中央市場位於多瑙河畔自由橋旁，是匈牙利規模最大、歷史最悠久的傳統市場。市場於 1897 年落成，由建築師薩穆·佩奇設計，採新哥德式建築風格，鋼骨結構搭配彩色佐爾奈陶瓷瓦屋頂，兼具實用性與藝術美感。市場共分三層，一樓販售新鮮蔬果、肉品、乳製品及各式匈牙利特產，如紅椒粉、香腸、鵝肝、葡萄酒等；二樓設有餐廳、小吃攤及紀念品商店，可品嚐匈牙利燉牛肉湯、炸麵餅（Lángos）等經典美食；地下樓層則主要作為倉儲及物流空間，是認識布達佩斯生活文化的重要窗口。
+        </h4>
+        <div style="text-align: center">
+          <img src="匈牙利照片/布達佩斯/BD11.jpg" style="width: 70%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+          <img src="匈牙利照片/布達佩斯/BD12.jpg" style="width: 70%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+          <img src="匈牙利照片/布達佩斯/BD13.jpg" style="width: 70%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+        </div>
+        <br /><br /><br />
+        <h3>伊莉莎白橋 (Elizabeth Bridge) </h3>
+        <h4>
+          伊莉莎白橋橫跨多瑙河，連接布達與佩斯兩岸，以深受匈牙利人民愛戴的奧地利皇后伊莉莎白 (茜茜公主) 命名，原橋於 1903 年落成，採優雅的懸索橋設計，曾是當時世界跨度最大的橋梁。然而二戰期間遭德軍炸毀，戰後於 1961 年至 1964 年間重建為現今的白色現代化吊橋。現今的伊莉莎白橋全長約 380 公尺，橋頭靠近蓋勒特山、伊莉莎白廣場及市中心，是欣賞多瑙河、布達城堡及國會大廈夜景的熱門地點。每當夜幕降臨，橋身燈光與河岸建築交相輝映，展現布達佩斯「多瑙河明珠」的迷人風采，成為城市最具代表性的景觀。
+        </h4>
+        <div style="text-align: center">
+          <img src="匈牙利照片/布達佩斯/BD14.jpg" style="width: 70%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+          <img src="匈牙利照片/布達佩斯/BD15.jpg" style="width: 70%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+          <img src="匈牙利照片/布達佩斯/BD16.jpg" style="width: 90%; max-width: 100vw; height: auto; margin: 0.5rem;" />
+          <img src="匈牙利照片/布達佩斯/BD17.jpg" style="width: 90%; max-width: 100vw; height: auto; margin: 0.5rem;" />
+        </div>
+        <br /><br /><br />
+        <h3>塞切尼鏈橋 (Széchenyi Chain Bridge)</h3>
+        <h4>
+          塞切尼鏈橋橫跨多瑙河，連接布達與佩斯兩岸，是布達佩斯最具代表性的地標，也是多瑙河上第一座永久性橋梁。橋梁由英國工程師威廉·蒂爾尼·克拉克設計，亞當·克拉克監造，於 1849 年正式通車，以倡議興建的政治家塞切尼·伊什特萬伯爵命名，被譽為「匈牙利最偉大的人」的代表工程。
+        </h4>
+        <h4>鏈橋全長約 375 公尺，採懸鏈橋設計，兩端設有威武的石獅雕像守護橋頭，象徵力量與榮耀。二戰期間橋梁遭炸毀，戰後依原貌重建，並於 1949 年重新開放，每當夜晚燈光亮起，鏈橋與布達城堡、國會大廈相互輝映，展現「多瑙河明珠」的迷人風采。</h4>
+        <div style="text-align: center">
+          <img src="匈牙利照片/布達佩斯/BD18.jpg" style="width: 90%; max-width: 100vw; height: auto; margin: 0.5rem;" />
+        </div>
+        <br /><br /><br />
+        <h3>布達城堡 (Buda Castle) </h3>
+        <h4>
+          布達城堡位於多瑙河西岸的城堡山上，是匈牙利最具代表性的歷史地標，也是世界文化遺產。城堡最初建於 13 世紀，歷經蒙古入侵、鄂圖曼帝國統治、哈布斯堡王朝重建及二戰破壞，多次修建後形成今日的規模，見證了匈牙利數百年的歷史變遷。布達城堡融合巴洛克與新古典主義建築風格，曾為匈牙利王室宮殿，如今設有布達佩斯歷史博物館、匈牙利國家美術館及塞切尼國家圖書館等文化機構。登上城堡山可俯瞰多瑙河、國會大廈、鏈橋及佩斯市區美景，尤其夜晚燈火璀璨景色迷人。
+        </h4>
+        <div style="text-align: center">
+          <img src="匈牙利照片/布達佩斯/BD19.jpg" style="width: 90%; max-width: 100vw; height: auto; margin: 0.5rem;" />
+          <img src="匈牙利照片/布達佩斯/BD20.jpg" style="width: 90%; max-width: 100vw; height: auto; margin: 0.5rem;" />
+          <img src="匈牙利照片/布達佩斯/BD21.jpg" style="width: 70%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+        </div>
+        <br /><br /><br />
+        <h3>馬加什教堂 (Matthias Church)</h3>
+        <h4>
+          馬加什教堂位於城堡山上的聖三一廣場，是匈牙利最具代表性的教堂，正式名稱為「聖母升天教堂」。教堂始建於 13 世紀，歷經多次擴建與重建，融合哥德式建築風格與 19 世紀修復特色，因 15 世紀國王馬加什一世曾在此舉行婚禮而得名，歷代匈牙利國王也曾在此加冕，具有重要的宗教與歷史地位。
+        </h4>
+        <h4>教堂最引人注目的是色彩鮮豔的佐爾奈陶瓷瓦屋頂、精緻的尖塔及華麗的彩繪玻璃，內部壁畫與裝飾工藝細緻典雅，展現匈牙利藝術之美。鄂圖曼帝國統治期間，教堂一度改為清真寺，之後重新恢復天主教用途，與鄰近的漁人堡共同構成城堡山最經典的景觀。</h4>
+        <div style="text-align: center">
+          <img src="匈牙利照片/布達佩斯/BD22.jpg" style="width: 70%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+          <img src="匈牙利照片/布達佩斯/BD23.jpg" style="width: 70%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+          <img src="匈牙利照片/布達佩斯/BD24.jpg" style="width: 90%; max-width: 100vw; height: auto; margin: 0.5rem;" />
+          <img src="匈牙利照片/布達佩斯/BD25.jpg" style="width: 70%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+          <img src="匈牙利照片/布達佩斯/BD26.jpg" style="width: 70%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+          <img src="匈牙利照片/布達佩斯/BD27.jpg" style="width: 70%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+        </div>
+        <br /><br /><br />
+        <h3>漁人堡 (Fisherman's Bastion) </h3>
+        <h4>
+          漁人堡位於城堡山上，毗鄰馬加什教堂，是俯瞰多瑙河與佩斯市區的最佳觀景點。建築建於 1895 年至 1902 年間，由建築師弗里傑什·舒萊克設計，採新羅馬式與新哥德式風格，擁有潔白的拱廊、迴廊與七座尖塔，造型宛如童話城堡。七座尖塔象徵 896 年建立匈牙利王國的七個馬札爾部落，而「漁人堡」之名則源於中世紀時，附近的漁夫行會曾負責守衛這段城牆。漁人堡本身並非軍事堡壘，而是為紀念匈牙利建國一千週年所興建的觀景建築。
+        </h4>
+        <h4>站在城堡平台上，可將國會大廈、鏈橋、多瑙河及布達佩斯全景盡收眼底，<b>尤其日落與夜景更是迷人</b>，是拍照與欣賞世界文化遺產景觀的必訪景點。</h4>
+        <div style="text-align: center">
+          <img src="匈牙利照片/布達佩斯/BD28.jpg" style="width: 90%; max-width: 100vw; height: auto; margin: 0.5rem;" />
+          <img src="匈牙利照片/布達佩斯/BD29.jpg" style="width: 70%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+          <img src="匈牙利照片/布達佩斯/BD30.jpg" style="width: 90%; max-width: 100vw; height: auto; margin: 0.5rem;" />
+        </div>
+        <br /><br /><br />
+        <h3>塞切尼溫泉浴場 (Széchenyi Thermal Bath)</h3>
+        <h4>
+          塞切尼溫泉浴場位於布達佩斯市立公園內，是歐洲最大的溫泉浴場，也是匈牙利最具代表性的溫泉設施。浴場建於 1913 年，採新巴洛克式建築風格，外觀典雅華麗充分展現19至20世紀初歐洲建築特色。布達佩斯因地熱資源豐富，素有「溫泉之都」美譽，浴場擁有18座室內外溫泉池、游泳池及三溫暖設施，泉水富含鈣、鎂、硫酸鹽等礦物質，據說有助於舒緩關節與肌肉不適，因此深受當地居民及遊客喜愛。冬季時，露天溫泉池水氣繚繞，許多人一邊泡湯、一邊下西洋棋，形成布達佩斯著名景象。
+        </h4>
+        <div style="text-align: center">
+          <img src="匈牙利照片/布達佩斯/BD31.jpg" style="width: 90%; max-width: 100vw; height: auto; margin: 0.5rem;" />
+        </div>
+        <br /><br /><br />
+        <h3>沃伊達奇城堡 (Vajdahunyad Castle) </h3>
+        <h4>
+          沃伊達奇城堡位於布達佩斯市立公園內，是為慶祝匈牙利建國一千週年而於 1896 年興建的著名建築。最初為木造展覽建築，後於 1904 年至 1908 年間改建為石造城堡。建築由建築師伊格納茨·阿爾帕爾設計，融合羅馬式、哥德式、文藝復興及巴洛克等多種風格，展現匈牙利建築藝術的演變。城堡外觀仿自羅馬尼亞特蘭西瓦尼亞的胡尼亞迪城堡 (Vajdahunyad Castle)因此得名。現今城堡內設有匈牙利農業博物館，展示農業、林業、狩獵及畜牧等相關文物，是歐洲歷史悠久的農業博物館，城堡四周環繞湖泊與綠地，景色優美，夏季可划船、冬季則化身為溜冰場。
+        </h4>
+        <div style="text-align: center">
+          <img src="匈牙利照片/布達佩斯/BD32.jpg" style="width: 90%; max-width: 100vw; height: auto; margin: 0.5rem;" />
+          <img src="匈牙利照片/布達佩斯/BD33.jpg" style="width: 70%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+          <img src="匈牙利照片/布達佩斯/BD34.jpg" style="width: 70%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+        </div>
+        <br /><br /><br />
+        <h3>英雄廣場 (Heroes' Square)</h3>
+        <h4>
+          英雄廣場位於布達佩斯市立公園入口，是匈牙利最具代表性的廣場，也是聯合國教科文組織世界文化遺產。廣場為紀念匈牙利建國一千週年而於 1896 年興建，中央矗立高 36 公尺的千禧紀念碑，頂端為手持聖冠與十字架的大天使加百列雕像，象徵匈牙利建國與基督教信仰。紀念碑基座環繞著七位率領馬札爾民族進入喀爾巴阡盆地的部落首領騎馬雕像，兩側半圓柱廊則陳列匈牙利歷代國王、民族英雄及重要歷史人物雕像，展現國家的發展歷程。廣場兩旁分別為美術博物館與藝術宮，是布達佩斯重要的文化中心。
+        </h4>
+        <div style="text-align: center">
+          <img src="匈牙利照片/布達佩斯/BD35.jpg" style="width: 90%; max-width: 100vw; height: auto; margin: 0.5rem;" />
+          <img src="匈牙利照片/布達佩斯/BD36.jpg" style="width: 70%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+          <img src="匈牙利照片/布達佩斯/BD37.jpg" style="width: 70%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+        </div>
+        <br /><br /><br />
+        <h3>匈牙利國家歌劇院 (Hungarian State Opera House) </h3>
+        <h4>
+          匈牙利國家歌劇院位於安德拉什大道，是匈牙利最重要的表演藝術殿堂，由著名建築師米克洛什伊布爾 (Miklós Ybl) 設計，採新文藝復興風格建造，於 1884 年正式啟用，歌劇院外觀典雅莊重，立面裝飾著多位世界知名作曲家的雕像；內部則以金箔、壁畫、大理石與水晶吊燈精心裝飾，展現 19 世紀歐洲宮廷建築的華麗風格。劇場約可容納 1200 名觀眾，匈牙利著名作曲家李斯特與艾凱爾都曾在此演出或指揮，留下珍貴的音樂文化資產。
+        </h4>
+        <div style="text-align: center">
+          <img src="匈牙利照片/布達佩斯/BD38.jpg" style="width: 90%; max-width: 100vw; height: auto; margin: 0.5rem;" />
+          <img src="匈牙利照片/布達佩斯/BD39.jpg" style="width: 70%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+        </div>
+        <br /><br /><br />
+        <h3>安德拉什大道 (Andrássy Avenue) </h3>
+        <h4>
+          安德拉什大道連接市中心與英雄廣場，全長約 2.3 公里，是城市最具代表性的林蔭大道，也是聯合國教科文組織世界文化遺產。大道於 1872 年開始興建，以匈牙利政治家安德拉什·久洛伯爵命名，融合新文藝復興風格建築與寬闊街景，被譽為「布達佩斯的香榭麗舍大道」。大道兩旁林立典雅豪宅、精品商店、咖啡館及文化機構，其中最著名的景點包括匈牙利國家歌劇院、恐怖之家博物館及李斯特音樂學院。地下還運行著歐洲大陸最古老的地鐵之一，1896 年啟用的布達佩斯地鐵 1 號線，同樣列入世界文化遺產。
+        </h4>
+        <div style="text-align: center">
+          <img src="匈牙利照片/布達佩斯/BD40.jpg" style="width: 70%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+          <img src="匈牙利照片/布達佩斯/BD41.jpg" style="width: 70%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+        </div>
+        <br /><br /><br />
+        <h3>戈茲杜庭院 (Gozsdu Udvar)</h3>
+        <h4>
+          戈茲杜庭院位於第七區猶太區中心，是一處結合歷史建築、餐飲、娛樂與購物的特色街區。這座建築群建於 1902 年，由建築師 Czigler Győző 設計，以七座相連庭院串聯六棟建築，原本作為住宅與商業空間使用，名稱來自羅馬尼亞裔匈牙利律師兼慈善家戈茲杜·馬諾 (Manó Gozsdu)。經整修活化後，Gozsdu Udvar 已成為布達佩斯最熱鬧的休閒場所，白天聚集咖啡館、特色餐廳、文創商店與藝廊，夜晚則搖身一變為酒吧與音樂表演聚集地，展現充滿活力的夜生活文化，每逢週末庭院內還會舉辦市集，販售古董、手工藝品及在地美食。
+        </h4>
+        <div style="text-align: center">
+          <img src="匈牙利照片/布達佩斯/BD42.jpg" style="width: 70%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+          <img src="匈牙利照片/布達佩斯/BD43.jpg" style="width: 70%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+          <img src="匈牙利照片/布達佩斯/BD44.jpg" style="width: 70%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+          <img src="匈牙利照片/布達佩斯/BD45.jpg" style="width: 70%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+        </div>
+        <br /><br /><br />
+        <h3>蓋勒特山 (Gellért Hill)</h3>
+        <h4>
+          蓋勒特山位於多瑙河西岸，海拔約 235 公尺，是俯瞰城市全景的著名景點，也是聯合國教科文組織世界文化遺產的一部分。山名源自 11 世紀的聖蓋勒特主教，相傳他在傳教時遭異教徒推下山坡殉道，因此成為匈牙利重要的宗教與歷史象徵。山上綠樹成蔭步道完善，沿途可欣賞多瑙河、塞切尼鏈橋、匈牙利國會大廈及布達城堡等著名景觀。山頂設有城堡堡壘 (Citadella) 及高聳的自由女神像，兩者皆為布達佩斯的重要地標，每逢黃昏與夜晚，<b>登上蓋勒特山可飽覽城市燈火與河岸夜景</b>，被譽為欣賞布達佩斯全景的最佳地點。
+        </h4>
+        <div style="text-align: center">
+          <img src="匈牙利照片/布達佩斯/BD46.jpg" style="width: 70%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+          <img src="匈牙利照片/布達佩斯/BD47.jpg" style="width: 70%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+          <img src="匈牙利照片/布達佩斯/BD48.jpg" style="width: 90%; max-width: 100vw; height: auto; margin: 0.5rem;" />
+          <img src="匈牙利照片/布達佩斯/BD49.jpg" style="width: 90%; max-width: 100vw; height: auto; margin: 0.5rem;" />
+          <img src="匈牙利照片/布達佩斯/BD50.jpg" style="width: 90%; max-width: 100vw; height: auto; margin: 0.5rem;" />
+          <img src="匈牙利照片/布達佩斯/BD51.jpg" style="width: 90%; max-width: 100vw; height: auto; margin: 0.5rem;" />
+          <img src="匈牙利照片/布達佩斯/BD52.jpg" style="width: 90%; max-width: 100vw; height: auto; margin: 0.5rem;" />
+          <img src="匈牙利照片/布達佩斯/BD53.jpg" style="width: 90%; max-width: 100vw; height: auto; margin: 0.5rem;" />
+          <img src="匈牙利照片/布達佩斯/BD54.jpg" style="width: 70%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+        </div>
+        <br /><br /><br />
+        <h2>布達佩斯近郊景點</h2>
+        <h3>埃斯泰爾戈姆聖殿 (Esztergom Basilica)</h3>
+        <h4>
+          埃斯泰爾戈姆聖殿位於匈牙利北部的埃斯泰爾戈姆市，毗鄰斯洛伐克，是匈牙利最大的教堂，也是天主教埃斯泰爾戈姆—布達佩斯總教區的主教座堂。聖殿建於 1822 年至 1869 年間，採新古典主義建築風格，中央圓頂高約 100 公尺雄偉壯觀，是匈牙利最具代表性的宗教建築。教堂內部收藏許多珍貴藝術品，其中主祭壇的大型祭壇畫是世界最大的單幅油畫，地下墓穴安葬多位匈牙利歷任樞機主教，也是重要的宗教聖地，作為匈牙利天主教的精神中心，埃斯泰爾戈姆聖殿見證國家的宗教發展。
+        </h4>
+        <h4>前往埃斯泰爾戈姆聖殿可搭乘地鐵到 Újpest-Városkapu 站後轉乘 Z72 路線城際火車到達底站後，轉乘埃斯泰爾戈姆城市中的公車抵達。</h4>
+        <div style="text-align: center">
+          <img src="匈牙利照片/布達佩斯/BD55.jpg" style="width: 90%; max-width: 100vw; height: auto; margin: 0.5rem;" />
+          <img src="匈牙利照片/布達佩斯/BD56.jpg" style="width: 90%; max-width: 100vw; height: auto; margin: 0.5rem;" />
+          <img src="匈牙利照片/布達佩斯/BD57.jpg" style="width: 90%; max-width: 100vw; height: auto; margin: 0.5rem;" />
+          <img src="匈牙利照片/布達佩斯/BD58.jpg" style="width: 70%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+        </div>
+        <br /><br /><br />
+        <h3>瑪麗亞瓦萊里亞橋 (Mária Valéria Bridge) </h3>
+        <h4>
+          瑪麗亞瓦萊里亞橋橫跨多瑙河，連接匈牙利埃斯泰爾戈姆與斯洛伐克什圖羅沃，是兩國之間重要的跨國橋梁。大橋於 1895 年落成，以奧匈帝國皇帝法蘭茲約瑟夫一世的女兒瑪麗亞・瓦萊里亞公主命名。橋梁全長約 500 公尺，採鋼桁架結構，在當時是重要的交通與商貿通道。二戰期間大橋中央橋段於1944年遭炸毀，長達近 60 年兩岸無法直接通行，只能依靠渡輪往返。直到 2001 年，在匈牙利、斯洛伐克及歐盟共同合作下，大橋依原貌重建並重新開放，不僅恢復交通功能，也象徵兩國友誼與歐洲合作精神，站在橋上可遠眺雄偉的埃斯泰爾戈姆聖殿、多瑙河美景及兩岸風光。
+        </h4>
+        <div style="text-align: center">
+          <img src="匈牙利照片/布達佩斯/BD59.jpg" style="width: 90%; max-width: 100vw; height: auto; margin: 0.5rem;" />
+          <img src="匈牙利照片/布達佩斯/BD60.jpg" style="width: 90%; max-width: 100vw; height: auto; margin: 0.5rem;" />
+        </div>
+        <br /><br />
+        <h2>布達佩斯美食</h2>
+        <h3>Retro Lángos Budapest</h3>
+        <h4>
+          Retro Lángos Budapest 是布達佩斯知名的炸麵餅 (Lángos) 專賣店，以道地匈牙利街頭美食聞名，店內現點現炸，外皮酥脆、內層鬆軟，經典口味搭配蒜香、酸奶油與起司，也提供火腿、培根等多種創新配料。店面雖不大卻因價格實惠、出餐快速與美味口碑而經常大排長龍，是體驗匈牙利傳統小吃的首選，也是造訪布達佩斯不可錯過的美食名店。
+        </h4>
+        <div style="text-align: center">
+          <img src="匈牙利照片/布達佩斯/BD61.jpg" style="width: 70%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+        </div>
+        <br /><br /><br />
+        <h3>Százéves Restaurant</h3>
+        <h4>
+          Százéves Restaurant (百年餐廳) 創立於 1831 年，是匈牙利歷史最悠久的餐廳之一。餐廳保留古典歐洲裝潢與傳統酒窖氛圍，供應道地匈牙利料理，如燉牛肉湯、鵝肝、燉牛肉及吉普賽風味菜餚，用餐時可欣賞現場吉普賽音樂演奏，營造濃厚的匈牙利文化氣息。
+        </h4>
+        <div style="text-align: center">
+          <img src="匈牙利照片/布達佩斯/BD62.jpg" style="width: 70%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+        </div>
+        <br /><br /><br />
+        <h3>Café Gerbeaud</h3>
+        <h4>
+          Café Gerbeaud 位於沃洛斯馬蒂廣場，創立於 1858 年，是匈牙利最著名、歷史最悠久的咖啡館之一。店內以典雅的新古典風格裝潢聞名，供應精緻蛋糕、手工巧克力、咖啡及匈牙利傳統甜點，其中招牌的傑爾博蛋糕 (Gerbeaud Slice) 深受歡迎。百餘年來一直是文人雅士、藝術家與旅客聚會交流的場所，是體驗布達佩斯咖啡文化與歐洲優雅下午茶氛圍的經典名店。
+        </h4>
+        <div style="text-align: center">
+          <img src="匈牙利照片/布達佩斯/BD63.jpg" style="width: 70%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+          <img src="匈牙利照片/布達佩斯/BD64.jpg" style="width: 70%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+          <img src="匈牙利照片/布達佩斯/BD65.jpg" style="width: 70%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+        </div>
+        <br /><br /><br />
+        <h3>Ukrainian Courtyard</h3>
+        <h4>
+          Ukrainian Courtyard 位於第九區，是深受當地居民喜愛的烏克蘭料理餐廳，以道地家常風味和溫馨氛圍聞名，餐廳裝潢融入烏克蘭鄉村庭院元素，充滿傳統木質家具、陶器與民俗擺設，營造如同造訪當地家庭般的用餐體驗，招牌料理包括羅宋湯 (Borscht)、烏克蘭餃子(Varenyky)、燉肉及傳統甜點，份量充足且價格合理深受好評。
+        </h4>
+        <div style="text-align: center">
+          <img src="匈牙利照片/布達佩斯/BD66.jpg" style="width: 70%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+          <img src="匈牙利照片/布達佩斯/BD67.jpg" style="width: 70%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+          <img src="匈牙利照片/布達佩斯/BD68.jpg" style="width: 90%; max-width: 100vw; height: auto; margin: 0.5rem;" />
+          <img src="匈牙利照片/布達佩斯/BD69.jpg" style="width: 90%; max-width: 100vw; height: auto; margin: 0.5rem;" />
+          <img src="匈牙利照片/布達佩斯/BD70.jpg" style="width: 70%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+        </div>
+        <br /><br /><br />
+        <h3>紐約宮殿咖啡館 (New York Café)</h3>
+        <h4>
+          紐約宮殿咖啡館位於紐約宮殿飯店內，1894年開業，被譽為「世界最美咖啡館」，館內融合義大利文藝復興、巴洛克與洛可可風格，金碧輝煌的大理石圓柱、水晶吊燈、壁畫與鍍金裝飾，展現極致奢華，過去曾是文學家、藝術家與知識分子的聚會場所，如今提供咖啡、甜點及匈牙利特色料理，在典雅氛圍中感受布達佩斯百年咖啡文化與歷史魅力。
+        </h4>
+        <div style="text-align: center">
+          <img src="匈牙利照片/布達佩斯/BD71.jpg" style="width: 70%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+          <img src="匈牙利照片/布達佩斯/BD72.jpg" style="width: 70%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+          <img src="匈牙利照片/布達佩斯/BD73.jpg" style="width: 70%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+          <img src="匈牙利照片/布達佩斯/BD74.jpg" style="width: 70%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+        </div>
+        <br /><br /><br />
+        <h3>Klauzál Café & Restaurant</h3>
+        <h4>
+          Klauzál Café & Restaurant 位於第七區猶太區附近，是一家結合匈牙利傳統料理與現代歐洲風味的人氣餐廳，店內環境溫馨舒適，供應燉牛肉、鴨腿、炸豬排及季節特色料理，以食材新鮮、價格合理及親切服務廣受好評，是體驗在地美食、享受悠閒用餐氛圍的理想選擇。
+        </h4>
+        <div style="text-align: center">
+          <img src="匈牙利照片/布達佩斯/BD75.jpg" style="width: 70%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+        </div>
+        <br /><br /><br />
+        <h3>Frici Papa</h3>
+        <h4>
+          Frici Papa 是深受當地居民喜愛的傳統匈牙利餐廳，以平價、美味及份量十足聞名，餐廳供應多道經典家常菜，包括匈牙利燉牛肉、紅椒雞、炸豬排、香腸及各式湯品，搭配每日特餐，深受上班族歡迎。店內裝潢樸實溫馨，充滿在地家庭餐館氛圍，讓顧客以實惠價格品嚐道地匈牙利風味，是體驗布達佩斯日常飲食文化的人氣餐廳。
+        </h4>
+        <div style="text-align: center">
+          <img src="匈牙利照片/布達佩斯/BD76.jpg" style="width: 70%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+          <img src="匈牙利照片/布達佩斯/BD77.jpg" style="width: 70%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+        </div>
+        <br /><br /><br />
+        <h3>Pizza Manufaktúra</h3>
+        <h4>
+          Pizza Manufaktúra 是布達佩斯頗受歡迎的手工披薩餐廳，以現點現做的義式薄餅披薩聞名。餐廳選用新鮮食材與長時間發酵麵糰，經高溫烘烤後，餅皮外酥內Q，搭配番茄、莫札瑞拉起司及各式肉類、蔬菜等豐富配料風味道地。店內環境簡約舒適，提供多種披薩、沙拉及飲品，兼具品質與合理價格，深受當地居民喜愛。
+        <div style="text-align: center">
+          <img src="匈牙利照片/布達佩斯/BD78.jpg" style="width: 70%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+        </div>
+        <br />
+      </div>
+      <div class="destination-sidebar">
+        <div class="sidebar-image-container">
+          <img src="側邊欄自我介紹.jpg" />
+        </div>
+        <h5>
+          Hi!
+          我是Tommy，我熱愛旅遊也喜歡藉由影像紀錄旅程中的點點滴滴，透過文字將我在旅途中的所見所聞分享給大家。旅行對我而言不只是吃吃喝喝，而是能在行萬里路間感受世界的脈動，體驗不同的文化，希望藉由我的分享能讓大家看到更多世界的美好。
+        </h5>
+        <br />
+        <h5>
+          想更了解我或與我聯絡:
+          <a
+            href="https://www.instagram.com/tommy_techvoyage/"
+            target="_blank"
+            style="color: inherit; text-decoration: underline"
+          >
+            <b>Instagram</b>
+          </a>
+        </h5>
+        </div>
+      </div>
+    </div>
+    <div class="contact-section">
+      <div class="contact-item">
+        <h3>
+          想更了解我或與我聯絡:
+          <a
+            href="https://www.instagram.com/tommy_techvoyage/"
+            target="_blank"
+            style="color: inherit; text-decoration: underline"
+          >
+            Instagram
+          </a>
+        </h3>
+      </div>
+    </div>
+    <footer>
+      <h6>COPYRIGHT © 2025 Tommy 看世界 All rights reserved.</h6>
+    </footer>
+    <div id="menu-toggle"></div>
+    <div id="expandable-menu">
+      <div id="menu-content">
+        <h4>目錄</h4>
+        <ul id="menu-list"></ul>
+      </div>
+    </div>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const menu = document.getElementById("expandable-menu");
+        const toggle = document.getElementById("menu-toggle");
+        const menuList = document.getElementById("menu-list");
+        const destinationMain = document.querySelector(".destination-main");
+
+        // 點擊按鈕切換目錄狀態
+        toggle.addEventListener("click", () => {
+          menu.classList.toggle("open");
+
+          const menuWidth = menu.offsetWidth; // 獲取目前展開的目錄寬度
+
+          if (menu.classList.contains("open")) {
+            // 讓按鈕向左平移與 menu 一樣的寬度
+            toggle.style.transform = `translateY(-50%) translateX(-${menuWidth}px)`;
+          } else {
+            // 收回原位
+            toggle.style.transform = `translateY(-50%) translateX(0)`;
+          }
+        });
+
+        window.addEventListener("load", () => {
+          if (menu.classList.contains("open")) {
+            const menuWidth = menu.offsetWidth;
+            toggle.style.transform = `translateY(-50%) translateX(-${menuWidth}px)`;
+          }
+        });
+
+        // 從 destination-main 區域提取 h2 和 h3，動態生成目錄
+        const headings = destinationMain.querySelectorAll("h2, h3");
+        headings.forEach((heading, index) => {
+          // 確保每個 h2 和 h3 都有唯一的 id
+          if (!heading.id) {
+            heading.id = `heading-${index}`;
+          }
+
+          const listItem = document.createElement("li");
+          const link = document.createElement("a");
+          link.textContent = heading.textContent;
+          link.href = `#${heading.id}`;
+          listItem.appendChild(link);
+
+          // 為 h3 添加縮排樣式
+          if (heading.tagName.toLowerCase() === "h3") {
+            listItem.classList.add("sub-item");
+          }
+
+          menuList.appendChild(listItem);
+        });
+
+        function adjustMenuPosition() {
+          const nav = document.querySelector("nav");
+          const menu = document.getElementById("expandable-menu");
+      
+          if (nav && menu) {
+            const navHeight = nav.offsetHeight;
+      
+            // 設定 menu 的 top 與高度
+            menu.style.top = `${navHeight}px`;
+            menu.style.height = `calc(100vh - ${navHeight}px)`;
+          }
+        }
+      
+        // 載入與尺寸變化時調整
+        window.addEventListener("DOMContentLoaded", adjustMenuPosition);
+        window.addEventListener("resize", adjustMenuPosition);
+        
+        // 滾動至目標位置並加上 75px 偏移
+        menuList.addEventListener("click", (event) => {
+          if (event.target.tagName === "A") {
+            event.preventDefault(); // 阻止預設行為
+
+            const targetId = event.target.getAttribute("href").substring(1); // 取得目標 ID
+            const targetElement = document.getElementById(targetId);
+
+            if (targetElement) {
+              // 計算目標元素的位置並加上 75px 偏移
+              const targetPosition =
+                targetElement.getBoundingClientRect().top + window.scrollY;
+              const offset = 75; // 偏移的距離
+              window.scrollTo({
+                top: targetPosition - offset,
+                behavior: "smooth", // 平滑滾動
+              });
+            }
+          }
+        });
+        // 手機 Safari 相容：點擊展開 dropdown
+        const dropdownToggles = document.querySelectorAll(".dropdown-toggle");
+
+        dropdownToggles.forEach((toggle) => {
+          toggle.addEventListener("click", function (e) {
+            e.stopPropagation(); // 防止冒泡，避免點擊外層時也觸發關閉
+            const dropdown = this.nextElementSibling;
+            const isVisible = dropdown.style.display === "block";
+            
+            // 關閉所有其他 dropdown（可選）
+            document.querySelectorAll(".dropdown-content").forEach((menu) => {
+              menu.style.display = "none";
+            });
+
+            // 切換目前這一個 dropdown
+            dropdown.style.display = isVisible ? "none" : "block";
+          });
+        });
+
+        // 點擊其他地方時關閉 dropdown
+        window.addEventListener("click", function () {
+          document.querySelectorAll(".dropdown-content").forEach((menu) => {
+            menu.style.display = "none";
+          });
+        });
+      });
+    </script>
+  </body>
+</html>
