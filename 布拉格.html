@@ -1,0 +1,971 @@
+<!DOCTYPE html>
+<html lang="zh-hant-TW">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="曹旅瀚 Tommy" />
+    <meta name="description" content="探索布拉格的藝術與陽光魅力！從聖斯蒂芬大教堂、布拉格城堡，到伏爾塔瓦河畔與道地捷克美食，體驗最具魅力的捷克城市。" />
+    <meta name="keywords" content="布拉格旅遊, 聖斯蒂芬大教堂, 布拉格城堡, 伏爾塔瓦河, 捷克自由行, 布拉格景點, 布拉格美食, 捷克城市介紹" />
+    <title>Tommy 看世界 - 布拉格</title>
+    <link rel="icon" href="網頁縮圖.ico" />
+    <style>
+      body {
+        font-family: Calibri, Arial, sans-serif; /* 首選 Calibri，次選 Arial */
+        margin: 0;
+        overflow-x: hidden; /* 禁止水平滾動 */
+        background-color: #f4f4f9;
+        color: #333;
+      }
+
+      h1 {
+        font-size: 40px;
+        font-weight: bold;
+      }
+
+      h2 {
+        font-size: 32px;
+        font-weight: bold;
+        color: #2a90a7;
+        display: inline-block;
+        background-color: #cee5e8;
+      }
+
+      h3 {
+        font-size: 26px;
+        margin: 0 0 1rem;
+        font-weight: bold;
+        text-decoration: underline;
+      }
+
+      h4 {
+        font-size: 18px;
+        font-weight: normal;
+        line-height: 1.8;
+      }
+
+      h5 {
+        font-size: 16px;
+        font-weight: normal;
+        margin: 0;
+      }
+
+      h6 {
+        font-size: 10px;
+        color: #fff;
+        margin: 0;
+        text-align: center;
+        line-height: 50px; /* 高度對齊 */
+      }
+
+      nav {
+        background-color: #78bcc4;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;                     /* 讓 nav 寬度隨螢幕自適應 */
+        padding: 0.8rem 5vw;               /* 左右 padding 用 5% 寬度 */
+        box-sizing: border-box;         /* 確保 padding 不會影響寬度總長 */
+        position: fixed;
+        top: 0;
+        z-index: 1000;
+      }
+
+      .nav-left .logo img {
+        height: 5vw; /* 高度為螢幕寬度的 5% */
+        transform: translateX(-2vw); /* 向左移動 2% 寬度 */
+        max-width: 100%; /* 確保不會超過容器 */
+        height: auto; /* 保持圖片比例（建議與 max-height 搭配） */
+        max-height: 3rem;
+      }
+
+      .nav-right {
+        display: flex;
+        align-items: center;
+        margin-left: auto; /* 推到右側 */
+        padding-left: 5%;   /* 內部元素間距，彈性設計 */
+      }
+
+      nav a {
+        color: #eff5f5;
+        text-decoration: none;
+        padding: 1vh 1vw;
+        margin: 0 1vw;
+        transition: transform 0.3s;
+      }
+
+      nav a:hover {
+        transform: translateY(-0.5vh); /* 根據視窗高度調整 */
+      }
+
+      .dropdown {
+        position: relative;
+        display: inline-block;
+      }
+
+      .dropdown-content {
+        width: 100%; /* 佔滿父層寬度 */
+        max-width: 20vw; /* 限制最大寬度 */
+        display: none;
+        position: absolute;
+        background-color: #78bcc4;
+        min-width: 10em; /* 取代 160px，以字體大小作為比例單位 */
+        border-radius: 0.25em;
+        box-shadow: 0 0.5em 1em rgba(0, 0, 0, 0.2); /* 改為相對單位 */
+        padding: 0.2rem 0;
+        z-index: 999;
+      }
+
+      .dropdown-content a {
+        color: #eff5f5;
+        display: block;
+        transition: transform 0.3s;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.3); /* 更淡配色、柔和過渡 */
+        padding: 0.6em 1em;
+        font-size: 1em;
+      }
+
+      .dropdown-content a:last-child {
+        border-bottom: none;
+      }
+
+      .dropdown-content a:hover {
+        transform: translateY(-0.25em); /* 改為相對單位 */
+      }
+
+      .intro-section {
+        background-color: #eff5f5;
+        display: flex;
+        flex-wrap: wrap; /* 確保在小螢幕可換行 */
+        padding: 2rem 5%;
+        margin-top: 4em; /* 根據導航列高度調整 */
+      }
+
+      .intro-section h4 {
+        max-width: 85%; /* 改為相對單位，避免固定寬度限制 */
+        line-height: 1.8;
+      }
+
+      .intro-section .left {
+        width: 60%;
+        padding-right: 1%;
+      }
+
+      .intro-section .right {
+        width: 39%;
+      }
+
+      .destination-section {
+        display: flex;
+        flex-wrap: wrap;               /* 小螢幕時允許換行 */
+        padding: 1rem 5%; /* 左右內間距為螢幕的10% */
+        background-color: white;
+      }
+
+      .destination-main {
+        width: 72%;                    /* 主要內容佔 72%，略縮以保留間距 */
+        margin-right: 3%;              /* 與 sidebar 間保留間距（約為 3%） */
+        box-sizing: border-box;
+      }
+
+      .destination-sidebar {
+        width: 25%;                    /* 側邊欄佔 25% */
+        padding-left: 2%;             /* 相對內邊距 */
+        margin-top: 2rem;
+        box-sizing: border-box;
+      }
+
+      .sidebar-image-container {
+        margin-bottom: 1rem;
+        text-align: center; /* 置中圖片 */
+      }
+
+      .sidebar-image-container img {
+        width: 90%;         /* 圖片寬度為容器寬度的 90% */
+        height: auto;       /* 高度自動，保持比例 */
+        max-height: 60vh;   /* 避免圖片過高，佔螢幕最大 60% 高 */
+        object-fit: cover;  /* 裁切處理長圖 */
+      }
+
+      .two-vertical-images {
+        display: flex;
+        justify-content: space-between;
+        gap: 4%; /* 使用百分比間距更彈性 */
+        margin-top: 2rem;
+        margin-bottom: 2rem;
+        flex-wrap: wrap; /* 若畫面太小，允許換行 */
+      }
+
+      .two-vertical-images img {
+        width: 48%; /* 每張圖片約佔一半（加上 gap 剛好 100%） */
+        height: auto; /* 保持原比例 */
+        object-fit: cover;
+        display: block;
+        margin: 0 auto;
+      }
+
+      .recommendation-section {
+        margin-top: 3vh; /* 與上方文字的間距 */
+        text-align: center;
+        position: sticky;
+        top: 80px; /* 空出導覽列的高度，確保推薦區不被覆蓋 */
+        z-index: 10; /* 提高層級，避免被其他內容遮蓋 */
+        padding: 0 5%;
+      }
+
+      .recommendation-section h3 {
+        font-size: 1.125rem;
+        font-weight: bold;
+        margin-bottom: 1vh; /* 與按鈕區的距離 */
+      }
+
+      .recommendation-buttons {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 0.5em; /* 按鈕之間的間距 */
+      }
+
+      .recommendation-buttons button {
+        padding: 0.5em 1em;
+        font-size: 0.875rem;
+        color: white;
+        background-color: #78bcc4;
+        border: none;
+        border-radius: 0.25rem;
+        transition: transform 0.3s;
+        font-family: Arial, sans-serif;
+      }
+
+      .recommendation-buttons button:hover {
+        transform: translateY(-3px);
+      }
+
+      .contact-section {
+        padding: 4vh 8vw; /* 上下與左右間距 */
+        background-color: #eff5f5; /* 淺灰背景 */
+        text-align: center; /* 確保內容置中對齊 */
+      }
+
+      .contact-item h3 {
+        font-size: 1.125rem; /* 調整標題字體大小 */
+        margin: 0; /* 移除多餘的間距 */
+        text-decoration: none; /* 移除底線 */
+      }
+
+      footer {
+        background-color: #000;
+        color: white;
+        height: 3vh; /* 使用相對單位，高度占螢幕高度的 3% */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 1.5rem; /* 使用相對字體大小 */
+        padding: 0.5rem 0; /* 確保小螢幕時內容不擠壓 */
+      }
+
+      #expandable-menu {
+        position: fixed; 
+        right: 0;
+        width: 26vw; /* 目錄寬度與 sidebar 齊寬 */
+        max-width: 90%; /* 避免在小螢幕太寬 */
+        transform: translateX(100%); /* 初始狀態：隱藏在右側 */
+        transition: transform 0.3s ease;
+        background-color: #f4f4f9; /* 與網站背景一致 */
+        z-index: 1000;
+        box-sizing: border-box;
+      }
+
+      /* 收闔按鈕 */
+      #menu-toggle {
+        position: fixed;
+        top: 45%;
+        right: 0; /* 永遠貼在右側 */
+        transform: translateY(-50%) translateX(0);
+        width: 2.5em; /* 增大按鈕寬度 */
+        height: 5em; /* 增大按鈕高度 */
+        background-color: #78bcc4;
+        color: white;
+        border-radius: 0.4em 0 0 0.4em;
+        display: flex;
+        justify-content: center; /* 水平居中 */
+        align-items: center; /* 垂直居中 */
+        z-index: 2000; /* 要比 expandable-menu 更高，避免被蓋住 */
+        cursor: pointer;
+        box-shadow: -0.1em 0 0.3em rgba(0,0,0,0.1);
+        transition: transform 0.3s ease; /* 平滑移動 */
+      }
+
+      #menu-toggle::after {
+        content: "目錄"; /* 在按鈕內顯示 "目錄" */
+        font-size: 1rem;
+        color: white; /* 設定字體顏色為白色 */
+        writing-mode: vertical-rl; /* 使文字垂直排列 */
+      }
+
+      #menu-toggle:hover {
+        background-color: #78bcc4;
+      }
+
+      /* 目錄內容 */
+      #menu-content {
+        padding: 0.5rem 5%;
+        overflow-y: auto;
+        height: 100%;
+        box-sizing: border-box;
+      }
+
+      #menu-content h4 {
+        font-weight: bold;
+        margin-top: 0;
+        font-size: 1.2rem;
+      }
+
+      #menu-list {
+        list-style: none;
+        padding: 0;
+      }
+
+      #menu-list li {
+        margin-bottom: 1vh;
+      }
+
+      #menu-list a {
+        color: #2a90a7;
+        text-decoration: none;
+        transition: color 0.3s;
+        font-size: 1rem; /* 使用相對字體大小 */
+      }
+
+      #menu-list a:hover {
+        color: #78bcc4;
+      }
+
+      #menu-list .sub-item {
+        margin-left: 8%; /* 調整縮排距離 */
+        font-size: 0.9rem; /* 可選：調整子項目字體大小 */
+      }
+
+      /* 目錄展開狀態 */
+      #expandable-menu.open {
+        transform: translateX(0);
+      }
+
+       /* === 響應式調整：針對手機與小螢幕設備 === */
+      @media (max-width: 768px) {
+        nav {
+          flex-wrap: wrap;
+          padding: 0.8rem 5vw;
+        }
+      
+        .nav-right {
+          display: flex;
+          flex-wrap: wrap;        /* ⭐ 核心 */
+          justify-content: flex-end;
+          width: 100%;
+          gap: 0.4rem;
+          margin-top: 0.3rem;
+        }
+      
+        nav a {
+          white-space: normal;    /* ⭐ 允許換行 */
+          padding: 0.4rem 0.5rem;
+          font-size: 0.85rem;
+        }
+
+        .nav-dropdown {
+          width: 60%; /* 或者用 max-content, fit-content 看需求 */
+          font-size: 0.85rem; /* 調整字體大小和導覽列一致 */
+          padding: 0.5rem;
+        }
+      
+        .nav-dropdown a {
+          font-size: inherit; /* 確保跟 .nav-dropdown 一樣大 */
+          padding: 0.5rem 1rem;
+          white-space: normal; /* 可選：讓字在必要時換行 */
+        }
+
+        .dropdown-content {
+          width: 12vw;
+          min-width: 8em; /* 保證至少能顯示幾個字 */
+          max-width: none;
+        }
+
+        .dropdown-content a {
+          font-size: 0.85rem;
+        }
+        
+        .intro-section {
+          flex-direction: column;
+          padding: 8%;
+          padding-top: calc(8% + 6rem); /* ⭐ 關鍵：讓位給 nav */
+        }
+      
+        .intro-section .left,
+        .intro-section .right {
+          width: 100%;
+          padding: 0;
+          flex: 1 1 100%;
+        }
+      
+        .intro-section .right {
+          margin-top: 1.5rem;
+          display: flex;
+          justify-content: center;
+        }
+      
+        .intro-section h4 {
+          max-width: 100%;
+          font-size: 1rem;
+        }
+
+        .destination-grid {
+          flex-direction: column;
+          gap: 1rem;
+        }
+
+        .destination-section h4 {
+          font-size: 1rem;
+        }
+
+        .destination-item {
+          max-width: 100%;
+          width: 100%;
+        }
+
+        .destination-item.a_role_with_2 {
+          position: static;
+          left: auto;
+        }
+
+        .destination-main,
+        .destination-sidebar {
+          width: 100%;
+          margin: 0;
+          padding: 0;
+        }
+
+        .destination-sidebar {
+          margin-top: 2rem;
+        }
+
+        .recommendation-buttons button {
+          width: 100%; /* 小螢幕按鈕全寬排列 */
+        }
+
+        .contact-section {
+          padding: 3vh 5vw;
+        }
+
+        .contact-item h3 {
+          font-size: 1rem;
+        }
+
+        /* 目錄區寬度改為螢幕寬度的40% */
+        #expandable-menu {
+          width: 40vw !important; /* 用vw方便響應螢幕寬度 */
+          max-width: 90%; /* 保留原本max-width避免太寬 */
+        }
+      
+        #expandable-menu,
+        #expandable-menu * {
+          font-size: 85% !important;
+        }
+              
+        #menu-toggle {
+          width: 75%;
+          max-width: 1.875em;
+          min-width: 1.875em;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <div class="nav-left">
+        <div class="logo">
+          <a href="首頁.html">
+            <img src="網站Logo.png" alt="網站 Logo" />
+          </a>
+        </div>
+      </div>
+      <div class="nav-right">
+        <a href="首頁.html">關於我</a>
+        <div class="dropdown">
+          <a class="dropdown-toggle">亞洲旅遊</a>
+          <div class="dropdown-content">
+            <a href="中國.html">中國</a>
+            <a href="日本.html">日本</a>
+            <a href="新加坡.html">新加坡</a>
+            <a href="馬來西亞.html">馬來西亞</a>
+            <a href="泰國.html">泰國</a>
+            <a href="印尼.html">印尼</a>
+            <a href="越南.html">越南</a>
+          </div>
+        </div>
+        <div class="dropdown">
+          <a class="dropdown-toggle">歐洲旅遊</a>
+          <div class="dropdown-content">
+            <a href="英國.html">英國</a>
+            <a href="法國.html">法國</a>
+            <a href="德國.html">德國</a>
+            <a href="荷蘭.html">荷蘭</a>
+            <a href="比利時.html">比利時</a>
+            <a href="盧森堡.html">盧森堡</a>
+            <a href="瑞士.html">瑞士</a>
+            <a href="摩納哥.html">摩納哥</a>
+            <a href="西班牙.html">西班牙</a>
+            <a href="葡萄牙.html">葡萄牙</a>
+            <a href="安道爾.html">安道爾</a>
+            <a href="丹麥.html">丹麥</a>
+            <a href="瑞典.html">瑞典</a>
+            <a href="波蘭.html">波蘭</a>
+            <a href="匈牙利.html">匈牙利</a>
+            <a href="捷克.html">捷克</a>
+            <a href="奧地利.html">奧地利</a>
+          </div>
+        </div>
+        <div class="dropdown">
+          <a class="dropdown-toggle">美洲旅遊</a>
+          <div class="dropdown-content">
+            <a href="美國.html">美國</a>
+            <a href="加拿大.html">加拿大</a>
+          </div>
+        </div>
+        <div class="dropdown">
+          <a class="dropdown-toggle">大洋洲旅遊</a>
+          <div class="dropdown-content">
+            <a href="澳洲.html">澳洲</a>
+          </div>
+        </div>
+        <div class="dropdown">
+          <a class="dropdown-toggle">非洲旅遊</a>
+          <div class="dropdown-content">
+            <a href="南非.html">南非</a>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <div class="intro-section">
+      <div class="left">
+        <h1>Tommy 在布拉格</h1>
+        <h4>
+          <b>布拉格 (Prague) </b>是捷克共和國首都，坐落於伏爾塔瓦河兩岸，擁有一千多年歷史，曾是波希米亞王國、神聖羅馬帝國及哈布斯堡王朝的重要政治與文化中心。14世紀查理四世統治時期，布拉格進入黃金時代，興建查理大橋、查理大學等重要建築，奠定今日城市風貌。
+        </h4>
+        <h4>20 世紀布拉格經歷兩次世界大戰、納粹占領及共產政權統治。1989年「天鵝絨革命」和平推翻共產政權，於 1993 年獨立，由於戰爭破壞較少，市中心完整保存羅馬式、哥德式、文藝復興、巴洛克及新藝術風格建築，被列為聯合國教科文組織世界文化遺產。如今布拉格是中歐重要的文化、教育、經濟與旅遊中心，展現古典與現代交融的獨特魅力。</h4>
+      </div>
+      <div class="right">
+        <img src="捷克照片\捷克_布拉格\布拉格_介紹.jpg" style="width: 100%; height: auto; max-width: 100%;" />
+      </div>
+    </div>
+
+    <div class="destination-section">
+      <div class="destination-main">
+        <h2>布拉格交通</h2>
+        <h3>機場交通</h3>
+        <h4>
+          從布拉格瓦茨拉夫·哈維爾國際機場可以搭乘機場巴士 AE 線抵達市中心，車程約 50 分鐘，但票價較高；如果想要省錢可以先搭乘 59 號公車，再轉乘 1 號地鐵線進入城區。
+        </h4>
+        <h3>市區交通</h3>
+        <h4>
+          遊覽布拉格除了步行外，也可以乘坐地鐵及地面電車出行，但基本上四通八達的地面電車就可以抵達全部的景點了，我自己是都沒有搭到地鐵，推薦可以買兩日或三日票。
+        </h4>
+        <div style="text-align: center">
+          <img src="捷克照片\捷克_布拉格\布拉格_交通1.png" style="width: 90%; max-width: 100vw; height: auto;" />
+          <img src="捷克照片\捷克_布拉格\布拉格_交通2.jpg" style="width: 70%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+        </div>
+        <br /><br />
+        <h2>布拉格住宿</h2>
+        <h4>
+          布拉格選擇住宿可以用價格與舒適度來考量，由於市中心有非常密集的路面電車路線，所以不一定需要住在非常核心的地區，推薦可以選擇城市南邊的區域，有比較多經濟實惠的選項。
+        </h4>
+        <div style="text-align: center">
+          <img src="捷克照片\捷克_布拉格\布拉格_住宿.png" style="width: 90%; max-width: 100vw; height: auto;" />
+        </div>
+        <br /><br />
+        <h2>布拉格景點</h2>
+        <h3>布拉格城堡 (Prague Castle) </h3>
+        <h4>
+          布拉格城堡坐落於伏爾塔瓦河西岸山丘上，始建於西元 880 年，是捷克最重要的歷史地標，占地約 7 萬平方公尺。千餘年來一直是波希米亞國王、神聖羅馬帝國皇帝、捷克斯洛伐克總統及現今捷克共和國總統的官邸，見證了捷克的政治與歷史發展。城堡內匯集多種建築風格，包括羅馬式、哥德式、文藝復興及巴洛克式建築，登上城堡廣場，可俯瞰伏爾塔瓦河、查理大橋及布拉格舊城區的紅瓦屋頂美景。
+        </h4>
+        <h4>由於城堡在山丘上，因此我推薦先搭乘路面電車 Pražský hrad 站走去城堡後門，如此可以省去爬樓梯上山的辛苦路段，讓整個旅程更輕鬆。</h4>
+        <div style="text-align: center">
+          <img src="捷克照片/捷克_布拉格/PG1.jpg" style="width: 90%; max-width: 100vw; height: auto; margin: 0.5rem;" />
+          <img src="捷克照片/捷克_布拉格/PG2.jpg" style="width: 90%; max-width: 100vw; height: auto; margin: 0.5rem;" />
+          <img src="捷克照片/捷克_布拉格/PG3.jpg" style="width: 90%; max-width: 100vw; height: auto; margin: 0.5rem;" />
+          <img src="捷克照片/捷克_布拉格/PG4.jpg" style="width: 90%; max-width: 100vw; height: auto; margin: 0.5rem;" />
+          <img src="捷克照片/捷克_布拉格/PG5.jpg" style="width: 90%; max-width: 100vw; height: auto; margin: 0.5rem;" />
+        </div>
+        <br /><br /><br />
+        <h3>聖維特主教座堂 (St. Vitus Cathedral)</h3>
+        <h4>
+          聖維特主教座堂位於布拉格城堡內，是捷克最重要的天主教教堂，也是布拉格最具代表性的哥德式建築。教堂始建於 1344 年，由神聖羅馬帝國皇帝查理四世主持興建，歷經近六百年才於 1929 年完工，融合哥德式、新哥德式等建築風格，展現精湛的工藝與藝術成就。
+        </h4>
+        <div style="text-align: center">
+          <img src="捷克照片/捷克_布拉格/PG6.jpg" style="width: 70%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+          <img src="捷克照片/捷克_布拉格/PG7.jpg" style="width: 70%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+          <img src="捷克照片/捷克_布拉格/PG8.jpg" style="width: 70%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+          <img src="捷克照片/捷克_布拉格/PG9.jpg" style="width: 70%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+          <img src="捷克照片/捷克_布拉格/PG10.jpg" style="width: 70%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+          <img src="捷克照片/捷克_布拉格/PG11.jpg" style="width: 70%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+          <img src="捷克照片/捷克_布拉格/PG12.jpg" style="width: 70%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+          <img src="捷克照片/捷克_布拉格/PG13.jpg" style="width: 70%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+        </div>
+        <br /><br /><br />
+        <h3>黃金巷 (Golden Lane)</h3>
+        <h4>
+          黃金巷位於布拉格城堡東北角，是一條充滿童話色彩的歷史小巷，這排色彩繽紛的小屋建於16世紀，原本供城堡守衛、工匠及僕役居住，相傳 17 世紀曾有煉金術士受魯道夫二世召集在此研究煉金術，因此得名「黃金巷」，雖然此說法缺乏確切史料證實，卻為小巷增添了神秘色彩。
+        </h4>
+        <h4>20 世紀初，黃金巷曾是作家與藝術家的聚居地，著名作家法蘭茲卡夫卡曾於 1916 至 1917 年間在 22 號小屋創作，因此成為文學愛好者朝聖之地。如今小屋已改建為博物館、工藝品店及展覽空間，展示中世紀居民生活、武器盔甲與傳統工藝。</h4>
+        <div style="text-align: center">
+          <img src="捷克照片/捷克_布拉格/PG14.jpg" style="width: 70%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+          <img src="捷克照片/捷克_布拉格/PG15.jpg" style="width: 90%; max-width: 100vw; height: auto; margin: 0.5rem;" />
+        </div>
+        <br /><br /><br />
+        <h3>查理大橋 (Charles Bridge) </h3>
+        <h4>
+          查理大橋橫跨伏爾塔瓦河，連接布拉格舊城區與小城區，由神聖羅馬帝國皇帝查理四世下令興建，於1357年奠基，15世紀初完工，取代遭洪水沖毀的茱蒂絲橋，數百年來一直是布拉格最重要的交通要道。大橋全長約 516 公尺，以 16 座拱橋支撐，橋上矗立 30 尊巴洛克風格的聖人雕像，其中以聖若望·內波穆克雕像最受矚目，據說觸摸浮雕可帶來好運，橋面鋪設石板，兩端分別由舊城橋塔與小城橋塔守護，展現中世紀建築之美。
+        </h4>
+        <div style="text-align: center">
+          <img src="捷克照片/捷克_布拉格/PG16.jpg" style="width: 90%; max-width: 100vw; height: auto; margin: 0.5rem;" />
+          <img src="捷克照片/捷克_布拉格/PG17.jpg" style="width: 70%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+          <img src="捷克照片/捷克_布拉格/PG18.jpg" style="width: 70%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+          <img src="捷克照片/捷克_布拉格/PG19.jpg" style="width: 70%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+          <img src="捷克照片/捷克_布拉格/PG20.jpg" style="width: 90%; max-width: 100vw; height: auto; margin: 0.5rem;" />
+        </div>
+        <h4>
+          伏爾塔瓦河中有許多河狸，在河邊散步的時候有時能遇到他們。
+        </h4>
+        <div style="text-align: center">
+          <img src="捷克照片/捷克_布拉格/PG21.jpg" style="width: 70%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+        </div>
+        <br /><br /><br />
+        <h3>列儂牆 (John Lennon Wall)  </h3>
+        <h4>
+          列儂牆位於布拉格小城區，鄰近查理大橋，是一處象徵和平、自由與言論表達的重要地標。1980 年約翰列儂遇刺後，年輕人自發在牆上繪製他的肖像，並寫下披頭四歌詞、和平標語及反抗極權的文字，以表達對自由的渴望。當時捷克仍處於共產政權統治，政府多次將塗鴉清除，但民眾不斷重新創作，使這面牆成為和平抗爭的象徵。1989 年天鵝絨革命後，列儂牆逐漸成為世界各地旅客共同創作的藝術空間，牆面上的圖畫與文字經常更新，每次造訪都能看到不同的創作，展現多元文化與自由精神。
+        </h4>
+        <div style="text-align: center">
+          <img src="捷克照片/捷克_布拉格/PG22.jpg" style="width: 70%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+        </div>
+        <br /><br /><br />
+        <h3>卡夫卡雕塑 (Head of Franz Kafka)</h3>
+        <h4>
+          卡夫卡雕塑是為紀念布拉格著名作家法蘭茲·卡夫卡而設立的現代藝術地標，這座雕塑由捷克知名藝術家大衛切爾尼 (David Černý) 創作，於 2014 年揭幕，高約 11 公尺，重約 39 噸，由 42 層可獨立旋轉的不鏽鋼構件組成，各層圓盤不斷轉動、分離又重新組合，最終拼成卡夫卡的頭像，呈現極具動態感的視覺效果。
+        </h4>
+        <h4>雕塑的設計靈感來自卡夫卡作品中對身份、存在與人性的探索，以及現代社會中個體的矛盾與疏離感。當金屬圓盤旋轉時，人物形象時而完整、時而破碎，象徵卡夫卡筆下充滿變化與不確定性的精神世界。</h4>
+        <div style="text-align: center">
+          <img src="捷克照片/捷克_布拉格/PG23.jpg" style="width: 70%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+        </div>
+        <br /><br /><br />
+        <h3>哈維爾市集 (Havelské tržiště)</h3>
+        <h4>
+          哈維爾市集介於舊城廣場與瓦茨拉夫廣場之間，創立於 1232 年，至今已有近八百年歷史。中世紀時這裡是當地居民採買蔬果、肉品及日用品的重要交易場所，也是布拉格商業發展的重要見證。如今哈維爾市集保留傳統市集風貌，攤位販售新鮮水果、蔬菜、花卉，以及木偶、水晶、手工藝品、畫作、蜂蜜、香料和各式捷克紀念品，漫步於石板街道間，不僅能感受熱鬧的市集氛圍，也能欣賞周圍保存完善的歷史建築。
+        </h4>
+        <div style="text-align: center">
+          <img src="捷克照片/捷克_布拉格/PG24.jpg" style="width: 70%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+          <img src="捷克照片/捷克_布拉格/PG25.jpg" style="width: 70%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+          <img src="捷克照片/捷克_布拉格/PG26.jpg" style="width: 70%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+          <img src="捷克照片/捷克_布拉格/PG27.jpg" style="width: 70%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+        </div>
+        <br /><br /><br />
+        <h3>布拉格天文鐘 (Prague Astronomical Clock)</h3>
+        <h4>
+          布拉格天文鐘位於布拉格舊城市政廳南牆，是世界現存仍在運作最古老的天文鐘，於 1410 年建成，之後多次修復與增建，融合中世紀機械工藝、天文學與宗教象徵。天文鐘由天文盤、日曆盤及木偶報時裝置組成，可顯示時間、日期、太陽與月亮的位置，以及黃道十二宮等天文資訊。<b>每逢整點十二使徒木偶依序現身</b>，骷髏木偶敲鐘象徵死亡，吸引大批遊客駐足觀賞，相傳若天文鐘停止運作，布拉格將遭逢厄運，因此歷代居民都十分重視其維護。
+        </h4>
+        <div style="text-align: center">
+          <img src="捷克照片/捷克_布拉格/PG28.jpg" style="width: 70%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+        </div>
+        <br /><br /><br />
+        <h3>老城廣場 (Old Town Square) </h3>
+        <h4>
+          老城廣場位於布拉格舊城區中心，是這座城市最重要的歷史廣場，也是蔡依林歌曲中的布拉格廣場，已有九百多年歷史，自中世紀以來，這裡一直是商業交易、市集、宗教慶典及重大歷史事件的舞臺，見證了波希米亞王國與捷克民族的發展歷程。廣場四周環繞著哥德式、巴洛克式、文藝復興及洛可可風格建築，其中最著名的景點包括布拉格天文鐘、舊市政廳、提恩教堂及聖尼古拉教堂，廣場中央矗立著宗教改革先驅揚·胡斯紀念碑，紀念他對捷克歷史的重要貢獻。每逢聖誕節與復活節，廣場會舉辦大型市集，洋溢濃厚節日氣氛，是體驗布拉格歷史文化與城市魅力不可錯過的核心地標。
+        </h4>
+        <div style="text-align: center">
+          <img src="捷克照片/捷克_布拉格/PG29.jpg" style="width: 90%; max-width: 100vw; height: auto; margin: 0.5rem;" />
+          <img src="捷克照片/捷克_布拉格/PG30.jpg" style="width: 90%; max-width: 100vw; height: auto; margin: 0.5rem;" />
+          <img src="捷克照片/捷克_布拉格/PG31.jpg" style="width: 90%; max-width: 100vw; height: auto; margin: 0.5rem;" />
+        </div>
+        <br /><br /><br />
+        <h3>泰恩教堂  (Church of Our Lady before Týn) </h3>
+        <h4>
+          泰恩教堂位於布拉格廣場東側，是捷克最具代表性的哥德式建築，也是布拉格最醒目的城市地標，教堂始建於 14 世紀，歷經近兩百年完工，兩座高約 80 公尺的尖塔直入天際，因高低略有不同，象徵男性與女性，教堂曾是 15 世紀胡斯派的重要宗教中心，見證了波希米亞宗教改革的歷史。內部保存華麗的巴洛克式祭壇、精美彩繪及珍貴藝術品，其中包括 17 世紀管風琴與天文學家第谷·布拉赫 (Tycho Brahe) 的墓碑，在夜晚點燈後，教堂尖塔與老城廣場相互輝映，景色格外迷人。
+        </h4>
+        <div style="text-align: center">
+          <img src="捷克照片/捷克_布拉格/PG32.jpg" style="width: 70%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+          <img src="捷克照片/捷克_布拉格/PG33.jpg" style="width: 70%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+        </div>
+        <br /><br /><br />
+        <h3>Celetná  </h3>
+        <h4>
+          Celetná 街是一條歷史悠久的中世紀街道，連接火藥塔與老城廣場，也是昔日波希米亞國王加冕遊行「皇家之路」的重要路段，街名源自中世紀流行的編織麵包「Calta」，昔日聚集許多麵包師傅因此得名。街道兩旁保存大量哥德式、文藝復興式及巴洛克式建築，許多建築經過改建，仍保留古老的門面與拱廊，著名作家法蘭茲·卡夫卡曾在此居住與求學，使這條街更添文學色彩，如今 Celetná 林立特色餐廳、咖啡館、精品店及紀念品商店，終日遊人如織。
+        </h4>
+        <div style="text-align: center">
+          <img src="捷克照片/捷克_布拉格/PG34.jpg" style="width: 70%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+          <img src="捷克照片/捷克_布拉格/PG35.jpg" style="width: 70%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+        </div>
+        <br /><br /><br />
+        <h3>火藥塔 (Powder Tower)</h3>
+        <h4>
+          火藥塔是布拉格最具代表性的哥德式建築，也是昔日中世紀城牆的重要城門。塔樓始建於 1475 年，由建築師馬捷伊·雷塞克設計，原本作為國王加冕遊行「皇家之路」的起點，象徵王權與城市榮耀。17世紀時因曾存放火藥而得名「火藥塔」，火藥塔高約 65 公尺，外牆布滿精緻的哥德式雕刻，描繪波希米亞國王、聖人及徽章，展現當時高超的石雕工藝，也可登上 186 級階梯抵達觀景台，俯瞰布拉格舊城區、紅瓦屋頂與周邊歷史建築。
+        </h4>
+        <div style="text-align: center">
+          <img src="捷克照片/捷克_布拉格/PG36.jpg" style="width: 70%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+        </div>
+        <br /><br /><br />
+        <h3>Palladium Prague </h3>
+        <h4>
+          Palladium Prague 位於共和國廣場，緊鄰火藥塔，商場於2007年開幕，由歷史建築與現代建築巧妙結合而成，部分外牆保留19世紀軍營遺跡，展現新舊融合的城市特色。Palladium 擁有五層購物空間，匯集約 200 家商店及 30 多家餐廳、咖啡館，涵蓋國際時尚品牌、運動用品、美妝保養、電子產品及捷克特色商品。地下樓層設有大型超市，方便旅客採買食品、伴手禮及日常用品。商場交通便利，與地鐵 B 線及多條電車路線相連，是市民的重要購物據點。
+        </h4>
+        <div style="text-align: center">
+          <img src="捷克照片/捷克_布拉格/PG37.jpg" style="width: 90%; max-width: 100vw; height: auto; margin: 0.5rem;" />
+          <img src="捷克照片/捷克_布拉格/PG38.jpg" style="width: 70%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+        </div>
+        <br /><br /><br />
+        <h3>佩特任瞭望塔 (Petřín Lookout Tower) </h3>
+        <h4>
+          佩特任瞭望塔位於布拉格佩特任山頂，是布拉格著名的觀景地標，建於 1891 年，靈感來自法國巴黎艾菲爾鐵塔。雖然塔高僅約 63.5 公尺，但因座落於海拔約 318 公尺的山丘上，其觀景高度與艾菲爾鐵塔相近，可俯瞰整座布拉格市區。瞭望塔採鋼構設計，設有 299 級階梯及電梯，方便遊客登頂，站在觀景台上，可將布拉格城堡、查理大橋、伏爾塔瓦河、舊城區及遠方群山盡收眼底，天氣晴朗時甚至可遠眺數十公里外的景色，前往瞭望塔可搭乘歷史悠久的佩特任纜車，再步行穿越綠意盎然的公園，沿途景色宜人。
+        </h4>
+        <div style="text-align: center">
+          <img src="捷克照片/捷克_布拉格/PG39.jpg" style="width: 70%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+          <img src="捷克照片/捷克_布拉格/PG40.jpg" style="width: 90%; max-width: 100vw; height: auto; margin: 0.5rem;" />
+        </div>
+        <br /><br /><br />
+        <h3>跳舞的房子 (Dancing House)</h3>
+        <h4>
+          跳舞的房子位於伏爾塔瓦河畔，是當代建築的代表作之一，也是布拉格最具特色的現代地標。建築於 1992 年開始設計、1996 年完工，由捷克裔建築師弗拉多米魯尼奇 (Vlado Milunić) 與國際知名建築師法蘭克蓋瑞 (Frank Gehry) 共同設計，採用解構主義風格，打破傳統建築形式。建築由一座筆直的石造塔樓與一座彎曲的玻璃塔樓組成，宛如一對翩翩起舞的舞者，因此被暱稱為「Fred and Ginger」，象徵好萊塢舞星佛雷德阿斯泰爾與金吉兒羅傑斯。跳舞的房子內設有辦公室、藝廊、餐廳及頂樓觀景酒吧，可欣賞伏爾塔瓦河與布拉格市景。
+        </h4>
+        <div style="text-align: center">
+          <img src="捷克照片/捷克_布拉格/PG41.jpg" style="width: 70%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+        </div>
+        <br /><br />
+        <h2>布拉格美食</h2>
+        <h3>Café Imperial</h3>
+        <h4>
+          Café Imperial 創立於 1914 年，是當地最具代表性的百年咖啡館與餐廳，店內以新藝術風格裝潢聞名，牆面與天花板鑲嵌精美彩色陶瓷馬賽克，典雅華麗極具藝術價值。餐廳由名廚團隊主理，供應捷克傳統料理、歐洲美食、咖啡與精緻甜點，兼具歷史氛圍與現代餐飲品質，是體驗布拉格經典咖啡文化與百年建築魅力的熱門名店。
+        </h4>
+        <div style="text-align: center">
+          <img src="捷克照片/捷克_布拉格/PG42.jpg" style="width: 70%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+        </div>
+        <div class="two-vertical-images">
+          <img src="捷克照片\捷克_布拉格\PG43-1.jpg" />
+          <img src="捷克照片\捷克_布拉格\PG43-2.jpg" />
+        </div>
+        <div style="text-align: center">
+          <img src="捷克照片/捷克_布拉格/PG44.jpg" style="width: 90%; max-width: 100vw; height: auto; margin: 0.5rem;" />
+          <img src="捷克照片/捷克_布拉格/PG45.jpg" style="width: 90%; max-width: 100vw; height: auto; margin: 0.5rem;" />
+          <img src="捷克照片/捷克_布拉格/PG46.jpg" style="width: 90%; max-width: 100vw; height: auto; margin: 0.5rem;" />
+        </div>
+        <br /><br /><br />
+        <h3>StreetBurger Bistro</h3>
+        <h4>
+          StreetBurger Bistro 以現點現做、使用新鮮食材與手工牛肉漢堡聞名，提供經典牛肉堡、雞肉堡、素食漢堡、薯條及精釀啤酒，份量充足、價格合理，餐廳裝潢簡約時尚、用餐環境舒適，是遊覽市區後享用美式餐點與輕鬆聚餐的人氣選擇。
+        </h4>
+        <div style="text-align: center">
+          <img src="捷克照片/捷克_布拉格/PG47.jpg" style="width: 70%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+          <img src="捷克照片/捷克_布拉格/PG48.jpg" style="width: 90%; max-width: 100vw; height: auto; margin: 0.5rem;" />
+          <img src="捷克照片/捷克_布拉格/PG49.jpg" style="width: 70%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+        </div>
+        <br /><br /><br />
+        <h3>U Glaubiců</h3>
+        <h4>
+          U Glaubiců 鄰近聖尼古拉教堂與查理大橋，是深受當地人喜愛的傳統捷克餐廳。餐廳保留古典酒館風格，供應道地捷克家常料理，如烤豬膝、燉牛肉、牛肉酸奶醬 (Svíčková) 及各式餃子，並搭配捷克生啤酒。餐點份量豐富、價格合理，加上親切服務與濃厚在地氛圍，能在歷史街區中品嚐正宗捷克美食，是體驗布拉格飲食文化的熱門餐廳。
+        </h4>
+        <div style="text-align: center">
+          <img src="捷克照片/捷克_布拉格/PG50.jpg" style="width: 70%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+          <img src="捷克照片/捷克_布拉格/PG51.jpg" style="width: 70%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+          <img src="捷克照片/捷克_布拉格/PG52.jpg" style="width: 70%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+        </div>
+        <br /><br /><br />
+        <h3>Cafe No. 3</h3>
+        <h4>
+          Cafe No. 3 是一家風格簡約、深受年輕人喜愛的特色咖啡館，店內以自家烘焙精品咖啡、手工甜點及輕食聞名，採用高品質咖啡豆，提供濃縮咖啡、手沖及季節限定飲品。明亮舒適的空間與親切服務，吸引不少當地居民前來休憩，無論是享受悠閒早餐、下午茶或短暫放鬆，都是探索布拉格時值得造訪的人氣咖啡館。
+        </h4>
+        <div style="text-align: center">
+          <img src="捷克照片/捷克_布拉格/PG53.jpg" style="width: 70%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+          <img src="捷克照片/捷克_布拉格/PG54.jpg" style="width: 70%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+          <img src="捷克照片/捷克_布拉格/PG55.jpg" style="width: 70%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+        </div>
+        <br /><br /><br />
+        <h3>Pho Vietnam Anglická</h3>
+        <h4>
+          Pho Vietnam Anglická 是一家廣受好評的越南料理餐廳，以道地河粉 (Pho) 聞名，由於越南與捷克過去同屬共產陣營，因此過去有許多越南人來捷克學習技術，而後落腳於此，餐廳選用新鮮食材，搭配長時間熬煮的濃郁湯頭，提供牛肉、雞肉及素食等多種口味，另有春捲、米線、炒飯等經典越南料理，是在布拉格品嚐亞洲風味、享受暖心越南美食的人氣餐廳。
+        </h4>
+        <div style="text-align: center">
+          <img src="捷克照片/捷克_布拉格/PG56.jpg" style="width: 70%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+        </div>
+        <br /><br /><br />
+        <h3>羅浮咖啡館 (Café Louvre)</h3>
+        <h4>
+          羅浮咖啡館創立於 1902 年，是捷克最具代表性的百年咖啡館，典雅的新藝術風格空間曾吸引卡夫卡、愛因斯坦等文化名人造訪，充滿濃厚的人文氣息。餐廳供應精品咖啡、傳統捷克料理、歐式早餐及精緻甜點，並保留歷史悠久的撞球室。
+        </h4>
+        <div style="text-align: center">
+          <img src="捷克照片/捷克_布拉格/PG57.jpg" style="width: 70%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+          <img src="捷克照片/捷克_布拉格/PG58.jpg" style="width: 70%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+          <img src="捷克照片/捷克_布拉格/PG59.jpg" style="width: 90%; max-width: 100vw; height: auto; margin: 0.5rem;" />
+        </div>
+        <br />
+      </div>
+      <div class="destination-sidebar">
+        <div class="sidebar-image-container">
+          <img src="側邊欄自我介紹.jpg" />
+        </div>
+        <h5>
+          Hi!
+          我是Tommy，我熱愛旅遊也喜歡藉由影像紀錄旅程中的點點滴滴，透過文字將我在旅途中的所見所聞分享給大家。旅行對我而言不只是吃吃喝喝，而是能在行萬里路間感受世界的脈動，體驗不同的文化，希望藉由我的分享能讓大家看到更多世界的美好。
+        </h5>
+        <br />
+        <h5>
+          想更了解我或與我聯絡:
+          <a
+            href="https://www.instagram.com/tommy_techvoyage/"
+            target="_blank"
+            style="color: inherit; text-decoration: underline"
+          >
+            <b>Instagram</b>
+          </a>
+        </h5>
+        </div>
+      </div>
+    </div>
+    <div class="contact-section">
+      <div class="contact-item">
+        <h3>
+          想更了解我或與我聯絡:
+          <a
+            href="https://www.instagram.com/tommy_techvoyage/"
+            target="_blank"
+            style="color: inherit; text-decoration: underline"
+          >
+            Instagram
+          </a>
+        </h3>
+      </div>
+    </div>
+    <footer>
+      <h6>COPYRIGHT © 2025 Tommy 看世界 All rights reserved.</h6>
+    </footer>
+    <div id="menu-toggle"></div>
+    <div id="expandable-menu">
+      <div id="menu-content">
+        <h4>目錄</h4>
+        <ul id="menu-list"></ul>
+      </div>
+    </div>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const menu = document.getElementById("expandable-menu");
+        const toggle = document.getElementById("menu-toggle");
+        const menuList = document.getElementById("menu-list");
+        const destinationMain = document.querySelector(".destination-main");
+
+        // 點擊按鈕切換目錄狀態
+        toggle.addEventListener("click", () => {
+          menu.classList.toggle("open");
+
+          const menuWidth = menu.offsetWidth; // 獲取目前展開的目錄寬度
+
+          if (menu.classList.contains("open")) {
+            // 讓按鈕向左平移與 menu 一樣的寬度
+            toggle.style.transform = `translateY(-50%) translateX(-${menuWidth}px)`;
+          } else {
+            // 收回原位
+            toggle.style.transform = `translateY(-50%) translateX(0)`;
+          }
+        });
+
+        window.addEventListener("load", () => {
+          if (menu.classList.contains("open")) {
+            const menuWidth = menu.offsetWidth;
+            toggle.style.transform = `translateY(-50%) translateX(-${menuWidth}px)`;
+          }
+        });
+
+        // 從 destination-main 區域提取 h2 和 h3，動態生成目錄
+        const headings = destinationMain.querySelectorAll("h2, h3");
+        headings.forEach((heading, index) => {
+          // 確保每個 h2 和 h3 都有唯一的 id
+          if (!heading.id) {
+            heading.id = `heading-${index}`;
+          }
+
+          const listItem = document.createElement("li");
+          const link = document.createElement("a");
+          link.textContent = heading.textContent;
+          link.href = `#${heading.id}`;
+          listItem.appendChild(link);
+
+          // 為 h3 添加縮排樣式
+          if (heading.tagName.toLowerCase() === "h3") {
+            listItem.classList.add("sub-item");
+          }
+
+          menuList.appendChild(listItem);
+        });
+
+        function adjustMenuPosition() {
+          const nav = document.querySelector("nav");
+          const menu = document.getElementById("expandable-menu");
+      
+          if (nav && menu) {
+            const navHeight = nav.offsetHeight;
+      
+            // 設定 menu 的 top 與高度
+            menu.style.top = `${navHeight}px`;
+            menu.style.height = `calc(100vh - ${navHeight}px)`;
+          }
+        }
+      
+        // 載入與尺寸變化時調整
+        window.addEventListener("DOMContentLoaded", adjustMenuPosition);
+        window.addEventListener("resize", adjustMenuPosition);
+        
+        // 滾動至目標位置並加上 75px 偏移
+        menuList.addEventListener("click", (event) => {
+          if (event.target.tagName === "A") {
+            event.preventDefault(); // 阻止預設行為
+
+            const targetId = event.target.getAttribute("href").substring(1); // 取得目標 ID
+            const targetElement = document.getElementById(targetId);
+
+            if (targetElement) {
+              // 計算目標元素的位置並加上 75px 偏移
+              const targetPosition =
+                targetElement.getBoundingClientRect().top + window.scrollY;
+              const offset = 75; // 偏移的距離
+              window.scrollTo({
+                top: targetPosition - offset,
+                behavior: "smooth", // 平滑滾動
+              });
+            }
+          }
+        });
+        // 手機 Safari 相容：點擊展開 dropdown
+        const dropdownToggles = document.querySelectorAll(".dropdown-toggle");
+
+        dropdownToggles.forEach((toggle) => {
+          toggle.addEventListener("click", function (e) {
+            e.stopPropagation(); // 防止冒泡，避免點擊外層時也觸發關閉
+            const dropdown = this.nextElementSibling;
+            const isVisible = dropdown.style.display === "block";
+            
+            // 關閉所有其他 dropdown（可選）
+            document.querySelectorAll(".dropdown-content").forEach((menu) => {
+              menu.style.display = "none";
+            });
+
+            // 切換目前這一個 dropdown
+            dropdown.style.display = isVisible ? "none" : "block";
+          });
+        });
+
+        // 點擊其他地方時關閉 dropdown
+        window.addEventListener("click", function () {
+          document.querySelectorAll(".dropdown-content").forEach((menu) => {
+            menu.style.display = "none";
+          });
+        });
+      });
+    </script>
+  </body>
+</html>
