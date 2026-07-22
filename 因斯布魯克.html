@@ -1,0 +1,854 @@
+<!DOCTYPE html>
+<html lang="zh-hant-TW">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="曹旅瀚 Tommy" />
+    <meta name="description" content="漫遊奧地利因斯布魯克！探索歷史悠久的宮殿、音樂廳與文化景點，品味奧地利美食與咖啡文化，感受這座城市獨特的魅力。" />
+    <meta name="keywords" content="因斯布魯克旅遊, 奧地利自由行, 因斯布魯克景點, 因斯布魯克音樂, 因斯布魯克宮殿, 因斯布魯克美食, 奧地利文化, 因斯布魯克交通, 因斯布魯克電車" />
+    <title>Tommy 看世界 - 因斯布魯克</title>
+    <link rel="icon" href="網頁縮圖.ico" />
+    <style>
+      body {
+        font-family: Calibri, Arial, sans-serif; /* 首選 Calibri，次選 Arial */
+        margin: 0;
+        overflow-x: hidden; /* 禁止水平滾動 */
+        background-color: #f4f4f9;
+        color: #333;
+      }
+
+      h1 {
+        font-size: 40px;
+        font-weight: bold;
+      }
+
+      h2 {
+        font-size: 32px;
+        font-weight: bold;
+        color: #2a90a7;
+        display: inline-block;
+        background-color: #cee5e8;
+      }
+
+      h3 {
+        font-size: 26px;
+        margin: 0 0 1rem;
+        font-weight: bold;
+        text-decoration: underline;
+      }
+
+      h4 {
+        font-size: 18px;
+        font-weight: normal;
+        line-height: 1.8;
+      }
+
+      h5 {
+        font-size: 16px;
+        font-weight: normal;
+        margin: 0;
+      }
+
+      h6 {
+        font-size: 10px;
+        color: #fff;
+        margin: 0;
+        text-align: center;
+        line-height: 50px; /* 高度對齊 */
+      }
+
+      nav {
+        background-color: #78bcc4;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;                     /* 讓 nav 寬度隨螢幕自適應 */
+        padding: 0.8rem 5vw;               /* 左右 padding 用 5% 寬度 */
+        box-sizing: border-box;         /* 確保 padding 不會影響寬度總長 */
+        position: fixed;
+        top: 0;
+        z-index: 1000;
+      }
+
+      .nav-left .logo img {
+        height: 5vw; /* 高度為螢幕寬度的 5% */
+        transform: translateX(-2vw); /* 向左移動 2% 寬度 */
+        max-width: 100%; /* 確保不會超過容器 */
+        height: auto; /* 保持圖片比例（建議與 max-height 搭配） */
+        max-height: 3rem;
+      }
+
+      .nav-right {
+        display: flex;
+        align-items: center;
+        margin-left: auto; /* 推到右側 */
+        padding-left: 5%;   /* 內部元素間距，彈性設計 */
+      }
+
+      nav a {
+        color: #eff5f5;
+        text-decoration: none;
+        padding: 1vh 1vw;
+        margin: 0 1vw;
+        transition: transform 0.3s;
+      }
+
+      nav a:hover {
+        transform: translateY(-0.5vh); /* 根據視窗高度調整 */
+      }
+
+      .dropdown {
+        position: relative;
+        display: inline-block;
+      }
+
+      .dropdown-content {
+        width: 100%; /* 佔滿父層寬度 */
+        max-width: 20vw; /* 限制最大寬度 */
+        display: none;
+        position: absolute;
+        background-color: #78bcc4;
+        min-width: 10em; /* 取代 160px，以字體大小作為比例單位 */
+        border-radius: 0.25em;
+        box-shadow: 0 0.5em 1em rgba(0, 0, 0, 0.2); /* 改為相對單位 */
+        padding: 0.2rem 0;
+        z-index: 999;
+      }
+
+      .dropdown-content a {
+        color: #eff5f5;
+        display: block;
+        transition: transform 0.3s;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.3); /* 更淡配色、柔和過渡 */
+        padding: 0.6em 1em;
+        font-size: 1em;
+      }
+
+      .dropdown-content a:last-child {
+        border-bottom: none;
+      }
+
+      .dropdown-content a:hover {
+        transform: translateY(-0.25em); /* 改為相對單位 */
+      }
+
+      .intro-section {
+        background-color: #eff5f5;
+        display: flex;
+        flex-wrap: wrap; /* 確保在小螢幕可換行 */
+        padding: 2rem 5%;
+        margin-top: 4em; /* 根據導航列高度調整 */
+      }
+
+      .intro-section h4 {
+        max-width: 85%; /* 改為相對單位，避免固定寬度限制 */
+        line-height: 1.8;
+      }
+
+      .intro-section .left {
+        width: 60%;
+        padding-right: 1%;
+      }
+
+      .intro-section .right {
+        width: 39%;
+      }
+
+      .destination-section {
+        display: flex;
+        flex-wrap: wrap;               /* 小螢幕時允許換行 */
+        padding: 1rem 5%; /* 左右內間距為螢幕的10% */
+        background-color: white;
+      }
+
+      .destination-main {
+        width: 72%;                    /* 主要內容佔 72%，略縮以保留間距 */
+        margin-right: 3%;              /* 與 sidebar 間保留間距（約為 3%） */
+        box-sizing: border-box;
+      }
+
+      .destination-sidebar {
+        width: 25%;                    /* 側邊欄佔 25% */
+        padding-left: 2%;             /* 相對內邊距 */
+        margin-top: 2rem;
+        box-sizing: border-box;
+      }
+
+      .sidebar-image-container {
+        margin-bottom: 1rem;
+        text-align: center; /* 置中圖片 */
+      }
+
+      .sidebar-image-container img {
+        width: 90%;         /* 圖片寬度為容器寬度的 90% */
+        height: auto;       /* 高度自動，保持比例 */
+        max-height: 60vh;   /* 避免圖片過高，佔螢幕最大 60% 高 */
+        object-fit: cover;  /* 裁切處理長圖 */
+      }
+
+      .two-vertical-images {
+        display: flex;
+        justify-content: space-between;
+        gap: 4%; /* 使用百分比間距更彈性 */
+        margin-top: 2rem;
+        margin-bottom: 2rem;
+        flex-wrap: wrap; /* 若畫面太小，允許換行 */
+      }
+
+      .two-vertical-images img {
+        width: 48%; /* 每張圖片約佔一半（加上 gap 剛好 100%） */
+        height: auto; /* 保持原比例 */
+        object-fit: cover;
+        display: block;
+        margin: 0 auto;
+      }
+
+      .recommendation-section {
+        margin-top: 3vh; /* 與上方文字的間距 */
+        text-align: center;
+        position: sticky;
+        top: 80px; /* 空出導覽列的高度，確保推薦區不被覆蓋 */
+        z-index: 10; /* 提高層級，避免被其他內容遮蓋 */
+        padding: 0 5%;
+      }
+
+      .recommendation-section h3 {
+        font-size: 1.125rem;
+        font-weight: bold;
+        margin-bottom: 1vh; /* 與按鈕區的距離 */
+      }
+
+      .recommendation-buttons {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 0.5em; /* 按鈕之間的間距 */
+      }
+
+      .recommendation-buttons button {
+        padding: 0.5em 1em;
+        font-size: 0.875rem;
+        color: white;
+        background-color: #78bcc4;
+        border: none;
+        border-radius: 0.25rem;
+        transition: transform 0.3s;
+        font-family: Arial, sans-serif;
+      }
+
+      .recommendation-buttons button:hover {
+        transform: translateY(-3px);
+      }
+
+      .contact-section {
+        padding: 4vh 8vw; /* 上下與左右間距 */
+        background-color: #eff5f5; /* 淺灰背景 */
+        text-align: center; /* 確保內容置中對齊 */
+      }
+
+      .contact-item h3 {
+        font-size: 1.125rem; /* 調整標題字體大小 */
+        margin: 0; /* 移除多餘的間距 */
+        text-decoration: none; /* 移除底線 */
+      }
+
+      footer {
+        background-color: #000;
+        color: white;
+        height: 3vh; /* 使用相對單位，高度占螢幕高度的 3% */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 1.5rem; /* 使用相對字體大小 */
+        padding: 0.5rem 0; /* 確保小螢幕時內容不擠壓 */
+      }
+
+      #expandable-menu {
+        position: fixed; 
+        right: 0;
+        width: 26vw; /* 目錄寬度與 sidebar 齊寬 */
+        max-width: 90%; /* 避免在小螢幕太寬 */
+        transform: translateX(100%); /* 初始狀態：隱藏在右側 */
+        transition: transform 0.3s ease;
+        background-color: #f4f4f9; /* 與網站背景一致 */
+        z-index: 1000;
+        box-sizing: border-box;
+      }
+
+      /* 收闔按鈕 */
+      #menu-toggle {
+        position: fixed;
+        top: 45%;
+        right: 0; /* 永遠貼在右側 */
+        transform: translateY(-50%) translateX(0);
+        width: 2.5em; /* 增大按鈕寬度 */
+        height: 5em; /* 增大按鈕高度 */
+        background-color: #78bcc4;
+        color: white;
+        border-radius: 0.4em 0 0 0.4em;
+        display: flex;
+        justify-content: center; /* 水平居中 */
+        align-items: center; /* 垂直居中 */
+        z-index: 2000; /* 要比 expandable-menu 更高，避免被蓋住 */
+        cursor: pointer;
+        box-shadow: -0.1em 0 0.3em rgba(0,0,0,0.1);
+        transition: transform 0.3s ease; /* 平滑移動 */
+      }
+
+      #menu-toggle::after {
+        content: "目錄"; /* 在按鈕內顯示 "目錄" */
+        font-size: 1rem;
+        color: white; /* 設定字體顏色為白色 */
+        writing-mode: vertical-rl; /* 使文字垂直排列 */
+      }
+
+      #menu-toggle:hover {
+        background-color: #78bcc4;
+      }
+
+      /* 目錄內容 */
+      #menu-content {
+        padding: 0.5rem 5%;
+        overflow-y: auto;
+        height: 100%;
+        box-sizing: border-box;
+      }
+
+      #menu-content h4 {
+        font-weight: bold;
+        margin-top: 0;
+        font-size: 1.2rem;
+      }
+
+      #menu-list {
+        list-style: none;
+        padding: 0;
+      }
+
+      #menu-list li {
+        margin-bottom: 1vh;
+      }
+
+      #menu-list a {
+        color: #2a90a7;
+        text-decoration: none;
+        transition: color 0.3s;
+        font-size: 1rem; /* 使用相對字體大小 */
+      }
+
+      #menu-list a:hover {
+        color: #78bcc4;
+      }
+
+      #menu-list .sub-item {
+        margin-left: 8%; /* 調整縮排距離 */
+        font-size: 0.9rem; /* 可選：調整子項目字體大小 */
+      }
+
+      /* 目錄展開狀態 */
+      #expandable-menu.open {
+        transform: translateX(0);
+      }
+
+       /* === 響應式調整：針對手機與小螢幕設備 === */
+      @media (max-width: 768px) {
+        nav {
+          flex-wrap: wrap;
+          padding: 0.8rem 5vw;
+        }
+      
+        .nav-right {
+          display: flex;
+          flex-wrap: wrap;        /* ⭐ 核心 */
+          justify-content: flex-end;
+          width: 100%;
+          gap: 0.4rem;
+          margin-top: 0.3rem;
+        }
+      
+        nav a {
+          white-space: normal;    /* ⭐ 允許換行 */
+          padding: 0.4rem 0.5rem;
+          font-size: 0.85rem;
+        }
+
+        .nav-dropdown {
+          width: 60%; /* 或者用 max-content, fit-content 看需求 */
+          font-size: 0.85rem; /* 調整字體大小和導覽列一致 */
+          padding: 0.5rem;
+        }
+      
+        .nav-dropdown a {
+          font-size: inherit; /* 確保跟 .nav-dropdown 一樣大 */
+          padding: 0.5rem 1rem;
+          white-space: normal; /* 可選：讓字在必要時換行 */
+        }
+
+        .dropdown-content {
+          width: 12vw;
+          min-width: 8em; /* 保證至少能顯示幾個字 */
+          max-width: none;
+        }
+
+        .dropdown-content a {
+          font-size: 0.85rem;
+        }
+        
+        .intro-section {
+          flex-direction: column;
+          padding: 8%;
+          padding-top: calc(8% + 6rem); /* ⭐ 關鍵：讓位給 nav */
+        }
+      
+        .intro-section .left,
+        .intro-section .right {
+          width: 100%;
+          padding: 0;
+          flex: 1 1 100%;
+        }
+      
+        .intro-section .right {
+          margin-top: 1.5rem;
+          display: flex;
+          justify-content: center;
+        }
+      
+        .intro-section h4 {
+          max-width: 100%;
+          font-size: 1rem;
+        }
+
+        .destination-grid {
+          flex-direction: column;
+          gap: 1rem;
+        }
+
+        .destination-section h4 {
+          font-size: 1rem;
+        }
+
+        .destination-item {
+          max-width: 100%;
+          width: 100%;
+        }
+
+        .destination-item.a_role_with_2 {
+          position: static;
+          left: auto;
+        }
+
+        .destination-main,
+        .destination-sidebar {
+          width: 100%;
+          margin: 0;
+          padding: 0;
+        }
+
+        .destination-sidebar {
+          margin-top: 2rem;
+        }
+
+        .recommendation-buttons button {
+          width: 100%; /* 小螢幕按鈕全寬排列 */
+        }
+
+        .contact-section {
+          padding: 3vh 5vw;
+        }
+
+        .contact-item h3 {
+          font-size: 1rem;
+        }
+
+        /* 目錄區寬度改為螢幕寬度的40% */
+        #expandable-menu {
+          width: 40vw !important; /* 用vw方便響應螢幕寬度 */
+          max-width: 90%; /* 保留原本max-width避免太寬 */
+        }
+      
+        #expandable-menu,
+        #expandable-menu * {
+          font-size: 85% !important;
+        }
+              
+        #menu-toggle {
+          width: 75%;
+          max-width: 1.875em;
+          min-width: 1.875em;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <div class="nav-left">
+        <div class="logo">
+          <a href="首頁.html">
+            <img src="網站Logo.png" alt="網站 Logo" />
+          </a>
+        </div>
+      </div>
+      <div class="nav-right">
+        <a href="首頁.html">關於我</a>
+        <div class="dropdown">
+          <a class="dropdown-toggle">亞洲旅遊</a>
+          <div class="dropdown-content">
+            <a href="中國.html">中國</a>
+            <a href="日本.html">日本</a>
+            <a href="新加坡.html">新加坡</a>
+            <a href="馬來西亞.html">馬來西亞</a>
+            <a href="泰國.html">泰國</a>
+            <a href="印尼.html">印尼</a>
+            <a href="越南.html">越南</a>
+          </div>
+        </div>
+        <div class="dropdown">
+          <a class="dropdown-toggle">歐洲旅遊</a>
+          <div class="dropdown-content">
+            <a href="英國.html">英國</a>
+            <a href="法國.html">法國</a>
+            <a href="德國.html">德國</a>
+            <a href="荷蘭.html">荷蘭</a>
+            <a href="比利時.html">比利時</a>
+            <a href="盧森堡.html">盧森堡</a>
+            <a href="瑞士.html">瑞士</a>
+            <a href="摩納哥.html">摩納哥</a>
+            <a href="西班牙.html">西班牙</a>
+            <a href="葡萄牙.html">葡萄牙</a>
+            <a href="安道爾.html">安道爾</a>
+            <a href="丹麥.html">丹麥</a>
+            <a href="瑞典.html">瑞典</a>
+            <a href="波蘭.html">波蘭</a>
+            <a href="匈牙利.html">匈牙利</a>
+            <a href="捷克.html">捷克</a>
+            <a href="奧地利.html">奧地利</a>
+          </div>
+        </div>
+        <div class="dropdown">
+          <a class="dropdown-toggle">美洲旅遊</a>
+          <div class="dropdown-content">
+            <a href="美國.html">美國</a>
+            <a href="加拿大.html">加拿大</a>
+          </div>
+        </div>
+        <div class="dropdown">
+          <a class="dropdown-toggle">大洋洲旅遊</a>
+          <div class="dropdown-content">
+            <a href="澳洲.html">澳洲</a>
+          </div>
+        </div>
+        <div class="dropdown">
+          <a class="dropdown-toggle">非洲旅遊</a>
+          <div class="dropdown-content">
+            <a href="南非.html">南非</a>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <div class="intro-section">
+      <div class="left">
+        <h1>Tommy 在因斯布魯克</h1>
+        <h4>
+          <b>因斯布魯克 (Innsbruck) </b>位於奧地利西部蒂羅爾邦，坐落於阿爾卑斯山環抱的因河谷地，城市名稱意為「因河上的橋」，自 12 世紀起便因連接南北歐的布倫納山口商道而迅速發展，15 世紀神聖羅馬帝國皇帝馬克西米連一世將因斯布魯克作為皇室駐地，使城市成為哈布斯堡王朝的重要政治與文化中心。
+        </h4>
+        <h4>第二次世界大戰期間雖遭受轟炸，但舊城區大多得以保存，如今因斯布魯克是奧地利重要的觀光、教育與體育城市，以完整保存的中世紀街區、巴洛克建築及壯麗山景聞名，曾兩度主辦 1964 年與 1976 年冬季奧運，並舉辦青年冬季奧運，是世界知名的冬季運動中心。今日的因斯布魯克成功融合悠久歷史、皇室文化、現代都市生活與阿爾卑斯自然景觀，是探索蒂羅爾地區的重要門戶。</h4>
+      </div>
+      <div class="right">
+        <img src="奧地利照片\因斯布魯克\因斯布魯克_介紹.jpg" style="width: 100%; height: auto; max-width: 100%;" />
+      </div>
+    </div>
+
+    <div class="destination-section">
+      <div class="destination-main">
+        <h2>因斯布魯克交通</h2>
+        <h3>機場交通</h3>
+        <h4>
+          因斯布魯克機場是非常小，航班也並不多，因此比較推薦是到慕尼黑之後再搭乘 2 個半小時的火車抵達。
+        </h4>
+        <h3>市區交通</h3>
+        <h4>
+          因斯布魯克的景點非常集中，步行遊覽即可。
+        </h4>
+        <br /><br />
+        <h2>因斯布魯克住宿</h2>
+        <h4>
+          由於因斯布魯克的景點相當集中，因此直接選擇市中心位置或靠近火車站即可。
+        </h4>
+        <div style="text-align: center">
+          <img src="奧地利照片\因斯布魯克\因斯布魯克_住宿.png" style="width: 90%; max-width: 100vw; height: auto;" />
+        </div>
+        <br /><br />
+        <h2>因斯布魯克景點</h2>
+        <h3>亞納柱 (Annasäule) </h3>
+        <h4>
+          亞納柱位於因斯布魯克舊城區瑪麗亞特蕾西亞大街中央，是當地最具代表性的歷史地標，紀念柱於 1706 年豎立，以紀念巴伐利亞軍隊在聖安娜日 ( 7 月 26 日) 撤離蒂羅爾，象徵因斯布魯克成功抵禦外敵入侵，因此得名「亞納柱」。紀念柱以紅色大理石打造，高約 13 公尺，柱頂矗立著聖母瑪利亞雕像，象徵信仰與守護。柱座四周則設有聖安娜、聖卡西安、聖喬治及聖維吉爾等聖人雕像，皆與蒂羅爾地區有深厚淵源。亞納柱周圍可遠眺壯麗的阿爾卑斯山，與兩旁典雅的歷史建築相互輝映，形成因斯布魯克最經典的城市景觀。
+        </h4>
+        <div style="text-align: center">
+          <img src="奧地利照片\因斯布魯克\IB1.jpg" style="width: 70%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+          <img src="奧地利照片\因斯布魯克\IB2.jpg" style="width: 70%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+          <img src="奧地利照片\因斯布魯克\IB3.jpg" style="width: 70%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+        </div>
+        <br /><br /><br />
+        <h3>瑪麗亞・特蕾西亞大街 (Maria-Theresien-Straße) </h3>
+        <h4>
+          瑪麗亞特蕾西亞大街是奧地利因斯布魯克最繁華、最具代表性的街道，也是舊城區與新城區的重要連接軸線，街道以 18 世紀奧地利女皇瑪麗亞特蕾西亞命名，兩旁林立色彩典雅的巴洛克式建築、歷史宅邸、精品商店、咖啡館及餐廳，展現濃厚的蒂羅爾風情與悠閒的歐洲街頭氛圍，漫步街上不僅可欣賞壯麗的阿爾卑斯山景，還能遠望因斯布魯克著名的山峰與城市天際線，形成獨特的都市與自然景觀。每逢聖誕節，街道更會舉辦熱鬧的聖誕市集，點亮璀璨燈飾，洋溢濃厚節慶氣氛。
+        </h4>
+        <div style="text-align: center">
+          <img src="奧地利照片\因斯布魯克\IB4.jpg" style="width: 90%; max-width: 100vw; height: auto; margin: 0.5rem;" />
+          <img src="奧地利照片\因斯布魯克\IB5.jpg" style="width: 90%; max-width: 100vw; height: auto; margin: 0.5rem;" />
+        </div>
+        <br /><br /><br />
+        <h3>黃金屋頂 (Golden Roof) </h3>
+        <h4>
+          黃金屋頂原為 15 世紀的一座市民宅邸，1500 年左右，神聖羅馬帝國皇帝馬克西米連一世為紀念與比安卡·瑪麗亞斯福爾扎的婚姻，下令增建華麗的凸窗陽台，作為觀賞騎士比武、慶典及遊行的皇家看台。黃金屋頂最引人注目的是覆蓋著 2657 片鍍金銅瓦，在陽光照射下金光閃耀因此得名，陽台周圍裝飾著精美的浮雕、徽章及壁畫，展現晚期哥德式建築與哈布斯堡王朝的權威。如今建築內設有黃金屋頂博物館，展示馬克西米連一世的生平、皇室歷史及因斯布魯克的發展歷程。
+        </h4>
+        <div style="text-align: center">
+          <img src="奧地利照片\因斯布魯克\IB6.jpg" style="width: 70%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+          <img src="奧地利照片\因斯布魯克\IB7.jpg" style="width: 70%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+          <img src="奧地利照片\因斯布魯克\IB8.jpg" style="width: 70%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+        </div>
+        <br /><br /><br />
+        <h3>因斯布魯克主教座堂 (Cathedral of St. James)</h3>
+        <h4>
+          因斯布魯克主教座堂是蒂羅爾地區最重要的天主教教堂，也是巴洛克建築的代表作。教堂建於 1717 年至 1724 年間，由建築師約翰雅各布赫爾科默設計，取代原有的中世紀教堂，其外觀莊嚴典雅，兩座洋蔥形鐘塔成為因斯布魯克天際線的重要標誌，教堂內部裝飾華麗，以精美的天頂壁畫、大理石祭壇、金箔雕飾及巴洛克藝術聞名。其中最珍貴的宗教聖物是15世紀的《瑪麗亞援助之母》(Maria Hilf) 聖像，由德國畫家老盧卡斯克拉納赫創作，長年受到信徒敬奉，教堂內還設有大型管風琴，經常舉辦宗教儀式與古典音樂演出，音響效果極佳。
+        </h4>
+        <div style="text-align: center">
+          <img src="奧地利照片\因斯布魯克\IB9.jpg" style="width: 70%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+          <img src="奧地利照片\因斯布魯克\IB10.jpg" style="width: 70%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+        </div>
+        <br /><br /><br />
+        <h3>因斯布魯克皇宮 (Hofburg Innsbruck)</h3>
+        <h4>
+          因斯布魯克皇宮是哈布斯堡王朝在蒂羅爾地區最重要的皇室宮殿，也是奧地利三大皇宮之一，與維也納霍夫堡、美泉宮齊名，皇宮始建於 15 世紀，在神聖羅馬帝國皇帝馬克西米連一世時期奠定基礎，18 世紀由女皇瑪麗亞特蕾西亞大規模改建，形成今日典雅的洛可可風格。宮殿內保存華麗的皇室廳堂、鏡廳、禮儀廳及皇帝、皇后寢宮，展現哈布斯堡王朝的生活風貌與宮廷文化，其中最著名的「巨人廳」(Giants' Hall) 裝飾精美，是皇室舉辦宴會與重要典禮的場所，皇宮內亦陳列許多珍貴家具、壁畫、肖像及歷史文物，讓遊客深入了解奧地利皇室的歷史。
+        </h4>
+        <div style="text-align: center">
+          <img src="奧地利照片\因斯布魯克\IB11.jpg" style="width: 70%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+        </div>
+        <br /><br /><br />
+        <h3>因橋 (Innbrücke)</h3>
+        <h4>
+          因橋橫跨因河 (Inn River)，連接奧地利因斯布魯克舊城區與北岸，是城市最重要的橋梁，也是因斯布魯克名稱的由來，「Innsbruck」在德語中意為「因河上的橋」，顯示這座橋自中世紀以來便是城市發展的核心，最早的橋梁可追溯至12世紀，因位於穿越阿爾卑斯山的重要商道上，促進了南北歐的商業往來，也使因斯布魯克逐漸發展為蒂羅爾地區的重要交通與貿易中心。
+        </h4>
+        <h4>今日的因橋經過多次重建與整修，橋面寬敞，供行人、車輛及自行車通行，站在橋上可欣賞因河碧綠的河水、兩岸色彩繽紛的歷史建築，以及遠方雄偉的北山山脈 (Nordkette)，構成因斯布魯克最經典的景色，尤其清晨與黃昏時分，山巒、河流與古城相互輝映，景色格外迷人。</h4>
+        <div style="text-align: center">
+          <img src="奧地利照片\因斯布魯克\IB12.jpg" style="width: 90%; max-width: 100vw; height: auto; margin: 0.5rem;" />
+          <img src="奧地利照片\因斯布魯克\IB13.jpg" style="width: 90%; max-width: 100vw; height: auto; margin: 0.5rem;" />
+          <img src="奧地利照片\因斯布魯克\IB14.jpg" style="width: 90%; max-width: 100vw; height: auto; margin: 0.5rem;" />
+          <img src="奧地利照片\因斯布魯克\IB15.jpg" style="width: 90%; max-width: 100vw; height: auto; margin: 0.5rem;" />
+        </div>
+        <br /><br /><br />
+        <h3>北山纜車 (Nordkettenbahnen)</h3>
+        <h4>
+          北山纜車是奧地利因斯布魯克最著名的登山纜車系統，連接市中心、Hungerburg、Seegrube 及海拔約 2256 公尺的 Hafelekar 山頂，讓旅客能在短時間內從城市直達阿爾卑斯山區，整條路線由登山纜車與空中纜車組成，其中 Hungerburg 車站及數個車站由世界知名建築師札哈·哈蒂 (Zaha Hadid) 設計，流線型外觀宛如冰川，成為現代建築代表作，搭乘 Nordkettenbahnen 約 30 分鐘即可從市區抵達高山，沿途可俯瞰因斯布魯克、因河谷及雄偉的蒂羅爾群山。
+        </h4>
+        <div style="text-align: center">
+          <img src="奧地利照片\因斯布魯克\IB16.jpg" style="width: 70%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+          <img src="奧地利照片\因斯布魯克\IB17.jpg" style="width: 90%; max-width: 100vw; height: auto; margin: 0.5rem;" />
+        </div>
+        <br /><br /><br />
+        <h3>因斯布魯克之巔 (Top of Innsbruck)</h3>
+        <h4>
+          因斯布魯克之巔是因斯布魯克最著名的觀景景點，位於北山山脈 (Nordkette) 哈費萊卡爾山頂，站在山頂觀景平台，可 360 度俯瞰因斯布魯克市區、因河谷、蒂羅爾群山及壯麗的阿爾卑斯山脈，天氣晴朗時視野極為遼闊，因此被譽為「因斯布魯克之巔」，這裡也是著名的健行、登山、滑雪及滑翔傘活動中心，冬季吸引滑雪愛好者，夏季則適合健行與欣賞高山自然景觀。
+        </h4>
+        <div style="text-align: center">
+          <img src="奧地利照片\因斯布魯克\IB18.jpg" style="width: 70%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+          <img src="奧地利照片\因斯布魯克\IB19.jpg" style="width: 90%; max-width: 100vw; height: auto; margin: 0.5rem;" />
+          <img src="奧地利照片\因斯布魯克\IB20.jpg" style="width: 90%; max-width: 100vw; height: auto; margin: 0.5rem;" />
+          <img src="奧地利照片\因斯布魯克\IB21.jpg" style="width: 90%; max-width: 100vw; height: auto; margin: 0.5rem;" />
+          <img src="奧地利照片\因斯布魯克\IB22.jpg" style="width: 90%; max-width: 100vw; height: auto; margin: 0.5rem;" />
+          <img src="奧地利照片\因斯布魯克\IB23.jpg" style="width: 70%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+          <img src="奧地利照片\因斯布魯克\IB24.jpg" style="width: 70%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+          <img src="奧地利照片\因斯布魯克\IB25.jpg" style="width: 70%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+          <img src="奧地利照片\因斯布魯克\IB26.jpg" style="width: 70%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+          <img src="奧地利照片\因斯布魯克\IB27.jpg" style="width: 70%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+          <img src="奧地利照片\因斯布魯克\IB28.jpg" style="width: 90%; max-width: 100vw; height: auto; margin: 0.5rem;" />
+          <img src="奧地利照片\因斯布魯克\IB29.jpg" style="width: 90%; max-width: 100vw; height: auto; margin: 0.5rem;" />
+        </div>
+        <br /><br />
+        <h2>因斯布魯克美食</h2>
+        <h3>Café Central</h3>
+        <h4>
+          Café Central 是一家歷史悠久的經典咖啡館，店內以典雅的歐式裝潢、舒適的用餐環境及親切服務聞名，供應奧地利傳統早餐、咖啡、蛋糕、蘋果捲 (Apfelstrudel) 及各式甜點，也提供午餐與輕食，露天座位可欣賞市中心街景，享受悠閒的蒂羅爾氛圍。
+        </h4>
+        <div style="text-align: center">
+          <img src="奧地利照片\因斯布魯克\IB30.jpg" style="width: 90%; max-width: 100vw; height: auto; margin: 0.5rem;" />
+          <img src="奧地利照片\因斯布魯克\IB31.jpg" style="width: 90%; max-width: 100vw; height: auto; margin: 0.5rem;" />
+          <img src="奧地利照片\因斯布魯克\IB32.jpg" style="width: 70%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+        </div>
+        <br />
+      </div>
+      <div class="destination-sidebar">
+        <div class="sidebar-image-container">
+          <img src="側邊欄自我介紹.jpg" />
+        </div>
+        <h5>
+          Hi!
+          我是Tommy，我熱愛旅遊也喜歡藉由影像紀錄旅程中的點點滴滴，透過文字將我在旅途中的所見所聞分享給大家。旅行對我而言不只是吃吃喝喝，而是能在行萬里路間感受世界的脈動，體驗不同的文化，希望藉由我的分享能讓大家看到更多世界的美好。
+        </h5>
+        <br />
+        <h5>
+          想更了解我或與我聯絡:
+          <a
+            href="https://www.instagram.com/tommy_techvoyage/"
+            target="_blank"
+            style="color: inherit; text-decoration: underline"
+          >
+            <b>Instagram</b>
+          </a>
+        </h5>
+        <div class="recommendation-section">
+          <h3>其他奧地利旅遊目的地</h3>
+          <div class="recommendation-buttons">
+            <a href="維也納.html">
+              <button><h5>維也納</h5></button>
+            </a>
+            <a href="薩爾茲堡.html">
+              <button><h5>薩爾茲堡</h5></button>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="contact-section">
+      <div class="contact-item">
+        <h3>
+          想更了解我或與我聯絡:
+          <a
+            href="https://www.instagram.com/tommy_techvoyage/"
+            target="_blank"
+            style="color: inherit; text-decoration: underline"
+          >
+            Instagram
+          </a>
+        </h3>
+      </div>
+    </div>
+    <footer>
+      <h6>COPYRIGHT © 2025 Tommy 看世界 All rights reserved.</h6>
+    </footer>
+    <div id="menu-toggle"></div>
+    <div id="expandable-menu">
+      <div id="menu-content">
+        <h4>目錄</h4>
+        <ul id="menu-list"></ul>
+      </div>
+    </div>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const menu = document.getElementById("expandable-menu");
+        const toggle = document.getElementById("menu-toggle");
+        const menuList = document.getElementById("menu-list");
+        const destinationMain = document.querySelector(".destination-main");
+
+        // 點擊按鈕切換目錄狀態
+        toggle.addEventListener("click", () => {
+          menu.classList.toggle("open");
+
+          const menuWidth = menu.offsetWidth; // 獲取目前展開的目錄寬度
+
+          if (menu.classList.contains("open")) {
+            // 讓按鈕向左平移與 menu 一樣的寬度
+            toggle.style.transform = `translateY(-50%) translateX(-${menuWidth}px)`;
+          } else {
+            // 收回原位
+            toggle.style.transform = `translateY(-50%) translateX(0)`;
+          }
+        });
+
+        window.addEventListener("load", () => {
+          if (menu.classList.contains("open")) {
+            const menuWidth = menu.offsetWidth;
+            toggle.style.transform = `translateY(-50%) translateX(-${menuWidth}px)`;
+          }
+        });
+
+        // 從 destination-main 區域提取 h2 和 h3，動態生成目錄
+        const headings = destinationMain.querySelectorAll("h2, h3");
+        headings.forEach((heading, index) => {
+          // 確保每個 h2 和 h3 都有唯一的 id
+          if (!heading.id) {
+            heading.id = `heading-${index}`;
+          }
+
+          const listItem = document.createElement("li");
+          const link = document.createElement("a");
+          link.textContent = heading.textContent;
+          link.href = `#${heading.id}`;
+          listItem.appendChild(link);
+
+          // 為 h3 添加縮排樣式
+          if (heading.tagName.toLowerCase() === "h3") {
+            listItem.classList.add("sub-item");
+          }
+
+          menuList.appendChild(listItem);
+        });
+
+        function adjustMenuPosition() {
+          const nav = document.querySelector("nav");
+          const menu = document.getElementById("expandable-menu");
+      
+          if (nav && menu) {
+            const navHeight = nav.offsetHeight;
+      
+            // 設定 menu 的 top 與高度
+            menu.style.top = `${navHeight}px`;
+            menu.style.height = `calc(100vh - ${navHeight}px)`;
+          }
+        }
+      
+        // 載入與尺寸變化時調整
+        window.addEventListener("DOMContentLoaded", adjustMenuPosition);
+        window.addEventListener("resize", adjustMenuPosition);
+        
+        // 滾動至目標位置並加上 75px 偏移
+        menuList.addEventListener("click", (event) => {
+          if (event.target.tagName === "A") {
+            event.preventDefault(); // 阻止預設行為
+
+            const targetId = event.target.getAttribute("href").substring(1); // 取得目標 ID
+            const targetElement = document.getElementById(targetId);
+
+            if (targetElement) {
+              // 計算目標元素的位置並加上 75px 偏移
+              const targetPosition =
+                targetElement.getBoundingClientRect().top + window.scrollY;
+              const offset = 75; // 偏移的距離
+              window.scrollTo({
+                top: targetPosition - offset,
+                behavior: "smooth", // 平滑滾動
+              });
+            }
+          }
+        });
+        // 手機 Safari 相容：點擊展開 dropdown
+        const dropdownToggles = document.querySelectorAll(".dropdown-toggle");
+
+        dropdownToggles.forEach((toggle) => {
+          toggle.addEventListener("click", function (e) {
+            e.stopPropagation(); // 防止冒泡，避免點擊外層時也觸發關閉
+            const dropdown = this.nextElementSibling;
+            const isVisible = dropdown.style.display === "block";
+            
+            // 關閉所有其他 dropdown（可選）
+            document.querySelectorAll(".dropdown-content").forEach((menu) => {
+              menu.style.display = "none";
+            });
+
+            // 切換目前這一個 dropdown
+            dropdown.style.display = isVisible ? "none" : "block";
+          });
+        });
+
+        // 點擊其他地方時關閉 dropdown
+        window.addEventListener("click", function () {
+          document.querySelectorAll(".dropdown-content").forEach((menu) => {
+            menu.style.display = "none";
+          });
+        });
+      });
+    </script>
+  </body>
+</html>

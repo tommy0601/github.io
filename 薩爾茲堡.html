@@ -1,0 +1,831 @@
+<!DOCTYPE html>
+<html lang="zh-hant-TW">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="曹旅瀚 Tommy" />
+    <meta name="description" content="漫遊奧地利薩爾茲堡！探索歷史悠久的宮殿、音樂廳與文化景點，品味奧地利美食與咖啡文化，感受這座城市獨特的魅力。" />
+    <meta name="keywords" content="薩爾茲堡旅遊, 奧地利自由行, 薩爾茲堡景點, 薩爾茲堡音樂, 薩爾茲堡宮殿, 薩爾茲堡美食, 奧地利文化, 薩爾茲堡交通, 薩爾茲堡電車" />
+    <title>Tommy 看世界 - 薩爾茲堡</title>
+    <link rel="icon" href="網頁縮圖.ico" />
+    <style>
+      body {
+        font-family: Calibri, Arial, sans-serif; /* 首選 Calibri，次選 Arial */
+        margin: 0;
+        overflow-x: hidden; /* 禁止水平滾動 */
+        background-color: #f4f4f9;
+        color: #333;
+      }
+
+      h1 {
+        font-size: 40px;
+        font-weight: bold;
+      }
+
+      h2 {
+        font-size: 32px;
+        font-weight: bold;
+        color: #2a90a7;
+        display: inline-block;
+        background-color: #cee5e8;
+      }
+
+      h3 {
+        font-size: 26px;
+        margin: 0 0 1rem;
+        font-weight: bold;
+        text-decoration: underline;
+      }
+
+      h4 {
+        font-size: 18px;
+        font-weight: normal;
+        line-height: 1.8;
+      }
+
+      h5 {
+        font-size: 16px;
+        font-weight: normal;
+        margin: 0;
+      }
+
+      h6 {
+        font-size: 10px;
+        color: #fff;
+        margin: 0;
+        text-align: center;
+        line-height: 50px; /* 高度對齊 */
+      }
+
+      nav {
+        background-color: #78bcc4;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;                     /* 讓 nav 寬度隨螢幕自適應 */
+        padding: 0.8rem 5vw;               /* 左右 padding 用 5% 寬度 */
+        box-sizing: border-box;         /* 確保 padding 不會影響寬度總長 */
+        position: fixed;
+        top: 0;
+        z-index: 1000;
+      }
+
+      .nav-left .logo img {
+        height: 5vw; /* 高度為螢幕寬度的 5% */
+        transform: translateX(-2vw); /* 向左移動 2% 寬度 */
+        max-width: 100%; /* 確保不會超過容器 */
+        height: auto; /* 保持圖片比例（建議與 max-height 搭配） */
+        max-height: 3rem;
+      }
+
+      .nav-right {
+        display: flex;
+        align-items: center;
+        margin-left: auto; /* 推到右側 */
+        padding-left: 5%;   /* 內部元素間距，彈性設計 */
+      }
+
+      nav a {
+        color: #eff5f5;
+        text-decoration: none;
+        padding: 1vh 1vw;
+        margin: 0 1vw;
+        transition: transform 0.3s;
+      }
+
+      nav a:hover {
+        transform: translateY(-0.5vh); /* 根據視窗高度調整 */
+      }
+
+      .dropdown {
+        position: relative;
+        display: inline-block;
+      }
+
+      .dropdown-content {
+        width: 100%; /* 佔滿父層寬度 */
+        max-width: 20vw; /* 限制最大寬度 */
+        display: none;
+        position: absolute;
+        background-color: #78bcc4;
+        min-width: 10em; /* 取代 160px，以字體大小作為比例單位 */
+        border-radius: 0.25em;
+        box-shadow: 0 0.5em 1em rgba(0, 0, 0, 0.2); /* 改為相對單位 */
+        padding: 0.2rem 0;
+        z-index: 999;
+      }
+
+      .dropdown-content a {
+        color: #eff5f5;
+        display: block;
+        transition: transform 0.3s;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.3); /* 更淡配色、柔和過渡 */
+        padding: 0.6em 1em;
+        font-size: 1em;
+      }
+
+      .dropdown-content a:last-child {
+        border-bottom: none;
+      }
+
+      .dropdown-content a:hover {
+        transform: translateY(-0.25em); /* 改為相對單位 */
+      }
+
+      .intro-section {
+        background-color: #eff5f5;
+        display: flex;
+        flex-wrap: wrap; /* 確保在小螢幕可換行 */
+        padding: 2rem 5%;
+        margin-top: 4em; /* 根據導航列高度調整 */
+      }
+
+      .intro-section h4 {
+        max-width: 85%; /* 改為相對單位，避免固定寬度限制 */
+        line-height: 1.8;
+      }
+
+      .intro-section .left {
+        width: 60%;
+        padding-right: 1%;
+      }
+
+      .intro-section .right {
+        width: 39%;
+      }
+
+      .destination-section {
+        display: flex;
+        flex-wrap: wrap;               /* 小螢幕時允許換行 */
+        padding: 1rem 5%; /* 左右內間距為螢幕的10% */
+        background-color: white;
+      }
+
+      .destination-main {
+        width: 72%;                    /* 主要內容佔 72%，略縮以保留間距 */
+        margin-right: 3%;              /* 與 sidebar 間保留間距（約為 3%） */
+        box-sizing: border-box;
+      }
+
+      .destination-sidebar {
+        width: 25%;                    /* 側邊欄佔 25% */
+        padding-left: 2%;             /* 相對內邊距 */
+        margin-top: 2rem;
+        box-sizing: border-box;
+      }
+
+      .sidebar-image-container {
+        margin-bottom: 1rem;
+        text-align: center; /* 置中圖片 */
+      }
+
+      .sidebar-image-container img {
+        width: 90%;         /* 圖片寬度為容器寬度的 90% */
+        height: auto;       /* 高度自動，保持比例 */
+        max-height: 60vh;   /* 避免圖片過高，佔螢幕最大 60% 高 */
+        object-fit: cover;  /* 裁切處理長圖 */
+      }
+
+      .two-vertical-images {
+        display: flex;
+        justify-content: space-between;
+        gap: 4%; /* 使用百分比間距更彈性 */
+        margin-top: 2rem;
+        margin-bottom: 2rem;
+        flex-wrap: wrap; /* 若畫面太小，允許換行 */
+      }
+
+      .two-vertical-images img {
+        width: 48%; /* 每張圖片約佔一半（加上 gap 剛好 100%） */
+        height: auto; /* 保持原比例 */
+        object-fit: cover;
+        display: block;
+        margin: 0 auto;
+      }
+
+      .recommendation-section {
+        margin-top: 3vh; /* 與上方文字的間距 */
+        text-align: center;
+        position: sticky;
+        top: 80px; /* 空出導覽列的高度，確保推薦區不被覆蓋 */
+        z-index: 10; /* 提高層級，避免被其他內容遮蓋 */
+        padding: 0 5%;
+      }
+
+      .recommendation-section h3 {
+        font-size: 1.125rem;
+        font-weight: bold;
+        margin-bottom: 1vh; /* 與按鈕區的距離 */
+      }
+
+      .recommendation-buttons {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 0.5em; /* 按鈕之間的間距 */
+      }
+
+      .recommendation-buttons button {
+        padding: 0.5em 1em;
+        font-size: 0.875rem;
+        color: white;
+        background-color: #78bcc4;
+        border: none;
+        border-radius: 0.25rem;
+        transition: transform 0.3s;
+        font-family: Arial, sans-serif;
+      }
+
+      .recommendation-buttons button:hover {
+        transform: translateY(-3px);
+      }
+
+      .contact-section {
+        padding: 4vh 8vw; /* 上下與左右間距 */
+        background-color: #eff5f5; /* 淺灰背景 */
+        text-align: center; /* 確保內容置中對齊 */
+      }
+
+      .contact-item h3 {
+        font-size: 1.125rem; /* 調整標題字體大小 */
+        margin: 0; /* 移除多餘的間距 */
+        text-decoration: none; /* 移除底線 */
+      }
+
+      footer {
+        background-color: #000;
+        color: white;
+        height: 3vh; /* 使用相對單位，高度占螢幕高度的 3% */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 1.5rem; /* 使用相對字體大小 */
+        padding: 0.5rem 0; /* 確保小螢幕時內容不擠壓 */
+      }
+
+      #expandable-menu {
+        position: fixed; 
+        right: 0;
+        width: 26vw; /* 目錄寬度與 sidebar 齊寬 */
+        max-width: 90%; /* 避免在小螢幕太寬 */
+        transform: translateX(100%); /* 初始狀態：隱藏在右側 */
+        transition: transform 0.3s ease;
+        background-color: #f4f4f9; /* 與網站背景一致 */
+        z-index: 1000;
+        box-sizing: border-box;
+      }
+
+      /* 收闔按鈕 */
+      #menu-toggle {
+        position: fixed;
+        top: 45%;
+        right: 0; /* 永遠貼在右側 */
+        transform: translateY(-50%) translateX(0);
+        width: 2.5em; /* 增大按鈕寬度 */
+        height: 5em; /* 增大按鈕高度 */
+        background-color: #78bcc4;
+        color: white;
+        border-radius: 0.4em 0 0 0.4em;
+        display: flex;
+        justify-content: center; /* 水平居中 */
+        align-items: center; /* 垂直居中 */
+        z-index: 2000; /* 要比 expandable-menu 更高，避免被蓋住 */
+        cursor: pointer;
+        box-shadow: -0.1em 0 0.3em rgba(0,0,0,0.1);
+        transition: transform 0.3s ease; /* 平滑移動 */
+      }
+
+      #menu-toggle::after {
+        content: "目錄"; /* 在按鈕內顯示 "目錄" */
+        font-size: 1rem;
+        color: white; /* 設定字體顏色為白色 */
+        writing-mode: vertical-rl; /* 使文字垂直排列 */
+      }
+
+      #menu-toggle:hover {
+        background-color: #78bcc4;
+      }
+
+      /* 目錄內容 */
+      #menu-content {
+        padding: 0.5rem 5%;
+        overflow-y: auto;
+        height: 100%;
+        box-sizing: border-box;
+      }
+
+      #menu-content h4 {
+        font-weight: bold;
+        margin-top: 0;
+        font-size: 1.2rem;
+      }
+
+      #menu-list {
+        list-style: none;
+        padding: 0;
+      }
+
+      #menu-list li {
+        margin-bottom: 1vh;
+      }
+
+      #menu-list a {
+        color: #2a90a7;
+        text-decoration: none;
+        transition: color 0.3s;
+        font-size: 1rem; /* 使用相對字體大小 */
+      }
+
+      #menu-list a:hover {
+        color: #78bcc4;
+      }
+
+      #menu-list .sub-item {
+        margin-left: 8%; /* 調整縮排距離 */
+        font-size: 0.9rem; /* 可選：調整子項目字體大小 */
+      }
+
+      /* 目錄展開狀態 */
+      #expandable-menu.open {
+        transform: translateX(0);
+      }
+
+       /* === 響應式調整：針對手機與小螢幕設備 === */
+      @media (max-width: 768px) {
+        nav {
+          flex-wrap: wrap;
+          padding: 0.8rem 5vw;
+        }
+      
+        .nav-right {
+          display: flex;
+          flex-wrap: wrap;        /* ⭐ 核心 */
+          justify-content: flex-end;
+          width: 100%;
+          gap: 0.4rem;
+          margin-top: 0.3rem;
+        }
+      
+        nav a {
+          white-space: normal;    /* ⭐ 允許換行 */
+          padding: 0.4rem 0.5rem;
+          font-size: 0.85rem;
+        }
+
+        .nav-dropdown {
+          width: 60%; /* 或者用 max-content, fit-content 看需求 */
+          font-size: 0.85rem; /* 調整字體大小和導覽列一致 */
+          padding: 0.5rem;
+        }
+      
+        .nav-dropdown a {
+          font-size: inherit; /* 確保跟 .nav-dropdown 一樣大 */
+          padding: 0.5rem 1rem;
+          white-space: normal; /* 可選：讓字在必要時換行 */
+        }
+
+        .dropdown-content {
+          width: 12vw;
+          min-width: 8em; /* 保證至少能顯示幾個字 */
+          max-width: none;
+        }
+
+        .dropdown-content a {
+          font-size: 0.85rem;
+        }
+        
+        .intro-section {
+          flex-direction: column;
+          padding: 8%;
+          padding-top: calc(8% + 6rem); /* ⭐ 關鍵：讓位給 nav */
+        }
+      
+        .intro-section .left,
+        .intro-section .right {
+          width: 100%;
+          padding: 0;
+          flex: 1 1 100%;
+        }
+      
+        .intro-section .right {
+          margin-top: 1.5rem;
+          display: flex;
+          justify-content: center;
+        }
+      
+        .intro-section h4 {
+          max-width: 100%;
+          font-size: 1rem;
+        }
+
+        .destination-grid {
+          flex-direction: column;
+          gap: 1rem;
+        }
+
+        .destination-section h4 {
+          font-size: 1rem;
+        }
+
+        .destination-item {
+          max-width: 100%;
+          width: 100%;
+        }
+
+        .destination-item.a_role_with_2 {
+          position: static;
+          left: auto;
+        }
+
+        .destination-main,
+        .destination-sidebar {
+          width: 100%;
+          margin: 0;
+          padding: 0;
+        }
+
+        .destination-sidebar {
+          margin-top: 2rem;
+        }
+
+        .recommendation-buttons button {
+          width: 100%; /* 小螢幕按鈕全寬排列 */
+        }
+
+        .contact-section {
+          padding: 3vh 5vw;
+        }
+
+        .contact-item h3 {
+          font-size: 1rem;
+        }
+
+        /* 目錄區寬度改為螢幕寬度的40% */
+        #expandable-menu {
+          width: 40vw !important; /* 用vw方便響應螢幕寬度 */
+          max-width: 90%; /* 保留原本max-width避免太寬 */
+        }
+      
+        #expandable-menu,
+        #expandable-menu * {
+          font-size: 85% !important;
+        }
+              
+        #menu-toggle {
+          width: 75%;
+          max-width: 1.875em;
+          min-width: 1.875em;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <div class="nav-left">
+        <div class="logo">
+          <a href="首頁.html">
+            <img src="網站Logo.png" alt="網站 Logo" />
+          </a>
+        </div>
+      </div>
+      <div class="nav-right">
+        <a href="首頁.html">關於我</a>
+        <div class="dropdown">
+          <a class="dropdown-toggle">亞洲旅遊</a>
+          <div class="dropdown-content">
+            <a href="中國.html">中國</a>
+            <a href="日本.html">日本</a>
+            <a href="新加坡.html">新加坡</a>
+            <a href="馬來西亞.html">馬來西亞</a>
+            <a href="泰國.html">泰國</a>
+            <a href="印尼.html">印尼</a>
+            <a href="越南.html">越南</a>
+          </div>
+        </div>
+        <div class="dropdown">
+          <a class="dropdown-toggle">歐洲旅遊</a>
+          <div class="dropdown-content">
+            <a href="英國.html">英國</a>
+            <a href="法國.html">法國</a>
+            <a href="德國.html">德國</a>
+            <a href="荷蘭.html">荷蘭</a>
+            <a href="比利時.html">比利時</a>
+            <a href="盧森堡.html">盧森堡</a>
+            <a href="瑞士.html">瑞士</a>
+            <a href="摩納哥.html">摩納哥</a>
+            <a href="西班牙.html">西班牙</a>
+            <a href="葡萄牙.html">葡萄牙</a>
+            <a href="安道爾.html">安道爾</a>
+            <a href="丹麥.html">丹麥</a>
+            <a href="瑞典.html">瑞典</a>
+            <a href="波蘭.html">波蘭</a>
+            <a href="匈牙利.html">匈牙利</a>
+            <a href="捷克.html">捷克</a>
+            <a href="奧地利.html">奧地利</a>
+          </div>
+        </div>
+        <div class="dropdown">
+          <a class="dropdown-toggle">美洲旅遊</a>
+          <div class="dropdown-content">
+            <a href="美國.html">美國</a>
+            <a href="加拿大.html">加拿大</a>
+          </div>
+        </div>
+        <div class="dropdown">
+          <a class="dropdown-toggle">大洋洲旅遊</a>
+          <div class="dropdown-content">
+            <a href="澳洲.html">澳洲</a>
+          </div>
+        </div>
+        <div class="dropdown">
+          <a class="dropdown-toggle">非洲旅遊</a>
+          <div class="dropdown-content">
+            <a href="南非.html">南非</a>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <div class="intro-section">
+      <div class="left">
+        <h1>Tommy 在薩爾茲堡</h1>
+        <h4>
+          <b>薩爾茲堡 (Salzburg) </b>位於奧地利西部，鄰近德國邊境，8 世紀薩爾茲堡成為天主教總主教駐地，歷代大主教憑藉鹽業財富興建眾多巴洛克式教堂、宮殿與廣場，使城市成為神聖羅馬帝國重要的宗教與文化中心。1756 年音樂神童沃夫岡阿瑪迪斯·札特誕生於此，薩爾茲堡因此享有「莫札特故鄉」的美譽，也成為世界古典音樂的重要象徵。
+        </h4>
+        <h4>第二次世界大戰期間薩爾茲堡雖遭受部分空襲，但舊城區大多完整保存，1996年薩爾茲堡歷史中心被列入聯合國教科文組織世界文化遺產，以保存完善的巴洛克建築、中世紀街巷與壯麗山城景觀聞名。如今薩爾茲堡每年舉辦享譽國際的薩爾茲堡藝術節，吸引世界頂尖音樂家與藝術家齊聚演出。此外電影《真善美》多處場景也在此拍攝，讓城市更具國際知名度。</h4>
+      </div>
+      <div class="right">
+        <img src="奧地利照片\薩爾茲堡\薩爾茲堡_介紹.jpg" style="width: 100%; height: auto; max-width: 100%;" />
+      </div>
+    </div>
+
+    <div class="destination-section">
+      <div class="destination-main">
+        <h2>薩爾茲堡交通</h2>
+        <h3>機場交通</h3>
+        <h4>
+          薩爾茲堡機場是非常小，航班也並不多，因此比較推薦是到慕尼黑之後再搭乘 2 個小時的火車抵達，也可以從維也納搭 3 個半小時的火車車抵達。
+        </h4>
+        <h3>市區交通</h3>
+        <h4>
+          薩爾茲堡的景點非常集中，步行遊覽即可。
+        </h4>
+        <br /><br />
+        <h2>薩爾茲堡住宿</h2>
+        <h4>
+          由於薩爾茲堡的景點相當集中，因此直接選擇市中心位置或靠近火車站即可。
+        </h4>
+        <div style="text-align: center">
+          <img src="奧地利照片\薩爾茲堡\薩爾茲堡_住宿.png" style="width: 70%; max-width: 90vw; height: auto;" />
+        </div>
+        <br /><br />
+        <h2>薩爾茲堡景點</h2>
+        <h3>米拉貝爾宮 (Mirabell Palace) </h3>
+        <h4>
+          米拉貝爾宮建於 1606 年，由薩爾茲堡大主教沃夫迪特里希 (Wolf Dietrich von Raitenau) 興建，作為送給摯愛莎樂美阿爾特 (Salome Alt) 的宮殿，後來經多次改建，尤其在 18 世紀採用華麗的巴洛克風格，成為今日典雅優美的宮殿建築，米拉貝爾宮與花園於 1996 年一同列入聯合國教科文組織世界文化遺產。
+        </h4>
+        <h4>宮殿最著名的是幾何造景的米拉貝爾花園，園內有飛馬噴泉、神話雕像、玫瑰花園及綠意盎然的步道，可遠眺霍恩薩爾茲堡要塞，是薩爾茲堡最經典的景觀，宮內的大理石廳 (Marble Hall) 被譽為世界最美婚禮禮堂，也是舉辦古典音樂會的重要場地，莫札特家族曾在此演出，電影《真善美》亦曾在花園取景。</h4>
+        <div style="text-align: center">
+          <img src="奧地利照片\薩爾茲堡\SZ1.jpg" style="width: 70%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+          <img src="奧地利照片\薩爾茲堡\SZ2.jpg" style="width: 70%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+          <img src="奧地利照片\薩爾茲堡\SZ3.jpg" style="width: 70%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+          <img src="奧地利照片\薩爾茲堡\SZ4.jpg" style="width: 70%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+          <img src="奧地利照片\薩爾茲堡\SZ5.jpg" style="width: 70%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+        </div>
+        <br /><br /><br />
+        <h3>馬卡特橋 (Makartsteg) </h3>
+        <h4>
+          馬卡特橋橫跨薩爾察赫河，連接薩爾茲堡舊城區與新城區，橋梁以 19 世紀奧地利著名歷史畫家漢斯馬卡特 (Hans Makart)命名，現今橋體於 20 世紀重建，設計簡潔現代，提供行人與自行車通行。馬卡特橋最大的特色是橋欄上掛滿象徵愛情與承諾的「愛情鎖」，情侶們將刻有姓名的鎖固定於橋上，再把鑰匙投入薩爾察赫河中，寓意愛情長久，因此又有「愛情橋」之稱，站在橋上可欣賞霍恩薩爾茲堡要塞、米拉貝爾宮花園、薩爾察赫河及舊城區巴洛克建築的優美景色，尤其黃昏與夜晚更具浪漫氛圍。
+        </h4>
+        <div style="text-align: center">
+          <img src="奧地利照片\薩爾茲堡\SZ6.jpg" style="width: 90%; max-width: 100vw; height: auto; margin: 0.5rem;" />
+          <img src="奧地利照片\薩爾茲堡\SZ7.jpg" style="width: 90%; max-width: 100vw; height: auto; margin: 0.5rem;" />
+          <img src="奧地利照片\薩爾茲堡\SZ8.jpg" style="width: 90%; max-width: 100vw; height: auto; margin: 0.5rem;" />
+        </div>
+        <br /><br /><br />
+        <h3>莫札特出生地 (Mozarts Geburtshaus)</h3>
+        <h4>
+          莫札特出生地位於薩爾茲堡舊城區糧食胡同 (Getreidegasse) 9號，是世界著名作曲家沃夫岡阿瑪迪斯莫札特於1756 年 1 月 27 日誕生的地方，莫札特一家在此居住至 1773 年，他在這裡度過童年，展現驚人的音樂天賦，並創作出許多早期作品，奠定日後成為古典音樂巨匠的基礎。
+        </h4>
+        <h4>這棟建築建於中世紀，現已改建為莫札特博物館，館內展示莫札特使用過的樂器、親筆手稿、書信、肖像及生活用品，透過珍貴文物完整介紹他的成長歷程與音樂成就，也能了解莫札特家族的生活背景，以及 18 世紀薩爾茲堡的文化風貌。</h4>
+        <div style="text-align: center">
+          <img src="奧地利照片\薩爾茲堡\SZ9.jpg" style="width: 70%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+        </div>
+        <br /><br /><br />
+        <h3>格特萊第街 (Getreidegasse)</h3>
+        <h4>
+          格特萊第街是最古老、最熱鬧的商業街，也是世界文化遺產的重要組成部分，可追溯至中世紀，因昔日聚集穀物商人而得名，數百年來一直是薩爾茲堡的重要商業與生活中心，街道兩旁保留色彩典雅的中世紀建築，狹窄的石板路充滿濃厚的歷史氛圍。格特萊第街最具特色的是造型精美的鍛鐵店招，每家商店都擁有獨具特色的招牌，街上匯集國際精品、傳統手工藝店、咖啡館及特色餐廳。
+        </h4>
+        <div style="text-align: center">
+          <img src="奧地利照片\薩爾茲堡\SZ10.jpg" style="width: 70%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+          <img src="奧地利照片\薩爾茲堡\SZ11.jpg" style="width: 70%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+        </div>
+        <h4>格特萊第街上有非常多販賣莫札特巧克力球的商家，但通常價格都非常高昂，因此不推薦在薩爾斯堡市中心購買，在歐洲非常多超市其實也都有販售類似的商品。</h4>
+        <div style="text-align: center">
+          <img src="奧地利照片\薩爾茲堡\SZ12.jpg" style="width: 70%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+        </div>
+        <br /><br /><br />
+        <h3>薩爾茲堡主教座堂 (Salzburg Cathedral)</h3>
+        <h4>
+          薩爾茲堡主教座堂是奧地利最重要的巴洛克式教堂之一，也是薩爾茲堡總教區的主教座堂，最早可追溯至 8 世紀，由聖魯佩特創建，現今建築則於 17 世紀由義大利建築師桑蒂諾索拉里設計並於 1628 年落成，以雄偉的白色外牆、雙塔與巨大圓頂聞名，展現巴洛克建築的莊嚴與華麗。教堂內部裝飾精緻，擁有壯觀的壁畫、大理石祭壇、精美雕塑及大型管風琴，充滿濃厚的宗教藝術氛圍，世界著名作曲家莫札特於 1756 年在此受洗，後來也曾擔任教堂管風琴師，因此教堂與他的音樂生涯有著深厚淵源。
+        </h4>
+        <div style="text-align: center">
+          <img src="奧地利照片\薩爾茲堡\SZ13.jpg" style="width: 90%; max-width: 100vw; height: auto; margin: 0.5rem;" />
+          <img src="奧地利照片\薩爾茲堡\SZ14.jpg" style="width: 90%; max-width: 100vw; height: auto; margin: 0.5rem;" />
+        </div>
+        <br /><br /><br />
+        <h3>薩爾茲堡要塞 (Hohensalzburg Fortress)</h3>
+        <h4>
+          薩爾茲堡要塞坐落於費斯頓山山頂，是歐洲保存最完整、規模最大的中世紀城堡，始建於 1077 年，由大主教格布哈德下令興建，之後歷經數百年擴建，逐漸形成今日雄偉的規模，由於防禦工事堅固，要塞在歷史上從未被敵軍攻陷，象徵著薩爾茲堡大主教昔日的權力與地位。要塞內設有王公廳、黃金廳、兵器館、木偶博物館及軍事展覽，展示中世紀生活與防禦設施，遊客可步行登山，或搭乘歷史悠久的登山纜車直達山頂，站在城牆與觀景台上，可俯瞰薩爾茲堡舊城、薩爾察赫河及遠方阿爾卑斯山脈，景色十分壯麗。
+        </h4>
+        <div style="text-align: center">
+          <img src="奧地利照片\薩爾茲堡\SZ15.jpg" style="width: 90%; max-width: 100vw; height: auto; margin: 0.5rem;" />
+          <img src="奧地利照片\薩爾茲堡\SZ16.jpg" style="width: 90%; max-width: 100vw; height: auto; margin: 0.5rem;" />
+          <img src="奧地利照片\薩爾茲堡\SZ17.jpg" style="width: 70%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+          <img src="奧地利照片\薩爾茲堡\SZ18.jpg" style="width: 70%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+        </div>
+        <br /><br />
+        <h2>薩爾茲堡美食</h2>
+        <h3>Bärenwirt</h3>
+        <h4>
+          Bärenwirt 是薩爾茲堡歷史悠久的傳統奧地利餐廳，創立於 17 世紀，以道地奧地利家常料理聞名，餐廳招牌菜包括維也納炸牛排、烤豬排、燉牛肉、餃子及季節特色料理，並搭配奧地利啤酒與在地葡萄酒，店內保留典雅的木質裝潢與傳統酒館氛圍，展現濃厚的薩爾茲堡風情。
+        </h4>
+        <div style="text-align: center">
+          <img src="奧地利照片\薩爾茲堡\SZ19.jpg" style="width: 70%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+        </div>
+        <br />
+      </div>
+      <div class="destination-sidebar">
+        <div class="sidebar-image-container">
+          <img src="側邊欄自我介紹.jpg" />
+        </div>
+        <h5>
+          Hi!
+          我是Tommy，我熱愛旅遊也喜歡藉由影像紀錄旅程中的點點滴滴，透過文字將我在旅途中的所見所聞分享給大家。旅行對我而言不只是吃吃喝喝，而是能在行萬里路間感受世界的脈動，體驗不同的文化，希望藉由我的分享能讓大家看到更多世界的美好。
+        </h5>
+        <br />
+        <h5>
+          想更了解我或與我聯絡:
+          <a
+            href="https://www.instagram.com/tommy_techvoyage/"
+            target="_blank"
+            style="color: inherit; text-decoration: underline"
+          >
+            <b>Instagram</b>
+          </a>
+        </h5>
+        <div class="recommendation-section">
+          <h3>其他奧地利旅遊目的地</h3>
+          <div class="recommendation-buttons">
+            <a href="維也納.html">
+              <button><h5>維也納</h5></button>
+            </a>
+            <a href="因斯布魯克.html">
+              <button><h5>因斯布魯克</h5></button>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="contact-section">
+      <div class="contact-item">
+        <h3>
+          想更了解我或與我聯絡:
+          <a
+            href="https://www.instagram.com/tommy_techvoyage/"
+            target="_blank"
+            style="color: inherit; text-decoration: underline"
+          >
+            Instagram
+          </a>
+        </h3>
+      </div>
+    </div>
+    <footer>
+      <h6>COPYRIGHT © 2025 Tommy 看世界 All rights reserved.</h6>
+    </footer>
+    <div id="menu-toggle"></div>
+    <div id="expandable-menu">
+      <div id="menu-content">
+        <h4>目錄</h4>
+        <ul id="menu-list"></ul>
+      </div>
+    </div>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const menu = document.getElementById("expandable-menu");
+        const toggle = document.getElementById("menu-toggle");
+        const menuList = document.getElementById("menu-list");
+        const destinationMain = document.querySelector(".destination-main");
+
+        // 點擊按鈕切換目錄狀態
+        toggle.addEventListener("click", () => {
+          menu.classList.toggle("open");
+
+          const menuWidth = menu.offsetWidth; // 獲取目前展開的目錄寬度
+
+          if (menu.classList.contains("open")) {
+            // 讓按鈕向左平移與 menu 一樣的寬度
+            toggle.style.transform = `translateY(-50%) translateX(-${menuWidth}px)`;
+          } else {
+            // 收回原位
+            toggle.style.transform = `translateY(-50%) translateX(0)`;
+          }
+        });
+
+        window.addEventListener("load", () => {
+          if (menu.classList.contains("open")) {
+            const menuWidth = menu.offsetWidth;
+            toggle.style.transform = `translateY(-50%) translateX(-${menuWidth}px)`;
+          }
+        });
+
+        // 從 destination-main 區域提取 h2 和 h3，動態生成目錄
+        const headings = destinationMain.querySelectorAll("h2, h3");
+        headings.forEach((heading, index) => {
+          // 確保每個 h2 和 h3 都有唯一的 id
+          if (!heading.id) {
+            heading.id = `heading-${index}`;
+          }
+
+          const listItem = document.createElement("li");
+          const link = document.createElement("a");
+          link.textContent = heading.textContent;
+          link.href = `#${heading.id}`;
+          listItem.appendChild(link);
+
+          // 為 h3 添加縮排樣式
+          if (heading.tagName.toLowerCase() === "h3") {
+            listItem.classList.add("sub-item");
+          }
+
+          menuList.appendChild(listItem);
+        });
+
+        function adjustMenuPosition() {
+          const nav = document.querySelector("nav");
+          const menu = document.getElementById("expandable-menu");
+      
+          if (nav && menu) {
+            const navHeight = nav.offsetHeight;
+      
+            // 設定 menu 的 top 與高度
+            menu.style.top = `${navHeight}px`;
+            menu.style.height = `calc(100vh - ${navHeight}px)`;
+          }
+        }
+      
+        // 載入與尺寸變化時調整
+        window.addEventListener("DOMContentLoaded", adjustMenuPosition);
+        window.addEventListener("resize", adjustMenuPosition);
+        
+        // 滾動至目標位置並加上 75px 偏移
+        menuList.addEventListener("click", (event) => {
+          if (event.target.tagName === "A") {
+            event.preventDefault(); // 阻止預設行為
+
+            const targetId = event.target.getAttribute("href").substring(1); // 取得目標 ID
+            const targetElement = document.getElementById(targetId);
+
+            if (targetElement) {
+              // 計算目標元素的位置並加上 75px 偏移
+              const targetPosition =
+                targetElement.getBoundingClientRect().top + window.scrollY;
+              const offset = 75; // 偏移的距離
+              window.scrollTo({
+                top: targetPosition - offset,
+                behavior: "smooth", // 平滑滾動
+              });
+            }
+          }
+        });
+        // 手機 Safari 相容：點擊展開 dropdown
+        const dropdownToggles = document.querySelectorAll(".dropdown-toggle");
+
+        dropdownToggles.forEach((toggle) => {
+          toggle.addEventListener("click", function (e) {
+            e.stopPropagation(); // 防止冒泡，避免點擊外層時也觸發關閉
+            const dropdown = this.nextElementSibling;
+            const isVisible = dropdown.style.display === "block";
+            
+            // 關閉所有其他 dropdown（可選）
+            document.querySelectorAll(".dropdown-content").forEach((menu) => {
+              menu.style.display = "none";
+            });
+
+            // 切換目前這一個 dropdown
+            dropdown.style.display = isVisible ? "none" : "block";
+          });
+        });
+
+        // 點擊其他地方時關閉 dropdown
+        window.addEventListener("click", function () {
+          document.querySelectorAll(".dropdown-content").forEach((menu) => {
+            menu.style.display = "none";
+          });
+        });
+      });
+    </script>
+  </body>
+</html>
