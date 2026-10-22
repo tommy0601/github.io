@@ -1,0 +1,981 @@
+<!DOCTYPE html>
+<html lang="zh-hant-TW">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="曹旅瀚 Tommy" />
+    <meta name="description" content="探索日惹的魅力！從美麗的沙灘到古老的寺廟，體驗日惹的獨特文化與自然景觀。享受海灘度假、沖浪、瑜伽和島嶼探險，感受這個熱帶天堂的每一刻。" />
+    <meta name="keywords" content="日惹旅遊, 日惹自由行, 日惹沙灘, 日惹寺廟, 日惹瑜伽, 日惹沖浪, 日惹度假, 日惹景點, 日惹文化, 日惹自然景觀" />
+    <title>Tommy 看世界 - 日惹</title>
+    <link rel="icon" href="網頁縮圖.ico" />
+    <style>
+      body {
+        font-family: Calibri, Arial, sans-serif; /* 首選 Calibri，次選 Arial */
+        margin: 0;
+        overflow-x: hidden; /* 禁止水平滾動 */
+        background-color: #f4f4f9;
+        color: #333;
+      }
+
+      h1 {
+        font-size: 40px;
+        font-weight: bold;
+      }
+
+      h2 {
+        font-size: 32px;
+        font-weight: bold;
+        color: #2a90a7;
+        display: inline-block;
+        background-color: #cee5e8;
+      }
+
+      h3 {
+        font-size: 26px;
+        margin: 0 0 1rem;
+        font-weight: bold;
+        text-decoration: underline;
+      }
+
+      h4 {
+        font-size: 18px;
+        font-weight: normal;
+        line-height: 1.8;
+      }
+
+      h5 {
+        font-size: 16px;
+        font-weight: normal;
+        margin: 0;
+      }
+
+      h6 {
+        font-size: 10px;
+        color: #fff;
+        margin: 0;
+        text-align: center;
+        line-height: 50px; /* 高度對齊 */
+      }
+
+      nav {
+        background-color: #78bcc4;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;                     /* 讓 nav 寬度隨螢幕自適應 */
+        padding: 0.8rem 5vw;               /* 左右 padding 用 5% 寬度 */
+        box-sizing: border-box;         /* 確保 padding 不會影響寬度總長 */
+        position: fixed;
+        top: 0;
+        z-index: 1000;
+      }
+
+      .nav-left .logo img {
+        height: 5vw; /* 高度為螢幕寬度的 5% */
+        transform: translateX(-2vw); /* 向左移動 2% 寬度 */
+        max-width: 100%; /* 確保不會超過容器 */
+        height: auto; /* 保持圖片比例（建議與 max-height 搭配） */
+        max-height: 3rem;
+      }
+
+      .nav-right {
+        display: flex;
+        align-items: center;
+        margin-left: auto; /* 推到右側 */
+        padding-left: 5%;   /* 內部元素間距，彈性設計 */
+      }
+
+      nav a {
+        color: #eff5f5;
+        text-decoration: none;
+        padding: 1vh 1vw;
+        margin: 0 1vw;
+        transition: transform 0.3s;
+      }
+
+      nav a:hover {
+        transform: translateY(-0.5vh); /* 根據視窗高度調整 */
+      }
+
+      .dropdown {
+        position: relative;
+        display: inline-block;
+      }
+
+      .dropdown-content {
+        width: 100%; /* 佔滿父層寬度 */
+        max-width: 20vw; /* 限制最大寬度 */
+        display: none;
+        position: absolute;
+        background-color: #78bcc4;
+        min-width: 10em; /* 取代 160px，以字體大小作為比例單位 */
+        border-radius: 0.25em;
+        box-shadow: 0 0.5em 1em rgba(0, 0, 0, 0.2); /* 改為相對單位 */
+        padding: 0.2rem 0;
+        z-index: 999;
+      }
+
+      .dropdown-content a {
+        color: #eff5f5;
+        display: block;
+        transition: transform 0.3s;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.3); /* 更淡配色、柔和過渡 */
+        padding: 0.6em 1em;
+        font-size: 1em;
+      }
+
+      .dropdown-content a:last-child {
+        border-bottom: none;
+      }
+
+      .dropdown-content a:hover {
+        transform: translateY(-0.25em); /* 改為相對單位 */
+      }
+
+      .intro-section {
+        background-color: #eff5f5;
+        display: flex;
+        flex-wrap: wrap; /* 確保在小螢幕可換行 */
+        padding: 2rem 5%;
+        margin-top: 4em; /* 根據導航列高度調整 */
+      }
+
+      .intro-section h4 {
+        max-width: 85%; /* 改為相對單位，避免固定寬度限制 */
+        line-height: 1.8;
+      }
+
+      .intro-section .left {
+        width: 60%;
+        padding-right: 1%;
+      }
+
+      .intro-section .right {
+        width: 39%;
+      }
+
+      .destination-section {
+        display: flex;
+        flex-wrap: wrap;               /* 小螢幕時允許換行 */
+        padding: 1rem 5%; /* 左右內間距為螢幕的10% */
+        background-color: white;
+      }
+
+      .destination-main {
+        width: 72%;                    /* 主要內容佔 72%，略縮以保留間距 */
+        margin-right: 3%;              /* 與 sidebar 間保留間距（約為 3%） */
+        box-sizing: border-box;
+      }
+
+      .destination-sidebar {
+        width: 25%;                    /* 側邊欄佔 25% */
+        padding-left: 2%;             /* 相對內邊距 */
+        margin-top: 2rem;
+        box-sizing: border-box;
+      }
+
+      .sidebar-image-container {
+        margin-bottom: 1rem;
+        text-align: center; /* 置中圖片 */
+      }
+
+      .sidebar-image-container img {
+        width: 90%;         /* 圖片寬度為容器寬度的 90% */
+        height: auto;       /* 高度自動，保持比例 */
+        max-height: 60vh;   /* 避免圖片過高，佔螢幕最大 60% 高 */
+        object-fit: cover;  /* 裁切處理長圖 */
+      }
+
+      .two-vertical-images {
+        display: flex;
+        justify-content: space-between;
+        gap: 4%; /* 使用百分比間距更彈性 */
+        margin-top: 2rem;
+        margin-bottom: 2rem;
+        flex-wrap: wrap; /* 若畫面太小，允許換行 */
+      }
+
+      .two-vertical-images img {
+        width: 48%; /* 每張圖片約佔一半（加上 gap 剛好 100%） */
+        height: auto; /* 保持原比例 */
+        object-fit: cover;
+        display: block;
+        margin: 0 auto;
+      }
+
+      .recommendation-section {
+        margin-top: 3vh; /* 與上方文字的間距 */
+        text-align: center;
+        position: sticky;
+        top: 80px; /* 空出導覽列的高度，確保推薦區不被覆蓋 */
+        z-index: 10; /* 提高層級，避免被其他內容遮蓋 */
+        padding: 0 5%;
+      }
+
+      .recommendation-section h3 {
+        font-size: 1.125rem;
+        font-weight: bold;
+        margin-bottom: 1vh; /* 與按鈕區的距離 */
+      }
+
+      .recommendation-buttons {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 0.5em; /* 按鈕之間的間距 */
+      }
+
+      .recommendation-buttons button {
+        padding: 0.5em 1em;
+        font-size: 0.875rem;
+        color: white;
+        background-color: #78bcc4;
+        border: none;
+        border-radius: 0.25rem;
+        transition: transform 0.3s;
+        font-family: Arial, sans-serif;
+      }
+
+      .recommendation-buttons button:hover {
+        transform: translateY(-3px);
+      }
+
+      .contact-section {
+        padding: 4vh 8vw; /* 上下與左右間距 */
+        background-color: #eff5f5; /* 淺灰背景 */
+        text-align: center; /* 確保內容置中對齊 */
+      }
+
+      .contact-item h3 {
+        font-size: 1.125rem; /* 調整標題字體大小 */
+        margin: 0; /* 移除多餘的間距 */
+        text-decoration: none; /* 移除底線 */
+      }
+
+      footer {
+        background-color: #000;
+        color: white;
+        height: 3vh; /* 使用相對單位，高度占螢幕高度的 3% */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 1.5rem; /* 使用相對字體大小 */
+        padding: 0.5rem 0; /* 確保小螢幕時內容不擠壓 */
+      }
+
+      #expandable-menu {
+        position: fixed; 
+        right: 0;
+        width: 26vw; /* 目錄寬度與 sidebar 齊寬 */
+        max-width: 90%; /* 避免在小螢幕太寬 */
+        transform: translateX(100%); /* 初始狀態：隱藏在右側 */
+        transition: transform 0.3s ease;
+        background-color: #f4f4f9; /* 與網站背景一致 */
+        z-index: 1000;
+        box-sizing: border-box;
+      }
+
+      /* 收闔按鈕 */
+      #menu-toggle {
+        position: fixed;
+        top: 45%;
+        right: 0; /* 永遠貼在右側 */
+        transform: translateY(-50%) translateX(0);
+        width: 2.5em; /* 增大按鈕寬度 */
+        height: 5em; /* 增大按鈕高度 */
+        background-color: #78bcc4;
+        color: white;
+        border-radius: 0.4em 0 0 0.4em;
+        display: flex;
+        justify-content: center; /* 水平居中 */
+        align-items: center; /* 垂直居中 */
+        z-index: 2000; /* 要比 expandable-menu 更高，避免被蓋住 */
+        cursor: pointer;
+        box-shadow: -0.1em 0 0.3em rgba(0,0,0,0.1);
+        transition: transform 0.3s ease; /* 平滑移動 */
+      }
+
+      #menu-toggle::after {
+        content: "目錄"; /* 在按鈕內顯示 "目錄" */
+        font-size: 1rem;
+        color: white; /* 設定字體顏色為白色 */
+        writing-mode: vertical-rl; /* 使文字垂直排列 */
+      }
+
+      #menu-toggle:hover {
+        background-color: #78bcc4;
+      }
+
+      /* 目錄內容 */
+      #menu-content {
+        padding: 0.5rem 5%;
+        overflow-y: auto;
+        height: 100%;
+        box-sizing: border-box;
+      }
+
+      #menu-content h4 {
+        font-weight: bold;
+        margin-top: 0;
+        font-size: 1.2rem;
+      }
+
+      #menu-list {
+        list-style: none;
+        padding: 0;
+      }
+
+      #menu-list li {
+        margin-bottom: 1vh;
+      }
+
+      #menu-list a {
+        color: #2a90a7;
+        text-decoration: none;
+        transition: color 0.3s;
+        font-size: 1rem; /* 使用相對字體大小 */
+      }
+
+      #menu-list a:hover {
+        color: #78bcc4;
+      }
+
+      #menu-list .sub-item {
+        margin-left: 8%; /* 調整縮排距離 */
+        font-size: 0.9rem; /* 可選：調整子項目字體大小 */
+      }
+
+      /* 目錄展開狀態 */
+      #expandable-menu.open {
+        transform: translateX(0);
+      }
+
+       /* === 響應式調整：針對手機與小螢幕設備 === */
+      @media (max-width: 768px) {
+        nav {
+          flex-wrap: wrap;
+          padding: 0.8rem 5vw;
+        }
+      
+        .nav-right {
+          display: flex;
+          flex-wrap: wrap;        /* ⭐ 核心 */
+          justify-content: flex-end;
+          width: 100%;
+          gap: 0.4rem;
+          margin-top: 0.3rem;
+        }
+      
+        nav a {
+          white-space: normal;    /* ⭐ 允許換行 */
+          padding: 0.4rem 0.5rem;
+          font-size: 0.85rem;
+        }
+
+        .nav-dropdown {
+          width: 60%; /* 或者用 max-content, fit-content 看需求 */
+          font-size: 0.85rem; /* 調整字體大小和導覽列一致 */
+          padding: 0.5rem;
+        }
+      
+        .nav-dropdown a {
+          font-size: inherit; /* 確保跟 .nav-dropdown 一樣大 */
+          padding: 0.5rem 1rem;
+          white-space: normal; /* 可選：讓字在必要時換行 */
+        }
+
+        .dropdown-content {
+          width: 12vw;
+          min-width: 8em; /* 保證至少能顯示幾個字 */
+          max-width: none;
+        }
+
+        .dropdown-content a {
+          font-size: 0.85rem;
+        }
+        
+        .intro-section {
+          flex-direction: column;
+          padding: 8%;
+          padding-top: calc(8% + 6rem); /* ⭐ 關鍵：讓位給 nav */
+        }
+      
+        .intro-section .left,
+        .intro-section .right {
+          width: 100%;
+          padding: 0;
+          flex: 1 1 100%;
+        }
+      
+        .intro-section .right {
+          margin-top: 1.5rem;
+          display: flex;
+          justify-content: center;
+        }
+      
+        .intro-section h4 {
+          max-width: 100%;
+          font-size: 1rem;
+        }
+
+        .destination-grid {
+          flex-direction: column;
+          gap: 1rem;
+        }
+
+        .destination-section h4 {
+          font-size: 1rem;
+        }
+
+        .destination-item {
+          max-width: 100%;
+          width: 100%;
+        }
+
+        .destination-item.a_role_with_2 {
+          position: static;
+          left: auto;
+        }
+
+        .destination-main,
+        .destination-sidebar {
+          width: 100%;
+          margin: 0;
+          padding: 0;
+        }
+
+        .destination-sidebar {
+          margin-top: 2rem;
+        }
+
+        .recommendation-buttons button {
+          width: 100%; /* 小螢幕按鈕全寬排列 */
+        }
+
+        .contact-section {
+          padding: 3vh 5vw;
+        }
+
+        .contact-item h3 {
+          font-size: 1rem;
+        }
+
+        /* 目錄區寬度改為螢幕寬度的40% */
+        #expandable-menu {
+          width: 40vw !important; /* 用vw方便響應螢幕寬度 */
+          max-width: 90%; /* 保留原本max-width避免太寬 */
+        }
+      
+        #expandable-menu,
+        #expandable-menu * {
+          font-size: 85% !important;
+        }
+              
+        #menu-toggle {
+          width: 75%;
+          max-width: 1.875em;
+          min-width: 1.875em;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <div class="nav-left">
+        <div class="logo">
+          <a href="首頁.html">
+            <img src="網站Logo.png" alt="網站 Logo" />
+          </a>
+        </div>
+      </div>
+           <div class="nav-right">
+        <a href="首頁.html">關於我</a>
+        <div class="dropdown">
+          <a class="dropdown-toggle">亞洲旅遊</a>
+          <div class="dropdown-content">
+            <a href="中國.html">中國</a>
+            <a href="日本.html">日本</a>
+            <a href="新加坡.html">新加坡</a>
+            <a href="馬來西亞.html">馬來西亞</a>
+            <a href="泰國.html">泰國</a>
+            <a href="印尼.html">印尼</a>
+            <a href="越南.html">越南</a>
+            <a href="菲律賓.html">菲律賓</a>
+          </div>
+        </div>
+        <div class="dropdown">
+          <a class="dropdown-toggle">歐洲旅遊</a>
+          <div class="dropdown-content">
+            <a href="英國.html">英國</a>
+            <a href="法國.html">法國</a>
+            <a href="德國.html">德國</a>
+            <a href="荷蘭.html">荷蘭</a>
+            <a href="比利時.html">比利時</a>
+            <a href="盧森堡.html">盧森堡</a>
+            <a href="瑞士.html">瑞士</a>
+            <a href="摩納哥.html">摩納哥</a>
+            <a href="西班牙.html">西班牙</a>
+            <a href="葡萄牙.html">葡萄牙</a>
+            <a href="安道爾.html">安道爾</a>
+            <a href="丹麥.html">丹麥</a>
+            <a href="瑞典.html">瑞典</a>
+            <a href="波蘭.html">波蘭</a>
+            <a href="匈牙利.html">匈牙利</a>
+            <a href="捷克.html">捷克</a>
+            <a href="奧地利.html">奧地利</a>
+          </div>
+        </div>
+        <div class="dropdown">
+          <a class="dropdown-toggle">美洲旅遊</a>
+          <div class="dropdown-content">
+            <a href="美國.html">美國</a>
+            <a href="加拿大.html">加拿大</a>
+          </div>
+        </div>
+        <div class="dropdown">
+          <a class="dropdown-toggle">大洋洲旅遊</a>
+          <div class="dropdown-content">
+            <a href="澳洲.html">澳洲</a>
+          </div>
+        </div>
+        <div class="dropdown">
+          <a class="dropdown-toggle">非洲旅遊</a>
+          <div class="dropdown-content">
+            <a href="南非.html">南非</a>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <div class="intro-section">
+      <div class="left">
+        <h1>Tommy 在日惹</h1>
+        <h4>
+          <b>日惹 (Yogyakarta)</b>
+          位於爪哇島中部，是印尼最具歷史、文化與藝術氣息的城市，曾是古代爪哇文明的重要核心，附近的婆羅浮屠與普蘭巴南分別見證佛教與印度教王國的繁盛。18 世紀日惹蘇丹國成立，城市逐漸成為爪哇政治與文化中心，印尼獨立革命期間，1946 至 1949 年間日惹更曾暫時成為共和國首都，在印尼建國史上具有重要地位，時至今日日惹仍保留蘇丹制度。
+        </h4>
+        <h4>
+          現在的日惹被譽為印尼的文化之都與學生之城，擁有日惹加查馬達大學等眾多高等教育機構，咖啡館、藝術空間、創意產業與新創社群也十分蓬勃，著名的 Malioboro 馬里奧波羅大街則匯集街頭美食、市集與商店。
+        </h4>
+      </div>
+      <div class="right">
+        <img src="印尼照片\日惹\日惹_介紹.jpg" style="width: 100%; height: auto; max-width: 100%;" />
+      </div>
+    </div>
+
+    <div class="destination-section">
+      <div class="destination-main">
+        <h2>日惹交通</h2>
+        <h3>機場交通</h3>
+        <h4>
+          日惹國際機場距離市區有 1 個小時車程，推薦是先搭乘機場鐵路到達 Tugu Yogyakarta 後，再叫 Grab 或 Gojek 前往飯店。
+        </h4>
+        <h3>市區交通</h3>
+        <h4>
+          日惹沒有大眾交通運輸，想要移動就叫 Grab 或 Gojek 吧，價格十分親民跟搭大眾交通運輸差不多。
+        </h4>
+        <br />
+        <h2>日惹住宿</h2>
+        <h4>
+          在日惹選擇住宿推薦住在古城區的民宿，離鬧區的 Malioboro 不遠，但又不會過於吵雜，離古城區內的景點也十分方便。
+        </h4>
+        <div style="text-align: center">
+          <img src="印尼照片\日惹\日惹_住宿.png" style="width: 90%; max-width: 100vw; height: auto;" />
+        </div>
+        <br /><br />
+        <h2>日惹景點</h2>
+        <h3>馬里奧波羅大街 (Jalan Malioboro)</h3>
+        <h4>
+          馬里奧波羅大街位於日惹市中心，是最著名的觀光街道與商業文化地標，歷史悠久的街道自日惹蘇丹國時期便是城市的重要軸線，兩旁林立傳統商店、百貨公司、街頭小吃攤與紀念品店，尤其以蠟染布、傳統手工藝品及爪哇特色美食聞名，可以品嚐 Gudeg 波羅蜜燉菜、沙嗲及各式印尼小吃，也能搭乘傳統馬車欣賞街景。入夜後街道燈火通明，街頭藝人、音樂表演與熱鬧人潮交織出獨特氛圍，馬里奧波羅大街鄰近日惹王宮、傳統市場及歷史建築，是感受日惹悠久歷史、藝術文化與庶民生活的最佳去處。
+        </h4>
+        <div style="text-align: center">
+          <img src="印尼照片\日惹\JO1.jpg" style="width: 90%; max-width: 100vw; height: auto; margin: 0.5rem;" />
+          <img src="印尼照片\日惹\JO2.jpg" style="width: 70%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+          <img src="印尼照片\日惹\JO3.jpg" style="width: 70%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+        </div>
+        <br /><br /><br />
+        <h3>弗雷德堡博物館 (Vredeburg Fort Museum)</h3>
+        <h4>
+          弗雷德堡博物館位於日惹市中心，鄰近馬里奧波羅大街與日惹王宮，堡壘最早於 1760 年由荷蘭殖民勢力興建，後改建為堅固的軍事要塞，主要用於監控日惹蘇丹國及維護殖民統治。如今堡壘已改建為歷史博物館，保留厚重城牆、護城河、瞭望塔與殖民時期建築，館內透過立體模型、歷史照片、文物及互動展示，介紹印尼民族獨立運動、荷蘭殖民統治與日惹在建國歷史中的重要角色，博物館結合歐洲殖民建築與印尼民族歷史，是深入了解日惹過去、印尼獨立歷程及爪哇文化的重要景點。
+        </h4>
+        <div style="text-align: center">
+          <img src="印尼照片\日惹\JO4.jpg" style="width: 90%; max-width: 100vw; height: auto; margin: 0.5rem;" />
+          <img src="印尼照片\日惹\JO5.jpg" style="width: 90%; max-width: 100vw; height: auto; margin: 0.5rem;" />
+          <img src="印尼照片\日惹\JO6.jpg" style="width: 90%; max-width: 100vw; height: auto; margin: 0.5rem;" />
+          <img src="印尼照片\日惹\JO7.jpg" style="width: 90%; max-width: 100vw; height: auto; margin: 0.5rem;" />
+          <img src="印尼照片\日惹\JO8.jpg" style="width: 90%; max-width: 100vw; height: auto; margin: 0.5rem;" />
+        </div>
+        <br /><br /><br />
+        <h3>Taman Sari Tourist Village</h3>
+        <h4>
+          Taman Sari Tourist Village 鄰近日惹王宮，是融合爪哇皇室歷史、傳統建築與在地生活的重要文化景點，以著名的塔曼薩里水宮為核心，建於 18 世紀日惹蘇丹國時期，原為皇室休憩、沐浴及娛樂的場所，擁有精緻水池、庭院、地下通道與融合爪哇、伊斯蘭及歐洲風格的建築，周圍的傳統村落保留狹窄巷弄、民宅與手工藝工作坊，遊客可欣賞蠟染布製作、傳統藝術及當地居民的日常生活，其中地下清真寺 Sumur Gumuling 以獨特的環形結構與交錯階梯聞名，是熱門攝影景點。
+        </h4>
+        <div style="text-align: center">
+          <img src="印尼照片\日惹\JO9.jpg" style="width: 70%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+          <img src="印尼照片\日惹\JO10.jpg" style="width: 70%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+          <img src="印尼照片\日惹\JO11.jpg" style="width: 90%; max-width: 100vw; height: auto; margin: 0.5rem;" />
+          <img src="印尼照片\日惹\JO12.jpg" style="width: 90%; max-width: 100vw; height: auto; margin: 0.5rem;" />
+          <img src="印尼照片\日惹\JO13.jpg" style="width: 90%; max-width: 100vw; height: auto; margin: 0.5rem;" />
+          <img src="印尼照片\日惹\JO14.jpg" style="width: 90%; max-width: 100vw; height: auto; margin: 0.5rem;" />
+        </div>
+        <br /><br /><br />
+        <h3>日惹紀念碑 (Tugu Yogyakarta)</h3>
+        <h4>
+          日惹紀念碑位於日惹市中心，是日惹蘇丹國的重要文化象徵，紀念碑最早建於 1755 年，由日惹首任蘇丹哈孟庫布沃諾一世下令興建，原名為 Tugu Golong Gilig，象徵君主與人民團結一致的精神，1867 年紀念碑因強烈地震倒塌，1889 年由荷蘭殖民政府重建，形成今日白色塔身、金色尖頂的外觀，紀念碑位於連接默拉皮火山、日惹王宮與南海的傳統宇宙軸線上，具有深厚的爪哇哲學與宗教意義。如今周圍遍布咖啡館、餐廳與商店，夜晚燈光映照下格外迷人，是旅客拍照留念的熱門景點，也象徵日惹悠久的皇室歷史與文化認同。
+        </h4>
+        <div style="text-align: center">
+          <img src="印尼照片\日惹\JO15.jpg" style="width: 70%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+        </div>
+        <br /><br /><br />
+        <h3>日惹王宮 (Keraton Ngayogyakarta Hadiningrat)</h3>
+        <h4>
+          日惹王宮是日惹蘇丹國的皇室宮殿，也是爪哇傳統文化與歷史的重要象徵，王宮於 1755 年由首任蘇丹哈孟庫布沃諾一世興建，至今仍是日惹蘇丹的居所與文化活動中心，建築融合傳統爪哇與伊斯蘭風格，以宏偉的宮門、開放式亭閣、精緻木雕及典雅庭院聞名，宮內設有博物館，展示皇室服飾、歷史文物、傳統武器與珍貴藝術收藏，還有機會欣賞甘美朗音樂 (Gamelan)、爪哇傳統舞蹈及皮影戲 (Wayang Kulit) 等文化表演。<b>請務必記得入內參觀必須要穿著長褲，或是用長袍把腿遮起來。</b>
+        </h4>
+        <div style="text-align: center">
+          <img src="印尼照片\日惹\JO16.jpg" style="width: 70%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+          <img src="印尼照片\日惹\JO17.jpg" style="width: 70%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+          <img src="印尼照片\日惹\JO18.jpg" style="width: 90%; max-width: 100vw; height: auto; margin: 0.5rem;" />
+          <img src="印尼照片\日惹\JO19.jpg" style="width: 90%; max-width: 100vw; height: auto; margin: 0.5rem;" />
+          <img src="印尼照片\日惹\JO20.jpg" style="width: 90%; max-width: 100vw; height: auto; margin: 0.5rem;" />
+          <img src="印尼照片\日惹\JO21.jpg" style="width: 90%; max-width: 100vw; height: auto; margin: 0.5rem;" />
+          <img src="印尼照片\日惹\JO22.jpg" style="width: 90%; max-width: 100vw; height: auto; margin: 0.5rem;" />
+          <img src="印尼照片\日惹\JO23.jpg" style="width: 90%; max-width: 100vw; height: auto; margin: 0.5rem;" />
+        </div>
+        <br /><br /><br />
+        <h3>日惹南廣場 (Alun-Alun Kidul Yogyakarta)</h3>
+        <h4>
+          日惹南廣場位於日惹王宮南側，是體驗爪哇庶民文化與夜生活的熱門景點，廣場歷史可追溯至 18 世紀日惹蘇丹國時期，過去主要用於皇室儀式、軍事訓練及重要慶典，廣場中央矗立兩棵巨大的榕樹，當地流傳著著名的 Masangin 傳統挑戰，據說蒙眼後若能成功從兩棵榕樹之間直線穿過，願望便有機會實現。
+        </h4>
+        <h4>入夜後廣場周圍聚集大量小吃攤、街頭藝人及裝飾繽紛燈光的腳踏車，可以品嚐印尼傳統美食、租借發光腳踏車環繞廣場，感受熱鬧而輕鬆的夜晚氛圍，不僅保留日惹悠久的皇室文化，也是當地居民休閒社交與家庭聚會的場所。</h4>
+        <div style="text-align: center">
+          <img src="印尼照片\日惹\JO24.jpg" style="width: 90%; max-width: 100vw; height: auto; margin: 0.5rem;" />
+          <img src="印尼照片\日惹\JO25.jpg" style="width: 90%; max-width: 100vw; height: auto; margin: 0.5rem;" />
+        </div>
+        <br />
+        <h2>日惹近郊景點</h2>
+        <h3>Bunker Kaliadem Merapi</h3>
+        <h4>
+          Bunker Kaliadem Merapi 位於日惹北方的默拉皮火山 (Mount Merapi) 山麓，碉堡最初興建作為火山活動期間的緊急避難設施，但在 2006 年默拉皮火山噴發時，因高溫火山碎屑流侵襲，造成兩名避難者不幸罹難，凸顯火山活動的危險性，如今碉堡已成為火山災害教育與觀光的重要地標，周圍遍布火山岩、火山灰沉積地形及壯觀的山谷景色，通常搭乘默拉皮火山吉普車前往，沿途探索火山噴發遺跡、受災村落與特殊地貌，天氣晴朗時更能近距離欣賞默拉皮火山雄偉的山體，可以在 klook 上預定行程。
+        </h4>
+        <div style="text-align: center">
+          <img src="印尼照片\日惹\JO26.jpg" style="width: 90%; max-width: 100vw; height: auto; margin: 0.5rem;" />
+          <img src="印尼照片\日惹\JO27.jpg" style="width: 90%; max-width: 100vw; height: auto; margin: 0.5rem;" />
+          <img src="印尼照片\日惹\JO28.jpg" style="width: 70%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+          <img src="印尼照片\日惹\JO29.jpg" style="width: 70%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+          <img src="印尼照片\日惹\JO30.jpg" style="width: 70%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+          <img src="印尼照片\日惹\JO31.jpg" style="width: 90%; max-width: 100vw; height: auto; margin: 0.5rem;" />
+        </div>
+        <br /><br /><br />
+        <h3>Museum Mini Sisa Hartaku</h3>
+        <h4>
+          Museum Mini Sisa Hartaku 是一座紀念 2010 年默拉皮火山大規模噴發災難的特殊博物館，「Sisa Hartaku」在印尼語中意為「我僅存的財產」，象徵災民在火山災害後留下的珍貴記憶，博物館由受災民宅改建而成，展示被高溫火山碎屑流燒毀的摩托車、家具、家電、鐘錶及日常用品，真實呈現火山爆發的破壞力，其中停留在災難發生時刻的時鐘與燒毀的生活物品格外令人震撼，讓我們在欣賞壯麗火山地形的同時，也能了解當地居民面對自然災害的經歷、重建家園的韌性，以及火山防災的重要性。
+        </h4>
+        <div style="text-align: center">
+          <img src="印尼照片\日惹\JO32.jpg" style="width: 90%; max-width: 100vw; height: auto; margin: 0.5rem;" />
+          <img src="印尼照片\日惹\JO33.jpg" style="width: 90%; max-width: 100vw; height: auto; margin: 0.5rem;" />
+        </div>
+        <div class="two-vertical-images">
+          <img src="中國照片\日惹\JO34-1.jpg" />
+          <img src="中國照片\日惹\JO34-2.jpg" />
+        </div>
+        <div class="two-vertical-images">
+          <img src="中國照片\日惹\JO35-1.jpg" />
+          <img src="中國照片\日惹\JO35-2.jpg" />
+        </div>
+        <br /><br /><br />
+        <h3>普蘭巴南 (Prambanan Temple) </h3>
+        <h4>
+          普蘭巴南位於日惹東北方約 17 公里，是印尼規模最大的印度教寺廟群，神廟建於 9 世紀馬塔蘭王國時期，主要供奉印度教三大主神：濕婆、毗濕奴與梵天，其中最高的濕婆神廟高達 47 公尺，以雄偉尖塔、精緻石雕及印度史詩《羅摩衍那》浮雕聞名，神廟群曾因地震與歷史變遷而荒廢，經過長期修復後於 1991 年被列入聯合國教科文組織世界文化遺產。
+        </h4>
+        <h4>
+          普蘭巴南不僅是印尼重要的歷史文化地標，也是欣賞爪哇古代建築藝術的熱門景點，還能觀賞著名的羅摩衍那芭蕾舞劇，在壯麗神廟背景下感受印度教神話與爪哇傳統藝術的魅力。
+        </h4>
+        <div style="text-align: center">
+          <img src="印尼照片\日惹\JO36.jpg" style="width: 90%; max-width: 100vw; height: auto; margin: 0.5rem;" />
+          <img src="印尼照片\日惹\JO37.jpg" style="width: 90%; max-width: 100vw; height: auto; margin: 0.5rem;" />
+          <img src="印尼照片\日惹\JO38.jpg" style="width: 70%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+          <img src="印尼照片\日惹\JO39.jpg" style="width: 70%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+        </div>
+        <br /><br /><br />
+        <h3>拉圖博科王宮遺址 (Keraton Ratu Boko)</h3>
+        <h4>
+          拉圖博科王宮遺址距離普蘭巴南神廟約 3 公里，是爪哇島最具代表性的古代宮殿遺址，坐落於海拔約 196 公尺的山丘上，建於 8 至 9 世紀古馬塔蘭王國時期，融合佛教與印度教文化，推測曾作為皇室居所、宗教修行及防禦設施，保留宏偉的石造宮門、古代浴池、宮殿地基、石窟與祭祀遺跡，展現古代爪哇文明的建築工藝與宗教信仰，其中最著名的是雙層石造宮門，由於地勢較高，這裡能俯瞰普蘭巴南平原與遠方的默拉皮火山，尤其以壯麗夕陽景色聞名。
+        </h4>
+        <div style="text-align: center">
+          <img src="印尼照片\日惹\JO40.jpg" style="width: 90%; max-width: 100vw; height: auto; margin: 0.5rem;" />
+          <img src="印尼照片\日惹\JO41.jpg" style="width: 90%; max-width: 100vw; height: auto; margin: 0.5rem;" />
+          <img src="印尼照片\日惹\JO42.jpg" style="width: 90%; max-width: 100vw; height: auto; margin: 0.5rem;" />
+        </div>
+        <br /><br /><br />
+        <h3>婆羅浮屠 (Borobudur)</h3>
+        <h4>
+          婆羅浮屠位於中爪哇省，距離日惹約 40 公里，是世界規模最大的佛教寺院，也是印尼最具代表性的歷史文化遺產，建於 8 至 9 世紀夏連特拉王朝時期，以火山岩建造，採用巨大的曼荼羅式階梯金字塔設計，象徵佛教修行者從世俗走向覺悟的精神旅程，寺廟共有九層平台，裝飾超過 2600 塊精緻浮雕與 500 尊佛像，頂層則環繞 72 座鐘形佛塔，中央矗立著巨大的主佛塔。婆羅浮屠曾因火山灰覆蓋與歷史變遷而長期被忽視，19 世紀重新受到關注，並於 1991 年被列入聯合國教科文組織世界文化遺產，不僅是重要的佛教朝聖地，也是欣賞爪哇古代建築藝術、佛教文化與壯麗山巒景色的熱門景點，尤其以清晨日出時分的神秘氛圍聞名。
+        </h4>
+        <div style="text-align: center">
+          <img src="印尼照片\日惹\JO43.jpg" style="width: 90%; max-width: 100vw; height: auto; margin: 0.5rem;" />
+          <img src="印尼照片\日惹\JO44.jpg" style="width: 90%; max-width: 100vw; height: auto; margin: 0.5rem;" />
+          <img src="印尼照片\日惹\JO45.jpg" style="width: 90%; max-width: 100vw; height: auto; margin: 0.5rem;" />
+          <img src="印尼照片\日惹\JO46.jpg" style="width: 90%; max-width: 100vw; height: auto; margin: 0.5rem;" />
+          <img src="印尼照片\日惹\JO47.jpg" style="width: 90%; max-width: 100vw; height: auto; margin: 0.5rem;" />
+          <img src="印尼照片\日惹\JO48.jpg" style="width: 70%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+          <img src="印尼照片\日惹\JO49.jpg" style="width: 70%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+        </div>
+        <br /><br /><br />
+        <h3>因德拉揚蒂海灘 (Indrayanti Beach)</h3>
+        <h4>
+          因德拉揚蒂海灘位於日惹特區南部的古農基都爾 (Gunungkidul)，距離日惹約 70 公里，正式名稱為 Pantai Pulang Sawal，以潔白細緻的沙灘、清澈湛藍的印度洋海水及壯麗石灰岩峭壁聞名，相較於日惹其他海灘，這裡擁有較完善的觀光設施，沿岸遍布海景餐廳、咖啡館與休憩涼亭，可以享用新鮮海鮮、欣賞海景或在沙灘上悠閒散步，海灘兩側的岩石山丘也是熱門觀景地點，能俯瞰海岸線與遼闊的印度洋，尤其適合欣賞日落。由於南岸海浪強勁、暗流危險，通常<b>不建議下海游泳</b>。
+        </h4>
+        <div style="text-align: center">
+          <img src="印尼照片\日惹\JO50.jpg" style="width: 90%; max-width: 100vw; height: auto; margin: 0.5rem;" />
+          <img src="印尼照片\日惹\JO51.jpg" style="width: 70%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+        </div>
+        <br /><br /><br />
+        <h3>Puncak Segoro</h3>
+        <h4>
+          Puncak Segoro 位於日惹特區南部的古農基都爾 (Gunungkidul)，以壯麗的印度洋景色、陡峭石灰岩懸崖及浪漫夕陽聞名，「Puncak Segoro」在爪哇語中意為「海洋之巔」，景點坐落於高聳的海岸峭壁上，能俯瞰遼闊的湛藍海洋與壯觀海浪，設有多處觀景平台、特色拍照裝置及懸崖景觀餐廳，可以一邊享用印尼傳統料理、咖啡與飲品，一邊欣賞海天一色的自然風光，其中建於懸崖邊的木造觀景平台尤其受到喜愛，是熱門的攝影打卡地點。
+        </h4>
+        <div style="text-align: center">
+          <img src="印尼照片\日惹\JO52.jpg" style="width: 70%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+          <img src="印尼照片\日惹\JO53.jpg" style="width: 90%; max-width: 100vw; height: auto; margin: 0.5rem;" />
+          <img src="印尼照片\日惹\JO54.jpg" style="width: 90%; max-width: 100vw; height: auto; margin: 0.5rem;" />
+        </div>
+        <br />
+        <h2>日惹美食</h2>
+        <h3>Mediterranea Restaurant by Kamil</h3>
+        <h4>
+          Mediterranea Restaurant by Kamil 位於日惹 Prawirotaman 區，是知名的地中海與歐洲料理餐廳，由法國主廚 Kamil 經營，以精緻料理、優質食材及舒適氛圍聞名，餐廳主打法式、義式與地中海風味，提供手工義大利麵、披薩、牛排、海鮮、沙拉及各式甜點，並特別重視新鮮食材與傳統烹調技法，店內裝潢融合歐式鄉村風格與現代設計，營造溫暖而優雅的用餐環境，憑藉豐富菜單、親民價格與穩定品質，深受當地居民、外籍人士及國際旅客喜愛，是日惹品嚐道地歐洲料理的熱門選擇。
+        </h4>
+        <div style="text-align: center">
+          <img src="印尼照片\日惹\JO55.jpg" style="width: 90%; max-width: 100vw; height: auto; margin: 0.5rem;" />
+          <img src="印尼照片\日惹\JO56.jpg" style="width: 90%; max-width: 100vw; height: auto; margin: 0.5rem;" />
+          <img src="印尼照片\日惹\JO57.jpg" style="width: 90%; max-width: 100vw; height: auto; margin: 0.5rem;" />
+        </div>
+        <br /><br /><br />
+        <h3>The House of Raminten</h3>
+        <h4>
+          The House of Raminten 位於日惹市中心，是極具代表性的爪哇傳統料理餐廳，以獨特的文化氛圍、平價美食及充滿藝術感的裝潢聞名，由日惹知名藝術家 Hamzah Sulaiman 創立，內部融合爪哇古典家具、傳統雕刻、神像與神秘的香氛氣息，服務人員身穿傳統爪哇服飾，營造濃厚的皇室文化氛圍，招牌料理包括 Nasi Kucing 迷你飯、Gudeg 波羅蜜燉菜、傳統沙嗲及各式爪哇甜點與特色飲品，是體驗日惹傳統飲食、藝術文化與特色用餐氛圍的熱門餐廳。
+        </h4>
+        <div style="text-align: center">
+          <img src="印尼照片\日惹\JO58.jpg" style="width: 70%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+          <img src="印尼照片\日惹\JO59.jpg" style="width: 70%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+          <img src="印尼照片\日惹\JO60.jpg" style="width: 70%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+        </div>
+        <br /><br /><br />
+        <h3>Gudeg Sagan</h3>
+        <h4>
+          Gudeg Sagan 位於日惹的 Sagan 區，以日惹代表性美食 Gudeg (波羅蜜燉菜) 聞名，Gudeg 使用未成熟的波羅蜜，加入椰奶、棕櫚糖與多種香料慢火燉煮，呈現香甜濃郁的獨特風味，餐廳以較濕潤的 Gudeg Basah 為特色，通常搭配白飯、香料燉雞、滷蛋、豆腐及辣味牛皮燉菜 Krecek，形成豐富的傳統爪哇套餐，保留濃厚的在地飲食氛圍，是造訪日惹時品嚐道地 Gudeg、認識爪哇飲食文化的熱門選擇。
+        </h4>
+        <div style="text-align: center">
+          <img src="印尼照片\日惹\JO61.jpg" style="width: 70%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+          <img src="印尼照片\日惹\JO62.jpg" style="width: 70%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+        </div>
+        <br /><br /><br />
+        <h3>Bale Raos – The Sultan’s Dishes</h3>
+        <h4>
+          Bale Raos – The Sultan’s Dishes 位於日惹王宮附近，是極具代表性的傳統爪哇皇室料理餐廳，以重現日惹蘇丹家族的宮廷美食聞名，餐廳名稱在爪哇語中意為「品嚐美食的場所」，建築融合傳統爪哇亭閣、木雕與典雅庭院，營造濃厚的皇室氛圍，菜單以歷代蘇丹喜愛的料理為特色，包括 Bebek Suwar-Suwir 香料鴨肉、Bestik Jawa 爪哇式燉牛肉及各式傳統甜點，不僅提供精緻的在地美食，也透過菜餚介紹呈現爪哇皇室的飲食文化與歷史，是造訪日惹時體驗蘇丹宮廷料理的特色餐廳。
+        </h4>
+        <div style="text-align: center">
+          <img src="印尼照片\日惹\JO63.jpg" style="width: 90%; max-width: 100vw; height: auto; margin: 0.5rem;" />
+          <img src="印尼照片\日惹\JO64.jpg" style="width: 70%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+        </div>
+        <br /><br /><br />
+        <h3>Svarga Flora Coffee & Plants</h3>
+        <h4>
+          Svarga Flora Coffee & Plants 是一間結合精品咖啡、植物園藝與自然美學的特色咖啡館，以綠意盎然的環境與悠閒氛圍聞名，店內種植大量熱帶觀葉植物，搭配木質家具、自然採光及開放式空間，營造宛如城市叢林般的舒適環境，提供義式咖啡、手沖咖啡、特色飲品及各式甜點與輕食，適合享受下午茶、閱讀或與朋友聚會。
+        </h4>
+        <div style="text-align: center">
+          <img src="印尼照片\日惹\JO65.jpg" style="width: 70%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+          <img src="印尼照片\日惹\JO66.jpg" style="width: 70%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+          <img src="印尼照片\日惹\JO67.jpg" style="width: 70%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+          <img src="印尼照片\日惹\JO68.jpg" style="width: 70%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+        </div>
+        <br /><br /><br />
+        <h3>Bakmi Jowo Mbah Gito</h3>
+        <h4>
+          Bakmi Jowo Mbah Gito 是極具代表性的傳統爪哇麵食餐廳，主打 Bakmi Jawa (爪哇炒麵)，使用傳統炭火爐烹調，搭配雞肉、雞蛋、蔬菜及特色香料，呈現濃郁香氣與獨特口感，招牌料理包括 Bakmi Goreng 炒麵、Bakmi Godog 湯麵及 Magelangan 炒飯麵，店內大量使用回收木材、古董家具與傳統爪哇裝飾，營造宛如古老村落的懷舊氛圍。
+        </h4>
+        <div style="text-align: center">
+          <img src="印尼照片\日惹\JO69.jpg" style="width: 70%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+          <img src="印尼照片\日惹\JO70.jpg" style="width: 70%; max-width: 90vw; height: auto; margin: 0.5rem;" />
+        </div>
+        <br />
+      </div>
+      <div class="destination-sidebar">
+        <div class="sidebar-image-container">
+          <img src="側邊欄自我介紹.jpg" />
+        </div>
+        <h5>
+          Hi!
+          我是Tommy，我熱愛旅遊也喜歡藉由影像紀錄旅程中的點點滴滴，透過文字將我在旅途中的所見所聞分享給大家。旅行對我而言不只是吃吃喝喝，而是能在行萬里路間感受世界的脈動，體驗不同的文化，希望藉由我的分享能讓大家看到更多世界的美好。
+        </h5>
+        <br />
+        <h5>
+          想更了解我或與我聯絡:
+          <a
+            href="https://www.instagram.com/tommy_techvoyage/"
+            target="_blank"
+            style="color: inherit; text-decoration: underline"
+          >
+            <b>Instagram</b>
+          </a>
+        </h5>
+        <div class="recommendation-section">
+          <h3>其他印尼旅遊目的地</h3>
+          <div class="recommendation-buttons">
+            <a href="雅加達.html">
+              <button><h5>雅加達</h5></button>
+            </a>
+            <a href="峇里島.html">
+              <button><h5>峇里島</h5></button>
+            </a>
+            <a href="龍目島.html">
+              <button><h5>龍目島</h5></button>
+            </a>
+            <a href="科莫多島.html">
+              <button><h5>科莫多島</h5></button>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="contact-section">
+      <div class="contact-item">
+        <h3>
+          想更了解我或與我聯絡:
+          <a
+            href="https://www.instagram.com/tommy_techvoyage/"
+            target="_blank"
+            style="color: inherit; text-decoration: underline"
+          >
+            Instagram
+          </a>
+        </h3>
+      </div>
+    </div>
+    <footer>
+      <h6>COPYRIGHT © 2025 Tommy 看世界 All rights reserved.</h6>
+    </footer>
+    <div id="menu-toggle"></div>
+    <div id="expandable-menu">
+      <div id="menu-content">
+        <h4>目錄</h4>
+        <ul id="menu-list"></ul>
+      </div>
+    </div>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const menu = document.getElementById("expandable-menu");
+        const toggle = document.getElementById("menu-toggle");
+        const menuList = document.getElementById("menu-list");
+        const destinationMain = document.querySelector(".destination-main");
+
+        // 點擊按鈕切換目錄狀態
+        toggle.addEventListener("click", () => {
+          menu.classList.toggle("open");
+
+          const menuWidth = menu.offsetWidth; // 獲取目前展開的目錄寬度
+
+          if (menu.classList.contains("open")) {
+            // 讓按鈕向左平移與 menu 一樣的寬度
+            toggle.style.transform = `translateY(-50%) translateX(-${menuWidth}px)`;
+          } else {
+            // 收回原位
+            toggle.style.transform = `translateY(-50%) translateX(0)`;
+          }
+        });
+
+        window.addEventListener("load", () => {
+          if (menu.classList.contains("open")) {
+            const menuWidth = menu.offsetWidth;
+            toggle.style.transform = `translateY(-50%) translateX(-${menuWidth}px)`;
+          }
+        });
+
+        // 從 destination-main 區域提取 h2 和 h3，動態生成目錄
+        const headings = destinationMain.querySelectorAll("h2, h3");
+        headings.forEach((heading, index) => {
+          // 確保每個 h2 和 h3 都有唯一的 id
+          if (!heading.id) {
+            heading.id = `heading-${index}`;
+          }
+
+          const listItem = document.createElement("li");
+          const link = document.createElement("a");
+          link.textContent = heading.textContent;
+          link.href = `#${heading.id}`;
+          listItem.appendChild(link);
+
+          // 為 h3 添加縮排樣式
+          if (heading.tagName.toLowerCase() === "h3") {
+            listItem.classList.add("sub-item");
+          }
+
+          menuList.appendChild(listItem);
+        });
+
+        function adjustMenuPosition() {
+          const nav = document.querySelector("nav");
+          const menu = document.getElementById("expandable-menu");
+      
+          if (nav && menu) {
+            const navHeight = nav.offsetHeight;
+      
+            // 設定 menu 的 top 與高度
+            menu.style.top = `${navHeight}px`;
+            menu.style.height = `calc(100vh - ${navHeight}px)`;
+          }
+        }
+      
+        // 載入與尺寸變化時調整
+        window.addEventListener("DOMContentLoaded", adjustMenuPosition);
+        window.addEventListener("resize", adjustMenuPosition);
+        
+        // 滾動至目標位置並加上 75px 偏移
+        menuList.addEventListener("click", (event) => {
+          if (event.target.tagName === "A") {
+            event.preventDefault(); // 阻止預設行為
+
+            const targetId = event.target.getAttribute("href").substring(1); // 取得目標 ID
+            const targetElement = document.getElementById(targetId);
+
+            if (targetElement) {
+              // 計算目標元素的位置並加上 75px 偏移
+              const targetPosition =
+                targetElement.getBoundingClientRect().top + window.scrollY;
+              const offset = 75; // 偏移的距離
+              window.scrollTo({
+                top: targetPosition - offset,
+                behavior: "smooth", // 平滑滾動
+              });
+            }
+          }
+        });
+        // 手機 Safari 相容：點擊展開 dropdown
+        const dropdownToggles = document.querySelectorAll(".dropdown-toggle");
+
+        dropdownToggles.forEach((toggle) => {
+          toggle.addEventListener("click", function (e) {
+            e.stopPropagation(); // 防止冒泡，避免點擊外層時也觸發關閉
+            const dropdown = this.nextElementSibling;
+            const isVisible = dropdown.style.display === "block";
+            
+            // 關閉所有其他 dropdown（可選）
+            document.querySelectorAll(".dropdown-content").forEach((menu) => {
+              menu.style.display = "none";
+            });
+
+            // 切換目前這一個 dropdown
+            dropdown.style.display = isVisible ? "none" : "block";
+          });
+        });
+
+        // 點擊其他地方時關閉 dropdown
+        window.addEventListener("click", function () {
+          document.querySelectorAll(".dropdown-content").forEach((menu) => {
+            menu.style.display = "none";
+          });
+        });
+      });
+    </script>
+  </body>
+</html>
